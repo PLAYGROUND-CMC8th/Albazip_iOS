@@ -23,7 +23,7 @@ extension UIColor {
     // ex. label.textColor = .mainOrange
     class var mainYellow: UIColor { #colorLiteral(red: 1, green: 0.768627451, blue: 0, alpha: 1)}
     class var blurYellow: UIColor { #colorLiteral(red: 1, green: 0.8823529412, blue: 0.4980392157, alpha: 1)}
-    class var semiYellow: UIColor { #colorLiteral(red: 0.9994661212, green: 0.979791224, blue: 0.9194086194, alpha: 1)}
+    class var semiYellow: UIColor { #colorLiteral(red: 0.9983271956, green: 0.9391896129, blue: 0.7384549379, alpha: 1)}
     class var gray: UIColor { #colorLiteral(red: 0.2039215686, green: 0.2039215686, blue: 0.2039215686, alpha: 1)}
     class var blurGray: UIColor { #colorLiteral(red: 0.8078431373, green: 0.8078431373, blue: 0.8078431373, alpha: 1)}
     

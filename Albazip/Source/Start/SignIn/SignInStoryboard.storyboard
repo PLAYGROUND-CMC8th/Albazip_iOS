@@ -588,7 +588,11 @@
                                             <constraint firstAttribute="width" constant="146" id="gWH-X2-29p"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="tintColor" red="0.98823523520000001" green="0.93725490570000003" blue="0.7607843876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="남자">
+                                            <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <state key="highlighted">
                                             <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -602,6 +606,9 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnMan:" destination="8jS-4m-b3Q" eventType="touchUpInside" id="ElN-Y1-1tp"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B61-nj-tNl">
                                         <rect key="frame" x="157" y="0.0" width="146" height="48"/>
@@ -610,7 +617,11 @@
                                             <constraint firstAttribute="width" constant="146" id="d6O-Ot-mUP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="tintColor" red="0.98823523520000001" green="0.93725490570000003" blue="0.7607843876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="여자">
+                                            <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <state key="highlighted">
                                             <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -624,6 +635,9 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnWoman:" destination="8jS-4m-b3Q" eventType="touchUpInside" id="gY4-nd-osn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -677,6 +691,14 @@
                             <constraint firstItem="YbG-oS-kFR" firstAttribute="top" secondItem="Tr5-hJ-LOs" secondAttribute="bottom" constant="36" id="vB1-Nr-JRI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ageTextfield" destination="T1I-2D-TXc" id="dF9-1l-Hvv"/>
+                        <outlet property="btnMan" destination="DRD-87-w6c" id="VLd-cI-CNs"/>
+                        <outlet property="btnNext" destination="AYL-ik-IrP" id="qg8-yg-bbR"/>
+                        <outlet property="btnWoman" destination="B61-nj-tNl" id="SXl-rh-Z64"/>
+                        <outlet property="firstNameTextfield" destination="Tr5-hJ-LOs" id="jPd-rV-pDi"/>
+                        <outlet property="nameTextfield" destination="Kjo-qa-dhY" id="VUP-K4-Z5W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGc-Za-MZi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -800,7 +822,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Prp-9H-FlQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2442" y="-26"/>
+            <point key="canvasLocation" x="2418" y="-31"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5CP-FH-bi7">
