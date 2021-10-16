@@ -10,6 +10,8 @@
 		9C7447FE94295A129DB07CA9 /* Pods_Albazip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363836578B4295DDC93F8120 /* Pods_Albazip.framework */; };
 		C37EBF3F271A9D7000DEC2CA /* SignInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37EBF3E271A9D7000DEC2CA /* SignInStoryboard.storyboard */; };
 		C37EBF41271AA1B000DEC2CA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */; };
+		C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */; };
+		C37EBF45271ABE7B00DEC2CA /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37EBF44271ABE7B00DEC2CA /* LoginStoryboard.storyboard */; };
 		C38442352714797000B84E8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38442342714797000B84E8A /* AppDelegate.swift */; };
 		C38442372714797000B84E8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38442362714797000B84E8A /* SceneDelegate.swift */; };
 		C384423C2714797000B84E8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C384423A2714797000B84E8A /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 		9E8BCDC410EA5AB6EF1D4E62 /* Pods-Albazip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Albazip.release.xcconfig"; path = "Pods/Target Support Files/Pods-Albazip/Pods-Albazip.release.xcconfig"; sourceTree = "<group>"; };
 		C37EBF3E271A9D7000DEC2CA /* SignInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInStoryboard.storyboard; sourceTree = "<group>"; };
 		C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C37EBF44271ABE7B00DEC2CA /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		C38442312714797000B84E8A /* Albazip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Albazip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38442342714797000B84E8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C38442362714797000B84E8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 		C384426E2714805B00B84E8A /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */,
+				C37EBF44271ABE7B00DEC2CA /* LoginStoryboard.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -417,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */,
+				C37EBF45271ABE7B00DEC2CA /* LoginStoryboard.storyboard in Resources */,
 				C38442412714797100B84E8A /* LaunchScreen.storyboard in Resources */,
 				C38442772714940100B84E8A /* CommunityStoryboard.storyboard in Resources */,
 				C384423E2714797100B84E8A /* Assets.xcassets in Resources */,
@@ -520,6 +527,7 @@
 				C384425E27147E3F00B84E8A /* UIFont.swift in Sources */,
 				C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */,
 				C37EBF41271AA1B000DEC2CA /* SignInViewController.swift in Sources */,
+				C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */,
 				C384424F27147E2900B84E8A /* IndicatorView.swift in Sources */,
 				C384425D27147E3F00B84E8A /* UINavigationBar.swift in Sources */,
 				C384425B27147E3F00B84E8A /* UIButton.swift in Sources */,
