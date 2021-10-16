@@ -1,0 +1,6 @@
+framework module Pods_Albazip {
+  umbrella header "Pods-Albazip-umbrella.h"
+
+  export *
+  module * { export * }
+}
