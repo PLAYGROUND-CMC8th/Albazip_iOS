@@ -12,6 +12,11 @@
 		C37EBF41271AA1B000DEC2CA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */; };
 		C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */; };
 		C37EBF45271ABE7B00DEC2CA /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37EBF44271ABE7B00DEC2CA /* LoginStoryboard.storyboard */; };
+		C37EBF49271AD0BB00DEC2CA /* SignInManagerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37EBF48271AD0BB00DEC2CA /* SignInManagerStoryboard.storyboard */; };
+		C37EBF4B271AD54200DEC2CA /* SigInPhoneNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF4A271AD54200DEC2CA /* SigInPhoneNumberVC.swift */; };
+		C37EBF4D271AD71700DEC2CA /* SigInPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF4C271AD71700DEC2CA /* SigInPasswordVC.swift */; };
+		C37EBF4F271AD97900DEC2CA /* SigInBasicInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF4E271AD97900DEC2CA /* SigInBasicInfoVC.swift */; };
+		C37EBF51271AF29B00DEC2CA /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF50271AF29B00DEC2CA /* UITextField.swift */; };
 		C38442352714797000B84E8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38442342714797000B84E8A /* AppDelegate.swift */; };
 		C38442372714797000B84E8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38442362714797000B84E8A /* SceneDelegate.swift */; };
 		C384423C2714797000B84E8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C384423A2714797000B84E8A /* Main.storyboard */; };
@@ -45,6 +50,11 @@
 		C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C37EBF44271ABE7B00DEC2CA /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		C37EBF48271AD0BB00DEC2CA /* SignInManagerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInManagerStoryboard.storyboard; sourceTree = "<group>"; };
+		C37EBF4A271AD54200DEC2CA /* SigInPhoneNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigInPhoneNumberVC.swift; sourceTree = "<group>"; };
+		C37EBF4C271AD71700DEC2CA /* SigInPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigInPasswordVC.swift; sourceTree = "<group>"; };
+		C37EBF4E271AD97900DEC2CA /* SigInBasicInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigInBasicInfoVC.swift; sourceTree = "<group>"; };
+		C37EBF50271AF29B00DEC2CA /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		C38442312714797000B84E8A /* Albazip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Albazip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38442342714797000B84E8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C38442362714797000B84E8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +109,21 @@
 				363836578B4295DDC93F8120 /* Pods_Albazip.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C37EBF46271AD00600DEC2CA /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C37EBF48271AD0BB00DEC2CA /* SignInManagerStoryboard.storyboard */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C37EBF47271AD00F00DEC2CA /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Worker;
 			sourceTree = "<group>";
 		};
 		C38442282714797000B84E8A = {
@@ -173,6 +198,7 @@
 				C384425727147E3F00B84E8A /* UIFont.swift */,
 				C384425827147E3F00B84E8A /* Color.swift */,
 				C3A9683E2719F8E500E27DA1 /* UIView.swift */,
+				C37EBF50271AF29B00DEC2CA /* UITextField.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -285,8 +311,13 @@
 		C3D385C72719DD7D0099A290 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				C37EBF46271AD00600DEC2CA /* Manager */,
+				C37EBF47271AD00F00DEC2CA /* Worker */,
 				C37EBF3E271A9D7000DEC2CA /* SignInStoryboard.storyboard */,
 				C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */,
+				C37EBF4A271AD54200DEC2CA /* SigInPhoneNumberVC.swift */,
+				C37EBF4C271AD71700DEC2CA /* SigInPasswordVC.swift */,
+				C37EBF4E271AD97900DEC2CA /* SigInBasicInfoVC.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -429,6 +460,7 @@
 				C384423E2714797100B84E8A /* Assets.xcassets in Resources */,
 				C384427A2714948200B84E8A /* ScheduleStoryboard.storyboard in Resources */,
 				C37EBF3F271A9D7000DEC2CA /* SignInStoryboard.storyboard in Resources */,
+				C37EBF49271AD0BB00DEC2CA /* SignInManagerStoryboard.storyboard in Resources */,
 				C38442722714913700B84E8A /* MyPageStoryboard.storyboard in Resources */,
 				C384423C2714797000B84E8A /* Main.storyboard in Resources */,
 				C38442742714932300B84E8A /* HomeStoryboard.storyboard in Resources */,
@@ -516,6 +548,7 @@
 			files = (
 				C38442352714797000B84E8A /* AppDelegate.swift in Sources */,
 				C384425927147E3F00B84E8A /* Date.swift in Sources */,
+				C37EBF51271AF29B00DEC2CA /* UITextField.swift in Sources */,
 				C38442372714797000B84E8A /* SceneDelegate.swift in Sources */,
 				C384425F27147E3F00B84E8A /* Color.swift in Sources */,
 				C384426C27147E6E00B84E8A /* BaseViewController.swift in Sources */,
@@ -527,9 +560,12 @@
 				C384425E27147E3F00B84E8A /* UIFont.swift in Sources */,
 				C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */,
 				C37EBF41271AA1B000DEC2CA /* SignInViewController.swift in Sources */,
+				C37EBF4B271AD54200DEC2CA /* SigInPhoneNumberVC.swift in Sources */,
+				C37EBF4D271AD71700DEC2CA /* SigInPasswordVC.swift in Sources */,
 				C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */,
 				C384424F27147E2900B84E8A /* IndicatorView.swift in Sources */,
 				C384425D27147E3F00B84E8A /* UINavigationBar.swift in Sources */,
+				C37EBF4F271AD97900DEC2CA /* SigInBasicInfoVC.swift in Sources */,
 				C384425B27147E3F00B84E8A /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
