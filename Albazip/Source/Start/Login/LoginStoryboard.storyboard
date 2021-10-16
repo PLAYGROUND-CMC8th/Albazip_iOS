@@ -373,7 +373,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btnActive" width="47" height="24"/>
+        <image name="btnActive" width="36" height="24"/>
         <image name="btnDisabled" width="36" height="24"/>
         <image name="icBackArrow" width="24" height="24"/>
         <image name="icCheckedNormal" width="24" height="24"/>
