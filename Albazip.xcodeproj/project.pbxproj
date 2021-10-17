@@ -37,6 +37,7 @@
 		C38442742714932300B84E8A /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38442732714932300B84E8A /* HomeStoryboard.storyboard */; };
 		C38442772714940100B84E8A /* CommunityStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38442762714940100B84E8A /* CommunityStoryboard.storyboard */; };
 		C384427A2714948200B84E8A /* ScheduleStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38442792714948200B84E8A /* ScheduleStoryboard.storyboard */; };
+		C3A1ADCA271C14E2005A61ED /* SignInSelectPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A1ADC9271C14E2005A61ED /* SignInSelectPositionVC.swift */; };
 		C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9683E2719F8E500E27DA1 /* UIView.swift */; };
 		C3A968422719FA7A00E27DA1 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A968412719FA7A00E27DA1 /* StartViewController.swift */; };
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
@@ -77,6 +78,7 @@
 		C38442732714932300B84E8A /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		C38442762714940100B84E8A /* CommunityStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommunityStoryboard.storyboard; sourceTree = "<group>"; };
 		C38442792714948200B84E8A /* ScheduleStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScheduleStoryboard.storyboard; sourceTree = "<group>"; };
+		C3A1ADC9271C14E2005A61ED /* SignInSelectPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSelectPositionVC.swift; sourceTree = "<group>"; };
 		C3A9683E2719F8E500E27DA1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C3A968412719FA7A00E27DA1 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				C37EBF4A271AD54200DEC2CA /* SigInPhoneNumberVC.swift */,
 				C37EBF4C271AD71700DEC2CA /* SigInPasswordVC.swift */,
 				C37EBF4E271AD97900DEC2CA /* SigInBasicInfoVC.swift */,
+				C3A1ADC9271C14E2005A61ED /* SignInSelectPositionVC.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38442352714797000B84E8A /* AppDelegate.swift in Sources */,
+				C3A1ADCA271C14E2005A61ED /* SignInSelectPositionVC.swift in Sources */,
 				C384425927147E3F00B84E8A /* Date.swift in Sources */,
 				C37EBF51271AF29B00DEC2CA /* UITextField.swift in Sources */,
 				C38442372714797000B84E8A /* SceneDelegate.swift in Sources */,
@@ -715,13 +719,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = Albazip/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chobi.Albazip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chobi.Albazip.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -735,13 +740,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = Albazip/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chobi.Albazip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chobi.Albazip.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

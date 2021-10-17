@@ -26,8 +26,8 @@ class SigInBasicInfoVC: UIViewController{
         nameTextfield.addLeftPadding()
         ageTextfield.addLeftPadding()
         self.dismissKeyboardWhenTappedAround()
-        btnWoman.isHighlighted = false
-        btnMan.isHighlighted = false
+        btnWoman.adjustsImageWhenHighlighted = false
+        btnMan.adjustsImageWhenHighlighted = false
     }
     
     @IBAction func btnCancel(_ sender: Any) {
@@ -35,6 +35,8 @@ class SigInBasicInfoVC: UIViewController{
     }
     
     @IBAction func btnNext(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SignInSelectPositionVC") as? SignInSelectPositionVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     func checkTextField(){

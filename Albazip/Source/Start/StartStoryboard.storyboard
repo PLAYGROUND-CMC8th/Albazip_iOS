@@ -32,18 +32,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="iFr-4p-0RV">
-                                <rect key="frame" x="138" y="202" width="99.333333333333329" height="89.666666666666657"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="iFr-4p-0RV">
+                                <rect key="frame" x="138" y="202" width="99.333333333333314" height="89.666666666666686"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99.329999999999998" id="pC8-ns-x6W"/>
+                                    <constraint firstAttribute="height" constant="89.670000000000002" id="rKW-v7-tag"/>
+                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoText" translatesAutoresizingMaskIntoConstraints="NO" id="McI-bu-F7n">
-                                <rect key="frame" x="88" y="310.66666666666663" width="199.33333333333331" height="67.333333333333329"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoText" translatesAutoresizingMaskIntoConstraints="NO" id="McI-bu-F7n">
+                                <rect key="frame" x="88.000000000000014" y="310.66666666666669" width="199.33333333333337" height="67.333333333333314"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67.329999999999998" id="BWu-b9-Req"/>
+                                    <constraint firstAttribute="width" constant="199.33000000000001" id="yso-JF-eXO"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1b7-Re-nwj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1b7-Re-nwj">
                                 <rect key="frame" x="24" y="539" width="327" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96470588450000005" green="0.77647060160000003" blue="0.26666668059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Gj0-K3-5bx"/>
+                                    <constraint firstAttribute="width" constant="327" id="QJG-tY-IQf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <state key="normal" title="회원가입">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,17 +66,19 @@
                                     <segue destination="QnE-uP-FaH" kind="show" id="1Xd-JI-JtN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="알바집으로 알바관리 A-Z까지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMU-3n-B14">
-                                <rect key="frame" x="98" y="400" width="189" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알바집으로 알바관리 A-Z까지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMU-3n-B14">
+                                <rect key="frame" x="93.333333333333329" y="396" width="188.33333333333337" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7Q-6U-aim">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7Q-6U-aim">
                                 <rect key="frame" x="24" y="601" width="327" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99607843159999998" green="0.98039215800000001" blue="0.92549026010000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="327" id="BEG-L9-i1i"/>
+                                    <constraint firstAttribute="height" constant="50" id="JrX-Rs-e6k"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <state key="normal" title="로그인">
                                     <color key="titleColor" red="0.96470588450000005" green="0.77647060160000003" blue="0.26666668059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -78,9 +89,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnS-BM-vWt">
-                                <rect key="frame" x="145" y="667" width="95" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnS-BM-vWt">
+                                <rect key="frame" x="98" y="667" width="189" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="Bru-Jq-269"/>
+                                    <constraint firstAttribute="width" constant="189" id="sWd-8w-h0c"/>
+                                </constraints>
                                 <state key="normal" title="비밀번호 재설정">
                                     <color key="titleColor" red="0.8078432083" green="0.8078432083" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -88,12 +102,30 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1b7-Re-nwj" secondAttribute="trailing" constant="24" id="3C5-yt-6fo"/>
+                            <constraint firstItem="BMU-3n-B14" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Bwq-mS-eRK"/>
+                            <constraint firstItem="DnS-BM-vWt" firstAttribute="top" secondItem="W7Q-6U-aim" secondAttribute="bottom" constant="16" id="CdH-zV-ppC"/>
+                            <constraint firstItem="McI-bu-F7n" firstAttribute="top" secondItem="iFr-4p-0RV" secondAttribute="bottom" constant="19" id="LyE-J6-P4e"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="W7Q-6U-aim" secondAttribute="trailing" constant="24" id="TQJ-dv-bAc"/>
+                            <constraint firstItem="BMU-3n-B14" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Ws5-SU-cbt"/>
+                            <constraint firstItem="McI-bu-F7n" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="88" id="Zm5-AF-p7L"/>
+                            <constraint firstItem="iFr-4p-0RV" firstAttribute="centerX" secondItem="McI-bu-F7n" secondAttribute="centerX" id="bnn-l6-bho"/>
+                            <constraint firstItem="W7Q-6U-aim" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="cio-iD-cQX"/>
+                            <constraint firstItem="1b7-Re-nwj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="fUd-TI-B09"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="McI-bu-F7n" secondAttribute="trailing" constant="87.670000000000002" id="fd4-dw-OxJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="DnS-BM-vWt" secondAttribute="bottom" constant="94" id="fdc-5m-vM4"/>
+                            <constraint firstItem="DnS-BM-vWt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="98" id="g6U-Yq-YoH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DnS-BM-vWt" secondAttribute="trailing" constant="88" id="n0s-xv-Fn7"/>
+                            <constraint firstItem="BMU-3n-B14" firstAttribute="top" secondItem="McI-bu-F7n" secondAttribute="bottom" constant="18" id="q3Q-qC-4Dp"/>
+                            <constraint firstItem="W7Q-6U-aim" firstAttribute="top" secondItem="1b7-Re-nwj" secondAttribute="bottom" constant="12" id="yN6-wD-DFx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hy6-m2-7MN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="-34"/>
+            <point key="canvasLocation" x="-196" y="-34.729064039408868"/>
         </scene>
         <!--SignInViewController-->
         <scene sceneID="Cxe-hx-QSN">
