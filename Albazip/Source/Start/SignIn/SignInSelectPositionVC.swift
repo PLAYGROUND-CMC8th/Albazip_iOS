@@ -15,7 +15,8 @@ class SignInSelectPositionVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // viewMap: View 객체
+        
+        // view 클릭 시, 함수 정의
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(managerViewTapped))
         managerView.addGestureRecognizer(tapGestureRecognizer)
         
@@ -25,10 +26,14 @@ class SignInSelectPositionVC: UIViewController{
         
     }
     @objc func managerViewTapped(sender: UITapGestureRecognizer) {
-        
+        let storyboard = UIStoryboard(name: "SignInManagerStoryboard", bundle: Bundle.main)
+        guard let nextVC = storyboard.instantiateViewController(identifier: "SignInSearchStoreVC") as? SignInSearchStoreVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     @objc func workerViewTapped(sender: UITapGestureRecognizer) {
-        
+        let storyboard = UIStoryboard(name: "SignInWorkerStoryboard", bundle: Bundle.main)
+        guard let nextVC = storyboard.instantiateViewController(identifier: "SignInWorkerCodeVC") as? SignInWorkerCodeVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     

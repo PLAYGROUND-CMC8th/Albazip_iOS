@@ -106,6 +106,10 @@ extension SigInBasicInfoVC: UITextFieldDelegate{
         return true
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if(textField == ageTextfield){
+            let newLength = (textField.text?.count)! + string.count - range.length
+                return !(newLength > 4)
+        }
         checkTextField()
         return true
     }
