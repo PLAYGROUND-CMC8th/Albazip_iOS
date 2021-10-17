@@ -24,6 +24,9 @@
                                     <constraint firstAttribute="width" constant="24" id="f5b-ng-9o1"/>
                                 </constraints>
                                 <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RNX-zt-isY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알바집 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEm-dm-NXC">
                                 <rect key="frame" x="36" y="112" width="130" height="29"/>
@@ -37,7 +40,7 @@
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="-없이 번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m6X-Fk-k2c">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="-없이 번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m6X-Fk-k2c">
                                 <rect key="frame" x="36" y="211" width="302" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="6QK-UR-wID"/>
@@ -51,7 +54,10 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.78431367870000002" green="0.78431367870000002" blue="0.78431367870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
@@ -61,7 +67,7 @@
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Goa-bb-u2p">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Goa-bb-u2p">
                                 <rect key="frame" x="36" y="329" width="302" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="302" id="83E-RK-v5k"/>
@@ -75,7 +81,10 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.78431367870000002" green="0.78431367870000002" blue="0.78431367870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
@@ -85,8 +94,11 @@
                                 <state key="normal" title="비밀번호 재설정">
                                     <color key="titleColor" red="0.80392158030000005" green="0.8078432083" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnResetPassword:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ekh-3V-DDY"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tg-56-pWv">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tg-56-pWv">
                                 <rect key="frame" x="24" y="738" width="327" height="50"/>
                                 <color key="backgroundColor" red="0.98039215800000001" green="0.88627451660000001" blue="0.54901963470000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -102,6 +114,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnLogin:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UEB-9W-2ZN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -128,15 +143,20 @@
                             <constraint firstItem="4Tg-56-pWv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="ve8-fA-DV4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="4Tg-56-pWv" id="4i8-LN-LE0"/>
+                        <outlet property="passwordTextfield" destination="Goa-bb-u2p" id="Xbb-HR-0mS"/>
+                        <outlet property="phoneTextfield" destination="m6X-Fk-k2c" id="bj9-VI-GH4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-7.2463768115942031" y="44.866071428571423"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Reset PhoneVC-->
         <scene sceneID="gj3-gT-a6o">
             <objects>
-                <viewController id="XLP-TL-0cc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginResetPhoneVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XLP-TL-0cc" customClass="LoginResetPhoneVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K28-Fc-VUp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,6 +168,9 @@
                                     <constraint firstAttribute="height" constant="24" id="edW-zX-vke"/>
                                 </constraints>
                                 <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="XLP-TL-0cc" eventType="touchUpInside" id="isq-bq-a12"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7l-ay-xAA">
                                 <rect key="frame" x="36" y="112" width="151" height="29"/>
@@ -155,7 +178,7 @@
                                 <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="-없이 번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USK-RJ-JNo">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="-없이 번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USK-RJ-JNo">
                                 <rect key="frame" x="36" y="177" width="303" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="41V-fP-hPT"/>
@@ -169,7 +192,10 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.78431367870000002" green="0.78431367870000002" blue="0.78823530669999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
@@ -197,8 +223,11 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnNext:" destination="XLP-TL-0cc" eventType="touchUpInside" id="oeu-40-axg"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="esW-eO-Lu5">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="esW-eO-Lu5">
                                 <rect key="frame" x="36" y="249" width="303" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="aY2-gg-FOJ"/>
@@ -212,7 +241,10 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.78431367870000002" green="0.78431367870000002" blue="0.78431367870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
@@ -252,10 +284,10 @@
             </objects>
             <point key="canvasLocation" x="665" y="44"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Reset PasswordVC-->
         <scene sceneID="HqL-Rr-wgG">
             <objects>
-                <viewController id="2FO-Y3-esZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginResetPasswordVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2FO-Y3-esZ" customClass="LoginResetPasswordVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zjh-tk-Qi7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -267,6 +299,9 @@
                                     <constraint firstAttribute="width" constant="24" id="AEe-fO-vmf"/>
                                 </constraints>
                                 <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="2FO-Y3-esZ" eventType="touchUpInside" id="M3M-6k-JGn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2K-5J-Tvf">
                                 <rect key="frame" x="36" y="112" width="151" height="29"/>
@@ -274,7 +309,7 @@
                                 <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="6자리 이상 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z5q-Ln-bEa">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6자리 이상 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z5q-Ln-bEa">
                                 <rect key="frame" x="36" y="177" width="303" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="pAE-2T-9pj"/>
@@ -282,25 +317,20 @@
                                 </constraints>
                                 <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.78431367870000002" green="0.78431367870000002" blue="0.78823530669999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTx-4g-5kS">
-                                <rect key="frame" x="299" y="189" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="qMF-V0-5dA"/>
-                                    <constraint firstAttribute="height" constant="24" id="zzV-j0-55c"/>
-                                </constraints>
-                                <state key="normal" image="icCheckedNormal"/>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="비밀번호 재입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fM9-zH-Ioe">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 재입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fM9-zH-Ioe">
                                 <rect key="frame" x="36" y="249" width="303" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Miu-5s-dHU"/>
@@ -308,24 +338,19 @@
                                 </constraints>
                                 <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.78431367870000002" green="0.78431367870000002" blue="0.78431367870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0e-qV-Abo">
-                                <rect key="frame" x="299" y="261" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="5pL-mf-roD"/>
-                                    <constraint firstAttribute="height" constant="24" id="yEr-gn-dda"/>
-                                </constraints>
-                                <state key="normal" image="icCheckedNormal"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZI-Jz-Gst">
                                 <rect key="frame" x="24" y="738" width="327" height="50"/>
                                 <color key="backgroundColor" red="0.98039215800000001" green="0.88627451660000001" blue="0.54901963470000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -342,30 +367,63 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnNext:" destination="2FO-Y3-esZ" eventType="touchUpInside" id="OG3-jb-dPE"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호가 일치하지 않습니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5N-fl-Gfk">
+                                <rect key="frame" x="44" y="305" width="146" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCheckedNormal" translatesAutoresizingMaskIntoConstraints="NO" id="Y37-yq-ovv">
+                                <rect key="frame" x="299" y="189" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="DNN-Bd-lgn"/>
+                                    <constraint firstAttribute="width" constant="24" id="Kti-Ay-eq9"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCheckedNormal" translatesAutoresizingMaskIntoConstraints="NO" id="8rj-Hy-GgB">
+                                <rect key="frame" x="299" y="261" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Awb-4B-927"/>
+                                    <constraint firstAttribute="width" constant="24" id="MUp-H2-mUy"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fzH-zw-wgU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fzH-zw-wgU" firstAttribute="trailing" secondItem="OZI-Jz-Gst" secondAttribute="trailing" constant="24" id="0B7-Vc-gjv"/>
+                            <constraint firstItem="e5N-fl-Gfk" firstAttribute="top" secondItem="fM9-zH-Ioe" secondAttribute="bottom" constant="8" symbolic="YES" id="1tg-AD-ZLZ"/>
                             <constraint firstItem="vcC-8k-CWk" firstAttribute="leading" secondItem="fzH-zw-wgU" secondAttribute="leading" constant="16" id="4sr-rx-TwX"/>
-                            <constraint firstItem="fzH-zw-wgU" firstAttribute="trailing" secondItem="v0e-qV-Abo" secondAttribute="trailing" constant="52" id="Gp2-Mf-std"/>
+                            <constraint firstItem="Y37-yq-ovv" firstAttribute="centerY" secondItem="Z5q-Ln-bEa" secondAttribute="centerY" id="JZE-hy-Sij"/>
                             <constraint firstItem="fM9-zH-Ioe" firstAttribute="top" secondItem="Z5q-Ln-bEa" secondAttribute="bottom" constant="24" id="KCI-Cg-fA2"/>
-                            <constraint firstItem="fzH-zw-wgU" firstAttribute="trailing" secondItem="YTx-4g-5kS" secondAttribute="trailing" constant="52" id="QwQ-gG-eml"/>
+                            <constraint firstItem="8rj-Hy-GgB" firstAttribute="centerY" secondItem="fM9-zH-Ioe" secondAttribute="centerY" id="Lcy-DP-Bcv"/>
+                            <constraint firstItem="fzH-zw-wgU" firstAttribute="trailing" secondItem="8rj-Hy-GgB" secondAttribute="trailing" constant="52" id="ObU-om-3Gk"/>
                             <constraint firstItem="Z5q-Ln-bEa" firstAttribute="leading" secondItem="fzH-zw-wgU" secondAttribute="leading" constant="36" id="UZF-xv-BKY"/>
                             <constraint firstItem="vcC-8k-CWk" firstAttribute="top" secondItem="fzH-zw-wgU" secondAttribute="top" constant="20" id="V7S-TS-vV4"/>
                             <constraint firstItem="fM9-zH-Ioe" firstAttribute="leading" secondItem="Z5q-Ln-bEa" secondAttribute="leading" id="Vzn-qN-sqb"/>
-                            <constraint firstItem="YTx-4g-5kS" firstAttribute="centerY" secondItem="Z5q-Ln-bEa" secondAttribute="centerY" id="XF3-Yr-LlR"/>
                             <constraint firstItem="OZI-Jz-Gst" firstAttribute="leading" secondItem="fzH-zw-wgU" secondAttribute="leading" constant="24" id="XTx-ei-xnm"/>
+                            <constraint firstItem="fzH-zw-wgU" firstAttribute="trailing" secondItem="Y37-yq-ovv" secondAttribute="trailing" constant="52" id="YcO-eW-fGw"/>
                             <constraint firstItem="z2K-5J-Tvf" firstAttribute="leading" secondItem="fzH-zw-wgU" secondAttribute="leading" constant="36" id="dDs-KH-Dgx"/>
-                            <constraint firstItem="v0e-qV-Abo" firstAttribute="centerY" secondItem="fM9-zH-Ioe" secondAttribute="centerY" id="eNN-mE-IBk"/>
                             <constraint firstAttribute="bottom" secondItem="OZI-Jz-Gst" secondAttribute="bottom" constant="24" id="h1t-lo-CRx"/>
+                            <constraint firstItem="e5N-fl-Gfk" firstAttribute="leading" secondItem="fzH-zw-wgU" secondAttribute="leading" constant="44" id="iCt-qF-qIg"/>
                             <constraint firstItem="Z5q-Ln-bEa" firstAttribute="top" secondItem="z2K-5J-Tvf" secondAttribute="bottom" constant="36" id="qAd-DV-SXh"/>
                             <constraint firstItem="fM9-zH-Ioe" firstAttribute="trailing" secondItem="Z5q-Ln-bEa" secondAttribute="trailing" id="rVw-2q-wkb"/>
                             <constraint firstItem="z2K-5J-Tvf" firstAttribute="top" secondItem="vcC-8k-CWk" secondAttribute="bottom" constant="24" id="scV-Gb-bm0"/>
                             <constraint firstItem="fzH-zw-wgU" firstAttribute="trailing" secondItem="Z5q-Ln-bEa" secondAttribute="trailing" constant="36" id="wYR-jo-eh8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnNext" destination="OZI-Jz-Gst" id="9cb-Xc-kzB"/>
+                        <outlet property="checkImage1" destination="8rj-Hy-GgB" id="NJh-rw-NL1"/>
+                        <outlet property="checkImage2" destination="8rj-Hy-GgB" id="Hv9-jS-19L"/>
+                        <outlet property="errorLabel" destination="e5N-fl-Gfk" id="Btp-sE-GVm"/>
+                        <outlet property="passwordCkTextField" destination="fM9-zH-Ioe" id="7Yc-VI-7mt"/>
+                        <outlet property="passwordTextField" destination="Z5q-Ln-bEa" id="EWE-77-i9h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jjh-MQ-Uiy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -379,6 +437,9 @@
         <image name="icCheckedNormal" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

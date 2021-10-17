@@ -52,9 +52,9 @@
                                 <rect key="frame" x="52" y="144" width="303" height="96"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반드시 본인의 매장을 등록해주세요. 본인의 매장이 아닐 경우 알바집 서비스 이용이 제한됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKo-4n-Ink">
-                                        <rect key="frame" x="60" y="20" width="231" height="63"/>
+                                        <rect key="frame" x="60" y="16" width="231" height="63"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="231" id="MWz-RA-yVU"/>
+                                            <constraint firstAttribute="width" constant="231" id="FYN-2A-LCm"/>
                                             <constraint firstAttribute="height" constant="63" id="mvz-P5-DBt"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -73,7 +73,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="1lo-wW-PZO"/>
                                     <constraint firstAttribute="height" constant="96" id="6r1-0U-ENd"/>
-                                    <constraint firstItem="xKo-4n-Ink" firstAttribute="top" secondItem="Zzz-hC-Bxa" secondAttribute="top" constant="20" symbolic="YES" id="DNf-46-hUq"/>
+                                    <constraint firstItem="xKo-4n-Ink" firstAttribute="top" secondItem="Zzz-hC-Bxa" secondAttribute="top" constant="16" id="A4s-GT-bjF"/>
                                     <constraint firstAttribute="trailing" secondItem="xKo-4n-Ink" secondAttribute="trailing" constant="12" id="LFG-d8-RBi"/>
                                     <constraint firstItem="Rkm-li-GZv" firstAttribute="top" secondItem="Zzz-hC-Bxa" secondAttribute="top" constant="20" symbolic="YES" id="UC6-aT-J8O"/>
                                     <constraint firstItem="Rkm-li-GZv" firstAttribute="leading" secondItem="Zzz-hC-Bxa" secondAttribute="leading" constant="20" symbolic="YES" id="W4B-Tj-YRu"/>
@@ -111,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="112"/>
+            <point key="canvasLocation" x="-47.200000000000003" y="111.57635467980296"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wfl-ht-cQf">

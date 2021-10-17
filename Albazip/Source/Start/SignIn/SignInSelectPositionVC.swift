@@ -15,6 +15,8 @@ class SignInSelectPositionVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+
         
         // view 클릭 시, 함수 정의
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(managerViewTapped))
@@ -36,6 +38,10 @@ class SignInSelectPositionVC: UIViewController{
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
+    @IBAction func btnSetting(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SignInSettingVC") as? SignInSettingVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
     
     
 }

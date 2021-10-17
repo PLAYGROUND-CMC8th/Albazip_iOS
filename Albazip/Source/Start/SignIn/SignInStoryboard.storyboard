@@ -715,6 +715,9 @@
                                     <constraint firstAttribute="width" constant="24" id="Bqm-ge-Jdy"/>
                                 </constraints>
                                 <state key="normal" image="icSetting"/>
+                                <connections>
+                                    <action selector="btnSetting:" destination="iHN-8d-9SG" eventType="touchUpInside" id="TgW-OZ-zLx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="희영님 반가워요 :) 포지션을 선택해주세요!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ui-9q-xt7">
                                 <rect key="frame" x="35.999999999999986" y="111.99999999999999" width="220.66666666666663" height="57.333333333333329"/>
@@ -827,7 +830,7 @@
         <!--설정-->
         <scene sceneID="5CP-FH-bi7">
             <objects>
-                <viewController id="6GS-e6-jsR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInSettingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6GS-e6-jsR" customClass="SignInSettingVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U2f-oV-lbH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -965,14 +968,19 @@
                                 <rect key="frame" x="16" y="10" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="6GS-e6-jsR" eventType="touchUpInside" id="4Dj-Eh-K9y"/>
+                                    <action selector="btnCancel:" destination="yH6-I7-nRE" eventType="touchUpInside" id="V1b-1e-3br"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rr3-D6-xIu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="yH6-I7-nRE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2984.8000000000002" y="-729.31034482758628"/>
+            <point key="canvasLocation" x="3132" y="-44"/>
         </scene>
     </scenes>
     <resources>

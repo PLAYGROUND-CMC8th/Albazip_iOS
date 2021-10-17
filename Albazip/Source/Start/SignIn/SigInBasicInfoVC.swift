@@ -19,6 +19,10 @@ class SigInBasicInfoVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setUI()
+    }
+    
+    func setUI(){
         firstNameTextfield.delegate = self
         nameTextfield.delegate = self
         ageTextfield.delegate = self
@@ -29,7 +33,6 @@ class SigInBasicInfoVC: UIViewController{
         btnWoman.adjustsImageWhenHighlighted = false
         btnMan.adjustsImageWhenHighlighted = false
     }
-    
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -40,9 +43,11 @@ class SigInBasicInfoVC: UIViewController{
     }
     
     func checkTextField(){
-        if let text1 = firstNameTextfield.text, let text2 = nameTextfield.text, let text3 = ageTextfield.text, btnMan.isSelected || btnWoman.isSelected{
-            btnNext.isEnabled = true
-            btnNext.backgroundColor = .mainYellow
+        if firstNameTextfield.text!.count > 0 , nameTextfield.text!.count > 0, ageTextfield.text!.count > 0{
+            if(btnMan.isSelected || btnWoman.isSelected){
+                btnNext.isEnabled = true
+                btnNext.backgroundColor = .mainYellow
+            }
             
         }else{
             btnNext.isEnabled = false

@@ -27,7 +27,7 @@
         <!--Start View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="StartViewController" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="StartViewController" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,6 +88,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="joP-JL-vTT" kind="show" id="Srq-he-3yN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnS-BM-vWt">
                                 <rect key="frame" x="98" y="667" width="189" height="17"/>
@@ -98,6 +101,9 @@
                                 <state key="normal" title="비밀번호 재설정">
                                     <color key="titleColor" red="0.8078432083" green="0.8078432083" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnResetPassword:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hCX-lC-YqM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -137,10 +143,12 @@
             </objects>
             <point key="canvasLocation" x="531" y="-140"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--LoginStoryboard-->
         <scene sceneID="qa7-rl-0cc">
             <objects>
-                <viewControllerPlaceholder id="joP-JL-vTT" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="LoginStoryboard" id="joP-JL-vTT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9Yf-v8-b1H"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQr-Z6-8DC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="526" y="19"/>
