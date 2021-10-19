@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ECA38B4755B83482C34045ED43FA9F51"
-               BuildableName = "XLPagerTabStrip.bundle"
-               BlueprintName = "XLPagerTabStrip-XLPagerTabStrip"
+               BlueprintIdentifier = "F872726D5815B9AF54987F894DAB188F"
+               BuildableName = "MSPeekCollectionViewDelegateImplementation.framework"
+               BlueprintName = "MSPeekCollectionViewDelegateImplementation"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

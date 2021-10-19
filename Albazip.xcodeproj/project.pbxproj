@@ -37,6 +37,8 @@
 		C38442742714932300B84E8A /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38442732714932300B84E8A /* HomeStoryboard.storyboard */; };
 		C38442772714940100B84E8A /* CommunityStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38442762714940100B84E8A /* CommunityStoryboard.storyboard */; };
 		C384427A2714948200B84E8A /* ScheduleStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38442792714948200B84E8A /* ScheduleStoryboard.storyboard */; };
+		C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39019BE271F246500BC2830 /* SearchCollectionViewCell.swift */; };
+		C39019C1271F246500BC2830 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */; };
 		C3A1ADCA271C14E2005A61ED /* SignInSelectPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A1ADC9271C14E2005A61ED /* SignInSelectPositionVC.swift */; };
 		C3A1ADCC271C5002005A61ED /* SignInSearchStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A1ADCB271C5002005A61ED /* SignInSearchStoreVC.swift */; };
 		C3A1ADCE271C62EF005A61ED /* SignInWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A1ADCD271C62EF005A61ED /* SignInWorkerStoryboard.storyboard */; };
@@ -84,6 +86,8 @@
 		C38442732714932300B84E8A /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		C38442762714940100B84E8A /* CommunityStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommunityStoryboard.storyboard; sourceTree = "<group>"; };
 		C38442792714948200B84E8A /* ScheduleStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScheduleStoryboard.storyboard; sourceTree = "<group>"; };
+		C39019BE271F246500BC2830 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		C3A1ADC9271C14E2005A61ED /* SignInSelectPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSelectPositionVC.swift; sourceTree = "<group>"; };
 		C3A1ADCB271C5002005A61ED /* SignInSearchStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSearchStoreVC.swift; sourceTree = "<group>"; };
 		C3A1ADCD271C62EF005A61ED /* SignInWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInWorkerStoryboard.storyboard; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 		C37EBF46271AD00600DEC2CA /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C39019BC271F243300BC2830 /* Cell */,
 				C37EBF48271AD0BB00DEC2CA /* SignInManagerStoryboard.storyboard */,
 				C3A1ADCB271C5002005A61ED /* SignInSearchStoreVC.swift */,
 			);
@@ -309,6 +314,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		C39019BC271F243300BC2830 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C39019BE271F246500BC2830 /* SearchCollectionViewCell.swift */,
+				C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		C3D385C52719DA720099A290 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,6 +498,7 @@
 				C37EBF3F271A9D7000DEC2CA /* SignInStoryboard.storyboard in Resources */,
 				C37EBF49271AD0BB00DEC2CA /* SignInManagerStoryboard.storyboard in Resources */,
 				C38442722714913700B84E8A /* MyPageStoryboard.storyboard in Resources */,
+				C39019C1271F246500BC2830 /* SearchCollectionViewCell.xib in Resources */,
 				C384423C2714797000B84E8A /* Main.storyboard in Resources */,
 				C38442742714932300B84E8A /* HomeStoryboard.storyboard in Resources */,
 			);
@@ -544,6 +559,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Albazip/Pods-Albazip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/MSPeekCollectionViewDelegateImplementation/MSPeekCollectionViewDelegateImplementation.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
@@ -553,6 +569,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSPeekCollectionViewDelegateImplementation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
@@ -594,6 +611,7 @@
 				C384424F27147E2900B84E8A /* IndicatorView.swift in Sources */,
 				C384425D27147E3F00B84E8A /* UINavigationBar.swift in Sources */,
 				C37EBF4F271AD97900DEC2CA /* SigInBasicInfoVC.swift in Sources */,
+				C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */,
 				C384425B27147E3F00B84E8A /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

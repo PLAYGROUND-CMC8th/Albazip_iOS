@@ -2,21 +2,24 @@ PODS:
   - Alamofire (5.4.4)
   - AlamofireNetworkActivityIndicator (3.1.0):
     - Alamofire (~> 5.1)
+  - MSPeekCollectionViewDelegateImplementation (3.2.0)
   - SnapKit (5.0.1)
   - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireNetworkActivityIndicator
+  - MSPeekCollectionViewDelegateImplementation
   - SnapKit
   - XLPagerTabStrip (~> 9.0)
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
+  MSPeekCollectionViewDelegateImplementation: be35a217bd302976a9e4476151be992c1f150127
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: c02ece6e9e2b8c02b4c85588a10b535beb75f52f
+PODFILE CHECKSUM: ba573934c71d2849d53b6e986daf91a330c955d3
 
 COCOAPODS: 1.4.0

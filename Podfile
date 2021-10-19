@@ -10,4 +10,5 @@ target 'Albazip' do
   pod 'AlamofireNetworkActivityIndicator'
   pod 'SnapKit'
   pod 'XLPagerTabStrip', '~> 9.0'
+  pod 'MSPeekCollectionViewDelegateImplementation'
 end
