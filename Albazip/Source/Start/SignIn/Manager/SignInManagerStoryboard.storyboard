@@ -464,7 +464,6 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kU4-Nh-caB">
                                 <rect key="frame" x="0.0" y="124" width="375" height="452"/>
-                                <color key="backgroundColor" red="0.78431367870000002" green="0.78431367870000002" blue="0.78431367870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRM-46-Hm9">
                                 <rect key="frame" x="16" y="64" width="24" height="24"/>
@@ -535,7 +534,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="join" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
@@ -571,6 +570,7 @@
                     </view>
                     <connections>
                         <outlet property="alertLabel" destination="827-Lp-u8d" id="zNN-52-m59"/>
+                        <outlet property="baseView" destination="kU4-Nh-caB" id="GJi-Qb-9Pt"/>
                         <outlet property="collectionView" destination="U46-Xd-f66" id="GLM-Cn-jsq"/>
                         <outlet property="cornerView" destination="HlE-Mm-ba9" id="JHC-8i-Wuf"/>
                         <outlet property="searchTextField" destination="oZY-In-7ah" id="PHW-f1-qne"/>

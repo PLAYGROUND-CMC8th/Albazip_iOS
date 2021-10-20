@@ -46,6 +46,14 @@
 		C3A1ADD2271C773F005A61ED /* SignInSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A1ADD1271C773F005A61ED /* SignInSettingVC.swift */; };
 		C3A1ADD4271C86B6005A61ED /* LoginResetPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A1ADD3271C86B6005A61ED /* LoginResetPhoneVC.swift */; };
 		C3A1ADD6271C86C9005A61ED /* LoginResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A1ADD5271C86C9005A61ED /* LoginResetPasswordVC.swift */; };
+		C3A3AC1127205E5F0019D1F3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A3AC1027205E5F0019D1F3 /* OpenGLES.framework */; };
+		C3A3AC1327205E6B0019D1F3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A3AC1227205E6B0019D1F3 /* SystemConfiguration.framework */; };
+		C3A3AC1527205E760019D1F3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A3AC1427205E760019D1F3 /* CoreLocation.framework */; };
+		C3A3AC1727205E8B0019D1F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A3AC1627205E8B0019D1F3 /* QuartzCore.framework */; };
+		C3A3AC1C27205F200019D1F3 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A3AC1B27205F200019D1F3 /* DaumMap.framework */; };
+		C3A3AC1E2720641C0019D1F3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A3AC1827205EB30019D1F3 /* libc++.tbd */; };
+		C3A3AC1F272064290019D1F3 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A3AC1927205ED80019D1F3 /* libxml2.tbd */; };
+		C3A3AC20272064380019D1F3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A3AC1A27205EE30019D1F3 /* libsqlite3.tbd */; };
 		C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9683E2719F8E500E27DA1 /* UIView.swift */; };
 		C3A968422719FA7A00E27DA1 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A968412719FA7A00E27DA1 /* StartViewController.swift */; };
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
@@ -95,6 +103,15 @@
 		C3A1ADD1271C773F005A61ED /* SignInSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSettingVC.swift; sourceTree = "<group>"; };
 		C3A1ADD3271C86B6005A61ED /* LoginResetPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResetPhoneVC.swift; sourceTree = "<group>"; };
 		C3A1ADD5271C86C9005A61ED /* LoginResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResetPasswordVC.swift; sourceTree = "<group>"; };
+		C3A3AC1027205E5F0019D1F3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		C3A3AC1227205E6B0019D1F3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C3A3AC1427205E760019D1F3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C3A3AC1627205E8B0019D1F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C3A3AC1827205EB30019D1F3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		C3A3AC1927205ED80019D1F3 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		C3A3AC1A27205EE30019D1F3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C3A3AC1B27205F200019D1F3 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		C3A3AC1D27205FB00019D1F3 /* Albazip-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Albazip-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3A9683E2719F8E500E27DA1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C3A968412719FA7A00E27DA1 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
@@ -105,7 +122,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3A3AC20272064380019D1F3 /* libsqlite3.tbd in Frameworks */,
+				C3A3AC1F272064290019D1F3 /* libxml2.tbd in Frameworks */,
+				C3A3AC1E2720641C0019D1F3 /* libc++.tbd in Frameworks */,
+				C3A3AC1727205E8B0019D1F3 /* QuartzCore.framework in Frameworks */,
+				C3A3AC1527205E760019D1F3 /* CoreLocation.framework in Frameworks */,
 				9C7447FE94295A129DB07CA9 /* Pods_Albazip.framework in Frameworks */,
+				C3A3AC1327205E6B0019D1F3 /* SystemConfiguration.framework in Frameworks */,
+				C3A3AC1C27205F200019D1F3 /* DaumMap.framework in Frameworks */,
+				C3A3AC1127205E5F0019D1F3 /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +149,14 @@
 		742874D3B4AD6D73A346E8D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3A3AC1B27205F200019D1F3 /* DaumMap.framework */,
+				C3A3AC1A27205EE30019D1F3 /* libsqlite3.tbd */,
+				C3A3AC1927205ED80019D1F3 /* libxml2.tbd */,
+				C3A3AC1827205EB30019D1F3 /* libc++.tbd */,
+				C3A3AC1627205E8B0019D1F3 /* QuartzCore.framework */,
+				C3A3AC1427205E760019D1F3 /* CoreLocation.framework */,
+				C3A3AC1227205E6B0019D1F3 /* SystemConfiguration.framework */,
+				C3A3AC1027205E5F0019D1F3 /* OpenGLES.framework */,
 				363836578B4295DDC93F8120 /* Pods_Albazip.framework */,
 			);
 			name = Frameworks;
@@ -329,6 +362,7 @@
 				C38442422714797100B84E8A /* Info.plist */,
 				C38442362714797000B84E8A /* SceneDelegate.swift */,
 				C38442342714797000B84E8A /* AppDelegate.swift */,
+				C3A3AC1D27205FB00019D1F3 /* Albazip-Bridging-Header.h */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -760,8 +794,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69F5355JYF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Albazip/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -770,6 +809,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chobi.Albazip.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimsoobin/Desktop/MakeUs/알바집/Albazip/Albazip/Application/Albazip-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -781,8 +821,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69F5355JYF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Albazip/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -791,6 +836,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chobi.Albazip.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimsoobin/Desktop/MakeUs/알바집/Albazip/Albazip/Application/Albazip-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
