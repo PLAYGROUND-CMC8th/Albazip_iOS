@@ -87,11 +87,11 @@ extension SignInSearchStoreVC: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        print("콜렉션 뷰: " + String(indexPath.row))
+        print("하단 콜렉션 뷰: " + String(indexPath.row))
         
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print("하단 스크롤: \(behavior.currentIndex)")
+        print("하단 스크롤 뷰: \(behavior.currentIndex)")
         selectedOne = behavior.currentIndex
         collectionView.reloadData()
     }
