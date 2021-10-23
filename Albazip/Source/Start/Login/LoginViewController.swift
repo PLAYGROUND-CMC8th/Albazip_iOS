@@ -30,10 +30,11 @@ class LoginViewController: UIViewController{
         if phoneTextfield.text!.count > 0 , passwordTextfield.text!.count > 0{
             btnLogin.isEnabled = true
             btnLogin.backgroundColor = .mainYellow
-            
+            btnLogin.setTitleColor(.gray, for: .normal)
         }else{
             btnLogin.isEnabled = false
-            btnLogin.backgroundColor = .blurYellow
+            btnLogin.backgroundColor = .semiYellow
+            btnLogin.setTitleColor(.semiGray, for: .normal)
         }
     }
     @IBAction func btnCancel(_ sender: Any) {

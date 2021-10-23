@@ -36,11 +36,13 @@ class LoginResetPasswordVC: UIViewController{
                     checkImage2.image = #imageLiteral(resourceName: "icCheckedCorrect")
                     btnNext.isEnabled = true
                     btnNext.backgroundColor = .mainYellow
+                    btnNext.setTitleColor(.gray, for: .normal)
                     errorLabel.isHidden = true
                 }else{
                     checkImage2.image = #imageLiteral(resourceName: "icCheckedNormal")
                     btnNext.isEnabled = false
-                    btnNext.backgroundColor = .blurYellow
+                    btnNext.backgroundColor = .semiYellow
+                    btnNext.setTitleColor(.semiGray, for: .normal)
                     errorLabel.isHidden = false
                     passwordCkTextField.borderColor = .red
                 }
@@ -48,14 +50,14 @@ class LoginResetPasswordVC: UIViewController{
             }else{
                 checkImage2.image = #imageLiteral(resourceName: "icCheckedNormal")
                 btnNext.isEnabled = false
-                btnNext.backgroundColor = .blurYellow
+                btnNext.backgroundColor = .semiYellow
                 errorLabel.isHidden = true
             }
         }else{
             checkImage1.image = #imageLiteral(resourceName: "icCheckedNormal")
             checkImage2.image = #imageLiteral(resourceName: "icCheckedNormal")
             btnNext.isEnabled = false
-            btnNext.backgroundColor = .blurYellow
+            btnNext.backgroundColor = .semiYellow
             errorLabel.isHidden = true
         }
         

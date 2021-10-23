@@ -578,7 +578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMw-VO-sTd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242.40000000000001" y="152.95566502463055"/>
+            <point key="canvasLocation" x="-100" y="112"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fx8-wP-Tik">

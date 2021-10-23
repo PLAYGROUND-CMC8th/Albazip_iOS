@@ -30,12 +30,14 @@ class SignInViewController: UIViewController{
             btnAgree3.isSelected = true
             btnNext.isEnabled = true
             btnNext.backgroundColor = .mainYellow
+            btnNext.setTitleColor(.gray, for: .normal)
         }else{
             btnAgree1.isSelected = false
             btnAgree2.isSelected = false
             btnAgree3.isSelected = false
             btnNext.isEnabled = false
-            btnNext.backgroundColor = .blurYellow
+            btnNext.backgroundColor = .semiYellow
+            btnNext.setTitleColor(.semiGray, for: .normal)
         }
     }
     
@@ -44,11 +46,13 @@ class SignInViewController: UIViewController{
         if(!btnAgree1.isSelected){
             btnAllAgree.isSelected = false
             btnNext.isEnabled = false
-            btnNext.backgroundColor = .blurYellow
+            btnNext.backgroundColor = .semiYellow
+            btnNext.setTitleColor(.semiGray, for: .normal)
         }else if(btnAgree1.isSelected && btnAgree2.isSelected && btnAgree3.isSelected){
             btnAllAgree.isSelected = true
             btnNext.isEnabled = true
             btnNext.backgroundColor = .mainYellow
+            btnNext.setTitleColor(.gray, for: .normal)
         }
     }
     
@@ -57,11 +61,13 @@ class SignInViewController: UIViewController{
         if(!btnAgree2.isSelected){
             btnAllAgree.isSelected = false
             btnNext.isEnabled = false
-            btnNext.backgroundColor = .blurYellow
+            btnNext.backgroundColor = .semiYellow
+            btnNext.setTitleColor(.semiGray, for: .normal)
         }else if(btnAgree1.isSelected && btnAgree2.isSelected && btnAgree3.isSelected){
             btnAllAgree.isSelected = true
             btnNext.isEnabled = true
             btnNext.backgroundColor = .mainYellow
+            btnNext.setTitleColor(.gray, for: .normal)
         }
     }
     
@@ -70,11 +76,13 @@ class SignInViewController: UIViewController{
         if(!btnAgree3.isSelected){
             btnAllAgree.isSelected = false
             btnNext.isEnabled = false
-            btnNext.backgroundColor = .blurYellow
+            btnNext.backgroundColor = .semiYellow
+            btnNext.setTitleColor(.semiGray, for: .normal)
         }else if(btnAgree1.isSelected && btnAgree2.isSelected && btnAgree3.isSelected){
             btnAllAgree.isSelected = true
             btnNext.isEnabled = true
             btnNext.backgroundColor = .mainYellow
+            btnNext.setTitleColor(.gray, for: .normal)
         }
     }
     

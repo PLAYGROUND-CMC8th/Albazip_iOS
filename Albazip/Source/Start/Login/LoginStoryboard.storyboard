@@ -99,15 +99,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tg-56-pWv">
-                                <rect key="frame" x="24" y="738" width="327" height="50"/>
-                                <color key="backgroundColor" red="0.98039215800000001" green="0.88627451660000001" blue="0.54901963470000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="24" y="726" width="327" height="50"/>
+                                <color key="backgroundColor" red="0.98823523520000001" green="0.93725490570000003" blue="0.76470589639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="327" id="ctW-Pr-6ia"/>
                                     <constraint firstAttribute="height" constant="50" id="zyK-xH-54z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <state key="normal" title="로그인">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.67450982329999998" green="0.6784313917" blue="0.6784313917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -122,7 +122,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="4Tg-56-pWv" secondAttribute="bottom" constant="24" id="9rw-eV-iQj"/>
+                            <constraint firstAttribute="bottom" secondItem="4Tg-56-pWv" secondAttribute="bottom" constant="36" id="9rw-eV-iQj"/>
                             <constraint firstItem="FEm-dm-NXC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="36" id="CyR-4p-qXz"/>
                             <constraint firstItem="jcD-FJ-z2h" firstAttribute="trailing" secondItem="Goa-bb-u2p" secondAttribute="trailing" id="Ecx-Ct-ZMQ"/>
                             <constraint firstItem="m6X-Fk-k2c" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="36" id="H5O-3T-7PF"/>
@@ -208,15 +208,15 @@
                                 <state key="normal" image="btnDisabled"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ony-NO-Rw2">
-                                <rect key="frame" x="24" y="738" width="327" height="50"/>
-                                <color key="backgroundColor" red="0.98039215800000001" green="0.88627451660000001" blue="0.54901963470000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="24" y="726" width="327" height="50"/>
+                                <color key="backgroundColor" red="0.98823523520000001" green="0.93725490570000003" blue="0.76470589639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="327" id="fqs-1v-bTd"/>
                                     <constraint firstAttribute="height" constant="50" id="wdB-lf-vlv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <state key="normal" title="다음">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.67450982329999998" green="0.6784313917" blue="0.6784313917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -264,7 +264,7 @@
                             <constraint firstItem="oCF-es-hPG" firstAttribute="trailing" secondItem="5v4-2H-ZvZ" secondAttribute="trailing" constant="52" id="5Rj-9d-1Wf"/>
                             <constraint firstItem="Ony-NO-Rw2" firstAttribute="leading" secondItem="oCF-es-hPG" secondAttribute="leading" constant="24" id="66I-vH-K0a"/>
                             <constraint firstItem="c7l-ay-xAA" firstAttribute="leading" secondItem="oCF-es-hPG" secondAttribute="leading" constant="36" id="KKa-af-U0y"/>
-                            <constraint firstAttribute="bottom" secondItem="Ony-NO-Rw2" secondAttribute="bottom" constant="24" id="P1n-D6-dmh"/>
+                            <constraint firstAttribute="bottom" secondItem="Ony-NO-Rw2" secondAttribute="bottom" constant="36" id="P1n-D6-dmh"/>
                             <constraint firstItem="oCF-es-hPG" firstAttribute="trailing" secondItem="ugg-mE-BEg" secondAttribute="trailing" constant="52" id="Qy7-v8-9f6"/>
                             <constraint firstItem="oCF-es-hPG" firstAttribute="trailing" secondItem="Ony-NO-Rw2" secondAttribute="trailing" constant="24" id="Tt5-W1-dhQ"/>
                             <constraint firstItem="esW-eO-Lu5" firstAttribute="trailing" secondItem="USK-RJ-JNo" secondAttribute="trailing" id="U4J-7Y-T5b"/>
@@ -352,15 +352,15 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZI-Jz-Gst">
-                                <rect key="frame" x="24" y="738" width="327" height="50"/>
-                                <color key="backgroundColor" red="0.98039215800000001" green="0.88627451660000001" blue="0.54901963470000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="24" y="726" width="327" height="50"/>
+                                <color key="backgroundColor" red="0.98823523520000001" green="0.93725490570000003" blue="0.76470589639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="327" id="ZaK-TZ-9ED"/>
                                     <constraint firstAttribute="height" constant="50" id="mN2-V0-CDo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <state key="normal" title="변경하기">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.67450982329999998" green="0.6784313917" blue="0.6784313917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -408,7 +408,7 @@
                             <constraint firstItem="OZI-Jz-Gst" firstAttribute="leading" secondItem="fzH-zw-wgU" secondAttribute="leading" constant="24" id="XTx-ei-xnm"/>
                             <constraint firstItem="fzH-zw-wgU" firstAttribute="trailing" secondItem="Y37-yq-ovv" secondAttribute="trailing" constant="52" id="YcO-eW-fGw"/>
                             <constraint firstItem="z2K-5J-Tvf" firstAttribute="leading" secondItem="fzH-zw-wgU" secondAttribute="leading" constant="36" id="dDs-KH-Dgx"/>
-                            <constraint firstAttribute="bottom" secondItem="OZI-Jz-Gst" secondAttribute="bottom" constant="24" id="h1t-lo-CRx"/>
+                            <constraint firstAttribute="bottom" secondItem="OZI-Jz-Gst" secondAttribute="bottom" constant="36" id="h1t-lo-CRx"/>
                             <constraint firstItem="e5N-fl-Gfk" firstAttribute="leading" secondItem="fzH-zw-wgU" secondAttribute="leading" constant="44" id="iCt-qF-qIg"/>
                             <constraint firstItem="Z5q-Ln-bEa" firstAttribute="top" secondItem="z2K-5J-Tvf" secondAttribute="bottom" constant="36" id="qAd-DV-SXh"/>
                             <constraint firstItem="fM9-zH-Ioe" firstAttribute="trailing" secondItem="Z5q-Ln-bEa" secondAttribute="trailing" id="rVw-2q-wkb"/>

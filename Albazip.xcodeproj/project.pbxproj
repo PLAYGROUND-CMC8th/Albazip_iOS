@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C7447FE94295A129DB07CA9 /* Pods_Albazip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363836578B4295DDC93F8120 /* Pods_Albazip.framework */; };
+		C34C4AE02721BF6700300454 /* SignInSelectYearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C4ADF2721BF6700300454 /* SignInSelectYearVC.swift */; };
 		C37EBF3F271A9D7000DEC2CA /* SignInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37EBF3E271A9D7000DEC2CA /* SignInStoryboard.storyboard */; };
 		C37EBF41271AA1B000DEC2CA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */; };
 		C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */; };
@@ -63,6 +64,7 @@
 		363836578B4295DDC93F8120 /* Pods_Albazip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Albazip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EACD131BC8A80FCC54849C5 /* Pods-Albazip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Albazip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Albazip/Pods-Albazip.debug.xcconfig"; sourceTree = "<group>"; };
 		9E8BCDC410EA5AB6EF1D4E62 /* Pods-Albazip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Albazip.release.xcconfig"; path = "Pods/Target Support Files/Pods-Albazip/Pods-Albazip.release.xcconfig"; sourceTree = "<group>"; };
+		C34C4ADF2721BF6700300454 /* SignInSelectYearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSelectYearVC.swift; sourceTree = "<group>"; };
 		C37EBF3E271A9D7000DEC2CA /* SignInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInStoryboard.storyboard; sourceTree = "<group>"; };
 		C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				C37EBF4E271AD97900DEC2CA /* SigInBasicInfoVC.swift */,
 				C3A1ADC9271C14E2005A61ED /* SignInSelectPositionVC.swift */,
 				C3A1ADD1271C773F005A61ED /* SignInSettingVC.swift */,
+				C34C4ADF2721BF6700300454 /* SignInSelectYearVC.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C34C4AE02721BF6700300454 /* SignInSelectYearVC.swift in Sources */,
 				C38442352714797000B84E8A /* AppDelegate.swift in Sources */,
 				C3A1ADCA271C14E2005A61ED /* SignInSelectPositionVC.swift in Sources */,
 				C384425927147E3F00B84E8A /* Date.swift in Sources */,
@@ -811,7 +815,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimsoobin/Desktop/MakeUs/알바집/Albazip/Albazip/Application/Albazip-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -838,7 +842,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimsoobin/Desktop/MakeUs/알바집/Albazip/Albazip/Application/Albazip-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

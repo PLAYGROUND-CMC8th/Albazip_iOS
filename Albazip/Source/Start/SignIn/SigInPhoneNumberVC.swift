@@ -53,6 +53,7 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
         btnConfirm.setImage(#imageLiteral(resourceName: "btnActive"), for: .normal)
         btnNext.isEnabled = true
         btnNext.backgroundColor = .mainYellow
+        btnNext.setTitleColor(.gray, for: .normal)
         return true
     }
     // 텍스트 필드의 편집이 종료되었을 때 호출

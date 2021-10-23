@@ -7,28 +7,46 @@
 
 import Foundation
 import UIKit
-class SigInBasicInfoVC: UIViewController{
+class SigInBasicInfoVC: UIViewController, ModalViewControllerDelegate{
+    
+    // 모달뷰 값 전달 받기
+    func modalDidFinished(modalText: String) {
+        print(modalText)
+        btnAge.setTitle("   "+modalText, for: .normal)
+        btnAge.setTitleColor(#colorLiteral(red: 0.1990817189, green: 0.2041014135, blue: 0.2039682269, alpha: 1), for: .normal)
+        selectAge = true
+    }
+    
     
     @IBOutlet weak var firstNameTextfield: UITextField!
     @IBOutlet weak var nameTextfield: UITextField!
-    @IBOutlet weak var ageTextfield: UITextField!
+    @IBOutlet var btnAge: UIButton!
     @IBOutlet weak var btnMan: UIButton!
     @IBOutlet weak var btnWoman: UIButton!
     @IBOutlet weak var btnNext: UIButton!
+    var selectAge = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUI()
+        //self.modalView.delegate = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "show" {
+            let viewController : SignInSelectYearVC = segue.destination as! SignInSelectYearVC
+            viewController.delegate = self
+        }
     }
     
     func setUI(){
         firstNameTextfield.delegate = self
         nameTextfield.delegate = self
-        ageTextfield.delegate = self
+        
         firstNameTextfield.addLeftPadding()
         nameTextfield.addLeftPadding()
-        ageTextfield.addLeftPadding()
+        
         self.dismissKeyboardWhenTappedAround()
         btnWoman.adjustsImageWhenHighlighted = false
         btnMan.adjustsImageWhenHighlighted = false
@@ -43,15 +61,17 @@ class SigInBasicInfoVC: UIViewController{
     }
     
     func checkTextField(){
-        if firstNameTextfield.text!.count > 0 , nameTextfield.text!.count > 0, ageTextfield.text!.count > 0{
+        if firstNameTextfield.text!.count > 0 , nameTextfield.text!.count > 0, selectAge{
             if(btnMan.isSelected || btnWoman.isSelected){
                 btnNext.isEnabled = true
                 btnNext.backgroundColor = .mainYellow
+                btnNext.setTitleColor(.gray, for: .normal)
             }
             
         }else{
             btnNext.isEnabled = false
-            btnNext.backgroundColor = .blurYellow
+            btnNext.backgroundColor = .semiYellow
+            btnNext.setTitleColor(.semiGray, for: .normal)
         }
     }
     @IBAction func btnMan(_ sender: Any) {
@@ -60,7 +80,7 @@ class SigInBasicInfoVC: UIViewController{
         btnMan.borderColor = .mainYellow
         btnWoman.isSelected = false
         btnWoman.backgroundColor = .none
-        btnWoman.borderColor = .blurGray
+        btnWoman.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
         checkTextField()
     }
     @IBAction func btnWoman(_ sender: Any) {
@@ -69,10 +89,23 @@ class SigInBasicInfoVC: UIViewController{
         btnWoman.borderColor = .mainYellow
         btnMan.isSelected = false
         btnMan.backgroundColor = .none
-        btnMan.borderColor = .blurGray
+        btnMan.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
         checkTextField()
     }
     
+    @IBAction func btnYear(_ sender: Any) {
+        self.nameTextfield.resignFirstResponder()
+        goAlertView()
+    }
+    
+    func goAlertView()  {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SignInSelectYearVC") as? SignInSelectYearVC else {return}
+                
+        //nextVC.modalTransitionStyle = .coverVertical
+        nextVC.modalPresentationStyle = .overCurrentContext
+                
+        self.present(nextVC, animated: false, completion: nil)
+    }
     
 }
 extension SigInBasicInfoVC: UITextFieldDelegate{
@@ -83,15 +116,11 @@ extension SigInBasicInfoVC: UITextFieldDelegate{
         if(textField == firstNameTextfield){
             firstNameTextfield.borderColor = .mainYellow
             nameTextfield.borderColor = .blurGray
-            ageTextfield.borderColor = .blurGray
+            
         }else if(textField == nameTextfield){
             firstNameTextfield.borderColor = .blurGray
             nameTextfield.borderColor = .mainYellow
-            ageTextfield.borderColor = .blurGray
-        }else if(textField == ageTextfield){
-            firstNameTextfield.borderColor = .blurGray
-            nameTextfield.borderColor = .blurGray
-            ageTextfield.borderColor = .mainYellow
+            
         }
         checkTextField()
         
@@ -111,10 +140,7 @@ extension SigInBasicInfoVC: UITextFieldDelegate{
         return true
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if(textField == ageTextfield){
-            let newLength = (textField.text?.count)! + string.count - range.length
-                return !(newLength > 4)
-        }
+        
         checkTextField()
         return true
     }
