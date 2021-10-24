@@ -249,6 +249,9 @@
                                     <constraint firstAttribute="height" constant="24" id="wIo-kd-ioX"/>
                                 </constraints>
                                 <state key="normal" image="btnDisabled"/>
+                                <connections>
+                                    <action selector="btnAuth:" destination="hai-4R-LML" eventType="touchUpInside" id="PrI-Bd-ns3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xj2-IK-z6L">
                                 <rect key="frame" x="24" y="726" width="327" height="50"/>

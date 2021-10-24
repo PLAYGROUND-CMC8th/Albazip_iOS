@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
+
 class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
     
     //MARK: - Outlet
@@ -14,6 +16,9 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var checkNumberTextField: UITextField!
     @IBOutlet weak var btnConfirm: UIButton!
     @IBOutlet weak var btnNext: UIButton!
+    
+    var currentVerificationId = ""
+    
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -28,9 +33,43 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
         self.dismissKeyboardWhenTappedAround()
     }
     
+    @IBAction func btnAuth(_ sender: Any) {
+        
+        Auth.auth().accessibilityLanguage = "kr";
+        
+        if let phoneNumber = phoneNumberTextField.text{
+            // Step 4: Request SMS
+                PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber) { (verificationID, error) in
+                  if let error = error {
+                    print(error.localizedDescription)
+                    return
+                  }
+
+                  // Either received APNs or user has passed the reCAPTCHA
+                  // Step 5: Verification ID is saved for later use for verifying OTP with phone number
+                  self.currentVerificationId = verificationID!
+                }
+        }
+        
+        //UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+    }
+    
     @IBAction func btnNext(_ sender: Any) {
+        let credential = PhoneAuthProvider.provider().credential(withVerificationID:currentVerificationId,verificationCode: checkNumberTextField.text!)
+        
+        Auth.auth().signIn(with: credential){(success, error) in
+            if error == nil{
+                print(success ?? "")
+                print("User Signed in...")
+            }else{
+                print(error.debugDescription)
+            }
+        }
+        
+        /*
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SigInPasswordVC") as? SigInPasswordVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
+ */
     }
     
     @IBAction func btnCancel(_ sender: Any) {

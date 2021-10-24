@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1240"
+   LastUpgradeVersion = "1250"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DB94432991D8B771127AC72AE24B5484"
+               BlueprintIdentifier = "5EE9EA13CA5D8CDBCF6C1D8F2E649336"
                BuildableName = "Pods_Albazip.framework"
                BlueprintName = "Pods-Albazip"
                ReferencedContainer = "container:Pods.xcodeproj">
