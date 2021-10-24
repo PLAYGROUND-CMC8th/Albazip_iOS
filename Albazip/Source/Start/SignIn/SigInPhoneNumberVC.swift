@@ -16,7 +16,10 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var checkNumberTextField: UITextField!
     @IBOutlet weak var btnConfirm: UIButton!
     @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet var btnReAuth: UIButton!
+    @IBOutlet var timerLabel: UILabel!
     
+    var limitTime : Int = 180 //3분
     var currentVerificationId = ""
     
     
@@ -31,6 +34,33 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
         checkNumberTextField.delegate = self
         
         self.dismissKeyboardWhenTappedAround()
+        
+        checkNumberTextField.isHidden = true
+        btnReAuth.isHidden = true
+        timerLabel.isHidden = true
+    }
+    
+    @objc func getSetTime(){
+        secToTime(sec: limitTime)
+        limitTime -= 1
+    }
+    
+    func secToTime(sec: Int)  {
+        let minute = (sec % 3600) / 60
+        let second = (sec % 3600) % 60
+        if second < 10 {
+            timerLabel.text = String(minute) + ":" + "0" + String(second)
+        }else{
+            timerLabel.text = String(minute) + ":" + String(second)
+        }
+        if limitTime != 0{
+            perform(#selector(getSetTime), with: nil, afterDelay: 1.0)
+        }
+        else if limitTime == 0{
+            checkNumberTextField.isHidden = true
+            btnReAuth.isHidden = true
+            timerLabel.isHidden = true
+        }
     }
     
     @IBAction func btnAuth(_ sender: Any) {
@@ -49,10 +79,36 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
                   // Step 5: Verification ID is saved for later use for verifying OTP with phone number
                   self.currentVerificationId = verificationID!
                 }
+            timerLabel.isHidden = false
+            btnReAuth.isHidden = false
+            checkNumberTextField.isHidden = false
+            getSetTime()
+            
         }
         
         //UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
     }
+    @IBAction func btnReAuth(_ sender: Any) {
+        
+        Auth.auth().accessibilityLanguage = "kr";
+        
+        if let phoneNumber = phoneNumberTextField.text{
+            // Step 4: Request SMS
+                PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber) { (verificationID, error) in
+                  if let error = error {
+                    print(error.localizedDescription)
+                    return
+                  }
+
+                  // Either received APNs or user has passed the reCAPTCHA
+                  // Step 5: Verification ID is saved for later use for verifying OTP with phone number
+                  self.currentVerificationId = verificationID!
+                }
+            limitTime = 180
+            
+        }
+    }
+    
     
     @IBAction func btnNext(_ sender: Any) {
         let credential = PhoneAuthProvider.provider().credential(withVerificationID:currentVerificationId,verificationCode: checkNumberTextField.text!)
@@ -61,15 +117,15 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
             if error == nil{
                 print(success ?? "")
                 print("User Signed in...")
+                
+                // 인증 성공! 다음 화면으로 이동
+                guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SigInPasswordVC") as? SigInPasswordVC else {return}
+                self.navigationController?.pushViewController(nextVC, animated: true)
             }else{
+                // 인증 실패
                 print(error.debugDescription)
             }
         }
-        
-        /*
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SigInPasswordVC") as? SigInPasswordVC else {return}
-        self.navigationController?.pushViewController(nextVC, animated: true)
- */
     }
     
     @IBAction func btnCancel(_ sender: Any) {

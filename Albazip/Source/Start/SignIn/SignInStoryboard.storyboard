@@ -301,7 +301,16 @@
                                     <constraint firstAttribute="width" constant="47" id="fJt-kn-sIM"/>
                                 </constraints>
                                 <state key="normal" image="btnReActive"/>
+                                <connections>
+                                    <action selector="btnReAuth:" destination="hai-4R-LML" eventType="touchUpInside" id="Fqj-b5-gmS"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTR-bh-8kj">
+                                <rect key="frame" x="225" y="264.66666666666669" width="36" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" red="0.43137252329999998" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zpF-Ax-A8r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -310,6 +319,7 @@
                             <constraint firstItem="xj2-IK-z6L" firstAttribute="leading" secondItem="zpF-Ax-A8r" secondAttribute="leading" constant="24" id="CRf-bG-Sz7"/>
                             <constraint firstItem="2q6-VW-yDy" firstAttribute="leading" secondItem="3bX-RF-X24" secondAttribute="leading" id="HhZ-N1-jUL"/>
                             <constraint firstItem="zpF-Ax-A8r" firstAttribute="trailing" secondItem="3bX-RF-X24" secondAttribute="trailing" constant="36" id="LyY-j8-fah"/>
+                            <constraint firstItem="cTR-bh-8kj" firstAttribute="centerY" secondItem="7ej-MU-Nt0" secondAttribute="centerY" id="Q3j-RK-Y1I"/>
                             <constraint firstItem="2q6-VW-yDy" firstAttribute="top" secondItem="3bX-RF-X24" secondAttribute="bottom" constant="24" id="Qbt-2O-eIm"/>
                             <constraint firstItem="TdF-j3-hzk" firstAttribute="top" secondItem="zpF-Ax-A8r" secondAttribute="top" constant="20" id="Qiu-TG-LKS"/>
                             <constraint firstItem="3bX-RF-X24" firstAttribute="top" secondItem="iI8-Eb-eBU" secondAttribute="bottom" constant="36" id="Yre-cI-6NV"/>
@@ -323,13 +333,16 @@
                             <constraint firstItem="zpF-Ax-A8r" firstAttribute="trailing" secondItem="7ej-MU-Nt0" secondAttribute="trailing" constant="52" id="p0O-Pn-j45"/>
                             <constraint firstItem="iI8-Eb-eBU" firstAttribute="top" secondItem="TdF-j3-hzk" secondAttribute="bottom" constant="24" id="y5o-mg-gen"/>
                             <constraint firstItem="zpF-Ax-A8r" firstAttribute="trailing" secondItem="xj2-IK-z6L" secondAttribute="trailing" constant="24" id="z9n-Pw-l5j"/>
+                            <constraint firstItem="7ej-MU-Nt0" firstAttribute="leading" secondItem="cTR-bh-8kj" secondAttribute="trailing" constant="15" id="zHR-fg-xQf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btnConfirm" destination="FW6-TN-3Ca" id="Wgr-I5-VZP"/>
                         <outlet property="btnNext" destination="xj2-IK-z6L" id="DUM-Rb-Nbj"/>
+                        <outlet property="btnReAuth" destination="7ej-MU-Nt0" id="Nzo-iJ-Toi"/>
                         <outlet property="checkNumberTextField" destination="2q6-VW-yDy" id="Ui2-sp-kO6"/>
                         <outlet property="phoneNumberTextField" destination="3bX-RF-X24" id="cmd-QA-sQC"/>
+                        <outlet property="timerLabel" destination="cTR-bh-8kj" id="Ukh-VH-a77"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Kw-wD-3ac" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
