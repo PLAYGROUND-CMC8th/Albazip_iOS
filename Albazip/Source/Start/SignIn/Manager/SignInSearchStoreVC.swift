@@ -16,6 +16,7 @@ class SignInSearchStoreVC: UIViewController{
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var baseView: UIView!
     
+    
     //맵뷰
     var mapView: MTMapView?
     
@@ -24,6 +25,11 @@ class SignInSearchStoreVC: UIViewController{
     
     //스크롤 action
     let behavior = MSCollectionViewPeekingBehavior()
+    
+    // Datamanager
+    lazy var dataManager: SignInSearchStoreDataManager = SignInSearchStoreDataManager()
+    
+    var searchData: [SignInSearchDocuments]?
     
     // 위치 더미 데이터
     let locationXArray: Array<Double> = [127.09834963621634, 127.12725826084582, 127.07339478315626, 127.0748329498537, 127.07126628056506]
@@ -35,8 +41,12 @@ class SignInSearchStoreVC: UIViewController{
         super.viewDidLoad()
         
         setUI()
+        setTextField()
         setCollectionView()
-        setMapView()
+        cornerView.isHidden = true
+        // 맵뷰 감추기
+        mapView?.isHidden = true
+        //setMapView()
     }
     
     func setUI(){
@@ -50,6 +60,12 @@ class SignInSearchStoreVC: UIViewController{
         //리턴키 누르기 전까지 뷰 hide
         //cornerView.isHidden = true
         //baseView.isHidden = true
+    }
+    
+    func setTextField()  {
+        searchTextField.delegate = self
+        searchTextField.addLeftPadding()
+        self.dismissKeyboardWhenTappedAround()
     }
     
     func setCollectionView() {
@@ -73,57 +89,136 @@ class SignInSearchStoreVC: UIViewController{
         
         mapView?.baseMapType = .standard
         
-        // 위치 정보
-        let pointGeo = MTMapPointGeo(latitude: locationYArray[0], longitude: locationXArray[0])
-        let point = MTMapPoint(geoCoord: pointGeo)
         
-        // 포인트를 맵의 센터로 사용
-        mapView?.setMapCenter(point, animated: true)
-        
-        // 화면 설정
-        mapView?.setZoomLevel(-1, animated: true)
-        if let mapView = self.mapView {
-            baseView.addSubview(mapView)
-        }
-        
-        //마커 찍기
-        let item = MTMapPOIItem()
-        item.itemName = mainTitle[0]
-        item.mapPoint = point
-        
-        item.markerType = .customImage
-        item.customImage = #imageLiteral(resourceName: "icPinLocation")
+        if let data = searchData, searchData?.count != 0{
             
-        item.markerSelectedType = .customImage
-        item.customSelectedImage = #imageLiteral(resourceName: "icPinLocation")
-        mapView?.add(item)
+                // 위치 정보
+                let pointGeo = MTMapPointGeo(latitude: Double(data[0].y!)!, longitude: Double(data[0].x!)!)
+                let point = MTMapPoint(geoCoord: pointGeo)
+                
+                // 포인트를 맵의 센터로 사용
+                mapView?.setMapCenter(point, animated: true)
+                
+                // 화면 설정
+                mapView?.setZoomLevel(-1, animated: true)
+                if let mapView = self.mapView {
+                    baseView.addSubview(mapView)
+                }
+                
+                //마커 찍기
+                let item = MTMapPOIItem()
+                item.itemName = data[0].place_name
+                item.mapPoint = point
+                
+                item.markerType = .customImage
+                item.customImage = #imageLiteral(resourceName: "icPinLocation")
+                    
+                item.markerSelectedType = .customImage
+                item.customSelectedImage = #imageLiteral(resourceName: "icPinLocation")
+                mapView?.add(item)
+            }else{
+                print("검색 결과 없음")
+            }
+
+        
+        
+        
     }
     
     func changeMapView(index:Int){
-        let item1 = MTMapPOIItem()
-        let pointGeo = MTMapPointGeo(latitude: locationYArray[index], longitude: locationXArray[index])
-        let point = MTMapPoint(geoCoord: pointGeo)
-        item1.itemName = mainTitle[index]
-        item1.mapPoint = point
-        item1.markerType = .customImage
-        item1.customImage = #imageLiteral(resourceName: "icPinLocation")
-        item1.markerSelectedType = .customImage
-        item1.customSelectedImage = #imageLiteral(resourceName: "icPinLocation")
-        mapView?.add(item1)
         
-        if let mapView = mapView{
-            // 포인트를 맵의 센터로 사용
-            mapView.setMapCenter(point, animated: true)
-            // 화면 설정
-            mapView.setZoomLevel(-1, animated: true)
+        if let data = searchData{
+            let item1 = MTMapPOIItem()
+            let pointGeo = MTMapPointGeo(latitude: Double(data[index].y!)!, longitude: Double(data[index].x!)!)
+            let point = MTMapPoint(geoCoord: pointGeo)
+            item1.itemName = data[index].place_name
+            item1.mapPoint = point
+            item1.markerType = .customImage
+            item1.customImage = #imageLiteral(resourceName: "icPinLocation")
+            item1.markerSelectedType = .customImage
+            item1.customSelectedImage = #imageLiteral(resourceName: "icPinLocation")
+            mapView?.add(item1)
             
+            if let mapView = mapView{
+                // 포인트를 맵의 센터로 사용
+                mapView.setMapCenter(point, animated: true)
+                // 화면 설정
+                mapView.setZoomLevel(-1, animated: true)
+                
+            }
         }
+    }
+    
+    func searchLocation(text:String)  {
+        dataManager.searchStore(vc: self, searchText: text)
+        
+    }
+    
+    @IBAction func btnCancel(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+}
+
+extension SignInSearchStoreVC {
+    func didSuccessSearchStore(_ result: SignInSearchStoreResponse) {
+        //self.presentAlert(title: "장바구니 담기 성공!", message: result.message)
+        //print("결제 정보 가져오기 성공!\(result.message!)")
+        print(result.documents)
+        searchData = result.documents
+        //tableView.reloadData()
+        
+        setMapView()
+        mapView?.isHidden = false
+        collectionView.reloadData()
+        cornerView.isHidden = false
+        
+    }
+    
+    func failedToSearchStore(message: String) {
+        self.presentAlert(title: message)
     }
 }
 
+
+//MARK: 텍스트 델리게이트
+extension SignInSearchStoreVC: UITextFieldDelegate{
+    
+    // 텍스트 필드의 편집을 시작할 때 호출
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("텍스트 필드의 편집이 시작됩니다.")
+        
+        
+        return true
+    }
+    // 텍스트 필드의 편집이 종료되었을 때 호출
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        print("텍스트 필드의 편집이 종료됩니다.")
+    }
+    // 텍스트 필드의 리턴키가 눌러졌을 때 호출
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        print("텍스트 필드의 리턴키가 눌러졌습니다.")
+        if let text = textField.text{
+            searchLocation(text: text)
+        }
+        return true
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        return true
+    }
+}
+
+//MARK: 콜렉션뷰 델리게이트
 extension SignInSearchStoreVC: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if let data = searchData{
+            return data.count
+        }
+        return 0
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -132,16 +227,18 @@ extension SignInSearchStoreVC: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell {
-            if(indexPath.row == selectedOne){
-                cell.searchView.backgroundColor = .semiYellow
-                cell.searchView.borderColor = .mainYellow
-                
-            }else{
-                cell.searchView.backgroundColor = #colorLiteral(red: 0.9999018312, green: 1, blue: 0.9998798966, alpha: 1)
-                cell.searchView.borderColor = #colorLiteral(red: 0.8077629209, green: 0.8078994155, blue: 0.8077449799, alpha: 1)
+            if let data = searchData{
+                if(indexPath.row == selectedOne){
+                    cell.searchView.backgroundColor = .semiYellow
+                    cell.searchView.borderColor = .mainYellow
+                    
+                }else{
+                    cell.searchView.backgroundColor = #colorLiteral(red: 0.9999018312, green: 1, blue: 0.9998798966, alpha: 1)
+                    cell.searchView.borderColor = #colorLiteral(red: 0.8077629209, green: 0.8078994155, blue: 0.8077449799, alpha: 1)
+                }
+                cell.titleLabel.text = data[indexPath.row].place_name
+                cell.subLabel.text = data[indexPath.row].address_name
             }
-            cell.titleLabel.text = mainTitle[indexPath.row]
-            cell.subLabel.text = subTitle[indexPath.row]
             return cell
         }
         return UICollectionViewCell()
@@ -167,6 +264,7 @@ extension SignInSearchStoreVC: UICollectionViewDelegate, UICollectionViewDataSou
     }
 }
 
+//MARK: 맵뷰 델리게이트
 extension SignInSearchStoreVC: MTMapViewDelegate {
     func mapView(_ mapView: MTMapView!, touchedCalloutBalloonOf poiItem: MTMapPOIItem!) {
         if let name = poiItem.itemName {

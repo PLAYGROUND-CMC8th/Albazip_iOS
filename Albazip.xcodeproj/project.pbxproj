@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9C7447FE94295A129DB07CA9 /* Pods_Albazip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363836578B4295DDC93F8120 /* Pods_Albazip.framework */; };
 		C34C4AE02721BF6700300454 /* SignInSelectYearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C4ADF2721BF6700300454 /* SignInSelectYearVC.swift */; };
+		C3546F812725082100C4C3DC /* SignInSearchStoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3546F802725082100C4C3DC /* SignInSearchStoreResponse.swift */; };
+		C3546F832725083B00C4C3DC /* SignInSearchStoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3546F822725083B00C4C3DC /* SignInSearchStoreDataManager.swift */; };
 		C37EBF3F271A9D7000DEC2CA /* SignInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37EBF3E271A9D7000DEC2CA /* SignInStoryboard.storyboard */; };
 		C37EBF41271AA1B000DEC2CA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */; };
 		C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */; };
@@ -65,6 +67,8 @@
 		7EACD131BC8A80FCC54849C5 /* Pods-Albazip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Albazip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Albazip/Pods-Albazip.debug.xcconfig"; sourceTree = "<group>"; };
 		9E8BCDC410EA5AB6EF1D4E62 /* Pods-Albazip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Albazip.release.xcconfig"; path = "Pods/Target Support Files/Pods-Albazip/Pods-Albazip.release.xcconfig"; sourceTree = "<group>"; };
 		C34C4ADF2721BF6700300454 /* SignInSelectYearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSelectYearVC.swift; sourceTree = "<group>"; };
+		C3546F802725082100C4C3DC /* SignInSearchStoreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSearchStoreResponse.swift; sourceTree = "<group>"; };
+		C3546F822725083B00C4C3DC /* SignInSearchStoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSearchStoreDataManager.swift; sourceTree = "<group>"; };
 		C37EBF3E271A9D7000DEC2CA /* SignInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInStoryboard.storyboard; sourceTree = "<group>"; };
 		C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -164,9 +168,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C3546F7E272507A400C4C3DC /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C3546F822725083B00C4C3DC /* SignInSearchStoreDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C3546F7F272507BB00C4C3DC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C3546F802725082100C4C3DC /* SignInSearchStoreResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		C37EBF46271AD00600DEC2CA /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C3546F7F272507BB00C4C3DC /* Entity */,
+				C3546F7E272507A400C4C3DC /* DataManager */,
 				C39019BC271F243300BC2830 /* Cell */,
 				C37EBF48271AD0BB00DEC2CA /* SignInManagerStoryboard.storyboard */,
 				C3A1ADCB271C5002005A61ED /* SignInSearchStoreVC.swift */,
@@ -644,11 +666,13 @@
 				C3A1ADD4271C86B6005A61ED /* LoginResetPhoneVC.swift in Sources */,
 				C37EBF41271AA1B000DEC2CA /* SignInViewController.swift in Sources */,
 				C37EBF4B271AD54200DEC2CA /* SigInPhoneNumberVC.swift in Sources */,
+				C3546F812725082100C4C3DC /* SignInSearchStoreResponse.swift in Sources */,
 				C37EBF4D271AD71700DEC2CA /* SigInPasswordVC.swift in Sources */,
 				C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */,
 				C384424F27147E2900B84E8A /* IndicatorView.swift in Sources */,
 				C384425D27147E3F00B84E8A /* UINavigationBar.swift in Sources */,
 				C37EBF4F271AD97900DEC2CA /* SigInBasicInfoVC.swift in Sources */,
+				C3546F832725083B00C4C3DC /* SignInSearchStoreDataManager.swift in Sources */,
 				C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */,
 				C384425B27147E3F00B84E8A /* UIButton.swift in Sources */,
 			);
