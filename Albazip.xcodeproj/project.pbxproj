@@ -63,6 +63,7 @@
 		C3B022E92726D91400013988 /* SignInStoreInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B022E82726D91400013988 /* SignInStoreInfoVC.swift */; };
 		C3B022EB2726D9C300013988 /* SignInManagerInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B022EA2726D9C300013988 /* SignInManagerInfoVC.swift */; };
 		C3B022ED2726DB3800013988 /* SignInMoreInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B022EC2726DB3800013988 /* SignInMoreInfoVC.swift */; };
+		C3B022EF2726F28A00013988 /* SignInSelectStoreTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B022EE2726F28A00013988 /* SignInSelectStoreTypeVC.swift */; };
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,7 @@
 		C3B022E82726D91400013988 /* SignInStoreInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInStoreInfoVC.swift; sourceTree = "<group>"; };
 		C3B022EA2726D9C300013988 /* SignInManagerInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInManagerInfoVC.swift; sourceTree = "<group>"; };
 		C3B022EC2726DB3800013988 /* SignInMoreInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInMoreInfoVC.swift; sourceTree = "<group>"; };
+		C3B022EE2726F28A00013988 /* SignInSelectStoreTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSelectStoreTypeVC.swift; sourceTree = "<group>"; };
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +206,7 @@
 				C3B022E82726D91400013988 /* SignInStoreInfoVC.swift */,
 				C3B022EA2726D9C300013988 /* SignInManagerInfoVC.swift */,
 				C3B022EC2726DB3800013988 /* SignInMoreInfoVC.swift */,
+				C3B022EE2726F28A00013988 /* SignInSelectStoreTypeVC.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				C384424B27147E1700B84E8A /* Constant.swift in Sources */,
 				C384425A27147E3F00B84E8A /* String.swift in Sources */,
 				C384425E27147E3F00B84E8A /* UIFont.swift in Sources */,
+				C3B022EF2726F28A00013988 /* SignInSelectStoreTypeVC.swift in Sources */,
 				C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */,
 				C3A1ADCC271C5002005A61ED /* SignInSearchStoreVC.swift in Sources */,
 				C3A1ADD4271C86B6005A61ED /* LoginResetPhoneVC.swift in Sources */,

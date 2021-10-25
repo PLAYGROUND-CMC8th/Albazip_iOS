@@ -189,6 +189,8 @@ class SignInSearchStoreVC: UIViewController{
     }
     @IBAction func btnNext(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SignInStoreInfoVC") as? SignInStoreInfoVC else {return}
+        nextVC.storeName = searchData![selectedOne].place_name!
+        nextVC.storeLocation = searchData![selectedOne].address_name!
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
