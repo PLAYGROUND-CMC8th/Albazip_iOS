@@ -15,6 +15,9 @@ class SignInSearchStoreVC: UIViewController{
     @IBOutlet weak var cornerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var baseView: UIView!
+    @IBOutlet var noSearchView: UIView!
+    @IBOutlet var btnNext: UIButton!
+    @IBOutlet var btnDirectRegister: UIButton!
     
     
     //맵뷰
@@ -31,11 +34,8 @@ class SignInSearchStoreVC: UIViewController{
     
     var searchData: [SignInSearchDocuments]?
     
-    // 위치 더미 데이터
-    let locationXArray: Array<Double> = [127.09834963621634, 127.12725826084582, 127.07339478315626, 127.0748329498537, 127.07126628056506]
-    let locationYArray: Array<Double> = [37.19639318015116,37.188159769329644, 37.20746987253404, 37.1945190595383, 37.20093314538069]
-    let mainTitle: Array<String> = ["파리바게뜨 동탄역점","파리바게뜨 동탄금강점","파리바게뜨 동탄시범점","파리바게뜨 동탄나루마을점","파리바게뜨 동탄다은솔빛점"]
-    let subTitle: Array<String> = ["경기 화성시 오산동 967-2429","경기 화성시 목동 산 34","경기 화성시 반송동 86-4","경기 화성시 반송동 218-1","경기 화성시 반송동 104-1"]
+    // 지도 검색이 처음인지
+    var isFirstSearch = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +44,7 @@ class SignInSearchStoreVC: UIViewController{
         setTextField()
         setCollectionView()
         cornerView.isHidden = true
+        noSearchView.isHidden = true
         // 맵뷰 감추기
         mapView?.isHidden = true
         //setMapView()
@@ -60,6 +61,9 @@ class SignInSearchStoreVC: UIViewController{
         //리턴키 누르기 전까지 뷰 hide
         //cornerView.isHidden = true
         //baseView.isHidden = true
+        
+    
+        
     }
     
     func setTextField()  {
@@ -91,38 +95,59 @@ class SignInSearchStoreVC: UIViewController{
         
         
         if let data = searchData, searchData?.count != 0{
-            
-                // 위치 정보
-                let pointGeo = MTMapPointGeo(latitude: Double(data[0].y!)!, longitude: Double(data[0].x!)!)
-                let point = MTMapPoint(geoCoord: pointGeo)
+            if(isFirstSearch){
+                isFirstSearch = false
+            }
+            cornerView.isHidden = false
+            btnNext.isHidden = false
+            collectionView.isHidden = false
+            noSearchView.isHidden = true
+            // 위치 정보
+            let pointGeo = MTMapPointGeo(latitude: Double(data[0].y!)!, longitude: Double(data[0].x!)!)
+            let point = MTMapPoint(geoCoord: pointGeo)
                 
+            // 포인트를 맵의 센터로 사용
+            mapView?.setMapCenter(point, animated: true)
+                
+            // 화면 설정
+            mapView?.setZoomLevel(-1, animated: true)
+            if let mapView = self.mapView {
+                baseView.addSubview(mapView)
+            }
+                
+            //마커 찍기
+            let item = MTMapPOIItem()
+            item.itemName = data[0].place_name
+            item.mapPoint = point
+                
+            item.markerType = .customImage
+            item.customImage = #imageLiteral(resourceName: "icPinLocation")
+                    
+            item.markerSelectedType = .customImage
+            item.customSelectedImage = #imageLiteral(resourceName: "icPinLocation")
+            mapView?.add(item)
+            
+        }else{
+                print("검색 결과 없음")
+                cornerView.isHidden = false
+                btnNext.isHidden = true
+                collectionView.isHidden = true
+                noSearchView.isHidden = false
+            if(isFirstSearch){
+                // 위치 정보
+                let pointGeo = MTMapPointGeo(latitude: 0.0, longitude: 0.0)
+                let point = MTMapPoint(geoCoord: pointGeo)
+                    
                 // 포인트를 맵의 센터로 사용
                 mapView?.setMapCenter(point, animated: true)
-                
+                    
                 // 화면 설정
                 mapView?.setZoomLevel(-1, animated: true)
                 if let mapView = self.mapView {
                     baseView.addSubview(mapView)
                 }
-                
-                //마커 찍기
-                let item = MTMapPOIItem()
-                item.itemName = data[0].place_name
-                item.mapPoint = point
-                
-                item.markerType = .customImage
-                item.customImage = #imageLiteral(resourceName: "icPinLocation")
-                    
-                item.markerSelectedType = .customImage
-                item.customSelectedImage = #imageLiteral(resourceName: "icPinLocation")
-                mapView?.add(item)
-            }else{
-                print("검색 결과 없음")
             }
-
-        
-        
-        
+        }
     }
     
     func changeMapView(index:Int){
@@ -158,7 +183,14 @@ class SignInSearchStoreVC: UIViewController{
         self.navigationController?.popViewController(animated: true)
     }
     
-    
+    @IBAction func btnDirectRegister(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SignInStoreInfoVC") as? SignInStoreInfoVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    @IBAction func btnNext(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SignInStoreInfoVC") as? SignInStoreInfoVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
 extension SignInSearchStoreVC {
@@ -172,7 +204,7 @@ extension SignInSearchStoreVC {
         setMapView()
         mapView?.isHidden = false
         collectionView.reloadData()
-        cornerView.isHidden = false
+        //cornerView.isHidden = false
         
     }
     
