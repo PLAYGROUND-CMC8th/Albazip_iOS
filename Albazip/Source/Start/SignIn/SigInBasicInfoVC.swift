@@ -7,23 +7,17 @@
 
 import Foundation
 import UIKit
-class SigInBasicInfoVC: UIViewController, ModalViewControllerDelegate{
+class SigInBasicInfoVC: UIViewController{
     
-    // 모달뷰 값 전달 받기
-    func modalDidFinished(modalText: String) {
-        print(modalText)
-        btnAge.setTitle("   "+modalText, for: .normal)
-        btnAge.setTitleColor(#colorLiteral(red: 0.1990817189, green: 0.2041014135, blue: 0.2039682269, alpha: 1), for: .normal)
-        selectAge = true
-    }
-    
-    
+   
+    @IBOutlet var modalBgView: UIView!
     @IBOutlet weak var firstNameTextfield: UITextField!
     @IBOutlet weak var nameTextfield: UITextField!
-    @IBOutlet var btnAge: UIButton!
     @IBOutlet weak var btnMan: UIButton!
     @IBOutlet weak var btnWoman: UIButton!
     @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet var ageTextfield: UITextField!
+    
     var selectAge = false
     
     override func viewDidLoad() {
@@ -31,15 +25,21 @@ class SigInBasicInfoVC: UIViewController, ModalViewControllerDelegate{
         // Do any additional setup after loading the view.
         setUI()
         //self.modalView.delegate = self
+        modalBgView.alpha = 0.0
+        ageTextfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .touchDown)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "show" {
-            let viewController : SignInSelectYearVC = segue.destination as! SignInSelectYearVC
-            viewController.delegate = self
+    @objc func textFieldDidChange(_ textField:UITextField) {
+        
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignInSelectYearVC") as? SignInSelectYearVC {
+            vc.modalPresentationStyle = .overFullScreen
+            
+            modalBgView.alpha = 1
+            vc.delegate = self
+            
+            self.present(vc, animated: true, completion: nil)
         }
     }
-    
     func setUI(){
         firstNameTextfield.delegate = self
         nameTextfield.delegate = self
@@ -50,6 +50,7 @@ class SigInBasicInfoVC: UIViewController, ModalViewControllerDelegate{
         self.dismissKeyboardWhenTappedAround()
         btnWoman.adjustsImageWhenHighlighted = false
         btnMan.adjustsImageWhenHighlighted = false
+        ageTextfield.addLeftPadding()
     }
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -93,19 +94,8 @@ class SigInBasicInfoVC: UIViewController, ModalViewControllerDelegate{
         checkTextField()
     }
     
-    @IBAction func btnYear(_ sender: Any) {
-        self.nameTextfield.resignFirstResponder()
-        goAlertView()
-    }
+   
     
-    func goAlertView()  {
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SignInSelectYearVC") as? SignInSelectYearVC else {return}
-                
-        //nextVC.modalTransitionStyle = .coverVertical
-        nextVC.modalPresentationStyle = .overCurrentContext
-                
-        self.present(nextVC, animated: false, completion: nil)
-    }
     
 }
 extension SigInBasicInfoVC: UITextFieldDelegate{
@@ -143,5 +133,15 @@ extension SigInBasicInfoVC: UITextFieldDelegate{
         
         checkTextField()
         return true
+    }
+}
+extension SigInBasicInfoVC: YearModalDelegate {
+    
+    func modalDismiss() {
+        modalBgView.alpha = 0.0
+    }
+    
+    func textFieldData(data: String) {
+        ageTextfield.text = data
     }
 }

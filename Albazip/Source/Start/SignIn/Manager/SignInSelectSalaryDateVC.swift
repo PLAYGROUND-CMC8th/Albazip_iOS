@@ -1,54 +1,56 @@
 //
-//  SignInSelectYearVC.swift
+//  SignInSelectSalaryDateVC.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2021/10/22.
+//  Created by 김수빈 on 2021/10/26.
 //
 
 import Foundation
 import UIKit
 
-protocol YearModalDelegate {
+protocol SalaryModalDelegate {
     func modalDismiss()
     func textFieldData(data: String)
 }
 
-class SignInSelectYearVC: UIViewController{
+
+class SignInSelectSalaryDateVC: UIViewController{
     
-    var date = "2000"
-    @IBOutlet var picker: UIPickerView!
-    var delegate: YearModalDelegate?
+    
+    @IBOutlet var pickerView: UIPickerView!
+    
+    var salaryModalDelegate : SalaryModalDelegate?
     var dates =  [String]()
-    var selectedDate = 50
+    var selectedDate = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        setPickerView()
-    }
-    func setPickerView() {
         
-        for i in (1950..<2021) {
+        for i in (1..<32) {
             dates.append("\(i)")
         }
-            
-        picker.dataSource = self
-        picker.delegate = self
-        picker.selectRow(50, inComponent: 0, animated: false)
+        setDelegate()
     }
+    
+    func setDelegate() {
+        pickerView.delegate = self
+        pickerView.dataSource = self
+    }
+    
     @IBAction func btnCancel(_ sender: Any) {
-        delegate?.modalDismiss()
-        self.dismiss(animated: true, completion: nil)
-    }
-    @IBAction func btnNext(_ sender: Any) {
-        delegate?.textFieldData(data: dates[selectedDate])
-        delegate?.modalDismiss()
+        salaryModalDelegate?.modalDismiss()
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func btnNext(_ sender: Any) {
+        salaryModalDelegate?.textFieldData(data: dates[selectedDate])
+        salaryModalDelegate?.modalDismiss()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
-
-extension SignInSelectYearVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+extension SignInSelectSalaryDateVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

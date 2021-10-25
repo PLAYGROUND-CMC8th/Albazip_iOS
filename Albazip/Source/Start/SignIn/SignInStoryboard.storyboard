@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mxT-iB-grI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QRx-D5-UYM">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -590,7 +590,6 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yje-VC-juB"/>
-                        <color key="backgroundColor" systemColor="systemFillColor"/>
                         <constraints>
                             <constraint firstItem="Ef1-ZG-ODG" firstAttribute="leading" secondItem="yje-VC-juB" secondAttribute="leading" id="awm-Hw-lhE"/>
                             <constraint firstItem="Ef1-ZG-ODG" firstAttribute="trailing" secondItem="yje-VC-juB" secondAttribute="trailing" id="cz8-Sz-oEO"/>
@@ -764,55 +763,62 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SpZ-LJ-hsq">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="출생년도 (YYYY)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wzL-W1-CKH">
                                 <rect key="frame" x="36" y="327" width="303" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="303" id="32z-lU-ndA"/>
-                                    <constraint firstAttribute="height" constant="48" id="o5U-MJ-Pvy"/>
+                                    <constraint firstAttribute="height" constant="48" id="Osc-tI-2ey"/>
+                                    <constraint firstAttribute="width" constant="303" id="beK-ue-UHb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <state key="normal" title="   출생년도 (YYYY)">
-                                    <color key="titleColor" red="0.78039217000000005" green="0.78431367870000002" blue="0.78039217000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
+                                <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="2zr-Vn-bIb" kind="presentation" identifier="show" animates="NO" modalPresentationStyle="overCurrentContext" id="XTB-WD-WIF"/>
+                                    <action selector="ageTextfield:" destination="8jS-4m-b3Q" eventType="editingDidEnd" id="htr-5r-tFN"/>
                                 </connections>
-                            </button>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYf-Ff-trM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gKJ-t4-GSI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GHV-oJ-gYg" firstAttribute="leading" secondItem="gKJ-t4-GSI" secondAttribute="leading" constant="36" id="0Np-4m-Bvp"/>
                             <constraint firstItem="Kjo-qa-dhY" firstAttribute="centerY" secondItem="Tr5-hJ-LOs" secondAttribute="centerY" id="232-1q-rUV"/>
+                            <constraint firstItem="gKJ-t4-GSI" firstAttribute="trailing" secondItem="wzL-W1-CKH" secondAttribute="trailing" constant="36" id="3c8-jb-QqR"/>
                             <constraint firstItem="LSy-bi-zip" firstAttribute="leading" secondItem="gKJ-t4-GSI" secondAttribute="leading" constant="36" id="69c-Te-udq"/>
                             <constraint firstItem="Tr5-hJ-LOs" firstAttribute="top" secondItem="yTM-dx-NuD" secondAttribute="bottom" constant="14" id="7ex-M9-PkO"/>
                             <constraint firstItem="Tr5-hJ-LOs" firstAttribute="leading" secondItem="gKJ-t4-GSI" secondAttribute="leading" constant="36" id="A9g-ED-4la"/>
+                            <constraint firstItem="wzL-W1-CKH" firstAttribute="leading" secondItem="gKJ-t4-GSI" secondAttribute="leading" constant="36" id="AC8-xR-bMo"/>
                             <constraint firstAttribute="bottom" secondItem="AYL-ik-IrP" secondAttribute="bottom" constant="36" id="Agv-jt-mZU"/>
                             <constraint firstItem="gKJ-t4-GSI" firstAttribute="trailing" secondItem="Kjo-qa-dhY" secondAttribute="trailing" constant="37" id="BGd-ve-eK4"/>
                             <constraint firstItem="vuZ-sS-hVp" firstAttribute="leading" secondItem="gKJ-t4-GSI" secondAttribute="leading" constant="16" id="GFF-Q8-QAG"/>
+                            <constraint firstItem="lYf-Ff-trM" firstAttribute="trailing" secondItem="gKJ-t4-GSI" secondAttribute="trailing" id="HJ6-pS-6JR"/>
+                            <constraint firstItem="wzL-W1-CKH" firstAttribute="top" secondItem="YbG-oS-kFR" secondAttribute="bottom" constant="13.67" id="I2n-LC-o8P"/>
+                            <constraint firstItem="LSy-bi-zip" firstAttribute="top" secondItem="wzL-W1-CKH" secondAttribute="bottom" constant="36.329999999999998" id="KIT-Gk-AKI"/>
                             <constraint firstItem="AYL-ik-IrP" firstAttribute="leading" secondItem="gKJ-t4-GSI" secondAttribute="leading" constant="24" id="McI-ER-oa1"/>
                             <constraint firstItem="rlb-wX-CHs" firstAttribute="leading" secondItem="gKJ-t4-GSI" secondAttribute="leading" constant="36" id="QVY-C1-TkA"/>
-                            <constraint firstItem="SpZ-LJ-hsq" firstAttribute="top" secondItem="YbG-oS-kFR" secondAttribute="bottom" constant="13.67" id="ROc-OX-RlB"/>
-                            <constraint firstItem="SpZ-LJ-hsq" firstAttribute="leading" secondItem="gKJ-t4-GSI" secondAttribute="leading" constant="36" id="SDW-gv-Ro0"/>
                             <constraint firstItem="rlb-wX-CHs" firstAttribute="top" secondItem="LSy-bi-zip" secondAttribute="bottom" constant="14" id="TFC-XG-poA"/>
-                            <constraint firstItem="gKJ-t4-GSI" firstAttribute="trailing" secondItem="SpZ-LJ-hsq" secondAttribute="trailing" constant="36" id="Tyk-nu-Xjb"/>
                             <constraint firstItem="gKJ-t4-GSI" firstAttribute="trailing" secondItem="rlb-wX-CHs" secondAttribute="trailing" constant="37" id="VBM-Rd-nX7"/>
-                            <constraint firstItem="LSy-bi-zip" firstAttribute="top" secondItem="SpZ-LJ-hsq" secondAttribute="bottom" constant="36.329999999999998" id="Vk0-7l-M2o"/>
+                            <constraint firstItem="lYf-Ff-trM" firstAttribute="top" secondItem="w2f-Ww-pie" secondAttribute="top" id="ZLO-5Z-Vpt"/>
                             <constraint firstItem="GHV-oJ-gYg" firstAttribute="top" secondItem="vuZ-sS-hVp" secondAttribute="bottom" constant="24" id="ZVp-Dg-703"/>
+                            <constraint firstItem="lYf-Ff-trM" firstAttribute="leading" secondItem="gKJ-t4-GSI" secondAttribute="leading" id="ck6-q0-APn"/>
                             <constraint firstItem="vuZ-sS-hVp" firstAttribute="top" secondItem="gKJ-t4-GSI" secondAttribute="top" constant="20" id="dmR-A1-nO1"/>
                             <constraint firstItem="Kjo-qa-dhY" firstAttribute="leading" secondItem="Tr5-hJ-LOs" secondAttribute="trailing" constant="23" id="dxa-s1-J7K"/>
                             <constraint firstItem="gKJ-t4-GSI" firstAttribute="trailing" secondItem="AYL-ik-IrP" secondAttribute="trailing" constant="24" id="gQ8-7d-d1b"/>
+                            <constraint firstAttribute="bottom" secondItem="lYf-Ff-trM" secondAttribute="bottom" id="iRo-d5-3e2"/>
                             <constraint firstItem="YbG-oS-kFR" firstAttribute="leading" secondItem="yTM-dx-NuD" secondAttribute="leading" id="lyo-MO-XxF"/>
                             <constraint firstItem="yTM-dx-NuD" firstAttribute="leading" secondItem="gKJ-t4-GSI" secondAttribute="leading" constant="36" id="n7b-tS-iHX"/>
                             <constraint firstItem="yTM-dx-NuD" firstAttribute="top" secondItem="GHV-oJ-gYg" secondAttribute="bottom" constant="36" id="nPT-Ma-wzr"/>
@@ -820,11 +826,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnAge" destination="SpZ-LJ-hsq" id="rWm-Eb-LFR"/>
+                        <outlet property="ageTextfield" destination="wzL-W1-CKH" id="6Yu-ks-Yhv"/>
                         <outlet property="btnMan" destination="KEl-X2-QMC" id="Uy8-hw-VEX"/>
                         <outlet property="btnNext" destination="AYL-ik-IrP" id="qg8-yg-bbR"/>
                         <outlet property="btnWoman" destination="CbG-cB-JIc" id="ERH-a3-1ut"/>
                         <outlet property="firstNameTextfield" destination="Tr5-hJ-LOs" id="jPd-rV-pDi"/>
+                        <outlet property="modalBgView" destination="lYf-Ff-trM" id="GFY-Kq-vqi"/>
                         <outlet property="nameTextfield" destination="Kjo-qa-dhY" id="VUP-K4-Z5W"/>
                     </connections>
                 </viewController>
@@ -1159,11 +1166,11 @@
         <image name="icSetting" width="24" height="24"/>
         <image name="illustManager" width="94" height="146.33332824707031"/>
         <image name="illustWorker" width="94" height="124"/>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemFillColor">
-            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
