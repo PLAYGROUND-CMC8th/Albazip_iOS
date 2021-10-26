@@ -33,14 +33,14 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jib-HE-9I7">
                                 <rect key="frame" x="24" y="738" width="327" height="50"/>
-                                <color key="backgroundColor" red="0.98039215800000001" green="0.88627451660000001" blue="0.54901963470000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.98823523520000001" green="0.94117647410000005" blue="0.7607843876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="327" id="dtx-hY-r1V"/>
                                     <constraint firstAttribute="height" constant="50" id="fv6-hR-cr5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <state key="normal" title="합류하기">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.6784313917" green="0.6784313917" blue="0.6784313917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -85,6 +85,10 @@
                             <constraint firstItem="lAP-XY-jnT" firstAttribute="trailing" secondItem="Jib-HE-9I7" secondAttribute="trailing" constant="24" id="iGR-SW-gtM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnNext" destination="Jib-HE-9I7" id="h0z-3c-3Wg"/>
+                        <outlet property="codeTextField" destination="QOc-Db-EgD" id="gnx-fU-dbL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="go4-vB-9Gc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
