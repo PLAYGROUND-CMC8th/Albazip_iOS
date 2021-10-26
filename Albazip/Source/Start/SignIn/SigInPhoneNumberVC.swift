@@ -18,15 +18,22 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet var btnReAuth: UIButton!
     @IBOutlet var timerLabel: UILabel!
+    @IBOutlet var errorLabel: UILabel!
     
-    var limitTime : Int = 180 //3분
+    
+    var limitTime : Int = 120 //3분
     var currentVerificationId = ""
-    
+    var isFirstAuth = true
+    var isTimerWork = false
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setUI()
+    }
+    
+    func setUI(){
         phoneNumberTextField.addLeftPadding()
         checkNumberTextField.addLeftPadding()
         
@@ -38,6 +45,7 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
         checkNumberTextField.isHidden = true
         btnReAuth.isHidden = true
         timerLabel.isHidden = true
+        errorLabel.isHidden = true
     }
     
     @objc func getSetTime(){
@@ -57,54 +65,75 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
             perform(#selector(getSetTime), with: nil, afterDelay: 1.0)
         }
         else if limitTime == 0{
-            checkNumberTextField.isHidden = true
-            btnReAuth.isHidden = true
-            timerLabel.isHidden = true
+            //checkNumberTextField.isHidden = true
+            //btnReAuth.isHidden = true
+            //timerLabel.isHidden = true
+            errorLabel.isHidden = false
+            errorLabel.text = "인증번호가 입력시간이 초과되었습니다. 재발송 해주세요."
+            isTimerWork = false
         }
     }
     
     @IBAction func btnAuth(_ sender: Any) {
-        
+        errorLabel.isHidden = true
         Auth.auth().accessibilityLanguage = "kr";
         
         if let phoneNumber = phoneNumberTextField.text{
-            // Step 4: Request SMS
-                PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber) { (verificationID, error) in
+        
+                PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)") { (verificationID, error) in
                   if let error = error {
                     print(error.localizedDescription)
                     return
                   }
 
-                  // Either received APNs or user has passed the reCAPTCHA
-                  // Step 5: Verification ID is saved for later use for verifying OTP with phone number
                   self.currentVerificationId = verificationID!
+                    
                 }
-            timerLabel.isHidden = false
-            btnReAuth.isHidden = false
-            checkNumberTextField.isHidden = false
-            getSetTime()
+            self.timerLabel.isHidden = false
+            self.btnReAuth.isHidden = false
+            self.checkNumberTextField.isHidden = false
+            if(self.isTimerWork){
+                self.limitTime = 120
+            }else{
+                self.getSetTime()
+                self.isTimerWork = true
+                //self.isFirstAuth = false
+            }
             
+            if(self.isFirstAuth){
+                self.isFirstAuth = false
+                
+                btnNext.isEnabled = true
+                btnNext.backgroundColor = .mainYellow
+                btnNext.setTitleColor(.gray, for: .normal)
+            }
         }
         
         //UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
     }
+    
+    // 재인증 버튼
     @IBAction func btnReAuth(_ sender: Any) {
-        
+        errorLabel.isHidden = true
         Auth.auth().accessibilityLanguage = "kr";
         
         if let phoneNumber = phoneNumberTextField.text{
-            // Step 4: Request SMS
-                PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber) { (verificationID, error) in
+          
+                PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)") { (verificationID, error) in
                   if let error = error {
                     print(error.localizedDescription)
                     return
                   }
 
-                  // Either received APNs or user has passed the reCAPTCHA
-                  // Step 5: Verification ID is saved for later use for verifying OTP with phone number
                   self.currentVerificationId = verificationID!
                 }
-            limitTime = 180
+            if(self.isTimerWork){
+                self.limitTime = 120
+            }else{
+                self.getSetTime()
+                self.isTimerWork = true
+                //self.isFirstAuth = false
+            }
             
         }
     }
@@ -119,11 +148,14 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
                 print("User Signed in...")
                 
                 // 인증 성공! 다음 화면으로 이동
+                self.errorLabel.isHidden = true
                 guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SigInPasswordVC") as? SigInPasswordVC else {return}
                 self.navigationController?.pushViewController(nextVC, animated: true)
             }else{
                 // 인증 실패
                 print(error.debugDescription)
+                self.errorLabel.isHidden = false
+                self.errorLabel.text = "인증번호가 일치하지 않습니다."
             }
         }
     }
@@ -146,9 +178,6 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
         }
         btnConfirm.isEnabled = true
         btnConfirm.setImage(#imageLiteral(resourceName: "btnActive"), for: .normal)
-        btnNext.isEnabled = true
-        btnNext.backgroundColor = .mainYellow
-        btnNext.setTitleColor(.gray, for: .normal)
         return true
     }
     // 텍스트 필드의 편집이 종료되었을 때 호출

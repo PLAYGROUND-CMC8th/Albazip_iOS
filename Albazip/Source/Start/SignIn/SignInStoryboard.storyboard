@@ -281,7 +281,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
@@ -311,6 +311,12 @@
                                 <color key="textColor" red="0.43137252329999998" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호가 일치하지 않습니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1b-zh-dlo">
+                                <rect key="frame" x="44" y="305" width="146" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zpF-Ax-A8r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -325,9 +331,11 @@
                             <constraint firstItem="3bX-RF-X24" firstAttribute="top" secondItem="iI8-Eb-eBU" secondAttribute="bottom" constant="36" id="Yre-cI-6NV"/>
                             <constraint firstItem="zpF-Ax-A8r" firstAttribute="trailing" secondItem="FW6-TN-3Ca" secondAttribute="trailing" constant="52" id="blh-pB-P40"/>
                             <constraint firstItem="FW6-TN-3Ca" firstAttribute="centerY" secondItem="3bX-RF-X24" secondAttribute="centerY" id="eI2-iy-FFQ"/>
+                            <constraint firstItem="d1b-zh-dlo" firstAttribute="top" secondItem="2q6-VW-yDy" secondAttribute="bottom" constant="8" id="eMr-0K-ewf"/>
                             <constraint firstItem="2q6-VW-yDy" firstAttribute="trailing" secondItem="3bX-RF-X24" secondAttribute="trailing" id="eog-Tz-FAy"/>
                             <constraint firstItem="TdF-j3-hzk" firstAttribute="leading" secondItem="zpF-Ax-A8r" secondAttribute="leading" constant="16" id="gMi-M8-gF6"/>
                             <constraint firstItem="3bX-RF-X24" firstAttribute="leading" secondItem="zpF-Ax-A8r" secondAttribute="leading" constant="36" id="kL9-1w-U3n"/>
+                            <constraint firstItem="d1b-zh-dlo" firstAttribute="leading" secondItem="zpF-Ax-A8r" secondAttribute="leading" constant="44" id="lYR-Gw-kkp"/>
                             <constraint firstItem="iI8-Eb-eBU" firstAttribute="leading" secondItem="zpF-Ax-A8r" secondAttribute="leading" constant="36" id="lvr-Bo-M5q"/>
                             <constraint firstItem="7ej-MU-Nt0" firstAttribute="centerY" secondItem="2q6-VW-yDy" secondAttribute="centerY" id="mSC-GA-7YP"/>
                             <constraint firstItem="zpF-Ax-A8r" firstAttribute="trailing" secondItem="7ej-MU-Nt0" secondAttribute="trailing" constant="52" id="p0O-Pn-j45"/>
@@ -341,6 +349,7 @@
                         <outlet property="btnNext" destination="xj2-IK-z6L" id="DUM-Rb-Nbj"/>
                         <outlet property="btnReAuth" destination="7ej-MU-Nt0" id="Nzo-iJ-Toi"/>
                         <outlet property="checkNumberTextField" destination="2q6-VW-yDy" id="Ui2-sp-kO6"/>
+                        <outlet property="errorLabel" destination="d1b-zh-dlo" id="OFq-ex-yBr"/>
                         <outlet property="phoneNumberTextField" destination="3bX-RF-X24" id="cmd-QA-sQC"/>
                         <outlet property="timerLabel" destination="cTR-bh-8kj" id="Ukh-VH-a77"/>
                     </connections>
@@ -511,7 +520,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xf1-A3-NxX">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xf1-A3-NxX">
                                         <rect key="frame" x="24" y="278" width="327" height="52"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91c-Mt-HKx">

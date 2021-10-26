@@ -76,6 +76,7 @@ class SigInBasicInfoVC: UIViewController{
         }
     }
     @IBAction func btnMan(_ sender: Any) {
+        
         btnMan.isSelected = true
         btnMan.backgroundColor = .semiYellow
         btnMan.borderColor = .mainYellow
@@ -85,6 +86,7 @@ class SigInBasicInfoVC: UIViewController{
         checkTextField()
     }
     @IBAction func btnWoman(_ sender: Any) {
+        
         btnWoman.isSelected = true
         btnWoman.backgroundColor = .semiYellow
         btnWoman.borderColor = .mainYellow
@@ -105,10 +107,10 @@ extension SigInBasicInfoVC: UITextFieldDelegate{
         print("텍스트 필드의 편집이 시작됩니다.")
         if(textField == firstNameTextfield){
             firstNameTextfield.borderColor = .mainYellow
-            nameTextfield.borderColor = .blurGray
+            nameTextfield.borderColor =  #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
             
         }else if(textField == nameTextfield){
-            firstNameTextfield.borderColor = .blurGray
+            firstNameTextfield.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
             nameTextfield.borderColor = .mainYellow
             
         }
@@ -118,7 +120,7 @@ extension SigInBasicInfoVC: UITextFieldDelegate{
     }
     // 텍스트 필드의 편집이 종료되었을 때 호출
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.borderColor = .blurGray
+        textField.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
         checkTextField()
         print("텍스트 필드의 편집이 종료됩니다.")
     }
@@ -143,5 +145,7 @@ extension SigInBasicInfoVC: YearModalDelegate {
     
     func textFieldData(data: String) {
         ageTextfield.text = data
+        selectAge = true
+        checkTextField()
     }
 }
