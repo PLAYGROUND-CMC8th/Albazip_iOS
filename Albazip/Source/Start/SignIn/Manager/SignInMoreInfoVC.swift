@@ -27,12 +27,22 @@ class SignInMoreInfoVC: UIViewController {
     @IBOutlet var salaryTextField: UITextField!
     @IBOutlet var hourLabel: UILabel!
     
+    //버튼 선택 정보 저장
+    var btnArray = [false, false, false,false, false, false,false, false, false]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUI()
         modalBgView.alpha = 0.0
         salaryTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .touchDown)
     }
+    
+    func setUI(){
+        self.dismissKeyboardWhenTappedAround()
+        salaryTextField.addRightPadding()
+    }
+    
     @objc func textFieldDidChange(_ textField:UITextField) {
         
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignInSelectSalaryDateVC") as? SignInSelectSalaryDateVC {

@@ -20,7 +20,7 @@ class SignInStoreInfoVC: UIViewController{
     var storeName = ""
     var storeLocation = ""
     
-    var isSelectedType = false
+    var selectedType = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,18 @@ class SignInStoreInfoVC: UIViewController{
         }
         
     }
-    
+    func checkTextField(){
+        if storeNameTextField.text!.count > 0 , storeLocationTextField.text!.count > 0, storeLocationDetailTextField.text!.count > 0, selectedType{
+            
+            btnNext.isEnabled = true
+            btnNext.backgroundColor = .mainYellow
+            btnNext.setTitleColor(.gray, for: .normal)
+        }else{
+            btnNext.isEnabled = false
+            btnNext.backgroundColor = .semiYellow
+            btnNext.setTitleColor(.semiGray, for: .normal)
+        }
+    }
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -95,19 +106,19 @@ extension SignInStoreInfoVC: UITextFieldDelegate{
     // 텍스트 필드의 편집이 종료되었을 때 호출
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.borderColor = .lightGray
-        //checkTextField()
+        checkTextField()
         print("텍스트 필드의 편집이 종료됩니다.")
     }
     // 텍스트 필드의 리턴키가 눌러졌을 때 호출
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         print("텍스트 필드의 리턴키가 눌러졌습니다.")
-        //checkTextField()
+        checkTextField()
         return true
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        //checkTextField()
+        checkTextField()
         return true
     }
 }
@@ -120,6 +131,7 @@ extension SignInStoreInfoVC: ModalDelegate {
     
     func textFieldData(data: String) {
         storeTypeTextField.text = data
-        isSelectedType = true
+        selectedType = true
+        checkTextField()
     }
 }
