@@ -113,7 +113,7 @@ class SigInBasicInfoVC: UIViewController{
 
 extension SigInBasicInfoVC {
     func didSuccessSignIn(_ result: SignInResponse) {
-        self.presentAlert(title: "회원 가입에 성공하였습니다", message: result.message)
+        //self.presentAlert(title: "회원 가입에 성공하였습니다", message: result.message)
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SignInSelectPositionVC") as? SignInSelectPositionVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }

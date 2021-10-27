@@ -13,6 +13,9 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
     
+    // Datamanager
+    lazy var dataManager: LoginDataManager = LoginDataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -42,10 +45,12 @@ class LoginViewController: UIViewController{
     }
     
     @IBAction func btnLogin(_ sender: Any) {
-        let newStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = newStoryboard.instantiateViewController(identifier: "MainTabBarController")
-        self.changeRootViewController(newViewController)
+        if let phone = phoneTextfield.text, let pwd = passwordTextfield.text{
+            let input = LoginRequest(phone: phone, pwd: pwd)
+            dataManager.postLogin(input, delegate: self)
+        }
     }
+    
     @IBAction func btnResetPassword(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "LoginResetPhoneVC") as? LoginResetPhoneVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
@@ -86,5 +91,18 @@ extension LoginViewController: UITextFieldDelegate{
         
         checkTextField()
         return true
+    }
+}
+
+extension LoginViewController {
+    func didSuccessLogin(_ result: LoginResponse) {
+        
+        let newStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = newStoryboard.instantiateViewController(identifier: "MainTabBarController")
+        self.changeRootViewController(newViewController)
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
     }
 }
