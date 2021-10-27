@@ -25,6 +25,7 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
     var currentVerificationId = ""
     var isFirstAuth = true
     var isTimerWork = false
+    var phoneNumber = ""
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -80,14 +81,14 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
         
         if let phoneNumber = phoneNumberTextField.text{
         
-                PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)") { (verificationID, error) in
+            PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)", uiDelegate: nil) { (verificationID, error) in
                   if let error = error {
                     print(error.localizedDescription)
                     return
                   }
 
                   self.currentVerificationId = verificationID!
-                    
+                  self.phoneNumber = phoneNumber
                 }
             self.timerLabel.isHidden = false
             self.btnReAuth.isHidden = false
@@ -119,12 +120,12 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
         
         if let phoneNumber = phoneNumberTextField.text{
           
-                PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)") { (verificationID, error) in
+            PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)", uiDelegate: nil) { (verificationID, error) in
                   if let error = error {
                     print(error.localizedDescription)
                     return
                   }
-
+                  self.phoneNumber = phoneNumber
                   self.currentVerificationId = verificationID!
                 }
             if(self.isTimerWork){
@@ -149,6 +150,14 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
                 
                 // 인증 성공! 다음 화면으로 이동
                 self.errorLabel.isHidden = true
+                
+                // 회원가입 데이터 저장
+                let signInBasicInfo = SignInBasicInfo.shared
+                signInBasicInfo.phone = self.phoneNumber
+                
+                //사용자 로그아웃
+                
+                
                 guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SigInPasswordVC") as? SigInPasswordVC else {return}
                 self.navigationController?.pushViewController(nextVC, animated: true)
             }else{

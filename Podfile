@@ -6,8 +6,8 @@ target 'Albazip' do
   use_frameworks!
 
   # Pods for Albazip
-  pod 'Firebase', '~> 4.0.0'
-  pod 'Firebase/Auth', '~> 4.0.0'
+  pod 'Firebase'
+  pod 'Firebase/Auth'
   pod 'Alamofire'
   pod 'AlamofireNetworkActivityIndicator'
   pod 'SnapKit'

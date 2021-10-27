@@ -32,6 +32,11 @@ class SigInPasswordVC: UIViewController{
     
     
     @IBAction func btnNext(_ sender: Any) {
+        // 회원가입 데이터 저장
+        let signInBasicInfo = SignInBasicInfo.shared
+        signInBasicInfo.pwd = passwordCkTextField.text!
+        
+        //다음 뷰컨으로 이동
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SigInBasicInfoVC") as? SigInBasicInfoVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }

@@ -20,6 +20,9 @@ class SigInBasicInfoVC: UIViewController{
     
     var selectAge = false
     
+    // Datamanager
+    lazy var dataManager: SignInDataManager = SignInDataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -57,8 +60,18 @@ class SigInBasicInfoVC: UIViewController{
     }
     
     @IBAction func btnNext(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SignInSelectPositionVC") as? SignInSelectPositionVC else {return}
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        
+        let signInBasicInfo = SignInBasicInfo.shared
+        var gender = "M"
+        if btnWoman.isSelected{
+            gender = "F"
+        }
+        let input = SignInRequest(phone: signInBasicInfo.phone!, pwd: signInBasicInfo.pwd!, lastName: firstNameTextfield.text!, firstName: nameTextfield.text!,birthyear: ageTextfield.text!, gender: gender)
+        
+        print(input)
+        
+        dataManager.postSignIn(input, delegate: self)
+        
     }
     
     func checkTextField(){
@@ -95,11 +108,22 @@ class SigInBasicInfoVC: UIViewController{
         btnMan.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
         checkTextField()
     }
-    
-   
-    
-    
+
 }
+
+extension SigInBasicInfoVC {
+    func didSuccessSignIn(_ result: SignInResponse) {
+        self.presentAlert(title: "회원 가입에 성공하였습니다", message: result.message)
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SignInSelectPositionVC") as? SignInSelectPositionVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
+}
+
+
 extension SigInBasicInfoVC: UITextFieldDelegate{
     
     // 텍스트 필드의 편집을 시작할 때 호출

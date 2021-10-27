@@ -17,6 +17,10 @@
 		C37B0B4A272901AB0017D179 /* OnboardingWorkerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B49272901AB0017D179 /* OnboardingWorkerVC.swift */; };
 		C37B0B50272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B4E272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift */; };
 		C37B0B51272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37B0B4F272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib */; };
+		C37B0B552729724E0017D179 /* SignInDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B542729724E0017D179 /* SignInDataManager.swift */; };
+		C37B0B57272972720017D179 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B56272972720017D179 /* SignInResponse.swift */; };
+		C37B0B59272972840017D179 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B58272972840017D179 /* SignInRequest.swift */; };
+		C37B0B5B272978F80017D179 /* SignInBasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B5A272978F80017D179 /* SignInBasicInfo.swift */; };
 		C37EBF3F271A9D7000DEC2CA /* SignInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37EBF3E271A9D7000DEC2CA /* SignInStoryboard.storyboard */; };
 		C37EBF41271AA1B000DEC2CA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */; };
 		C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */; };
@@ -87,6 +91,10 @@
 		C37B0B49272901AB0017D179 /* OnboardingWorkerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWorkerVC.swift; sourceTree = "<group>"; };
 		C37B0B4E272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWorkerCollectionViewCell.swift; sourceTree = "<group>"; };
 		C37B0B4F272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingWorkerCollectionViewCell.xib; sourceTree = "<group>"; };
+		C37B0B542729724E0017D179 /* SignInDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataManager.swift; sourceTree = "<group>"; };
+		C37B0B56272972720017D179 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
+		C37B0B58272972840017D179 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		C37B0B5A272978F80017D179 /* SignInBasicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInBasicInfo.swift; sourceTree = "<group>"; };
 		C37EBF3E271A9D7000DEC2CA /* SignInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInStoryboard.storyboard; sourceTree = "<group>"; };
 		C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +249,24 @@
 				C37B0B4F272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C37B0B52272972040017D179 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C37B0B58272972840017D179 /* SignInRequest.swift */,
+				C37B0B56272972720017D179 /* SignInResponse.swift */,
+				C37B0B5A272978F80017D179 /* SignInBasicInfo.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C37B0B53272972100017D179 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C37B0B542729724E0017D179 /* SignInDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		C37EBF46271AD00600DEC2CA /* Manager */ = {
@@ -468,6 +494,8 @@
 		C3D385C72719DD7D0099A290 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				C37B0B53272972100017D179 /* DataManager */,
+				C37B0B52272972040017D179 /* Entity */,
 				C37EBF46271AD00600DEC2CA /* Manager */,
 				C37EBF47271AD00F00DEC2CA /* Worker */,
 				C37EBF3E271A9D7000DEC2CA /* SignInStoryboard.storyboard */,
@@ -566,7 +594,6 @@
 				C384422E2714797000B84E8A /* Frameworks */,
 				C384422F2714797000B84E8A /* Resources */,
 				CDF72B045563F825B6FADFA5 /* [CP] Embed Pods Frameworks */,
-				238CF942BA91FFED45F92D7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -637,25 +664,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		238CF942BA91FFED45F92D7D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Albazip/Pods-Albazip-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		64EECBE8401D8957F1DBA101 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -684,34 +692,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Albazip/Pods-Albazip-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/MSPeekCollectionViewDelegateImplementation/MSPeekCollectionViewDelegateImplementation.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Albazip/Pods-Albazip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSPeekCollectionViewDelegateImplementation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Albazip/Pods-Albazip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Albazip/Pods-Albazip-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Albazip/Pods-Albazip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -741,7 +730,9 @@
 				C384425A27147E3F00B84E8A /* String.swift in Sources */,
 				C384425E27147E3F00B84E8A /* UIFont.swift in Sources */,
 				C37B0B4A272901AB0017D179 /* OnboardingWorkerVC.swift in Sources */,
+				C37B0B5B272978F80017D179 /* SignInBasicInfo.swift in Sources */,
 				C3B022EF2726F28A00013988 /* SignInSelectStoreTypeVC.swift in Sources */,
+				C37B0B59272972840017D179 /* SignInRequest.swift in Sources */,
 				C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */,
 				C3A1ADCC271C5002005A61ED /* SignInSearchStoreVC.swift in Sources */,
 				C37B0B50272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift in Sources */,
@@ -750,6 +741,7 @@
 				C37EBF41271AA1B000DEC2CA /* SignInViewController.swift in Sources */,
 				C37EBF4B271AD54200DEC2CA /* SigInPhoneNumberVC.swift in Sources */,
 				C3546F812725082100C4C3DC /* SignInSearchStoreResponse.swift in Sources */,
+				C37B0B552729724E0017D179 /* SignInDataManager.swift in Sources */,
 				C37EBF4D271AD71700DEC2CA /* SigInPasswordVC.swift in Sources */,
 				C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */,
 				C384424F27147E2900B84E8A /* IndicatorView.swift in Sources */,
@@ -758,6 +750,7 @@
 				C3B022EB2726D9C300013988 /* SignInManagerInfoVC.swift in Sources */,
 				C3546F832725083B00C4C3DC /* SignInSearchStoreDataManager.swift in Sources */,
 				C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */,
+				C37B0B57272972720017D179 /* SignInResponse.swift in Sources */,
 				C384425B27147E3F00B84E8A /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

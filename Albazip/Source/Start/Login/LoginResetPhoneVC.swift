@@ -76,7 +76,7 @@ class LoginResetPhoneVC: UIViewController, UITextFieldDelegate{
         
         if let phoneNumber = phoneNumberTextField.text{
         
-                PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)") { (verificationID, error) in
+            PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)", uiDelegate: nil) { (verificationID, error) in
                   if let error = error {
                     print(error.localizedDescription)
                     return
@@ -114,7 +114,7 @@ class LoginResetPhoneVC: UIViewController, UITextFieldDelegate{
         
         if let phoneNumber = phoneNumberTextField.text{
           
-                PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)") { (verificationID, error) in
+            PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)", uiDelegate: nil) { (verificationID, error) in
                   if let error = error {
                     print(error.localizedDescription)
                     return

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1250"
+   LastUpgradeVersion = "1240"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA0096D37A889E4B5337E0972386DE4A"
+               BlueprintIdentifier = "8C796CDB90777AB5D92691D3F8F2DDA5"
                BuildableName = "AlamofireNetworkActivityIndicator.framework"
                BlueprintName = "AlamofireNetworkActivityIndicator"
                ReferencedContainer = "container:Pods.xcodeproj">
