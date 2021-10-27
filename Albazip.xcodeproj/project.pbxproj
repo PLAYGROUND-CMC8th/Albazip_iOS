@@ -12,6 +12,11 @@
 		C3546F812725082100C4C3DC /* SignInSearchStoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3546F802725082100C4C3DC /* SignInSearchStoreResponse.swift */; };
 		C3546F832725083B00C4C3DC /* SignInSearchStoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3546F822725083B00C4C3DC /* SignInSearchStoreDataManager.swift */; };
 		C3546F8627253A3100C4C3DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3546F8527253A3100C4C3DC /* GoogleService-Info.plist */; };
+		C37B0B442728FF070017D179 /* OnboardingManagerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37B0B432728FF070017D179 /* OnboardingManagerStoryboard.storyboard */; };
+		C37B0B482728FF300017D179 /* OnboardingWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37B0B472728FF300017D179 /* OnboardingWorkerStoryboard.storyboard */; };
+		C37B0B4A272901AB0017D179 /* OnboardingWorkerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B49272901AB0017D179 /* OnboardingWorkerVC.swift */; };
+		C37B0B50272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B4E272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift */; };
+		C37B0B51272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37B0B4F272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib */; };
 		C37EBF3F271A9D7000DEC2CA /* SignInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37EBF3E271A9D7000DEC2CA /* SignInStoryboard.storyboard */; };
 		C37EBF41271AA1B000DEC2CA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */; };
 		C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */; };
@@ -77,6 +82,11 @@
 		C3546F822725083B00C4C3DC /* SignInSearchStoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSearchStoreDataManager.swift; sourceTree = "<group>"; };
 		C3546F84272537DE00C4C3DC /* Albazip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Albazip.entitlements; sourceTree = "<group>"; };
 		C3546F8527253A3100C4C3DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C37B0B432728FF070017D179 /* OnboardingManagerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingManagerStoryboard.storyboard; sourceTree = "<group>"; };
+		C37B0B472728FF300017D179 /* OnboardingWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingWorkerStoryboard.storyboard; sourceTree = "<group>"; };
+		C37B0B49272901AB0017D179 /* OnboardingWorkerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWorkerVC.swift; sourceTree = "<group>"; };
+		C37B0B4E272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWorkerCollectionViewCell.swift; sourceTree = "<group>"; };
+		C37B0B4F272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingWorkerCollectionViewCell.xib; sourceTree = "<group>"; };
 		C37EBF3E271A9D7000DEC2CA /* SignInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInStoryboard.storyboard; sourceTree = "<group>"; };
 		C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +205,42 @@
 				C3546F802725082100C4C3DC /* SignInSearchStoreResponse.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		C37B0B422728FE5E0017D179 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C37B0B462728FF140017D179 /* Worker */,
+				C37B0B452728FF0C0017D179 /* Manager */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		C37B0B452728FF0C0017D179 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C37B0B432728FF070017D179 /* OnboardingManagerStoryboard.storyboard */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C37B0B462728FF140017D179 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				C37B0B4B272902940017D179 /* Cell */,
+				C37B0B472728FF300017D179 /* OnboardingWorkerStoryboard.storyboard */,
+				C37B0B49272901AB0017D179 /* OnboardingWorkerVC.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		C37B0B4B272902940017D179 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C37B0B4E272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift */,
+				C37B0B4F272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C37EBF46271AD00600DEC2CA /* Manager */ = {
@@ -499,6 +545,7 @@
 		C3D385D12719EB540099A290 /* Start */ = {
 			isa = PBXGroup;
 			children = (
+				C37B0B422728FE5E0017D179 /* Onboarding */,
 				C3D385C72719DD7D0099A290 /* SignIn */,
 				C384426E2714805B00B84E8A /* Login */,
 				C3D385D32719EB990099A290 /* StartStoryboard.storyboard */,
@@ -569,8 +616,10 @@
 			files = (
 				C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */,
 				C37EBF45271ABE7B00DEC2CA /* LoginStoryboard.storyboard in Resources */,
+				C37B0B482728FF300017D179 /* OnboardingWorkerStoryboard.storyboard in Resources */,
 				C38442412714797100B84E8A /* LaunchScreen.storyboard in Resources */,
 				C38442772714940100B84E8A /* CommunityStoryboard.storyboard in Resources */,
+				C37B0B51272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib in Resources */,
 				C384423E2714797100B84E8A /* Assets.xcassets in Resources */,
 				C3A1ADCE271C62EF005A61ED /* SignInWorkerStoryboard.storyboard in Resources */,
 				C384427A2714948200B84E8A /* ScheduleStoryboard.storyboard in Resources */,
@@ -581,6 +630,7 @@
 				C384423C2714797000B84E8A /* Main.storyboard in Resources */,
 				C38442742714932300B84E8A /* HomeStoryboard.storyboard in Resources */,
 				C3546F8627253A3100C4C3DC /* GoogleService-Info.plist in Resources */,
+				C37B0B442728FF070017D179 /* OnboardingManagerStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,9 +740,11 @@
 				C384424B27147E1700B84E8A /* Constant.swift in Sources */,
 				C384425A27147E3F00B84E8A /* String.swift in Sources */,
 				C384425E27147E3F00B84E8A /* UIFont.swift in Sources */,
+				C37B0B4A272901AB0017D179 /* OnboardingWorkerVC.swift in Sources */,
 				C3B022EF2726F28A00013988 /* SignInSelectStoreTypeVC.swift in Sources */,
 				C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */,
 				C3A1ADCC271C5002005A61ED /* SignInSearchStoreVC.swift in Sources */,
+				C37B0B50272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift in Sources */,
 				C3A1ADD4271C86B6005A61ED /* LoginResetPhoneVC.swift in Sources */,
 				C3B022ED2726DB3800013988 /* SignInMoreInfoVC.swift in Sources */,
 				C37EBF41271AA1B000DEC2CA /* SignInViewController.swift in Sources */,
