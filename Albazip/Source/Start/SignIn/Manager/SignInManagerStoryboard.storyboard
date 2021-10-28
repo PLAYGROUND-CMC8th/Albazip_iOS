@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AVI-eT-ROy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1TA-8v-MqY">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -253,7 +253,7 @@
                                     <constraint firstAttribute="height" constant="50" id="uYD-UL-fC8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <state key="normal" title="다음">
+                                <state key="normal" title="매장 등록하기">
                                     <color key="titleColor" red="0.6784313917" green="0.6784313917" blue="0.6784313917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -326,7 +326,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0시간" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eV-3D-Q21">
-                                <rect key="frame" x="310.33333333333331" y="412.33333333333331" width="28.666666666666686" height="14.333333333333314"/>
+                                <rect key="frame" x="310.33333333333331" y="429.33333333333331" width="28.666666666666686" height="14.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.63529413940000001" green="0.63921570780000003" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -376,15 +376,15 @@
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQ7-NI-PEh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQ7-NI-PEh">
                                 <rect key="frame" x="36" y="207" width="65" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="2FW-jI-zUG"/>
                                     <constraint firstAttribute="width" constant="65" id="Z9h-D4-C7f"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <state key="normal" title="연중무휴">
-                                    <color key="titleColor" red="0.43137252329999998" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -397,17 +397,20 @@
                                         <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnNoBreak:" destination="hTX-nK-S0L" eventType="touchUpInside" id="25b-4L-orr"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5Mk-H3-8Ol">
                                 <rect key="frame" x="36" y="247" width="300" height="31"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9j-n7-5fV">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9j-n7-5fV">
                                         <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="62v-w4-T5B"/>
                                             <constraint firstAttribute="width" constant="31" id="nHA-CE-sMh"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="월">
                                             <color key="titleColor" red="0.43137252329999998" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -422,14 +425,17 @@
                                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnMon:" destination="hTX-nK-S0L" eventType="touchUpInside" id="hG0-Ck-lAR"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRH-nW-Fvz">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRH-nW-Fvz">
                                         <rect key="frame" x="35" y="0.0" width="31" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="CF6-DO-G44"/>
                                             <constraint firstAttribute="width" constant="31" id="rFt-f8-yK6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="화">
                                             <color key="titleColor" red="0.43137252329999998" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -444,14 +450,17 @@
                                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnTue:" destination="hTX-nK-S0L" eventType="touchUpInside" id="SH6-r4-CUa"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7t1-cv-EgZ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7t1-cv-EgZ">
                                         <rect key="frame" x="70" y="0.0" width="31" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="31" id="Gsc-Sx-0Hm"/>
                                             <constraint firstAttribute="height" constant="31" id="XzT-Gr-Fmu"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="수">
                                             <color key="titleColor" red="0.43137252329999998" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -466,14 +475,17 @@
                                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnWed:" destination="hTX-nK-S0L" eventType="touchUpInside" id="7je-Sw-C3f"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDA-GG-Uyx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDA-GG-Uyx">
                                         <rect key="frame" x="105" y="0.0" width="31" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="nTp-oa-Vs7"/>
                                             <constraint firstAttribute="width" constant="31" id="s2d-br-ykp"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="목">
                                             <color key="titleColor" red="0.43137252329999998" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -488,14 +500,17 @@
                                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnThu:" destination="hTX-nK-S0L" eventType="touchUpInside" id="Rf4-ra-AoJ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YP4-bH-3A2">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YP4-bH-3A2">
                                         <rect key="frame" x="140" y="0.0" width="31" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="31" id="KDU-5I-PHq"/>
                                             <constraint firstAttribute="height" constant="31" id="p8b-m9-ukd"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="금">
                                             <color key="titleColor" red="0.43137252329999998" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -510,14 +525,17 @@
                                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnFri:" destination="hTX-nK-S0L" eventType="touchUpInside" id="EIt-vq-pkb"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldD-Jt-wXa">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldD-Jt-wXa">
                                         <rect key="frame" x="175" y="0.0" width="31" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="1tL-ri-Lsg"/>
                                             <constraint firstAttribute="width" constant="31" id="ESm-r8-2iS"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="토">
                                             <color key="titleColor" red="0.43137252329999998" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -532,14 +550,17 @@
                                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnSat:" destination="hTX-nK-S0L" eventType="touchUpInside" id="7yB-iF-akF"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFY-GQ-4Sb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFY-GQ-4Sb">
                                         <rect key="frame" x="210" y="0.0" width="31" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="31" id="d7Q-5l-qq7"/>
                                             <constraint firstAttribute="height" constant="31" id="tQo-1O-Wmi"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="일">
                                             <color key="titleColor" red="0.43137252329999998" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -554,14 +575,17 @@
                                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnSun:" destination="hTX-nK-S0L" eventType="touchUpInside" id="Bjd-bE-aPn"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FW-df-yOq">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FW-df-yOq">
                                         <rect key="frame" x="245" y="0.0" width="55" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="29u-2K-jRK"/>
                                             <constraint firstAttribute="width" constant="55" id="ZCC-ae-gfD"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <state key="normal" title="공휴일">
                                             <color key="titleColor" red="0.43137252329999998" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -576,6 +600,9 @@
                                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnBreak:" destination="hTX-nK-S0L" eventType="touchUpInside" id="fua-Fq-SYN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -599,7 +626,7 @@
                             <constraint firstItem="5Xn-9w-rgP" firstAttribute="leading" secondItem="tCf-ej-YDT" secondAttribute="leading" constant="24" id="E3N-gN-As3"/>
                             <constraint firstItem="qeB-lN-BNv" firstAttribute="centerX" secondItem="JPF-qX-6nQ" secondAttribute="centerX" id="EbZ-qZ-STK"/>
                             <constraint firstItem="qeB-lN-BNv" firstAttribute="centerY" secondItem="yLt-81-lsG" secondAttribute="centerY" id="HHO-C1-ntb"/>
-                            <constraint firstItem="1eV-3D-Q21" firstAttribute="top" secondItem="gBe-s1-TTU" secondAttribute="bottom" constant="-9" id="ITE-Qo-JMP"/>
+                            <constraint firstItem="1eV-3D-Q21" firstAttribute="top" secondItem="gBe-s1-TTU" secondAttribute="bottom" constant="8" id="ITE-Qo-JMP"/>
                             <constraint firstItem="1bo-VS-gA2" firstAttribute="leading" secondItem="6YR-GL-dGb" secondAttribute="leading" id="Idq-q9-u98"/>
                             <constraint firstItem="tCf-ej-YDT" firstAttribute="trailing" secondItem="gBe-s1-TTU" secondAttribute="trailing" constant="36" id="JYO-bm-1Qc"/>
                             <constraint firstItem="tCf-ej-YDT" firstAttribute="trailing" secondItem="yhj-Rp-c35" secondAttribute="trailing" constant="121" id="Moy-Mn-uSB"/>
@@ -1079,7 +1106,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="QO9-k8-0fe">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="QO9-k8-0fe">
                                         <rect key="frame" x="24" y="278" width="327" height="52"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzk-dR-ceD">
@@ -1087,7 +1114,6 @@
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="52" id="TQo-vm-zmk"/>
-                                                    <constraint firstAttribute="width" constant="156" id="YfQ-rf-tJM"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 <state key="normal" title="취소">
@@ -1106,7 +1132,6 @@
                                                 <rect key="frame" x="171" y="0.0" width="156" height="52"/>
                                                 <color key="backgroundColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="156" id="JGu-2I-j1V"/>
                                                     <constraint firstAttribute="height" constant="52" id="hH4-Zr-8M9"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
