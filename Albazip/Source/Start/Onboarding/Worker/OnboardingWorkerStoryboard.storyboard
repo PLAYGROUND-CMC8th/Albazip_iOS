@@ -19,40 +19,73 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YsL-tt-7G3">
-                                <rect key="frame" x="24" y="110" width="366" height="524"/>
+                                <rect key="frame" x="43.5" y="110" width="327" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="524" id="GF5-S3-MuH"/>
+                                    <constraint firstAttribute="width" constant="327" id="Wik-Dt-9pu"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wTs-RY-azT">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="328" height="524"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Wbl-Ml-MX4">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="Wbl-Ml-MX4">
+                                        <rect key="frame" x="0.0" y="0.0" width="328" height="524"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tBB-Jw-QnZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="524"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="328" height="524"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ybe-Mr-r6Q">
-                                <rect key="frame" x="146" y="788" width="122" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </pageControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="KZi-aB-1xU">
+                                <rect key="frame" x="66" y="793" width="282" height="19"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDo-du-nXL">
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="2T5-X4-fhG"/>
+                                            <constraint firstAttribute="width" constant="56" id="Mfj-Oo-oJI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <state key="normal" title="건너뛰기">
+                                            <color key="titleColor" red="0.67450982329999998" green="0.6784313917" blue="0.6784313917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ybe-Mr-r6Q">
+                                        <rect key="frame" x="116" y="0.0" width="50" height="19"/>
+                                        <color key="tintColor" red="0.96470588450000005" green="0.77647060160000003" blue="0.26274511220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="pWf-TA-qfH"/>
+                                        </constraints>
+                                    </pageControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFw-RG-X2Q">
+                                        <rect key="frame" x="226" y="0.0" width="56" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="Y9A-y2-CkT"/>
+                                            <constraint firstAttribute="width" constant="56" id="uxG-vr-cr5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <state key="normal" title="다음">
+                                            <color key="titleColor" red="0.96470588450000005" green="0.77647060160000003" blue="0.26666668059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YsL-tt-7G3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="Bbs-l3-bMb"/>
-                            <constraint firstItem="YsL-tt-7G3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="66" id="bMK-GS-ozT"/>
-                            <constraint firstItem="YsL-tt-7G3" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="dBV-Vm-812"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YsL-tt-7G3" secondAttribute="trailing" constant="24" id="wac-OV-P8b"/>
+                            <constraint firstItem="KZi-aB-1xU" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="NG8-qc-ydz"/>
+                            <constraint firstItem="YsL-tt-7G3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="43.5" id="XiQ-PB-117"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="KZi-aB-1xU" secondAttribute="bottom" constant="50" id="ow6-mN-jJZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YsL-tt-7G3" secondAttribute="trailing" constant="43.5" id="pnL-Zh-b14"/>
+                            <constraint firstItem="YsL-tt-7G3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="66" id="za8-tr-ASs"/>
                         </constraints>
                     </view>
                     <connections>
@@ -62,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="44"/>
+            <point key="canvasLocation" x="195.6521739130435" y="43.526785714285715"/>
         </scene>
     </scenes>
     <resources>

@@ -15,10 +15,15 @@ class SignInManagerInfoVC: UIViewController{
     @IBOutlet var errorLabel2: UILabel!
     @IBOutlet var checkImage1: UIImageView!
     @IBOutlet var checkImage2: UIImageView!
+    @IBOutlet var btnNext: UIButton!
     
+    // Datamanager
+    lazy var dataManager1: SignInNumberExistDataManager = SignInNumberExistDataManager()
+    lazy var dataManager2: SignInNumberMatchDataManager = SignInNumberMatchDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
     }
     
     func setUI(){
@@ -28,6 +33,8 @@ class SignInManagerInfoVC: UIViewController{
         personNameTextField.delegate = self
         errorLabel1.isHidden = true
         errorLabel2.isHidden = true
+        checkImage2.isHidden = true
+        personNameTextField.isHidden = true
         self.dismissKeyboardWhenTappedAround()
     }
     
@@ -63,16 +70,99 @@ extension SignInManagerInfoVC: UITextFieldDelegate{
         textField.borderColor = .lightGray
         //checkPassword()
         print("텍스트 필드의 편집이 종료됩니다.")
+        if(textField == registerNumberTextField){
+            //사업자 등록 확인 api 호출
+            if let text = registerNumberTextField.text{
+                dataManager1.getSignInNumberExist(vc: self, number: text)
+            }
+            
+        }else if(textField == personNameTextField){
+            // 대표자명 인증 api 호출
+            if let text = personNameTextField.text{
+                print(text)
+                print(registerNumberTextField.text!)
+                dataManager2.getSignInNumberMatch(vc: self, number: registerNumberTextField.text!, name: text)
+            }
+            
+        }
     }
     // 텍스트 필드의 리턴키가 눌러졌을 때 호출
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         print("텍스트 필드의 리턴키가 눌러졌습니다.")
         //checkPassword()
+        
+        if(textField == registerNumberTextField){
+            //사업자 등록 확인 api 호출
+            if let text = registerNumberTextField.text{
+                dataManager1.getSignInNumberExist(vc: self, number: text)
+            }
+            
+        }else if(textField == personNameTextField){
+            // 대표자명 인증 api 호출
+            if let text = personNameTextField.text{
+                print(text)
+                print(registerNumberTextField.text!)
+                dataManager2.getSignInNumberMatch(vc: self, number: registerNumberTextField.text!, name: text)
+            }
+            
+        }
         return true
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         //checkPassword()
         return true
+    }
+}
+
+extension SignInManagerInfoVC {
+    func didSuccessSignInNumberExist(_ result: SignInNumberExistResponse) {
+        if(result.message == "사업자등번호가 존재합니다."){
+            //self.presentAlert(title: result.message)
+            personNameTextField.isHidden = false
+            checkImage1.image = #imageLiteral(resourceName: "icCheckedCorrect")
+            registerNumberTextField.isEnabled = false
+            checkImage2.isHidden = false
+            errorLabel1.isHidden = true
+        }else{
+            errorLabel1.isHidden = false
+            errorLabel1.text = result.message
+        }
+        //self.presentAlert(title: result.message)
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+        errorLabel1.isHidden = true
+        //errorLabel1.text = message
+    }
+    
+    func didSuccessSignInNumberMatch(_ result: SignInNumberMatchResponse) {
+        if(result.message == "사업자등번호가 인증되었습니다."){
+            //self.presentAlert(title: result.message)
+            checkImage2.image = #imageLiteral(resourceName: "icCheckedCorrect")
+            errorLabel2.isHidden = true
+            btnNext.isEnabled = true
+            btnNext.backgroundColor = .mainYellow
+            btnNext.setTitleColor(.gray, for: .normal)
+        }else{
+            errorLabel2.isHidden = false
+            errorLabel2.text = result.message
+            checkImage2.image = #imageLiteral(resourceName: "icCheckedNormal")
+            btnNext.isEnabled = false
+            btnNext.backgroundColor = .semiYellow
+            btnNext.setTitleColor(.semiGray, for: .normal)
+        }
+        //self.presentAlert(title: result.message)
+    }
+    
+    func failedToRequestMatch(message: String) {
+        self.presentAlert(title: message)
+        errorLabel2.isHidden = true
+        checkImage2.image = #imageLiteral(resourceName: "icCheckedNormal")
+        btnNext.isEnabled = false
+        btnNext.backgroundColor = .semiYellow
+        btnNext.setTitleColor(.semiGray, for: .normal)
+        //errorLabel1.text = message
     }
 }

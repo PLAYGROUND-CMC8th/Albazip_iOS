@@ -17,11 +17,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="327" height="524"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="65q-uQ-2HA">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="65q-uQ-2HA">
                         <rect key="frame" x="0.0" y="0.0" width="327" height="370"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="327" id="CkZ-ts-alO"/>
-                            <constraint firstAttribute="height" constant="370" id="gGK-Fr-lUg"/>
+                            <constraint firstAttribute="width" secondItem="65q-uQ-2HA" secondAttribute="height" multiplier="327:370" id="w0f-B6-jfe"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업무 체크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgn-cY-VR9">
@@ -42,11 +41,11 @@
             <constraints>
                 <constraint firstItem="Btd-JR-Mag" firstAttribute="top" secondItem="Kgn-cY-VR9" secondAttribute="bottom" constant="14" id="04t-b0-oHG"/>
                 <constraint firstItem="65q-uQ-2HA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5Ag-hf-Y4y"/>
+                <constraint firstAttribute="bottom" secondItem="Btd-JR-Mag" secondAttribute="bottom" constant="20" id="C2J-S6-vEU"/>
                 <constraint firstItem="Kgn-cY-VR9" firstAttribute="centerX" secondItem="65q-uQ-2HA" secondAttribute="centerX" id="Knr-ou-wSs"/>
                 <constraint firstAttribute="trailing" secondItem="65q-uQ-2HA" secondAttribute="trailing" id="OHz-XJ-z8X"/>
                 <constraint firstItem="65q-uQ-2HA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Qz6-MG-nn6"/>
                 <constraint firstItem="Btd-JR-Mag" firstAttribute="centerX" secondItem="Kgn-cY-VR9" secondAttribute="centerX" id="XwV-BE-HOH"/>
-                <constraint firstItem="Kgn-cY-VR9" firstAttribute="top" secondItem="65q-uQ-2HA" secondAttribute="bottom" constant="65" id="jow-sJ-eGg"/>
             </constraints>
             <size key="customSize" width="308" height="303"/>
             <connections>

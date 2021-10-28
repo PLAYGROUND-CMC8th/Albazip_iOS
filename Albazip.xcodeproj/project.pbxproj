@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9C7447FE94295A129DB07CA9 /* Pods_Albazip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363836578B4295DDC93F8120 /* Pods_Albazip.framework */; };
+		C30EC2DD272A4F7D00EEF218 /* SignInNumberExistDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2DC272A4F7D00EEF218 /* SignInNumberExistDataManager.swift */; };
+		C30EC2DF272A4FA600EEF218 /* SignInNumberMatchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2DE272A4FA600EEF218 /* SignInNumberMatchDataManager.swift */; };
+		C30EC2E1272A4FDB00EEF218 /* SignInNumberMatchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E0272A4FDB00EEF218 /* SignInNumberMatchResponse.swift */; };
+		C30EC2E3272A4FEF00EEF218 /* SignInNumberExistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E2272A4FEF00EEF218 /* SignInNumberExistResponse.swift */; };
 		C34C4AE02721BF6700300454 /* SignInSelectYearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C4ADF2721BF6700300454 /* SignInSelectYearVC.swift */; };
 		C3546F812725082100C4C3DC /* SignInSearchStoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3546F802725082100C4C3DC /* SignInSearchStoreResponse.swift */; };
 		C3546F832725083B00C4C3DC /* SignInSearchStoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3546F822725083B00C4C3DC /* SignInSearchStoreDataManager.swift */; };
@@ -55,6 +59,9 @@
 		C384427A2714948200B84E8A /* ScheduleStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38442792714948200B84E8A /* ScheduleStoryboard.storyboard */; };
 		C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39019BE271F246500BC2830 /* SearchCollectionViewCell.swift */; };
 		C39019C1271F246500BC2830 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */; };
+		C39083EF2729B4E5006223CB /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39083EE2729B4E5006223CB /* OnboardingData.swift */; };
+		C39083F12729B559006223CB /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39083F02729B559006223CB /* OnboardingCollectionViewCell.swift */; };
+		C39083F32729B6F4006223CB /* OnboardingManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39083F22729B6F4006223CB /* OnboardingManagerVC.swift */; };
 		C3A1ADCA271C14E2005A61ED /* SignInSelectPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A1ADC9271C14E2005A61ED /* SignInSelectPositionVC.swift */; };
 		C3A1ADCC271C5002005A61ED /* SignInSearchStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A1ADCB271C5002005A61ED /* SignInSearchStoreVC.swift */; };
 		C3A1ADCE271C62EF005A61ED /* SignInWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A1ADCD271C62EF005A61ED /* SignInWorkerStoryboard.storyboard */; };
@@ -84,6 +91,10 @@
 		363836578B4295DDC93F8120 /* Pods_Albazip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Albazip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EACD131BC8A80FCC54849C5 /* Pods-Albazip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Albazip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Albazip/Pods-Albazip.debug.xcconfig"; sourceTree = "<group>"; };
 		9E8BCDC410EA5AB6EF1D4E62 /* Pods-Albazip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Albazip.release.xcconfig"; path = "Pods/Target Support Files/Pods-Albazip/Pods-Albazip.release.xcconfig"; sourceTree = "<group>"; };
+		C30EC2DC272A4F7D00EEF218 /* SignInNumberExistDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInNumberExistDataManager.swift; sourceTree = "<group>"; };
+		C30EC2DE272A4FA600EEF218 /* SignInNumberMatchDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInNumberMatchDataManager.swift; sourceTree = "<group>"; };
+		C30EC2E0272A4FDB00EEF218 /* SignInNumberMatchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInNumberMatchResponse.swift; sourceTree = "<group>"; };
+		C30EC2E2272A4FEF00EEF218 /* SignInNumberExistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInNumberExistResponse.swift; sourceTree = "<group>"; };
 		C34C4ADF2721BF6700300454 /* SignInSelectYearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSelectYearVC.swift; sourceTree = "<group>"; };
 		C3546F802725082100C4C3DC /* SignInSearchStoreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSearchStoreResponse.swift; sourceTree = "<group>"; };
 		C3546F822725083B00C4C3DC /* SignInSearchStoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSearchStoreDataManager.swift; sourceTree = "<group>"; };
@@ -134,6 +145,9 @@
 		C38442792714948200B84E8A /* ScheduleStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScheduleStoryboard.storyboard; sourceTree = "<group>"; };
 		C39019BE271F246500BC2830 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		C39083EE2729B4E5006223CB /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
+		C39083F02729B559006223CB /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		C39083F22729B6F4006223CB /* OnboardingManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManagerVC.swift; sourceTree = "<group>"; };
 		C3A1ADC9271C14E2005A61ED /* SignInSelectPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSelectPositionVC.swift; sourceTree = "<group>"; };
 		C3A1ADCB271C5002005A61ED /* SignInSearchStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSearchStoreVC.swift; sourceTree = "<group>"; };
 		C3A1ADCD271C62EF005A61ED /* SignInWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInWorkerStoryboard.storyboard; sourceTree = "<group>"; };
@@ -209,6 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				C3546F822725083B00C4C3DC /* SignInSearchStoreDataManager.swift */,
+				C30EC2DC272A4F7D00EEF218 /* SignInNumberExistDataManager.swift */,
+				C30EC2DE272A4FA600EEF218 /* SignInNumberMatchDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -217,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				C3546F802725082100C4C3DC /* SignInSearchStoreResponse.swift */,
+				C30EC2E0272A4FDB00EEF218 /* SignInNumberMatchResponse.swift */,
+				C30EC2E2272A4FEF00EEF218 /* SignInNumberExistResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -224,6 +242,7 @@
 		C37B0B422728FE5E0017D179 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				C39083EE2729B4E5006223CB /* OnboardingData.swift */,
 				C37B0B462728FF140017D179 /* Worker */,
 				C37B0B452728FF0C0017D179 /* Manager */,
 			);
@@ -234,6 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				C37B0B432728FF070017D179 /* OnboardingManagerStoryboard.storyboard */,
+				C39083F02729B559006223CB /* OnboardingCollectionViewCell.swift */,
+				C39083F22729B6F4006223CB /* OnboardingManagerVC.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -735,6 +756,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30EC2DF272A4FA600EEF218 /* SignInNumberMatchDataManager.swift in Sources */,
 				C37B0B6327299EDD0017D179 /* LoginDataManager.swift in Sources */,
 				C3B022F12727193100013988 /* SignInSelectSalaryDateVC.swift in Sources */,
 				C34C4AE02721BF6700300454 /* SignInSelectYearVC.swift in Sources */,
@@ -746,10 +768,14 @@
 				C384425F27147E3F00B84E8A /* Color.swift in Sources */,
 				C3A1ADD0271C698D005A61ED /* SignInWorkerCodeVC.swift in Sources */,
 				C3A1ADD2271C773F005A61ED /* SignInSettingVC.swift in Sources */,
+				C39083F32729B6F4006223CB /* OnboardingManagerVC.swift in Sources */,
 				C384426C27147E6E00B84E8A /* BaseViewController.swift in Sources */,
 				C3A968422719FA7A00E27DA1 /* StartViewController.swift in Sources */,
 				C3A1ADD6271C86C9005A61ED /* LoginResetPasswordVC.swift in Sources */,
+				C39083EF2729B4E5006223CB /* OnboardingData.swift in Sources */,
 				C3B022E92726D91400013988 /* SignInStoreInfoVC.swift in Sources */,
+				C30EC2DD272A4F7D00EEF218 /* SignInNumberExistDataManager.swift in Sources */,
+				C30EC2E3272A4FEF00EEF218 /* SignInNumberExistResponse.swift in Sources */,
 				C384425C27147E3F00B84E8A /* UIViewController.swift in Sources */,
 				C384425027147E2900B84E8A /* Device.swift in Sources */,
 				C384424B27147E1700B84E8A /* Constant.swift in Sources */,
@@ -757,6 +783,7 @@
 				C384425E27147E3F00B84E8A /* UIFont.swift in Sources */,
 				C37B0B4A272901AB0017D179 /* OnboardingWorkerVC.swift in Sources */,
 				C37B0B5B272978F80017D179 /* SignInBasicInfo.swift in Sources */,
+				C39083F12729B559006223CB /* OnboardingCollectionViewCell.swift in Sources */,
 				C3B022EF2726F28A00013988 /* SignInSelectStoreTypeVC.swift in Sources */,
 				C37B0B59272972840017D179 /* SignInRequest.swift in Sources */,
 				C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */,
@@ -770,6 +797,7 @@
 				C37B0B552729724E0017D179 /* SignInDataManager.swift in Sources */,
 				C37B0B5F27299EA70017D179 /* LoginResponse.swift in Sources */,
 				C37EBF4D271AD71700DEC2CA /* SigInPasswordVC.swift in Sources */,
+				C30EC2E1272A4FDB00EEF218 /* SignInNumberMatchResponse.swift in Sources */,
 				C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */,
 				C384424F27147E2900B84E8A /* IndicatorView.swift in Sources */,
 				C384425D27147E3F00B84E8A /* UINavigationBar.swift in Sources */,
