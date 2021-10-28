@@ -28,7 +28,9 @@ class SignInMoreInfoVC: UIViewController {
     @IBOutlet var hourLabel: UILabel!
     
     //버튼 선택 정보 저장
-    var btnArray = [false, false, false,false, false, false,false, false, false]
+    var btnArray = [false, false, false, false, false, false,false, false, false]
+    // Datamanager
+    lazy var dataManager: SignInManagerDataManager = SignInManagerDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -223,4 +225,20 @@ extension SignInMoreInfoVC : UITextFieldDelegate{
             
             return true
         }
+}
+
+extension SignInMoreInfoVC {
+    func didSuccessSignInManager(_ result: SignInManagerResponse) {
+        if(result.message == "성공적으로 관리자 가입이 완료되었습니다."){
+            let newStoryboard = UIStoryboard(name: "OnboardingManagerStoryboard", bundle: nil)
+                    let newViewController = newStoryboard.instantiateViewController(identifier: "OnboardingManagerVC")
+                    self.changeRootViewController(newViewController)
+        }else{
+            self.presentAlert(title: result.message)
+        }
+    }
+    
+    func failedToSignInManager(message: String) {
+        self.presentAlert(title: message)
+    }
 }

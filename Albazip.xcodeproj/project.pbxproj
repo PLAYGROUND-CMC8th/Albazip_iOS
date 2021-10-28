@@ -12,6 +12,10 @@
 		C30EC2DF272A4FA600EEF218 /* SignInNumberMatchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2DE272A4FA600EEF218 /* SignInNumberMatchDataManager.swift */; };
 		C30EC2E1272A4FDB00EEF218 /* SignInNumberMatchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E0272A4FDB00EEF218 /* SignInNumberMatchResponse.swift */; };
 		C30EC2E3272A4FEF00EEF218 /* SignInNumberExistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E2272A4FEF00EEF218 /* SignInNumberExistResponse.swift */; };
+		C30EC2E5272B0A8D00EEF218 /* SignInManagerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E4272B0A8D00EEF218 /* SignInManagerDataManager.swift */; };
+		C30EC2E7272B0A9F00EEF218 /* SignInManagerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E6272B0A9F00EEF218 /* SignInManagerResponse.swift */; };
+		C30EC2E9272B0AB500EEF218 /* SignInManagerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E8272B0AB500EEF218 /* SignInManagerRequest.swift */; };
+		C30EC2EB272B121900EEF218 /* SignInManagerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2EA272B121900EEF218 /* SignInManagerInfo.swift */; };
 		C34C4AE02721BF6700300454 /* SignInSelectYearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C4ADF2721BF6700300454 /* SignInSelectYearVC.swift */; };
 		C3546F812725082100C4C3DC /* SignInSearchStoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3546F802725082100C4C3DC /* SignInSearchStoreResponse.swift */; };
 		C3546F832725083B00C4C3DC /* SignInSearchStoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3546F822725083B00C4C3DC /* SignInSearchStoreDataManager.swift */; };
@@ -95,6 +99,10 @@
 		C30EC2DE272A4FA600EEF218 /* SignInNumberMatchDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInNumberMatchDataManager.swift; sourceTree = "<group>"; };
 		C30EC2E0272A4FDB00EEF218 /* SignInNumberMatchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInNumberMatchResponse.swift; sourceTree = "<group>"; };
 		C30EC2E2272A4FEF00EEF218 /* SignInNumberExistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInNumberExistResponse.swift; sourceTree = "<group>"; };
+		C30EC2E4272B0A8D00EEF218 /* SignInManagerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInManagerDataManager.swift; sourceTree = "<group>"; };
+		C30EC2E6272B0A9F00EEF218 /* SignInManagerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInManagerResponse.swift; sourceTree = "<group>"; };
+		C30EC2E8272B0AB500EEF218 /* SignInManagerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInManagerRequest.swift; sourceTree = "<group>"; };
+		C30EC2EA272B121900EEF218 /* SignInManagerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInManagerInfo.swift; sourceTree = "<group>"; };
 		C34C4ADF2721BF6700300454 /* SignInSelectYearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSelectYearVC.swift; sourceTree = "<group>"; };
 		C3546F802725082100C4C3DC /* SignInSearchStoreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSearchStoreResponse.swift; sourceTree = "<group>"; };
 		C3546F822725083B00C4C3DC /* SignInSearchStoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSearchStoreDataManager.swift; sourceTree = "<group>"; };
@@ -225,6 +233,7 @@
 				C3546F822725083B00C4C3DC /* SignInSearchStoreDataManager.swift */,
 				C30EC2DC272A4F7D00EEF218 /* SignInNumberExistDataManager.swift */,
 				C30EC2DE272A4FA600EEF218 /* SignInNumberMatchDataManager.swift */,
+				C30EC2E4272B0A8D00EEF218 /* SignInManagerDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -235,6 +244,9 @@
 				C3546F802725082100C4C3DC /* SignInSearchStoreResponse.swift */,
 				C30EC2E0272A4FDB00EEF218 /* SignInNumberMatchResponse.swift */,
 				C30EC2E2272A4FEF00EEF218 /* SignInNumberExistResponse.swift */,
+				C30EC2E6272B0A9F00EEF218 /* SignInManagerResponse.swift */,
+				C30EC2E8272B0AB500EEF218 /* SignInManagerRequest.swift */,
+				C30EC2EA272B121900EEF218 /* SignInManagerInfo.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -759,14 +771,17 @@
 				C30EC2DF272A4FA600EEF218 /* SignInNumberMatchDataManager.swift in Sources */,
 				C37B0B6327299EDD0017D179 /* LoginDataManager.swift in Sources */,
 				C3B022F12727193100013988 /* SignInSelectSalaryDateVC.swift in Sources */,
+				C30EC2E5272B0A8D00EEF218 /* SignInManagerDataManager.swift in Sources */,
 				C34C4AE02721BF6700300454 /* SignInSelectYearVC.swift in Sources */,
 				C38442352714797000B84E8A /* AppDelegate.swift in Sources */,
 				C3A1ADCA271C14E2005A61ED /* SignInSelectPositionVC.swift in Sources */,
 				C384425927147E3F00B84E8A /* Date.swift in Sources */,
 				C37EBF51271AF29B00DEC2CA /* UITextField.swift in Sources */,
+				C30EC2E9272B0AB500EEF218 /* SignInManagerRequest.swift in Sources */,
 				C38442372714797000B84E8A /* SceneDelegate.swift in Sources */,
 				C384425F27147E3F00B84E8A /* Color.swift in Sources */,
 				C3A1ADD0271C698D005A61ED /* SignInWorkerCodeVC.swift in Sources */,
+				C30EC2E7272B0A9F00EEF218 /* SignInManagerResponse.swift in Sources */,
 				C3A1ADD2271C773F005A61ED /* SignInSettingVC.swift in Sources */,
 				C39083F32729B6F4006223CB /* OnboardingManagerVC.swift in Sources */,
 				C384426C27147E6E00B84E8A /* BaseViewController.swift in Sources */,
@@ -778,6 +793,7 @@
 				C30EC2E3272A4FEF00EEF218 /* SignInNumberExistResponse.swift in Sources */,
 				C384425C27147E3F00B84E8A /* UIViewController.swift in Sources */,
 				C384425027147E2900B84E8A /* Device.swift in Sources */,
+				C30EC2EB272B121900EEF218 /* SignInManagerInfo.swift in Sources */,
 				C384424B27147E1700B84E8A /* Constant.swift in Sources */,
 				C384425A27147E3F00B84E8A /* String.swift in Sources */,
 				C384425E27147E3F00B84E8A /* UIFont.swift in Sources */,
