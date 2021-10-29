@@ -24,7 +24,6 @@
 		C37B0B482728FF300017D179 /* OnboardingWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37B0B472728FF300017D179 /* OnboardingWorkerStoryboard.storyboard */; };
 		C37B0B4A272901AB0017D179 /* OnboardingWorkerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B49272901AB0017D179 /* OnboardingWorkerVC.swift */; };
 		C37B0B50272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B4E272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift */; };
-		C37B0B51272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37B0B4F272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib */; };
 		C37B0B552729724E0017D179 /* SignInDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B542729724E0017D179 /* SignInDataManager.swift */; };
 		C37B0B57272972720017D179 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B56272972720017D179 /* SignInResponse.swift */; };
 		C37B0B59272972840017D179 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B58272972840017D179 /* SignInRequest.swift */; };
@@ -112,7 +111,6 @@
 		C37B0B472728FF300017D179 /* OnboardingWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingWorkerStoryboard.storyboard; sourceTree = "<group>"; };
 		C37B0B49272901AB0017D179 /* OnboardingWorkerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWorkerVC.swift; sourceTree = "<group>"; };
 		C37B0B4E272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWorkerCollectionViewCell.swift; sourceTree = "<group>"; };
-		C37B0B4F272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingWorkerCollectionViewCell.xib; sourceTree = "<group>"; };
 		C37B0B542729724E0017D179 /* SignInDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataManager.swift; sourceTree = "<group>"; };
 		C37B0B56272972720017D179 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		C37B0B58272972840017D179 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
@@ -264,8 +262,8 @@
 		C37B0B452728FF0C0017D179 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C3F54E7A272C31E100FE412B /* Cell */,
 				C37B0B432728FF070017D179 /* OnboardingManagerStoryboard.storyboard */,
-				C39083F02729B559006223CB /* OnboardingCollectionViewCell.swift */,
 				C39083F22729B6F4006223CB /* OnboardingManagerVC.swift */,
 			);
 			path = Manager;
@@ -285,7 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				C37B0B4E272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift */,
-				C37B0B4F272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -640,6 +637,14 @@
 			path = Start;
 			sourceTree = "<group>";
 		};
+		C3F54E7A272C31E100FE412B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C39083F02729B559006223CB /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -704,7 +709,6 @@
 				C37B0B482728FF300017D179 /* OnboardingWorkerStoryboard.storyboard in Resources */,
 				C38442412714797100B84E8A /* LaunchScreen.storyboard in Resources */,
 				C38442772714940100B84E8A /* CommunityStoryboard.storyboard in Resources */,
-				C37B0B51272902F30017D179 /* OnboardingWorkerCollectionViewCell.xib in Resources */,
 				C384423E2714797100B84E8A /* Assets.xcassets in Resources */,
 				C3A1ADCE271C62EF005A61ED /* SignInWorkerStoryboard.storyboard in Resources */,
 				C384427A2714948200B84E8A /* ScheduleStoryboard.storyboard in Resources */,

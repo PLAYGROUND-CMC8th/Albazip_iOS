@@ -13,20 +13,12 @@ class OnboardingWorkerCollectionViewCell: UICollectionViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     
-    static let identifier = "OnboardingWorkerCollectionViewCell"
+    static let identifier = String(describing: OnboardingWorkerCollectionViewCell.self)
     
-    static func nib() -> UINib {
-        return UINib(nibName: "OnboardingWorkerCollectionViewCell", bundle: nil)
-    }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    func setCell(title: String, sub: String, imageName: String){
-        titleLabel.text = title
-        subLabel.text = sub
-        imageView.image = UIImage(named: imageName)
+    func setup(_ slide: OnboardingData){
+        titleLabel.text = slide.title
+        subLabel.text = slide.description
+        imageView.image = slide.image
     }
 }
