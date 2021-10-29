@@ -134,10 +134,10 @@ extension SigInBasicInfoVC: UITextFieldDelegate{
         print("텍스트 필드의 편집이 시작됩니다.")
         if(textField == firstNameTextfield){
             firstNameTextfield.borderColor = .mainYellow
-            nameTextfield.borderColor =  #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            nameTextfield.borderColor = .lightGray
             
         }else if(textField == nameTextfield){
-            firstNameTextfield.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            firstNameTextfield.borderColor = .lightGray
             nameTextfield.borderColor = .mainYellow
             
         }
@@ -147,7 +147,7 @@ extension SigInBasicInfoVC: UITextFieldDelegate{
     }
     // 텍스트 필드의 편집이 종료되었을 때 호출
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+        textField.borderColor = .lightGray
         checkTextField()
         print("텍스트 필드의 편집이 종료됩니다.")
     }

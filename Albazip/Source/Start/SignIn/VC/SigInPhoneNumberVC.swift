@@ -179,10 +179,10 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
         print("텍스트 필드의 편집이 시작됩니다.")
         if(textField == checkNumberTextField){
             checkNumberTextField.borderColor = .mainYellow
-            phoneNumberTextField.borderColor = .blurGray
+            phoneNumberTextField.borderColor = .lightGray
             
         }else if(textField == phoneNumberTextField){
-            checkNumberTextField.borderColor = .blurGray
+            checkNumberTextField.borderColor = .lightGray
             phoneNumberTextField.borderColor = .mainYellow
         }
         btnConfirm.isEnabled = true
@@ -191,7 +191,7 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
     }
     // 텍스트 필드의 편집이 종료되었을 때 호출
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.borderColor = .blurGray
+        textField.borderColor = .lightGray
     }
     
     

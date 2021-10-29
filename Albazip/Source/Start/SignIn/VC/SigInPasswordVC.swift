@@ -90,10 +90,10 @@ extension SigInPasswordVC: UITextFieldDelegate{
         print("텍스트 필드의 편집이 시작됩니다.")
         if(textField == passwordTextField){
             passwordTextField.borderColor = .mainYellow
-            passwordCkTextField.borderColor = .blurGray
+            passwordCkTextField.borderColor = .lightGray
             
         }else if(textField == passwordCkTextField){
-            passwordTextField.borderColor = .blurGray
+            passwordTextField.borderColor = .lightGray
             passwordCkTextField.borderColor = .mainYellow
         }
         checkPassword()
@@ -102,7 +102,7 @@ extension SigInPasswordVC: UITextFieldDelegate{
     }
     // 텍스트 필드의 편집이 종료되었을 때 호출
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.borderColor = .blurGray
+        textField.borderColor = .lightGray
         checkPassword()
         print("텍스트 필드의 편집이 종료됩니다.")
     }

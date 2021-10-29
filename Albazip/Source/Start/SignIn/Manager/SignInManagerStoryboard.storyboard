@@ -1154,6 +1154,19 @@
                                             <constraint firstAttribute="height" constant="52" id="G1i-Ih-Ts6"/>
                                         </constraints>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKL-rn-RYg">
+                                        <rect key="frame" x="32" y="151.33333333333337" width="311" height="26"/>
+                                        <color key="backgroundColor" red="0.98823523520000001" green="0.94117647410000005" blue="0.75686275960000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="311" id="AuI-vE-qPM"/>
+                                            <constraint firstAttribute="height" constant="26" id="sW0-v8-b8h"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BfI-3Y-2bi">
                                         <rect key="frame" x="24" y="61.666666666666686" width="327" height="205"/>
                                         <constraints>
@@ -1164,17 +1177,20 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="QKL-rn-RYg" firstAttribute="leading" secondItem="le5-ov-bho" secondAttribute="leading" constant="32" id="6RV-tk-aJA"/>
                                     <constraint firstItem="BfI-3Y-2bi" firstAttribute="top" secondItem="Zi5-ek-ryI" secondAttribute="bottom" constant="16" id="Enj-4j-AmW"/>
                                     <constraint firstAttribute="trailing" secondItem="QO9-k8-0fe" secondAttribute="trailing" constant="24" id="IaT-Ks-zKR"/>
                                     <constraint firstItem="Zi5-ek-ryI" firstAttribute="leading" secondItem="le5-ov-bho" secondAttribute="leading" constant="24" id="PBf-yQ-Lsj"/>
                                     <constraint firstAttribute="width" constant="375" id="TKD-qP-xHE"/>
                                     <constraint firstItem="BfI-3Y-2bi" firstAttribute="leading" secondItem="le5-ov-bho" secondAttribute="leading" constant="24" id="cGd-bc-z3o"/>
                                     <constraint firstAttribute="bottom" secondItem="QO9-k8-0fe" secondAttribute="bottom" constant="36" id="fme-Tl-NC5"/>
+                                    <constraint firstAttribute="trailing" secondItem="QKL-rn-RYg" secondAttribute="trailing" constant="32" id="ma0-wx-cgR"/>
                                     <constraint firstAttribute="trailing" secondItem="BfI-3Y-2bi" secondAttribute="trailing" constant="24" id="mhA-jv-OWJ"/>
                                     <constraint firstAttribute="height" constant="366" id="nOa-iL-790"/>
                                     <constraint firstAttribute="trailing" secondItem="Zi5-ek-ryI" secondAttribute="trailing" constant="24" id="t53-TN-F0U"/>
                                     <constraint firstItem="Zi5-ek-ryI" firstAttribute="top" secondItem="le5-ov-bho" secondAttribute="top" constant="24" id="vTH-7Z-XfO"/>
                                     <constraint firstItem="QO9-k8-0fe" firstAttribute="leading" secondItem="le5-ov-bho" secondAttribute="leading" constant="24" id="wXP-bN-UVR"/>
+                                    <constraint firstItem="QKL-rn-RYg" firstAttribute="centerY" secondItem="BfI-3Y-2bi" secondAttribute="centerY" id="ym4-b1-Zy3"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1197,7 +1213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1l-aW-Vwg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2094" y="-587"/>
+            <point key="canvasLocation" x="2093.5999999999999" y="-587.4384236453202"/>
         </scene>
         <!--Sign In Manager InfoVC-->
         <scene sceneID="pyX-4U-jQv">

@@ -222,18 +222,19 @@ extension SignInSearchStoreVC: UITextFieldDelegate{
     // 텍스트 필드의 편집을 시작할 때 호출
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         print("텍스트 필드의 편집이 시작됩니다.")
-        
+        textField.borderColor = .mainYellow
         
         return true
     }
     // 텍스트 필드의 편집이 종료되었을 때 호출
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
+        textField.borderColor = .lightGray
         print("텍스트 필드의 편집이 종료됩니다.")
     }
     // 텍스트 필드의 리턴키가 눌러졌을 때 호출
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        textField.borderColor = .lightGray
         print("텍스트 필드의 리턴키가 눌러졌습니다.")
         if let text = textField.text{
             searchLocation(text: text)

@@ -123,12 +123,14 @@ extension SignInManagerInfoVC {
             //self.presentAlert(title: result.message)
             personNameTextField.isHidden = false
             checkImage1.image = #imageLiteral(resourceName: "icCheckedCorrect")
+            registerNumberTextField.borderColor = .lightGray
             registerNumberTextField.isEnabled = false
             checkImage2.isHidden = false
             errorLabel1.isHidden = true
         }else{
             errorLabel1.isHidden = false
             errorLabel1.text = result.message
+            registerNumberTextField.borderColor = .red
         }
         //self.presentAlert(title: result.message)
     }
@@ -147,6 +149,7 @@ extension SignInManagerInfoVC {
             btnNext.isEnabled = true
             btnNext.backgroundColor = .mainYellow
             btnNext.setTitleColor(.gray, for: .normal)
+            personNameTextField.borderColor = .lightGray
         }else{
             errorLabel2.isHidden = false
             errorLabel2.text = result.message
@@ -154,6 +157,7 @@ extension SignInManagerInfoVC {
             btnNext.isEnabled = false
             btnNext.backgroundColor = .semiYellow
             btnNext.setTitleColor(.semiGray, for: .normal)
+            personNameTextField.borderColor = .red
         }
         //self.presentAlert(title: result.message)
     }

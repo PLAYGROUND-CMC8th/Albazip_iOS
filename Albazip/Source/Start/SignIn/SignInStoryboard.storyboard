@@ -569,6 +569,19 @@
                                             <constraint firstAttribute="height" constant="52" id="Oyk-FX-duC"/>
                                         </constraints>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdb-VT-jbL">
+                                        <rect key="frame" x="32" y="151.33333333333337" width="311" height="26"/>
+                                        <color key="backgroundColor" red="0.98823523520000001" green="0.94117647410000005" blue="0.75686275960000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="RS3-kE-4Jt"/>
+                                            <constraint firstAttribute="width" constant="311" id="px3-Bq-H70"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IkR-ED-S9z">
                                         <rect key="frame" x="24" y="61.666666666666686" width="327" height="205"/>
                                         <constraints>
@@ -581,6 +594,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="Fkh-jy-9ns"/>
                                     <constraint firstItem="IkR-ED-S9z" firstAttribute="leading" secondItem="Ef1-ZG-ODG" secondAttribute="leading" constant="24" id="SnE-cZ-3Ce"/>
+                                    <constraint firstItem="fdb-VT-jbL" firstAttribute="centerY" secondItem="IkR-ED-S9z" secondAttribute="centerY" id="So9-k8-OCF"/>
                                     <constraint firstItem="psu-w0-ruY" firstAttribute="top" secondItem="Ef1-ZG-ODG" secondAttribute="top" constant="24" id="Te6-rH-S1y"/>
                                     <constraint firstAttribute="trailing" secondItem="xf1-A3-NxX" secondAttribute="trailing" constant="24" id="V5S-bF-GMF"/>
                                     <constraint firstAttribute="trailing" secondItem="psu-w0-ruY" secondAttribute="trailing" constant="24" id="Vea-eg-B5M"/>
@@ -589,6 +603,8 @@
                                     <constraint firstAttribute="bottom" secondItem="xf1-A3-NxX" secondAttribute="bottom" constant="36" id="hbh-kT-GJo"/>
                                     <constraint firstItem="xf1-A3-NxX" firstAttribute="leading" secondItem="Ef1-ZG-ODG" secondAttribute="leading" constant="24" id="iAv-oV-R9D"/>
                                     <constraint firstAttribute="trailing" secondItem="IkR-ED-S9z" secondAttribute="trailing" constant="24" id="lA5-l5-yjS"/>
+                                    <constraint firstAttribute="trailing" secondItem="fdb-VT-jbL" secondAttribute="trailing" constant="32" id="oPI-wn-FgJ"/>
+                                    <constraint firstItem="fdb-VT-jbL" firstAttribute="leading" secondItem="Ef1-ZG-ODG" secondAttribute="leading" constant="32" id="peO-PJ-glT"/>
                                     <constraint firstItem="IkR-ED-S9z" firstAttribute="top" secondItem="psu-w0-ruY" secondAttribute="bottom" constant="16" id="wvt-KS-VXW"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -728,6 +744,7 @@
                                             <constraint firstAttribute="width" constant="146" id="cnV-iI-q4I"/>
                                             <constraint firstAttribute="height" constant="48" id="qut-0y-8Er"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="남자">
                                             <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -752,6 +769,7 @@
                                             <constraint firstAttribute="width" constant="146" id="0i2-UG-1TR"/>
                                             <constraint firstAttribute="height" constant="48" id="pia-Z4-WGk"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="여자">
                                             <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>

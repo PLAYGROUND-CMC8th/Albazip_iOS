@@ -28,6 +28,7 @@ class LoginViewController: UIViewController{
         phoneTextfield.delegate = self
         passwordTextfield.delegate = self
         self.dismissKeyboardWhenTappedAround()
+        
     }
     func checkTextField(){
         if phoneTextfield.text!.count > 0 , passwordTextfield.text!.count > 0{
@@ -63,10 +64,10 @@ extension LoginViewController: UITextFieldDelegate{
         print("텍스트 필드의 편집이 시작됩니다.")
         if(textField == phoneTextfield){
             phoneTextfield.borderColor = .mainYellow
-            passwordTextfield.borderColor = .blurGray
+            passwordTextfield.borderColor = .lightGray
             
         }else if(textField == passwordTextfield){
-            phoneTextfield.borderColor = .blurGray
+            phoneTextfield.borderColor = .lightGray
             passwordTextfield.borderColor = .mainYellow
             
         }
@@ -75,7 +76,7 @@ extension LoginViewController: UITextFieldDelegate{
     }
     // 텍스트 필드의 편집이 종료되었을 때 호출
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.borderColor = .blurGray
+        textField.borderColor = .lightGray
         checkTextField()
         print("텍스트 필드의 편집이 종료됩니다.")
     }

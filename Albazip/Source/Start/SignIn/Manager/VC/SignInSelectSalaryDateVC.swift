@@ -67,4 +67,19 @@ extension SignInSelectSalaryDateVC: UITextFieldDelegate, UIPickerViewDelegate, U
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedDate = row
     }
+    
+    // 피커뷰 배경색 지우기
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+            pickerView.subviews.forEach {
+                $0.backgroundColor = .clear
+            }
+            
+            let numberLabel = UILabel()
+            numberLabel.textAlignment = .center
+        numberLabel.font = .systemFont(ofSize: 16, weight: .semibold)
+            numberLabel.textColor = .black
+            numberLabel.text = dates[row]
+            
+            return numberLabel
+    }
 }
