@@ -252,7 +252,7 @@
 		C37B0B422728FE5E0017D179 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				C39083EE2729B4E5006223CB /* OnboardingData.swift */,
+				C3F54E7F272C4DA300FE412B /* Entity */,
 				C37B0B462728FF140017D179 /* Worker */,
 				C37B0B452728FF0C0017D179 /* Manager */,
 			);
@@ -262,9 +262,9 @@
 		C37B0B452728FF0C0017D179 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C3F54E7E272C4D9000FE412B /* VC */,
 				C3F54E7A272C31E100FE412B /* Cell */,
 				C37B0B432728FF070017D179 /* OnboardingManagerStoryboard.storyboard */,
-				C39083F22729B6F4006223CB /* OnboardingManagerVC.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -272,9 +272,9 @@
 		C37B0B462728FF140017D179 /* Worker */ = {
 			isa = PBXGroup;
 			children = (
+				C3F54E7D272C4D8500FE412B /* VC */,
 				C37B0B4B272902940017D179 /* Cell */,
 				C37B0B472728FF300017D179 /* OnboardingWorkerStoryboard.storyboard */,
-				C37B0B49272901AB0017D179 /* OnboardingWorkerVC.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -325,16 +325,11 @@
 		C37EBF46271AD00600DEC2CA /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C3F54E7B272C4D3B00FE412B /* VC */,
 				C3546F7F272507BB00C4C3DC /* Entity */,
 				C3546F7E272507A400C4C3DC /* DataManager */,
 				C39019BC271F243300BC2830 /* Cell */,
 				C37EBF48271AD0BB00DEC2CA /* SignInManagerStoryboard.storyboard */,
-				C3A1ADCB271C5002005A61ED /* SignInSearchStoreVC.swift */,
-				C3B022E82726D91400013988 /* SignInStoreInfoVC.swift */,
-				C3B022EA2726D9C300013988 /* SignInManagerInfoVC.swift */,
-				C3B022EC2726DB3800013988 /* SignInMoreInfoVC.swift */,
-				C3B022EE2726F28A00013988 /* SignInSelectStoreTypeVC.swift */,
-				C3B022F02727193100013988 /* SignInSelectSalaryDateVC.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -342,8 +337,8 @@
 		C37EBF47271AD00F00DEC2CA /* Worker */ = {
 			isa = PBXGroup;
 			children = (
+				C3F54E82272C4DF400FE412B /* VC */,
 				C3A1ADCD271C62EF005A61ED /* SignInWorkerStoryboard.storyboard */,
-				C3A1ADCF271C698D005A61ED /* SignInWorkerCodeVC.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -460,12 +455,10 @@
 		C384426E2714805B00B84E8A /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C3F54E80272C4DB000FE412B /* VC */,
 				C37B0B5D27299E7B0017D179 /* Datamanager */,
 				C37B0B5C27299E710017D179 /* Entity */,
-				C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */,
 				C37EBF44271ABE7B00DEC2CA /* LoginStoryboard.storyboard */,
-				C3A1ADD3271C86B6005A61ED /* LoginResetPhoneVC.swift */,
-				C3A1ADD5271C86C9005A61ED /* LoginResetPasswordVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -549,18 +542,12 @@
 		C3D385C72719DD7D0099A290 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				C3F54E7C272C4D6400FE412B /* VC */,
 				C37B0B53272972100017D179 /* DataManager */,
 				C37B0B52272972040017D179 /* Entity */,
 				C37EBF46271AD00600DEC2CA /* Manager */,
 				C37EBF47271AD00F00DEC2CA /* Worker */,
 				C37EBF3E271A9D7000DEC2CA /* SignInStoryboard.storyboard */,
-				C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */,
-				C37EBF4A271AD54200DEC2CA /* SigInPhoneNumberVC.swift */,
-				C37EBF4C271AD71700DEC2CA /* SigInPasswordVC.swift */,
-				C37EBF4E271AD97900DEC2CA /* SigInBasicInfoVC.swift */,
-				C3A1ADC9271C14E2005A61ED /* SignInSelectPositionVC.swift */,
-				C3A1ADD1271C773F005A61ED /* SignInSettingVC.swift */,
-				C34C4ADF2721BF6700300454 /* SignInSelectYearVC.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -628,11 +615,11 @@
 		C3D385D12719EB540099A290 /* Start */ = {
 			isa = PBXGroup;
 			children = (
+				C3F54E81272C4DC300FE412B /* VC */,
 				C37B0B422728FE5E0017D179 /* Onboarding */,
 				C3D385C72719DD7D0099A290 /* SignIn */,
 				C384426E2714805B00B84E8A /* Login */,
 				C3D385D32719EB990099A290 /* StartStoryboard.storyboard */,
-				C3A968412719FA7A00E27DA1 /* StartViewController.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -643,6 +630,83 @@
 				C39083F02729B559006223CB /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C3F54E7B272C4D3B00FE412B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C3B022E82726D91400013988 /* SignInStoreInfoVC.swift */,
+				C3A1ADCB271C5002005A61ED /* SignInSearchStoreVC.swift */,
+				C3B022EA2726D9C300013988 /* SignInManagerInfoVC.swift */,
+				C3B022EC2726DB3800013988 /* SignInMoreInfoVC.swift */,
+				C3B022EE2726F28A00013988 /* SignInSelectStoreTypeVC.swift */,
+				C3B022F02727193100013988 /* SignInSelectSalaryDateVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		C3F54E7C272C4D6400FE412B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C37EBF40271AA1B000DEC2CA /* SignInViewController.swift */,
+				C37EBF4A271AD54200DEC2CA /* SigInPhoneNumberVC.swift */,
+				C37EBF4C271AD71700DEC2CA /* SigInPasswordVC.swift */,
+				C37EBF4E271AD97900DEC2CA /* SigInBasicInfoVC.swift */,
+				C3A1ADD1271C773F005A61ED /* SignInSettingVC.swift */,
+				C3A1ADC9271C14E2005A61ED /* SignInSelectPositionVC.swift */,
+				C34C4ADF2721BF6700300454 /* SignInSelectYearVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		C3F54E7D272C4D8500FE412B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C37B0B49272901AB0017D179 /* OnboardingWorkerVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		C3F54E7E272C4D9000FE412B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C39083F22729B6F4006223CB /* OnboardingManagerVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		C3F54E7F272C4DA300FE412B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C39083EE2729B4E5006223CB /* OnboardingData.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C3F54E80272C4DB000FE412B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C37EBF42271ABE6D00DEC2CA /* LoginViewController.swift */,
+				C3A1ADD5271C86C9005A61ED /* LoginResetPasswordVC.swift */,
+				C3A1ADD3271C86B6005A61ED /* LoginResetPhoneVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		C3F54E81272C4DC300FE412B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C3A968412719FA7A00E27DA1 /* StartViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		C3F54E82272C4DF400FE412B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C3A1ADCF271C698D005A61ED /* SignInWorkerCodeVC.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
