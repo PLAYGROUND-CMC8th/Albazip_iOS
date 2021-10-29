@@ -43,7 +43,9 @@ class SignInManagerInfoVC: UIViewController{
     }
     
     @IBAction func btnNext(_ sender: Any) {
-        
+        let signInManagerInfo = SignInManagerInfo.shared
+        signInManagerInfo.registerNumber = registerNumberTextField.text!
+        signInManagerInfo.ownerName = personNameTextField.text!
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SignInMoreInfoVC") as? SignInMoreInfoVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }

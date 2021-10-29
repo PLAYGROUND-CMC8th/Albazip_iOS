@@ -665,6 +665,7 @@
                         <outlet property="btnBreak" destination="5FW-df-yOq" id="vPR-CX-Es2"/>
                         <outlet property="btnFri" destination="YP4-bH-3A2" id="mmQ-hH-7Ve"/>
                         <outlet property="btnMon" destination="T9j-n7-5fV" id="JQv-Qk-gWj"/>
+                        <outlet property="btnNext" destination="5Xn-9w-rgP" id="36u-fA-90x"/>
                         <outlet property="btnNoBreak" destination="FQ7-NI-PEh" id="mmU-k8-zab"/>
                         <outlet property="btnSat" destination="ldD-Jt-wXa" id="K3n-mw-Ib2"/>
                         <outlet property="btnSun" destination="SFY-GQ-4Sb" id="Hnt-3L-SY8"/>

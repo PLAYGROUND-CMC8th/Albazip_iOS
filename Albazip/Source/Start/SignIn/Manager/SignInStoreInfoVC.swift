@@ -75,6 +75,11 @@ class SignInStoreInfoVC: UIViewController{
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnNext(_ sender: Any) {
+        
+        let signInManagerInfo = SignInManagerInfo.shared
+        signInManagerInfo.name = storeNameTextField.text!
+        signInManagerInfo.type = storeTypeTextField.text!
+        signInManagerInfo.address = storeLocationTextField.text! + " " + storeLocationDetailTextField.text!
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SignInManagerInfoVC") as? SignInManagerInfoVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
