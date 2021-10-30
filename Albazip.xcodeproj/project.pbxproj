@@ -89,6 +89,14 @@
 		C3B022EF2726F28A00013988 /* SignInSelectStoreTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B022EE2726F28A00013988 /* SignInSelectStoreTypeVC.swift */; };
 		C3B022F12727193100013988 /* SignInSelectSalaryDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B022F02727193100013988 /* SignInSelectSalaryDateVC.swift */; };
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
+		C3E1FEA3272D8A3300CE44C6 /* MyPageManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA2272D8A3300CE44C6 /* MyPageManagerVC.swift */; };
+		C3E1FEA6272D8AAB00CE44C6 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA5272D8AAB00CE44C6 /* Page.swift */; };
+		C3E1FEA9272D8C5B00CE44C6 /* MyPageManagerContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA7272D8C5B00CE44C6 /* MyPageManagerContentVC.swift */; };
+		C3E1FEAA272D8C5B00CE44C6 /* MyPageManagerContentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E1FEA8272D8C5B00CE44C6 /* MyPageManagerContentVC.xib */; };
+		C3E1FEAD272D8F1000CE44C6 /* MyPageManagerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEAB272D8F1000CE44C6 /* MyPageManagerTableViewCell.swift */; };
+		C3E1FEAE272D8F1000CE44C6 /* MyPageManagerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E1FEAC272D8F1000CE44C6 /* MyPageManagerTableViewCell.xib */; };
+		C3E1FEB1272D901300CE44C6 /* MyPageTabBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEAF272D901300CE44C6 /* MyPageTabBarCollectionViewCell.swift */; };
+		C3E1FEB2272D901300CE44C6 /* MyPageTabBarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E1FEB0272D901300CE44C6 /* MyPageTabBarCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,6 +188,14 @@
 		C3B022EE2726F28A00013988 /* SignInSelectStoreTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSelectStoreTypeVC.swift; sourceTree = "<group>"; };
 		C3B022F02727193100013988 /* SignInSelectSalaryDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSelectSalaryDateVC.swift; sourceTree = "<group>"; };
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
+		C3E1FEA2272D8A3300CE44C6 /* MyPageManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerVC.swift; sourceTree = "<group>"; };
+		C3E1FEA5272D8AAB00CE44C6 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		C3E1FEA7272D8C5B00CE44C6 /* MyPageManagerContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerContentVC.swift; sourceTree = "<group>"; };
+		C3E1FEA8272D8C5B00CE44C6 /* MyPageManagerContentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerContentVC.xib; sourceTree = "<group>"; };
+		C3E1FEAB272D8F1000CE44C6 /* MyPageManagerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerTableViewCell.swift; sourceTree = "<group>"; };
+		C3E1FEAC272D8F1000CE44C6 /* MyPageManagerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerTableViewCell.xib; sourceTree = "<group>"; };
+		C3E1FEAF272D901300CE44C6 /* MyPageTabBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTabBarCollectionViewCell.swift; sourceTree = "<group>"; };
+		C3E1FEB0272D901300CE44C6 /* MyPageTabBarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageTabBarCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -495,6 +511,9 @@
 		C3844270271480D400B84E8A /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				C3E1FEA4272D8A9A00CE44C6 /* ViewModel */,
+				C3E1FEA1272D8A1600CE44C6 /* VC */,
+				C3E1FEA0272D8A0F00CE44C6 /* Cell */,
 				C38442712714913700B84E8A /* MyPageManagerStoryboard.storyboard */,
 			);
 			path = MyPage;
@@ -576,6 +595,35 @@
 				C3D385D32719EB990099A290 /* StartStoryboard.storyboard */,
 			);
 			path = Start;
+			sourceTree = "<group>";
+		};
+		C3E1FEA0272D8A0F00CE44C6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C3E1FEAB272D8F1000CE44C6 /* MyPageManagerTableViewCell.swift */,
+				C3E1FEAC272D8F1000CE44C6 /* MyPageManagerTableViewCell.xib */,
+				C3E1FEAF272D901300CE44C6 /* MyPageTabBarCollectionViewCell.swift */,
+				C3E1FEB0272D901300CE44C6 /* MyPageTabBarCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C3E1FEA1272D8A1600CE44C6 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C3E1FEA2272D8A3300CE44C6 /* MyPageManagerVC.swift */,
+				C3E1FEA7272D8C5B00CE44C6 /* MyPageManagerContentVC.swift */,
+				C3E1FEA8272D8C5B00CE44C6 /* MyPageManagerContentVC.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		C3E1FEA4272D8A9A00CE44C6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C3E1FEA5272D8AAB00CE44C6 /* Page.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C3F54E7A272C31E100FE412B /* Cell */ = {
@@ -726,12 +774,15 @@
 				C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */,
 				C37EBF45271ABE7B00DEC2CA /* LoginStoryboard.storyboard in Resources */,
 				C37B0B482728FF300017D179 /* OnboardingWorkerStoryboard.storyboard in Resources */,
+				C3E1FEB2272D901300CE44C6 /* MyPageTabBarCollectionViewCell.xib in Resources */,
 				C38442412714797100B84E8A /* LaunchScreen.storyboard in Resources */,
 				C38442772714940100B84E8A /* CommunityManagerStoryboard.storyboard in Resources */,
 				C384423E2714797100B84E8A /* Assets.xcassets in Resources */,
 				C3A1ADCE271C62EF005A61ED /* SignInWorkerStoryboard.storyboard in Resources */,
 				C384427A2714948200B84E8A /* ScheduleManagerStoryboard.storyboard in Resources */,
+				C3E1FEAE272D8F1000CE44C6 /* MyPageManagerTableViewCell.xib in Resources */,
 				C37EBF3F271A9D7000DEC2CA /* SignInStoryboard.storyboard in Resources */,
+				C3E1FEAA272D8C5B00CE44C6 /* MyPageManagerContentVC.xib in Resources */,
 				C37EBF49271AD0BB00DEC2CA /* SignInManagerStoryboard.storyboard in Resources */,
 				C38442722714913700B84E8A /* MyPageManagerStoryboard.storyboard in Resources */,
 				C39019C1271F246500BC2830 /* SearchCollectionViewCell.xib in Resources */,
@@ -798,6 +849,7 @@
 				C34C4AE02721BF6700300454 /* SignInSelectYearVC.swift in Sources */,
 				C38442352714797000B84E8A /* AppDelegate.swift in Sources */,
 				C3A1ADCA271C14E2005A61ED /* SignInSelectPositionVC.swift in Sources */,
+				C3E1FEB1272D901300CE44C6 /* MyPageTabBarCollectionViewCell.swift in Sources */,
 				C384425927147E3F00B84E8A /* Date.swift in Sources */,
 				C37EBF51271AF29B00DEC2CA /* UITextField.swift in Sources */,
 				C30EC2E9272B0AB500EEF218 /* SignInManagerRequest.swift in Sources */,
@@ -812,8 +864,11 @@
 				C3A968422719FA7A00E27DA1 /* StartViewController.swift in Sources */,
 				C3A1ADD6271C86C9005A61ED /* LoginResetPasswordVC.swift in Sources */,
 				C39083EF2729B4E5006223CB /* OnboardingData.swift in Sources */,
+				C3E1FEA3272D8A3300CE44C6 /* MyPageManagerVC.swift in Sources */,
 				C3B022E92726D91400013988 /* SignInStoreInfoVC.swift in Sources */,
 				C30EC2DD272A4F7D00EEF218 /* SignInNumberExistDataManager.swift in Sources */,
+				C3E1FEA6272D8AAB00CE44C6 /* Page.swift in Sources */,
+				C3E1FEA9272D8C5B00CE44C6 /* MyPageManagerContentVC.swift in Sources */,
 				C30EC2E3272A4FEF00EEF218 /* SignInNumberExistResponse.swift in Sources */,
 				C384425C27147E3F00B84E8A /* UIViewController.swift in Sources */,
 				C384425027147E2900B84E8A /* Device.swift in Sources */,
@@ -835,6 +890,7 @@
 				C37EBF4B271AD54200DEC2CA /* SigInPhoneNumberVC.swift in Sources */,
 				C3546F812725082100C4C3DC /* SignInSearchStoreResponse.swift in Sources */,
 				C37B0B552729724E0017D179 /* SignInDataManager.swift in Sources */,
+				C3E1FEAD272D8F1000CE44C6 /* MyPageManagerTableViewCell.swift in Sources */,
 				C37B0B5F27299EA70017D179 /* LoginResponse.swift in Sources */,
 				C37EBF4D271AD71700DEC2CA /* SigInPasswordVC.swift in Sources */,
 				C30EC2E1272A4FDB00EEF218 /* SignInNumberMatchResponse.swift in Sources */,
