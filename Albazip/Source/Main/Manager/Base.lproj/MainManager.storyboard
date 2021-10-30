@@ -10,7 +10,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="7de-rW-8ZQ">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarController" id="wFi-nr-43v" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainManagerTabBarController" id="wFi-nr-43v" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="erU-gU-QMv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,42 +25,42 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bjl-QU-DyG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="148"/>
+            <point key="canvasLocation" x="-41" y="143"/>
         </scene>
-        <!--HomeNavigationController-->
+        <!--HomeManagerNavigationController-->
         <scene sceneID="pgD-SY-TNw">
             <objects>
-                <viewControllerPlaceholder storyboardName="HomeStoryboard" referencedIdentifier="HomeNavigationController" id="1gj-Xf-0kU" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="HomeManagerStoryboard" referencedIdentifier="HomeManagerNavigationController" id="1gj-Xf-0kU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Bgh-Ea-cfZ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ms7-tD-Y98" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618" y="-11"/>
+            <point key="canvasLocation" x="586" y="-16"/>
         </scene>
-        <!--CommunityNavigationController-->
+        <!--CommunityManagerNavigationController-->
         <scene sceneID="iFW-me-6Ym">
             <objects>
-                <viewControllerPlaceholder storyboardName="CommunityStoryboard" referencedIdentifier="CommunityNavigationController" id="Ho7-5V-uhG" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="CommunityManagerStoryboard" referencedIdentifier="CommunityManagerNavigationController" id="Ho7-5V-uhG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="mOF-p7-hBZ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7GV-iI-Vnw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="641" y="90"/>
         </scene>
-        <!--ScheduleNavigationController-->
+        <!--ScheduleManagerNavigationController-->
         <scene sceneID="2je-Qf-tUW">
             <objects>
-                <viewControllerPlaceholder storyboardName="ScheduleStoryboard" referencedIdentifier="ScheduleNavigationController" id="SEJ-gD-oyV" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ScheduleManagerStoryboard" referencedIdentifier="ScheduleManagerNavigationController" id="SEJ-gD-oyV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="y51-NZ-3sx"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eyl-i6-ISQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="632" y="198"/>
         </scene>
-        <!--MyPageNavigationController-->
+        <!--MyPageManagerNavigationController-->
         <scene sceneID="Kct-dJ-29C">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyPageStoryboard" referencedIdentifier="MyPageNavigationController" id="Q1V-K1-u6R" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MyPageManagerStoryboard" referencedIdentifier="MyPageManagerNavigationController" id="Q1V-K1-u6R" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="EuQ-hQ-cdQ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPB-jV-Mv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

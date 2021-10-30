@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2nR-Ae-3LI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -27,7 +28,7 @@
         <!--소통창-->
         <scene sceneID="4PW-bw-5Ec">
             <objects>
-                <navigationController storyboardIdentifier="CommunityNavigationController" id="2nR-Ae-3LI" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CommunityManagerNavigationController" id="2nR-Ae-3LI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="소통창" id="59m-Sx-wTv"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="t9Q-1N-ZWa">

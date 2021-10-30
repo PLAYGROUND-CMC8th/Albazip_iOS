@@ -97,10 +97,12 @@ extension LoginViewController: UITextFieldDelegate{
 
 extension LoginViewController {
     func didSuccessLogin(_ result: LoginResponse) {
-        
+        //MARK: 사장님인지 근무자인지 판단해서 다른 스토리보드로 이동해야 할듯!
+        /*
         let newStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = newStoryboard.instantiateViewController(identifier: "MainTabBarController")
         self.changeRootViewController(newViewController)
+         */
     }
     
     func failedToRequest(message: String) {

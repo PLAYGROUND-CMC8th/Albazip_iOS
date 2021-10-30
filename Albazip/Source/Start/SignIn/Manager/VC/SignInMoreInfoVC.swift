@@ -47,9 +47,8 @@ class SignInMoreInfoVC: UIViewController {
         salaryTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .touchDown)
         startTextField.addLeftPadding()
         endTextField.addLeftPadding()
-        startTextField.delegate = self
-        endTextField.delegate = self
-        
+        startTextField.addTarget(self, action: #selector(startTimeTextFieldDidChange(_:)), for: .touchDown)
+        endTextField.addTarget(self, action: #selector(endTimeTextFieldDidChange(_:)), for: .touchDown)
     }
     
     @objc func textFieldDidChange(_ textField:UITextField) {
@@ -65,6 +64,32 @@ class SignInMoreInfoVC: UIViewController {
         }
             
     }
+    
+    @objc func startTimeTextFieldDidChange(_ textField:UITextField) {
+        
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignInSelectTimeVC") as? SignInSelectTimeVC {
+            vc.modalPresentationStyle = .overFullScreen
+            
+            modalBgView.isHidden = false
+            vc.timeDateModalDelegate = self
+            vc.whatDate = 0
+            self.present(vc, animated: true, completion: nil)
+            
+        }
+    }
+    @objc func endTimeTextFieldDidChange(_ textField:UITextField) {
+        
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignInSelectTimeVC") as? SignInSelectTimeVC {
+            vc.modalPresentationStyle = .overFullScreen
+            
+            modalBgView.isHidden = false
+            vc.timeDateModalDelegate = self
+            vc.whatDate = 1
+            self.present(vc, animated: true, completion: nil)
+            
+        }
+    }
+    
     
     @IBAction func btnNoBreak(_ sender: Any) {
         btnNoBreak.isSelected.toggle()
@@ -239,6 +264,20 @@ extension SignInMoreInfoVC: SalaryModalDelegate {
     
     func textFieldData(data: String) {
         salaryTextField.text = data
+    }
+}
+
+extension SignInMoreInfoVC: TimeDateModalDelegate {
+    
+    func timeModalDismiss() {
+        modalBgView.isHidden = true
+    }
+    
+    func openTimeTextFieldData(data: String) {
+        startTextField.text = data
+    }
+    func endTimeTextFieldData(data: String) {
+        endTextField.text = data
     }
 }
 
