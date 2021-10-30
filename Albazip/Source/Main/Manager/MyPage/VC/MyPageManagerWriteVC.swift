@@ -1,19 +1,13 @@
 //
-//  MyPageManagerContentVC.swift
+//  MyPageManagerWriteVC.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2021/10/30.
+//  Created by 김수빈 on 2021/10/31.
 //
 
 import UIKit
 
-enum DragDirection {
-    
-    case Up
-    case Down
-}
-
-protocol InnerTableViewScrollDelegate: AnyObject {
+protocol MyPageManagerWriteTableViewScrollDelegate: AnyObject {
     
     var currentHeaderHeight: CGFloat { get }
     
@@ -21,14 +15,14 @@ protocol InnerTableViewScrollDelegate: AnyObject {
     func innerTableViewScrollEnded(withScrollDirection scrollDirection: DragDirection)
 }
 
-class MyPageManagerContentVC: UIViewController {
-
+class MyPageManagerWriteVC: UIViewController {
+    
     //MARK:- Outlets
     @IBOutlet var tableView: UITableView!
     
     //MARK:- Scroll Delegate
     
-    weak var innerTableViewScrollDelegate: InnerTableViewScrollDelegate?
+    weak var myPageManagerWriteTableViewScrollDelegate: MyPageManagerWriteTableViewScrollDelegate?
     
     //MARK:- Stored Properties for Scroll Delegate
     
@@ -37,52 +31,49 @@ class MyPageManagerContentVC: UIViewController {
     
     //MARK:- Data Source
     
-    var numberOfCells: Int = 0
+    var numberOfCells: Int = 5
     
     //MARK:- View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
+
         setupTableView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-        print("viewWillAppear")
+        print("viewWillAppear2")
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-        print("viewDidAppear")
+        print("viewDidAppear2")
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(false)
-        print("viewWillDisappear")
+        print("viewWillDisappear2")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(false)
-        print("viewDidDisappear")
+        print("viewDidDisappear2")
     }
-    
-    
-
     //MARK:- View Setup
     
     func setupTableView() {
         
-        tableView.register(UINib(nibName: "MyPageManagerTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageManagerTableViewCell")
+        tableView.register(UINib(nibName: "MyPageManagerWriteTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageManagerWriteTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = 44
+        tableView.estimatedRowHeight = 97
     }
 
 }
 
 //MARK:- Table View Data Source
 
-extension MyPageManagerContentVC: UITableViewDataSource {
+extension MyPageManagerWriteVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -91,25 +82,31 @@ extension MyPageManagerContentVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerTableViewCell") as? MyPageManagerTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteTableViewCell") as? MyPageManagerWriteTableViewCell {
             
             cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+            print(indexPath.row)
             return cell
         }
         
         return UITableViewCell()
     }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
+        return 97
+    }
+    
+    
 }
 
 //MARK:- Scroll View Actions
 
-extension MyPageManagerContentVC: UITableViewDelegate {
+extension MyPageManagerWriteVC: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let delta = scrollView.contentOffset.y - oldContentOffset.y
         
-        let topViewCurrentHeightConst = innerTableViewScrollDelegate?.currentHeaderHeight
+        let topViewCurrentHeightConst = myPageManagerWriteTableViewScrollDelegate?.currentHeaderHeight
         
         if let topViewUnwrappedHeight = topViewCurrentHeightConst {
             
@@ -125,7 +122,7 @@ extension MyPageManagerContentVC: UITableViewDelegate {
                 scrollView.contentOffset.y > 0 {
                 
                 dragDirection = .Up
-                innerTableViewScrollDelegate?.innerTableViewDidScroll(withDistance: delta)
+                myPageManagerWriteTableViewScrollDelegate?.innerTableViewDidScroll(withDistance: delta)
                 scrollView.contentOffset.y -= delta
             }
             
@@ -141,7 +138,7 @@ extension MyPageManagerContentVC: UITableViewDelegate {
                 scrollView.contentOffset.y < 0 {
                 
                 dragDirection = .Down
-                innerTableViewScrollDelegate?.innerTableViewDidScroll(withDistance: delta)
+                myPageManagerWriteTableViewScrollDelegate?.innerTableViewDidScroll(withDistance: delta)
                 scrollView.contentOffset.y -= delta
             }
         }
@@ -155,7 +152,7 @@ extension MyPageManagerContentVC: UITableViewDelegate {
         
         if scrollView.contentOffset.y <= 0 {
             
-            innerTableViewScrollDelegate?.innerTableViewScrollEnded(withScrollDirection: dragDirection)
+            myPageManagerWriteTableViewScrollDelegate?.innerTableViewScrollEnded(withScrollDirection: dragDirection)
         }
     }
     
@@ -165,7 +162,7 @@ extension MyPageManagerContentVC: UITableViewDelegate {
         
         if decelerate == false && scrollView.contentOffset.y <= 0 {
             
-            innerTableViewScrollDelegate?.innerTableViewScrollEnded(withScrollDirection: dragDirection)
+            myPageManagerWriteTableViewScrollDelegate?.innerTableViewScrollEnded(withScrollDirection: dragDirection)
         }
     }
 }

@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 정보" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgK-om-eVG">
-                        <rect key="frame" x="12" y="16" width="59" height="24"/>
+                        <rect key="frame" x="12" y="16" width="59" height="27"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -30,7 +30,7 @@
                 <constraint firstItem="NgK-om-eVG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="Cai-3d-9BW"/>
                 <constraint firstAttribute="trailing" secondItem="NgK-om-eVG" secondAttribute="trailing" constant="12" id="Pl7-gZ-saf"/>
                 <constraint firstItem="NgK-om-eVG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="QXo-Zn-SJp"/>
-                <constraint firstAttribute="bottom" secondItem="NgK-om-eVG" secondAttribute="bottom" constant="16" id="Ry2-Fb-Ux7"/>
+                <constraint firstAttribute="bottom" secondItem="NgK-om-eVG" secondAttribute="bottom" constant="13" id="Ry2-Fb-Ux7"/>
             </constraints>
             <size key="customSize" width="83" height="56"/>
             <connections>

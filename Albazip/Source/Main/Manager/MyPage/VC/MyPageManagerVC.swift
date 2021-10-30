@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 var topViewInitialHeight : CGFloat = 156
-
-let topViewFinalHeight : CGFloat = UIApplication.shared.statusBarFrame.size.height  //navigation hieght
+let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+let height = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+let topViewFinalHeight : CGFloat = height - 15 //navigation hieght
 
 let topViewHeightConstraintRange = topViewFinalHeight..<topViewInitialHeight
 
@@ -45,6 +46,26 @@ class MyPageManagerVC : UIViewController{
         setupPagingViewController()
         populateBottomView()
         addPanGestureToTopViewAndCollectionView()
+        
+        print("MainviewDidLoad")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        print("MainviewWillAppear")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        print("MainviewDidAppear")
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(false)
+        print("MainviewWillDisappear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(false)
+        print("MainviewDidDisappear")
     }
 
     //MARK: View Setup
@@ -65,13 +86,13 @@ class MyPageManagerVC : UIViewController{
     func setupSelectedTabView() {
         
         let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 10, height: 10))
-        label.text = "TAB \(1)"
+        label.text = "근무자"//"TAB \(1)"
         label.sizeToFit()
         var width = label.intrinsicContentSize.width
-        width = width + 40
+        width = width + 15
         
-        selectedTabView.frame = CGRect(x: 20, y: 55, width: width, height: 5)
-        selectedTabView.backgroundColor = UIColor(red:0.65, green:0.58, blue:0.94, alpha:1)
+        selectedTabView.frame = CGRect(x: 24, y: 51, width: width, height: 2)
+        selectedTabView.backgroundColor = #colorLiteral(red: 0.1990817189, green: 0.2041014135, blue: 0.2039682269, alpha: 1)
         tabBarCollectionView.addSubview(selectedTabView)
     }
     
@@ -86,15 +107,26 @@ class MyPageManagerVC : UIViewController{
     
     func populateBottomView() {
         
+        let tabName = ["근무자", "작성글"]
         for subTabCount in 0..<tabsCount {
             
-            let tabContentVC = MyPageManagerContentVC()
-            tabContentVC.innerTableViewScrollDelegate = self
-            tabContentVC.numberOfCells = 30 // (subTabCount + 1) * 10
             
-            let displayName = "TAB \(subTabCount + 1)"
-            let page = Page(with: displayName, _vc: tabContentVC)
-            pageCollection.pages.append(page)
+            if(subTabCount==0){
+                let tabContentVC = MyPageManagerContentVC()
+                tabContentVC.innerTableViewScrollDelegate = self
+                tabContentVC.numberOfCells = 30
+                let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
+                let page = Page(with: displayName, _vc: tabContentVC)
+                pageCollection.pages.append(page)
+            }else if(subTabCount==1){
+                let tabContentVC = MyPageManagerWriteVC()
+                tabContentVC.myPageManagerWriteTableViewScrollDelegate = self
+                tabContentVC.numberOfCells = 30
+                let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
+                let page = Page(with: displayName, _vc: tabContentVC)
+                pageCollection.pages.append(page)
+            }
+            
         }
         
         let initialPage = 0
@@ -250,8 +282,12 @@ extension MyPageManagerVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if(section == 0){
+            return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+        }else{
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
         
-        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
 }
 
@@ -289,8 +325,9 @@ extension MyPageManagerVC: UIPageViewControllerDataSource {
 }
 
 //MARK:- Delegate Method to tell Inner View Controller movement inside Page View Controller
+//MARK:- Page View Controller 내부의 Inner View Controller 움직임을 알려주는 Delegate 메서드
 //Capture it and change the selection bar position in collection View
-
+//캡처하고 컬렉션 뷰에서 선택 막대 위치를 변경합니다.
 extension MyPageManagerVC: UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -312,7 +349,7 @@ extension MyPageManagerVC: UIPageViewControllerDelegate {
 
 //MARK:- Sticky Header Effect
 
-extension MyPageManagerVC: InnerTableViewScrollDelegate {
+extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTableViewScrollDelegate {
     
     var currentHeaderHeight: CGFloat {
         
