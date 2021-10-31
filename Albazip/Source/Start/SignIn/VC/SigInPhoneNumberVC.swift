@@ -141,7 +141,7 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
     
     
     @IBAction func btnNext(_ sender: Any) {
-        let credential = PhoneAuthProvider.provider().credential(withVerificationID:currentVerificationId,verificationCode: checkNumberTextField.text!)
+        let credential = PhoneAuthProvider.provider().credential(withVerificationID: self.currentVerificationId,verificationCode: checkNumberTextField.text!)
         
         Auth.auth().signIn(with: credential){(success, error) in
             if error == nil{

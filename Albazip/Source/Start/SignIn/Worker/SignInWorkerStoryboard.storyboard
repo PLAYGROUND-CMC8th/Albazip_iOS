@@ -24,6 +24,9 @@
                                     <constraint firstAttribute="height" constant="24" id="nq2-JJ-xCm"/>
                                 </constraints>
                                 <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="2ee-Hb-nHx" eventType="touchUpInside" id="rxq-Ix-qXe"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="직원 코드를 입력해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJO-WI-UYB">
                                 <rect key="frame" x="36" y="112" width="247" height="29"/>
@@ -47,6 +50,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnNext:" destination="2ee-Hb-nHx" eventType="touchUpInside" id="HYZ-fk-gSv"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="코드 입력       " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QOc-Db-EgD">
                                 <rect key="frame" x="36" y="177" width="303" height="45"/>
@@ -56,7 +62,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
@@ -69,6 +75,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="올바르지 않은 코드입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIr-oJ-O1J">
+                                <rect key="frame" x="44" y="230" width="125" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lAP-XY-jnT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,6 +89,8 @@
                             <constraint firstItem="QOc-Db-EgD" firstAttribute="leading" secondItem="lAP-XY-jnT" secondAttribute="leading" constant="36" id="LRu-KA-k6K"/>
                             <constraint firstItem="tJO-WI-UYB" firstAttribute="top" secondItem="ls6-5H-qWa" secondAttribute="bottom" constant="34" id="RzH-xJ-9VU"/>
                             <constraint firstItem="tJO-WI-UYB" firstAttribute="leading" secondItem="lAP-XY-jnT" secondAttribute="leading" constant="36" id="SWi-85-IqY"/>
+                            <constraint firstItem="WIr-oJ-O1J" firstAttribute="top" secondItem="QOc-Db-EgD" secondAttribute="bottom" constant="8" id="TV4-KB-8Nx"/>
+                            <constraint firstItem="WIr-oJ-O1J" firstAttribute="leading" secondItem="lAP-XY-jnT" secondAttribute="leading" constant="44" id="UWu-Br-Wn0"/>
                             <constraint firstItem="Jib-HE-9I7" firstAttribute="leading" secondItem="lAP-XY-jnT" secondAttribute="leading" constant="24" id="Wio-Qn-QYC"/>
                             <constraint firstItem="lAP-XY-jnT" firstAttribute="trailing" secondItem="QOc-Db-EgD" secondAttribute="trailing" constant="36" id="YS9-Gu-Wc2"/>
                             <constraint firstItem="ls6-5H-qWa" firstAttribute="top" secondItem="lAP-XY-jnT" secondAttribute="top" constant="10" id="cT1-qR-5Pw"/>
@@ -86,19 +100,24 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnCancel" destination="ls6-5H-qWa" id="Nx4-CH-MLT"/>
                         <outlet property="btnNext" destination="Jib-HE-9I7" id="h0z-3c-3Wg"/>
                         <outlet property="codeTextField" destination="QOc-Db-EgD" id="gnx-fU-dbL"/>
+                        <outlet property="errorLabel" destination="WIr-oJ-O1J" id="he4-pO-YJm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="go4-vB-9Gc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="79"/>
+            <point key="canvasLocation" x="982" y="75"/>
         </scene>
     </scenes>
     <resources>
         <image name="icBackArrow" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

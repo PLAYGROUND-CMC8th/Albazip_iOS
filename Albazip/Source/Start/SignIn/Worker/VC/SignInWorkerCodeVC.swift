@@ -13,6 +13,11 @@ class SignInWorkerCodeVC : UIViewController{
     
     @IBOutlet var codeTextField: UITextField!
     @IBOutlet var btnNext: UIButton!
+    @IBOutlet var btnCancel: UIButton!
+    @IBOutlet var errorLabel: UILabel!
+    
+    // Datamanager
+    lazy var dataManager: SignInWorkerDataManager = SignInWorkerDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +27,10 @@ class SignInWorkerCodeVC : UIViewController{
     func setUI(){
         codeTextField.addLeftPadding()
         codeTextField.delegate = self
+        errorLabel.isHidden = true
         self.dismissKeyboardWhenTappedAround()
     }
-    func checkPassword(){
+    func checkCode(){
         if codeTextField.text!.count > 0{
             btnNext.isEnabled = true
             btnNext.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
@@ -35,6 +41,15 @@ class SignInWorkerCodeVC : UIViewController{
             btnNext.setTitleColor(#colorLiteral(red: 0.678363204, green: 0.678479135, blue: 0.6783478856, alpha: 1), for: .normal)
         }
     }
+    @IBAction func btnCancel(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func btnNext(_ sender: Any) {
+        if codeTextField.text!.count > 0{
+            dataManager.postSignInWorker(SignInWorkerRequset(code: codeTextField.text!), delegate: self)
+        }
+    }
     
 }
 extension SignInWorkerCodeVC: UITextFieldDelegate{
@@ -43,25 +58,52 @@ extension SignInWorkerCodeVC: UITextFieldDelegate{
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         print("텍스트 필드의 편집이 시작됩니다.")
         textField.borderColor = .mainYellow
-        checkPassword()
+        checkCode()
         
         return true
     }
     // 텍스트 필드의 편집이 종료되었을 때 호출
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.borderColor = .lightGray
-        checkPassword()
+        checkCode()
+        
         print("텍스트 필드의 편집이 종료됩니다.")
     }
     // 텍스트 필드의 리턴키가 눌러졌을 때 호출
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         print("텍스트 필드의 리턴키가 눌러졌습니다.")
-        checkPassword()
+        checkCode()
+        
         return true
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        checkPassword()
+        checkCode()
         return true
+    }
+}
+
+extension SignInWorkerCodeVC{
+    func didSuccessSignInWorker(_ result: SignInWorkerResponse) {
+        if(result.message == "성공적으로 근무자 가입이 완료되었습니다."){
+            errorLabel.isHidden = true
+            codeTextField.borderColor = .lightGray
+            //온보딩 화면으로 넘어가기
+            let newStoryboard = UIStoryboard(name: "OnboardingWorkerStoryboard", bundle: nil)
+                    let newViewController = newStoryboard.instantiateViewController(identifier: "OnboardingWorkerVC")
+                    self.changeRootViewController(newViewController)
+            
+        }else{
+            errorLabel.isHidden = false
+            codeTextField.borderColor = .red
+            //self.presentAlert(title: result.message)
+        }
+        //self.presentAlert(title: result.message)
+    }
+    
+    func failedToSignInWorker(message: String) {
+        self.presentAlert(title: message)
+        codeTextField.borderColor = .lightGray
+        errorLabel.isHidden = true
     }
 }

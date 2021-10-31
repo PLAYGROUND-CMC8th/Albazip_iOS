@@ -28,7 +28,7 @@ struct UserInfo: Decodable{
     var last_name: String
     var first_name: String
     var birthyear: String
-    var gender: Int
+    var gender: Bool
     var image_path: String?
     var last_position: String?
     var refresh_token: String?
