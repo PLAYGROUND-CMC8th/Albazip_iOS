@@ -92,7 +92,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="Xzb-UB-X0h">
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xzb-UB-X0h">
                                 <rect key="frame" x="36.666666666666657" y="709" width="302" height="19"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r96-bH-jfN">
@@ -110,10 +110,10 @@
                                         </connections>
                                     </button>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pKG-AB-0Rv">
-                                        <rect key="frame" x="101" y="0.0" width="100" height="19"/>
+                                        <rect key="frame" x="56" y="0.0" width="190" height="19"/>
                                         <color key="tintColor" red="0.96470588450000005" green="0.77647060160000003" blue="0.26274511220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="ZEP-5V-JYV"/>
+                                            <constraint firstAttribute="width" constant="190" id="ZEP-5V-JYV"/>
                                         </constraints>
                                         <color key="pageIndicatorTintColor" red="0.91764706370000004" green="0.91764706370000004" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="currentPageIndicatorTintColor" red="0.96470588450000005" green="0.77647060160000003" blue="0.26666668059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -150,6 +150,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnStart:" destination="jX6-kT-dXa" eventType="touchUpInside" id="8a9-4l-bWn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wA0-Z1-T5e"/>
@@ -157,13 +160,13 @@
                         <constraints>
                             <constraint firstItem="565-qp-6Ig" firstAttribute="leading" secondItem="wA0-Z1-T5e" secondAttribute="leading" id="3pG-xn-SrS"/>
                             <constraint firstItem="VbM-bv-H8a" firstAttribute="top" secondItem="565-qp-6Ig" secondAttribute="bottom" constant="24" id="5w1-Hn-g5Y"/>
-                            <constraint firstItem="565-qp-6Ig" firstAttribute="centerX" secondItem="Xzb-UB-X0h" secondAttribute="centerX" id="8kd-Aj-Ny2"/>
-                            <constraint firstItem="Xzb-UB-X0h" firstAttribute="centerX" secondItem="4F9-yv-AOu" secondAttribute="centerX" id="DnQ-L4-czc"/>
+                            <constraint firstItem="wA0-Z1-T5e" firstAttribute="trailing" secondItem="Xzb-UB-X0h" secondAttribute="trailing" constant="36.329999999999998" id="6mr-03-l98"/>
                             <constraint firstItem="565-qp-6Ig" firstAttribute="trailing" secondItem="wA0-Z1-T5e" secondAttribute="trailing" id="Q6m-oG-iB8"/>
                             <constraint firstItem="VbM-bv-H8a" firstAttribute="leading" secondItem="wA0-Z1-T5e" secondAttribute="leading" constant="24" id="Qfh-qK-6nl"/>
                             <constraint firstItem="wA0-Z1-T5e" firstAttribute="trailing" secondItem="VbM-bv-H8a" secondAttribute="trailing" constant="24" id="Ux1-CF-qIN"/>
                             <constraint firstItem="wA0-Z1-T5e" firstAttribute="bottom" secondItem="Xzb-UB-X0h" secondAttribute="bottom" constant="50" id="cTW-Ug-5cE"/>
                             <constraint firstItem="wA0-Z1-T5e" firstAttribute="bottom" secondItem="VbM-bv-H8a" secondAttribute="bottom" constant="36" id="g7I-rI-eDL"/>
+                            <constraint firstItem="Xzb-UB-X0h" firstAttribute="leading" secondItem="wA0-Z1-T5e" secondAttribute="leading" constant="36.670000000000002" id="wV8-uR-oxg"/>
                         </constraints>
                     </view>
                     <connections>

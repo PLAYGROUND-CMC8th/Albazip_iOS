@@ -20,8 +20,8 @@ class OnboardingWorkerVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         slides = [
-                   OnboardingData(title: "근무자 관리", description: "근무자의 스케줄과 시급을 설정하고, 업무\n리스트를 작성해 편리하게 인수인계 하세요.", image: #imageLiteral(resourceName: "imgOnboarding1")),
-            OnboardingData(title: "실시간 근태보고", description: "업무 리스트를 작성하면 근무자가 업무를\n체크하고, 관리자는 업무 진행현황을\n실시간으로 확인할 수 있어요.", image: #imageLiteral(resourceName: "imgOnboarding2")),
+                   OnboardingData(title: "업무 체크", description: "업무 리스트를 체크하고, 하루에\n주어진 업무를 빼먹지 않고 수행할 수 있어요.", image: #imageLiteral(resourceName: "imgOnboarding1")),
+            OnboardingData(title: "근무일 및 급여 확인", description: "QR체크를 통한 출퇴근 기록으로\n정확한 근무한 날과 시간이 기록돼요!\n또한 이 달에 받을 급여를 미리 알 수 있어요.", image: #imageLiteral(resourceName: "imgOnboarding2")),
             OnboardingData(title: "모두를 위한 소통창", description: "새로운 공지사항이나 변경사항을\n즉시 공유하고 확인 할 수 있어요.\n이제 모두가 연결된 환경에서 근무하세요!", image: #imageLiteral(resourceName: "imgOnboarding3"))
                ]
         setUI()
@@ -45,6 +45,7 @@ class OnboardingWorkerVC: UIViewController{
             btnStart.isHidden = true
         }
         print(currentPage)
+        pageControl.currentPage = currentPage
     }
     
     @IBAction func btnSkip(_ sender: Any) {

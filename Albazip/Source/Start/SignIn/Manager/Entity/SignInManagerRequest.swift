@@ -13,6 +13,7 @@ struct SignInManagerRequset: Encodable {
     var registerNumber: String
     var startTime: String
     var endTime: String
+    var breakTime: String
     var holiday: [String]
     var payday: String
 }

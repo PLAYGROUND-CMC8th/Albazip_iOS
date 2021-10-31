@@ -21,9 +21,9 @@ class OnboardingManagerVC:UIViewController{
         super.viewDidLoad()
         
         slides = [
-                   OnboardingData(title: "근무자 관리", description: "근무자의 스케줄과 시급을 설정하고, 업무\n리스트를 작성해 편리하게 인수인계 하세요.", image: #imageLiteral(resourceName: "imgOnboarding1")),
-            OnboardingData(title: "실시간 근태보고", description: "업무 리스트를 작성하면 근무자가 업무를\n체크하고, 관리자는 업무 진행현황을\n실시간으로 확인할 수 있어요.", image: #imageLiteral(resourceName: "imgOnboarding2")),
-            OnboardingData(title: "모두를 위한 소통창", description: "새로운 공지사항이나 변경사항을\n즉시 공유하고 확인 할 수 있어요.\n이제 모두가 연결된 환경에서 근무하세요!", image: #imageLiteral(resourceName: "imgOnboarding3"))
+                   OnboardingData(title: "근무자 관리", description: "근무자의 스케줄과 시급을 설정하고, 업무\n리스트를 작성해 편리하게 인수인계 하세요.", image: #imageLiteral(resourceName: "imgManagerOnboarding1")),
+            OnboardingData(title: "실시간 근태보고", description: "업무 리스트를 작성하면 근무자가 업무를\n체크하고, 관리자는 업무 진행현황을\n실시간으로 확인할 수 있어요.", image: #imageLiteral(resourceName: "imgManagerOnboarding2")),
+            OnboardingData(title: "모두를 위한 소통창", description: "새로운 공지사항이나 변경사항을\n즉시 공유하고 확인 할 수 있어요.\n이제 모두가 연결된 환경에서 근무하세요!", image: #imageLiteral(resourceName: "imgManagerOnboarding3"))
                ]
         setUI()
     }
@@ -71,6 +71,11 @@ class OnboardingManagerVC:UIViewController{
         }
         print(currentPage)
         pageControl.currentPage = currentPage
+    }
+    @IBAction func btnStart(_ sender: Any) {
+        let newStoryboard = UIStoryboard(name: "MainManager", bundle: nil)
+        let newViewController = newStoryboard.instantiateViewController(identifier: "MainManagerTabBarController")
+        self.changeRootViewController(newViewController)
     }
 }
     
