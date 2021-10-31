@@ -123,6 +123,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bottomView" destination="t7w-ZY-WfN" id="iso-Pg-Mif"/>
+                        <outlet property="bottomViewTopConstraint" destination="SrI-Ro-GGV" id="J5h-nR-vQ5"/>
                         <outlet property="headerViewHeightConstraint" destination="4QR-T6-pe4" id="anJ-vU-arC"/>
                         <outlet property="stickyHeaderView" destination="FkT-qM-6pX" id="AxO-3U-drc"/>
                         <outlet property="tabBarCollectionView" destination="GBM-3R-atk" id="6SJ-oU-kMC"/>

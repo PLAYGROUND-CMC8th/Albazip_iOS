@@ -264,6 +264,36 @@ class SignInMoreInfoVC: UIViewController {
         }
     }
     
+    //시간차 구하기
+    func calculateTime(){
+        if startTextField.text!.count > 0, endTextField.text!.count > 0{
+            let startTime = startTextField.text!.components(separatedBy: ":")
+            let endTime = endTextField.text!.components(separatedBy: ":")
+            var startTotal = 0
+            var endTotal = 0
+            var hour = 0
+            var minute = 0
+            
+            //마감시간이 오픈시간 값보다 작을 때 마감시간에 24더하고 빼주기
+            if Int(startTime[0])!>Int(endTime[0])!{
+                endTotal = (Int(endTime[0])! + 24) * 60 + Int(endTime[1])!
+            }else if Int(startTime[0])!==Int(endTime[0])! , Int(startTime[1])!>Int(endTime[1])!{
+                endTotal = (Int(endTime[0])! + 24) * 60 + Int(endTime[1])!
+            }
+            //오픈 시간보다 마감시간이 더 빠를때!
+            else{
+                endTotal = Int(endTime[0])! * 60 + Int(endTime[1])!
+            }
+            startTotal = Int(startTime[0])! * 60 + Int(startTime[1])!
+            
+            let diffTime = endTotal - startTotal
+            hour = diffTime/60
+            minute = diffTime%60
+            
+            hourLabel.text = "\(hour)시간\(minute)분"
+        }
+    }
+    
     //휴일 정보를 배열에 저장
     func getHoliday(){
         //연중 무휴가 아닐때 배열에 추가
@@ -286,6 +316,8 @@ class SignInMoreInfoVC: UIViewController {
             if btnBreak.isSelected{
                 holiday.append("휴무일")
             }
+        }else{
+            holiday.append("연중무휴")
         }
     }
     
@@ -326,6 +358,7 @@ extension SignInMoreInfoVC: SalaryModalDelegate {
     
     func textFieldData(data: String) {
         salaryTextField.text = data
+        
     }
 }
 
@@ -338,9 +371,11 @@ extension SignInMoreInfoVC: TimeDateModalDelegate {
     
     func openTimeTextFieldData(data: String) {
         startTextField.text = data
+        calculateTime()
     }
     func endTimeTextFieldData(data: String) {
         endTextField.text = data
+        calculateTime()
     }
 }
 

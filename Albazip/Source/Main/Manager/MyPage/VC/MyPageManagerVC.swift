@@ -27,6 +27,7 @@ class MyPageManagerVC : UIViewController{
     @IBOutlet var tabBarCollectionView: UICollectionView!
     @IBOutlet var bottomView: UIView!
     @IBOutlet var headerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var bottomViewTopConstraint: NSLayoutConstraint!
     
     //MARK:- Programatic UI Properties
     
@@ -360,15 +361,14 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
        
         headerViewHeightConstraint.constant -= scrollDistance
         
-        /* Don't restrict the downward scroll.
+         //Don't restrict the downward scroll.
  
         if headerViewHeightConstraint.constant > topViewInitialHeight {
 
             headerViewHeightConstraint.constant = topViewInitialHeight
+            //bottomViewTopConstraint.constant += scrollDistance
         }
          
-        */
-        
         if headerViewHeightConstraint.constant < topViewFinalHeight {
             
             headerViewHeightConstraint.constant = topViewFinalHeight
