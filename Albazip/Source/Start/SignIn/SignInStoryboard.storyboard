@@ -869,7 +869,7 @@
         <!--Navigation Controller-->
         <scene sceneID="j3T-rG-reC">
             <objects>
-                <navigationController navigationBarHidden="YES" id="mxT-iB-grI" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SignInNavigationSelectPositionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="mxT-iB-grI" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xf5-eV-gJ1">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

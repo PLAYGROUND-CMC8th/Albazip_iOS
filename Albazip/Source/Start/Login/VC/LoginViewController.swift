@@ -98,11 +98,19 @@ extension LoginViewController: UITextFieldDelegate{
 extension LoginViewController {
     func didSuccessLogin(_ result: LoginResponse) {
         //MARK: 사장님인지 근무자인지 판단해서 다른 스토리보드로 이동해야 할듯!
-        /*
-        let newStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = newStoryboard.instantiateViewController(identifier: "MainTabBarController")
-        self.changeRootViewController(newViewController)
-         */
+        
+        //포지션 정보 있으면 모든 가입절차 완료한 사람임 -> Main 화면으로
+        if let position = result.data?.positionInfo{
+            let newStoryboard = UIStoryboard(name: "MainManager", bundle: nil)
+            let newViewController = newStoryboard.instantiateViewController(identifier: "MainManagerTabBarController")
+            self.changeRootViewController(newViewController)
+        }
+        //포지션 정보 없으면 포지션 선택 안한것, 포지션 선택 페이지로!
+        else{
+            let newStoryboard = UIStoryboard(name: "SignInStoryboard", bundle: nil)
+            let newViewController = newStoryboard.instantiateViewController(identifier: "SignInNavigationSelectPositionVC")
+            self.changeRootViewController(newViewController)
+        }
     }
     
     func failedToRequest(message: String) {

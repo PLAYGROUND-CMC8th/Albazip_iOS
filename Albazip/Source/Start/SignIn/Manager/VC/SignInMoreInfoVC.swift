@@ -252,7 +252,7 @@ class SignInMoreInfoVC: UIViewController {
     
     @IBAction func btnNext(_ sender: Any) {
         let data = SignInManagerInfo.shared
-        let input = SignInManagerRequset(name: data.name!, type: data.type!, address: data.address!, ownerName: data.ownerName!, registerNumber: data.registerNumber!, startTime: startTextField.text!, endTime: endTextField.text!, holiday: "연중무휴", payday: salaryTextField.text!)
+        let input = SignInManagerRequset(name: data.name!, type: data.type!, address: data.address!, ownerName: data.ownerName!, registerNumber: data.registerNumber!, startTime: startTextField.text!, endTime: endTextField.text!, holiday: ["연중무휴"], payday: salaryTextField.text!)
         
     }
 }

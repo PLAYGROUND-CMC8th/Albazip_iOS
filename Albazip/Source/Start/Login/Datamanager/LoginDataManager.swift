@@ -13,7 +13,9 @@ class LoginDataManager{
             .responseDecodable(of: LoginResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    // 성공했을 때
+                    
+                    // 연결 성공했을 때
+                    
                     if ((response.data) != nil) {
                         delegate.didSuccessLogin(response)
                     }
