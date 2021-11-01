@@ -140,7 +140,7 @@ class LoginResetPhoneVC: UIViewController, UITextFieldDelegate{
         
         let credential = PhoneAuthProvider.provider().credential(withVerificationID:currentVerificationId,verificationCode: checkNumberTextField.text!)
         
-        Auth.auth().signIn(with: credential){(success, error) in
+        Auth.auth().signIn(with: credential){ [self](success, error) in
             if error == nil{
                 print(success ?? "")
                 print("User Signed in...")
@@ -148,6 +148,7 @@ class LoginResetPhoneVC: UIViewController, UITextFieldDelegate{
                 // 인증 성공! 다음 화면으로 이동
                 self.errorLabel.isHidden = true
                 guard let nextVC = self.storyboard?.instantiateViewController(identifier: "LoginResetPasswordVC") as? LoginResetPasswordVC else {return}
+                nextVC.phoneNumber = self.phoneNumberTextField.text!
                 self.navigationController?.pushViewController(nextVC, animated: true)
             }else{
                 // 인증 실패

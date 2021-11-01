@@ -64,6 +64,9 @@
 		C38442742714932300B84E8A /* HomeManagerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38442732714932300B84E8A /* HomeManagerStoryboard.storyboard */; };
 		C38442772714940100B84E8A /* CommunityManagerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38442762714940100B84E8A /* CommunityManagerStoryboard.storyboard */; };
 		C384427A2714948200B84E8A /* ScheduleManagerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38442792714948200B84E8A /* ScheduleManagerStoryboard.storyboard */; };
+		C38CA0B5272F646100EA7BB3 /* LoginResetPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0B4272F646100EA7BB3 /* LoginResetPasswordDataManager.swift */; };
+		C38CA0B7272F647600EA7BB3 /* LoginResetPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0B6272F647600EA7BB3 /* LoginResetPasswordRequest.swift */; };
+		C38CA0B9272F649000EA7BB3 /* LoginResetPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0B8272F649000EA7BB3 /* LoginResetPasswordResponse.swift */; };
 		C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39019BE271F246500BC2830 /* SearchCollectionViewCell.swift */; };
 		C39019C1271F246500BC2830 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */; };
 		C39083EF2729B4E5006223CB /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39083EE2729B4E5006223CB /* OnboardingData.swift */; };
@@ -169,6 +172,9 @@
 		C38442732714932300B84E8A /* HomeManagerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeManagerStoryboard.storyboard; sourceTree = "<group>"; };
 		C38442762714940100B84E8A /* CommunityManagerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommunityManagerStoryboard.storyboard; sourceTree = "<group>"; };
 		C38442792714948200B84E8A /* ScheduleManagerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScheduleManagerStoryboard.storyboard; sourceTree = "<group>"; };
+		C38CA0B4272F646100EA7BB3 /* LoginResetPasswordDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResetPasswordDataManager.swift; sourceTree = "<group>"; };
+		C38CA0B6272F647600EA7BB3 /* LoginResetPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResetPasswordRequest.swift; sourceTree = "<group>"; };
+		C38CA0B8272F649000EA7BB3 /* LoginResetPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResetPasswordResponse.swift; sourceTree = "<group>"; };
 		C39019BE271F246500BC2830 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		C39083EE2729B4E5006223CB /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
@@ -378,6 +384,8 @@
 			children = (
 				C37B0B5E27299EA70017D179 /* LoginResponse.swift */,
 				C37B0B6027299EC50017D179 /* LoginRequest.swift */,
+				C38CA0B6272F647600EA7BB3 /* LoginResetPasswordRequest.swift */,
+				C38CA0B8272F649000EA7BB3 /* LoginResetPasswordResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -386,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				C37B0B6227299EDD0017D179 /* LoginDataManager.swift */,
+				C38CA0B4272F646100EA7BB3 /* LoginResetPasswordDataManager.swift */,
 			);
 			path = Datamanager;
 			sourceTree = "<group>";
@@ -934,6 +943,7 @@
 				C37B0B552729724E0017D179 /* SignInDataManager.swift in Sources */,
 				C33F9982272E971800E9FF05 /* SignInWorkerResponse.swift in Sources */,
 				C3E1FEAD272D8F1000CE44C6 /* MyPageManagerTableViewCell.swift in Sources */,
+				C38CA0B7272F647600EA7BB3 /* LoginResetPasswordRequest.swift in Sources */,
 				C37B0B5F27299EA70017D179 /* LoginResponse.swift in Sources */,
 				C37EBF4D271AD71700DEC2CA /* SigInPasswordVC.swift in Sources */,
 				C30EC2E1272A4FDB00EEF218 /* SignInNumberMatchResponse.swift in Sources */,
@@ -942,7 +952,9 @@
 				C384425D27147E3F00B84E8A /* UINavigationBar.swift in Sources */,
 				C33F9984272E973500E9FF05 /* SignInWorkerRequest.swift in Sources */,
 				C37EBF4F271AD97900DEC2CA /* SigInBasicInfoVC.swift in Sources */,
+				C38CA0B9272F649000EA7BB3 /* LoginResetPasswordResponse.swift in Sources */,
 				C3B022EB2726D9C300013988 /* SignInManagerInfoVC.swift in Sources */,
+				C38CA0B5272F646100EA7BB3 /* LoginResetPasswordDataManager.swift in Sources */,
 				C3546F832725083B00C4C3DC /* SignInSearchStoreDataManager.swift in Sources */,
 				C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */,
 				C37B0B57272972720017D179 /* SignInResponse.swift in Sources */,

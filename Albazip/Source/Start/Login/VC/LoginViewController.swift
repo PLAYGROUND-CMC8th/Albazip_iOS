@@ -100,7 +100,7 @@ extension LoginViewController {
         //MARK: 사장님인지 근무자인지 판단해서 다른 스토리보드로 이동해야 할듯!
         
         //우선 유저 토큰 로컬에 저장
-        UserDefaults.standard.set(result.data?.token,forKey: "token")
+        UserDefaults.standard.set(result.data?.token.token,forKey: "token")
         print("token: \(UserDefaults.standard.string(forKey: "token")!)")
         
         //포지션 정보 있으면 모든 가입절차 완료한 사람임 -> Main 화면으로

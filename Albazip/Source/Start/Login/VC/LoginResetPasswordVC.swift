@@ -16,6 +16,10 @@ class LoginResetPasswordVC: UIViewController{
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var btnNext: UIButton!
     
+    var phoneNumber = ""
+    // Datamanager
+    lazy var dataManager: LoginResetPasswordDataManager = LoginResetPasswordDataManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTextField.addLeftPadding()
@@ -67,7 +71,8 @@ class LoginResetPasswordVC: UIViewController{
     }
     
     @IBAction func btnNext(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        dataManager.postLoginResetPassword(LoginResetPasswordRequest(phone: phoneNumber,pwd: passwordTextField.text!), delegate: self)
+        //self.navigationController?.popToRootViewController(animated: true)
     }
     
 }
@@ -105,5 +110,17 @@ extension LoginResetPasswordVC: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         checkPassword()
         return true
+    }
+}
+
+
+extension LoginResetPasswordVC {
+    func didSuccessLoginResetPassword(_ result: LoginResetPasswordResponse) {
+        //MARK: 비밀번호 변경 완료!
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func failedToRequestLoginResetPassword(message: String) {
+        self.presentAlert(title: message)
     }
 }

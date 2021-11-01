@@ -11,7 +11,7 @@ struct LoginResponse: Decodable {
 }
 
 struct LoginResponseData: Decodable {
-    var token: Int
+    var token: Token
     var userInfo: UserInfo?
     var shopInfo : ShopInfo?
     var positionInfo: PositionInfo?
@@ -19,7 +19,9 @@ struct LoginResponseData: Decodable {
     var boardInfo : BoardInfo?
     var scheduleInfo: ScheduleInfo?
 }
-
+struct Token: Decodable{
+    var token : String
+}
 struct UserInfo: Decodable{
     var id: Int
     var phone: String
