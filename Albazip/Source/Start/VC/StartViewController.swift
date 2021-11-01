@@ -19,8 +19,8 @@ class StartViewController: UIViewController{
     func autoLogin(){
         // 자동 로그인
         if let token = UserDefaults.standard.string(forKey: "token"){
-            let storyboard = UIStoryboard(name: "SignInStoryboard", bundle: Bundle.main)
-            guard let nextVC = storyboard.instantiateViewController(identifier: "SignInSelectPositionVC") as? SignInSelectPositionVC else {return}
+            let storyboard = UIStoryboard(name: "RegisterStoryboard", bundle: Bundle.main)
+            guard let nextVC = storyboard.instantiateViewController(identifier: "RegisterSelectPositionVC") as? RegisterSelectPositionVC else {return}
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }

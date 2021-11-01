@@ -28,7 +28,7 @@ class LoginViewController: UIViewController{
         phoneTextfield.delegate = self
         passwordTextfield.delegate = self
         self.dismissKeyboardWhenTappedAround()
-        
+        phoneTextfield.attributedPlaceholder = NSAttributedString(string: "-없이 번호 입력", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
     }
     func checkTextField(){
         if phoneTextfield.text!.count > 0 , passwordTextfield.text!.count > 0{
@@ -99,21 +99,28 @@ extension LoginViewController {
     func didSuccessLogin(_ result: LoginResponse) {
         //MARK: 사장님인지 근무자인지 판단해서 다른 스토리보드로 이동해야 할듯!
         
-        //우선 유저 토큰 로컬에 저장
-        UserDefaults.standard.set(result.data?.token.token,forKey: "token")
-        print("token: \(UserDefaults.standard.string(forKey: "token")!)")
+        
         
         //포지션 정보 있으면 모든 가입절차 완료한 사람임 -> Main 화면으로
         // 이때 근무자인지 관리자인지에 따라 다른 화면 보여줘야함. 우선 관리자만 해놨음
         if let position = result.data?.positionInfo{
+            //우선 유저 토큰 로컬에 저장
+            UserDefaults.standard.set(result.data?.token.token,forKey: "token")
+            print("token: \(UserDefaults.standard.string(forKey: "token")!)")
+            
             let newStoryboard = UIStoryboard(name: "MainManager", bundle: nil)
             let newViewController = newStoryboard.instantiateViewController(identifier: "MainManagerTabBarController")
             self.changeRootViewController(newViewController)
         }
+        
         //포지션 정보 없으면 포지션 선택 안한것, 포지션 선택 페이지로!
         else{
-            let newStoryboard = UIStoryboard(name: "SignInStoryboard", bundle: nil)
-            let newViewController = newStoryboard.instantiateViewController(identifier: "SignInNavigationSelectPositionVC")
+            //토큰은 RegisterBasicInfo.shared 싱글톤에 저장
+            let data = RegisterBasicInfo.shared
+            data.token = result.data?.token.token
+            
+            let newStoryboard = UIStoryboard(name: "RegisterStoryboard", bundle: nil)
+            let newViewController = newStoryboard.instantiateViewController(identifier: "RegisterNavigationSelectPositionVC")
             self.changeRootViewController(newViewController)
         }
     }

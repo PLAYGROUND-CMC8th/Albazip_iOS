@@ -133,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="-196" y="-34.729064039408868"/>
         </scene>
-        <!--SignInViewController-->
+        <!--RegisterViewController-->
         <scene sceneID="Cxe-hx-QSN">
             <objects>
-                <viewControllerPlaceholder storyboardName="SignInStoryboard" referencedIdentifier="SignInViewController" id="QnE-uP-FaH" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="RegisterStoryboard" referencedIdentifier="RegisterViewController" id="QnE-uP-FaH" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="vRc-UK-t8R"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56V-b2-wv3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
