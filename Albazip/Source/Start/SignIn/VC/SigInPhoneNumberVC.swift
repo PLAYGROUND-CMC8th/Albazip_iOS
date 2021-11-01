@@ -27,6 +27,13 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
     var isTimerWork = false
     var phoneNumber = ""
     
+    //휴대폰 중복 api 땜에 만들어진 변수
+    var isReAuth = false
+    var currentNumber = ""
+    
+    // Datamanager
+    lazy var dataManager: SignInPhoneNumberDuplicateDataManager = SignInPhoneNumberDuplicateDataManager()
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,43 +82,70 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
         }
     }
     
+    //휴대폰 번호가 중복되는 번호가 아니라면 문자메시지 보내는 함수 수행!!(인증버튼)
+    func phoneAuth(phoneNumber: String) {
+        PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)", uiDelegate: nil) { (verificationID, error) in
+              if let error = error {
+                print(error.localizedDescription)
+                return
+              }
+
+              self.currentVerificationId = verificationID!
+              self.phoneNumber = phoneNumber
+            }
+        self.timerLabel.isHidden = false
+        self.btnReAuth.isHidden = false
+        self.checkNumberTextField.isHidden = false
+        if(self.isTimerWork){
+            self.limitTime = 120
+        }else{
+            self.getSetTime()
+            self.isTimerWork = true
+            //self.isFirstAuth = false
+        }
+        
+        if(self.isFirstAuth){
+            self.isFirstAuth = false
+            
+            btnNext.isEnabled = true
+            btnNext.backgroundColor = .mainYellow
+            btnNext.setTitleColor(.gray, for: .normal)
+        }
+    }
+    
     @IBAction func btnAuth(_ sender: Any) {
         errorLabel.isHidden = true
         Auth.auth().accessibilityLanguage = "kr";
         
-        if let phoneNumber = phoneNumberTextField.text{
-        
-            PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)", uiDelegate: nil) { (verificationID, error) in
-                  if let error = error {
-                    print(error.localizedDescription)
-                    return
-                  }
-
-                  self.currentVerificationId = verificationID!
-                  self.phoneNumber = phoneNumber
-                }
-            self.timerLabel.isHidden = false
-            self.btnReAuth.isHidden = false
-            self.checkNumberTextField.isHidden = false
-            if(self.isTimerWork){
-                self.limitTime = 120
-            }else{
-                self.getSetTime()
-                self.isTimerWork = true
-                //self.isFirstAuth = false
-            }
-            
-            if(self.isFirstAuth){
-                self.isFirstAuth = false
-                
-                btnNext.isEnabled = true
-                btnNext.backgroundColor = .mainYellow
-                btnNext.setTitleColor(.gray, for: .normal)
-            }
+        if phoneNumberTextField.text!.count > 0{
+            isReAuth = false
+            currentNumber = phoneNumberTextField.text!
+            //핸드폰 번호 중복 검사 api
+            dataManager.getSignInPhoneNumberDuplicateDataManager(vc: self, number: currentNumber)
         }
         
         //UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
     }
+    
+    //휴대폰 번호가 중복되는 번호가 아니라면 문자메시지 보내는 함수 수행!!(재인증버튼)
+    func phoneReAuth(phoneNumber: String){
+        PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)", uiDelegate: nil) { (verificationID, error) in
+              if let error = error {
+                print(error.localizedDescription)
+                return
+              }
+              self.phoneNumber = phoneNumber
+              self.currentVerificationId = verificationID!
+            }
+        if(self.isTimerWork){
+            self.limitTime = 120
+        }else{
+            self.getSetTime()
+            self.isTimerWork = true
+            //self.isFirstAuth = false
+        }
+    }
+    
     
     // 재인증 버튼
     @IBAction func btnReAuth(_ sender: Any) {
@@ -119,23 +153,10 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
         Auth.auth().accessibilityLanguage = "kr";
         
         if let phoneNumber = phoneNumberTextField.text{
-          
-            PhoneAuthProvider.provider().verifyPhoneNumber("+82\(phoneNumber)", uiDelegate: nil) { (verificationID, error) in
-                  if let error = error {
-                    print(error.localizedDescription)
-                    return
-                  }
-                  self.phoneNumber = phoneNumber
-                  self.currentVerificationId = verificationID!
-                }
-            if(self.isTimerWork){
-                self.limitTime = 120
-            }else{
-                self.getSetTime()
-                self.isTimerWork = true
-                //self.isFirstAuth = false
-            }
-            
+            isReAuth = true
+            currentNumber = phoneNumberTextField.text!
+            //핸드폰 번호 중복 검사 api
+            dataManager.getSignInPhoneNumberDuplicateDataManager(vc: self, number: currentNumber)
         }
     }
     
@@ -197,3 +218,18 @@ class SigInPhoneNumberVC: UIViewController, UITextFieldDelegate{
     
 }
 
+extension SigInPhoneNumberVC {
+    func didSuccessSignInPhoneNumberExist(_ result: SignInPhoneNumberDuplicateResponse) {
+        if(!isReAuth){//인증버튼이면
+            phoneAuth(phoneNumber: currentNumber)
+            print(result.message)
+        }else{
+            phoneReAuth(phoneNumber: currentNumber)
+            print(result.message)
+        }
+    }
+    
+    func failedToRequestSignInPhoneNumberExist(message: String) {
+        self.presentAlert(title: message)
+    }
+}

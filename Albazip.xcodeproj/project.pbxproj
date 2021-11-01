@@ -67,6 +67,8 @@
 		C38CA0B5272F646100EA7BB3 /* LoginResetPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0B4272F646100EA7BB3 /* LoginResetPasswordDataManager.swift */; };
 		C38CA0B7272F647600EA7BB3 /* LoginResetPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0B6272F647600EA7BB3 /* LoginResetPasswordRequest.swift */; };
 		C38CA0B9272F649000EA7BB3 /* LoginResetPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0B8272F649000EA7BB3 /* LoginResetPasswordResponse.swift */; };
+		C38CA0BB272F9C5D00EA7BB3 /* SignInPhoneNumberDuplicateDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0BA272F9C5D00EA7BB3 /* SignInPhoneNumberDuplicateDataManager.swift */; };
+		C38CA0BD272F9CC200EA7BB3 /* SignInPhoneNumberDuplicateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0BC272F9CC200EA7BB3 /* SignInPhoneNumberDuplicateResponse.swift */; };
 		C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39019BE271F246500BC2830 /* SearchCollectionViewCell.swift */; };
 		C39019C1271F246500BC2830 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */; };
 		C39083EF2729B4E5006223CB /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39083EE2729B4E5006223CB /* OnboardingData.swift */; };
@@ -175,6 +177,8 @@
 		C38CA0B4272F646100EA7BB3 /* LoginResetPasswordDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResetPasswordDataManager.swift; sourceTree = "<group>"; };
 		C38CA0B6272F647600EA7BB3 /* LoginResetPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResetPasswordRequest.swift; sourceTree = "<group>"; };
 		C38CA0B8272F649000EA7BB3 /* LoginResetPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResetPasswordResponse.swift; sourceTree = "<group>"; };
+		C38CA0BA272F9C5D00EA7BB3 /* SignInPhoneNumberDuplicateDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPhoneNumberDuplicateDataManager.swift; sourceTree = "<group>"; };
+		C38CA0BC272F9CC200EA7BB3 /* SignInPhoneNumberDuplicateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPhoneNumberDuplicateResponse.swift; sourceTree = "<group>"; };
 		C39019BE271F246500BC2830 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		C39083EE2729B4E5006223CB /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
@@ -367,6 +371,7 @@
 				C37B0B58272972840017D179 /* SignInRequest.swift */,
 				C37B0B56272972720017D179 /* SignInResponse.swift */,
 				C37B0B5A272978F80017D179 /* SignInBasicInfo.swift */,
+				C38CA0BC272F9CC200EA7BB3 /* SignInPhoneNumberDuplicateResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				C37B0B542729724E0017D179 /* SignInDataManager.swift */,
+				C38CA0BA272F9C5D00EA7BB3 /* SignInPhoneNumberDuplicateDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -912,7 +918,9 @@
 				C3A968422719FA7A00E27DA1 /* StartViewController.swift in Sources */,
 				C3E1FEB5272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.swift in Sources */,
 				C3A1ADD6271C86C9005A61ED /* LoginResetPasswordVC.swift in Sources */,
+				C38CA0BB272F9C5D00EA7BB3 /* SignInPhoneNumberDuplicateDataManager.swift in Sources */,
 				C39083EF2729B4E5006223CB /* OnboardingData.swift in Sources */,
+				C38CA0BD272F9CC200EA7BB3 /* SignInPhoneNumberDuplicateResponse.swift in Sources */,
 				C3E1FEB9272DB1EA00CE44C6 /* MyPageManagerWriteVC.swift in Sources */,
 				C3E1FEA3272D8A3300CE44C6 /* MyPageManagerVC.swift in Sources */,
 				C3B022E92726D91400013988 /* SignInStoreInfoVC.swift in Sources */,
