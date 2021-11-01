@@ -69,6 +69,10 @@
 		C38CA0B9272F649000EA7BB3 /* LoginResetPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0B8272F649000EA7BB3 /* LoginResetPasswordResponse.swift */; };
 		C38CA0BB272F9C5D00EA7BB3 /* RegisterPhoneNumberDuplicateDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0BA272F9C5D00EA7BB3 /* RegisterPhoneNumberDuplicateDataManager.swift */; };
 		C38CA0BD272F9CC200EA7BB3 /* RegisterPhoneNumberDuplicateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0BC272F9CC200EA7BB3 /* RegisterPhoneNumberDuplicateResponse.swift */; };
+		C38CA0C0273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0BE273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.swift */; };
+		C38CA0C1273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38CA0BF273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.xib */; };
+		C38CA0C4273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0C2273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.swift */; };
+		C38CA0C5273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38CA0C3273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.xib */; };
 		C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39019BE271F246500BC2830 /* SearchCollectionViewCell.swift */; };
 		C39019C1271F246500BC2830 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */; };
 		C39083EF2729B4E5006223CB /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39083EE2729B4E5006223CB /* OnboardingData.swift */; };
@@ -179,6 +183,10 @@
 		C38CA0B8272F649000EA7BB3 /* LoginResetPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResetPasswordResponse.swift; sourceTree = "<group>"; };
 		C38CA0BA272F9C5D00EA7BB3 /* RegisterPhoneNumberDuplicateDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPhoneNumberDuplicateDataManager.swift; sourceTree = "<group>"; };
 		C38CA0BC272F9CC200EA7BB3 /* RegisterPhoneNumberDuplicateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPhoneNumberDuplicateResponse.swift; sourceTree = "<group>"; };
+		C38CA0BE273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerCollectionViewCell.swift; sourceTree = "<group>"; };
+		C38CA0BF273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerWorkerCollectionViewCell.xib; sourceTree = "<group>"; };
+		C38CA0C2273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerTableViewCell.swift; sourceTree = "<group>"; };
+		C38CA0C3273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerWorkerTableViewCell.xib; sourceTree = "<group>"; };
 		C39019BE271F246500BC2830 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		C39083EE2729B4E5006223CB /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
@@ -654,6 +662,10 @@
 				C3E1FEB0272D901300CE44C6 /* MyPageTabBarCollectionViewCell.xib */,
 				C3E1FEB3272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.swift */,
 				C3E1FEB4272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.xib */,
+				C38CA0BE273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.swift */,
+				C38CA0BF273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.xib */,
+				C38CA0C2273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.swift */,
+				C38CA0C3273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -834,6 +846,8 @@
 				C384427A2714948200B84E8A /* ScheduleManagerStoryboard.storyboard in Resources */,
 				C3E1FEAE272D8F1000CE44C6 /* MyPageManagerTableViewCell.xib in Resources */,
 				C3E1FEBA272DB1EA00CE44C6 /* MyPageManagerWriteVC.xib in Resources */,
+				C38CA0C1273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.xib in Resources */,
+				C38CA0C5273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.xib in Resources */,
 				C37EBF3F271A9D7000DEC2CA /* RegisterStoryboard.storyboard in Resources */,
 				C3E1FEAA272D8C5B00CE44C6 /* MyPageManagerContentVC.xib in Resources */,
 				C37EBF49271AD0BB00DEC2CA /* RegisterManagerStoryboard.storyboard in Resources */,
@@ -944,6 +958,7 @@
 				C3A1ADCC271C5002005A61ED /* RegisterSearchStoreVC.swift in Sources */,
 				C37B0B50272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift in Sources */,
 				C3A1ADD4271C86B6005A61ED /* LoginResetPhoneVC.swift in Sources */,
+				C38CA0C4273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.swift in Sources */,
 				C3B022ED2726DB3800013988 /* RegisterMoreInfoVC.swift in Sources */,
 				C37EBF41271AA1B000DEC2CA /* RegisterViewController.swift in Sources */,
 				C37EBF4B271AD54200DEC2CA /* RegisterPhoneNumberVC.swift in Sources */,
@@ -951,6 +966,7 @@
 				C37B0B552729724E0017D179 /* RegisterDataManager.swift in Sources */,
 				C33F9982272E971800E9FF05 /* RegisterWorkerResponse.swift in Sources */,
 				C3E1FEAD272D8F1000CE44C6 /* MyPageManagerTableViewCell.swift in Sources */,
+				C38CA0C0273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.swift in Sources */,
 				C38CA0B7272F647600EA7BB3 /* LoginResetPasswordRequest.swift in Sources */,
 				C37B0B5F27299EA70017D179 /* LoginResponse.swift in Sources */,
 				C37EBF4D271AD71700DEC2CA /* RegisterPasswordVC.swift in Sources */,

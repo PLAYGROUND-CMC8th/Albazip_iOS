@@ -104,22 +104,41 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gpM-60-CPN">
-                        <rightBarButtonItems>
-                            <barButtonItem style="plain" id="Nbe-5y-s3M">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mxq-oc-kKV">
-                                    <rect key="frame" x="370" y="10" width="24" height="24"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="icSetting"/>
-                                </button>
-                            </barButtonItem>
-                            <barButtonItem style="plain" id="c7L-PU-QCW">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0yw-ny-oVl">
-                                    <rect key="frame" x="338" y="10" width="24" height="24"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="icAddPerson"/>
-                                </button>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="hm9-Kq-nf8">
+                            <view key="customView" contentMode="scaleToFill" id="bM1-zG-7lb">
+                                <rect key="frame" x="20" y="5.5" width="92" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="마이페이지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALK-Nh-ejs">
+                                        <rect key="frame" x="7" y="6" width="78" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="5Qb-kD-UMm">
+                            <view key="customView" contentMode="scaleToFill" id="gFp-ud-zWC">
+                                <rect key="frame" x="302" y="5.5" width="92" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yha-LY-wPn">
+                                        <rect key="frame" x="68" y="4" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="icSetting"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="157-Cc-ply">
+                                        <rect key="frame" x="34" y="4" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="icAddPerson"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bottomView" destination="t7w-ZY-WfN" id="iso-Pg-Mif"/>
@@ -137,7 +156,7 @@
         <scene sceneID="wJf-1I-pMb">
             <objects>
                 <navigationController storyboardIdentifier="MyPageManagerNavigationController" id="vs7-eS-pCa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="마이페이지" id="ue1-f0-TKM"/>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="icMypageActive" id="ue1-f0-TKM"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="naM-Pb-gvH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -155,6 +174,7 @@
     <resources>
         <image name="btnProfileChange" width="30" height="30"/>
         <image name="icAddPerson" width="24" height="24"/>
+        <image name="icMypageActive" width="24" height="24"/>
         <image name="icSetting" width="24" height="24"/>
         <image name="imgProfile84Px1" width="84" height="84"/>
         <systemColor name="systemBackgroundColor">

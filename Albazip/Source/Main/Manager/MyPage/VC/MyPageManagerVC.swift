@@ -15,7 +15,7 @@ let topViewFinalHeight : CGFloat = height - 15 //navigation hieght
 
 let topViewHeightConstraintRange = topViewFinalHeight..<topViewInitialHeight
 
-class MyPageManagerVC : UIViewController{
+class MyPageManagerVC : BaseViewController{
     
     //MARK:- Change this value for number of tabs.
     
@@ -42,13 +42,34 @@ class MyPageManagerVC : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUI()
         setupCollectionView()
         setupPagingViewController()
         populateBottomView()
         addPanGestureToTopViewAndCollectionView()
-        
         print("MainviewDidLoad")
+    }
+    func setUI(){
+        //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "마이페이지", style: .plain, target: self, action: nil)
+        /*
+        let btnAddPerson = UIBarButtonItem(image: #imageLiteral(resourceName: "icAddPerson"), style: .plain, target: self, action: #selector(btnAddPerson))
+        let buyTitle = UIBarButtonItem(image: #imageLiteral(resourceName: "icSetting"), style: .plain, target: self, action: #selector(btnSetting))*/
+        //navigationItem.rightBarButtonItems = [btnAddPerson, buyTitle]
+        /*
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "마이페이지"
+        label.textAlignment = .left
+        navigationItem.titleView = label
+        if let navigationBar = navigationController?.navigationBar {
+           label.widthAnchor.constraint(equalTo: navigationBar.widthAnchor, constant: -20).isActive = true
+        }*/
+    }
+    @objc func btnAddPerson(){
+        
+    }
+    @objc func btnSetting(){
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,6 +127,7 @@ class MyPageManagerVC : UIViewController{
         pageViewController.delegate = self
     }
     
+    //상단 탭바 글씨 지정
     func populateBottomView() {
         
         let tabName = ["근무자", "작성글"]
@@ -115,7 +137,7 @@ class MyPageManagerVC : UIViewController{
             if(subTabCount==0){
                 let tabContentVC = MyPageManagerContentVC()
                 tabContentVC.innerTableViewScrollDelegate = self
-                tabContentVC.numberOfCells = 30
+                //tabContentVC.numberOfCells = 30
                 let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
                 let page = Page(with: displayName, _vc: tabContentVC)
                 pageCollection.pages.append(page)
@@ -365,6 +387,14 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
  
         if headerViewHeightConstraint.constant > topViewInitialHeight {
 
+            /*
+            showIndicator()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                    self.dismissIndicator()
+            }
+            */
+            
+            
             headerViewHeightConstraint.constant = topViewInitialHeight
             //bottomViewTopConstraint.constant += scrollDistance
         }

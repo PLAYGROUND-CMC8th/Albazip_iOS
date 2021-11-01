@@ -68,14 +68,20 @@ class MyPageManagerContentVC: UIViewController {
     
 
     //MARK:- View Setup
+    //tableview cell에 들어갈 cell들의 Nib을 등록
     
     func setupTableView() {
+        
+        let curatingCellNib = UINib(nibName: "MyPageManagerWorkerTableViewCell", bundle: nil)
+        self.tableView.register(curatingCellNib, forCellReuseIdentifier: "MyPageManagerWorkerTableViewCell")
+        
         
         tableView.register(UINib(nibName: "MyPageManagerTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageManagerTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = 44
+        //tableView.estimatedRowHeight = 1000
+        
     }
 
 }
@@ -86,14 +92,22 @@ extension MyPageManagerContentVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return numberOfCells
+        return 1
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0:
+            return 500
+        
+        default:
+            return 100
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerTableViewCell") as? MyPageManagerTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerTableViewCell") as? MyPageManagerWorkerTableViewCell {
             
-            cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+            //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
             return cell
         }
         

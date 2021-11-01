@@ -66,7 +66,7 @@ class MyPageManagerWriteVC: UIViewController {
                            forCellReuseIdentifier: "MyPageManagerWriteTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = 97
+        tableView.estimatedRowHeight = 74
     }
 
 }
