@@ -57,9 +57,12 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="4QR-T6-pe4"/>
+                                    <constraint firstItem="zG9-wS-dNP" firstAttribute="top" secondItem="FkT-qM-6pX" secondAttribute="top" constant="94" id="D75-Z1-J5v"/>
                                     <constraint firstItem="TQ6-3o-4Wk" firstAttribute="centerY" secondItem="Bfo-UH-yxi" secondAttribute="centerY" id="U6H-ib-EDD"/>
                                     <constraint firstItem="Sp5-kq-6Lg" firstAttribute="leading" secondItem="UxZ-4B-8Ad" secondAttribute="trailing" constant="14" id="V3M-cM-7BI"/>
                                     <constraint firstItem="UxZ-4B-8Ad" firstAttribute="top" secondItem="FkT-qM-6pX" secondAttribute="top" constant="36" id="Y2H-xc-ZSi"/>
+                                    <constraint firstItem="Sp5-kq-6Lg" firstAttribute="top" secondItem="FkT-qM-6pX" secondAttribute="top" constant="54" id="YxL-R7-izM"/>
+                                    <constraint firstItem="zG9-wS-dNP" firstAttribute="leading" secondItem="FkT-qM-6pX" secondAttribute="leading" constant="74" id="aNR-ow-NlI"/>
                                     <constraint firstItem="UxZ-4B-8Ad" firstAttribute="leading" secondItem="FkT-qM-6pX" secondAttribute="leading" constant="24" id="akf-Ca-sYC"/>
                                     <constraint firstItem="zG9-wS-dNP" firstAttribute="top" secondItem="FkT-qM-6pX" secondAttribute="top" constant="94" id="eU6-sn-Ct2"/>
                                     <constraint firstItem="Sp5-kq-6Lg" firstAttribute="top" secondItem="FkT-qM-6pX" secondAttribute="top" constant="54" id="ho2-EQ-KEO"/>
@@ -91,16 +94,19 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="FkT-qM-6pX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8et-Gk-g9D"/>
                             <constraint firstItem="GBM-3R-atk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="AMg-en-6rL"/>
                             <constraint firstItem="FkT-qM-6pX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="D9Z-h2-IX8"/>
                             <constraint firstItem="GBM-3R-atk" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Ek7-35-hpx"/>
                             <constraint firstItem="FkT-qM-6pX" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="O2F-QU-nCv"/>
+                            <constraint firstItem="FkT-qM-6pX" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Ofq-Nx-NsC"/>
                             <constraint firstItem="FkT-qM-6pX" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="R26-Ol-MGA"/>
                             <constraint firstItem="t7w-ZY-WfN" firstAttribute="top" secondItem="GBM-3R-atk" secondAttribute="bottom" id="SrI-Ro-GGV"/>
                             <constraint firstItem="t7w-ZY-WfN" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="UGt-E0-iMQ"/>
                             <constraint firstItem="GBM-3R-atk" firstAttribute="top" secondItem="FkT-qM-6pX" secondAttribute="bottom" id="Uxk-Wr-hoZ"/>
                             <constraint firstItem="t7w-ZY-WfN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iJ6-Y8-bxA"/>
                             <constraint firstItem="t7w-ZY-WfN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="jla-wZ-mcx"/>
+                            <constraint firstItem="FkT-qM-6pX" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="zOI-FX-jIn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gpM-60-CPN">
