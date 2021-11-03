@@ -139,6 +139,49 @@
             </objects>
             <point key="canvasLocation" x="1023" y="157"/>
         </scene>
+        <!--출퇴근 기록-->
+        <scene sceneID="MU6-Ap-g9T">
+            <objects>
+                <viewController storyboardIdentifier="MyPageDetailCommuteRecordVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ekD-Ct-XRa" customClass="MyPageDetailCommuteRecordVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wF1-6J-S4l">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F8C-6O-fWI">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="39U-np-Ier"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="39U-np-Ier" firstAttribute="trailing" secondItem="F8C-6O-fWI" secondAttribute="trailing" id="1n9-c2-Wop"/>
+                            <constraint firstItem="F8C-6O-fWI" firstAttribute="top" secondItem="39U-np-Ier" secondAttribute="top" id="vMR-Tf-Z2G"/>
+                            <constraint firstItem="39U-np-Ier" firstAttribute="bottom" secondItem="F8C-6O-fWI" secondAttribute="bottom" id="vaR-P1-geb"/>
+                            <constraint firstItem="F8C-6O-fWI" firstAttribute="leading" secondItem="39U-np-Ier" secondAttribute="leading" id="yLI-CQ-Alq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="출퇴근 기록" id="cNo-oo-lwG">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="t0k-rv-2eA">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PGc-iO-6sk">
+                                <rect key="frame" x="20" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="ekD-Ct-XRa" eventType="touchUpInside" id="cXJ-XM-qgq"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="F8C-6O-fWI" id="cEd-r7-1VN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uf2-oq-diK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1751" y="-518"/>
+        </scene>
         <!--마이페이지-->
         <scene sceneID="xkv-Te-cic">
             <objects>
@@ -157,9 +200,170 @@
             </objects>
             <point key="canvasLocation" x="151" y="153"/>
         </scene>
+        <!--완료한 업무-->
+        <scene sceneID="4BY-jP-wWO">
+            <objects>
+                <viewController storyboardIdentifier="MyPageDetailClearWorkVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aUy-zT-RM2" customClass="MyPageDetailClearWorkVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s46-WE-R9U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8j4-1P-N2E">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PCF-So-AS5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PCF-So-AS5" firstAttribute="bottom" secondItem="8j4-1P-N2E" secondAttribute="bottom" id="7qe-SZ-V7d"/>
+                            <constraint firstItem="8j4-1P-N2E" firstAttribute="leading" secondItem="PCF-So-AS5" secondAttribute="leading" id="QwA-Os-LBA"/>
+                            <constraint firstItem="PCF-So-AS5" firstAttribute="trailing" secondItem="8j4-1P-N2E" secondAttribute="trailing" id="b8S-dS-sp7"/>
+                            <constraint firstItem="8j4-1P-N2E" firstAttribute="top" secondItem="PCF-So-AS5" secondAttribute="top" id="es7-Jf-O1O"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="완료한 업무" id="X9h-CC-AyA">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="nAD-BY-9Rg">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lIi-3y-vOu">
+                                <rect key="frame" x="20" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="aUy-zT-RM2" eventType="touchUpInside" id="r9Q-UG-44r"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="8j4-1P-N2E" id="cMd-wj-rKH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLy-e7-b91" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1661" y="886"/>
+        </scene>
+        <!--공통 업무-->
+        <scene sceneID="ags-hJ-Hry">
+            <objects>
+                <viewController storyboardIdentifier="MyPageDetailPublicWorkVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xi9-pS-NuG" customClass="MyPageDetailPublicWorkVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HaF-di-T0J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uOf-lZ-Vib">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="K1i-6h-Uq8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="K1i-6h-Uq8" firstAttribute="bottom" secondItem="uOf-lZ-Vib" secondAttribute="bottom" id="10s-Ar-LeS"/>
+                            <constraint firstItem="K1i-6h-Uq8" firstAttribute="trailing" secondItem="uOf-lZ-Vib" secondAttribute="trailing" id="2Ou-0H-gMs"/>
+                            <constraint firstItem="uOf-lZ-Vib" firstAttribute="top" secondItem="K1i-6h-Uq8" secondAttribute="top" id="Ge7-VK-oTc"/>
+                            <constraint firstItem="uOf-lZ-Vib" firstAttribute="leading" secondItem="K1i-6h-Uq8" secondAttribute="leading" id="wyB-Oa-vFt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="공통 업무" id="qf5-WP-HqF">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="PgD-Ta-JAN">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Q2d-j9-KQZ">
+                                <rect key="frame" x="20" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="xi9-pS-NuG" eventType="touchUpInside" id="IEG-tQ-vLJ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="uOf-lZ-Vib" id="z8c-jT-E1A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2PR-rK-SG5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="157"/>
+        </scene>
+        <!--21년 9월 업무-->
+        <scene sceneID="qOr-3W-9od">
+            <objects>
+                <viewController id="pTe-LR-EBo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nG4-E7-aNi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KOV-cS-bKY">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rOv-Hh-r8t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KOV-cS-bKY" firstAttribute="leading" secondItem="rOv-Hh-r8t" secondAttribute="leading" id="6kY-PX-oZz"/>
+                            <constraint firstItem="rOv-Hh-r8t" firstAttribute="trailing" secondItem="KOV-cS-bKY" secondAttribute="trailing" id="N3S-Dc-n4M"/>
+                            <constraint firstItem="KOV-cS-bKY" firstAttribute="top" secondItem="rOv-Hh-r8t" secondAttribute="top" id="mfs-bQ-Fsb"/>
+                            <constraint firstItem="rOv-Hh-r8t" firstAttribute="bottom" secondItem="KOV-cS-bKY" secondAttribute="bottom" id="wH9-rx-h3W"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="21년 9월 업무" id="3tW-5S-Dsk">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="Nqx-JI-ypE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mzB-tD-P5L">
+                                <rect key="frame" x="20" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icBackArrow"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C0F-3f-fVT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2422" y="867"/>
+        </scene>
+        <!--9/22 수요일 업무-->
+        <scene sceneID="0LQ-8S-1pc">
+            <objects>
+                <viewController id="iDE-tt-Ny0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hca-cr-ULV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lsd-QW-BCF">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ncr-Bh-ZPH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ncr-Bh-ZPH" firstAttribute="bottom" secondItem="Lsd-QW-BCF" secondAttribute="bottom" id="5gY-RW-o99"/>
+                            <constraint firstItem="Lsd-QW-BCF" firstAttribute="leading" secondItem="Ncr-Bh-ZPH" secondAttribute="leading" id="DNI-dL-ssP"/>
+                            <constraint firstItem="Ncr-Bh-ZPH" firstAttribute="trailing" secondItem="Lsd-QW-BCF" secondAttribute="trailing" id="oQQ-FW-AOJ"/>
+                            <constraint firstItem="Lsd-QW-BCF" firstAttribute="top" secondItem="Ncr-Bh-ZPH" secondAttribute="top" id="vIr-rF-j06"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="9/22 수요일 업무" id="phY-YJ-kXp">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="sH7-2d-LPG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sIW-2a-hMC">
+                                <rect key="frame" x="20" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icBackArrow"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVg-CA-Mef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3146" y="867"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btnProfileChange" width="30" height="30"/>
+        <image name="icBackArrow" width="24" height="24"/>
         <image name="icMypageActive" width="24" height="24"/>
         <image name="icSetting" width="24" height="24"/>
         <image name="imgProfile84Px5" width="84" height="84"/>

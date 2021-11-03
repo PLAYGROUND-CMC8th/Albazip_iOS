@@ -34,6 +34,11 @@
 		C34A00612731BF2900C24102 /* MyPageWorkerPositionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34A005F2731BF2900C24102 /* MyPageWorkerPositionTableViewCell.xib */; };
 		C34A00642731C82200C24102 /* MyPageWorkerPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A00622731C82200C24102 /* MyPageWorkerPositionVC.swift */; };
 		C34A00652731C82200C24102 /* MyPageWorkerPositionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34A00632731C82200C24102 /* MyPageWorkerPositionVC.xib */; };
+		C34BCB382732B5910085ADB3 /* MyPageDetailCountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34BCB362732B5910085ADB3 /* MyPageDetailCountTableViewCell.swift */; };
+		C34BCB392732B5910085ADB3 /* MyPageDetailCountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34BCB372732B5910085ADB3 /* MyPageDetailCountTableViewCell.xib */; };
+		C34BCB3C2732BFB20085ADB3 /* MyPageDetailCommuteRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34BCB3B2732BFB20085ADB3 /* MyPageDetailCommuteRecordVC.swift */; };
+		C34BCB3E2732CCB80085ADB3 /* MyPageDetailPublicWorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34BCB3D2732CCB80085ADB3 /* MyPageDetailPublicWorkVC.swift */; };
+		C34BCB402732CCD90085ADB3 /* MyPageDetailClearWorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34BCB3F2732CCD90085ADB3 /* MyPageDetailClearWorkVC.swift */; };
 		C34C4AE02721BF6700300454 /* RegisterSelectYearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C4ADF2721BF6700300454 /* RegisterSelectYearVC.swift */; };
 		C3546F812725082100C4C3DC /* RegisterSearchStoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3546F802725082100C4C3DC /* RegisterSearchStoreResponse.swift */; };
 		C3546F832725083B00C4C3DC /* RegisterSearchStoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3546F822725083B00C4C3DC /* RegisterSearchStoreDataManager.swift */; };
@@ -163,6 +168,11 @@
 		C34A005F2731BF2900C24102 /* MyPageWorkerPositionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageWorkerPositionTableViewCell.xib; sourceTree = "<group>"; };
 		C34A00622731C82200C24102 /* MyPageWorkerPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerPositionVC.swift; sourceTree = "<group>"; };
 		C34A00632731C82200C24102 /* MyPageWorkerPositionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageWorkerPositionVC.xib; sourceTree = "<group>"; };
+		C34BCB362732B5910085ADB3 /* MyPageDetailCountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailCountTableViewCell.swift; sourceTree = "<group>"; };
+		C34BCB372732B5910085ADB3 /* MyPageDetailCountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageDetailCountTableViewCell.xib; sourceTree = "<group>"; };
+		C34BCB3B2732BFB20085ADB3 /* MyPageDetailCommuteRecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailCommuteRecordVC.swift; sourceTree = "<group>"; };
+		C34BCB3D2732CCB80085ADB3 /* MyPageDetailPublicWorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailPublicWorkVC.swift; sourceTree = "<group>"; };
+		C34BCB3F2732CCD90085ADB3 /* MyPageDetailClearWorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailClearWorkVC.swift; sourceTree = "<group>"; };
 		C34C4ADF2721BF6700300454 /* RegisterSelectYearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSelectYearVC.swift; sourceTree = "<group>"; };
 		C3546F802725082100C4C3DC /* RegisterSearchStoreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSearchStoreResponse.swift; sourceTree = "<group>"; };
 		C3546F822725083B00C4C3DC /* RegisterSearchStoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSearchStoreDataManager.swift; sourceTree = "<group>"; };
@@ -387,6 +397,34 @@
 				C33E00032731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C34BCB342732B52D0085ADB3 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C34BCB3A2732BF790085ADB3 /* VC */,
+				C34BCB352732B5380085ADB3 /* Cell */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		C34BCB352732B5380085ADB3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C34BCB362732B5910085ADB3 /* MyPageDetailCountTableViewCell.swift */,
+				C34BCB372732B5910085ADB3 /* MyPageDetailCountTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C34BCB3A2732BF790085ADB3 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C34BCB3B2732BFB20085ADB3 /* MyPageDetailCommuteRecordVC.swift */,
+				C34BCB3D2732CCB80085ADB3 /* MyPageDetailPublicWorkVC.swift */,
+				C34BCB3F2732CCD90085ADB3 /* MyPageDetailClearWorkVC.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		C3546F7E272507A400C4C3DC /* DataManager */ = {
@@ -690,6 +728,7 @@
 		C3C97BC72730B40D002C8584 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				C34BCB342732B52D0085ADB3 /* Detail */,
 				C34A00552731A99E00C24102 /* Cell */,
 				C3C97BCA2730E927002C8584 /* VC */,
 				C3C97BC82730B42E002C8584 /* MyPageWorkerStoryboard.storyboard */,
@@ -941,6 +980,7 @@
 				C37EBF45271ABE7B00DEC2CA /* LoginStoryboard.storyboard in Resources */,
 				C37B0B482728FF300017D179 /* OnboardingWorkerStoryboard.storyboard in Resources */,
 				C3E1FEB2272D901300CE44C6 /* MyPageTabBarCollectionViewCell.xib in Resources */,
+				C34BCB392732B5910085ADB3 /* MyPageDetailCountTableViewCell.xib in Resources */,
 				C30D2EB027315DC400D4C1C1 /* HomeWorkerStoryboard.storyboard in Resources */,
 				C38442412714797100B84E8A /* LaunchScreen.storyboard in Resources */,
 				C30D2EB427315EC400D4C1C1 /* ScheduleWorkerStoryboard.storyboard in Resources */,
@@ -1050,12 +1090,15 @@
 				C3A1ADD6271C86C9005A61ED /* LoginResetPasswordVC.swift in Sources */,
 				C38CA0BB272F9C5D00EA7BB3 /* RegisterPhoneNumberDuplicateDataManager.swift in Sources */,
 				C39083EF2729B4E5006223CB /* OnboardingData.swift in Sources */,
+				C34BCB382732B5910085ADB3 /* MyPageDetailCountTableViewCell.swift in Sources */,
 				C38CA0BD272F9CC200EA7BB3 /* RegisterPhoneNumberDuplicateResponse.swift in Sources */,
 				C3E1FEB9272DB1EA00CE44C6 /* MyPageManagerWriteVC.swift in Sources */,
 				C3E1FEA3272D8A3300CE44C6 /* MyPageManagerVC.swift in Sources */,
 				C3B022E92726D91400013988 /* RegisterStoreInfoVC.swift in Sources */,
+				C34BCB402732CCD90085ADB3 /* MyPageDetailClearWorkVC.swift in Sources */,
 				C30EC2DD272A4F7D00EEF218 /* RegisterNumberExistDataManager.swift in Sources */,
 				C33E00082731D80500D88267 /* MyPageWorkerWriteVC.swift in Sources */,
+				C34BCB3E2732CCB80085ADB3 /* MyPageDetailPublicWorkVC.swift in Sources */,
 				C3E1FEA6272D8AAB00CE44C6 /* Page.swift in Sources */,
 				C3E1FEA9272D8C5B00CE44C6 /* MyPageManagerContentVC.swift in Sources */,
 				C30EC2E3272A4FEF00EEF218 /* RegisterNumberExistResponse.swift in Sources */,
@@ -1097,6 +1140,7 @@
 				C34A00582731AA2D00C24102 /* MyPageWorkerMyInfoTableViewCell.swift in Sources */,
 				C37EBF4F271AD97900DEC2CA /* RegisterBasicInfoVC.swift in Sources */,
 				C38CA0B9272F649000EA7BB3 /* LoginResetPasswordResponse.swift in Sources */,
+				C34BCB3C2732BFB20085ADB3 /* MyPageDetailCommuteRecordVC.swift in Sources */,
 				C3B022EB2726D9C300013988 /* RegisterManagerInfoVC.swift in Sources */,
 				C38CA0B5272F646100EA7BB3 /* LoginResetPasswordDataManager.swift in Sources */,
 				C3546F832725083B00C4C3DC /* RegisterSearchStoreDataManager.swift in Sources */,

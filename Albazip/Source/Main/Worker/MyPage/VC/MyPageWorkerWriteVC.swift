@@ -43,12 +43,14 @@ class MyPageWorkerWriteVC: UIViewController {
     //MARK:- View Setup
     
     func setupTableView() {
-        
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 18))
+        header.backgroundColor = #colorLiteral(red: 0.9724535346, green: 0.9726160169, blue: 0.9724321961, alpha: 1)
+        tableView.tableHeaderView = header
         tableView.register(UINib(nibName: "MyPageWorkerWriteTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageWorkerWriteTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = 204
+        //tableView.estimatedRowHeight = 204
     }
 
 }
@@ -64,17 +66,20 @@ extension MyPageWorkerWriteVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerWriteTableViewCell") as? MyPageWorkerWriteTableViewCell {
-            
-            //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
-            print(indexPath.row)
+         if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerWriteTableViewCell") as? MyPageWorkerWriteTableViewCell {
+                
+                //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                print(indexPath.row)
             return cell
+            
         }
         
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
+        
         return 204
+        
     }
     
     

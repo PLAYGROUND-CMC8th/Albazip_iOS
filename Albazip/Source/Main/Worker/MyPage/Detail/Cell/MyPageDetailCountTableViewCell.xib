@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="113" id="KGk-i7-Jjw" customClass="MyPageDetailCountTableViewCell" customModule="Albazip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="113"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="113"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLd-Zm-Svy">
+                        <rect key="frame" x="24" y="24" width="342" height="67"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지각횟수" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHP-V1-oeP">
+                                <rect key="frame" x="24" y="24" width="203" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="203" id="Ojn-ME-N7Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20784312490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTI-Vj-eFM">
+                                <rect key="frame" x="304" y="23.666666666666664" width="14" height="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xc-tp-a2i">
+                                <rect key="frame" x="287" y="19" width="16" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215800000001" green="0.88627451660000001" blue="0.54901963470000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="0xc-tp-a2i" firstAttribute="centerY" secondItem="GTI-Vj-eFM" secondAttribute="centerY" id="5aI-0x-BhA"/>
+                            <constraint firstAttribute="height" constant="67" id="Axx-E6-Nba"/>
+                            <constraint firstItem="GTI-Vj-eFM" firstAttribute="leading" secondItem="0xc-tp-a2i" secondAttribute="trailing" constant="1" id="Kvg-QY-81W"/>
+                            <constraint firstItem="GTI-Vj-eFM" firstAttribute="centerY" secondItem="PHP-V1-oeP" secondAttribute="centerY" id="OQU-Oz-yfS"/>
+                            <constraint firstItem="PHP-V1-oeP" firstAttribute="top" secondItem="sLd-Zm-Svy" secondAttribute="top" constant="24" id="YRu-zl-dSw"/>
+                            <constraint firstAttribute="trailing" secondItem="GTI-Vj-eFM" secondAttribute="trailing" constant="24" id="b3g-Y4-RpX"/>
+                            <constraint firstItem="PHP-V1-oeP" firstAttribute="leading" secondItem="sLd-Zm-Svy" secondAttribute="leading" constant="24" id="pC9-in-XPK"/>
+                            <constraint firstAttribute="bottom" secondItem="PHP-V1-oeP" secondAttribute="bottom" constant="24" id="xEO-d9-7Ga"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="sLd-Zm-Svy" secondAttribute="bottom" constant="24" id="CAn-P5-hq3"/>
+                    <constraint firstItem="sLd-Zm-Svy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="GXH-nO-FA2"/>
+                    <constraint firstAttribute="trailing" secondItem="sLd-Zm-Svy" secondAttribute="trailing" constant="24" id="Y6O-fC-wf7"/>
+                    <constraint firstItem="sLd-Zm-Svy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="nVG-kD-H7m"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="184" y="145.19704433497537"/>
+        </tableViewCell>
+    </objects>
+</document>

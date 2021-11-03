@@ -67,6 +67,7 @@ extension MyPageWorkerInfoVC: UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerMyInfoTableViewCell") as? MyPageWorkerMyInfoTableViewCell {
             
+            cell.delegate = self
             //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
             print(indexPath.row)
             return cell
@@ -147,5 +148,31 @@ extension MyPageWorkerInfoVC: UITableViewDelegate {
             
             myPageWorkerInfoTableViewScrollDelegate?.innerTableViewScrollEnded(withScrollDirection: dragDirection)
         }
+    }
+}
+
+
+extension MyPageWorkerInfoVC: MyPageWorkerMyInfoDelegate {
+    
+    func goCommuteRecordVC(){
+        print("출퇴근 기록 페이지로..")
+        let storyboard = UIStoryboard(name: "MyPageWorkerStoryboard", bundle: Bundle.main)
+        guard let nextVC = storyboard.instantiateViewController(identifier: "MyPageDetailCommuteRecordVC") as? MyPageDetailCommuteRecordVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    func goPublicWorkVC(){
+        print("공동업무 페이지로..")
+        let storyboard = UIStoryboard(name: "MyPageWorkerStoryboard", bundle: Bundle.main)
+        guard let nextVC = storyboard.instantiateViewController(identifier: "MyPageDetailPublicWorkVC") as? MyPageDetailPublicWorkVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    func goClearWorkVC(){
+        print("완료 업무 페이지로..")
+        let storyboard = UIStoryboard(name: "MyPageWorkerStoryboard", bundle: Bundle.main)
+        guard let nextVC = storyboard.instantiateViewController(identifier: "MyPageDetailClearWorkVC") as? MyPageDetailClearWorkVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    func goLeaveWorkVC(){
+        print("퇴사 알림창..")
     }
 }
