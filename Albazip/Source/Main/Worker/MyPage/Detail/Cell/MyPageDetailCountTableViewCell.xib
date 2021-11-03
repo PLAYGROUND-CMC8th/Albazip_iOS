@@ -68,6 +68,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="countLabel" destination="0xc-tp-a2i" id="CCJ-Nq-hsp"/>
+                <outlet property="titleLabel" destination="PHP-V1-oeP" id="TLb-aC-Ltd"/>
+                <outlet property="unitLabel" destination="GTI-Vj-eFM" id="b0Q-tH-sSD"/>
+            </connections>
             <point key="canvasLocation" x="184" y="145.19704433497537"/>
         </tableViewCell>
     </objects>

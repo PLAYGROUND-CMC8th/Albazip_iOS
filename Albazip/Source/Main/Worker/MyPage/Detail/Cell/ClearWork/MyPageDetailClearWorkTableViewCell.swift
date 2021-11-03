@@ -1,5 +1,5 @@
 //
-//  MyPageDetailCountTableViewCell.swift
+//  MyPageDetailClearWorkTableViewCell.swift
 //  Albazip
 //
 //  Created by 김수빈 on 2021/11/03.
@@ -7,11 +7,13 @@
 
 import UIKit
 
-class MyPageDetailCountTableViewCell: UITableViewCell {
+class MyPageDetailClearWorkTableViewCell: UITableViewCell {
 
-    @IBOutlet var titleLabel: UILabel!
+    
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var totalLabel: UILabel!
     @IBOutlet var countLabel: UILabel!
-    @IBOutlet var unitLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -1,18 +1,14 @@
 //
-//  MyPageDetailCountTableViewCell.swift
+//  MyPageDetailCommuteMonthTableViewCell.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2021/11/03.
+//  Created by 김수빈 on 2021/11/04.
 //
 
 import UIKit
 
-class MyPageDetailCountTableViewCell: UITableViewCell {
+class MyPageDetailCommuteMonthTableViewCell: UITableViewCell {
 
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var countLabel: UILabel!
-    @IBOutlet var unitLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

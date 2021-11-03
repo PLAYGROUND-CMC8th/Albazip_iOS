@@ -1,18 +1,14 @@
 //
-//  MyPageDetailCountTableViewCell.swift
+//  MyPageDetailPublicWorkTableViewCell.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2021/11/03.
+//  Created by 김수빈 on 2021/11/04.
 //
 
 import UIKit
 
-class MyPageDetailCountTableViewCell: UITableViewCell {
+class MyPageDetailPublicWorkTableViewCell: UITableViewCell {
 
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var countLabel: UILabel!
-    @IBOutlet var unitLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
