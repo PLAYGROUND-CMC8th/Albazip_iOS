@@ -1,5 +1,5 @@
 //
-//  MyPageManagerSelectInfo3TableViewCell.swift
+//  MyPageManagerWorkList2TableViewCell.swift
 //  Albazip
 //
 //  Created by 김수빈 on 2021/11/04.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyPageManagerSelectInfo3TableViewCell: UITableViewCell {
+class MyPageManagerWorkList2TableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

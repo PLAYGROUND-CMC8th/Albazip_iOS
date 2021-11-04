@@ -90,6 +90,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="moneyTextField" destination="TVt-x3-isE" id="5JE-ah-EtD"/>
+                <outlet property="moneyTypeTextField" destination="tFS-yp-c2y" id="rbE-r6-dVk"/>
+            </connections>
             <point key="canvasLocation" x="511" y="165"/>
         </tableViewCell>
     </objects>

@@ -50,8 +50,9 @@ class MyPageManagerVC : BaseViewController{
         addPanGestureToTopViewAndCollectionView()
         print("MainviewDidLoad")
     }
+    
     func setUI(){
-      
+        self.tabBarController?.tabBar.isHidden = false
     }
     @objc func btnAddPerson(){
         
@@ -63,6 +64,7 @@ class MyPageManagerVC : BaseViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         print("MainviewWillAppear")
+        setUI()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)

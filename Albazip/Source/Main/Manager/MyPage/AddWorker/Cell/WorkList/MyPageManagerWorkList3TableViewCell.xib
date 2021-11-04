@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MyPageManagerWorkList3TableViewCell" customModule="Albazip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ug6-66-nFO">
+                        <rect key="frame" x="132" y="8" width="111" height="44"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic20Px" translatesAutoresizingMaskIntoConstraints="NO" id="BXo-nU-OJS">
+                                <rect key="frame" x="22" y="12" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="fbS-aA-221"/>
+                                    <constraint firstAttribute="width" constant="20" id="j2e-Nh-maA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업무 추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phe-TG-bis">
+                                <rect key="frame" x="44" y="14.666666666666668" width="45" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.43921568989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="6jo-9b-KUf"/>
+                            <constraint firstItem="phe-TG-bis" firstAttribute="leading" secondItem="BXo-nU-OJS" secondAttribute="trailing" constant="2" id="TOT-Xc-Gmu"/>
+                            <constraint firstAttribute="bottom" secondItem="BXo-nU-OJS" secondAttribute="bottom" constant="12" id="Xij-lW-3UF"/>
+                            <constraint firstItem="BXo-nU-OJS" firstAttribute="top" secondItem="Ug6-66-nFO" secondAttribute="top" constant="12" id="YYx-jj-Qjp"/>
+                            <constraint firstItem="BXo-nU-OJS" firstAttribute="leading" secondItem="Ug6-66-nFO" secondAttribute="leading" constant="22" id="ZJn-VJ-S9t"/>
+                            <constraint firstItem="phe-TG-bis" firstAttribute="centerY" secondItem="BXo-nU-OJS" secondAttribute="centerY" id="aYP-2s-CWx"/>
+                            <constraint firstAttribute="width" constant="111" id="qT6-mH-1jt"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="26"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ug6-66-nFO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Qeu-j0-PFn"/>
+                    <constraint firstItem="Ug6-66-nFO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gCB-s1-bFZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="245.59999999999999" y="138.91625615763547"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic20Px" width="20" height="20"/>
+    </resources>
+</document>

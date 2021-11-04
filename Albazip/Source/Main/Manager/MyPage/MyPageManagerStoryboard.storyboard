@@ -203,6 +203,9 @@
                                         <state key="normal" title="다음">
                                             <color key="titleColor" red="0.6784313917" green="0.6784313917" blue="0.6784313917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnNext:" destination="3et-ET-s4f" eventType="touchUpInside" id="3f8-dd-8KI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -217,6 +220,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4U-v2-Bm7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1172" y="704"/>
+        </scene>
+        <!--근무자 추가-->
+        <scene sceneID="tj8-Nk-q8k">
+            <objects>
+                <viewController storyboardIdentifier="MyPageManagerWorkListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="By3-ao-wND" customClass="MyPageManagerWorkListVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cZ8-D2-Gih">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G6k-nb-xQ9">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lnG-Cw-x4L"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lnG-Cw-x4L" firstAttribute="trailing" secondItem="G6k-nb-xQ9" secondAttribute="trailing" id="0DX-fz-jLr"/>
+                            <constraint firstItem="G6k-nb-xQ9" firstAttribute="leading" secondItem="lnG-Cw-x4L" secondAttribute="leading" id="3Cv-Sp-yLC"/>
+                            <constraint firstItem="G6k-nb-xQ9" firstAttribute="top" secondItem="lnG-Cw-x4L" secondAttribute="top" id="e1l-V2-ixG"/>
+                            <constraint firstItem="lnG-Cw-x4L" firstAttribute="bottom" secondItem="G6k-nb-xQ9" secondAttribute="bottom" id="ktM-y0-GnH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="근무자 추가" id="bcF-qI-xdy">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="JGd-Uj-b36">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bmW-MB-p5E">
+                                <rect key="frame" x="16" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="By3-ao-wND" eventType="touchUpInside" id="XQR-jE-paf"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ot4-Tu-HyK">
+                            <view key="customView" contentMode="scaleToFill" id="yVe-Bp-JiS">
+                                <rect key="frame" x="276" y="5.6666666666666679" width="83" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgX-na-4hO">
+                                        <rect key="frame" x="53" y="1.9999999999999609" width="30" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <state key="normal" title="완료">
+                                            <color key="titleColor" red="0.96470588450000005" green="0.77647060160000003" blue="0.26274511220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="btnNext" destination="yVe-Bp-JiS" id="VOv-9f-d1k"/>
+                        <outlet property="tableView" destination="G6k-nb-xQ9" id="sTG-wf-mBJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="seJ-Lb-2Rd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918" y="705"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="n64-iL-jba">
