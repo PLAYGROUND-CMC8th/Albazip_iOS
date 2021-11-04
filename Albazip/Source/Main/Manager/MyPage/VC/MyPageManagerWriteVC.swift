@@ -15,7 +15,7 @@ protocol MyPageManagerWriteTableViewScrollDelegate: AnyObject {
     func innerTableViewScrollEnded(withScrollDirection scrollDirection: DragDirection)
 }
 
-class MyPageManagerWriteVC: UIViewController {
+class MyPageManagerWriteVC: UIViewController, MyPageManagerWriteTabDelegate  {
     
     //MARK:- Outlets
     @IBOutlet var tableView: UITableView!
@@ -32,6 +32,8 @@ class MyPageManagerWriteVC: UIViewController {
     //MARK:- Data Source
     
     var numberOfCells: Int = 5
+    //선택됨 탭
+    var selectedTab = 0
     
     //MARK:- View Life Cycle
     
@@ -64,11 +66,21 @@ class MyPageManagerWriteVC: UIViewController {
         
         tableView.register(UINib(nibName: "MyPageManagerWriteTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageManagerWriteTableViewCell")
+        tableView.register(UINib(nibName: "MyPageManagerWriteTabTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageManagerWriteTabTableViewCell")
+        tableView.register(UINib(nibName: "MyPageManagerWriteCommunityTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageManagerWriteCommunityTableViewCell")
+        //MyPageManagerWriteCommunityTableViewCell
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = 74
+        //tableView.estimatedRowHeight = 74
     }
 
+    //tab Delegate
+    func changeTab(index: Int) {
+        selectedTab = index
+        tableView.reloadData()
+    }
 }
 
 //MARK:- Table View Data Source
@@ -82,19 +94,46 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteTableViewCell") as? MyPageManagerWriteTableViewCell {
+        if indexPath.row == 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteTabTableViewCell") as? MyPageManagerWriteTabTableViewCell {
+                cell.delegate = self
+                cell.selectionStyle = .none
+                return cell
+            }
+        }else{
+            if(selectedTab==0){
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteTableViewCell") as? MyPageManagerWriteTableViewCell {
+                    cell.selectionStyle = .none
+                    cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                    print(indexPath.row)
+                    return cell
+                }
+            }else{
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteCommunityTableViewCell") as? MyPageManagerWriteCommunityTableViewCell {
+                    cell.selectionStyle = .none
+                    //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                    print(indexPath.row)
+                    return cell
+                }
+            }
             
-            cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
-            print(indexPath.row)
-            return cell
         }
-        
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
-        return 97
+        if indexPath.row == 0{
+            return 51
+        }else{
+            if selectedTab == 0{
+                return 97
+            }else{
+                return 175
+            }
+        }
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("선택된 행은 \(indexPath.row) 입니다.")
+    }
     
 }
 
@@ -166,3 +205,4 @@ extension MyPageManagerWriteVC: UITableViewDelegate {
         }
     }
 }
+

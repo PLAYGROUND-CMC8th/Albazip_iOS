@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="MyPageManagerWriteCommunityTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPageManagerWriteCommunityTableViewCell" id="KGk-i7-Jjw" customClass="MyPageManagerWriteCommunityTableViewCell" customModule="Albazip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ng-yU-UOm">
+                        <rect key="frame" x="24" y="6" width="327" height="163"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfile84Px1" translatesAutoresizingMaskIntoConstraints="NO" id="gej-Wj-3vc">
+                                <rect key="frame" x="16" y="16" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="LGD-Jk-Jkk"/>
+                                    <constraint firstAttribute="width" constant="24" id="ijO-4n-tiA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사장님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3d-XE-nQn">
+                                <rect key="frame" x="44" y="21" width="29" height="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                                <color key="textColor" red="0.94117647410000005" green="0.55294120309999995" blue="0.20784312490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김형준" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4b-C5-hLn">
+                                <rect key="frame" x="77" y="21" width="29" height="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                                <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icMoreVertical24Px" translatesAutoresizingMaskIntoConstraints="NO" id="RNX-cg-Spa">
+                                <rect key="frame" x="287" y="16" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="OP0-eC-iS0"/>
+                                    <constraint firstAttribute="width" constant="24" id="thk-Du-7vd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오차드별 아이스티 품절" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neh-Cl-nac">
+                                <rect key="frame" x="16" y="52" width="129" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTX-dS-pjO">
+                                <rect key="frame" x="16" y="77" width="295" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="6Nj-pc-EcY"/>
+                                </constraints>
+                                <string key="text">오차드별 아이스티 남아있던 거 다 팔았습니다!
+오늘부로 판매 종료입니다~</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icComment24Px" translatesAutoresizingMaskIntoConstraints="NO" id="kjR-cu-FsW">
+                                <rect key="frame" x="16" y="127" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="eMo-h4-pmu"/>
+                                    <constraint firstAttribute="height" constant="20" id="rBz-vT-vfA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbu-u1-eTh">
+                                <rect key="frame" x="41" y="129.66666666666666" width="21" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mu-jx-Ahg">
+                                <rect key="frame" x="64" y="129.66666666666666" width="8" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021. 08. 15. 일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxX-T3-s0h">
+                                <rect key="frame" x="236" y="135" width="75" height="12"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                <color key="textColor" red="0.63921570780000003" green="0.63921570780000003" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RNX-cg-Spa" firstAttribute="centerY" secondItem="gej-Wj-3vc" secondAttribute="centerY" id="2gV-gN-uK6"/>
+                            <constraint firstItem="6Mu-jx-Ahg" firstAttribute="leading" secondItem="Pbu-u1-eTh" secondAttribute="trailing" constant="2" id="6L4-YA-Tbd"/>
+                            <constraint firstItem="neh-Cl-nac" firstAttribute="top" secondItem="gej-Wj-3vc" secondAttribute="bottom" constant="12" id="6cQ-Vs-fj6"/>
+                            <constraint firstAttribute="trailing" secondItem="gTX-dS-pjO" secondAttribute="trailing" constant="16" id="72H-p0-bpR"/>
+                            <constraint firstItem="kjR-cu-FsW" firstAttribute="leading" secondItem="gej-Wj-3vc" secondAttribute="leading" id="8Lv-Gi-EvA"/>
+                            <constraint firstItem="kjR-cu-FsW" firstAttribute="top" secondItem="gTX-dS-pjO" secondAttribute="bottom" constant="18" id="B9H-YU-mz6"/>
+                            <constraint firstItem="Pbu-u1-eTh" firstAttribute="centerY" secondItem="kjR-cu-FsW" secondAttribute="centerY" id="BGw-Ik-DZL"/>
+                            <constraint firstItem="Pbu-u1-eTh" firstAttribute="leading" secondItem="kjR-cu-FsW" secondAttribute="trailing" constant="5" id="D5K-ch-Scg"/>
+                            <constraint firstItem="L4b-C5-hLn" firstAttribute="centerY" secondItem="gej-Wj-3vc" secondAttribute="centerY" id="Goz-Zw-hfG"/>
+                            <constraint firstAttribute="trailing" secondItem="RNX-cg-Spa" secondAttribute="trailing" constant="16" id="Itp-mN-AsM"/>
+                            <constraint firstItem="6Mu-jx-Ahg" firstAttribute="centerY" secondItem="Pbu-u1-eTh" secondAttribute="centerY" id="Jda-6Z-dla"/>
+                            <constraint firstItem="E3d-XE-nQn" firstAttribute="centerY" secondItem="gej-Wj-3vc" secondAttribute="centerY" id="NUF-EG-UWf"/>
+                            <constraint firstAttribute="trailing" secondItem="ZxX-T3-s0h" secondAttribute="trailing" constant="16" id="NYu-La-8bZ"/>
+                            <constraint firstItem="gTX-dS-pjO" firstAttribute="top" secondItem="neh-Cl-nac" secondAttribute="bottom" constant="8" id="NZo-cX-4hp"/>
+                            <constraint firstAttribute="height" constant="163" id="aIL-Pc-wCZ"/>
+                            <constraint firstItem="gej-Wj-3vc" firstAttribute="top" secondItem="5Ng-yU-UOm" secondAttribute="top" constant="16" id="oE1-U2-OjY"/>
+                            <constraint firstItem="neh-Cl-nac" firstAttribute="leading" secondItem="gej-Wj-3vc" secondAttribute="leading" id="oFJ-bc-r0j"/>
+                            <constraint firstItem="gej-Wj-3vc" firstAttribute="leading" secondItem="5Ng-yU-UOm" secondAttribute="leading" constant="16" id="r86-pP-icd"/>
+                            <constraint firstAttribute="bottom" secondItem="ZxX-T3-s0h" secondAttribute="bottom" constant="16" id="rmP-M8-LCk"/>
+                            <constraint firstItem="L4b-C5-hLn" firstAttribute="leading" secondItem="E3d-XE-nQn" secondAttribute="trailing" constant="4" id="tHD-M5-QGX"/>
+                            <constraint firstItem="E3d-XE-nQn" firstAttribute="leading" secondItem="gej-Wj-3vc" secondAttribute="trailing" constant="4" id="v2r-Jc-D8c"/>
+                            <constraint firstItem="gTX-dS-pjO" firstAttribute="leading" secondItem="gej-Wj-3vc" secondAttribute="leading" id="v84-PP-NnG"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstItem="5Ng-yU-UOm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="Ua4-lp-IrE"/>
+                    <constraint firstAttribute="trailing" secondItem="5Ng-yU-UOm" secondAttribute="trailing" constant="24" id="bS5-SA-PMh"/>
+                    <constraint firstAttribute="bottom" secondItem="5Ng-yU-UOm" secondAttribute="bottom" constant="6" id="tJ5-Di-UNz"/>
+                    <constraint firstItem="5Ng-yU-UOm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="zZs-oB-6af"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="79" y="154"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icComment24Px" width="20" height="20"/>
+        <image name="icMoreVertical24Px" width="24" height="24"/>
+        <image name="imgProfile84Px1" width="84" height="84"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

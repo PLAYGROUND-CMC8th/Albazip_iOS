@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9C7447FE94295A129DB07CA9 /* Pods_Albazip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363836578B4295DDC93F8120 /* Pods_Albazip.framework */; };
+		C30AFE672733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AFE652733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift */; };
+		C30AFE682733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30AFE662733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib */; };
+		C30AFE6B2733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AFE692733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift */; };
+		C30AFE6C2733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30AFE6A2733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.xib */; };
 		C30D2EB027315DC400D4C1C1 /* HomeWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30D2EAF27315DC400D4C1C1 /* HomeWorkerStoryboard.storyboard */; };
 		C30D2EB227315E4A00D4C1C1 /* CommunityWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30D2EB127315E4A00D4C1C1 /* CommunityWorkerStoryboard.storyboard */; };
 		C30D2EB427315EC400D4C1C1 /* ScheduleWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30D2EB327315EC400D4C1C1 /* ScheduleWorkerStoryboard.storyboard */; };
@@ -138,8 +142,6 @@
 		C3E1FEA6272D8AAB00CE44C6 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA5272D8AAB00CE44C6 /* Page.swift */; };
 		C3E1FEA9272D8C5B00CE44C6 /* MyPageManagerContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA7272D8C5B00CE44C6 /* MyPageManagerContentVC.swift */; };
 		C3E1FEAA272D8C5B00CE44C6 /* MyPageManagerContentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E1FEA8272D8C5B00CE44C6 /* MyPageManagerContentVC.xib */; };
-		C3E1FEAD272D8F1000CE44C6 /* MyPageManagerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEAB272D8F1000CE44C6 /* MyPageManagerTableViewCell.swift */; };
-		C3E1FEAE272D8F1000CE44C6 /* MyPageManagerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E1FEAC272D8F1000CE44C6 /* MyPageManagerTableViewCell.xib */; };
 		C3E1FEB1272D901300CE44C6 /* MyPageTabBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEAF272D901300CE44C6 /* MyPageTabBarCollectionViewCell.swift */; };
 		C3E1FEB2272D901300CE44C6 /* MyPageTabBarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E1FEB0272D901300CE44C6 /* MyPageTabBarCollectionViewCell.xib */; };
 		C3E1FEB5272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEB3272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.swift */; };
@@ -152,6 +154,10 @@
 		363836578B4295DDC93F8120 /* Pods_Albazip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Albazip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EACD131BC8A80FCC54849C5 /* Pods-Albazip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Albazip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Albazip/Pods-Albazip.debug.xcconfig"; sourceTree = "<group>"; };
 		9E8BCDC410EA5AB6EF1D4E62 /* Pods-Albazip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Albazip.release.xcconfig"; path = "Pods/Target Support Files/Pods-Albazip/Pods-Albazip.release.xcconfig"; sourceTree = "<group>"; };
+		C30AFE652733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWriteTabTableViewCell.swift; sourceTree = "<group>"; };
+		C30AFE662733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerWriteTabTableViewCell.xib; sourceTree = "<group>"; };
+		C30AFE692733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWriteCommunityTableViewCell.swift; sourceTree = "<group>"; };
+		C30AFE6A2733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerWriteCommunityTableViewCell.xib; sourceTree = "<group>"; };
 		C30D2EAF27315DC400D4C1C1 /* HomeWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeWorkerStoryboard.storyboard; sourceTree = "<group>"; };
 		C30D2EB127315E4A00D4C1C1 /* CommunityWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommunityWorkerStoryboard.storyboard; sourceTree = "<group>"; };
 		C30D2EB327315EC400D4C1C1 /* ScheduleWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScheduleWorkerStoryboard.storyboard; sourceTree = "<group>"; };
@@ -286,8 +292,6 @@
 		C3E1FEA5272D8AAB00CE44C6 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		C3E1FEA7272D8C5B00CE44C6 /* MyPageManagerContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerContentVC.swift; sourceTree = "<group>"; };
 		C3E1FEA8272D8C5B00CE44C6 /* MyPageManagerContentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerContentVC.xib; sourceTree = "<group>"; };
-		C3E1FEAB272D8F1000CE44C6 /* MyPageManagerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerTableViewCell.swift; sourceTree = "<group>"; };
-		C3E1FEAC272D8F1000CE44C6 /* MyPageManagerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerTableViewCell.xib; sourceTree = "<group>"; };
 		C3E1FEAF272D901300CE44C6 /* MyPageTabBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTabBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3E1FEB0272D901300CE44C6 /* MyPageTabBarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageTabBarCollectionViewCell.xib; sourceTree = "<group>"; };
 		C3E1FEB3272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWriteTableViewCell.swift; sourceTree = "<group>"; };
@@ -363,6 +367,30 @@
 				C3C97BC52730B404002C8584 /* MainWorker.storyboard */,
 			);
 			path = Worker;
+			sourceTree = "<group>";
+		};
+		C30AFE632733A5B10075CDE2 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				C38CA0BE273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.swift */,
+				C38CA0BF273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.xib */,
+				C38CA0C2273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.swift */,
+				C38CA0C3273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.xib */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		C30AFE642733A5B80075CDE2 /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				C3E1FEB3272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.swift */,
+				C3E1FEB4272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.xib */,
+				C30AFE652733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift */,
+				C30AFE662733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib */,
+				C30AFE692733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift */,
+				C30AFE6A2733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.xib */,
+			);
+			path = Write;
 			sourceTree = "<group>";
 		};
 		C30D2EAC27315D8800D4C1C1 /* Home */ = {
@@ -851,16 +879,10 @@
 		C3E1FEA0272D8A0F00CE44C6 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C3E1FEAB272D8F1000CE44C6 /* MyPageManagerTableViewCell.swift */,
-				C3E1FEAC272D8F1000CE44C6 /* MyPageManagerTableViewCell.xib */,
+				C30AFE642733A5B80075CDE2 /* Write */,
+				C30AFE632733A5B10075CDE2 /* Worker */,
 				C3E1FEAF272D901300CE44C6 /* MyPageTabBarCollectionViewCell.swift */,
 				C3E1FEB0272D901300CE44C6 /* MyPageTabBarCollectionViewCell.xib */,
-				C3E1FEB3272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.swift */,
-				C3E1FEB4272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.xib */,
-				C38CA0BE273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.swift */,
-				C38CA0BF273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.xib */,
-				C38CA0C2273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.swift */,
-				C38CA0C3273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1046,7 +1068,6 @@
 				C33E00052731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib in Resources */,
 				C384427A2714948200B84E8A /* ScheduleManagerStoryboard.storyboard in Resources */,
 				C34BCB542732F6C50085ADB3 /* MyPageDetailCommuteMonthTableViewCell.xib in Resources */,
-				C3E1FEAE272D8F1000CE44C6 /* MyPageManagerTableViewCell.xib in Resources */,
 				C3E1FEBA272DB1EA00CE44C6 /* MyPageManagerWriteVC.xib in Resources */,
 				C38CA0C1273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.xib in Resources */,
 				C38CA0C5273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.xib in Resources */,
@@ -1059,12 +1080,14 @@
 				C37EBF49271AD0BB00DEC2CA /* RegisterManagerStoryboard.storyboard in Resources */,
 				C34A00592731AA2D00C24102 /* MyPageWorkerMyInfoTableViewCell.xib in Resources */,
 				C34A00652731C82200C24102 /* MyPageWorkerPositionVC.xib in Resources */,
+				C30AFE6C2733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.xib in Resources */,
 				C38442722714913700B84E8A /* MyPageManagerStoryboard.storyboard in Resources */,
 				C39019C1271F246500BC2830 /* SearchCollectionViewCell.xib in Resources */,
 				C384423C2714797000B84E8A /* MainManager.storyboard in Resources */,
 				C3C97BC62730B404002C8584 /* MainWorker.storyboard in Resources */,
 				C3E1FEB6272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.xib in Resources */,
 				C34BCB4D2732F3C00085ADB3 /* MyPageDetailPublicDateTableViewCell.xib in Resources */,
+				C30AFE682733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib in Resources */,
 				C34BCB492732F1040085ADB3 /* MyPageDetailPublicWorkTableViewCell.xib in Resources */,
 				C38442742714932300B84E8A /* HomeManagerStoryboard.storyboard in Resources */,
 				C3546F8627253A3100C4C3DC /* GoogleService-Info.plist in Resources */,
@@ -1139,6 +1162,7 @@
 				C38442372714797000B84E8A /* SceneDelegate.swift in Sources */,
 				C384425F27147E3F00B84E8A /* Color.swift in Sources */,
 				C3A1ADD0271C698D005A61ED /* RegisterWorkerCodeVC.swift in Sources */,
+				C30AFE6B2733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift in Sources */,
 				C30EC2E7272B0A9F00EEF218 /* RegisterManagerResponse.swift in Sources */,
 				C3A1ADD2271C773F005A61ED /* RegisterSettingVC.swift in Sources */,
 				C3834770272D1D7E00EE0D55 /* RegisterSelectTimeVC.swift in Sources */,
@@ -1186,11 +1210,11 @@
 				C3B022ED2726DB3800013988 /* RegisterMoreInfoVC.swift in Sources */,
 				C37EBF41271AA1B000DEC2CA /* RegisterViewController.swift in Sources */,
 				C37EBF4B271AD54200DEC2CA /* RegisterPhoneNumberVC.swift in Sources */,
+				C30AFE672733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift in Sources */,
 				C3546F812725082100C4C3DC /* RegisterSearchStoreResponse.swift in Sources */,
 				C37B0B552729724E0017D179 /* RegisterDataManager.swift in Sources */,
 				C33E00042731D30600D88267 /* MyPageWorkerWriteTableViewCell.swift in Sources */,
 				C33F9982272E971800E9FF05 /* RegisterWorkerResponse.swift in Sources */,
-				C3E1FEAD272D8F1000CE44C6 /* MyPageManagerTableViewCell.swift in Sources */,
 				C38CA0C0273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.swift in Sources */,
 				C38CA0B7272F647600EA7BB3 /* LoginResetPasswordRequest.swift in Sources */,
 				C37B0B5F27299EA70017D179 /* LoginResponse.swift in Sources */,
