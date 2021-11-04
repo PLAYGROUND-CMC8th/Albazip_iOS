@@ -25,6 +25,8 @@ class MyPageWorkerVC: BaseViewController{
     
     var pageViewController = UIPageViewController()
     var selectedTabView = UIView()
+    //선택된 탭 인덱스
+    var selectedTabIndex = 0
     
     //MARK:- View Model
     
@@ -77,8 +79,7 @@ class MyPageWorkerVC: BaseViewController{
         let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 10, height: 10))
         label.text = "내정보"//"TAB \(1)"
         label.sizeToFit()
-        var width = label.intrinsicContentSize.width
-        width = width + 15
+        let width = label.intrinsicContentSize.width
         
         selectedTabView.frame = CGRect(x: 24, y: 51, width: width, height: 2)
         selectedTabView.backgroundColor = #colorLiteral(red: 0.1990817189, green: 0.2041014135, blue: 0.2039682269, alpha: 1)
@@ -239,6 +240,14 @@ extension MyPageWorkerVC: UICollectionViewDataSource {
         if let tabCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPageTabBarCollectionViewCell", for: indexPath) as? MyPageTabBarCollectionViewCell {
             
             tabCell.tabNameLabel.text = pageCollection.pages[indexPath.row].name
+            //선택된 셀만 텍스트 컬러 진하게
+            if(indexPath.row == selectedTabIndex){
+                tabCell.tabNameLabel.textColor = #colorLiteral(red: 0.1990817189, green: 0.2041014135, blue: 0.2039682269, alpha: 1)
+                tabCell.tabNameLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 16)
+            }else{
+                tabCell.tabNameLabel.textColor = #colorLiteral(red: 0.886187017, green: 0.8863359094, blue: 0.8904727101, alpha: 1)
+                tabCell.tabNameLabel.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 16)
+            }
             return tabCell
         }
         
@@ -277,11 +286,16 @@ extension MyPageWorkerVC: UICollectionViewDelegateFlowLayout {
         scrollSelectedTabView(toIndexPath: indexPath)
         
         setBottomPagingView(toPageWithAtIndex: indexPath.item, andNavigationDirection: direction)
+        
+        // 선택된 셀이라면 텍스트 색상 진하게 변경
+        selectedTabIndex = indexPath.row
+        //선택 안된 셀이라면 텍스트 색상 디폴트 값, 연하게
+        tabBarCollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if(section == 0){
-            return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+            return UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 0)
         }else{
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
