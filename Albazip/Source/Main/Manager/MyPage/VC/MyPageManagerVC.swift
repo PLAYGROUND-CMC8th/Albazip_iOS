@@ -11,7 +11,7 @@ import UIKit
 var topViewInitialHeight : CGFloat = 156
 let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
 let height = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-let topViewFinalHeight : CGFloat = height - 15 //navigation hieght
+let topViewFinalHeight : CGFloat = height - Device.navigationBarHeight //- 15 //navigation hieght
 
 let topViewHeightConstraintRange = topViewFinalHeight..<topViewInitialHeight
 

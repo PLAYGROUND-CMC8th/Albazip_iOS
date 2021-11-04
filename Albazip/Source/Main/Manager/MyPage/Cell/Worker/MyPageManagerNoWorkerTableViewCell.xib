@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="MyPageManagerNoWorkerTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="419" id="KGk-i7-Jjw" customClass="MyPageManagerNoWorkerTableViewCell" customModule="Albazip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="419"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="419"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkE-yA-c6R">
+                        <rect key="frame" x="24" y="24" width="327" height="371"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgNone68Px" translatesAutoresizingMaskIntoConstraints="NO" id="3po-Mh-QHt">
+                                <rect key="frame" x="129.5" y="72" width="68" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="C8e-u4-Scu"/>
+                                    <constraint firstAttribute="width" constant="68" id="ZBq-hN-52a"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록된 근무자가 없어요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTe-Vk-K9s">
+                                <rect key="frame" x="60" y="164" width="207" height="27.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20784312490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsy-VH-vG2">
+                                <rect key="frame" x="59" y="205.5" width="209.5" height="33.5"/>
+                                <string key="text">포지션을 추가하고, 근무자를 초대하면
+근무자에 대한 정보가 업데이트 돼요.</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" red="0.63529413940000001" green="0.63921570780000003" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hnb-8I-iOZ">
+                                <rect key="frame" x="115.5" y="263" width="96" height="36"/>
+                                <color key="backgroundColor" red="0.97647058959999999" green="0.85490196939999996" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="dJF-89-TA2"/>
+                                    <constraint firstAttribute="width" constant="96" id="mNC-hh-04L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="추가하기">
+                                    <color key="titleColor" red="0.20392156862745098" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnAddWorker:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Otb-0l-tPf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3po-Mh-QHt" firstAttribute="top" secondItem="OkE-yA-c6R" secondAttribute="top" constant="72" id="1fm-cF-76d"/>
+                            <constraint firstItem="Hnb-8I-iOZ" firstAttribute="top" secondItem="Nsy-VH-vG2" secondAttribute="bottom" constant="24" id="DoC-Ei-hJh"/>
+                            <constraint firstItem="Nsy-VH-vG2" firstAttribute="centerX" secondItem="rTe-Vk-K9s" secondAttribute="centerX" id="GoW-Ao-G3n"/>
+                            <constraint firstItem="Hnb-8I-iOZ" firstAttribute="centerX" secondItem="Nsy-VH-vG2" secondAttribute="centerX" id="M18-os-a7Q"/>
+                            <constraint firstItem="rTe-Vk-K9s" firstAttribute="top" secondItem="3po-Mh-QHt" secondAttribute="bottom" constant="24" id="Nqb-Pe-RY8"/>
+                            <constraint firstAttribute="bottom" secondItem="Hnb-8I-iOZ" secondAttribute="bottom" constant="72" id="SsI-TB-sPF"/>
+                            <constraint firstItem="Nsy-VH-vG2" firstAttribute="top" secondItem="rTe-Vk-K9s" secondAttribute="bottom" constant="14" id="Wdh-Up-xpq"/>
+                            <constraint firstItem="3po-Mh-QHt" firstAttribute="centerX" secondItem="OkE-yA-c6R" secondAttribute="centerX" id="ggW-8X-EPk"/>
+                            <constraint firstItem="rTe-Vk-K9s" firstAttribute="centerX" secondItem="3po-Mh-QHt" secondAttribute="centerX" id="y6Q-Fo-LwK"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="OkE-yA-c6R" secondAttribute="trailing" constant="24" id="AxR-lk-i96"/>
+                    <constraint firstItem="OkE-yA-c6R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="c91-6P-8yj"/>
+                    <constraint firstItem="OkE-yA-c6R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="kzA-mL-Xaa"/>
+                    <constraint firstAttribute="bottom" secondItem="OkE-yA-c6R" secondAttribute="bottom" constant="24" id="th7-hR-EWT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="131.15942028985509" y="136.27232142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="imgNone68Px" width="68" height="68"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -38,7 +38,7 @@ class MyPageManagerContentVC: UIViewController {
     //MARK:- Data Source
     
     var numberOfCells: Int = 0
-    
+    var isNoWorker = true
     //MARK:- View Life Cycle
     
     override func viewDidLoad() {
@@ -78,39 +78,61 @@ class MyPageManagerContentVC: UIViewController {
         
         tableView.register(UINib(nibName: "MyPageManagerTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageManagerTableViewCell")
+        tableView.register(UINib(nibName: "MyPageManagerNoWorkerTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageManagerNoWorkerTableViewCell")
+        //MyPageManagerNoWorkerTableViewCell
         tableView.dataSource = self
         tableView.delegate = self
         //tableView.estimatedRowHeight = 1000
         
+    }
+    
+    //근무자 추가 페이지로,. Delegate
+    func goAddWorkerPage() {
+        let storyboard = UIStoryboard(name: "MyPageManagerStoryboard", bundle: Bundle.main)
+        guard let nextVC = storyboard.instantiateViewController(identifier: "MyPageManagerAddWorkerVC") as? MyPageManagerAddWorkerVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 
 }
 
 //MARK:- Table View Data Source
 
-extension MyPageManagerContentVC: UITableViewDataSource {
+extension MyPageManagerContentVC: UITableViewDataSource, MyPageManagerNoWorkerDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 1
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
-            return 500
         
-        default:
-            return 100
+        if isNoWorker{
+            return 419
+        }else{
+            switch indexPath.row {
+            case 0:
+                return 500
+            
+            default:
+                return 100
+            }
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerTableViewCell") as? MyPageManagerWorkerTableViewCell {
-            
-            //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
-            return cell
+        if isNoWorker{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWorkerTableViewCell") as? MyPageManagerNoWorkerTableViewCell {
+                cell.delegate = self
+                //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                return cell
+            }
+        }else{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerTableViewCell") as? MyPageManagerWorkerTableViewCell {
+                
+                //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                return cell
+            }
         }
-        
         return UITableViewCell()
     }
 }
