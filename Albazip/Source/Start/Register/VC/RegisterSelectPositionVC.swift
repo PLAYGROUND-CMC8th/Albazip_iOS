@@ -13,6 +13,7 @@ class RegisterSelectPositionVC: UIViewController{
     @IBOutlet weak var managerView: UIView!
     @IBOutlet weak var workerView: UIView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -24,7 +25,7 @@ class RegisterSelectPositionVC: UIViewController{
         
         let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(workerViewTapped))
         workerView.addGestureRecognizer(tapGestureRecognizer2)
-
+        
         
     }
     @objc func managerViewTapped(sender: UITapGestureRecognizer) {

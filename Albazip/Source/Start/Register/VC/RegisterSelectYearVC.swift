@@ -16,6 +16,8 @@ protocol YearModalDelegate {
 class RegisterSelectYearVC: UIViewController{
     
     var date = "2000"
+    
+    @IBOutlet var cornerView: UIView!
     @IBOutlet var picker: UIPickerView!
     var delegate: YearModalDelegate?
     var dates =  [String]()
@@ -25,6 +27,7 @@ class RegisterSelectYearVC: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setPickerView()
+        cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
     }
     func setPickerView() {
         

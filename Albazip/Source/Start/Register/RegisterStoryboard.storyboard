@@ -623,6 +623,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="jLv-F0-O1U"/>
                     <connections>
+                        <outlet property="cornerView" destination="Ef1-ZG-ODG" id="CVi-3m-BNB"/>
                         <outlet property="picker" destination="IkR-ED-S9z" id="8ih-bs-1iW"/>
                     </connections>
                 </viewController>

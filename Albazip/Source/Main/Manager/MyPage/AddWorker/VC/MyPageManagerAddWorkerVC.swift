@@ -11,7 +11,8 @@ import UIKit
 class MyPageManagerAddWorkerVC: UIViewController, MyPageManagerTimeDateModalDelegate, MyPageManagerPayTypeModalDelegate{
     
     
- 
+    @IBOutlet var modalBgView: UIView!
+    
     @IBOutlet var tableView: UITableView!
     
     // 시간 변수
@@ -25,8 +26,9 @@ class MyPageManagerAddWorkerVC: UIViewController, MyPageManagerTimeDateModalDele
     }
     //MARK:- View Setup
     func setUI(){
-        self.tabBarController?.tabBar.isHidden = true
+        //self.tabBarController?.tabBar.isHidden = true
         self.dismissKeyboardWhenTappedAround()
+        modalBgView.isHidden = true
     }
     func setupTableView() {
         
@@ -55,7 +57,7 @@ class MyPageManagerAddWorkerVC: UIViewController, MyPageManagerTimeDateModalDele
         if let vc = storyboard.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
                     vc.modalPresentationStyle = .overFullScreen
                     
-                    //modalBgView.isHidden = false
+                    modalBgView.isHidden = false
                     vc.timeDateModalDelegate = self
                     vc.whatDate = index
                     if index == 0{
@@ -73,7 +75,7 @@ class MyPageManagerAddWorkerVC: UIViewController, MyPageManagerTimeDateModalDele
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyPageManagerSelectPayTypeVC") as? MyPageManagerSelectPayTypeVC {
                     vc.modalPresentationStyle = .overFullScreen
                     
-                    //modalBgView.isHidden = false
+                    modalBgView.isHidden = false
                     vc.selectPayTypeDelegate = self
                     
                     self.present(vc, animated: true, completion: nil)
@@ -147,7 +149,7 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
 }
 extension MyPageManagerAddWorkerVC: TimeDateModalDelegate {
     func timeModalDismiss() {
-        //modalBgView.isHidden = true
+        modalBgView.isHidden = true
         //checkValue()
     }
 
@@ -166,7 +168,7 @@ extension MyPageManagerAddWorkerVC: TimeDateModalDelegate {
 
 extension MyPageManagerAddWorkerVC: SelectPayTypeDelegate {
     func modalDismiss(){
-        
+        modalBgView.isHidden = true
     }
     func textFieldData(data: String){
         payTime = data

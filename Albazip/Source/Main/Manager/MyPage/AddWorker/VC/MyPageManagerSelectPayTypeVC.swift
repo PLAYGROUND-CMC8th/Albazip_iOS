@@ -17,10 +17,14 @@ class MyPageManagerSelectPayTypeVC: UIViewController{
     @IBOutlet var view1: UIView!
     @IBOutlet var view2: UIView!
     @IBOutlet var view3: UIView!
+    @IBOutlet var cornerView: UIView!
     var selectPayTypeDelegate : SelectPayTypeDelegate?
     var payType = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //
+        cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         
         // view 클릭 시, 함수 정의
         let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(view1Tapped))

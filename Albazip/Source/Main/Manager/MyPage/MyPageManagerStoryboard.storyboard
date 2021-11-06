@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FkT-qM-6pX">
                                 <rect key="frame" x="0.0" y="88" width="375" height="156"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileM128Px3" translatesAutoresizingMaskIntoConstraints="NO" id="UxZ-4B-8Ad">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileM128Px2" translatesAutoresizingMaskIntoConstraints="NO" id="UxZ-4B-8Ad">
                                         <rect key="frame" x="24" y="36" width="84" height="84"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="84" id="SoX-7O-8HM"/>
@@ -93,6 +93,10 @@
                                 <rect key="frame" x="0.0" y="297" width="375" height="432"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ewn-kd-lU9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -101,12 +105,16 @@
                             <constraint firstItem="GBM-3R-atk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="AMg-en-6rL"/>
                             <constraint firstItem="FkT-qM-6pX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="D9Z-h2-IX8"/>
                             <constraint firstItem="GBM-3R-atk" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Ek7-35-hpx"/>
+                            <constraint firstItem="Ewn-kd-lU9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="HGT-Ak-bhQ"/>
                             <constraint firstItem="FkT-qM-6pX" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="O2F-QU-nCv"/>
                             <constraint firstItem="FkT-qM-6pX" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Ofq-Nx-NsC"/>
                             <constraint firstItem="FkT-qM-6pX" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="R26-Ol-MGA"/>
+                            <constraint firstAttribute="trailing" secondItem="Ewn-kd-lU9" secondAttribute="trailing" id="Rtx-fY-OSu"/>
                             <constraint firstItem="t7w-ZY-WfN" firstAttribute="top" secondItem="GBM-3R-atk" secondAttribute="bottom" id="SrI-Ro-GGV"/>
                             <constraint firstItem="t7w-ZY-WfN" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="UGt-E0-iMQ"/>
                             <constraint firstItem="GBM-3R-atk" firstAttribute="top" secondItem="FkT-qM-6pX" secondAttribute="bottom" id="Uxk-Wr-hoZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ewn-kd-lU9" secondAttribute="bottom" id="cdq-et-aap"/>
+                            <constraint firstItem="Ewn-kd-lU9" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="dCL-iC-mfm"/>
                             <constraint firstItem="t7w-ZY-WfN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iJ6-Y8-bxA"/>
                             <constraint firstItem="t7w-ZY-WfN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="jla-wZ-mcx"/>
                             <constraint firstItem="FkT-qM-6pX" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="zOI-FX-jIn"/>
@@ -153,6 +161,7 @@
                         <outlet property="bottomView" destination="t7w-ZY-WfN" id="iso-Pg-Mif"/>
                         <outlet property="bottomViewTopConstraint" destination="SrI-Ro-GGV" id="J5h-nR-vQ5"/>
                         <outlet property="headerViewHeightConstraint" destination="4QR-T6-pe4" id="anJ-vU-arC"/>
+                        <outlet property="modalBgView" destination="Ewn-kd-lU9" id="mmR-Bs-tIQ"/>
                         <outlet property="profileImage" destination="UxZ-4B-8Ad" id="3lx-6S-Thy"/>
                         <outlet property="stickyHeaderView" destination="FkT-qM-6pX" id="AxO-3U-drc"/>
                         <outlet property="storeNameLabel" destination="Sp5-kq-6Lg" id="U9V-5s-a3X"/>
@@ -167,7 +176,7 @@
         <!--근무자 추가-->
         <scene sceneID="ifs-X0-BbL">
             <objects>
-                <viewController storyboardIdentifier="MyPageManagerAddWorkerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3et-ET-s4f" customClass="MyPageManagerAddWorkerVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPageManagerAddWorkerVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3et-ET-s4f" customClass="MyPageManagerAddWorkerVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BCe-Xl-fW3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,13 +185,21 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfA-7b-dxW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PLw-ob-YFk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PLw-ob-YFk" firstAttribute="bottom" secondItem="RDH-hP-tTm" secondAttribute="bottom" id="0ej-UH-Tfu"/>
+                            <constraint firstItem="jfA-7b-dxW" firstAttribute="leading" secondItem="PLw-ob-YFk" secondAttribute="leading" id="5D7-Mc-4Jf"/>
                             <constraint firstItem="PLw-ob-YFk" firstAttribute="trailing" secondItem="RDH-hP-tTm" secondAttribute="trailing" id="BHu-VR-sjE"/>
+                            <constraint firstAttribute="trailing" secondItem="jfA-7b-dxW" secondAttribute="trailing" id="J4g-H0-MHA"/>
                             <constraint firstItem="RDH-hP-tTm" firstAttribute="leading" secondItem="PLw-ob-YFk" secondAttribute="leading" id="OgV-1X-d10"/>
+                            <constraint firstItem="jfA-7b-dxW" firstAttribute="top" secondItem="BCe-Xl-fW3" secondAttribute="top" id="dab-Vu-FSC"/>
+                            <constraint firstItem="PLw-ob-YFk" firstAttribute="bottom" secondItem="jfA-7b-dxW" secondAttribute="bottom" id="ggM-sn-VLt"/>
                             <constraint firstItem="RDH-hP-tTm" firstAttribute="top" secondItem="PLw-ob-YFk" secondAttribute="top" id="usN-MN-ziT"/>
                         </constraints>
                     </view>
@@ -220,6 +237,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="modalBgView" destination="jfA-7b-dxW" id="GkN-SP-Kt7"/>
                         <outlet property="tableView" destination="RDH-hP-tTm" id="RJY-eS-dhv"/>
                     </connections>
                 </viewController>
@@ -230,7 +248,7 @@
         <!--근무자 추가-->
         <scene sceneID="tj8-Nk-q8k">
             <objects>
-                <viewController storyboardIdentifier="MyPageManagerWorkListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="By3-ao-wND" customClass="MyPageManagerWorkListVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPageManagerWorkListVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="By3-ao-wND" customClass="MyPageManagerWorkListVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZ8-D2-Gih">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -305,7 +323,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileM128Px3" translatesAutoresizingMaskIntoConstraints="NO" id="uHt-VR-p4p">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileM128Px2" translatesAutoresizingMaskIntoConstraints="NO" id="uHt-VR-p4p">
                                         <rect key="frame" x="123.66666666666669" y="69.666666666666686" width="128" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="128" id="Ycm-2w-pP1"/>
@@ -510,6 +528,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cornerView" destination="ww8-1M-DBB" id="cKE-fS-6us"/>
                         <outlet property="imageBorder1" destination="4A8-gU-zyR" id="hg3-lh-HPM"/>
                         <outlet property="imageBorder2" destination="86s-OP-Bc3" id="AZn-Ew-jfb"/>
                         <outlet property="imageBorder3" destination="3ex-ee-fvJ" id="slA-6J-JEa"/>
@@ -641,6 +660,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cornerView" destination="mCy-da-Hrv" id="mUy-MW-ro6"/>
                         <outlet property="view1" destination="a9k-XR-E0V" id="j2L-aq-6na"/>
                         <outlet property="view2" destination="pqy-4p-7oE" id="1Fj-VO-pkP"/>
                         <outlet property="view3" destination="Dij-XA-qNe" id="A9E-n7-A54"/>
@@ -681,6 +701,9 @@
         <image name="imgProfileM128Px3" width="128" height="128"/>
         <image name="imgProfileM128Px5" width="128" height="128"/>
         <image name="profileSelected" width="58" height="58"/>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

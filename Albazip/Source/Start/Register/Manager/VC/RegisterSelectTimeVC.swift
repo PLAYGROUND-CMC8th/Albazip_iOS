@@ -18,6 +18,7 @@ class RegisterSelectTimeVC: UIViewController{
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var pickerView: UIPickerView!
+    @IBOutlet var cornerView: UILabel!
     @IBOutlet var pickerView2: UIPickerView!
     
     var titletext = ""
@@ -56,6 +57,7 @@ class RegisterSelectTimeVC: UIViewController{
         pickerView2.delegate = self
         pickerView2.dataSource = self
         titleLabel.text = titletext
+        cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
     }
     
    

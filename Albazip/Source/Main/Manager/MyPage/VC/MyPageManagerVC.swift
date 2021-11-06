@@ -36,6 +36,7 @@ class MyPageManagerVC : BaseViewController{
     @IBOutlet var storeNameLabel: UILabel!
     @IBOutlet var userNameLabel: UILabel!
     
+    @IBOutlet var modalBgView: UIView!
     
     //MARK:- Programatic UI Properties
     
@@ -65,6 +66,7 @@ class MyPageManagerVC : BaseViewController{
         //이미지뷰 동그랗게
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
         profileImage.clipsToBounds = true
+        modalBgView.isHidden = true
     }
     
     
@@ -95,7 +97,7 @@ class MyPageManagerVC : BaseViewController{
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyPageManagerSelectProfileImageVC") as? MyPageManagerSelectProfileImageVC {
                     vc.modalPresentationStyle = .overFullScreen
                     
-                    //modalBgView.isHidden = false
+            modalBgView.isHidden = false
             vc.selectProfileImageDelegate = self
             vc.selectedImage = profileImage.image!
                     
@@ -511,7 +513,7 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
 
 extension MyPageManagerVC: SelectProfileImageDelegate{
     func imageModalDismiss(){
-        
+        modalBgView.isHidden = true
     }
     func changeImage(data: UIImage){
         print("이미지 변경")

@@ -17,6 +17,7 @@ protocol SalaryModalDelegate {
 class RegisterSelectSalaryDateVC: UIViewController{
     
     
+    @IBOutlet var cornerView: UIView!
     @IBOutlet var pickerView: UIPickerView!
     
     var salaryModalDelegate : SalaryModalDelegate?
@@ -30,6 +31,8 @@ class RegisterSelectSalaryDateVC: UIViewController{
             dates.append("\(i)")
         }
         setDelegate()
+        
+        cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
     }
     
     func setDelegate() {

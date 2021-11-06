@@ -1208,6 +1208,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DHX-nO-cng"/>
                     <connections>
+                        <outlet property="cornerView" destination="le5-ov-bho" id="wMe-lP-BDS"/>
                         <outlet property="pickerView" destination="BfI-3Y-2bi" id="BmA-fm-WmT"/>
                     </connections>
                 </viewController>
@@ -1514,6 +1515,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="iaA-Z5-XcJ"/>
                     <connections>
+                        <outlet property="cornerView" destination="QVC-wV-ODQ" id="X8C-1v-SGs"/>
                         <outlet property="pickerView" destination="Qh2-Sm-JO8" id="yei-Zs-Y2z"/>
                         <outlet property="pickerView2" destination="jN2-Ef-ShL" id="yaA-PO-qEp"/>
                         <outlet property="titleLabel" destination="QVC-wV-ODQ" id="l03-kd-tfz"/>

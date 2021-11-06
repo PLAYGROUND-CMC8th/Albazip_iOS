@@ -1,5 +1,5 @@
 //
-//  MyPageManagerSelectProfileImageVC.swift
+//  MyPageWorkerSelectProfileImageVC.swift
 //  Albazip
 //
 //  Created by 김수빈 on 2021/11/06.
@@ -7,14 +7,9 @@
 
 import Foundation
 import UIKit
-protocol SelectProfileImageDelegate {
-    func imageModalDismiss()
-    func changeImage(data: UIImage)
-}
-class MyPageManagerSelectProfileImageVC: UIViewController{
+class MyPageWorkerSelectProfileImageVC: UIViewController{
     
     @IBOutlet var mainImage: UIImageView!
-    
     @IBOutlet var imageBorder1: UIImageView!
     @IBOutlet var imageBorder2: UIImageView!
     @IBOutlet var imageBorder3: UIImageView!
@@ -24,7 +19,7 @@ class MyPageManagerSelectProfileImageVC: UIViewController{
     
     var selectedImageIndex = 0
     var selectedImage = #imageLiteral(resourceName: "icMoney")
-    var imageArray = [#imageLiteral(resourceName: "imgProfileM128Px1"), #imageLiteral(resourceName: "imgProfileM128Px2"), #imageLiteral(resourceName: "imgProfileM128Px3"), #imageLiteral(resourceName: "imgProfileM128Px4"), #imageLiteral(resourceName: "imgProfileM128Px5")]
+    var imageArray = [#imageLiteral(resourceName: "imgProfileW128Px1"), #imageLiteral(resourceName: "imgProfileW128Px2"), #imageLiteral(resourceName: "imgProfileW128Px3"), #imageLiteral(resourceName: "imgProfileW128Px4"), #imageLiteral(resourceName: "imgProfileW128Px5")]
     var selectProfileImageDelegate : SelectProfileImageDelegate?
     
     override func viewDidLoad() {
@@ -36,6 +31,8 @@ class MyPageManagerSelectProfileImageVC: UIViewController{
         mainImage.clipsToBounds = true
         
         // 이미지 첫 변경일때 디폴트로 젤 가운데꺼
+        print(selectedImage.imageAsset)
+        print(imageArray[2].imageAsset)
         if selectedImage.imageAsset == imageArray[1].imageAsset{
             selectedImageIndex = 1
             changeImage(index: selectedImageIndex)
@@ -47,26 +44,21 @@ class MyPageManagerSelectProfileImageVC: UIViewController{
         }
         //앱 이미지
         else{
-            if(selectedImage == #imageLiteral(resourceName: "imgProfileM128Px1")){
+            if(selectedImage == #imageLiteral(resourceName: "imgProfileW128Px1")){
                 selectedImageIndex = 0
-            }else if(selectedImage == #imageLiteral(resourceName: "imgProfileM128Px2")){
+            }else if(selectedImage == #imageLiteral(resourceName: "imgProfileW128Px2")){
                 selectedImageIndex = 1
-            }else if(selectedImage == #imageLiteral(resourceName: "imgProfileM128Px3")){
+            }else if(selectedImage == #imageLiteral(resourceName: "imgProfileW128Px3")){
                 print("3")
                 selectedImageIndex = 2
-            }else if(selectedImage == #imageLiteral(resourceName: "imgProfileM128Px4")){
+            }else if(selectedImage == #imageLiteral(resourceName: "imgProfileW128Px4")){
                 selectedImageIndex = 3
-            }else if(selectedImage == #imageLiteral(resourceName: "imgProfileM128Px5")){
+            }else if(selectedImage == #imageLiteral(resourceName: "imgProfileW128Px5")){
                 selectedImageIndex = 4
             }
             changeImage(index: selectedImageIndex)
         }
-        //changeImage(index: selectedImageIndex)
     }
-    override func didReceiveMemoryWarning() {
-          super.didReceiveMemoryWarning()
-          // Dispose of any resources that can be recreated.
-        }
     func setUI(){
         imageBorder1.isHidden = true
         imageBorder2.isHidden = true
@@ -74,7 +66,13 @@ class MyPageManagerSelectProfileImageVC: UIViewController{
         imageBorder4.isHidden = true
         imageBorder5.isHidden = true
         cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        
+        
     }
+    override func didReceiveMemoryWarning() {
+          super.didReceiveMemoryWarning()
+          // Dispose of any resources that can be recreated.
+        }
     func changeImage(index: Int){
         mainImage.image = imageArray[index]
         switch index{
@@ -98,32 +96,36 @@ class MyPageManagerSelectProfileImageVC: UIViewController{
             break
         }
     }
-    
     @IBAction func btnImage1(_ sender: Any) {
         selectedImageIndex = 0
         setUI()
         changeImage(index: 0)
     }
+    
     @IBAction func btnImage2(_ sender: Any) {
         selectedImageIndex = 1
         setUI()
         changeImage(index: 1)
     }
+    
     @IBAction func btnImage3(_ sender: Any) {
         selectedImageIndex = 2
         setUI()
         changeImage(index: 2)
     }
+    
     @IBAction func btnImage4(_ sender: Any) {
         selectedImageIndex = 3
         setUI()
         changeImage(index: 3)
     }
+    
     @IBAction func btnImage5(_ sender: Any) {
         selectedImageIndex = 4
         setUI()
         changeImage(index: 4)
     }
+    
     
     @IBAction func btnGallary(_ sender: Any) {
         // 이미지 피커 컨트롤러 인스턴스 생성
@@ -137,6 +139,7 @@ class MyPageManagerSelectProfileImageVC: UIViewController{
         // 이미지 피커 컨트롤러 실행
         self.present(picker, animated: false)
     }
+    
     @IBAction func btnCancel(_ sender: Any) {
         selectProfileImageDelegate?.imageModalDismiss()
         self.dismiss(animated: true, completion: nil)
@@ -146,10 +149,10 @@ class MyPageManagerSelectProfileImageVC: UIViewController{
         selectProfileImageDelegate?.changeImage(data: mainImage.image!)
         self.dismiss(animated: true, completion: nil)
     }
-    
 }
+
 // MARK:- 이미지 피커 컨트롤러 델리게이트 메소드
-extension MyPageManagerSelectProfileImageVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension MyPageWorkerSelectProfileImageVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   // 이미지 피커에서 이미지를 선택하지 않고 취소했을 때 호출되는 메소드
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     // 이미지 피커 컨트롤러 창 닫기

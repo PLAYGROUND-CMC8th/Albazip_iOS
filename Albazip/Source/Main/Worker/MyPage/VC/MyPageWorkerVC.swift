@@ -21,6 +21,9 @@ class MyPageWorkerVC: BaseViewController{
     @IBOutlet var bottomView: UIView!
     @IBOutlet var headerViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet var modalBgView: UIView!
+    @IBOutlet var profileImage: UIImageView!
+    
     //MARK:- Programatic UI Properties
     
     var pageViewController = UIPageViewController()
@@ -39,6 +42,7 @@ class MyPageWorkerVC: BaseViewController{
         setupPagingViewController()
         populateBottomView()
         addPanGestureToTopViewAndCollectionView()
+        setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +64,25 @@ class MyPageWorkerVC: BaseViewController{
     }
     
     //MARK: View Setup
+    func setUI(){
+        //이미지뷰 동그랗게
+        profileImage.layer.cornerRadius = profileImage.frame.width / 2
+        profileImage.clipsToBounds = true
+        modalBgView.isHidden = true
+    }
+    @IBAction func btnProfileImage(_ sender: Any) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyPageWorkerSelectProfileImageVC") as? MyPageWorkerSelectProfileImageVC {
+                    vc.modalPresentationStyle = .overFullScreen
+                    
+            modalBgView.isHidden = false
+            vc.selectProfileImageDelegate = self
+            vc.selectedImage = profileImage.image!
+                    
+                    self.present(vc, animated: true, completion: nil)
+                    
+                }
+    }
+    
     
     func setupCollectionView() {
         
@@ -468,3 +491,13 @@ extension MyPageWorkerVC: MyPageWorkerInfoTableViewScrollDelegate, MyPageWorkerP
     }
 }
 
+extension MyPageWorkerVC: SelectProfileImageDelegate{
+    func imageModalDismiss(){
+        modalBgView.isHidden = true
+    }
+    func changeImage(data: UIImage){
+        print("이미지 변경")
+        
+        profileImage.image = data
+    }
+}
