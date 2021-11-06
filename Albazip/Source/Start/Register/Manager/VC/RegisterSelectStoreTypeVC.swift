@@ -22,11 +22,13 @@ class RegisterSelectStoreTypeVC: UIViewController{
     @IBOutlet var view4: UIView!
     @IBOutlet var view5: UIView!
     
+    @IBOutlet var cornerView: UIView!
     var storeType = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         // view 클릭 시, 함수 정의
         let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(view1Tapped))
         view1.addGestureRecognizer(tapGestureRecognizer1)

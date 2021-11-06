@@ -28,5 +28,4 @@ extension UIColor {
     class var blurGray: UIColor { #colorLiteral(red: 0.8078431373, green: 0.8078431373, blue: 0.8078431373, alpha: 1)}
     class var lightGray: UIColor {#colorLiteral(red: 0.9293201566, green: 0.9294758439, blue: 0.9292996526, alpha: 1)}
     class var semiGray: UIColor{#colorLiteral(red: 0.678363204, green: 0.678479135, blue: 0.6783478856, alpha: 1)}
-    
 }

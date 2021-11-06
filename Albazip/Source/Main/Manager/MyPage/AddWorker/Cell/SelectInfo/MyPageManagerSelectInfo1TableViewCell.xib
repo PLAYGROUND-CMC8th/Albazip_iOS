@@ -23,7 +23,7 @@
                         <color key="textColor" red="0.20000001789999999" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMt-OP-K0X">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMt-OP-K0X">
                         <rect key="frame" x="24" y="62" width="55" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="JEO-5t-uH8"/>
@@ -33,27 +33,11 @@
                         <state key="normal" title="알바생">
                             <color key="titleColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </state>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="16"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wN9-6k-Koi">
-                        <rect key="frame" x="83" y="62" width="44" height="31"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="44" id="Ivy-YG-wPu"/>
-                            <constraint firstAttribute="height" constant="31" id="Q7c-Aj-e6j"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                        <state key="normal" title="직원">
-                            <color key="titleColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <state key="disabled">
+                            <color key="titleColor" red="0.45490196350000001" green="0.45490196350000001" blue="0.45490196350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                        <state key="selected">
+                            <color key="titleColor" red="0.20784312490000001" green="0.20784312490000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -66,6 +50,40 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn1_1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0g6-Pj-F2B"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wN9-6k-Koi">
+                        <rect key="frame" x="83" y="62" width="44" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="Ivy-YG-wPu"/>
+                            <constraint firstAttribute="height" constant="31" id="Q7c-Aj-e6j"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <state key="normal" title="직원">
+                            <color key="titleColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                        <state key="disabled">
+                            <color key="titleColor" red="0.45490196350000001" green="0.45490196350000001" blue="0.45490196350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                        <state key="selected">
+                            <color key="titleColor" red="0.20784312490000001" green="0.20784312490000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn1_2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MPZ-Zz-2Gb"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="포지션 선택하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfN-qK-GRd">
                         <rect key="frame" x="24" y="129" width="101" height="19.5"/>
@@ -73,7 +91,7 @@
                         <color key="textColor" red="0.20000001789999999" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bny-Fx-eqe">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bny-Fx-eqe">
                         <rect key="frame" x="24" y="164.5" width="44" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="at2-Sb-kI5"/>
@@ -94,8 +112,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn2_1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Oq9-M2-b4c"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RC-YX-EYi">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RC-YX-EYi">
                         <rect key="frame" x="72" y="164.5" width="44" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="44" id="Hjz-Rn-rIG"/>
@@ -116,8 +137,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn2_2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mBS-9d-MrD"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXX-a8-TgH">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXX-a8-TgH">
                         <rect key="frame" x="120" y="164.5" width="55" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="55" id="3cc-Om-B6h"/>
@@ -138,8 +162,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn2_3:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3ju-NB-3oT"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aA-hW-ncC">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aA-hW-ncC">
                         <rect key="frame" x="179" y="164.5" width="44" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="44" id="Je6-8s-pYj"/>
@@ -160,8 +187,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn2_4:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="28n-UI-EMp"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwp-KF-0he">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwp-KF-0he">
                         <rect key="frame" x="24" y="203.5" width="44" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="Tj5-TX-cqh"/>
@@ -182,8 +212,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn3_1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ean-2G-pEP"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMP-Dk-vVQ">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMP-Dk-vVQ">
                         <rect key="frame" x="72" y="203.5" width="44" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="GrD-jl-Wgk"/>
@@ -204,8 +237,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn3_2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5Gq-gT-uHy"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODF-iR-phj">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODF-iR-phj">
                         <rect key="frame" x="120" y="203.5" width="44" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="44" id="4xu-YE-TDW"/>
@@ -226,6 +262,9 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn3_3:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wv3-fc-Qce"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="스케줄 입력하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfT-O9-DuU">
                         <rect key="frame" x="24" y="270.5" width="101" height="19.5"/>
@@ -233,7 +272,7 @@
                         <color key="textColor" red="0.20000001789999999" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dp-69-AML">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dp-69-AML">
                         <rect key="frame" x="24" y="331" width="31" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="31" id="99p-CH-L6l"/>
@@ -254,6 +293,9 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn4_1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qcp-cy-29k"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="근무요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deI-Re-elE">
                         <rect key="frame" x="24" y="306" width="49" height="17"/>
@@ -261,7 +303,7 @@
                         <color key="textColor" red="0.63921570780000003" green="0.63921570780000003" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iP-Tk-V6F">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iP-Tk-V6F">
                         <rect key="frame" x="59" y="331" width="31" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="J7N-Wm-Rv2"/>
@@ -282,8 +324,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn4_2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6nt-hH-0eu"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdC-s6-Bkd">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdC-s6-Bkd">
                         <rect key="frame" x="94" y="331" width="31" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="31" id="Coi-4Y-ycJ"/>
@@ -304,8 +349,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn4_3:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="a3d-uH-bBz"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETe-gj-v1H">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETe-gj-v1H">
                         <rect key="frame" x="164" y="331" width="31" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="dhe-b0-C2C"/>
@@ -326,8 +374,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn4_5:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lQ7-Rt-awo"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwQ-vu-2Xn">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwQ-vu-2Xn">
                         <rect key="frame" x="199" y="331" width="31" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="EXg-F5-hfN"/>
@@ -348,8 +399,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn4_6:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0Jz-S4-Ae0"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOK-P7-qSY">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOK-P7-qSY">
                         <rect key="frame" x="129" y="331" width="31" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="31" id="17v-GN-Vvj"/>
@@ -370,8 +424,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn4_4:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fax-tG-09W"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1a-QH-hRc">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1a-QH-hRc">
                         <rect key="frame" x="234" y="331" width="31" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="5z2-St-Iui"/>
@@ -392,8 +449,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn4_7:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aNk-3l-d8b"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-T6-JrE">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-T6-JrE">
                         <rect key="frame" x="269" y="331" width="65" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="4hF-eP-IMc"/>
@@ -414,6 +474,9 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn4_8:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="IlA-P1-8mO"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -463,6 +526,25 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btn1_1" destination="BMt-OP-K0X" id="SjZ-Ba-4qW"/>
+                <outlet property="btn1_2" destination="wN9-6k-Koi" id="0Va-db-8SF"/>
+                <outlet property="btn2_1" destination="bny-Fx-eqe" id="hpa-wH-LYv"/>
+                <outlet property="btn2_2" destination="6RC-YX-EYi" id="9g9-Mu-a30"/>
+                <outlet property="btn2_3" destination="nXX-a8-TgH" id="Gkk-vb-dki"/>
+                <outlet property="btn2_4" destination="8aA-hW-ncC" id="GLw-zH-jea"/>
+                <outlet property="btn3_1" destination="wwp-KF-0he" id="A0J-q7-per"/>
+                <outlet property="btn3_2" destination="gMP-Dk-vVQ" id="Bni-CZ-q9W"/>
+                <outlet property="btn3_3" destination="ODF-iR-phj" id="wAq-hA-2tK"/>
+                <outlet property="btn4_1" destination="9Dp-69-AML" id="ODK-tD-xyy"/>
+                <outlet property="btn4_2" destination="6iP-Tk-V6F" id="cLt-Lk-PEi"/>
+                <outlet property="btn4_3" destination="rdC-s6-Bkd" id="f31-NT-LUa"/>
+                <outlet property="btn4_4" destination="bOK-P7-qSY" id="UFG-3G-JJG"/>
+                <outlet property="btn4_5" destination="ETe-gj-v1H" id="fAu-xy-dzx"/>
+                <outlet property="btn4_6" destination="dwQ-vu-2Xn" id="r1y-9P-kJh"/>
+                <outlet property="btn4_7" destination="I1a-QH-hRc" id="vek-Gq-Wnn"/>
+                <outlet property="btn4_8" destination="TXf-T6-JrE" id="LEi-Mr-4QZ"/>
+            </connections>
             <point key="canvasLocation" x="148.55072463768118" y="138.95089285714286"/>
         </tableViewCell>
     </objects>

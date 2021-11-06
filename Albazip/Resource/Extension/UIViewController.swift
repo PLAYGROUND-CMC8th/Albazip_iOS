@@ -118,7 +118,7 @@ extension UIViewController {
             let toastContainer = UIView(frame: CGRect())
             toastContainer.backgroundColor = UIColor.black.withAlphaComponent(0.6)
             toastContainer.alpha = 0.0
-            toastContainer.layer.cornerRadius = 25;
+            toastContainer.layer.cornerRadius = 15;
             toastContainer.clipsToBounds  =  true
             
             let toastLabel = UILabel(frame: CGRect())
@@ -143,7 +143,7 @@ extension UIViewController {
             
             let c1 = NSLayoutConstraint(item: toastContainer, attribute: .leading, relatedBy: .equal, toItem: controller.view, attribute: .leading, multiplier: 1, constant: 10)
             let c2 = NSLayoutConstraint(item: toastContainer, attribute: .trailing, relatedBy: .equal, toItem: controller.view, attribute: .trailing, multiplier: 1, constant: -10)
-            let c3 = NSLayoutConstraint(item: toastContainer, attribute: .bottom, relatedBy: .equal, toItem: controller.view, attribute: .bottom, multiplier: 1, constant: 0)
+            let c3 = NSLayoutConstraint(item: toastContainer, attribute: .bottom, relatedBy: .equal, toItem: controller.view, attribute: .bottom, multiplier: 1, constant: -16)
             controller.view.addConstraints([c1, c2, c3])
             
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {

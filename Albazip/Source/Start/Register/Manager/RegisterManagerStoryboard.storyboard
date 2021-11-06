@@ -1078,6 +1078,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pxD-Ld-7dQ"/>
                     <connections>
+                        <outlet property="cornerView" destination="xQ9-HH-Wfa" id="ov5-Fc-9wN"/>
                         <outlet property="view1" destination="L1Q-ht-dN7" id="OVP-wo-uZR"/>
                         <outlet property="view2" destination="j3U-7Y-zPG" id="weh-ed-aVq"/>
                         <outlet property="view3" destination="Bii-xX-Yir" id="eJX-f1-yCG"/>
@@ -1515,7 +1516,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="iaA-Z5-XcJ"/>
                     <connections>
-                        <outlet property="cornerView" destination="QVC-wV-ODQ" id="X8C-1v-SGs"/>
+                        <outlet property="cornerView" destination="WgG-Bb-JKb" id="ryD-Ot-iim"/>
                         <outlet property="pickerView" destination="Qh2-Sm-JO8" id="yei-Zs-Y2z"/>
                         <outlet property="pickerView2" destination="jN2-Ef-ShL" id="yaA-PO-qEp"/>
                         <outlet property="titleLabel" destination="QVC-wV-ODQ" id="l03-kd-tfz"/>

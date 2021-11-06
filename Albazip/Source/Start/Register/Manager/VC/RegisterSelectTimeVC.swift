@@ -18,7 +18,8 @@ class RegisterSelectTimeVC: UIViewController{
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var pickerView: UIPickerView!
-    @IBOutlet var cornerView: UILabel!
+   
+    @IBOutlet var cornerView: UIView!
     @IBOutlet var pickerView2: UIPickerView!
     
     var titletext = ""

@@ -47,7 +47,7 @@
                         <color key="textColor" red="0.63529413940000001" green="0.63921570780000003" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAM-gr-sw6">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAM-gr-sw6">
                         <rect key="frame" x="24" y="149" width="44" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="44" id="4CU-pS-BTL"/>
@@ -57,6 +57,9 @@
                         <state key="normal" title="없음">
                             <color key="titleColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </state>
+                        <state key="selected">
+                            <color key="titleColor" red="0.20000001789999999" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="16"/>
@@ -68,8 +71,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XcD-4S-ULP"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebd-NC-OiL">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebd-NC-OiL">
                         <rect key="frame" x="72" y="149" width="44" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="44" id="7fb-hW-hmL"/>
@@ -79,6 +85,9 @@
                         <state key="normal" title="30분">
                             <color key="titleColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </state>
+                        <state key="selected">
+                            <color key="titleColor" red="0.20000001789999999" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="16"/>
@@ -90,8 +99,11 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fbs-ZE-Ua4"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPk-SW-GmF">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPk-SW-GmF">
                         <rect key="frame" x="120" y="149" width="44" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="eKv-Xo-CIG"/>
@@ -101,27 +113,8 @@
                         <state key="normal" title="60분">
                             <color key="titleColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </state>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="16"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W07-lJ-hIY">
-                        <rect key="frame" x="168" y="149" width="44" height="31"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="31" id="5CW-Wa-cil"/>
-                            <constraint firstAttribute="width" constant="44" id="IJ1-tT-epJ"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                        <state key="normal" title="90분">
-                            <color key="titleColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <state key="selected">
+                            <color key="titleColor" red="0.20000001789999999" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -134,6 +127,37 @@
                                 <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn3:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uYz-OP-tO8"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W07-lJ-hIY">
+                        <rect key="frame" x="168" y="149" width="44" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="5CW-Wa-cil"/>
+                            <constraint firstAttribute="width" constant="44" id="IJ1-tT-epJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <state key="normal" title="90분">
+                            <color key="titleColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                        <state key="selected">
+                            <color key="titleColor" red="0.20000001789999999" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btn4:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8X1-lS-teQ"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1W-LG-Zaj">
                         <rect key="frame" x="24" y="26" width="134" height="62"/>
@@ -214,7 +238,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btn1" destination="SAM-gr-sw6" id="3CC-3e-CGC"/>
+                <outlet property="btn2" destination="Ebd-NC-OiL" id="fyY-Xc-4W6"/>
+                <outlet property="btn3" destination="ZPk-SW-GmF" id="GQL-IC-Q1h"/>
+                <outlet property="btn4" destination="W07-lJ-hIY" id="6fe-dz-6Qb"/>
                 <outlet property="endButton" destination="tcV-vw-EiY" id="HsK-Q2-yeW"/>
+                <outlet property="hourLabel" destination="fGs-2D-crA" id="cCO-jB-lzP"/>
                 <outlet property="startButton" destination="n1W-LG-Zaj" id="XEV-JP-Y8V"/>
             </connections>
             <point key="canvasLocation" x="652.89855072463774" y="198.54910714285714"/>
