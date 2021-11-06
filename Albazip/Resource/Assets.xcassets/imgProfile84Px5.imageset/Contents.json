@@ -6,14 +6,14 @@
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "imgProfile84Px5@2x.png"
+      "filename" : "imgProfile84Px5@2x.png",
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
+      "filename" : "imgProfile84Px5@3x.png",
       "scale" : "3x",
-      "filename" : "imgProfile84Px5@3x.png"
+      "idiom" : "universal"
     }
   ],
   "info" : {

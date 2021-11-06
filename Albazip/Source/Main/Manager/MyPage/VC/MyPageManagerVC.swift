@@ -16,6 +16,8 @@ let topViewFinalHeight : CGFloat = height - Device.navigationBarHeight //- 15 //
 let topViewHeightConstraintRange = topViewFinalHeight..<topViewInitialHeight
 
 class MyPageManagerVC : BaseViewController{
+   
+    
     
     //MARK:- Change this value for number of tabs.
     
@@ -28,6 +30,12 @@ class MyPageManagerVC : BaseViewController{
     @IBOutlet var bottomView: UIView!
     @IBOutlet var headerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var bottomViewTopConstraint: NSLayoutConstraint!
+    
+    // 상단 내 정보
+    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var storeNameLabel: UILabel!
+    @IBOutlet var userNameLabel: UILabel!
+    
     
     //MARK:- Programatic UI Properties
     
@@ -49,17 +57,16 @@ class MyPageManagerVC : BaseViewController{
         populateBottomView()
         addPanGestureToTopViewAndCollectionView()
         print("MainviewDidLoad")
+        
     }
     
     func setUI(){
         self.tabBarController?.tabBar.isHidden = false
+        //이미지뷰 동그랗게
+        profileImage.layer.cornerRadius = profileImage.frame.width / 2
+        profileImage.clipsToBounds = true
     }
-    @objc func btnAddPerson(){
-        
-    }
-    @objc func btnSetting(){
-        
-    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
@@ -81,6 +88,22 @@ class MyPageManagerVC : BaseViewController{
     }
 
     //MARK: View Setup
+    
+    @IBAction func btnProfileImage(_ sender: Any) {
+        //presentBottomAlert(message: "블라블라")
+        // showMessage(message: "블라블라", controller: self)
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyPageManagerSelectProfileImageVC") as? MyPageManagerSelectProfileImageVC {
+                    vc.modalPresentationStyle = .overFullScreen
+                    
+                    //modalBgView.isHidden = false
+            vc.selectProfileImageDelegate = self
+            vc.selectedImage = profileImage.image!
+                    
+                    self.present(vc, animated: true, completion: nil)
+                    
+                }
+    }
+    
     
     func setupCollectionView() {
         
@@ -238,6 +261,7 @@ class MyPageManagerVC : BaseViewController{
             }
         }
     }
+    
 }
 
 //MARK:- Collection View Data Source
@@ -482,5 +506,16 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
             
             self.view.layoutIfNeeded()
         })
+    }
+}
+
+extension MyPageManagerVC: SelectProfileImageDelegate{
+    func imageModalDismiss(){
+        
+    }
+    func changeImage(data: UIImage){
+        print("이미지 변경")
+        
+        profileImage.image = data
     }
 }

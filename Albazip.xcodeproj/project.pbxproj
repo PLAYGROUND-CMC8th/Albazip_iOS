@@ -154,6 +154,7 @@
 		C3C97BC92730B42E002C8584 /* MyPageWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3C97BC82730B42E002C8584 /* MyPageWorkerStoryboard.storyboard */; };
 		C3C97BCC2730E940002C8584 /* MyPageWorkerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C97BCB2730E940002C8584 /* MyPageWorkerVC.swift */; };
 		C3CC57C327362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC57C227362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift */; };
+		C3CC57C52736442C00657EE9 /* MyPageManagerSelectProfileImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC57C42736442C00657EE9 /* MyPageManagerSelectProfileImageVC.swift */; };
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
 		C3E1FEA3272D8A3300CE44C6 /* MyPageManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA2272D8A3300CE44C6 /* MyPageManagerVC.swift */; };
 		C3E1FEA6272D8AAB00CE44C6 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA5272D8AAB00CE44C6 /* Page.swift */; };
@@ -321,6 +322,7 @@
 		C3C97BC82730B42E002C8584 /* MyPageWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPageWorkerStoryboard.storyboard; sourceTree = "<group>"; };
 		C3C97BCB2730E940002C8584 /* MyPageWorkerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerVC.swift; sourceTree = "<group>"; };
 		C3CC57C227362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerSelectPayTypeVC.swift; sourceTree = "<group>"; };
+		C3CC57C42736442C00657EE9 /* MyPageManagerSelectProfileImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerSelectProfileImageVC.swift; sourceTree = "<group>"; };
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 		C3E1FEA2272D8A3300CE44C6 /* MyPageManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerVC.swift; sourceTree = "<group>"; };
 		C3E1FEA5272D8AAB00CE44C6 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				C30AFE8227340B1B0075CDE2 /* MyPageManagerAddWorkerVC.swift */,
 				C30AFE92273451060075CDE2 /* MyPageManagerWorkListVC.swift */,
 				C3CC57C227362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift */,
+				C3CC57C42736442C00657EE9 /* MyPageManagerSelectProfileImageVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1290,6 +1293,7 @@
 				C384425C27147E3F00B84E8A /* UIViewController.swift in Sources */,
 				C384425027147E2900B84E8A /* Device.swift in Sources */,
 				C30EC2EB272B121900EEF218 /* RegisterManagerInfo.swift in Sources */,
+				C3CC57C52736442C00657EE9 /* MyPageManagerSelectProfileImageVC.swift in Sources */,
 				C33F9986272E977700E9FF05 /* RegisterWorkerDataManager.swift in Sources */,
 				C384424B27147E1700B84E8A /* Constant.swift in Sources */,
 				C30AFE7E2733CE670075CDE2 /* MyPageManagerSelectInfo3TableViewCell.swift in Sources */,
