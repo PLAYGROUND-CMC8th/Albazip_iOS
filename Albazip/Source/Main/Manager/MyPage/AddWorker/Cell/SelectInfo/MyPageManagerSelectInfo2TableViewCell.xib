@@ -23,54 +23,12 @@
                         <color key="textColor" red="0.63529413940000001" green="0.63921570780000003" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00:00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HdH-Vp-Gan">
-                        <rect key="frame" x="24" y="26" width="134" height="62"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="134" id="MoH-bl-NWo"/>
-                            <constraint firstAttribute="height" constant="62" id="bO3-Ic-82h"/>
-                        </constraints>
-                        <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1O-KH-LiW">
                         <rect key="frame" x="178" y="39" width="19" height="36"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                         <color key="textColor" red="0.77254903320000001" green="0.77647060160000003" blue="0.77254903320000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="24:00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nGr-KF-eqL">
-                        <rect key="frame" x="217" y="26" width="134" height="62"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="134" id="UUh-BM-ndg"/>
-                            <constraint firstAttribute="height" constant="62" id="V9Q-Bm-B8S"/>
-                        </constraints>
-                        <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="출근 시간" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAN-yB-018">
                         <rect key="frame" x="24" y="0.0" width="52.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -177,27 +135,77 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1W-LG-Zaj">
+                        <rect key="frame" x="24" y="26" width="134" height="62"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="134" id="GuY-hY-LrB"/>
+                            <constraint firstAttribute="height" constant="62" id="yDo-4M-2eT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                        <state key="normal" title="00:00">
+                            <color key="titleColor" red="0.88627451660000001" green="0.88627451660000001" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.92549026010000002" green="0.92941176889999999" blue="0.92549026010000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btnStart:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ru6-dX-lwC"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcV-vw-EiY">
+                        <rect key="frame" x="217" y="26" width="134" height="62"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="134" id="XY8-qO-2iN"/>
+                            <constraint firstAttribute="height" constant="62" id="miX-jE-6JG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                        <state key="normal" title="00:00">
+                            <color key="titleColor" red="0.88627451660000001" green="0.88627451660000001" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.92549026010000002" green="0.92941176889999999" blue="0.92549026010000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btnEnd:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1Za-LV-EZQ"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="iAN-yB-018" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="3J8-jj-FQ8"/>
                     <constraint firstItem="Ebd-NC-OiL" firstAttribute="centerY" secondItem="SAM-gr-sw6" secondAttribute="centerY" id="3SO-pc-l9j"/>
                     <constraint firstItem="W07-lJ-hIY" firstAttribute="leading" secondItem="ZPk-SW-GmF" secondAttribute="trailing" constant="4" id="7Eo-lu-VeS"/>
-                    <constraint firstItem="fGs-2D-crA" firstAttribute="top" secondItem="nGr-KF-eqL" secondAttribute="bottom" constant="8" id="Avh-Al-qa5"/>
+                    <constraint firstItem="n1W-LG-Zaj" firstAttribute="top" secondItem="iAN-yB-018" secondAttribute="bottom" constant="8" id="CMt-AX-Xtn"/>
                     <constraint firstItem="L9c-kq-Ma5" firstAttribute="centerY" secondItem="iAN-yB-018" secondAttribute="centerY" id="CTr-MQ-b38"/>
-                    <constraint firstItem="YI8-ij-5Yb" firstAttribute="top" secondItem="HdH-Vp-Gan" secondAttribute="bottom" constant="36" id="Cl3-7M-Sak"/>
                     <constraint firstItem="SAM-gr-sw6" firstAttribute="leading" secondItem="YI8-ij-5Yb" secondAttribute="leading" id="Dbd-ag-g2e"/>
-                    <constraint firstItem="fGs-2D-crA" firstAttribute="trailing" secondItem="nGr-KF-eqL" secondAttribute="trailing" id="GmR-0W-mY4"/>
+                    <constraint firstItem="YI8-ij-5Yb" firstAttribute="top" secondItem="n1W-LG-Zaj" secondAttribute="bottom" constant="36" id="IIH-mm-LRC"/>
+                    <constraint firstItem="fGs-2D-crA" firstAttribute="top" secondItem="tcV-vw-EiY" secondAttribute="bottom" constant="8" id="QEl-7s-iAp"/>
                     <constraint firstItem="W07-lJ-hIY" firstAttribute="centerY" secondItem="SAM-gr-sw6" secondAttribute="centerY" id="Rlp-0e-lhv"/>
-                    <constraint firstItem="HdH-Vp-Gan" firstAttribute="top" secondItem="iAN-yB-018" secondAttribute="bottom" constant="8" symbolic="YES" id="XHE-6W-ltV"/>
-                    <constraint firstItem="R1O-KH-LiW" firstAttribute="centerY" secondItem="HdH-Vp-Gan" secondAttribute="centerY" id="XSq-1w-ZrQ"/>
-                    <constraint firstItem="nGr-KF-eqL" firstAttribute="centerY" secondItem="HdH-Vp-Gan" secondAttribute="centerY" id="dBU-bu-zZB"/>
+                    <constraint firstItem="R1O-KH-LiW" firstAttribute="centerY" secondItem="n1W-LG-Zaj" secondAttribute="centerY" id="Xof-BZ-lw3"/>
+                    <constraint firstItem="fGs-2D-crA" firstAttribute="trailing" secondItem="tcV-vw-EiY" secondAttribute="trailing" id="Z13-yZ-kcS"/>
+                    <constraint firstItem="L9c-kq-Ma5" firstAttribute="leading" secondItem="tcV-vw-EiY" secondAttribute="leading" id="d0x-oo-lef"/>
                     <constraint firstItem="SAM-gr-sw6" firstAttribute="top" secondItem="YI8-ij-5Yb" secondAttribute="bottom" constant="8" id="ghU-E7-Uty"/>
+                    <constraint firstItem="tcV-vw-EiY" firstAttribute="centerY" secondItem="n1W-LG-Zaj" secondAttribute="centerY" id="hdk-RT-3K2"/>
+                    <constraint firstAttribute="trailing" secondItem="tcV-vw-EiY" secondAttribute="trailing" constant="24" id="ikZ-h0-0AH"/>
+                    <constraint firstItem="n1W-LG-Zaj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="irU-rz-zd8"/>
                     <constraint firstItem="Ebd-NC-OiL" firstAttribute="leading" secondItem="SAM-gr-sw6" secondAttribute="trailing" constant="4" id="kHR-gH-jks"/>
                     <constraint firstItem="R1O-KH-LiW" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="lIQ-bg-iFy"/>
                     <constraint firstItem="iAN-yB-018" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ncI-iQ-mO7"/>
-                    <constraint firstItem="L9c-kq-Ma5" firstAttribute="leading" secondItem="nGr-KF-eqL" secondAttribute="leading" id="o2a-b3-uDp"/>
-                    <constraint firstAttribute="trailing" secondItem="nGr-KF-eqL" secondAttribute="trailing" constant="24" id="pQd-Su-E9Z"/>
-                    <constraint firstItem="HdH-Vp-Gan" firstAttribute="leading" secondItem="iAN-yB-018" secondAttribute="leading" id="pXH-7y-hex"/>
                     <constraint firstAttribute="bottomMargin" secondItem="SAM-gr-sw6" secondAttribute="bottom" constant="12" id="rtk-rY-50r"/>
                     <constraint firstItem="ZPk-SW-GmF" firstAttribute="centerY" secondItem="SAM-gr-sw6" secondAttribute="centerY" id="uhb-B6-61i"/>
                     <constraint firstItem="YI8-ij-5Yb" firstAttribute="leading" secondItem="iAN-yB-018" secondAttribute="leading" id="yHz-C5-HxN"/>
@@ -205,7 +213,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="654" y="199"/>
+            <connections>
+                <outlet property="endButton" destination="tcV-vw-EiY" id="HsK-Q2-yeW"/>
+                <outlet property="startButton" destination="n1W-LG-Zaj" id="XEV-JP-Y8V"/>
+            </connections>
+            <point key="canvasLocation" x="652.89855072463774" y="198.54910714285714"/>
         </tableViewCell>
     </objects>
 </document>

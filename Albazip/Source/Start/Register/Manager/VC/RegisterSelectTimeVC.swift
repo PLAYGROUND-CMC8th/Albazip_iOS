@@ -16,9 +16,11 @@ protocol TimeDateModalDelegate {
 
 class RegisterSelectTimeVC: UIViewController{
     
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var pickerView: UIPickerView!
     @IBOutlet var pickerView2: UIPickerView!
     
+    var titletext = ""
     var timeDateModalDelegate : TimeDateModalDelegate?
     var date1 =  [String]()
     var date2 =  [String]()
@@ -53,7 +55,7 @@ class RegisterSelectTimeVC: UIViewController{
         pickerView.dataSource = self
         pickerView2.delegate = self
         pickerView2.dataSource = self
-        
+        titleLabel.text = titletext
     }
     
    

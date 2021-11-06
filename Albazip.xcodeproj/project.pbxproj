@@ -153,6 +153,7 @@
 		C3C97BC62730B404002C8584 /* MainWorker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3C97BC52730B404002C8584 /* MainWorker.storyboard */; };
 		C3C97BC92730B42E002C8584 /* MyPageWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3C97BC82730B42E002C8584 /* MyPageWorkerStoryboard.storyboard */; };
 		C3C97BCC2730E940002C8584 /* MyPageWorkerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C97BCB2730E940002C8584 /* MyPageWorkerVC.swift */; };
+		C3CC57C327362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC57C227362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift */; };
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
 		C3E1FEA3272D8A3300CE44C6 /* MyPageManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA2272D8A3300CE44C6 /* MyPageManagerVC.swift */; };
 		C3E1FEA6272D8AAB00CE44C6 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA5272D8AAB00CE44C6 /* Page.swift */; };
@@ -319,6 +320,7 @@
 		C3C97BC52730B404002C8584 /* MainWorker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainWorker.storyboard; sourceTree = "<group>"; };
 		C3C97BC82730B42E002C8584 /* MyPageWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPageWorkerStoryboard.storyboard; sourceTree = "<group>"; };
 		C3C97BCB2730E940002C8584 /* MyPageWorkerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerVC.swift; sourceTree = "<group>"; };
+		C3CC57C227362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerSelectPayTypeVC.swift; sourceTree = "<group>"; };
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 		C3E1FEA2272D8A3300CE44C6 /* MyPageManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerVC.swift; sourceTree = "<group>"; };
 		C3E1FEA5272D8AAB00CE44C6 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 			children = (
 				C30AFE8227340B1B0075CDE2 /* MyPageManagerAddWorkerVC.swift */,
 				C30AFE92273451060075CDE2 /* MyPageManagerWorkListVC.swift */,
+				C3CC57C227362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1256,6 +1259,7 @@
 				C30EC2E9272B0AB500EEF218 /* RegisterManagerRequest.swift in Sources */,
 				C38442372714797000B84E8A /* SceneDelegate.swift in Sources */,
 				C384425F27147E3F00B84E8A /* Color.swift in Sources */,
+				C3CC57C327362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift in Sources */,
 				C3A1ADD0271C698D005A61ED /* RegisterWorkerCodeVC.swift in Sources */,
 				C30AFE6B2733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift in Sources */,
 				C30EC2E7272B0A9F00EEF218 /* RegisterManagerResponse.swift in Sources */,

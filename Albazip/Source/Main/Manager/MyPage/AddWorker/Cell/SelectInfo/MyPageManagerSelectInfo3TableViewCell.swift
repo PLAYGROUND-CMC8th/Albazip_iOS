@@ -6,24 +6,33 @@
 //
 
 import UIKit
-
+protocol MyPageManagerPayTypeModalDelegate {
+    func goSelectPayType()
+}
 class MyPageManagerSelectInfo3TableViewCell: UITableViewCell {
 
-    @IBOutlet var moneyTypeTextField: UITextField!
+    @IBOutlet var btnPayType: UIButton!
+    @IBOutlet var payTypeLabel: UILabel!
     @IBOutlet var moneyTextField: UITextField!
-    
+    var myPageManagerPayTypeModalDelegate : MyPageManagerPayTypeModalDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
     }
     func setUI()  {
+        
         moneyTextField.addRightPadding()
-        moneyTypeTextField.addLeftPadding()
+        
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func btnPayType(_ sender: Any) {
+        //급여 선택 페이지로
+        myPageManagerPayTypeModalDelegate?.goSelectPayType()
     }
     
 }

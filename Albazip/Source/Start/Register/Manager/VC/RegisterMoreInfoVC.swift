@@ -75,6 +75,7 @@ class RegisterMoreInfoVC: UIViewController {
             modalBgView.isHidden = false
             vc.timeDateModalDelegate = self
             vc.whatDate = 0
+            vc.titletext = "매장 오픈 시간"
             self.present(vc, animated: true, completion: nil)
             
         }
@@ -87,6 +88,7 @@ class RegisterMoreInfoVC: UIViewController {
             modalBgView.isHidden = false
             vc.timeDateModalDelegate = self
             vc.whatDate = 1
+            vc.titletext = "매장 마감 시간"
             self.present(vc, animated: true, completion: nil)
             
         }

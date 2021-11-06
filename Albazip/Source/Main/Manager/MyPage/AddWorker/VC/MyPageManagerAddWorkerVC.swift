@@ -8,10 +8,16 @@
 import Foundation
 import UIKit
 
-class MyPageManagerAddWorkerVC: UIViewController{
+class MyPageManagerAddWorkerVC: UIViewController, MyPageManagerTimeDateModalDelegate, MyPageManagerPayTypeModalDelegate{
+    
+    
  
     @IBOutlet var tableView: UITableView!
     
+    // 시간 변수
+    var startTime = ""
+    var endTime = ""
+    var payTime = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -20,6 +26,7 @@ class MyPageManagerAddWorkerVC: UIViewController{
     //MARK:- View Setup
     func setUI(){
         self.tabBarController?.tabBar.isHidden = true
+        self.dismissKeyboardWhenTappedAround()
     }
     func setupTableView() {
         
@@ -41,7 +48,38 @@ class MyPageManagerAddWorkerVC: UIViewController{
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageManagerWorkListVC") as? MyPageManagerWorkListVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    //타임 피커 페이지로..
+    func goSelectTimeDate(index: Int) {
+        print("goSelectTimeDate")
+        let storyboard = UIStoryboard(name: "RegisterManagerStoryboard", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
+                    vc.modalPresentationStyle = .overFullScreen
+                    
+                    //modalBgView.isHidden = false
+                    vc.timeDateModalDelegate = self
+                    vc.whatDate = index
+                    if index == 0{
+                        vc.titletext = "출근 시간"
+                    }else{
+                        vc.titletext = "퇴근 시간"
+                    }
+                    self.present(vc, animated: true, completion: nil)
+                    
+                }
+    }
     
+    //급여 계산 기준 선택 페이지로
+    func goSelectPayType() {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyPageManagerSelectPayTypeVC") as? MyPageManagerSelectPayTypeVC {
+                    vc.modalPresentationStyle = .overFullScreen
+                    
+                    //modalBgView.isHidden = false
+                    vc.selectPayTypeDelegate = self
+                    
+                    self.present(vc, animated: true, completion: nil)
+                    
+        }
+    }
 }
 //MARK:- Table View Data Source
 
@@ -63,6 +101,15 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerSelectInfo2TableViewCell") as? MyPageManagerSelectInfo2TableViewCell {
                 cell.selectionStyle = .none
+                cell.myPageManagerTimeDateModalDelegate = self
+                if startTime != ""{
+                    cell.startButton.setTitle(startTime, for: .normal)
+                    cell.startButton.setTitleColor(#colorLiteral(red: 0.2038974464, green: 0.2039384246, blue: 0.2038920522, alpha: 1), for: .normal)
+                }
+                if endTime != ""{
+                    cell.endButton.setTitle(endTime, for: .normal)
+                    cell.endButton.setTitleColor(#colorLiteral(red: 0.2038974464, green: 0.2039384246, blue: 0.2038920522, alpha: 1), for: .normal)
+                }
                 print(indexPath.row)
                 return cell
             }
@@ -70,6 +117,10 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerSelectInfo3TableViewCell") as? MyPageManagerSelectInfo3TableViewCell {
                 cell.selectionStyle = .none
                 print(indexPath.row)
+                cell.myPageManagerPayTypeModalDelegate = self
+                if payTime != ""{
+                    cell.payTypeLabel.text = payTime
+                }
                 return cell
             }
         default:
@@ -93,4 +144,34 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row) 입니다.")
     }
+}
+extension MyPageManagerAddWorkerVC: TimeDateModalDelegate {
+    func timeModalDismiss() {
+        //modalBgView.isHidden = true
+        //checkValue()
+    }
+
+    func openTimeTextFieldData(data: String) {
+        startTime = data
+        tableView.reloadData()
+        //calculateTime()
+    }
+
+    func endTimeTextFieldData(data: String) {
+        endTime = data
+        tableView.reloadData()
+        //calculateTime()
+    }
+}
+
+extension MyPageManagerAddWorkerVC: SelectPayTypeDelegate {
+    func modalDismiss(){
+        
+    }
+    func textFieldData(data: String){
+        payTime = data
+        tableView.reloadData()
+    }
+
+    
 }
