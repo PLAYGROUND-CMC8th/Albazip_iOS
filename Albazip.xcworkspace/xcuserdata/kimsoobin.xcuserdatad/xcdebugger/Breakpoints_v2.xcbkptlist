@@ -62,8 +62,8 @@
             filePath = "Albazip/Source/Main/Manager/MyPage/AddWorker/VC/MyPageManagerWorkListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "MyPageManagerWorkListVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -82,6 +82,22 @@
             endingLineNumber = "20"
             landmarkName = "MyPageManagerWorkList3TableViewCell"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "45C1691F-505F-4A85-8E6D-1C087E0B9946"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Albazip/Source/Main/Manager/MyPage/AddWorker/Cell/SelectInfo/MyPageManagerSelectInfo2TableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "btn3(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

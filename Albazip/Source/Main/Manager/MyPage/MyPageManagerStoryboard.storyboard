@@ -237,6 +237,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="btnNext" destination="zbn-Au-bSL" id="ejR-zU-SNJ"/>
                         <outlet property="modalBgView" destination="jfA-7b-dxW" id="GkN-SP-Kt7"/>
                         <outlet property="tableView" destination="RDH-hP-tTm" id="RJY-eS-dhv"/>
                     </connections>
@@ -290,6 +291,9 @@
                                         <state key="normal" title="완료">
                                             <color key="titleColor" red="0.96470588450000005" green="0.77647060160000003" blue="0.26274511220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnNext:" destination="By3-ao-wND" eventType="touchUpInside" id="dWx-rI-bYC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -298,7 +302,6 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="btnNext" destination="yVe-Bp-JiS" id="VOv-9f-d1k"/>
                         <outlet property="tableView" destination="G6k-nb-xQ9" id="sTG-wf-mBJ"/>
                     </connections>
                 </viewController>
@@ -696,7 +699,7 @@
         <scene sceneID="wJf-1I-pMb">
             <objects>
                 <navigationController storyboardIdentifier="MyPageManagerNavigationController" id="vs7-eS-pCa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="마이페이지" image="icMypageActive" id="ue1-f0-TKM"/>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="icMyPageInactive" selectedImage="icMypageActive" id="ue1-f0-TKM"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="naM-Pb-gvH">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -715,6 +718,7 @@
         <image name="btnProfileChange" width="30" height="30"/>
         <image name="icAddPerson" width="24" height="24"/>
         <image name="icBackArrow" width="24" height="24"/>
+        <image name="icMyPageInactive" width="24" height="24"/>
         <image name="icMypageActive" width="24" height="24"/>
         <image name="icSetting" width="24" height="24"/>
         <image name="imgProfile58Px4" width="58" height="58"/>

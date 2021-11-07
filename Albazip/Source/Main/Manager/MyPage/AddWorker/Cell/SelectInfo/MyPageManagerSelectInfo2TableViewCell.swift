@@ -9,6 +9,8 @@ import UIKit
 
 protocol MyPageManagerTimeDateModalDelegate {
     func goSelectTimeDate(index:Int)
+    func checkValue2(value: Bool)
+    func setBreaktime(text:String)
 }
 
 class MyPageManagerSelectInfo2TableViewCell: UITableViewCell {
@@ -59,9 +61,11 @@ class MyPageManagerSelectInfo2TableViewCell: UITableViewCell {
             btn3.isSelected = false
             btn4.backgroundColor = .none
             btn4.isSelected = false
+            myPageManagerTimeDateModalDelegate?.setBreaktime(text: "없음")
         }else{
             btn1.backgroundColor = .none
         }
+        checkButton()
     }
     
     @IBAction func btn2(_ sender: Any) {
@@ -74,9 +78,11 @@ class MyPageManagerSelectInfo2TableViewCell: UITableViewCell {
             btn3.isSelected = false
             btn4.backgroundColor = .none
             btn4.isSelected = false
+            myPageManagerTimeDateModalDelegate?.setBreaktime(text: "30분")
         }else{
             btn2.backgroundColor = .none
         }
+        checkButton()
     }
     @IBAction func btn3(_ sender: Any) {
         btn3.isSelected.toggle()
@@ -88,9 +94,11 @@ class MyPageManagerSelectInfo2TableViewCell: UITableViewCell {
             btn1.isSelected = false
             btn4.backgroundColor = .none
             btn4.isSelected = false
+            myPageManagerTimeDateModalDelegate?.setBreaktime(text: "60분")
         }else{
             btn3.backgroundColor = .none
         }
+        checkButton()
     }
     @IBAction func btn4(_ sender: Any) {
         btn4.isSelected.toggle()
@@ -102,8 +110,18 @@ class MyPageManagerSelectInfo2TableViewCell: UITableViewCell {
             btn3.isSelected = false
             btn1.backgroundColor = .none
             btn1.isSelected = false
+            myPageManagerTimeDateModalDelegate?.setBreaktime(text: "90분")
         }else{
             btn4.backgroundColor = .none
+        }
+        checkButton()
+    }
+    
+    func checkButton(){
+        if !btn1.isSelected, !btn2.isSelected, !btn3.isSelected, !btn4.isSelected{
+            myPageManagerTimeDateModalDelegate?.checkValue2(value: false)
+        }else{
+            myPageManagerTimeDateModalDelegate?.checkValue2(value: true)
         }
     }
     

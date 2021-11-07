@@ -13,15 +13,28 @@ class MyPageManagerAddWorkerVC: UIViewController{
     
     @IBOutlet var modalBgView: UIView!
     
+    @IBOutlet var btnNext: UIButton!
     @IBOutlet var tableView: UITableView!
     
     // 시간 변수
     var startTime = ""
     var endTime = ""
-    var payTime = ""
+    var payTime = "시급"
     var hour = "0시간"
     // 테이블뷰 접었다 펴기
     var isDateSelected = false
+    
+    //폼 요소 다 채워졌는지 확인
+    var checkValue1 = false
+    var checkValue2 = false
+    var checkValue3 = true
+    
+    // data
+    var rank = ""
+    var title2 = ""
+    var workDay = [String]()
+    var breakTime = ""
+    var salary = "8720"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +46,7 @@ class MyPageManagerAddWorkerVC: UIViewController{
         //self.tabBarController?.tabBar.isHidden = true
         self.dismissKeyboardWhenTappedAround()
         modalBgView.isHidden = true
+        btnNext.isEnabled = false
     }
     func setupTableView() {
         
@@ -54,9 +68,35 @@ class MyPageManagerAddWorkerVC: UIViewController{
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnNext(_ sender: Any) {
+        let data = MyPageManagerAddWorkerInfo.shared
+        data.startTime = startTime.replace(target: ":", with: "")
+        data.endTime = endTime.replace(target: ":", with: "")
+        data.salaryType = payTime
+        data.salary = salary
+        data.breakTime = breakTime
+        data.title = title2
+        data.rank = rank
+        data.workDays = workDay
+        
+        print("data:\(data.rank) \(data.title) \(data.startTime) \(data.endTime) \(data.workDays) \(data.breakTime) \(data.salary) \(data.salaryType)")
+        
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageManagerWorkListVC") as? MyPageManagerWorkListVC else {return}
-        self.navigationController?.pushViewController(nextVC, animated: true)
+                self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
+    //모든 값이 입력되었는지 확인
+    func checkContent(){
+        if checkValue1, checkValue2, checkValue3, startTime != "", endTime != ""{
+            
+            btnNext.isEnabled = true
+            btnNext.setTitleColor(#colorLiteral(red: 0.9961670041, green: 0.7674626112, blue: 0, alpha: 1), for: .normal)
+            
+        }else{
+            btnNext.isEnabled = false
+            btnNext.setTitleColor(#colorLiteral(red: 0.678363204, green: 0.678479135, blue: 0.6783478856, alpha: 1), for: .normal)
+        }
+    }
+    
     //시간차 구하기
     func calculateTime(){
         if startTime != "", endTime != "" {
@@ -141,6 +181,7 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
                     cell.payTypeLabel.text = payTime
                     
                 }
+                salary = cell.moneyTextField.text!
                 return cell
             }
         default:
@@ -202,6 +243,54 @@ extension MyPageManagerAddWorkerVC: SelectPayTypeDelegate {
 }
 
 extension MyPageManagerAddWorkerVC: MyPageManagerTimeDateModalDelegate, MyPageManagerPayTypeModalDelegate, MyPageManagerSelectInfo1Delegate{
+    
+    func setRank(text: String) {
+        rank = text
+        print("rank:\(rank)")
+    }
+    
+    func setTitle(text: String) {
+        title2 = text
+        print("title:\(title2)")
+    }
+    func setBreaktime(text: String) {
+        breakTime = text
+        print("breakTime:\(breakTime)")
+    }
+    func addDay(text: String) {
+        workDay.append(text)
+        print("workday:\(workDay)")
+    }
+    
+    func deleteDay(text: String) {
+        if let firstIndex = workDay.firstIndex(of: text) {
+            workDay.remove(at: firstIndex)
+        }
+        print("workday:\(workDay)")
+    }
+    
+    
+    func checkValue1(value: Bool) {
+        print(value)
+        checkValue1 = value
+        checkContent()
+    }
+    func checkValue2(value: Bool) {
+        print(value)
+        checkValue2 = value
+        checkContent()
+    }
+    
+    func checkValue3(text: String) {
+        print("salary: "+text)
+        salary = text
+        if text != ""{
+            checkValue3 = true
+        }else{
+            checkValue3 = false
+        }
+        checkContent()
+    }
     func presentAlert(text: String) {
         showMessage(message: text, controller: self)
     }

@@ -9,7 +9,9 @@ import UIKit
 
 protocol MyPageManagerWorkList2Delegate {
     func deleteCell(index:Int)
-    //func deleteCell2(_ myPageManagerWorkList2TableViewCell:MyPageManagerWorkList2TableViewCell)
+    
+    func setTitleTextField(index: Int, text:String)
+    func setSubTextField(index: Int, text:String)
 }
 
 class MyPageManagerWorkList2TableViewCell: UITableViewCell {
@@ -21,8 +23,8 @@ class MyPageManagerWorkList2TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        titleLabel.delegate = self
-        subLabel.delegate = self
+        titleLabel.addTarget(self, action: #selector(self.textFieldDidChange(_:)),  for: .editingChanged)
+        subLabel.addTarget(self, action: #selector(self.textFieldDidChange2(_:)),  for: .editingChanged)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,8 +38,13 @@ class MyPageManagerWorkList2TableViewCell: UITableViewCell {
         //myPageManagerWorkList2Delegate?.deleteCell2(self)
     }
     
+    @objc func textFieldDidChange(_ sender: Any?) {
+           print(self.titleLabel.text!)
+        myPageManagerWorkList2Delegate?.setTitleTextField(index: cellIndex!, text: self.titleLabel.text!)
+    }
+    @objc func textFieldDidChange2(_ sender: Any?) {
+           print(self.subLabel.text!)
+        myPageManagerWorkList2Delegate?.setSubTextField(index: cellIndex!, text: self.subLabel.text!)
+    }
 }
 
-extension MyPageManagerWorkList2TableViewCell: UITextFieldDelegate{
-    
-}

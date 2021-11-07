@@ -19,7 +19,10 @@ class MyPageManagerWorkListVC: UIViewController{
     @IBOutlet var tableView: UITableView!
     var totalCount = 0
     var totalList = [WorkList]()
-    var replaceData = false
+    var taskList = [TaskLists]()
+    // Datamanager
+    lazy var dataManager: MyPageManagerAddWorkerDatamanager = MyPageManagerAddWorkerDatamanager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -28,6 +31,7 @@ class MyPageManagerWorkListVC: UIViewController{
     //MARK:- View Setup
     func setUI(){
         self.tabBarController?.tabBar.isHidden = true
+        self.dismissKeyboardWhenTappedAround()
     }
     func setupTableView() {
         
@@ -46,7 +50,34 @@ class MyPageManagerWorkListVC: UIViewController{
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    @IBOutlet var btnNext: UIView!
+    
+    @IBAction func btnNext(_ sender: Any) {
+        taskList.removeAll()
+     
+        if totalList.count != 0{
+            for x in 0...totalList.count - 1{
+                if totalList[x].title == ""{
+                    return showMessage(message: "업무명을 입력해주세요.", controller: self)
+                }
+                taskList.append(TaskLists(title: totalList[x].title, content: totalList[x].content))
+            }
+            print("완료")
+            
+        }else{
+            print("totalList가 null 임")
+           
+            
+        }
+        //api 호출
+        let data = MyPageManagerAddWorkerInfo.shared
+        let input = MyPageManagerAddWorkerRequest(rank: data.rank!, title: data.title!, startTime: data.startTime!, endTime: data.endTime!,  workDays: data.workDays!, breakTime: data.breakTime!, salary: data.salary!, salaryType: data.salaryType!, taskLists: taskList)
+        print(input)
+        dataManager.postAddWorker(input, vc: self)
+        showIndicator()
+        //self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     
 }
 
@@ -81,12 +112,8 @@ extension  MyPageManagerWorkListVC: UITableViewDataSource, UITableViewDelegate {
                 cell.selectionStyle = .none
                 cell.cellIndex = indexPath.row
                 cell.myPageManagerWorkList2Delegate = self
-                if replaceData{
-                    cell.titleLabel.text = totalList[indexPath.row - 1].title
-                    cell.subLabel.text = totalList[indexPath.row - 1].content
-                }else{
-                    totalList[indexPath.row - 1] = WorkList(title: cell.titleLabel.text!, content: cell.subLabel.text!)
-                }
+                cell.titleLabel.text = totalList[indexPath.row - 1].title
+                cell.subLabel.text = totalList[indexPath.row - 1].content
                 
                 
                 print(indexPath.row)
@@ -113,26 +140,24 @@ extension  MyPageManagerWorkListVC: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension MyPageManagerWorkListVC: MyPageManagerWorkList3Delegate, MyPageManagerWorkList2Delegate{
-    func deleteCell2(_ myPageManagerWorkList2TableViewCell: MyPageManagerWorkList2TableViewCell) {
-        //totalList.remove(at: myPageManagerWorkList2TableViewCell.cellIndex! - 1)
-        //tableView.reloadData()
-    }
     
+    func setTitleTextField(index: Int,text: String) {
+        totalList[index-1].title = text
+        print(totalList)
+    }
+    func setSubTextField(index: Int, text:String){
+        totalList[index-1].content = text
+        print(totalList)
+    }
     func deleteCell(index: Int) {
-        replaceData = false
-        tableView.reloadData()
-        print(totalList)
         totalList.remove(at: index - 1)
-        
         print(totalList)
-        replaceData = true
         tableView.reloadData()
-        //replaceData = false
         print(totalList)
     }
-    
+
     func addWork() {
-        replaceData = false
+            
         totalList.append(WorkList(title: "",content: ""))
         print(totalList)
         tableView.reloadData()
@@ -140,4 +165,17 @@ extension MyPageManagerWorkListVC: MyPageManagerWorkList3Delegate, MyPageManager
     }
     
     
+}
+
+extension MyPageManagerWorkListVC {
+    func didSuccessAddWorker(_ result: MyPageManagerAddWorkerResponse) {
+        dismissIndicator()
+        self.presentAlert(title: result.message)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func failedToRequestAddWorker(message: String) {
+        dismissIndicator()
+        self.presentAlert(title: message)
+    }
 }
