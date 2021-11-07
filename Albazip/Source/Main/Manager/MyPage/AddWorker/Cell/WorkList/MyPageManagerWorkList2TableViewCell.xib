@@ -19,49 +19,57 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aH1-T0-BL5">
-                        <rect key="frame" x="24" y="6" width="327" height="98"/>
+                        <rect key="frame" x="24" y="6" width="327" height="99.666666666666671"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간판 밖으로 내놓기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWw-x3-6No">
-                                <rect key="frame" x="16" y="16" width="257" height="17"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0039215688589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icX20Px" translatesAutoresizingMaskIntoConstraints="NO" id="qA9-Av-UPW">
-                                <rect key="frame" x="283" y="14.666666666666668" width="20" height="20.000000000000004"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="lVq-Ya-eTt"/>
-                                    <constraint firstAttribute="height" constant="20" id="mjA-h4-z9m"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqv-rX-TWT">
-                                <rect key="frame" x="16" y="48.666666666666664" width="287" height="1"/>
+                                <rect key="frame" x="16" y="50.333333333333336" width="287" height="1"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Hgy-um-vUX"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매장 앞 나무 주변에 놓아주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xY5-7Z-okV">
-                                <rect key="frame" x="16" y="65.666666666666671" width="287" height="16.333333333333329"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="업무명" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p0M-ks-BO7">
+                                <rect key="frame" x="24" y="16" width="249" height="18.666666666666671"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="249" id="prW-uQ-ejE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="업무 설명을 적어주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sd1-DU-ech">
+                                <rect key="frame" x="24" y="67.333333333333329" width="279" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="mZz-UM-FFZ"/>
+                                    <constraint firstAttribute="width" constant="279" id="w9D-AA-IH3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HT-az-SpX">
+                                <rect key="frame" x="283" y="15.333333333333332" width="20" height="19.999999999999996"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="9Ph-Yg-6KQ"/>
+                                    <constraint firstAttribute="width" constant="20" id="cTv-5u-pbO"/>
+                                </constraints>
+                                <state key="normal" image="icX20Px"/>
+                                <connections>
+                                    <action selector="btnDelete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="EI3-CC-iZe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GWw-x3-6No" firstAttribute="leading" secondItem="aH1-T0-BL5" secondAttribute="leading" constant="16" id="1Ir-7e-TMI"/>
-                            <constraint firstAttribute="bottom" secondItem="xY5-7Z-okV" secondAttribute="bottom" constant="16" id="2rd-Lm-3P3"/>
-                            <constraint firstItem="qA9-Av-UPW" firstAttribute="leading" secondItem="GWw-x3-6No" secondAttribute="trailing" constant="10" id="5lB-de-NNp"/>
-                            <constraint firstAttribute="trailing" secondItem="xY5-7Z-okV" secondAttribute="trailing" constant="24" id="GM8-4i-48e"/>
-                            <constraint firstItem="Rqv-rX-TWT" firstAttribute="trailing" secondItem="qA9-Av-UPW" secondAttribute="trailing" id="GUS-30-SkH"/>
-                            <constraint firstItem="Rqv-rX-TWT" firstAttribute="leading" secondItem="GWw-x3-6No" secondAttribute="leading" id="HPC-KE-RO1"/>
-                            <constraint firstItem="qA9-Av-UPW" firstAttribute="centerY" secondItem="GWw-x3-6No" secondAttribute="centerY" id="Ker-st-cy4"/>
+                            <constraint firstItem="Rqv-rX-TWT" firstAttribute="leading" secondItem="aH1-T0-BL5" secondAttribute="leading" constant="16" id="B27-sQ-gSG"/>
+                            <constraint firstItem="p0M-ks-BO7" firstAttribute="top" secondItem="aH1-T0-BL5" secondAttribute="top" constant="16" id="BzV-ia-Psn"/>
+                            <constraint firstItem="Sd1-DU-ech" firstAttribute="top" secondItem="Rqv-rX-TWT" secondAttribute="bottom" constant="16" id="Dq8-Jc-tjB"/>
+                            <constraint firstAttribute="trailing" secondItem="7HT-az-SpX" secondAttribute="trailing" constant="24" id="Fhg-1B-alq"/>
+                            <constraint firstItem="p0M-ks-BO7" firstAttribute="leading" secondItem="aH1-T0-BL5" secondAttribute="leading" constant="24" id="Hsq-Le-a8m"/>
+                            <constraint firstItem="Sd1-DU-ech" firstAttribute="leading" secondItem="aH1-T0-BL5" secondAttribute="leading" constant="24" id="V9U-rC-1XQ"/>
+                            <constraint firstItem="Rqv-rX-TWT" firstAttribute="trailing" secondItem="Sd1-DU-ech" secondAttribute="trailing" id="X9H-jz-QMx"/>
                             <constraint firstItem="Rqv-rX-TWT" firstAttribute="centerY" secondItem="aH1-T0-BL5" secondAttribute="centerY" id="ciT-jM-xDh"/>
-                            <constraint firstItem="xY5-7Z-okV" firstAttribute="top" secondItem="Rqv-rX-TWT" secondAttribute="bottom" constant="16" id="fMM-FK-6wd"/>
-                            <constraint firstAttribute="trailing" secondItem="qA9-Av-UPW" secondAttribute="trailing" constant="24" id="psQ-Ey-u1Z"/>
-                            <constraint firstItem="xY5-7Z-okV" firstAttribute="leading" secondItem="GWw-x3-6No" secondAttribute="leading" id="r1S-T3-k8u"/>
-                            <constraint firstItem="GWw-x3-6No" firstAttribute="top" secondItem="aH1-T0-BL5" secondAttribute="top" constant="16" id="vr3-va-ZQP"/>
+                            <constraint firstItem="Rqv-rX-TWT" firstAttribute="top" secondItem="7HT-az-SpX" secondAttribute="bottom" constant="15.000000000000007" id="kl0-9w-VWH"/>
+                            <constraint firstAttribute="bottom" secondItem="Sd1-DU-ech" secondAttribute="bottom" constant="17.329999999999998" id="pli-NZ-iLh"/>
+                            <constraint firstItem="7HT-az-SpX" firstAttribute="centerY" secondItem="p0M-ks-BO7" secondAttribute="centerY" id="u2R-6c-cnJ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -84,6 +92,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="subLabel" destination="Sd1-DU-ech" id="g0A-eR-HFe"/>
+                <outlet property="titleLabel" destination="p0M-ks-BO7" id="qY0-oW-aMI"/>
+            </connections>
             <point key="canvasLocation" x="172" y="142.61083743842366"/>
         </tableViewCell>
     </objects>

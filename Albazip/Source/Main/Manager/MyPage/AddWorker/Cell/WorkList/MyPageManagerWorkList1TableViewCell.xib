@@ -35,6 +35,11 @@
                             <constraint firstItem="E10-4J-67O" firstAttribute="top" secondItem="Kvd-aT-ATP" secondAttribute="top" constant="16" id="QVn-o4-cZN"/>
                             <constraint firstAttribute="height" constant="66" id="fTO-4F-Xkl"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업무리스트 작성하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hya-ny-o7k">
                         <rect key="frame" x="24" y="114" width="129" height="19"/>

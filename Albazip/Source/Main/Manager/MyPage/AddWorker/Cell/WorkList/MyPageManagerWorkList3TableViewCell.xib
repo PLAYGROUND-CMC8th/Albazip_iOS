@@ -50,10 +50,29 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDH-O1-68A">
+                        <rect key="frame" x="132" y="8" width="111" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="KOo-CA-tq8"/>
+                            <constraint firstAttribute="width" constant="111" id="S7Y-4f-4hk"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="26"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btnAddWork:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="feQ-8D-ZMX"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Ug6-66-nFO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Qeu-j0-PFn"/>
+                    <constraint firstItem="mDH-O1-68A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="745-rc-u7Z"/>
+                    <constraint firstAttribute="bottom" secondItem="mDH-O1-68A" secondAttribute="bottom" constant="8" id="D1s-bp-dvn"/>
+                    <constraint firstAttribute="bottom" secondItem="Ug6-66-nFO" secondAttribute="bottom" constant="8" id="cDQ-t0-EBP"/>
                     <constraint firstItem="Ug6-66-nFO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gCB-s1-bFZ"/>
+                    <constraint firstItem="Ug6-66-nFO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="iQl-bi-lYK"/>
+                    <constraint firstItem="mDH-O1-68A" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="x2r-MY-0il"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
