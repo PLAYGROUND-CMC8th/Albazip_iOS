@@ -31,7 +31,7 @@ class MyPageManagerWriteVC: UIViewController, MyPageManagerWriteTabDelegate  {
     
     //MARK:- Data Source
     
-    var numberOfCells: Int = 5
+    var numberOfCells: Int = 0
     //선택됨 탭
     var selectedTab = 0
     
@@ -70,7 +70,9 @@ class MyPageManagerWriteVC: UIViewController, MyPageManagerWriteTabDelegate  {
                            forCellReuseIdentifier: "MyPageManagerWriteTabTableViewCell")
         tableView.register(UINib(nibName: "MyPageManagerWriteCommunityTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageManagerWriteCommunityTableViewCell")
-        //MyPageManagerWriteCommunityTableViewCell
+        tableView.register(UINib(nibName: "MyPageManagerNoWriteTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageManagerNoWriteTableViewCell")
+        //MyPageManagerNoWriteTableViewCell
         tableView.dataSource = self
         tableView.delegate = self
         //tableView.estimatedRowHeight = 74
@@ -88,8 +90,12 @@ class MyPageManagerWriteVC: UIViewController, MyPageManagerWriteTabDelegate  {
 extension MyPageManagerWriteVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return numberOfCells
+        if numberOfCells == 0{
+            return numberOfCells + 1 + 1 // 글이 없음니다 셀때문애
+        }else{
+            return numberOfCells + 1
+        }
+        // 1은 디폴트 공지사항, 게시판 버튼탭 셀임
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,19 +108,39 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
             }
         }else{
             if(selectedTab==0){
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteTableViewCell") as? MyPageManagerWriteTableViewCell {
-                    cell.selectionStyle = .none
-                    cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
-                    print(indexPath.row)
-                    return cell
+                if numberOfCells == 0{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWriteTableViewCell") as? MyPageManagerNoWriteTableViewCell {
+                        cell.selectionStyle = .none
+                        //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                        print(indexPath.row)
+                        return cell
+                    }
+                }else{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteTableViewCell") as? MyPageManagerWriteTableViewCell {
+                        cell.selectionStyle = .none
+                        cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                        print(indexPath.row)
+                        return cell
+                    }
                 }
+                
             }else{
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteCommunityTableViewCell") as? MyPageManagerWriteCommunityTableViewCell {
-                    cell.selectionStyle = .none
-                    //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
-                    print(indexPath.row)
-                    return cell
+                if numberOfCells == 0{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWriteTableViewCell") as? MyPageManagerNoWriteTableViewCell {
+                        cell.selectionStyle = .none
+                        //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                        print(indexPath.row)
+                        return cell
+                    }
+                }else{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteCommunityTableViewCell") as? MyPageManagerWriteCommunityTableViewCell {
+                        cell.selectionStyle = .none
+                        //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                        print(indexPath.row)
+                        return cell
+                    }
                 }
+                
             }
             
         }
@@ -125,9 +151,17 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
             return 51
         }else{
             if selectedTab == 0{
-                return 97
+                if numberOfCells == 0{
+                    return 326
+                }else{
+                    return 97
+                }
             }else{
-                return 175
+                if numberOfCells == 0{
+                    return 326
+                }else{
+                    return 175
+                }
             }
         }
     }

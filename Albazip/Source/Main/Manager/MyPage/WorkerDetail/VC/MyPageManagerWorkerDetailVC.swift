@@ -1,42 +1,30 @@
 //
-//  MyPageManagerVC.swift
+//  MyPageManagerWorkerDetailVC.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2021/10/30.
+//  Created by 김수빈 on 2021/11/08.
 //
+
+var detailTopViewInitialHeight : CGFloat = 186
 
 import Foundation
 import UIKit
-
-var topViewInitialHeight : CGFloat = 156
-let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-let height = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-let topViewFinalHeight : CGFloat = height - Device.navigationBarHeight //- 15 //navigation hieght
-
-let topViewHeightConstraintRange = topViewFinalHeight..<topViewInitialHeight
-
-class MyPageManagerVC : BaseViewController{
-   
-    
-    
+class MyPageManagerWorkerDetailVC: BaseViewController{
     //MARK:- Change this value for number of tabs.
     
-    let tabsCount = 2; #warning ("< 1 causes crash")
+    let tabsCount = 3; #warning ("< 1 causes crash")
     
     //MARK:- Outlets
-    
+    //스티키 레이아웃 구성요소들
     @IBOutlet var stickyHeaderView: UIView!
     @IBOutlet var tabBarCollectionView: UICollectionView!
     @IBOutlet var bottomView: UIView!
     @IBOutlet var headerViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var bottomViewTopConstraint: NSLayoutConstraint!
     
-    // 상단 내 정보
+    //알바생 상단 정보
     @IBOutlet var profileImage: UIImageView!
-    @IBOutlet var storeNameLabel: UILabel!
-    @IBOutlet var userNameLabel: UILabel!
+    @IBOutlet var workerNameLabel: UILabel!
     
-    @IBOutlet var modalBgView: UIView!
     
     //MARK:- Programatic UI Properties
     
@@ -44,36 +32,24 @@ class MyPageManagerVC : BaseViewController{
     var selectedTabView = UIView()
     //선택된 탭 인덱스
     var selectedTabIndex = 0
+    
     //MARK:- View Model
     
     var pageCollection = PageCollection()
     
     //MARK: View Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
         setupCollectionView()
         setupPagingViewController()
         populateBottomView()
         addPanGestureToTopViewAndCollectionView()
-        print("MainviewDidLoad")
-        
+        setUI()
     }
-    
-    func setUI(){
-        self.tabBarController?.tabBar.isHidden = false
-        //이미지뷰 동그랗게
-        profileImage.layer.cornerRadius = profileImage.frame.width / 2
-        profileImage.clipsToBounds = true
-        modalBgView.isHidden = true
-    }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         print("MainviewWillAppear")
-        setUI()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
@@ -88,24 +64,21 @@ class MyPageManagerVC : BaseViewController{
         super.viewDidDisappear(false)
         print("MainviewDidDisappear")
     }
-
-    //MARK: View Setup
     
-    @IBAction func btnProfileImage(_ sender: Any) {
-        //presentBottomAlert(message: "블라블라")
-        // showMessage(message: "블라블라", controller: self)
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyPageManagerSelectProfileImageVC") as? MyPageManagerSelectProfileImageVC {
-                    vc.modalPresentationStyle = .overFullScreen
-                    
-            modalBgView.isHidden = false
-            vc.selectProfileImageDelegate = self
-            vc.selectedImage = profileImage.image!
-                    
-                    self.present(vc, animated: true, completion: nil)
-                    
-                }
+    @IBAction func btnCancel(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func btnNext(_ sender: Any) {
+        
     }
     
+    
+    //MARK: View Setup
+    func setUI(){
+        //이미지뷰 동그랗게
+        profileImage.layer.cornerRadius = profileImage.frame.width / 2
+        profileImage.clipsToBounds = true
+    }
     
     func setupCollectionView() {
         
@@ -123,10 +96,9 @@ class MyPageManagerVC : BaseViewController{
     func setupSelectedTabView() {
         
         let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 10, height: 10))
-        label.text = "근무자"//"TAB \(1)"
+        label.text = "근무자 정보"//"TAB \(1)"
         label.sizeToFit()
         let width = label.intrinsicContentSize.width
-        //width = width //+ 40//15
         
         selectedTabView.frame = CGRect(x: 24, y: 51, width: width, height: 2)
         selectedTabView.backgroundColor = #colorLiteral(red: 0.1990817189, green: 0.2041014135, blue: 0.2039682269, alpha: 1)
@@ -145,20 +117,27 @@ class MyPageManagerVC : BaseViewController{
     //상단 탭바 글씨 지정
     func populateBottomView() {
         
-        let tabName = ["근무자", "작성글"]
+        let tabName = ["근무자 정보", "포지션 정보", "업무 리스트"]
         for subTabCount in 0..<tabsCount {
             
             
             if(subTabCount==0){
-                let tabContentVC = MyPageManagerContentVC()
-                tabContentVC.innerTableViewScrollDelegate = self
+                let tabContentVC = MyPageManagerWorkerInfoVC()
+                tabContentVC.myPageManagerWorkerInfoTableViewScrollDelegate = self
                 //tabContentVC.numberOfCells = 30
                 let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
                 let page = Page(with: displayName, _vc: tabContentVC)
                 pageCollection.pages.append(page)
             }else if(subTabCount==1){
-                let tabContentVC = MyPageManagerWriteVC()
-                tabContentVC.myPageManagerWriteTableViewScrollDelegate = self
+                let tabContentVC = MyPageManagerWorkerPositionVC()
+                tabContentVC.myPageManagerWorkerPositionTableViewScrollDelegate = self
+                //tabContentVC.numberOfCells = 30
+                let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
+                let page = Page(with: displayName, _vc: tabContentVC)
+                pageCollection.pages.append(page)
+            }else if(subTabCount==2){
+                let tabContentVC = MyPageManagerWorkerWriteVC()
+                tabContentVC.myPageManagerWorkerWriteTableViewScrollDelegate = self
                 //tabContentVC.numberOfCells = 30
                 let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
                 let page = Page(with: displayName, _vc: tabContentVC)
@@ -263,12 +242,12 @@ class MyPageManagerVC : BaseViewController{
             }
         }
     }
-    
 }
+    
 
 //MARK:- Collection View Data Source
 
-extension MyPageManagerVC: UICollectionViewDataSource {
+extension MyPageManagerWorkerDetailVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -280,7 +259,6 @@ extension MyPageManagerVC: UICollectionViewDataSource {
         if let tabCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPageTabBarCollectionViewCell", for: indexPath) as? MyPageTabBarCollectionViewCell {
             
             tabCell.tabNameLabel.text = pageCollection.pages[indexPath.row].name
-            
             //선택된 셀만 텍스트 컬러 진하게
             if(indexPath.row == selectedTabIndex){
                 tabCell.tabNameLabel.textColor = #colorLiteral(red: 0.1990817189, green: 0.2041014135, blue: 0.2039682269, alpha: 1)
@@ -298,7 +276,7 @@ extension MyPageManagerVC: UICollectionViewDataSource {
 
 //MARK:- Collection View Delegate
 
-extension MyPageManagerVC: UICollectionViewDelegateFlowLayout {
+extension MyPageManagerWorkerDetailVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -328,12 +306,10 @@ extension MyPageManagerVC: UICollectionViewDelegateFlowLayout {
         
         setBottomPagingView(toPageWithAtIndex: indexPath.item, andNavigationDirection: direction)
         
-        
         // 선택된 셀이라면 텍스트 색상 진하게 변경
         selectedTabIndex = indexPath.row
         //선택 안된 셀이라면 텍스트 색상 디폴트 값, 연하게
         tabBarCollectionView.reloadData()
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -348,7 +324,7 @@ extension MyPageManagerVC: UICollectionViewDelegateFlowLayout {
 
 //MARK:- Delegate Method to give the next and previous View Controllers to the Page View Controller
 
-extension MyPageManagerVC: UIPageViewControllerDataSource {
+extension MyPageManagerWorkerDetailVC: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
@@ -383,7 +359,7 @@ extension MyPageManagerVC: UIPageViewControllerDataSource {
 //MARK:- Page View Controller 내부의 Inner View Controller 움직임을 알려주는 Delegate 메서드
 //Capture it and change the selection bar position in collection View
 //캡처하고 컬렉션 뷰에서 선택 막대 위치를 변경합니다.
-extension MyPageManagerVC: UIPageViewControllerDelegate {
+extension MyPageManagerWorkerDetailVC: UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         
@@ -404,7 +380,7 @@ extension MyPageManagerVC: UIPageViewControllerDelegate {
 
 //MARK:- Sticky Header Effect
 
-extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTableViewScrollDelegate {
+extension MyPageManagerWorkerDetailVC: MyPageManagerWorkerInfoTableViewScrollDelegate, MyPageManagerWorkerPositionTableViewScrollDelegate, MyPageManagerWorkerWriteTableViewScrollDelegate {
     
     var currentHeaderHeight: CGFloat {
         
@@ -417,7 +393,7 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
         
          //Don't restrict the downward scroll.
  
-        if headerViewHeightConstraint.constant > topViewInitialHeight {
+        if headerViewHeightConstraint.constant > detailTopViewInitialHeight {
 
             /*
             showIndicator()
@@ -427,7 +403,7 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
             */
             
             
-            headerViewHeightConstraint.constant = topViewInitialHeight
+            headerViewHeightConstraint.constant = detailTopViewInitialHeight
             //bottomViewTopConstraint.constant += scrollDistance
         }
          
@@ -445,7 +421,7 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
          *  Scroll is not restricted.
          *  So this check might cause the view to get stuck in the header height is greater than initial height.
  
-        if topViewHeight >= topViewInitialHeight || topViewHeight <= topViewFinalHeight { return }
+        if topViewHeight >= detailTopViewInitialHeight || topViewHeight <= topViewFinalHeight { return }
          
         */
         
@@ -453,7 +429,7 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
             
             scrollToFinalView()
             
-        } else if topViewHeight <= topViewInitialHeight - 20 {
+        } else if topViewHeight <= detailTopViewInitialHeight - 20 {
             
             switch scrollDirection {
                 
@@ -472,7 +448,7 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
         
         let topViewCurrentHeight = stickyHeaderView.frame.height
         
-        let distanceToBeMoved = abs(topViewCurrentHeight - topViewInitialHeight)
+        let distanceToBeMoved = abs(topViewCurrentHeight - detailTopViewInitialHeight)
         
         var time = distanceToBeMoved / 500
         
@@ -481,7 +457,7 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
             time = 0.25
         }
         
-        headerViewHeightConstraint.constant = topViewInitialHeight
+        headerViewHeightConstraint.constant = detailTopViewInitialHeight
         
         UIView.animate(withDuration: TimeInterval(time), animations: {
             
@@ -511,13 +487,3 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
     }
 }
 
-extension MyPageManagerVC: SelectProfileImageDelegate{
-    func imageModalDismiss(){
-        modalBgView.isHidden = true
-    }
-    func changeImage(data: UIImage){
-        print("이미지 변경")
-        
-        profileImage.image = data
-    }
-}

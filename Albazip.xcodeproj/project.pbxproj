@@ -149,6 +149,13 @@
 		C3A3AC20272064380019D1F3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A3AC1A27205EE30019D1F3 /* libsqlite3.tbd */; };
 		C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9683E2719F8E500E27DA1 /* UIView.swift */; };
 		C3A968422719FA7A00E27DA1 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A968412719FA7A00E27DA1 /* StartViewController.swift */; };
+		C3AD3B1527394BFC0030905C /* MyPageManagerWorkerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AD3B1427394BFC0030905C /* MyPageManagerWorkerDetailVC.swift */; };
+		C3AD3B1E273963AA0030905C /* MyPageManagerWorkerInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AD3B1C273963AA0030905C /* MyPageManagerWorkerInfoVC.swift */; };
+		C3AD3B1F273963AA0030905C /* MyPageManagerWorkerInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3AD3B1D273963AA0030905C /* MyPageManagerWorkerInfoVC.xib */; };
+		C3AD3B22273963C80030905C /* MyPageManagerWorkerPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AD3B20273963C80030905C /* MyPageManagerWorkerPositionVC.swift */; };
+		C3AD3B23273963C80030905C /* MyPageManagerWorkerPositionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3AD3B21273963C80030905C /* MyPageManagerWorkerPositionVC.xib */; };
+		C3AD3B26273963E30030905C /* MyPageManagerWorkerWriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AD3B24273963E30030905C /* MyPageManagerWorkerWriteVC.swift */; };
+		C3AD3B27273963E30030905C /* MyPageManagerWorkerWriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3AD3B25273963E30030905C /* MyPageManagerWorkerWriteVC.xib */; };
 		C3B022E92726D91400013988 /* RegisterStoreInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B022E82726D91400013988 /* RegisterStoreInfoVC.swift */; };
 		C3B022EB2726D9C300013988 /* RegisterManagerInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B022EA2726D9C300013988 /* RegisterManagerInfoVC.swift */; };
 		C3B022ED2726DB3800013988 /* RegisterMoreInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B022EC2726DB3800013988 /* RegisterMoreInfoVC.swift */; };
@@ -162,6 +169,8 @@
 		C3CC57C727369BAB00657EE9 /* MyPageWorkerSelectProfileImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC57C627369BAB00657EE9 /* MyPageWorkerSelectProfileImageVC.swift */; };
 		C3CC57CA2736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC57C82736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.swift */; };
 		C3CC57CB2736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CC57C92736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.xib */; };
+		C3CDB53A2738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CDB5382738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift */; };
+		C3CDB53B2738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CDB5392738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib */; };
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
 		C3E1FEA3272D8A3300CE44C6 /* MyPageManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA2272D8A3300CE44C6 /* MyPageManagerVC.swift */; };
 		C3E1FEA6272D8AAB00CE44C6 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA5272D8AAB00CE44C6 /* Page.swift */; };
@@ -324,6 +333,13 @@
 		C3A3AC1D27205FB00019D1F3 /* Albazip-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Albazip-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3A9683E2719F8E500E27DA1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C3A968412719FA7A00E27DA1 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		C3AD3B1427394BFC0030905C /* MyPageManagerWorkerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerDetailVC.swift; sourceTree = "<group>"; };
+		C3AD3B1C273963AA0030905C /* MyPageManagerWorkerInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerInfoVC.swift; sourceTree = "<group>"; };
+		C3AD3B1D273963AA0030905C /* MyPageManagerWorkerInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerWorkerInfoVC.xib; sourceTree = "<group>"; };
+		C3AD3B20273963C80030905C /* MyPageManagerWorkerPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerPositionVC.swift; sourceTree = "<group>"; };
+		C3AD3B21273963C80030905C /* MyPageManagerWorkerPositionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerWorkerPositionVC.xib; sourceTree = "<group>"; };
+		C3AD3B24273963E30030905C /* MyPageManagerWorkerWriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerWriteVC.swift; sourceTree = "<group>"; };
+		C3AD3B25273963E30030905C /* MyPageManagerWorkerWriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerWorkerWriteVC.xib; sourceTree = "<group>"; };
 		C3B022E82726D91400013988 /* RegisterStoreInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStoreInfoVC.swift; sourceTree = "<group>"; };
 		C3B022EA2726D9C300013988 /* RegisterManagerInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerInfoVC.swift; sourceTree = "<group>"; };
 		C3B022EC2726DB3800013988 /* RegisterMoreInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMoreInfoVC.swift; sourceTree = "<group>"; };
@@ -337,6 +353,8 @@
 		C3CC57C627369BAB00657EE9 /* MyPageWorkerSelectProfileImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerSelectProfileImageVC.swift; sourceTree = "<group>"; };
 		C3CC57C82736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerNoHeightTableViewCell.swift; sourceTree = "<group>"; };
 		C3CC57C92736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerNoHeightTableViewCell.xib; sourceTree = "<group>"; };
+		C3CDB5382738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerNoWriteTableViewCell.swift; sourceTree = "<group>"; };
+		C3CDB5392738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerNoWriteTableViewCell.xib; sourceTree = "<group>"; };
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 		C3E1FEA2272D8A3300CE44C6 /* MyPageManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerVC.swift; sourceTree = "<group>"; };
 		C3E1FEA5272D8AAB00CE44C6 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
@@ -441,6 +459,8 @@
 				C30AFE662733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib */,
 				C30AFE692733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift */,
 				C30AFE6A2733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.xib */,
+				C3CDB5382738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift */,
+				C3CDB5392738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -894,6 +914,7 @@
 		C3844270271480D400B84E8A /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				C3AD3B1227394B940030905C /* WorkerDetail */,
 				C30AFE712733CD750075CDE2 /* AddWorker */,
 				C3E1FEA4272D8A9A00CE44C6 /* ViewModel */,
 				C3E1FEA1272D8A1600CE44C6 /* VC */,
@@ -935,6 +956,28 @@
 				C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C3AD3B1227394B940030905C /* WorkerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C3AD3B1327394BB70030905C /* VC */,
+			);
+			path = WorkerDetail;
+			sourceTree = "<group>";
+		};
+		C3AD3B1327394BB70030905C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C3AD3B1427394BFC0030905C /* MyPageManagerWorkerDetailVC.swift */,
+				C3AD3B1C273963AA0030905C /* MyPageManagerWorkerInfoVC.swift */,
+				C3AD3B1D273963AA0030905C /* MyPageManagerWorkerInfoVC.xib */,
+				C3AD3B20273963C80030905C /* MyPageManagerWorkerPositionVC.swift */,
+				C3AD3B21273963C80030905C /* MyPageManagerWorkerPositionVC.xib */,
+				C3AD3B24273963E30030905C /* MyPageManagerWorkerWriteVC.swift */,
+				C3AD3B25273963E30030905C /* MyPageManagerWorkerWriteVC.xib */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		C3C97BC72730B40D002C8584 /* MyPage */ = {
@@ -1183,9 +1226,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3AD3B23273963C80030905C /* MyPageManagerWorkerPositionVC.xib in Resources */,
 				C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */,
 				C30AFE8727341CD70075CDE2 /* MyPageManagerWorkList1TableViewCell.xib in Resources */,
 				C37EBF45271ABE7B00DEC2CA /* LoginStoryboard.storyboard in Resources */,
+				C3AD3B27273963E30030905C /* MyPageManagerWorkerWriteVC.xib in Resources */,
 				C37B0B482728FF300017D179 /* OnboardingWorkerStoryboard.storyboard in Resources */,
 				C3E1FEB2272D901300CE44C6 /* MyPageTabBarCollectionViewCell.xib in Resources */,
 				C34BCB392732B5910085ADB3 /* MyPageDetailCountTableViewCell.xib in Resources */,
@@ -1194,8 +1239,10 @@
 				C38442412714797100B84E8A /* LaunchScreen.storyboard in Resources */,
 				C30D2EB427315EC400D4C1C1 /* ScheduleWorkerStoryboard.storyboard in Resources */,
 				C34A005D2731BA1B00C24102 /* MyPageWorkerInfoVC.xib in Resources */,
+				C3AD3B1F273963AA0030905C /* MyPageManagerWorkerInfoVC.xib in Resources */,
 				C38442772714940100B84E8A /* CommunityManagerStoryboard.storyboard in Resources */,
 				C30AFE91273425170075CDE2 /* MyPageManagerWorkList3TableViewCell.xib in Resources */,
+				C3CDB53B2738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib in Resources */,
 				C384423E2714797100B84E8A /* Assets.xcassets in Resources */,
 				C3A1ADCE271C62EF005A61ED /* RegisterWorkerStoryboard.storyboard in Resources */,
 				C30D2EB227315E4A00D4C1C1 /* CommunityWorkerStoryboard.storyboard in Resources */,
@@ -1286,6 +1333,7 @@
 			files = (
 				C30EC2DF272A4FA600EEF218 /* RegisterNumberMatchDataManager.swift in Sources */,
 				C37B0B6327299EDD0017D179 /* LoginDataManager.swift in Sources */,
+				C3AD3B1527394BFC0030905C /* MyPageManagerWorkerDetailVC.swift in Sources */,
 				C3B022F12727193100013988 /* RegisterSelectSalaryDateVC.swift in Sources */,
 				C30EC2E5272B0A8D00EEF218 /* RegisterManagerDataManager.swift in Sources */,
 				C34C4AE02721BF6700300454 /* RegisterSelectYearVC.swift in Sources */,
@@ -1303,6 +1351,7 @@
 				C3CC57C327362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift in Sources */,
 				C3A1ADD0271C698D005A61ED /* RegisterWorkerCodeVC.swift in Sources */,
 				C30AFE6B2733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift in Sources */,
+				C3AD3B22273963C80030905C /* MyPageManagerWorkerPositionVC.swift in Sources */,
 				C30EC2E7272B0A9F00EEF218 /* RegisterManagerResponse.swift in Sources */,
 				C3A1ADD2271C773F005A61ED /* RegisterSettingVC.swift in Sources */,
 				C3834770272D1D7E00EE0D55 /* RegisterSelectTimeVC.swift in Sources */,
@@ -1372,6 +1421,7 @@
 				C37B0B5F27299EA70017D179 /* LoginResponse.swift in Sources */,
 				C37EBF4D271AD71700DEC2CA /* RegisterPasswordVC.swift in Sources */,
 				C30EC2E1272A4FDB00EEF218 /* RegisterNumberMatchResponse.swift in Sources */,
+				C3AD3B1E273963AA0030905C /* MyPageManagerWorkerInfoVC.swift in Sources */,
 				C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */,
 				C384424F27147E2900B84E8A /* IndicatorView.swift in Sources */,
 				C384425D27147E3F00B84E8A /* UINavigationBar.swift in Sources */,
@@ -1380,8 +1430,10 @@
 				C30AFE8627341CD70075CDE2 /* MyPageManagerWorkList1TableViewCell.swift in Sources */,
 				C37EBF4F271AD97900DEC2CA /* RegisterBasicInfoVC.swift in Sources */,
 				C38CA0B9272F649000EA7BB3 /* LoginResetPasswordResponse.swift in Sources */,
+				C3AD3B26273963E30030905C /* MyPageManagerWorkerWriteVC.swift in Sources */,
 				C34BCB3C2732BFB20085ADB3 /* MyPageDetailCommuteRecordVC.swift in Sources */,
 				C3B022EB2726D9C300013988 /* RegisterManagerInfoVC.swift in Sources */,
+				C3CDB53A2738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift in Sources */,
 				C34BCB572732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.swift in Sources */,
 				C38CA0B5272F646100EA7BB3 /* LoginResetPasswordDataManager.swift in Sources */,
 				C3546F832725083B00C4C3DC /* RegisterSearchStoreDataManager.swift in Sources */,

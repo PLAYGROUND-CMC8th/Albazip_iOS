@@ -85,6 +85,12 @@
                 <constraint firstItem="E92-Tj-9xx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cAS-5Q-g2x"/>
                 <constraint firstAttribute="trailing" secondItem="E92-Tj-9xx" secondAttribute="trailing" id="gqr-XW-Y4w"/>
             </constraints>
+            <connections>
+                <outlet property="workerImage" destination="K7G-Qj-KYL" id="yAJ-Ie-6eV"/>
+                <outlet property="workerNameLabel" destination="1kY-wZ-2DY" id="b1u-XC-9an"/>
+                <outlet property="workerPositionLabel" destination="xSa-Ac-3Ws" id="q5O-UF-aZ6"/>
+                <outlet property="workerView" destination="E92-Tj-9xx" id="JR5-xW-qQ3"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="107.47767857142857"/>
         </collectionViewCell>
     </objects>

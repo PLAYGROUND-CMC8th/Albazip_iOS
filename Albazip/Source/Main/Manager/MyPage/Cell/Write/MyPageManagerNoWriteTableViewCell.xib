@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPageManagerNoWriteTableViewCell" rowHeight="326" id="KGk-i7-Jjw" customClass="MyPageManagerNoWriteTableViewCell" customModule="Albazip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="326"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="326"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgAlert36Px" translatesAutoresizingMaskIntoConstraints="NO" id="4hq-lS-Nh3">
+                        <rect key="frame" x="169.5" y="142" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="cPB-HK-V9u"/>
+                            <constraint firstAttribute="width" constant="36" id="sFp-9J-e2b"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성한 글이 없어요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgw-1W-XxV">
+                        <rect key="frame" x="133" y="192" width="109" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <color key="textColor" red="0.63921570780000003" green="0.63921570780000003" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="lgw-1W-XxV" secondAttribute="bottom" constant="131" id="6sf-pr-EFN"/>
+                    <constraint firstItem="4hq-lS-Nh3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="131" id="au1-8p-z5z"/>
+                    <constraint firstItem="lgw-1W-XxV" firstAttribute="top" secondItem="4hq-lS-Nh3" secondAttribute="bottom" constant="14" id="cvW-Jt-lVH"/>
+                    <constraint firstItem="4hq-lS-Nh3" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="p2W-UX-8Vt"/>
+                    <constraint firstItem="lgw-1W-XxV" firstAttribute="centerX" secondItem="4hq-lS-Nh3" secondAttribute="centerX" id="w0L-y8-xJK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="-215" y="130"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="imgAlert36Px" width="36" height="36"/>
+    </resources>
+</document>

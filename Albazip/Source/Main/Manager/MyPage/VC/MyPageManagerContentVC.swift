@@ -20,7 +20,7 @@ protocol InnerTableViewScrollDelegate: AnyObject {
     func innerTableViewDidScroll(withDistance scrollDistance: CGFloat)
     func innerTableViewScrollEnded(withScrollDirection scrollDirection: DragDirection)
 }
-
+//186
 class MyPageManagerContentVC: UIViewController {
 
     //MARK:- Outlets
@@ -38,7 +38,7 @@ class MyPageManagerContentVC: UIViewController {
     //MARK:- Data Source
     
     var numberOfCells: Int = 0
-    var isNoWorker = true
+    var isNoWorker = false
     //MARK:- View Life Cycle
     
     override func viewDidLoad() {
@@ -96,13 +96,27 @@ class MyPageManagerContentVC: UIViewController {
 
 }
 
+// 근무자 디테일 페이지로 이동
+extension MyPageManagerContentVC: MyPageManagerWorkerCollectionViewCellDelegate{
+    func collectionView(collectionviewcell: MyPageManagerWorkerCollectionViewCell?, index: Int, didTappedInTableViewCell: MyPageManagerWorkerTableViewCell) {
+        let storyboard = UIStoryboard(name: "MyPageManagerStoryboard", bundle: nil)
+        
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "MyPageManagerWorkerDetailVC") as? MyPageManagerWorkerDetailVC else { return }
+        //vc.index = index
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+}
+
+
 //MARK:- Table View Data Source
 
 extension MyPageManagerContentVC: UITableViewDataSource, MyPageManagerNoWorkerDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return 1 // 무조건 한개
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -128,7 +142,7 @@ extension MyPageManagerContentVC: UITableViewDataSource, MyPageManagerNoWorkerDe
             }
         }else{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerTableViewCell") as? MyPageManagerWorkerTableViewCell {
-                
+                cell.myPageManagerWorkerCollectionViewCellDelegate = self
                 //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
                 return cell
             }

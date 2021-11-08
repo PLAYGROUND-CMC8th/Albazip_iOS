@@ -9,9 +9,17 @@ import UIKit
 
 class MyPageManagerWorkerCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet var workerView: UIView!
+    @IBOutlet var workerImage: UIImageView!
+    @IBOutlet var workerPositionLabel: UILabel!
+    @IBOutlet var workerNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    func setCell(){
+        
+    }
 }

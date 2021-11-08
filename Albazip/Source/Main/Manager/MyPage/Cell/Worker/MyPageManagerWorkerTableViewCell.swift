@@ -6,11 +6,18 @@
 //
 
 import UIKit
+//MARK: Protocol
+protocol MyPageManagerWorkerCollectionViewCellDelegate: AnyObject {
+    func collectionView(collectionviewcell: MyPageManagerWorkerCollectionViewCell?, index: Int, didTappedInTableViewCell: MyPageManagerWorkerTableViewCell)
+}
 
 class MyPageManagerWorkerTableViewCell: UITableViewCell {
 
     
     @IBOutlet var collectionView: UICollectionView!
+    
+    weak var myPageManagerWorkerCollectionViewCellDelegate : MyPageManagerWorkerCollectionViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -62,8 +69,8 @@ extension MyPageManagerWorkerTableViewCell: UICollectionViewDelegate, UICollecti
         
         print("콜렉션 뷰 " + String(indexPath.row))
         
-        //let cell = collectionView.cellForItem(at: indexPath) as? MyPageManagerWorkerCollectionViewCell
-            //self.todayGoodsCellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTappedInTableViewCell: self)
+        let cell = collectionView.cellForItem(at: indexPath) as? MyPageManagerWorkerCollectionViewCell
+            self.myPageManagerWorkerCollectionViewCellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTappedInTableViewCell: self)
 
     }
     /*
