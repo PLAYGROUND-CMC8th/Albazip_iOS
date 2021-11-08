@@ -44,12 +44,14 @@ class MyPageManagerWorkerInfoVC: UIViewController {
     //MARK:- View Setup
     
     func setupTableView() {
-        
+        //230
         tableView.register(UINib(nibName: "MyPageWorkerMyInfoTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageWorkerMyInfoTableViewCell")
+        tableView.register(UINib(nibName: "MyPageManagerWorkerCodeTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageManagerWorkerCodeTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = 473
+        //tableView.estimatedRowHeight = 473
     }
 
 }
@@ -64,18 +66,25 @@ extension MyPageManagerWorkerInfoVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        /*
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerMyInfoTableViewCell") as? MyPageWorkerMyInfoTableViewCell {
             
             cell.delegate = self
             //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
             print(indexPath.row)
             return cell
+        }*/
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerCodeTableViewCell") as? MyPageManagerWorkerCodeTableViewCell {
+            
+            //cell.delegate = self
+            //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+            print(indexPath.row)
+            return cell
         }
-        
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
-        return 473
+        return 230 //473
     }
     
     

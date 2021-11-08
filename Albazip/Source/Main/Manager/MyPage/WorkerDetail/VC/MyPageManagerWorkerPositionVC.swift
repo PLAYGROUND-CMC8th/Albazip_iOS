@@ -15,7 +15,10 @@ protocol MyPageManagerWorkerPositionTableViewScrollDelegate: AnyObject {
     func innerTableViewScrollEnded(withScrollDirection scrollDirection: DragDirection)
 }
 
-class MyPageManagerWorkerPositionVC: UIViewController {
+class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositionDeleteDelegate {
+    
+    
+    
 
     
     @IBOutlet var tableView: UITableView!
@@ -45,13 +48,22 @@ class MyPageManagerWorkerPositionVC: UIViewController {
     
     func setupTableView() {
         
-        tableView.register(UINib(nibName: "MyPageWorkerPositionTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageWorkerPositionTableViewCell")
+        tableView.register(UINib(nibName: "MyPageManagerWorkerPositionTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageManagerWorkerPositionTableViewCell")
+        tableView.register(UINib(nibName: "MyPageManagerWorkerPositionDeleteTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageManagerWorkerPositionDeleteTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = 401
+        //tableView.estimatedRowHeight = 401
+    }
+    
+    //포지션 삭제 버튼
+    func deletePosition() {
+        print("삭제 버튼")
     }
 }
+
+
 
 //MARK:- Table View Data Source
 
@@ -59,22 +71,37 @@ extension MyPageManagerWorkerPositionVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerPositionTableViewCell") as? MyPageWorkerPositionTableViewCell {
-            
-            //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
-            print(indexPath.row)
-            return cell
+        if indexPath.row == 0{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerPositionTableViewCell") as? MyPageManagerWorkerPositionTableViewCell {
+                
+                //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                print(indexPath.row)
+                return cell
+            }
+        }else{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerPositionDeleteTableViewCell") as? MyPageManagerWorkerPositionDeleteTableViewCell {
+                cell.myPageManagerWorkerPositionDeleteDelegate = self
+                //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                print(indexPath.row)
+                return cell
+            }
         }
+        
         
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
-        return 401
+        if indexPath.row == 0{
+            return 330
+        }else {
+            return 50
+        }
+        
     }
     
     

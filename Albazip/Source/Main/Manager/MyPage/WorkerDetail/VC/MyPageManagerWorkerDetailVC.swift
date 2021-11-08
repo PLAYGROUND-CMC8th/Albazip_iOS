@@ -25,6 +25,7 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var workerNameLabel: UILabel!
     
+    @IBOutlet var modalBgView: UIView!
     
     //MARK:- Programatic UI Properties
     
@@ -78,6 +79,7 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
         //이미지뷰 동그랗게
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
         profileImage.clipsToBounds = true
+        modalBgView.isHidden = true
     }
     
     func setupCollectionView() {

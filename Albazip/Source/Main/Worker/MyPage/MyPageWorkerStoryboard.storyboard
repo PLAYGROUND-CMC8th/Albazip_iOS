@@ -608,6 +608,115 @@
             </objects>
             <point key="canvasLocation" x="3146" y="867"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="pYI-Vm-ZWA">
+            <objects>
+                <viewController id="DVD-zx-pTS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4pD-rQ-QDT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mN7-pg-5Es">
+                                <rect key="frame" x="0.0" y="456" width="375" height="322"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정말 그만두시겠어요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G21-cO-h05">
+                                        <rect key="frame" x="36" y="124.00000000000001" width="303" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00k-1P-wgO">
+                                        <rect key="frame" x="45" y="159.66666666666663" width="285" height="33.666666666666657"/>
+                                        <string key="text">그만두시면 관리자에게 퇴사 요청이 됩니다.
+작업을 계속 진행할까요?</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="pdR-76-94h">
+                                        <rect key="frame" x="24" y="229.33333333333337" width="327" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UID-9h-mFG">
+                                                <rect key="frame" x="0.0" y="0.0" width="156" height="52"/>
+                                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="Ldu-c8-6fi"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <state key="normal" title="취소">
+                                                    <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndB-aw-9Wm">
+                                                <rect key="frame" x="171" y="0.0" width="156" height="52"/>
+                                                <color key="backgroundColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="6Tg-kj-Zf8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <state key="normal" title="요청하기">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="dOV-lO-iTF"/>
+                                            <constraint firstAttribute="width" constant="327" id="egV-pZ-liO"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgWaring" translatesAutoresizingMaskIntoConstraints="NO" id="6Q6-f9-1d2">
+                                        <rect key="frame" x="147.66666666666666" y="36" width="80" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="6qa-qN-1xP"/>
+                                            <constraint firstAttribute="width" constant="80" id="PjW-rs-IuX"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="pdR-76-94h" firstAttribute="top" secondItem="00k-1P-wgO" secondAttribute="bottom" constant="36" id="2eT-In-dGi"/>
+                                    <constraint firstItem="pdR-76-94h" firstAttribute="leading" secondItem="mN7-pg-5Es" secondAttribute="leading" constant="24" id="CEw-7V-uom"/>
+                                    <constraint firstItem="00k-1P-wgO" firstAttribute="top" secondItem="G21-cO-h05" secondAttribute="bottom" constant="14" id="HgV-hO-hVG"/>
+                                    <constraint firstItem="00k-1P-wgO" firstAttribute="leading" secondItem="mN7-pg-5Es" secondAttribute="leading" constant="45" id="J07-Z6-Cgf"/>
+                                    <constraint firstItem="6Q6-f9-1d2" firstAttribute="top" secondItem="mN7-pg-5Es" secondAttribute="top" constant="36" id="Lp3-VB-bqX"/>
+                                    <constraint firstAttribute="bottom" secondItem="pdR-76-94h" secondAttribute="bottom" constant="40.670000000000002" id="MMJ-7L-Udy"/>
+                                    <constraint firstAttribute="trailing" secondItem="pdR-76-94h" secondAttribute="trailing" constant="24" id="TvM-Ni-MCp"/>
+                                    <constraint firstAttribute="trailing" secondItem="00k-1P-wgO" secondAttribute="trailing" constant="45" id="U21-bK-bBV"/>
+                                    <constraint firstItem="6Q6-f9-1d2" firstAttribute="centerX" secondItem="mN7-pg-5Es" secondAttribute="centerX" id="boy-bh-Ayp"/>
+                                    <constraint firstItem="G21-cO-h05" firstAttribute="leading" secondItem="mN7-pg-5Es" secondAttribute="leading" constant="36" id="eQu-CV-SBx"/>
+                                    <constraint firstAttribute="height" constant="322" id="jdr-6x-BIs"/>
+                                    <constraint firstItem="G21-cO-h05" firstAttribute="top" secondItem="6Q6-f9-1d2" secondAttribute="bottom" constant="24" id="sKq-Nu-QFY"/>
+                                    <constraint firstAttribute="trailing" secondItem="G21-cO-h05" secondAttribute="trailing" constant="36" id="z9a-In-Cm4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ed1-Gv-G9E"/>
+                        <constraints>
+                            <constraint firstItem="ed1-Gv-G9E" firstAttribute="bottom" secondItem="mN7-pg-5Es" secondAttribute="bottom" id="4dr-cF-1eA"/>
+                            <constraint firstItem="mN7-pg-5Es" firstAttribute="leading" secondItem="ed1-Gv-G9E" secondAttribute="leading" id="mM9-cH-nte"/>
+                            <constraint firstItem="ed1-Gv-G9E" firstAttribute="trailing" secondItem="mN7-pg-5Es" secondAttribute="trailing" id="ww6-p1-WvP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yap-uw-Twl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2674" y="157"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btnProfileChange" width="30" height="30"/>
@@ -619,6 +728,7 @@
         <image name="imgProfileW128Px3" width="128" height="128"/>
         <image name="imgProfileW128Px4" width="128" height="128"/>
         <image name="imgProfileW128Px5" width="128" height="128"/>
+        <image name="imgWaring" width="80" height="64"/>
         <image name="profileSelected" width="58" height="58"/>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

@@ -45,8 +45,8 @@ class MyPageManagerWorkerWriteVC: UIViewController {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 18))
         header.backgroundColor = #colorLiteral(red: 0.9724535346, green: 0.9726160169, blue: 0.9724321961, alpha: 1)
         tableView.tableHeaderView = header
-        tableView.register(UINib(nibName: "MyPageWorkerWriteTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageWorkerWriteTableViewCell")
+        tableView.register(UINib(nibName: "MyPageManagerWorklistTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageManagerWorklistTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
         //tableView.estimatedRowHeight = 204
@@ -63,7 +63,7 @@ extension MyPageManagerWorkerWriteVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-         if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerWriteTableViewCell") as? MyPageWorkerWriteTableViewCell {
+         if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorklistTableViewCell") as? MyPageManagerWorklistTableViewCell {
                 
                 //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
                 print(indexPath.row)
@@ -75,7 +75,7 @@ extension MyPageManagerWorkerWriteVC: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
         
-        return 204
+        return 82
         
     }
     
