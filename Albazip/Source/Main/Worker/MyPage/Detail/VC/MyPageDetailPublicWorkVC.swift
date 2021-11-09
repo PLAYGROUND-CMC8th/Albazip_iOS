@@ -22,10 +22,8 @@ class MyPageDetailPublicWorkVC: UIViewController{
     
     func setupTableView() {
         
-        tableView.register(UINib(nibName: "MyPageDetailCountTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageDetailCountTableViewCell")
-        tableView.register(UINib(nibName: "MyPageDetailPublicWorkTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageDetailPublicWorkTableViewCell")
+        //tableView.register(UINib(nibName: "MyPageDetailCountTableViewCell", bundle: nil),forCellReuseIdentifier: "MyPageDetailCountTableViewCell")
+        tableView.register(UINib(nibName: "MyPageDetailPublicWorkTableViewCell", bundle: nil),forCellReuseIdentifier: "MyPageDetailPublicWorkTableViewCell")
         tableView.register(UINib(nibName: "MyPageDetailPublicDateTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageDetailPublicDateTableViewCell")
         tableView.dataSource = self
@@ -42,6 +40,7 @@ extension MyPageDetailPublicWorkVC: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        /*
         if indexPath.row == 0{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailCountTableViewCell") as? MyPageDetailCountTableViewCell {
                 cell.selectionStyle = .none
@@ -51,7 +50,8 @@ extension MyPageDetailPublicWorkVC: UITableViewDataSource,UITableViewDelegate {
                 print(indexPath.row)
                 return cell
             }
-        }else if indexPath.row == 1{
+        }else*/
+        if indexPath.row == 0{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailPublicDateTableViewCell") as? MyPageDetailPublicDateTableViewCell {
                 cell.selectionStyle = .none
                 print(indexPath.row)
@@ -69,9 +69,12 @@ extension MyPageDetailPublicWorkVC: UITableViewDataSource,UITableViewDelegate {
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
+        /*
         if indexPath.row == 0{
             return 113
-        }else if indexPath.row == 1{
+        }else
+        */
+        if indexPath.row == 0{
             return 44
         }else{
             return 90

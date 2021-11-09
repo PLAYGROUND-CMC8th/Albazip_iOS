@@ -24,10 +24,8 @@ class MyPageDetailCommuteRecordVC: UIViewController{
     
     func setupTableView() {
         
-        tableView.register(UINib(nibName: "MyPageDetailCountTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageDetailCountTableViewCell")
-        tableView.register(UINib(nibName: "MyPageDetailCommuteMonthTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageDetailCommuteMonthTableViewCell")
+        //tableView.register(UINib(nibName: "MyPageDetailCountTableViewCell", bundle: nil), forCellReuseIdentifier: "MyPageDetailCountTableViewCell")
+        //tableView.register(UINib(nibName: "MyPageDetailCommuteMonthTableViewCell", bundle: nil), forCellReuseIdentifier: "MyPageDetailCommuteMonthTableViewCell")
         tableView.register(UINib(nibName: "MyPageDetailCommuteRecordTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageDetailCommuteRecordTableViewCell")
         //MyPageDetailCommuteRecordTableViewCell
@@ -46,7 +44,7 @@ extension MyPageDetailCommuteRecordVC: UITableViewDataSource,UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        /*
         if indexPath.row == 0{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailCountTableViewCell") as? MyPageDetailCountTableViewCell {
                 cell.selectionStyle = .none
@@ -63,24 +61,25 @@ extension MyPageDetailCommuteRecordVC: UITableViewDataSource,UITableViewDelegate
                 print(indexPath.row)
                 return cell
             }
-        }else{
+        }*/
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailCommuteRecordTableViewCell") as? MyPageDetailCommuteRecordTableViewCell {
                 cell.selectionStyle = .none
                 
                 print(indexPath.row)
                 return cell
             }
-        }
+        
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
+        /*
         if indexPath.row == 0{
             return 113
         }else if indexPath.row == 1{
             return 44
-        }else{
+        }*/
             return 133
-        }
+        
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

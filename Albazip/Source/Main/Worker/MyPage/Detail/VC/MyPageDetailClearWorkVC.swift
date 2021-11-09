@@ -23,8 +23,7 @@ class MyPageDetailClearWorkVC: UIViewController{
     
     func setupTableView() {
         
-        tableView.register(UINib(nibName: "MyPageDetailCountTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageDetailCountTableViewCell")
+        //tableView.register(UINib(nibName: "MyPageDetailCountTableViewCell", bundle: nil), forCellReuseIdentifier: "MyPageDetailCountTableViewCell")
         
         let todayGoodsCellNib = UINib(nibName: "MyPageDetailClearWorkTableViewCell", bundle: nil)
         self.tableView.register(todayGoodsCellNib, forCellReuseIdentifier: "MyPageDetailClearWorkTableViewCell")
@@ -43,7 +42,7 @@ extension MyPageDetailClearWorkVC: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        /*
         if indexPath.row == 0{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailCountTableViewCell") as? MyPageDetailCountTableViewCell {
                 cell.selectionStyle = .none
@@ -53,21 +52,23 @@ extension MyPageDetailClearWorkVC: UITableViewDataSource,UITableViewDelegate {
                 print(indexPath.row)
                 return cell
             }
-        }else{
+        }*/
+ 
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailClearWorkTableViewCell") as? MyPageDetailClearWorkTableViewCell {
                 cell.selectionStyle = .none
                 return cell
             }
-        }
+        
         
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
+        /*
         if indexPath.row == 0{
             return 113
-        }else{
+        }else{*/
             return 125
-        }
+        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row) 입니다.")
