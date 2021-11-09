@@ -118,6 +118,9 @@
 		C38442742714932300B84E8A /* HomeManagerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38442732714932300B84E8A /* HomeManagerStoryboard.storyboard */; };
 		C38442772714940100B84E8A /* CommunityManagerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38442762714940100B84E8A /* CommunityManagerStoryboard.storyboard */; };
 		C384427A2714948200B84E8A /* ScheduleManagerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38442792714948200B84E8A /* ScheduleManagerStoryboard.storyboard */; };
+		C38BFB792739EC6C00E79BF5 /* MyPageManagerWorkerPositionDeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38BFB782739EC6C00E79BF5 /* MyPageManagerWorkerPositionDeleteVC.swift */; };
+		C38BFB7B2739EFA000E79BF5 /* MyPageManagerWorkerPositionDelete2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38BFB7A2739EFA000E79BF5 /* MyPageManagerWorkerPositionDelete2VC.swift */; };
+		C38BFB7D273AA30700E79BF5 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38BFB7C273AA30700E79BF5 /* UIApplication.swift */; };
 		C38CA0B5272F646100EA7BB3 /* LoginResetPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0B4272F646100EA7BB3 /* LoginResetPasswordDataManager.swift */; };
 		C38CA0B7272F647600EA7BB3 /* LoginResetPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0B6272F647600EA7BB3 /* LoginResetPasswordRequest.swift */; };
 		C38CA0B9272F649000EA7BB3 /* LoginResetPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0B8272F649000EA7BB3 /* LoginResetPasswordResponse.swift */; };
@@ -309,6 +312,9 @@
 		C38442732714932300B84E8A /* HomeManagerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeManagerStoryboard.storyboard; sourceTree = "<group>"; };
 		C38442762714940100B84E8A /* CommunityManagerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommunityManagerStoryboard.storyboard; sourceTree = "<group>"; };
 		C38442792714948200B84E8A /* ScheduleManagerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScheduleManagerStoryboard.storyboard; sourceTree = "<group>"; };
+		C38BFB782739EC6C00E79BF5 /* MyPageManagerWorkerPositionDeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerPositionDeleteVC.swift; sourceTree = "<group>"; };
+		C38BFB7A2739EFA000E79BF5 /* MyPageManagerWorkerPositionDelete2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerPositionDelete2VC.swift; sourceTree = "<group>"; };
+		C38BFB7C273AA30700E79BF5 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		C38CA0B4272F646100EA7BB3 /* LoginResetPasswordDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResetPasswordDataManager.swift; sourceTree = "<group>"; };
 		C38CA0B6272F647600EA7BB3 /* LoginResetPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResetPasswordRequest.swift; sourceTree = "<group>"; };
 		C38CA0B8272F649000EA7BB3 /* LoginResetPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResetPasswordResponse.swift; sourceTree = "<group>"; };
@@ -874,6 +880,7 @@
 				C384425827147E3F00B84E8A /* Color.swift */,
 				C3A9683E2719F8E500E27DA1 /* UIView.swift */,
 				C37EBF50271AF29B00DEC2CA /* UITextField.swift */,
+				C38BFB7C273AA30700E79BF5 /* UIApplication.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -993,6 +1000,8 @@
 				C3AD3B21273963C80030905C /* MyPageManagerWorkerPositionVC.xib */,
 				C3AD3B24273963E30030905C /* MyPageManagerWorkerWriteVC.swift */,
 				C3AD3B25273963E30030905C /* MyPageManagerWorkerWriteVC.xib */,
+				C38BFB782739EC6C00E79BF5 /* MyPageManagerWorkerPositionDeleteVC.swift */,
+				C38BFB7A2739EFA000E79BF5 /* MyPageManagerWorkerPositionDelete2VC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1369,6 +1378,7 @@
 			files = (
 				C30EC2DF272A4FA600EEF218 /* RegisterNumberMatchDataManager.swift in Sources */,
 				C37B0B6327299EDD0017D179 /* LoginDataManager.swift in Sources */,
+				C38BFB7B2739EFA000E79BF5 /* MyPageManagerWorkerPositionDelete2VC.swift in Sources */,
 				C3AD3B1527394BFC0030905C /* MyPageManagerWorkerDetailVC.swift in Sources */,
 				C3B022F12727193100013988 /* RegisterSelectSalaryDateVC.swift in Sources */,
 				C30EC2E5272B0A8D00EEF218 /* RegisterManagerDataManager.swift in Sources */,
@@ -1414,6 +1424,7 @@
 				C33E00082731D80500D88267 /* MyPageWorkerWriteVC.swift in Sources */,
 				C34BCB3E2732CCB80085ADB3 /* MyPageDetailPublicWorkVC.swift in Sources */,
 				C3E1FEA6272D8AAB00CE44C6 /* Page.swift in Sources */,
+				C38BFB7D273AA30700E79BF5 /* UIApplication.swift in Sources */,
 				C3CC57CA2736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.swift in Sources */,
 				C34BCB482732F1040085ADB3 /* MyPageDetailPublicWorkTableViewCell.swift in Sources */,
 				C3E1FEA9272D8C5B00CE44C6 /* MyPageManagerContentVC.swift in Sources */,
@@ -1446,6 +1457,7 @@
 				C3B022ED2726DB3800013988 /* RegisterMoreInfoVC.swift in Sources */,
 				C37EBF41271AA1B000DEC2CA /* RegisterViewController.swift in Sources */,
 				C37EBF4B271AD54200DEC2CA /* RegisterPhoneNumberVC.swift in Sources */,
+				C38BFB792739EC6C00E79BF5 /* MyPageManagerWorkerPositionDeleteVC.swift in Sources */,
 				C30AFE7A2733CE4F0075CDE2 /* MyPageManagerSelectInfo2TableViewCell.swift in Sources */,
 				C30AFE672733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift in Sources */,
 				C3546F812725082100C4C3DC /* RegisterSearchStoreResponse.swift in Sources */,

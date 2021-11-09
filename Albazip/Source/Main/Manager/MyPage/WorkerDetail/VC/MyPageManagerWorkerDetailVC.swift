@@ -51,6 +51,7 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         print("MainviewWillAppear")
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
@@ -59,6 +60,7 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(false)
         print("MainviewWillDisappear")
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -489,3 +491,17 @@ extension MyPageManagerWorkerDetailVC: MyPageManagerWorkerInfoTableViewScrollDel
     }
 }
 
+extension MyPageManagerWorkerDetailVC :MyPageManagerWorkerPositionDeleteAlertDelegate, MyPageManagerWorkerPositionAlertDelegate{
+    func modalDismiss() {
+        print("modalDismiss")
+        modalBgView.isHidden = true
+        self.navigationController!.navigationBar.backgroundColor = .none
+    }
+    func modalShow(){
+        print("modalShow")
+        modalBgView.isHidden = false
+        self.navigationController!.navigationBar.backgroundColor = #colorLiteral(red: 0.7763934135, green: 0.7765250206, blue: 0.7849833965, alpha: 1)
+    }
+    
+    
+}

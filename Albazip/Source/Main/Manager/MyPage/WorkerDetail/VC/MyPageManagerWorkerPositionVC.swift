@@ -15,6 +15,11 @@ protocol MyPageManagerWorkerPositionTableViewScrollDelegate: AnyObject {
     func innerTableViewScrollEnded(withScrollDirection scrollDirection: DragDirection)
 }
 
+protocol MyPageManagerWorkerPositionAlertDelegate {
+    func modalShow()
+}
+
+
 class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositionDeleteDelegate {
     
     
@@ -26,6 +31,8 @@ class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositi
     //MARK:- Scroll Delegate
     
     weak var myPageManagerWorkerPositionTableViewScrollDelegate: MyPageManagerWorkerPositionTableViewScrollDelegate?
+    
+    var myPageManagerWorkerPositionAlertDelegate: MyPageManagerWorkerPositionAlertDelegate?
     
     //MARK:- Stored Properties for Scroll Delegate
     
@@ -60,6 +67,13 @@ class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositi
     //포지션 삭제 버튼
     func deletePosition() {
         print("삭제 버튼")
+        let newStoryboard = UIStoryboard(name: "MyPageManagerStoryboard", bundle: nil)
+        
+        if let vc = newStoryboard.instantiateViewController(withIdentifier: "MyPageManagerWorkerPositionDeleteVC") as? MyPageManagerWorkerPositionDeleteVC {
+            vc.modalPresentationStyle = .overFullScreen
+            myPageManagerWorkerPositionAlertDelegate?.modalShow()
+        self.present(vc, animated: true, completion: nil)
+    }
     }
 }
 
@@ -86,6 +100,7 @@ extension MyPageManagerWorkerPositionVC: UITableViewDataSource {
         }else{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerPositionDeleteTableViewCell") as? MyPageManagerWorkerPositionDeleteTableViewCell {
                 cell.myPageManagerWorkerPositionDeleteDelegate = self
+                
                 //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
                 print(indexPath.row)
                 return cell

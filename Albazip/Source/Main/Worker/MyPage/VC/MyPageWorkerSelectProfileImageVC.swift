@@ -66,7 +66,7 @@ class MyPageWorkerSelectProfileImageVC: UIViewController{
         imageBorder4.isHidden = true
         imageBorder5.isHidden = true
         cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
-        
+        self.navigationController?.isNavigationBarHidden = true
         
     }
     override func didReceiveMemoryWarning() {

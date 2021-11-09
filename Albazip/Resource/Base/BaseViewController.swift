@@ -19,7 +19,10 @@ class BaseViewController: UIViewController {
         // Background Color
 //        self.view.backgroundColor = .white
         
+        // 네비게이션 바 없애기
+        self.navigationController?.navigationBar.isHidden = true
         
+        /*
         let navigationBarAppearace = UINavigationBar.appearance()
         //반투명 없애주기
         self.navigationController?.navigationBar.isTranslucent = false
@@ -27,6 +30,7 @@ class BaseViewController: UIViewController {
         navigationBarAppearace.barTintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         //내비 밑에 선 없애기
         self.navigationController?.navigationBar.shadowImage = UIImage()
+ */
         //탭바 색 흰색으로
         tabBarController?.tabBar.barTintColor = .white
         //반투명 없애주기
