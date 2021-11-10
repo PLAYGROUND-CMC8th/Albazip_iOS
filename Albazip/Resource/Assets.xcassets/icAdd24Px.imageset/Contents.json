@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "scale" : "1x",
+      "filename" : "ic24Px.png"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "ic24Px@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "scale" : "3x",
+      "filename" : "ic24Px@3x.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

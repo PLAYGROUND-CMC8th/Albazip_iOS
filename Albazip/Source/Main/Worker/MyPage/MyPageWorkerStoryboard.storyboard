@@ -107,6 +107,9 @@
                                     <constraint firstAttribute="height" constant="24" id="gsW-G7-kJK"/>
                                 </constraints>
                                 <state key="normal" image="icSetting"/>
+                                <connections>
+                                    <action selector="btnSetting:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WkU-c7-3ye"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yod-sU-dUv"/>
