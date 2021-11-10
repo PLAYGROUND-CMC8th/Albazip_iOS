@@ -77,7 +77,7 @@ extension MyPageDetailPublicWorkVC: UITableViewDataSource,UITableViewDelegate {
         if indexPath.row == 0{
             return 44
         }else{
-            return 90
+            return 82
         }
        
     }

@@ -12,6 +12,7 @@ protocol MyPageWorkerMyInfoDelegate {
     func goPublicWorkVC()
     func goClearWorkVC()
     func goLeaveWorkVC()
+    
 }
 
 class MyPageWorkerMyInfoTableViewCell: UITableViewCell {
@@ -60,5 +61,6 @@ class MyPageWorkerMyInfoTableViewCell: UITableViewCell {
         print("퇴사하기")
         self.delegate?.goLeaveWorkVC()
     }
+    
     
 }

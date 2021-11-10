@@ -40,7 +40,7 @@ class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositi
     private var oldContentOffset = CGPoint.zero
     
     //MARK:- Data Source
-    
+    var transparentView = UIView()
     //var numberOfCells: Int = 5
     
     //MARK:- View Life Cycle
@@ -72,6 +72,7 @@ class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositi
         if let vc = newStoryboard.instantiateViewController(withIdentifier: "MyPageManagerWorkerPositionDeleteVC") as? MyPageManagerWorkerPositionDeleteVC {
             vc.modalPresentationStyle = .overFullScreen
             myPageManagerWorkerPositionAlertDelegate?.modalShow()
+            
         self.present(vc, animated: true, completion: nil)
     }
     }

@@ -107,6 +107,12 @@ class MyPageManagerVC : BaseViewController{
 
     //MARK: View Setup
     
+    @IBAction func btnSetting(_ sender: Any) {
+        let newStoryboard = UIStoryboard(name: "SettingStoryboard", bundle: nil)
+        guard let nextVC = newStoryboard.instantiateViewController(identifier: "SettingVC") as? SettingVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
     @IBAction func btnProfileImage(_ sender: Any) {
         //presentBottomAlert(message: "블라블라")
         // showMessage(message: "블라블라", controller: self)
@@ -116,8 +122,7 @@ class MyPageManagerVC : BaseViewController{
         
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyPageManagerSelectProfileImageVC") as? MyPageManagerSelectProfileImageVC {
                     vc.modalPresentationStyle = .overFullScreen
-            UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.7763934135, green: 0.7765250206, blue: 0.7849833965, alpha: 1)
-
+            
             modalBgView.isHidden = false
             //UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.7763934135, green: 0.7765250206, blue: 0.7849833965, alpha: 1)
             vc.selectProfileImageDelegate = self
@@ -125,8 +130,7 @@ class MyPageManagerVC : BaseViewController{
                     
             //테스트용임
             
-            //
-                    self.present(vc, animated: true, completion: nil)
+           self.present(vc, animated: true, completion: nil)
                     
                 }
     }
@@ -539,7 +543,6 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
 extension MyPageManagerVC: SelectProfileImageDelegate{
     func imageModalDismiss(){
         modalBgView.isHidden = true
-        UINavigationBar.appearance().barTintColor = .white
     }
     func changeImage(data: UIImage){
         print("이미지 변경")

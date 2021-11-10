@@ -13,7 +13,7 @@
         <scene sceneID="Ufq-KT-UNj">
             <objects>
                 <navigationController storyboardIdentifier="ScheduleWorkerNavigationController" id="vDL-AJ-QE4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="스케줄" image="icScheduleInactive" id="kGx-nr-gSZ"/>
+                    <tabBarItem key="tabBarItem" title="스케줄" image="icScheduleInactive" selectedImage="icScheduleActive" id="kGx-nr-gSZ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VGo-do-pdb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -45,6 +45,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icScheduleActive" width="24" height="24"/>
         <image name="icScheduleInactive" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

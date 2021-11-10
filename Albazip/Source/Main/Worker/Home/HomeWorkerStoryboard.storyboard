@@ -13,7 +13,7 @@
         <scene sceneID="vQd-IF-8U0">
             <objects>
                 <navigationController storyboardIdentifier="HomeWorkerNavigationController" id="143-ka-355" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" image="icHomeInactive" id="BcP-i4-vGM"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="icHomeInactive" selectedImage="icHomeActive" id="BcP-i4-vGM"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XNP-KQ-acq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -30,7 +30,6 @@
         <!--View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -40,11 +39,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="lek-PD-ajk"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="265" y="-158"/>
         </scene>
     </scenes>
     <resources>
+        <image name="icHomeActive" width="24" height="24"/>
         <image name="icHomeInactive" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

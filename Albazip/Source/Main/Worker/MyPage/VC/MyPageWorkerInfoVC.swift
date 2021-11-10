@@ -153,6 +153,8 @@ extension MyPageWorkerInfoVC: UITableViewDelegate {
 
 
 extension MyPageWorkerInfoVC: MyPageWorkerMyInfoDelegate {
+  
+    
     
     func goCommuteRecordVC(){
         print("출퇴근 기록 페이지로..")
@@ -174,5 +176,12 @@ extension MyPageWorkerInfoVC: MyPageWorkerMyInfoDelegate {
     }
     func goLeaveWorkVC(){
         print("퇴사 알림창..")
+        let storyboard = UIStoryboard(name: "MyPageWorkerStoryboard", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "MyPageDetailStopWorkVC") as? MyPageDetailStopWorkVC {
+            vc.modalPresentationStyle = .overFullScreen
+            //myPageManagerWorkerPositionAlertDelegate?.modalShow()
+            
+        self.present(vc, animated: true, completion: nil)
+        }
     }
 }

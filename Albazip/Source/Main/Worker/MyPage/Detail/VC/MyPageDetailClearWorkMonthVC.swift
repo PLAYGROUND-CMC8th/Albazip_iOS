@@ -1,46 +1,44 @@
 //
-//  MyPageDetailClearWorkVC.swift
+//  MyPageDetailClearWorkMonthVC.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2021/11/03.
+//  Created by 김수빈 on 2021/11/11.
 //
 
 import Foundation
-import UIKit
-class MyPageDetailClearWorkVC: UIViewController{
+class MyPageDetailClearWorkMonthVC: UIViewController{
     
     @IBOutlet var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
     }
     
-    @IBAction func btnCancel(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    func goMonthPage(){
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageDetailClearWorkMonthVC") as? MyPageDetailClearWorkMonthVC else {return}
-        self.navigationController?.pushViewController(nextVC, animated: true)
-    }
-    
-    //MARK:- View Setup
-    
     func setupTableView() {
         
         //tableView.register(UINib(nibName: "MyPageDetailCountTableViewCell", bundle: nil), forCellReuseIdentifier: "MyPageDetailCountTableViewCell")
-        
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 18))
+        header.backgroundColor = #colorLiteral(red: 0.9999018312, green: 1, blue: 0.9998798966, alpha: 1)
+        tableView.tableHeaderView = header
         let todayGoodsCellNib = UINib(nibName: "MyPageDetailClearWorkTableViewCell", bundle: nil)
         self.tableView.register(todayGoodsCellNib, forCellReuseIdentifier: "MyPageDetailClearWorkTableViewCell")
         
         tableView.dataSource = self
         tableView.delegate = self
     }
+    func goDayPage(){
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageDetailClearWorkDayVC") as? MyPageDetailClearWorkDayVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    @IBAction func btnCancel(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
+
 //MARK:- Table View Data Source
 
-extension MyPageDetailClearWorkVC: UITableViewDataSource,UITableViewDelegate {
+extension MyPageDetailClearWorkMonthVC: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -48,17 +46,7 @@ extension MyPageDetailClearWorkVC: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*
-        if indexPath.row == 0{
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailCountTableViewCell") as? MyPageDetailCountTableViewCell {
-                cell.selectionStyle = .none
-                cell.titleLabel.text = "업무완수율"
-                cell.countLabel.text = "100"
-                cell.unitLabel.text = "%"
-                print(indexPath.row)
-                return cell
-            }
-        }*/
+        
  
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailClearWorkTableViewCell") as? MyPageDetailClearWorkTableViewCell {
                 cell.selectionStyle = .none
@@ -69,16 +57,13 @@ extension MyPageDetailClearWorkVC: UITableViewDataSource,UITableViewDelegate {
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
-        /*
-        if indexPath.row == 0{
-            return 113
-        }else{*/
+        
             return 125
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row) 입니다.")
-        goMonthPage()
+        goDayPage()
     }
     
 }

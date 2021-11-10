@@ -45,33 +45,30 @@
                                 <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZh-D3-2da">
-                                <rect key="frame" x="24" y="78" width="279" height="8"/>
-                                <color key="backgroundColor" red="0.95686274770000002" green="0.70588237050000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="8" id="J9O-hC-9s4"/>
-                                    <constraint firstAttribute="width" constant="279" id="N47-FZ-5AJ"/>
-                                </constraints>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="95s-jb-oKL">
+                                <rect key="frame" x="24" y="78" width="279" height="4"/>
+                                <color key="progressTintColor" red="0.95686274770000002" green="0.70588237050000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="trackTintColor" red="0.98431372640000003" green="0.90588235859999999" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </view>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843159999998" green="0.98039215800000001" blue="0.92549026010000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="plS-nR-VPn" firstAttribute="leading" secondItem="IJP-v8-QS9" secondAttribute="trailing" constant="2" id="2D2-0D-YP4"/>
-                            <constraint firstItem="HZh-D3-2da" firstAttribute="top" secondItem="QWH-2D-9vS" secondAttribute="bottom" constant="24" id="42Y-3q-dTk"/>
+                            <constraint firstItem="95s-jb-oKL" firstAttribute="top" secondItem="QWH-2D-9vS" secondAttribute="bottom" constant="24" id="5WL-Cj-Y58"/>
                             <constraint firstItem="QWH-2D-9vS" firstAttribute="leading" secondItem="c1R-Aw-v8p" secondAttribute="leading" constant="24" id="8PM-rA-71z"/>
                             <constraint firstItem="e4e-pk-NK8" firstAttribute="leading" secondItem="QWH-2D-9vS" secondAttribute="trailing" constant="8" id="BVO-yo-8Mj"/>
-                            <constraint firstAttribute="bottom" secondItem="HZh-D3-2da" secondAttribute="bottom" constant="31" id="CtT-XG-zIl"/>
+                            <constraint firstAttribute="trailing" secondItem="95s-jb-oKL" secondAttribute="trailing" constant="24" id="GNW-Wv-9LJ"/>
                             <constraint firstAttribute="trailing" secondItem="plS-nR-VPn" secondAttribute="trailing" constant="24" id="IY6-UZ-dYV"/>
+                            <constraint firstItem="95s-jb-oKL" firstAttribute="leading" secondItem="c1R-Aw-v8p" secondAttribute="leading" constant="24" id="R51-Vb-B6r"/>
                             <constraint firstItem="plS-nR-VPn" firstAttribute="bottom" secondItem="e4e-pk-NK8" secondAttribute="bottom" id="RDc-JI-e6t"/>
                             <constraint firstAttribute="height" constant="117" id="c8x-ll-sqU"/>
                             <constraint firstItem="IJP-v8-QS9" firstAttribute="bottom" secondItem="e4e-pk-NK8" secondAttribute="bottom" id="cog-KA-vQC"/>
                             <constraint firstItem="QWH-2D-9vS" firstAttribute="top" secondItem="c1R-Aw-v8p" secondAttribute="top" constant="30" id="fKM-L3-aod"/>
-                            <constraint firstItem="HZh-D3-2da" firstAttribute="leading" secondItem="c1R-Aw-v8p" secondAttribute="leading" constant="24" id="m7h-wD-N5D"/>
                             <constraint firstItem="e4e-pk-NK8" firstAttribute="centerY" secondItem="QWH-2D-9vS" secondAttribute="centerY" id="rKn-e5-ckU"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>

@@ -31,7 +31,7 @@ class MyPageManagerWriteVC: UIViewController, MyPageManagerWriteTabDelegate  {
     
     //MARK:- Data Source
     
-    var numberOfCells: Int = 0
+    var numberOfCells: Int = 10
     //선택됨 탭
     var selectedTab = 0
     

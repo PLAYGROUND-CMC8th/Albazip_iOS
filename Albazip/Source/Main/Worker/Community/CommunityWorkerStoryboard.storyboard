@@ -13,7 +13,7 @@
         <scene sceneID="SGQ-75-CHL">
             <objects>
                 <navigationController storyboardIdentifier="CommunityWorkerNavigationController" id="O4Y-oU-ekZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="소통창" image="icCommunityInactive" id="Zj8-O4-cvV"/>
+                    <tabBarItem key="tabBarItem" title="소통창" image="icCommunityInactive" selectedImage="icCommunityActive" id="Zj8-O4-cvV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QvJ-E4-SLO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -45,6 +45,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icCommunityActive" width="24" height="24"/>
         <image name="icCommunityInactive" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -112,6 +112,9 @@
                                     <constraint firstAttribute="width" constant="24" id="V6g-s8-iNh"/>
                                 </constraints>
                                 <state key="normal" image="icSetting"/>
+                                <connections>
+                                    <action selector="btnSetting:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oUE-rF-7YT"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fli-MD-UOd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
@@ -175,10 +178,6 @@
                                 <rect key="frame" x="0.0" y="102" width="375" height="676"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfA-7b-dxW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
-                                <color key="backgroundColor" systemColor="separatorColor"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbn-Au-bSL">
                                 <rect key="frame" x="329" y="60" width="30" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -189,6 +188,13 @@
                                     <action selector="btnNext:" destination="3et-ET-s4f" eventType="touchUpInside" id="3f8-dd-8KI"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5E-BB-b7a">
+                                <rect key="frame" x="0.0" y="101" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="8uz-ci-1Gh"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="근무자 추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKY-4N-nCK">
                                 <rect key="frame" x="146.66666666666666" y="65" width="82" height="22"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -206,12 +212,9 @@
                                     <action selector="btnCancel:" destination="3et-ET-s4f" eventType="touchUpInside" id="in4-mM-r41"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5E-BB-b7a">
-                                <rect key="frame" x="0.0" y="101" width="375" height="1"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="8uz-ci-1Gh"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfA-7b-dxW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PLw-ob-YFk"/>
@@ -515,7 +518,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G6k-nb-xQ9">
                                 <rect key="frame" x="0.0" y="102" width="375" height="676"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgX-na-4hO">
                                 <rect key="frame" x="329" y="60" width="30" height="32"/>
