@@ -72,6 +72,8 @@
             <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <connections>
                 <outlet property="cellLabel" destination="Rnb-bH-EBe" id="uET-mv-tDI"/>
+                <outlet property="pinImage" destination="o4U-Km-25a" id="LSd-90-yC2"/>
+                <outlet property="subLabel" destination="iww-aD-Y5y" id="TZK-ZS-EgL"/>
             </connections>
             <point key="canvasLocation" x="-114" y="45"/>
         </tableViewCell>

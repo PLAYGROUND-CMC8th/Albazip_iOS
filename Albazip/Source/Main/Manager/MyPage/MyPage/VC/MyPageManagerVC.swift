@@ -61,12 +61,17 @@ class MyPageManagerVC : BaseViewController{
     //테스트용
     var transparentView = UIView()
     
-    
+    // Datamanager
+    lazy var dataManager: MyPageManagerProfileDatamanager = MyPageManagerProfileDatamanager()
+    //투데이 데이터
+    var profileData: MyPageManagerProfileData?
     
     //MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showIndicator()
+        dataManager.getMyPageManagerProfile(vc: self)
         setUI()
         setupCollectionView()
         setupPagingViewController()
@@ -90,6 +95,7 @@ class MyPageManagerVC : BaseViewController{
         super.viewWillAppear(false)
         print("MainviewWillAppear")
         setUI()
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
@@ -550,3 +556,21 @@ extension MyPageManagerVC: SelectProfileImageDelegate{
         profileImage.image = data
     }
 }
+
+extension MyPageManagerVC {
+    func didSuccessMyPageManagerProfile(result: MyPageManagerProfileResponse) {
+        dismissIndicator()
+        profileData = result.data
+        
+        print(result.message!)
+        //profileImage.image = .none
+        storeNameLabel.text = profileData?.shopName!
+        userNameLabel.text = "\(profileData!.lastName!)\(profileData!.firstName!)"
+    }
+    
+    func failedToRequestMyPageManagerProfile(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
+}
+

@@ -30,13 +30,20 @@ class MyPageWorkerWriteVC: UIViewController {
     
     //MARK:- Data Source
     
-    var numberOfCells: Int = 5
+    //var numberOfCells: Int = 5
+    // Datamanager
+    lazy var dataManager: MyPageWorkerWriteDatamanager = MyPageWorkerWriteDatamanager()
+    //
+    var writeData: [MyPageWorkerWritePostInfo]?
+    var isNoData = true
     
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
+        showIndicator()
+        dataManager.getMyPageWorkerWrite(vc: self)
     }
 
 
@@ -48,9 +55,14 @@ class MyPageWorkerWriteVC: UIViewController {
         tableView.tableHeaderView = header
         tableView.register(UINib(nibName: "MyPageWorkerWriteTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageWorkerWriteTableViewCell")
+        //작성 글 없을 때
+        tableView.register(UINib(nibName: "MyPageManagerNoWriteTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageManagerNoWriteTableViewCell")
+        
         tableView.dataSource = self
         tableView.delegate = self
         //tableView.estimatedRowHeight = 204
+        //MyPageManagerNoWriteTableViewCell : 326
     }
 
 }
@@ -61,24 +73,52 @@ extension MyPageWorkerWriteVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        if let data = writeData{
+            return data.count
+        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-         if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerWriteTableViewCell") as? MyPageWorkerWriteTableViewCell {
+        if isNoData{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWriteTableViewCell") as? MyPageManagerNoWriteTableViewCell {
+                   
+                cell.titleLabel.text = "작성한 글이 없습니다."
+                   print(indexPath.row)
+               return cell
+               
+           }
+        }else{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerWriteTableViewCell") as? MyPageWorkerWriteTableViewCell {
+                   
+                if let data = writeData{
+                    cell.nameLabel.text = data[indexPath.row].writerName!
+                    cell.commentCountLabel.text = String(data[indexPath.row].commentCount!)
+                    let date = data[indexPath.row].registerDate!.substring(from: 0, to: 10)
+                    print(date)
+                    let date2 = date.replace(target: "-", with: ". ")
+                    cell.dateLabel.text = date2
+                    cell.positionLabel.text = data[indexPath.row].writerJob!
+                    cell.subLabel.text = data[indexPath.row].content!
+                    cell.titleLabel.text = data[indexPath.row].title!
+                    print(indexPath.row)
+                }
                 
-                //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
-                print(indexPath.row)
-            return cell
-            
+               return cell
+               
+           }
         }
+         
         
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
-        
-        return 204
+        if isNoData{
+            return 326
+        }else{
+            return 204
+        }
         
     }
     
@@ -141,3 +181,25 @@ extension MyPageWorkerWriteVC: UITableViewDelegate {
         }
     }
 }
+extension MyPageWorkerWriteVC {
+    func didSuccessMyPageWorkerWrite(result: MyPageWorkerWriteResponse) {
+        dismissIndicator()
+        writeData = result.data?.postInfo
+        print(result.message!)
+        if writeData != nil{
+            isNoData = false
+        }else{
+            isNoData = true
+        }
+        tableView.reloadData()
+        
+        
+    }
+    
+    func failedToRequestMyPageWorkerWrite(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+        
+    }
+}
+

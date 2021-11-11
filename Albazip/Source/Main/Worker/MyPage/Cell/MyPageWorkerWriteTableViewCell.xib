@@ -131,6 +131,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="commentCountLabel" destination="ZE7-YL-3vd" id="BXa-T4-caq"/>
+                <outlet property="dateLabel" destination="KvT-SV-3ED" id="DTH-jX-Xvr"/>
+                <outlet property="nameLabel" destination="7MP-WA-zDq" id="OFT-Oq-CVM"/>
+                <outlet property="positionLabel" destination="k9b-qn-dzC" id="emU-qA-07L"/>
+                <outlet property="subLabel" destination="fZQ-g5-Gvu" id="RrS-JI-Soh"/>
+                <outlet property="titleLabel" destination="0Us-Dc-Af1" id="b1v-bn-24x"/>
+            </connections>
             <point key="canvasLocation" x="125.36231884057972" y="140.95982142857142"/>
         </tableViewCell>
     </objects>

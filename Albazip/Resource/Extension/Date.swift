@@ -32,4 +32,10 @@ extension Date {
         dateFormatter.dateFormat = "yyyyMMddhhmmssSSS"
         return dateFormatter.string(from: self)
     }
+    
+    var registerDate: String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy. MM. dd."
+        return dateFormatter.string(from: self)
+    }
 }

@@ -10,6 +10,9 @@ import UIKit
 class MyPageManagerWriteTableViewCell: UITableViewCell {
 
     @IBOutlet var cellLabel: UILabel!
+    @IBOutlet var subLabel: UILabel!
+    @IBOutlet var pinImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

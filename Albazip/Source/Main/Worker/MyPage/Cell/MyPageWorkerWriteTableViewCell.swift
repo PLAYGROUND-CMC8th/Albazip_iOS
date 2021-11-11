@@ -9,6 +9,13 @@ import UIKit
 
 class MyPageWorkerWriteTableViewCell: UITableViewCell {
 
+    @IBOutlet var positionLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var subLabel: UILabel!
+    @IBOutlet var commentCountLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

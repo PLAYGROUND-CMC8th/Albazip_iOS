@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ng-yU-UOm">
                         <rect key="frame" x="24" y="6" width="327" height="163"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfile84Px1" translatesAutoresizingMaskIntoConstraints="NO" id="gej-Wj-3vc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileM128Px3" translatesAutoresizingMaskIntoConstraints="NO" id="gej-Wj-3vc">
                                 <rect key="frame" x="16" y="16" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="LGD-Jk-Jkk"/>
@@ -131,13 +131,22 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="commentLabel" destination="6Mu-jx-Ahg" id="igi-8K-lCH"/>
+                <outlet property="dateLabel" destination="ZxX-T3-s0h" id="5dw-Pq-jIo"/>
+                <outlet property="nameLabel" destination="L4b-C5-hLn" id="oVo-Wc-978"/>
+                <outlet property="positionLabel" destination="E3d-XE-nQn" id="nJB-oB-2Us"/>
+                <outlet property="profileImage" destination="gej-Wj-3vc" id="5Gv-V8-jcj"/>
+                <outlet property="subLabel" destination="gTX-dS-pjO" id="9n9-oy-dgL"/>
+                <outlet property="titleLabel" destination="neh-Cl-nac" id="UMx-QM-Ukj"/>
+            </connections>
             <point key="canvasLocation" x="79" y="154"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="icComment24Px" width="20" height="20"/>
         <image name="icMoreVertical24Px" width="24" height="24"/>
-        <image name="imgProfile84Px1" width="84" height="84"/>
+        <image name="imgProfileM128Px3" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

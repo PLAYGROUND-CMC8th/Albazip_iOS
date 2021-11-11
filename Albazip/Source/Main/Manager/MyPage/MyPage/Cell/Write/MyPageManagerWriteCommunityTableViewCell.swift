@@ -9,6 +9,14 @@ import UIKit
 
 class MyPageManagerWriteCommunityTableViewCell: UITableViewCell {
 
+    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var positionLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var subLabel: UILabel!
+    @IBOutlet var commentLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

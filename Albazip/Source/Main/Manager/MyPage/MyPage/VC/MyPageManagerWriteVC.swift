@@ -30,8 +30,15 @@ class MyPageManagerWriteVC: UIViewController, MyPageManagerWriteTabDelegate  {
     private var oldContentOffset = CGPoint.zero
     
     //MARK:- Data Source
+    // Datamanager
+    lazy var dataManager: MyPageManagerWriteDatamanager = MyPageManagerWriteDatamanager()
+    //
+    var writeData: [MyPageManagerWritePostInfo]?
+    var noticeData: [MyPageManagerWriteNoticeInfo]?
+    var isNoWriteData = true
+    var isNoNoticeData = true
     
-    var numberOfCells: Int = 10
+    //var numberOfCells: Int = 10
     //선택됨 탭
     var selectedTab = 0
     
@@ -41,6 +48,8 @@ class MyPageManagerWriteVC: UIViewController, MyPageManagerWriteTabDelegate  {
         super.viewDidLoad()
 
         setupTableView()
+        showIndicator()
+        dataManager.getMyPageManagerWrite(vc: self)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -90,11 +99,21 @@ class MyPageManagerWriteVC: UIViewController, MyPageManagerWriteTabDelegate  {
 extension MyPageManagerWriteVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if numberOfCells == 0{
-            return numberOfCells + 1 + 1 // 글이 없음니다 셀때문애
+        
+        if selectedTab == 0{
+            if isNoNoticeData{
+                return 2
+            }else{
+                return noticeData!.count + 1
+            }
         }else{
-            return numberOfCells + 1
+            if isNoWriteData{
+                return 2
+            }else{
+                return writeData!.count + 1
+            }
         }
+        
         // 1은 디폴트 공지사항, 게시판 버튼탭 셀임
     }
     
@@ -107,36 +126,58 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
                 return cell
             }
         }else{
-            if(selectedTab==0){
-                if numberOfCells == 0{
+            if(selectedTab==0){ // 공지사항일때
+                if isNoNoticeData{
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWriteTableViewCell") as? MyPageManagerNoWriteTableViewCell {
                         cell.selectionStyle = .none
-                        //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                        cell.titleLabel.text = "작성한 글이 없습니다."
                         print(indexPath.row)
                         return cell
                     }
                 }else{
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteTableViewCell") as? MyPageManagerWriteTableViewCell {
                         cell.selectionStyle = .none
-                        cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                        if let data = noticeData{
+                            let date = data[indexPath.row - 1].registerDate!.substring(from: 0, to: 10)
+                            print(date)
+                            let date2 = date.replace(target: "-", with: ". ")
+                            cell.subLabel.text = date2
+                            cell.cellLabel.text = data[indexPath.row - 1].title!
+                            if data[indexPath.row - 1].pin! == 1{
+                                cell.pinImage.image = #imageLiteral(resourceName: "icPushpinActive")
+                            }else{
+                                cell.pinImage.image = #imageLiteral(resourceName: "icPushpinInactive")
+                            }
+                        }
                         print(indexPath.row)
                         return cell
                     }
                 }
                 
-            }else{
-                if numberOfCells == 0{
+            }else{ //게시판 일때
+                if isNoNoticeData{
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWriteTableViewCell") as? MyPageManagerNoWriteTableViewCell {
                         cell.selectionStyle = .none
-                        //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                        cell.titleLabel.text = "작성한 글이 없습니다."
                         print(indexPath.row)
                         return cell
                     }
                 }else{
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteCommunityTableViewCell") as? MyPageManagerWriteCommunityTableViewCell {
                         cell.selectionStyle = .none
-                        //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
-                        print(indexPath.row)
+                        if let data = writeData{
+                            cell.nameLabel.text = data[indexPath.row - 1].writerName!
+                            cell.commentLabel.text = String(data[indexPath.row - 1].commentCount!)
+                            let date = data[indexPath.row - 1].registerDate!.substring(from: 0, to: 10)
+                            print(date)
+                            let date2 = date.replace(target: "-", with: ". ")
+                            cell.dateLabel.text = date2
+                            cell.positionLabel.text = data[indexPath.row - 1].writerJob!
+                            cell.subLabel.text = data[indexPath.row - 1].content!
+                            cell.titleLabel.text = data[indexPath.row - 1].title!
+                            print(indexPath.row)
+                        }
+                     
                         return cell
                     }
                 }
@@ -151,13 +192,13 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
             return 51
         }else{
             if selectedTab == 0{
-                if numberOfCells == 0{
+                if isNoNoticeData{
                     return 326
                 }else{
                     return 97
                 }
             }else{
-                if numberOfCells == 0{
+                if isNoWriteData{
                     return 326
                 }else{
                     return 175
@@ -240,3 +281,32 @@ extension MyPageManagerWriteVC: UITableViewDelegate {
     }
 }
 
+extension MyPageManagerWriteVC {
+    func didSuccessMyPageManagerWrite(result: MyPageManagerWriteResponse) {
+        dismissIndicator()
+        writeData = result.data?.postInfo
+        noticeData = result.data?.noticeInfo
+        print(result.message!)
+        if writeData != nil{
+            isNoWriteData = false
+        }else{
+            isNoWriteData = true
+        }
+        
+        if noticeData != nil{
+            isNoNoticeData = false
+        }else{
+            isNoNoticeData = true
+        }
+        
+        tableView.reloadData()
+        
+        
+    }
+    
+    func failedToRequestMyPageManagerWrite(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+        
+    }
+}

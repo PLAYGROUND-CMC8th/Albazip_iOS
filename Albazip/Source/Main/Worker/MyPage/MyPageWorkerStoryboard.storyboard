@@ -27,20 +27,20 @@
                                             <constraint firstAttribute="width" constant="84" id="tGb-bO-M08"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서플라이 첨단점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyv-LR-0TF">
-                                        <rect key="frame" x="122" y="54" width="101" height="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyv-LR-0TF">
+                                        <rect key="frame" x="122" y="54" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평일마감" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8u-Zc-isp">
-                                        <rect key="frame" x="122" y="77" width="77" height="27"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8u-Zc-isp">
+                                        <rect key="frame" x="122" y="58" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                         <color key="textColor" red="0.93725490570000003" green="0.55294120309999995" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김형준" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqP-f5-klc">
-                                        <rect key="frame" x="203" y="77" width="58" height="27"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqP-f5-klc">
+                                        <rect key="frame" x="126" y="58" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -140,8 +140,11 @@
                         <outlet property="bottomView" destination="cPN-xQ-oS9" id="rM6-c8-Bwz"/>
                         <outlet property="headerViewHeightConstraint" destination="K3j-VC-ht6" id="Jrw-CP-aIo"/>
                         <outlet property="modalBgView" destination="GdV-Fb-iBJ" id="Inq-Mj-llJ"/>
+                        <outlet property="nameLabel" destination="dqP-f5-klc" id="bTo-6P-zKl"/>
+                        <outlet property="positionLabel" destination="d8u-Zc-isp" id="TkH-Bs-4bD"/>
                         <outlet property="profileImage" destination="1gc-eZ-wE0" id="zQh-0Z-hNI"/>
                         <outlet property="stickyHeaderView" destination="Sbp-Tj-XD3" id="DDh-6U-9I9"/>
+                        <outlet property="storeNameLabel" destination="Cyv-LR-0TF" id="Io3-hS-46x"/>
                         <outlet property="tabBarCollectionView" destination="Ahh-Zd-Z5h" id="f65-g9-Y6H"/>
                     </connections>
                 </viewController>

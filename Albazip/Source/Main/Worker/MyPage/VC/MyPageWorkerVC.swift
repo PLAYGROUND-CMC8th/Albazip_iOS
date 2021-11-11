@@ -30,6 +30,13 @@ class MyPageWorkerVC: BaseViewController{
     var selectedTabView = UIView()
     //선택된 탭 인덱스
     var selectedTabIndex = 0
+    // Datamanager
+    lazy var dataManager: MyPageWorkerProfileDatamanager = MyPageWorkerProfileDatamanager()
+    //
+    var profileData: MyPageManagerProfileData?
+    @IBOutlet var storeNameLabel: UILabel!
+    @IBOutlet var positionLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
     
     //MARK:- View Model
     
@@ -38,6 +45,8 @@ class MyPageWorkerVC: BaseViewController{
     //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        showIndicator()
+        dataManager.getMyPageManagerProfile(vc: self)
         setupCollectionView()
         setupPagingViewController()
         populateBottomView()
@@ -506,3 +515,22 @@ extension MyPageWorkerVC: SelectProfileImageDelegate{
         profileImage.image = data
     }
 }
+extension MyPageWorkerVC {
+    func didSuccessMyPageManagerProfile(result: MyPageManagerProfileResponse) {
+        dismissIndicator()
+        profileData = result.data
+        
+        print(result.message!)
+        //profileImage.image = .none
+        positionLabel.text = profileData?.jobTitle!
+        storeNameLabel.text = profileData?.shopName!
+        nameLabel.text = "\(profileData!.lastName!)\(profileData!.firstName!)"
+        
+    }
+    
+    func failedToRequestMyPageManagerProfile(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
+}
+

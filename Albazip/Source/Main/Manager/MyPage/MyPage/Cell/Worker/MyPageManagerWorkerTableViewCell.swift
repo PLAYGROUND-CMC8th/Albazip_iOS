@@ -14,6 +14,7 @@ protocol MyPageManagerWorkerCollectionViewCellDelegate: AnyObject {
 class MyPageManagerWorkerTableViewCell: UITableViewCell {
 
     
+    @IBOutlet var totalCount: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     
     weak var myPageManagerWorkerCollectionViewCellDelegate : MyPageManagerWorkerCollectionViewCellDelegate?
