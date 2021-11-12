@@ -222,6 +222,9 @@
 		C3CFC2FE273EA513001B2EB6 /* MyPageWorkerPositionDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2FD273EA513001B2EB6 /* MyPageWorkerPositionDatamanager.swift */; };
 		C3CFC300273EBA7F001B2EB6 /* MyPageManagerWorkerPositionDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2FF273EBA7F001B2EB6 /* MyPageManagerWorkerPositionDatamanager.swift */; };
 		C3CFC302273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC301273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift */; };
+		C3CFC304273EC3F2001B2EB6 /* MyPageManagerWorkerInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC303273EC3F2001B2EB6 /* MyPageManagerWorkerInfoDataManager.swift */; };
+		C3CFC306273EC929001B2EB6 /* MyPageManagerWorkerCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC305273EC929001B2EB6 /* MyPageManagerWorkerCodeResponse.swift */; };
+		C3CFC308273EC957001B2EB6 /* MyPageManagerWorkerCodeDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC307273EC957001B2EB6 /* MyPageManagerWorkerCodeDatamanager.swift */; };
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
 		C3D69454273ACC8500BF540C /* SettingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */; };
 		C3D69457273ACDC500BF540C /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D69456273ACDC500BF540C /* SettingVC.swift */; };
@@ -459,6 +462,9 @@
 		C3CFC2FD273EA513001B2EB6 /* MyPageWorkerPositionDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerPositionDatamanager.swift; sourceTree = "<group>"; };
 		C3CFC2FF273EBA7F001B2EB6 /* MyPageManagerWorkerPositionDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerPositionDatamanager.swift; sourceTree = "<group>"; };
 		C3CFC301273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerPositionResponse.swift; sourceTree = "<group>"; };
+		C3CFC303273EC3F2001B2EB6 /* MyPageManagerWorkerInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerInfoDataManager.swift; sourceTree = "<group>"; };
+		C3CFC305273EC929001B2EB6 /* MyPageManagerWorkerCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerCodeResponse.swift; sourceTree = "<group>"; };
+		C3CFC307273EC957001B2EB6 /* MyPageManagerWorkerCodeDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerCodeDatamanager.swift; sourceTree = "<group>"; };
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69456273ACDC500BF540C /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -1222,6 +1228,8 @@
 			children = (
 				C3CFC2F5273E5263001B2EB6 /* MyPageManagerWorkerDetailProfileDatamanger.swift */,
 				C3CFC2FF273EBA7F001B2EB6 /* MyPageManagerWorkerPositionDatamanager.swift */,
+				C3CFC303273EC3F2001B2EB6 /* MyPageManagerWorkerInfoDataManager.swift */,
+				C3CFC307273EC957001B2EB6 /* MyPageManagerWorkerCodeDatamanager.swift */,
 			);
 			path = Datamanager;
 			sourceTree = "<group>";
@@ -1231,6 +1239,7 @@
 			children = (
 				C3CFC2F3273E5241001B2EB6 /* MyPageManagerWorkerDetailProfileResponse.swift */,
 				C3CFC301273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift */,
+				C3CFC305273EC929001B2EB6 /* MyPageManagerWorkerCodeResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1687,12 +1696,14 @@
 				C39083F12729B559006223CB /* OnboardingCollectionViewCell.swift in Sources */,
 				C3B93384273BFA220056E381 /* SettingNoticeVC.swift in Sources */,
 				C3B022EF2726F28A00013988 /* RegisterSelectStoreTypeVC.swift in Sources */,
+				C3CFC304273EC3F2001B2EB6 /* MyPageManagerWorkerInfoDataManager.swift in Sources */,
 				C35982C6273810E300546F2C /* MyPageManagerAddWorkerDatamanager.swift in Sources */,
 				C34A00602731BF2900C24102 /* MyPageWorkerPositionTableViewCell.swift in Sources */,
 				C37B0B59272972840017D179 /* RegisterRequest.swift in Sources */,
 				C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */,
 				C3A1ADCC271C5002005A61ED /* RegisterSearchStoreVC.swift in Sources */,
 				C37B0B50272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift in Sources */,
+				C3CFC306273EC929001B2EB6 /* MyPageManagerWorkerCodeResponse.swift in Sources */,
 				C30AFE8A27341F330075CDE2 /* MyPageManagerWorkList2TableViewCell.swift in Sources */,
 				C3B933A7273C3DD00056E381 /* MyPageDetailClearWorkMiddleTableViewCell.swift in Sources */,
 				C3A1ADD4271C86B6005A61ED /* LoginResetPhoneVC.swift in Sources */,
@@ -1726,6 +1737,7 @@
 				C3CB0169273D5980000EA353 /* MyPageWorkerProfileDatamanager.swift in Sources */,
 				C3CFC2FC273E94DE001B2EB6 /* MyPageWorkerPositionResponse.swift in Sources */,
 				C34A00582731AA2D00C24102 /* MyPageWorkerMyInfoTableViewCell.swift in Sources */,
+				C3CFC308273EC957001B2EB6 /* MyPageManagerWorkerCodeDatamanager.swift in Sources */,
 				C30AFE8627341CD70075CDE2 /* MyPageManagerWorkList1TableViewCell.swift in Sources */,
 				C3B9338A273BFAC30056E381 /* SettingVersionVC.swift in Sources */,
 				C3AD3B3727398C130030905C /* MyPageManagerWorkerCodeTableViewCell.swift in Sources */,

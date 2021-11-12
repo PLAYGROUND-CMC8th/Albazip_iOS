@@ -123,7 +123,7 @@ extension String {
         if time.substring(from: 0, to: 1) == "0"{
             time = time.substring(from: 1, to: 2)
         }
-        var time2 = self.substring(from: 0, to: 2)
+        var time2 = self.substring(from: 2, to: 4)
         if time2.substring(from: 0, to: 1) == "0"{
             time2 = time2.substring(from: 1, to: 2)
         }

@@ -28,22 +28,33 @@ class MyPageManagerWorkerInfoVC: UIViewController {
     private var dragDirection: DragDirection = .Up
     private var oldContentOffset = CGPoint.zero
     
+    lazy var dataManager: MyPageManagerWorkerInfoDataManager  = MyPageManagerWorkerInfoDataManager ()
+    lazy var dataManager2: MyPageManagerWorkerCodeDatamanager  = MyPageManagerWorkerCodeDatamanager ()
     //MARK:- Data Source
-    
+    var userInfo: MyPageWorkerMyInfoUserInfo?
+    var workInfo: MyPageWorkerMyInfoWorkInfo?
+    var joinDate: String?
+    var code: String?
     var numberOfCells: Int = 1
-    var positionId = 0
-    var status = 0
+    var positionId = -1
+    var status = -1
     //MARK:- View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
-        if status == 0{
-            // 근무자 코드
-        }else {
-            // 포지션
+        if status != -1, positionId != -1{
+            if status == 0{
+                // 근무자 코드
+                dataManager2.getMyPageManagerWorkerCode(vc: self, index: positionId)
+            }else {
+                // 포지션
+                showIndicator()
+                dataManager.getMyPageWorkerMyInfo(vc: self, index: positionId)
+            }
         }
+        
     }
 
 
@@ -73,7 +84,8 @@ extension MyPageManagerWorkerInfoVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if status == 0{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerCodeTableViewCell") as? MyPageManagerWorkerCodeTableViewCell {
-                
+                cell.selectionStyle = .none
+                cell.codeLabel.text = code
                 //cell.delegate = self
                 //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
                 print(indexPath.row)
@@ -81,9 +93,31 @@ extension MyPageManagerWorkerInfoVC: UITableViewDataSource {
             }
         }else{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerMyInfoTableViewCell") as? MyPageWorkerMyInfoTableViewCell {
-                
+                cell.selectionStyle = .none
                 cell.delegate = self
-                //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                if let data = userInfo{
+                    cell.numberLabel.text = data.phone!.insertPhone
+                    cell.yearLabel.text = "\(data.birthyear!)년생"
+                    if data.gender! == 0{
+                        cell.sexLabel.text = "남자"
+                    }else{
+                        cell.sexLabel.text = "여자"
+                    }
+                }
+                if let data = workInfo{
+                    cell.lateCountLabel.text = String(data.lateCount!)
+                    if data.totalTaskCount! != 0{
+                        cell.clearRateLabel.text = String(data.completeTaskCount! / data.totalTaskCount! * 100)
+                    }else{
+                        cell.clearRateLabel.text = "0"
+                    }
+                    
+                    cell.joinPublicLabel.text = String(data.coTaskCount!)
+                    
+                }
+                if let data = joinDate{
+                    cell.joinDatelabel.text = data.insertDate
+                }
                 print(indexPath.row)
                 return cell
             }
@@ -190,5 +224,39 @@ extension MyPageManagerWorkerInfoVC: MyPageWorkerMyInfoDelegate {
             
         self.present(vc, animated: true, completion: nil)
         }
+    }
+}
+extension MyPageManagerWorkerInfoVC {
+    func didSuccessMyPageWorkerMyInfo(result: MyPageWorkerMyInfoResponse) {
+        
+        userInfo = result.data?.userInfo
+        workInfo = result.data?.workInfo
+        joinDate = (result.data?.joinDate!)!
+        print(result.message!)
+        
+        tableView.reloadData()
+        dismissIndicator()
+        
+    }
+    
+    func failedToRequestMyPageWorkerMyInfo(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+        
+    }
+    func didSuccessMyPageWorkerCode(result: MyPageManagerWorkerCodeResponse) {
+        
+        code = result.data!.positionInfo!.code!
+        print(result.message!)
+        
+        tableView.reloadData()
+        dismissIndicator()
+        
+    }
+    
+    func failedToRequestMyPageWorkerCode(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+        
     }
 }

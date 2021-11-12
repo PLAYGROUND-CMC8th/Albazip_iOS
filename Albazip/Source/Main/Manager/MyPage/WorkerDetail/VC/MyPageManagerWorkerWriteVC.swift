@@ -65,7 +65,7 @@ extension MyPageManagerWorkerWriteVC: UITableViewDataSource {
         
          if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorklistTableViewCell") as? MyPageManagerWorklistTableViewCell {
                 
-                //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+            cell.selectionStyle = .none //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
                 print(indexPath.row)
             return cell
             

@@ -52,7 +52,7 @@ class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositi
 
         setupTableView()
         showIndicator()
-        dataManager.MyPageManagerWorkerPosition(vc: self, index: positionId)
+        dataManager.getMyPageManagerWorkerPosition(vc: self, index: positionId)
     }
     //MARK:- View Setup
     
@@ -102,7 +102,7 @@ extension MyPageManagerWorkerPositionVC: UITableViewDataSource {
                     if data.salaryType == 0{
                         cell.salaryLabel.text = "시급 " + data.salary!.insertComma +  "원"
                     }else if data.salaryType == 1{
-                        cell.salaryLabel.text = "주급" + data.salary!.insertComma +  "원"
+                        cell.salaryLabel.text = "주급 " + data.salary!.insertComma +  "원"
                     }else{
                         cell.salaryLabel.text = "월급 " + data.salary!.insertComma +  "원"
                     }

@@ -9,6 +9,7 @@ import UIKit
 
 class MyPageManagerWorkerCodeTableViewCell: UITableViewCell {
 
+    @IBOutlet var codeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +19,8 @@ class MyPageManagerWorkerCodeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func btnCopy(_ sender: Any) {
     }
     
 }

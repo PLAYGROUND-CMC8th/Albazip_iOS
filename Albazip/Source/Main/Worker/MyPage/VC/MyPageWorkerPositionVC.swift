@@ -75,7 +75,7 @@ extension MyPageWorkerPositionVC: UITableViewDataSource {
                 if data.salaryType == 0{
                     cell.salaryLabel.text = "시급 " + data.salary!.insertComma +  "원"
                 }else if data.salaryType == 1{
-                    cell.salaryLabel.text = "주급" + data.salary!.insertComma +  "원"
+                    cell.salaryLabel.text = "주급 " + data.salary!.insertComma +  "원"
                 }else{
                     cell.salaryLabel.text = "월급 " + data.salary!.insertComma +  "원"
                 }
