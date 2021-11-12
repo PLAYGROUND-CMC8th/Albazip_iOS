@@ -521,7 +521,12 @@ extension MyPageWorkerVC {
         profileData = result.data
         
         print(result.message!)
-        //profileImage.image = .none
+        if let img = profileData?.imagePath{
+            let url = URL(string: img)
+            profileImage.kf.setImage(with: url)
+        }else{
+            profileImage.image = #imageLiteral(resourceName: "imgProfile84Px1")
+        }
         positionLabel.text = profileData?.jobTitle!
         storeNameLabel.text = profileData?.shopName!
         nameLabel.text = "\(profileData!.lastName!)\(profileData!.firstName!)"

@@ -40,10 +40,12 @@ class MyPageManagerWorkList2TableViewCell: UITableViewCell {
     
     @objc func textFieldDidChange(_ sender: Any?) {
            print(self.titleLabel.text!)
+        titleLabel.becomeFirstResponder()
         myPageManagerWorkList2Delegate?.setTitleTextField(index: cellIndex!, text: self.titleLabel.text!)
     }
     @objc func textFieldDidChange2(_ sender: Any?) {
            print(self.subLabel.text!)
+        subLabel.becomeFirstResponder()
         myPageManagerWorkList2Delegate?.setSubTextField(index: cellIndex!, text: self.subLabel.text!)
     }
 }

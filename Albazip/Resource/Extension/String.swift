@@ -94,6 +94,22 @@ extension String {
         return self
     }
     
+    var insertPhone: String{
+        var PHONE:String = self
 
+        let index1 = PHONE.index(PHONE.startIndex, offsetBy: 3)
+        let index2 = PHONE.index(PHONE.startIndex, offsetBy: 7)
+
+        PHONE.insert("-", at: index2)
+        PHONE.insert("-", at: index1)
+
+        return PHONE
+    }
     
+    var insertDate: String{
+        let date = self.substring(from: 0, to: 10)
+        print(date)
+        let date2 = date.replace(target: "-", with: ". ")
+        return date2
+    }
 }

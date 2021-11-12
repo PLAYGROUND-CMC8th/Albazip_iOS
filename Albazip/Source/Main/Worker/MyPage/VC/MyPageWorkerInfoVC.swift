@@ -28,8 +28,11 @@ class MyPageWorkerInfoVC: UIViewController {
     
     private var dragDirection: DragDirection = .Up
     private var oldContentOffset = CGPoint.zero
-    
+    lazy var dataManager: MyPageWorkerMyInfoDatamanager = MyPageWorkerMyInfoDatamanager()
     //MARK:- Data Source
+    var userInfo: MyPageWorkerMyInfoUserInfo?
+    var workInfo: MyPageWorkerMyInfoWorkInfo?
+    var joinDate: String?
     
     var numberOfCells: Int = 5
     
@@ -39,6 +42,8 @@ class MyPageWorkerInfoVC: UIViewController {
         super.viewDidLoad()
 
         setupTableView()
+        showIndicator()
+        dataManager.getMyPageWorkerMyInfo(vc: self)
     }
 
     //MARK:- View Setup
@@ -68,7 +73,30 @@ extension MyPageWorkerInfoVC: UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerMyInfoTableViewCell") as? MyPageWorkerMyInfoTableViewCell {
             
             cell.delegate = self
-            //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+            if let data = userInfo{
+                cell.numberLabel.text = data.phone!.insertPhone
+                cell.yearLabel.text = "\(data.birthyear!)년생"
+                if data.gender! == 0{
+                    cell.sexLabel.text = "남자"
+                }else{
+                    cell.sexLabel.text = "여자"
+                }
+            }
+            if let data = workInfo{
+                cell.lateCountLabel.text = String(data.lateCount!)
+                if data.totalTaskCount! != 0{
+                    cell.clearRateLabel.text = String(data.completeTaskCount! / data.totalTaskCount! * 100)
+                }else{
+                    cell.clearRateLabel.text = "0"
+                }
+                
+                cell.joinPublicLabel.text = String(data.coTaskCount!)
+                
+            }
+            if let data = joinDate{
+                cell.joinDatelabel.text = data.insertDate
+            }
+            
             print(indexPath.row)
             return cell
         }
@@ -94,13 +122,6 @@ extension MyPageWorkerInfoVC: UITableViewDelegate {
         
         if let topViewUnwrappedHeight = topViewCurrentHeightConst {
             
-            /**
-             *  Re-size (Shrink) the top view only when the conditions meet:-
-             *  1. The current offset of the table view should be greater than the previous offset indicating an upward scroll.
-             *  2. The top view's height should be within its minimum height.
-             *  3. Optional - Collapse the header view only when the table view's edge is below the above view - This case will occur if you are using Step 2 of the next condition and have a refresh control in the table view.
-             */
-            
             if delta > 0,
                 topViewUnwrappedHeight > topViewHeightConstraintRange.lowerBound,
                 scrollView.contentOffset.y > 0 {
@@ -110,12 +131,6 @@ extension MyPageWorkerInfoVC: UITableViewDelegate {
                 scrollView.contentOffset.y -= delta
             }
             
-            /**
-             *  Re-size (Expand) the top view only when the conditions meet:-
-             *  1. The current offset of the table view should be lesser than the previous offset indicating an downward scroll.
-             *  2. Optional - The top view's height should be within its maximum height. Skipping this step will give a bouncy effect. Note that you need to write extra code in the outer view controller to bring back the view to the maximum possible height.
-             *  3. Expand the header view only when the table view's edge is below the header view, else the table view should first scroll till it's offset is 0 and only then the header should expand.
-             */
             
             if delta < 0,
                 // topViewUnwrappedHeight < topViewHeightConstraintRange.upperBound,
@@ -185,3 +200,23 @@ extension MyPageWorkerInfoVC: MyPageWorkerMyInfoDelegate {
         }
     }
 }
+extension MyPageWorkerInfoVC {
+    func didSuccessMyPageWorkerMyInfo(result: MyPageWorkerMyInfoResponse) {
+        
+        userInfo = result.data?.userInfo
+        workInfo = result.data?.workInfo
+        joinDate = (result.data?.joinDate!)!
+        print(result.message!)
+        
+        tableView.reloadData()
+        dismissIndicator()
+        
+    }
+    
+    func failedToRequestMyPageWorkerMyInfo(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+        
+    }
+}
+

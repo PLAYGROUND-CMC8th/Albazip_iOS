@@ -32,12 +32,18 @@ class MyPageManagerWorkerInfoVC: UIViewController {
     
     var numberOfCells: Int = 1
     var positionId = 0
+    var status = 0
     //MARK:- View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
+        if status == 0{
+            // 근무자 코드
+        }else {
+            // 포지션
+        }
     }
 
 
@@ -65,26 +71,31 @@ extension MyPageManagerWorkerInfoVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        /*
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerMyInfoTableViewCell") as? MyPageWorkerMyInfoTableViewCell {
-            
-            cell.delegate = self
-            //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
-            print(indexPath.row)
-            return cell
-        }*/
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerCodeTableViewCell") as? MyPageManagerWorkerCodeTableViewCell {
-            
-            //cell.delegate = self
-            //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
-            print(indexPath.row)
-            return cell
+        if status == 0{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerCodeTableViewCell") as? MyPageManagerWorkerCodeTableViewCell {
+                
+                //cell.delegate = self
+                //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                print(indexPath.row)
+                return cell
+            }
+        }else{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerMyInfoTableViewCell") as? MyPageWorkerMyInfoTableViewCell {
+                
+                cell.delegate = self
+                //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                print(indexPath.row)
+                return cell
+            }
         }
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
-        return 230 //473
+        if status == 0{
+            return 230
+        }else{
+            return 473
+        }
     }
     
     

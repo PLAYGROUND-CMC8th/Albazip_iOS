@@ -20,7 +20,21 @@ class MyPageWorkerMyInfoTableViewCell: UITableViewCell {
     @IBOutlet var lateCountView: UIView!
     @IBOutlet var joinPublicView: UIView!
     @IBOutlet var clearRateView: UIView!
+    
+    @IBOutlet var numberLabel: UILabel!
+    @IBOutlet var yearLabel: UILabel!
+    @IBOutlet var sexLabel: UILabel!
+
+    @IBOutlet var lateCountLabel: UILabel!
+    @IBOutlet var joinPublicLabel: UILabel!
+    @IBOutlet var clearRateLabel: UILabel!
+    @IBOutlet var joinDatelabel: UILabel!
+    
+    
     var delegate: MyPageWorkerMyInfoDelegate?
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
