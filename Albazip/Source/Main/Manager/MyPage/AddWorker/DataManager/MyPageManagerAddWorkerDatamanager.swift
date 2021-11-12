@@ -9,8 +9,8 @@ import Alamofire
 class MyPageManagerAddWorkerDatamanager{
     func postAddWorker(_ parameters: MyPageManagerAddWorkerRequest, vc: MyPageManagerWorkListVC) {
         
-        let header: HTTPHeaders = ["Content-Type":"application/json", "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwiam9iIjoiUzIiLCJpYXQiOjE2MzYyNjE2NTMsImV4cCI6MTYzODg1MzY1MywiaXNzIjoiQWxiYXppcFNlcnZlciJ9.SS2y0vWBma9qyKbZOc9oJXXHln-g5HRC6PR0ToA9NpM"]
-        
+        let header: HTTPHeaders = ["Content-Type":"application/json", "token": Constant.tokenManager]
+        //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwiam9iIjoiUzIiLCJpYXQiOjE2MzYyNjE2NTMsImV4cCI6MTYzODg1MzY1MywiaXNzIjoiQWxiYXppcFNlcnZlciJ9.SS2y0vWBma9qyKbZOc9oJXXHln-g5HRC6PR0ToA9NpM
         AF.request("\(Constant.BASE_URL)/position/", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: header)
             .validate()
             .responseDecodable(of: MyPageManagerAddWorkerResponse.self) { response in

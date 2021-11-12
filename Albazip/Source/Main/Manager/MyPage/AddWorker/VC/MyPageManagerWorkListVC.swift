@@ -170,8 +170,8 @@ extension MyPageManagerWorkListVC: MyPageManagerWorkList3Delegate, MyPageManager
 extension MyPageManagerWorkListVC {
     func didSuccessAddWorker(_ result: MyPageManagerAddWorkerResponse) {
         dismissIndicator()
-        self.presentAlert(title: result.message)
-        self.navigationController?.popViewController(animated: true)
+        //self.presentAlert(title: result.message)
+        self.navigationController?.popToRootViewController(animated: false)
     }
     
     func failedToRequestAddWorker(message: String) {

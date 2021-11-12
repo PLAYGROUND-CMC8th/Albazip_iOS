@@ -19,6 +19,10 @@ class MyPageManagerWorkerTableViewCell: UITableViewCell {
     
     weak var myPageManagerWorkerCollectionViewCellDelegate : MyPageManagerWorkerCollectionViewCellDelegate?
     
+    // 데이터 배열
+    var contentData: Array<MyPageManagerContentData> = []
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -43,19 +47,19 @@ class MyPageManagerWorkerTableViewCell: UITableViewCell {
 extension MyPageManagerWorkerTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return contentData.count
         //return movieVO.popular.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            // 컬렉션 뷰 한 줄에 2개가 딱 맞게 정사각형으로 들어가게!
+            
         let width = collectionView.bounds.width / 3.3
         return CGSize(width: width, height: 143)
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPageManagerWorkerCollectionViewCell", for: indexPath) as? MyPageManagerWorkerCollectionViewCell {
             
-            //cell.setCell( todayGoods: todayGoodsArray[indexPath.row],todayRealtime: todayRealtimeArray[indexPath.row], index: index)
+            cell.setCell(data: contentData[indexPath.row])
             return cell
         }
         return UICollectionViewCell()
@@ -74,12 +78,10 @@ extension MyPageManagerWorkerTableViewCell: UICollectionViewDelegate, UICollecti
             self.myPageManagerWorkerCollectionViewCellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTappedInTableViewCell: self)
 
     }
-    /*
+    
     //데이터 가져올 함수
-    func setCell(goods: Array<TodayGoods>, realtime: Array<TodayRealtime>, index: Int)  {
-        self.index = index
-        self.todayGoodsArray = goods
-        self.todayRealtimeArray = realtime
-        self.todayGoodsCollectionView.reloadData()
-    }*/
+    func setCell(data: Array<MyPageManagerContentData>)  {
+        self.contentData = data
+        self.collectionView.reloadData()
+    }
 }

@@ -183,16 +183,16 @@ extension MyPageWorkerWriteVC: UITableViewDelegate {
 }
 extension MyPageWorkerWriteVC {
     func didSuccessMyPageWorkerWrite(result: MyPageWorkerWriteResponse) {
-        dismissIndicator()
+        
         writeData = result.data?.postInfo
         print(result.message!)
-        if writeData != nil{
+        if writeData!.count != 0{
             isNoData = false
         }else{
             isNoData = true
         }
         tableView.reloadData()
-        
+        dismissIndicator()
         
     }
     

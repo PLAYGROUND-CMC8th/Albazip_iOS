@@ -13,4 +13,5 @@ target 'Albazip' do
   pod 'SnapKit'
   pod 'XLPagerTabStrip', '~> 9.0'
   pod 'MSPeekCollectionViewDelegateImplementation'
+  pod 'Kingfisher', '~> 7.0'
 end

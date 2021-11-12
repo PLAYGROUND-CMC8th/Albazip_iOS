@@ -38,7 +38,9 @@ class MyPageManagerContentVC: UIViewController {
     //MARK:- Data Source
     
     var numberOfCells: Int = 0
-    var isNoWorker = false
+    var isNoWorker = true
+    var contentData: [MyPageManagerContentData]?
+    lazy var dataManager: MyPageManagerContentDatamanager = MyPageManagerContentDatamanager()
     //MARK:- View Life Cycle
     
     override func viewDidLoad() {
@@ -50,6 +52,7 @@ class MyPageManagerContentVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         print("viewWillAppear")
+        dataManager.getMyPageManagerContent(vc: self)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
@@ -116,7 +119,7 @@ extension MyPageManagerContentVC: UITableViewDataSource, MyPageManagerNoWorkerDe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1 // 무조건 한개
+        return numberOfCells // 무조건 한개
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -125,7 +128,7 @@ extension MyPageManagerContentVC: UITableViewDataSource, MyPageManagerNoWorkerDe
         }else{
             switch indexPath.row {
             case 0:
-                return 500
+                return 578
             
             default:
                 return 100
@@ -143,7 +146,8 @@ extension MyPageManagerContentVC: UITableViewDataSource, MyPageManagerNoWorkerDe
         }else{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerTableViewCell") as? MyPageManagerWorkerTableViewCell {
                 cell.myPageManagerWorkerCollectionViewCellDelegate = self
-                //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                cell.setCell(data: contentData!)
+                cell.totalCount.text = String(contentData!.count)
                 return cell
             }
         }
@@ -217,5 +221,27 @@ extension MyPageManagerContentVC: UITableViewDelegate {
             
             innerTableViewScrollDelegate?.innerTableViewScrollEnded(withScrollDirection: dragDirection)
         }
+    }
+}
+extension MyPageManagerContentVC {
+    func didSuccessMyPageManagerContent(result: MyPageManagerContentResponse) {
+        contentData = result.data
+       
+        print(result.message!)
+        if contentData!.count != 0{
+            isNoWorker = false
+        }else{
+            isNoWorker = true
+        }
+        numberOfCells = 1
+        tableView.reloadData()
+        dismissIndicator()
+        
+    }
+    
+    func failedToRequestMyPageManagerContent(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+        
     }
 }

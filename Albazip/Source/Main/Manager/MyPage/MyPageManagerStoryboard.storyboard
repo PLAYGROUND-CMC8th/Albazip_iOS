@@ -104,6 +104,9 @@
                                     <constraint firstAttribute="width" constant="24" id="wkg-Nj-wQ9"/>
                                 </constraints>
                                 <state key="normal" image="icAddPerson"/>
+                                <connections>
+                                    <action selector="btnAddWorker:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GGh-sH-745"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSf-z0-eS3">
                                 <rect key="frame" x="335" y="64" width="24" height="24"/>

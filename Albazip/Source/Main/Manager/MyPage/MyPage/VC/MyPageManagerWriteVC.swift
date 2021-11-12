@@ -81,6 +81,7 @@ class MyPageManagerWriteVC: UIViewController, MyPageManagerWriteTabDelegate  {
                            forCellReuseIdentifier: "MyPageManagerWriteCommunityTableViewCell")
         tableView.register(UINib(nibName: "MyPageManagerNoWriteTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageManagerNoWriteTableViewCell")
+        
         //MyPageManagerNoWriteTableViewCell
         tableView.dataSource = self
         tableView.delegate = self
@@ -283,24 +284,23 @@ extension MyPageManagerWriteVC: UITableViewDelegate {
 
 extension MyPageManagerWriteVC {
     func didSuccessMyPageManagerWrite(result: MyPageManagerWriteResponse) {
-        dismissIndicator()
         writeData = result.data?.postInfo
         noticeData = result.data?.noticeInfo
         print(result.message!)
-        if writeData != nil{
+        if writeData!.count != 0{
             isNoWriteData = false
         }else{
             isNoWriteData = true
         }
         
-        if noticeData != nil{
+        if noticeData!.count != 0{
             isNoNoticeData = false
         }else{
             isNoNoticeData = true
         }
-        
+        print("\(isNoWriteData) \(isNoNoticeData)" )
         tableView.reloadData()
-        
+        dismissIndicator()
         
     }
     

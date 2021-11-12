@@ -30,7 +30,7 @@
                                 <color key="textColor" red="0.56862747670000002" green="0.56862747670000002" blue="0.57254904510000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfile48Px1" translatesAutoresizingMaskIntoConstraints="NO" id="K7G-Qj-KYL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfile84Px1" translatesAutoresizingMaskIntoConstraints="NO" id="K7G-Qj-KYL">
                                 <rect key="frame" x="27" y="35" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="7Am-LL-SYl"/>
@@ -49,12 +49,17 @@
                                 <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20784312490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newBadge8Px" translatesAutoresizingMaskIntoConstraints="NO" id="dT1-IA-7Ce">
+                                <rect key="frame" x="65" y="37" width="12" height="12"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843159999998" green="0.98039215800000001" blue="0.92549026010000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Ika-8x-Ykw" firstAttribute="top" secondItem="E92-Tj-9xx" secondAttribute="top" constant="16" id="3a0-f0-8KE"/>
                             <constraint firstItem="Ika-8x-Ykw" firstAttribute="leading" secondItem="E92-Tj-9xx" secondAttribute="leading" constant="16" id="3jq-FE-4BM"/>
+                            <constraint firstItem="dT1-IA-7Ce" firstAttribute="centerY" secondItem="K7G-Qj-KYL" secondAttribute="centerY" constant="-16" id="FQd-ml-eYh"/>
                             <constraint firstItem="K7G-Qj-KYL" firstAttribute="centerX" secondItem="Ika-8x-Ykw" secondAttribute="centerX" id="OSY-ie-Xl0"/>
+                            <constraint firstItem="dT1-IA-7Ce" firstAttribute="centerX" secondItem="K7G-Qj-KYL" secondAttribute="centerX" constant="20" id="U1s-uv-2qx"/>
                             <constraint firstItem="K7G-Qj-KYL" firstAttribute="top" secondItem="Ika-8x-Ykw" secondAttribute="bottom" constant="4" id="VXA-OJ-69i"/>
                             <constraint firstAttribute="bottom" secondItem="1kY-wZ-2DY" secondAttribute="bottom" constant="16" id="XOg-bo-poW"/>
                             <constraint firstAttribute="width" secondItem="E92-Tj-9xx" secondAttribute="height" multiplier="102:143" id="XfZ-ST-DB2"/>
@@ -86,15 +91,18 @@
                 <constraint firstAttribute="trailing" secondItem="E92-Tj-9xx" secondAttribute="trailing" id="gqr-XW-Y4w"/>
             </constraints>
             <connections>
+                <outlet property="alertImage" destination="dT1-IA-7Ce" id="hiD-eU-PWp"/>
                 <outlet property="workerImage" destination="K7G-Qj-KYL" id="yAJ-Ie-6eV"/>
                 <outlet property="workerNameLabel" destination="1kY-wZ-2DY" id="b1u-XC-9an"/>
                 <outlet property="workerPositionLabel" destination="xSa-Ac-3Ws" id="q5O-UF-aZ6"/>
+                <outlet property="workerRankLabel" destination="Ika-8x-Ykw" id="qZR-8C-HMb"/>
                 <outlet property="workerView" destination="E92-Tj-9xx" id="JR5-xW-qQ3"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="107.47767857142857"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="imgProfile48Px1" width="48" height="48"/>
+        <image name="imgProfile84Px1" width="84" height="84"/>
+        <image name="newBadge8Px" width="12" height="12"/>
     </resources>
 </document>

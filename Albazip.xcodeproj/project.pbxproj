@@ -212,6 +212,8 @@
 		C3CC57CB2736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CC57C92736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.xib */; };
 		C3CDB53A2738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CDB5382738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift */; };
 		C3CDB53B2738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CDB5392738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib */; };
+		C3CFC2EE273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2ED273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift */; };
+		C3CFC2F0273E27C1001B2EB6 /* MyPageManagerContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2EF273E27C1001B2EB6 /* MyPageManagerContentResponse.swift */; };
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
 		C3D69454273ACC8500BF540C /* SettingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */; };
 		C3D69457273ACDC500BF540C /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D69456273ACDC500BF540C /* SettingVC.swift */; };
@@ -439,6 +441,8 @@
 		C3CC57C92736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerNoHeightTableViewCell.xib; sourceTree = "<group>"; };
 		C3CDB5382738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerNoWriteTableViewCell.swift; sourceTree = "<group>"; };
 		C3CDB5392738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerNoWriteTableViewCell.xib; sourceTree = "<group>"; };
+		C3CFC2ED273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerContentDatamanager.swift; sourceTree = "<group>"; };
+		C3CFC2EF273E27C1001B2EB6 /* MyPageManagerContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerContentResponse.swift; sourceTree = "<group>"; };
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69456273ACDC500BF540C /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -1137,6 +1141,7 @@
 			children = (
 				C3CB0165273D49F6000EA353 /* MyPageManagerProfileDatamanager.swift */,
 				C3CB016F273D78D4000EA353 /* MyPageManagerWriteDatamanager.swift */,
+				C3CFC2ED273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift */,
 			);
 			path = Datamanager;
 			sourceTree = "<group>";
@@ -1146,6 +1151,7 @@
 			children = (
 				C3CB0163273CC9AF000EA353 /* MyPageManagerProfileResponse.swift */,
 				C3CB0171273D78EE000EA353 /* MyPageManagerWriteResponse.swift */,
+				C3CFC2EF273E27C1001B2EB6 /* MyPageManagerContentResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1607,6 +1613,7 @@
 				C3AD3B2B2739786D0030905C /* MyPageManagerWorkerPositionDeleteTableViewCell.swift in Sources */,
 				C30EC2DD272A4F7D00EEF218 /* RegisterNumberExistDataManager.swift in Sources */,
 				C3B93386273BFA6F0056E381 /* SettingLogoutVC.swift in Sources */,
+				C3CFC2F0273E27C1001B2EB6 /* MyPageManagerContentResponse.swift in Sources */,
 				C3B933AE273C43AA0056E381 /* MyPageDetailStopWorkVC.swift in Sources */,
 				C33E00082731D80500D88267 /* MyPageWorkerWriteVC.swift in Sources */,
 				C34BCB3E2732CCB80085ADB3 /* MyPageDetailPublicWorkVC.swift in Sources */,
@@ -1619,6 +1626,7 @@
 				C3E1FEA9272D8C5B00CE44C6 /* MyPageManagerContentVC.swift in Sources */,
 				C30EC2E3272A4FEF00EEF218 /* RegisterNumberExistResponse.swift in Sources */,
 				C384425C27147E3F00B84E8A /* UIViewController.swift in Sources */,
+				C3CFC2EE273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift in Sources */,
 				C384425027147E2900B84E8A /* Device.swift in Sources */,
 				C30EC2EB272B121900EEF218 /* RegisterManagerInfo.swift in Sources */,
 				C3CC57C52736442C00657EE9 /* MyPageManagerSelectProfileImageVC.swift in Sources */,

@@ -119,6 +119,11 @@ class MyPageManagerVC : BaseViewController{
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
+    @IBAction func btnAddWorker(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "MyPageManagerStoryboard", bundle: Bundle.main)
+        guard let nextVC = storyboard.instantiateViewController(identifier: "MyPageManagerAddWorkerVC") as? MyPageManagerAddWorkerVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
     @IBAction func btnProfileImage(_ sender: Any) {
         //presentBottomAlert(message: "블라블라")
         // showMessage(message: "블라블라", controller: self)
