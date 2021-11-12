@@ -9,6 +9,13 @@ import UIKit
 
 class MyPageWorkerPositionTableViewCell: UITableViewCell {
 
+    @IBOutlet var workTimeLabel: UILabel!
+    @IBOutlet var breakTimeLabel: UILabel!
+    @IBOutlet var salaryLabel: UILabel!
+    @IBOutlet var workDayLabel: UILabel!
+    @IBOutlet var positionLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

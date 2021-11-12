@@ -112,4 +112,28 @@ extension String {
         let date2 = date.replace(target: "-", with: ". ")
         return date2
     }
+    var insertTime: String{
+        let time = self.substring(from: 0, to: 2)
+        let time2 = self.substring(from: 2, to: 4)
+        return time + ":" + time2
+    }
+    
+    var insertWorkTime: String{
+        var time = self.substring(from: 0, to: 2)
+        if time.substring(from: 0, to: 1) == "0"{
+            time = time.substring(from: 1, to: 2)
+        }
+        var time2 = self.substring(from: 0, to: 2)
+        if time2.substring(from: 0, to: 1) == "0"{
+            time2 = time2.substring(from: 1, to: 2)
+        }
+        
+        if time2 == "0"{
+            return "(총 \(time)시간)"
+        }else{
+            return "(총 \(time)시간 \(time2)분)"
+        }
+        
+    }
+    
 }

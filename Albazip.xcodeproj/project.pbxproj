@@ -219,6 +219,7 @@
 		C3CFC2F8273E916F001B2EB6 /* MyPageWorkerMyInfoDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2F7273E916F001B2EB6 /* MyPageWorkerMyInfoDatamanager.swift */; };
 		C3CFC2FA273E9180001B2EB6 /* MyPageWorkerMyInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2F9273E9180001B2EB6 /* MyPageWorkerMyInfoResponse.swift */; };
 		C3CFC2FC273E94DE001B2EB6 /* MyPageWorkerPositionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2FB273E94DE001B2EB6 /* MyPageWorkerPositionResponse.swift */; };
+		C3CFC2FE273EA513001B2EB6 /* MyPageWorkerPositionDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2FD273EA513001B2EB6 /* MyPageWorkerPositionDatamanager.swift */; };
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
 		C3D69454273ACC8500BF540C /* SettingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */; };
 		C3D69457273ACDC500BF540C /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D69456273ACDC500BF540C /* SettingVC.swift */; };
@@ -453,6 +454,7 @@
 		C3CFC2F7273E916F001B2EB6 /* MyPageWorkerMyInfoDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerMyInfoDatamanager.swift; sourceTree = "<group>"; };
 		C3CFC2F9273E9180001B2EB6 /* MyPageWorkerMyInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerMyInfoResponse.swift; sourceTree = "<group>"; };
 		C3CFC2FB273E94DE001B2EB6 /* MyPageWorkerPositionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerPositionResponse.swift; sourceTree = "<group>"; };
+		C3CFC2FD273EA513001B2EB6 /* MyPageWorkerPositionDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerPositionDatamanager.swift; sourceTree = "<group>"; };
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69456273ACDC500BF540C /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -1196,6 +1198,7 @@
 				C3CB0168273D5980000EA353 /* MyPageWorkerProfileDatamanager.swift */,
 				C3CB016A273D5F4F000EA353 /* MyPageWorkerWriteDatamanager.swift */,
 				C3CFC2F7273E916F001B2EB6 /* MyPageWorkerMyInfoDatamanager.swift */,
+				C3CFC2FD273EA513001B2EB6 /* MyPageWorkerPositionDatamanager.swift */,
 			);
 			path = Datamanager;
 			sourceTree = "<group>";
@@ -1639,6 +1642,7 @@
 				C38CA0BD272F9CC200EA7BB3 /* RegisterPhoneNumberDuplicateResponse.swift in Sources */,
 				C3E1FEB9272DB1EA00CE44C6 /* MyPageManagerWriteVC.swift in Sources */,
 				C3B9339F273C37100056E381 /* MyPageDetailNoClearWorkTableViewCell.swift in Sources */,
+				C3CFC2FE273EA513001B2EB6 /* MyPageWorkerPositionDatamanager.swift in Sources */,
 				C3E1FEA3272D8A3300CE44C6 /* MyPageManagerVC.swift in Sources */,
 				C3B022E92726D91400013988 /* RegisterStoreInfoVC.swift in Sources */,
 				C34BCB402732CCD90085ADB3 /* MyPageDetailClearWorkVC.swift in Sources */,

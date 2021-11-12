@@ -190,6 +190,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="breakTimeLabel" destination="6Ui-wn-OQP" id="2Xb-Or-sId"/>
+                <outlet property="positionLabel" destination="4yW-v9-dpH" id="ekd-uC-cXU"/>
+                <outlet property="salaryLabel" destination="Lky-uv-Y16" id="YJM-Fy-m23"/>
+                <outlet property="workDayLabel" destination="QEo-ws-hjp" id="4Yv-mZ-R3S"/>
+                <outlet property="workTimeLabel" destination="5cP-eW-sSR" id="cYT-FY-r8r"/>
+            </connections>
             <point key="canvasLocation" x="64" y="119"/>
         </tableViewCell>
     </objects>

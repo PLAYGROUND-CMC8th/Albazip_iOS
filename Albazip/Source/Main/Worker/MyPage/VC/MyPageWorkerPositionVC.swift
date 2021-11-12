@@ -29,7 +29,8 @@ class MyPageWorkerPositionVC: UIViewController {
     private var oldContentOffset = CGPoint.zero
     
     //MARK:- Data Source
-    
+    var positionInfo: MyPageWorkerPositionData?
+    lazy var dataManager: MyPageWorkerPositionDatamanager = MyPageWorkerPositionDatamanager()
     //var numberOfCells: Int = 5
     
     //MARK:- View Life Cycle
@@ -38,6 +39,8 @@ class MyPageWorkerPositionVC: UIViewController {
         super.viewDidLoad()
 
         setupTableView()
+        showIndicator()
+        dataManager.getMyPageWorkerPosition(vc: self)
     }
 
     //MARK:- View Setup
@@ -67,8 +70,21 @@ extension MyPageWorkerPositionVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerPositionTableViewCell") as? MyPageWorkerPositionTableViewCell {
+            if let data = positionInfo{
+                cell.breakTimeLabel.text = "휴게시간 " + data.breakTime!
+                if data.salaryType == 0{
+                    cell.salaryLabel.text = "시급 " + data.salary!.insertComma +  "원"
+                }else if data.salaryType == 1{
+                    cell.salaryLabel.text = "주급" + data.salary!.insertComma +  "원"
+                }else{
+                    cell.salaryLabel.text = "월급 " + data.salary!.insertComma +  "원"
+                }
+                cell.workDayLabel.text = data.workDay!
+                let workTime = data.workTime!.insertWorkTime
+                cell.workTimeLabel.text = "\(data.startTime!.insertTime) ~ \(data.endTime!.insertTime) \(workTime)"
+            }
             
-            //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+            
             print(indexPath.row)
             return cell
         }
@@ -138,3 +154,21 @@ extension MyPageWorkerPositionVC: UITableViewDelegate {
         }
     }
 }
+extension MyPageWorkerPositionVC {
+    func didSuccessMyPageWorkerPosition(result: MyPageWorkerPositionResponse) {
+        
+        positionInfo = result.data
+        print(result.message!)
+        
+        tableView.reloadData()
+        dismissIndicator()
+        
+    }
+    
+    func failedToRequestMyPageWorkerPosition(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+        
+    }
+}
+
