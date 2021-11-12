@@ -52,6 +52,7 @@ class MyPageManagerContentVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         print("viewWillAppear")
+        showIndicator()
         dataManager.getMyPageManagerContent(vc: self)
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -105,7 +106,8 @@ extension MyPageManagerContentVC: MyPageManagerWorkerCollectionViewCellDelegate{
         let storyboard = UIStoryboard(name: "MyPageManagerStoryboard", bundle: nil)
         
         guard let vc = storyboard.instantiateViewController(withIdentifier: "MyPageManagerWorkerDetailVC") as? MyPageManagerWorkerDetailVC else { return }
-        //vc.index = index
+        vc.positionId = contentData![index].positionId!
+        vc.status = contentData![index].status!
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

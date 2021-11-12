@@ -48,13 +48,14 @@ class MyPageManagerWriteVC: UIViewController, MyPageManagerWriteTabDelegate  {
         super.viewDidLoad()
 
         setupTableView()
-        showIndicator()
-        dataManager.getMyPageManagerWrite(vc: self)
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         print("viewWillAppear2")
+        showIndicator()
+        dataManager.getMyPageManagerWrite(vc: self)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)

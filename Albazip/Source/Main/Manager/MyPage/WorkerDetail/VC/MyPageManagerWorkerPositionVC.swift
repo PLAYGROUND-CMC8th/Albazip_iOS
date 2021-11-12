@@ -42,7 +42,7 @@ class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositi
     //MARK:- Data Source
     var transparentView = UIView()
     //var numberOfCells: Int = 5
-    
+    var positionId = 0
     //MARK:- View Life Cycle
     
     

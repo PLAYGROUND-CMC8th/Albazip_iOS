@@ -31,7 +31,7 @@ class MyPageManagerWorkerInfoVC: UIViewController {
     //MARK:- Data Source
     
     var numberOfCells: Int = 1
-    
+    var positionId = 0
     //MARK:- View Life Cycle
     
     override func viewDidLoad() {

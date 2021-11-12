@@ -9,6 +9,7 @@ var detailTopViewInitialHeight : CGFloat = 186
 
 import Foundation
 import UIKit
+import Kingfisher
 class MyPageManagerWorkerDetailVC: BaseViewController{
     //MARK:- Change this value for number of tabs.
     
@@ -23,6 +24,8 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
     
     //알바생 상단 정보
     @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var workerPositionLabel: UILabel!
+    @IBOutlet var workerRankLabel: UILabel!
     @IBOutlet var workerNameLabel: UILabel!
     
     @IBOutlet var modalBgView: UIView!
@@ -34,6 +37,13 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
     //선택된 탭 인덱스
     var selectedTabIndex = 0
     
+    // 이전 뷰에서 받아올 정보
+    var positionId = 0
+    var status = 0
+    // Datamanager
+    lazy var dataManager: MyPageManagerWorkerDetailProfileDataManger = MyPageManagerWorkerDetailProfileDataManger()
+    //투데이 데이터
+    var profileData: MyPageManagerWorkerDetailProfileData?
     //MARK:- View Model
     
     var pageCollection = PageCollection()
@@ -46,11 +56,17 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
         populateBottomView()
         addPanGestureToTopViewAndCollectionView()
         setUI()
+        showIndicator()
+        dataManager.getMyPageManagerWorkerDetailProfile(vc: self, index: positionId)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         print("MainviewWillAppear")
+        //퇴사 알림창 띄워주기!
+        if status == 2{
+            
+        }
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -128,21 +144,21 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
             if(subTabCount==0){
                 let tabContentVC = MyPageManagerWorkerInfoVC()
                 tabContentVC.myPageManagerWorkerInfoTableViewScrollDelegate = self
-                //tabContentVC.numberOfCells = 30
+                tabContentVC.positionId = self.positionId
                 let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
                 let page = Page(with: displayName, _vc: tabContentVC)
                 pageCollection.pages.append(page)
             }else if(subTabCount==1){
                 let tabContentVC = MyPageManagerWorkerPositionVC()
                 tabContentVC.myPageManagerWorkerPositionTableViewScrollDelegate = self
-                //tabContentVC.numberOfCells = 30
+                tabContentVC.positionId = self.positionId
                 let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
                 let page = Page(with: displayName, _vc: tabContentVC)
                 pageCollection.pages.append(page)
             }else if(subTabCount==2){
                 let tabContentVC = MyPageManagerWorkerWriteVC()
                 tabContentVC.myPageManagerWorkerWriteTableViewScrollDelegate = self
-                //tabContentVC.numberOfCells = 30
+                tabContentVC.positionId = self.positionId
                 let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
                 let page = Page(with: displayName, _vc: tabContentVC)
                 pageCollection.pages.append(page)
@@ -502,4 +518,33 @@ extension MyPageManagerWorkerDetailVC : MyPageManagerWorkerPositionAlertDelegate
     }
     
     
+}
+extension MyPageManagerWorkerDetailVC {
+    func didSuccessMyPageManagerWorkerDetailProfile(result: MyPageManagerWorkerDetailProfileResponse) {
+        profileData = result.data
+        
+        print(result.message!)
+        //profileImage.image = .none
+        if let img = profileData?.imagePath{
+            let url = URL(string: img)
+            profileImage.kf.setImage(with: url)
+        }else{ // 이미지 널이면 디폴트 이미지 넣자
+            if status == 0{
+                profileImage.image =  #imageLiteral(resourceName: "imgProfileNone84Px")
+            }else{
+                profileImage.image = #imageLiteral(resourceName: "imgProfileW128Px2")
+            }
+        }
+        
+        
+        workerRankLabel.text = profileData?.rank!
+        workerNameLabel.text = profileData?.firstName!
+        workerPositionLabel.text  = profileData?.title!
+        dismissIndicator()
+    }
+    
+    func failedToRequestMyPageManagerWorkerDetailProfile(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
 }

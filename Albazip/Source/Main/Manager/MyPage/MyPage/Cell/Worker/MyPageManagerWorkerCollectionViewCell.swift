@@ -40,9 +40,9 @@ class MyPageManagerWorkerCollectionViewCell: UICollectionViewCell {
             }else{
                     workerImage.image = #imageLiteral(resourceName: "imgProfile84Px1")
             }
-            if let name = data.firstName{
-                workerNameLabel.text = name
-            }
+            
+            workerNameLabel.text = data.first_name!
+            
             
             //status 1 일때! (등록 상태)
             if data.status == 1{

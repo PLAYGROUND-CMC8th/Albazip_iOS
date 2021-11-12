@@ -32,7 +32,7 @@ class MyPageManagerWorkerWriteVC: UIViewController {
     //MARK:- Data Source
     
     var numberOfCells: Int = 5
-    
+    var positionId = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
