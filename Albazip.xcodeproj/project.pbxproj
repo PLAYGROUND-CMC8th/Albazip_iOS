@@ -220,6 +220,8 @@
 		C3CFC2FA273E9180001B2EB6 /* MyPageWorkerMyInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2F9273E9180001B2EB6 /* MyPageWorkerMyInfoResponse.swift */; };
 		C3CFC2FC273E94DE001B2EB6 /* MyPageWorkerPositionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2FB273E94DE001B2EB6 /* MyPageWorkerPositionResponse.swift */; };
 		C3CFC2FE273EA513001B2EB6 /* MyPageWorkerPositionDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2FD273EA513001B2EB6 /* MyPageWorkerPositionDatamanager.swift */; };
+		C3CFC300273EBA7F001B2EB6 /* MyPageManagerWorkerPositionDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2FF273EBA7F001B2EB6 /* MyPageManagerWorkerPositionDatamanager.swift */; };
+		C3CFC302273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC301273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift */; };
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
 		C3D69454273ACC8500BF540C /* SettingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */; };
 		C3D69457273ACDC500BF540C /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D69456273ACDC500BF540C /* SettingVC.swift */; };
@@ -455,6 +457,8 @@
 		C3CFC2F9273E9180001B2EB6 /* MyPageWorkerMyInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerMyInfoResponse.swift; sourceTree = "<group>"; };
 		C3CFC2FB273E94DE001B2EB6 /* MyPageWorkerPositionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerPositionResponse.swift; sourceTree = "<group>"; };
 		C3CFC2FD273EA513001B2EB6 /* MyPageWorkerPositionDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerPositionDatamanager.swift; sourceTree = "<group>"; };
+		C3CFC2FF273EBA7F001B2EB6 /* MyPageManagerWorkerPositionDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerPositionDatamanager.swift; sourceTree = "<group>"; };
+		C3CFC301273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerPositionResponse.swift; sourceTree = "<group>"; };
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69456273ACDC500BF540C /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -1217,6 +1221,7 @@
 			isa = PBXGroup;
 			children = (
 				C3CFC2F5273E5263001B2EB6 /* MyPageManagerWorkerDetailProfileDatamanger.swift */,
+				C3CFC2FF273EBA7F001B2EB6 /* MyPageManagerWorkerPositionDatamanager.swift */,
 			);
 			path = Datamanager;
 			sourceTree = "<group>";
@@ -1225,6 +1230,7 @@
 			isa = PBXGroup;
 			children = (
 				C3CFC2F3273E5241001B2EB6 /* MyPageManagerWorkerDetailProfileResponse.swift */,
+				C3CFC301273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1738,11 +1744,13 @@
 				C3CB016B273D5F4F000EA353 /* MyPageWorkerWriteDatamanager.swift in Sources */,
 				C35982C42737A0F300546F2C /* MyPageManagerAddWorkerInfo.swift in Sources */,
 				C30AFE6F2733BF0A0075CDE2 /* MyPageManagerNoWorkerTableViewCell.swift in Sources */,
+				C3CFC302273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift in Sources */,
 				C3CFC2FA273E9180001B2EB6 /* MyPageWorkerMyInfoResponse.swift in Sources */,
 				C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */,
 				C37B0B57272972720017D179 /* RegisterResponse.swift in Sources */,
 				C3AD3B332739874D0030905C /* MyPageManagerWorkerPositionTableViewCell.swift in Sources */,
 				C384425B27147E3F00B84E8A /* UIButton.swift in Sources */,
+				C3CFC300273EBA7F001B2EB6 /* MyPageManagerWorkerPositionDatamanager.swift in Sources */,
 				C37B0B6127299EC50017D179 /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

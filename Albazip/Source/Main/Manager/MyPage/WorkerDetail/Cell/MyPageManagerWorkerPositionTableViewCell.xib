@@ -182,6 +182,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="breakTimeLabel" destination="QK3-Xx-S6o" id="5vU-fb-XD5"/>
+                <outlet property="salaryLabel" destination="X10-pH-m8R" id="dqL-Rf-yOL"/>
+                <outlet property="workDayLabel" destination="W1i-9K-f40" id="FDq-Y0-hRb"/>
+                <outlet property="workTimeLabel" destination="bIV-ye-nnR" id="omd-O5-c8Q"/>
+            </connections>
             <point key="canvasLocation" x="476.08695652173918" y="213.95089285714286"/>
         </tableViewCell>
     </objects>

@@ -41,7 +41,8 @@ class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositi
     
     //MARK:- Data Source
     var transparentView = UIView()
-    //var numberOfCells: Int = 5
+    var positionInfo: MyPageManagerWorkerPositionData?
+    lazy var dataManager: MyPageManagerWorkerPositionDatamanager = MyPageManagerWorkerPositionDatamanager()
     var positionId = 0
     //MARK:- View Life Cycle
     
@@ -50,6 +51,8 @@ class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositi
         super.viewDidLoad()
 
         setupTableView()
+        showIndicator()
+        dataManager.MyPageManagerWorkerPosition(vc: self, index: positionId)
     }
     //MARK:- View Setup
     
@@ -94,7 +97,19 @@ extension MyPageManagerWorkerPositionVC: UITableViewDataSource {
         if indexPath.row == 0{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerPositionTableViewCell") as? MyPageManagerWorkerPositionTableViewCell {
                 
-                //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                if let data = positionInfo{
+                    cell.breakTimeLabel.text = "휴게시간 " + data.breakTime!
+                    if data.salaryType == 0{
+                        cell.salaryLabel.text = "시급 " + data.salary!.insertComma +  "원"
+                    }else if data.salaryType == 1{
+                        cell.salaryLabel.text = "주급" + data.salary!.insertComma +  "원"
+                    }else{
+                        cell.salaryLabel.text = "월급 " + data.salary!.insertComma +  "원"
+                    }
+                    cell.workDayLabel.text = data.workDay!
+                    let workTime = data.workTime!.insertWorkTime
+                    cell.workTimeLabel.text = "\(data.startTime!.insertTime) ~ \(data.endTime!.insertTime) \(workTime)"
+                }
                 print(indexPath.row)
                 return cell
             }
@@ -179,3 +194,21 @@ extension MyPageManagerWorkerPositionVC: UITableViewDelegate {
         }
     }
 }
+extension MyPageManagerWorkerPositionVC {
+    func didSuccessMyPageManagerWorkerPosition(result: MyPageManagerWorkerPositionResponse) {
+        
+        positionInfo = result.data
+        print(result.message!)
+        
+        tableView.reloadData()
+        dismissIndicator()
+        
+    }
+    
+    func failedToRequestMyPageManagerWorkerPosition(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+        
+    }
+}
+
