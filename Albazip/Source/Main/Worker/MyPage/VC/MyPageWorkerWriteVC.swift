@@ -42,10 +42,12 @@ class MyPageWorkerWriteVC: UIViewController {
         super.viewDidLoad()
 
         setupTableView()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
         showIndicator()
         dataManager.getMyPageWorkerWrite(vc: self)
     }
-
 
     //MARK:- View Setup
     

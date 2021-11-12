@@ -42,10 +42,13 @@ class MyPageWorkerInfoVC: UIViewController {
         super.viewDidLoad()
 
         setupTableView()
+      
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
         showIndicator()
         dataManager.getMyPageWorkerMyInfo(vc: self)
     }
-
     //MARK:- View Setup
     
     func setupTableView() {

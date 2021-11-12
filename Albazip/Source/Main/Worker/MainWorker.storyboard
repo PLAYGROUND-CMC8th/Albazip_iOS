@@ -61,7 +61,6 @@
                     <connections>
                         <segue destination="NkZ-E4-d5H" kind="relationship" relationship="viewControllers" id="x1G-Gc-j7s"/>
                         <segue destination="tT3-aI-F9B" kind="relationship" relationship="viewControllers" id="62i-u4-5Pe"/>
-                        <segue destination="Lte-gI-YwX" kind="relationship" relationship="viewControllers" id="nd6-Qi-B6w"/>
                         <segue destination="qPR-W3-m5T" kind="relationship" relationship="viewControllers" id="BlM-0s-Fd5"/>
                     </connections>
                 </tabBarController>
