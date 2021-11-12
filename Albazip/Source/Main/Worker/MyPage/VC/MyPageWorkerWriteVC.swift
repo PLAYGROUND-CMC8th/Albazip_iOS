@@ -84,7 +84,7 @@ extension MyPageWorkerWriteVC: UITableViewDataSource {
         if isNoData{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWriteTableViewCell") as? MyPageManagerNoWriteTableViewCell {
                    
-                cell.titleLabel.text = "작성한 글이 없습니다."
+                cell.titleLabel.text = "작성한 글이 없어요."
                    print(indexPath.row)
                return cell
                

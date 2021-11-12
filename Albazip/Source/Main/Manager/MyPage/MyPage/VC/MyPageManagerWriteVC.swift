@@ -132,7 +132,7 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
                 if isNoNoticeData{
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWriteTableViewCell") as? MyPageManagerNoWriteTableViewCell {
                         cell.selectionStyle = .none
-                        cell.titleLabel.text = "작성한 글이 없습니다."
+                        cell.titleLabel.text = "작성한 글이 없어요."
                         print(indexPath.row)
                         return cell
                     }
@@ -160,7 +160,7 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
                 if isNoNoticeData{
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWriteTableViewCell") as? MyPageManagerNoWriteTableViewCell {
                         cell.selectionStyle = .none
-                        cell.titleLabel.text = "작성한 글이 없습니다."
+                        cell.titleLabel.text = "작성한 글이 없어요."
                         print(indexPath.row)
                         return cell
                     }

@@ -30,14 +30,17 @@ class MyPageManagerWorkerWriteVC: UIViewController {
     private var oldContentOffset = CGPoint.zero
     
     //MARK:- Data Source
-    
+    var workListData: [MyPageManagerWorkerWriteData]?
+    lazy var dataManager: MyPageManagerWorkerWriteDatamanager = MyPageManagerWorkerWriteDatamanager()
     var numberOfCells: Int = 5
     var positionId = 0
-    
+    var isNoWorkList = true
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
+        showIndicator()
+        dataManager.getMyPageManagerWorkerWrite(vc: self, index: positionId)
     }
     //MARK:- View Setup
     
@@ -47,6 +50,9 @@ class MyPageManagerWorkerWriteVC: UIViewController {
         tableView.tableHeaderView = header
         tableView.register(UINib(nibName: "MyPageManagerWorklistTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageManagerWorklistTableViewCell")
+        tableView.register(UINib(nibName: "MyPageManagerNoWriteTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageManagerNoWriteTableViewCell")
+        //MyPageManagerNoWriteTableViewCell
         tableView.dataSource = self
         tableView.delegate = self
         //tableView.estimatedRowHeight = 204
@@ -57,25 +63,51 @@ class MyPageManagerWorkerWriteVC: UIViewController {
 extension MyPageManagerWorkerWriteVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 5
+        if isNoWorkList{
+            return 1
+        }else{
+            if let data = workListData{
+                return data.count
+            }
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-         if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorklistTableViewCell") as? MyPageManagerWorklistTableViewCell {
-                
-            cell.selectionStyle = .none //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
-                print(indexPath.row)
-            return cell
-            
+        if isNoWorkList{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWriteTableViewCell") as? MyPageManagerNoWriteTableViewCell {
+                   
+               cell.selectionStyle = .none //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                cell.titleLabel.text = "작성한 업무리스트가 없어요."
+                   print(indexPath.row)
+               return cell
+               
+           }
+        }else{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorklistTableViewCell") as? MyPageManagerWorklistTableViewCell {
+                   
+               cell.selectionStyle = .none //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+               if let data = workListData{
+                   cell.subLabel.text = data[indexPath.row].content!
+                   cell.titleLabel.text = data[indexPath.row].title!
+               }
+                   print(indexPath.row)
+               return cell
+               
+           }
         }
+         
         
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
-        
-        return 82
+        if isNoWorkList{
+            return 375
+        }else{
+            return 82
+        }
+
         
     }
     
@@ -138,3 +170,25 @@ extension MyPageManagerWorkerWriteVC: UITableViewDelegate {
         }
     }
 }
+extension MyPageManagerWorkerWriteVC {
+    func didSuccessMyPageManagerWorkerWrite(result: MyPageManagerWorkerWriteResponse) {
+        
+        workListData = result.data
+        print(result.message!)
+        if workListData!.count != 0{
+            isNoWorkList = false
+        } else{
+            isNoWorkList = true
+        }
+        tableView.reloadData()
+        dismissIndicator()
+        
+    }
+    
+    func failedToRequestMyPageManagerWorkerWrite(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+        
+    }
+}
+
