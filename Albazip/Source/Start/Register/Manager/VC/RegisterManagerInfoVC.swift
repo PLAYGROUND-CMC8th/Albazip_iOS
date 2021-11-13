@@ -35,6 +35,8 @@ class RegisterManagerInfoVC: UIViewController{
         errorLabel2.isHidden = true
         checkImage2.isHidden = true
         personNameTextField.isHidden = true
+        registerNumberTextField.attributedPlaceholder = NSAttributedString(string: "사업자 등록번호 10자리 입력", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
+        personNameTextField.attributedPlaceholder = NSAttributedString(string: "대표자명 입력", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
         self.dismissKeyboardWhenTappedAround()
     }
     

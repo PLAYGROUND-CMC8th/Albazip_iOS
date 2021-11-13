@@ -44,6 +44,10 @@ class RegisterStoreInfoVC: UIViewController{
         storeLocationDetailTextField.delegate = self
         storeTypeTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .touchDown)
         modalBgView.alpha = 0.0
+        storeNameTextField.attributedPlaceholder = NSAttributedString(string: "매장명과 지점 입력", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
+        storeTypeTextField.attributedPlaceholder = NSAttributedString(string: "업종 선택", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
+        storeLocationTextField.attributedPlaceholder = NSAttributedString(string: "도로명이나 지번주소 입력", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
+        storeLocationDetailTextField.attributedPlaceholder = NSAttributedString(string: "상세주소 입력", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
     }
     
     @objc func textFieldDidChange(_ textField:UITextField) {

@@ -51,6 +51,9 @@ class RegisterMoreInfoVC: UIViewController {
         endTextField.addLeftPadding()
         startTextField.addTarget(self, action: #selector(startTimeTextFieldDidChange(_:)), for: .touchDown)
         endTextField.addTarget(self, action: #selector(endTimeTextFieldDidChange(_:)), for: .touchDown)
+        salaryTextField.attributedPlaceholder = NSAttributedString(string: "1 - 31    ", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
+        startTextField.attributedPlaceholder = NSAttributedString(string: "00:00", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 30)!])
+        endTextField.attributedPlaceholder = NSAttributedString(string: "00:00", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 30)!])
     }
     
     @objc func textFieldDidChange(_ textField:UITextField) {

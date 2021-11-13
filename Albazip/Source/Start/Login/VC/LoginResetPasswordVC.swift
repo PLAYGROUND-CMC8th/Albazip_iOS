@@ -28,7 +28,8 @@ class LoginResetPasswordVC: UIViewController{
         passwordTextField.delegate = self
         passwordCkTextField.delegate = self
         btnNext.isEnabled = false
-        
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "6자리 이상 입력", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
+        passwordCkTextField.attributedPlaceholder = NSAttributedString(string: "비밀번호 재입력", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
         self.dismissKeyboardWhenTappedAround()
     }
     // 패스워드 유효성 검사

@@ -54,6 +54,7 @@ class RegisterPhoneNumberVC: UIViewController, UITextFieldDelegate{
         btnReAuth.isHidden = true
         timerLabel.isHidden = true
         errorLabel.isHidden = true
+        phoneNumberTextField.attributedPlaceholder = NSAttributedString(string: "-없이 번호 입력", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
     }
     
     @objc func getSetTime(){

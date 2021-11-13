@@ -30,6 +30,11 @@ class RegisterBasicInfoVC: UIViewController{
         //self.modalView.delegate = self
         modalBgView.alpha = 0.0
         ageTextfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .touchDown)
+        
+        firstNameTextfield.attributedPlaceholder = NSAttributedString(string: "성", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
+        nameTextfield.attributedPlaceholder = NSAttributedString(string: "이름", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
+        
+        ageTextfield.attributedPlaceholder = NSAttributedString(string: "출생년도 (YYYY)", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
     }
     
     @objc func textFieldDidChange(_ textField:UITextField) {

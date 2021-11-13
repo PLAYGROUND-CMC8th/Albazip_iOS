@@ -28,6 +28,7 @@ class RegisterWorkerCodeVC : UIViewController{
         codeTextField.addLeftPadding()
         codeTextField.delegate = self
         errorLabel.isHidden = true
+        codeTextField.attributedPlaceholder = NSAttributedString(string: "코드 입력", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
         self.dismissKeyboardWhenTappedAround()
     }
     func checkCode(){

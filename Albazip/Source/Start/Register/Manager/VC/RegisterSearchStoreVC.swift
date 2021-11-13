@@ -62,7 +62,7 @@ class RegisterSearchStoreVC: UIViewController{
         //cornerView.isHidden = true
         //baseView.isHidden = true
         
-    
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "매장명+지점 검색", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
         
     }
     

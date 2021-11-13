@@ -29,6 +29,7 @@ class LoginViewController: UIViewController{
         passwordTextfield.delegate = self
         self.dismissKeyboardWhenTappedAround()
         phoneTextfield.attributedPlaceholder = NSAttributedString(string: "-없이 번호 입력", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
+        passwordTextfield.attributedPlaceholder = NSAttributedString(string: "비밀번호", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
     }
     func checkTextField(){
         if phoneTextfield.text!.count > 0 , passwordTextfield.text!.count > 0{
