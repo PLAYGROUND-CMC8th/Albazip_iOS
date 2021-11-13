@@ -2,16 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icAdd24Px.png",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "icQrCode.png"
     },
     {
-      "idiom" : "universal",
-      "filename" : "icAdd24Px@2x.png",
-      "scale" : "2x"
+      "filename" : "icQrCode@2x.png",
+      "scale" : "2x",
+      "idiom" : "universal"
     },
     {
-      "filename" : "icAdd24Px@3x.png",
+      "filename" : "icQrCode@3x.png",
       "scale" : "3x",
       "idiom" : "universal"
     }

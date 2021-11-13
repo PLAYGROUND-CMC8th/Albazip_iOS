@@ -12,11 +12,11 @@
         <!--홈-->
         <scene sceneID="vQd-IF-8U0">
             <objects>
-                <navigationController storyboardIdentifier="HomeWorkerNavigationController" id="143-ka-355" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeWorkerNavigationController" navigationBarHidden="YES" id="143-ka-355" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" image="icHomeInactive" selectedImage="icHomeActive" id="BcP-i4-vGM"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XNP-KQ-acq">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -34,14 +34,38 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFA-i4-UQo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서플라이 첨단점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJO-2U-gBm">
+                                        <rect key="frame" x="24" y="65" width="108" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98823523520000001" green="0.93725490570000003" blue="0.75686275960000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2OW-Xe-qfK"/>
+                                    <constraint firstItem="cJO-2U-gBm" firstAttribute="leading" secondItem="PFA-i4-UQo" secondAttribute="leading" constant="24" id="AWw-kc-iBA"/>
+                                    <constraint firstItem="cJO-2U-gBm" firstAttribute="top" secondItem="PFA-i4-UQo" secondAttribute="top" constant="65" id="dcN-kO-EaZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PFA-i4-UQo" secondAttribute="trailing" id="0jJ-jd-wTB"/>
+                            <constraint firstItem="PFA-i4-UQo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2NZ-0L-fys"/>
+                            <constraint firstItem="PFA-i4-UQo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="-44" id="59h-fL-7UH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lek-PD-ajk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="-158"/>
+            <point key="canvasLocation" x="263.768115942029" y="-158.03571428571428"/>
         </scene>
     </scenes>
     <resources>

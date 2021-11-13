@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeManagerCoummunityCollectionViewCell" customModule="Albazip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Phm-6k-S5q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미확인" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXA-oW-06B">
+                                <rect key="frame" x="16" y="16" width="35" height="17"/>
+                                <color key="backgroundColor" red="0.98039215800000001" green="0.90196073060000004" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="JuA-o2-7LR"/>
+                                    <constraint firstAttribute="width" constant="35" id="ylR-cv-JOp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                <color key="textColor" red="0.9098039269" green="0.29803922770000002" blue="0.14901961389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코로나 관련 매장 관리 공지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAh-wO-JCo">
+                                <rect key="frame" x="59.000000000000014" y="16" width="147.33333333333337" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="DXA-oW-06B" firstAttribute="top" secondItem="Phm-6k-S5q" secondAttribute="top" constant="16" id="6ru-A1-NoX"/>
+                            <constraint firstItem="CAh-wO-JCo" firstAttribute="centerY" secondItem="DXA-oW-06B" secondAttribute="centerY" id="BNF-ly-8oR"/>
+                            <constraint firstItem="CAh-wO-JCo" firstAttribute="leading" secondItem="DXA-oW-06B" secondAttribute="trailing" constant="8" id="Keq-4v-fZy"/>
+                            <constraint firstAttribute="bottom" secondItem="DXA-oW-06B" secondAttribute="bottom" constant="16" id="aEK-gA-FkO"/>
+                            <constraint firstItem="DXA-oW-06B" firstAttribute="leading" secondItem="Phm-6k-S5q" secondAttribute="leading" constant="16" id="eh4-Lx-umP"/>
+                            <constraint firstAttribute="height" constant="49" id="tBk-Kw-0Xm"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="19"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Phm-6k-S5q" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3ET-YJ-Aqn"/>
+                <constraint firstItem="Phm-6k-S5q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="a2l-Am-ms7"/>
+                <constraint firstAttribute="trailing" secondItem="Phm-6k-S5q" secondAttribute="trailing" id="aSC-Kk-dFt"/>
+                <constraint firstAttribute="bottom" secondItem="Phm-6k-S5q" secondAttribute="bottom" id="sOH-Za-x3Y"/>
+            </constraints>
+            <size key="customSize" width="291" height="70"/>
+            <point key="canvasLocation" x="190" y="140"/>
+        </collectionViewCell>
+    </objects>
+</document>
