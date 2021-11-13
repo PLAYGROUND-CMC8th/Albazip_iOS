@@ -105,13 +105,6 @@
                         <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icAdd24Px" translatesAutoresizingMaskIntoConstraints="NO" id="2zz-SN-4GF">
-                        <rect key="frame" x="319" y="173" width="24" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="9cs-Yc-dAs"/>
-                            <constraint firstAttribute="width" constant="24" id="BRz-a7-OW0"/>
-                        </constraints>
-                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDH-Hj-8qq">
                         <rect key="frame" x="24" y="206" width="327" height="117"/>
                         <subviews>
@@ -262,20 +255,31 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqO-bN-LgZ">
+                        <rect key="frame" x="319" y="173" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="Y3S-RH-bK8"/>
+                            <constraint firstAttribute="height" constant="24" id="hW5-PV-a7q"/>
+                        </constraints>
+                        <state key="normal" image="icAdd24Px"/>
+                        <connections>
+                            <action selector="btnAddWork:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fce-Ki-glt"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Zmw-ar-0SU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="0DR-Au-FsM"/>
                     <constraint firstItem="JCF-wr-s2g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="0QZ-5P-rv1"/>
                     <constraint firstItem="e1d-tt-OUd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="88D-8Q-jnY"/>
+                    <constraint firstAttribute="trailing" secondItem="uqO-bN-LgZ" secondAttribute="trailing" constant="32" id="Coe-l9-ENN"/>
                     <constraint firstAttribute="trailing" secondItem="Zmw-ar-0SU" secondAttribute="trailing" constant="24" id="GQ9-40-6y5"/>
                     <constraint firstItem="oDH-Hj-8qq" firstAttribute="leading" secondItem="Zmw-ar-0SU" secondAttribute="leading" id="JO8-aV-EkN"/>
                     <constraint firstAttribute="bottom" secondItem="kJF-29-Ek5" secondAttribute="bottom" constant="24" id="K4o-Ax-fdF"/>
                     <constraint firstAttribute="trailing" secondItem="vgq-dK-yXs" secondAttribute="trailing" constant="36" id="b6p-OG-fAf"/>
-                    <constraint firstItem="2zz-SN-4GF" firstAttribute="centerY" secondItem="JCF-wr-s2g" secondAttribute="centerY" id="brh-fc-eSP"/>
+                    <constraint firstItem="uqO-bN-LgZ" firstAttribute="centerY" secondItem="JCF-wr-s2g" secondAttribute="centerY" id="dTz-gK-Mwx"/>
                     <constraint firstItem="JCF-wr-s2g" firstAttribute="top" secondItem="Zmw-ar-0SU" secondAttribute="bottom" constant="48" id="eW8-qn-Jqx"/>
                     <constraint firstItem="oDH-Hj-8qq" firstAttribute="trailing" secondItem="Zmw-ar-0SU" secondAttribute="trailing" id="fv8-Tj-WiW"/>
                     <constraint firstItem="kJF-29-Ek5" firstAttribute="leading" secondItem="oDH-Hj-8qq" secondAttribute="leading" id="hxe-XU-faV"/>
-                    <constraint firstAttribute="trailing" secondItem="2zz-SN-4GF" secondAttribute="trailing" constant="32" id="iGS-tU-Oyu"/>
                     <constraint firstItem="oDH-Hj-8qq" firstAttribute="top" secondItem="Zmw-ar-0SU" secondAttribute="bottom" constant="80" id="o9B-P9-Xkz"/>
                     <constraint firstItem="e1d-tt-OUd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="qC7-1o-Jbc"/>
                     <constraint firstItem="vgq-dK-yXs" firstAttribute="centerY" secondItem="e1d-tt-OUd" secondAttribute="centerY" id="uXW-cM-b6e"/>
@@ -288,6 +292,7 @@
             <connections>
                 <outlet property="privateWorkView" destination="kJF-29-Ek5" id="RH6-3s-BRL"/>
                 <outlet property="publicWorkView" destination="oDH-Hj-8qq" id="Pb3-Re-7s2"/>
+                <outlet property="todayWorkerView" destination="Zmw-ar-0SU" id="3ef-gx-5sW"/>
             </connections>
             <point key="canvasLocation" x="85.599999999999994" y="91.625615763546804"/>
         </tableViewCell>

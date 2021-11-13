@@ -52,6 +52,9 @@
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnAddWork:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Yg0-Ke-C62"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -81,6 +84,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnAddWork" destination="A69-HW-XdH" id="FdU-Y3-OaJ"/>
+                <outlet property="dateLabel" destination="Fjl-7C-zZf" id="czd-bh-OP6"/>
+                <outlet property="honeyImage" destination="x6v-NG-UyV" id="81D-Wh-Li4"/>
+                <outlet property="titleLabel" destination="v8J-aa-Ajp" id="lcU-V0-FEN"/>
+            </connections>
             <point key="canvasLocation" x="85.599999999999994" y="91.625615763546804"/>
         </tableViewCell>
     </objects>

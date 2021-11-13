@@ -8,7 +8,7 @@
 import Foundation
 class HomeManagerVC: BaseViewController{
     
-    var isOpen = true
+    var isOpen = false
     
     @IBOutlet var mainView: UIView!
     @IBOutlet var tableView: UITableView!
@@ -38,6 +38,17 @@ class HomeManagerVC: BaseViewController{
             mainView.backgroundColor = #colorLiteral(red: 0.9991409183, green: 0.9350905418, blue: 0.7344018817, alpha: 1)
         }
     }
+    //큐알 페이지로
+    @IBAction func btnQRCode(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerQRCodeVC") as? HomeManagerQRCodeVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    //알람 페이지로
+    @IBAction func btnAlarm(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerAlarmVC") as? HomeManagerAlarmVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
 }
 // 테이블뷰 extension
 extension HomeManagerVC: UITableViewDataSource, UITableViewDelegate{
@@ -58,6 +69,7 @@ extension HomeManagerVC: UITableViewDataSource, UITableViewDelegate{
                     //if let x = todayData{
                     //    cell.setCell(row: x.getBannerRes)
                     //}
+                    cell.delegate = self
                     return cell
                 }
             }else{
@@ -67,6 +79,7 @@ extension HomeManagerVC: UITableViewDataSource, UITableViewDelegate{
                     //if let x = todayData{
                     //    cell.setCell(row: x.getBannerRes)
                     //}
+                    cell.delegate = self
                     return cell
                 }
             }
@@ -98,5 +111,64 @@ extension HomeManagerVC: UITableViewDataSource, UITableViewDelegate{
         default:
             return 0
         }
+    }
+}
+
+extension HomeManagerVC: HomeManagerOpenDeleagate, HomeManagerAddWorkDelegate{
+    //오늘 근무자 창
+    func goTodayWorkerList() {
+        
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerWorkerTodayWorkerListVC") as? HomeManagerWorkerTodayWorkerListVC else {return}
+       
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    
+    
+    //업무 추가 알림창!
+    func goAddWorkPage() {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeManagerAddWorkVC") as? HomeManagerAddWorkVC {
+            vc.modalPresentationStyle = .overFullScreen
+            
+            //modalBgView.alpha = 1
+            //vc.delegate = self
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    // 공동 업무 상세
+    func goPublicWork() {
+        print("goPublicWork")
+        
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerTodayWorkVC") as? HomeManagerTodayWorkVC else {return}
+        nextVC.segValue = 0
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    // 개인 업무 상세
+    func goPrivateWork() {
+        print("goPublicWork")
+        
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerTodayWorkVC") as? HomeManagerTodayWorkVC else {return}
+        nextVC.segValue = 1
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+}
+
+extension HomeManagerVC: HomeManagerAddWorkSelectDelegate{
+    // 공동업무 추가 페이지로
+    func goAddPublicWork() {
+        print("goAddPublicWork")
+        
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerAddPublicWorkVC") as? HomeManagerAddPublicWorkVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    // 개인 업무 추가 페이지로
+    func goAddPrivateWork() {
+        print("goAddPrivateWork()")
+        
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerAddPrivateWorkVC") as? HomeManagerAddPrivateWorkVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

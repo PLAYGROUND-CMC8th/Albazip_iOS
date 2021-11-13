@@ -144,6 +144,13 @@
 		C398BFA9273F974F008E8BA5 /* HomeManagerCommunityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C398BFA7273F974F008E8BA5 /* HomeManagerCommunityTableViewCell.xib */; };
 		C398BFAC273F9FE5008E8BA5 /* HomeManagerCoummunityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BFAA273F9FE5008E8BA5 /* HomeManagerCoummunityCollectionViewCell.swift */; };
 		C398BFAD273F9FE5008E8BA5 /* HomeManagerCoummunityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C398BFAB273F9FE5008E8BA5 /* HomeManagerCoummunityCollectionViewCell.xib */; };
+		C398BFB4273FD26C008E8BA5 /* HomeManagerWorkerTodayWorkerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BFB3273FD26C008E8BA5 /* HomeManagerWorkerTodayWorkerListVC.swift */; };
+		C398BFB6273FD3D1008E8BA5 /* HomeManagerQRCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BFB5273FD3D1008E8BA5 /* HomeManagerQRCodeVC.swift */; };
+		C398BFB8273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BFB7273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift */; };
+		C398BFBA273FD860008E8BA5 /* HomeManagerAddWorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BFB9273FD860008E8BA5 /* HomeManagerAddWorkVC.swift */; };
+		C398BFBC273FD889008E8BA5 /* HomeManagerAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BFBB273FD889008E8BA5 /* HomeManagerAlarmVC.swift */; };
+		C398BFBE273FF0FF008E8BA5 /* HomeManagerAddPublicWorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BFBD273FF0FF008E8BA5 /* HomeManagerAddPublicWorkVC.swift */; };
+		C398BFC0273FF15F008E8BA5 /* HomeManagerAddPrivateWorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BFBF273FF15F008E8BA5 /* HomeManagerAddPrivateWorkVC.swift */; };
 		C3A1ADCA271C14E2005A61ED /* RegisterSelectPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A1ADC9271C14E2005A61ED /* RegisterSelectPositionVC.swift */; };
 		C3A1ADCC271C5002005A61ED /* RegisterSearchStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A1ADCB271C5002005A61ED /* RegisterSearchStoreVC.swift */; };
 		C3A1ADCE271C62EF005A61ED /* RegisterWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A1ADCD271C62EF005A61ED /* RegisterWorkerStoryboard.storyboard */; };
@@ -394,6 +401,13 @@
 		C398BFA7273F974F008E8BA5 /* HomeManagerCommunityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeManagerCommunityTableViewCell.xib; sourceTree = "<group>"; };
 		C398BFAA273F9FE5008E8BA5 /* HomeManagerCoummunityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerCoummunityCollectionViewCell.swift; sourceTree = "<group>"; };
 		C398BFAB273F9FE5008E8BA5 /* HomeManagerCoummunityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeManagerCoummunityCollectionViewCell.xib; sourceTree = "<group>"; };
+		C398BFB3273FD26C008E8BA5 /* HomeManagerWorkerTodayWorkerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerWorkerTodayWorkerListVC.swift; sourceTree = "<group>"; };
+		C398BFB5273FD3D1008E8BA5 /* HomeManagerQRCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerQRCodeVC.swift; sourceTree = "<group>"; };
+		C398BFB7273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkVC.swift; sourceTree = "<group>"; };
+		C398BFB9273FD860008E8BA5 /* HomeManagerAddWorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAddWorkVC.swift; sourceTree = "<group>"; };
+		C398BFBB273FD889008E8BA5 /* HomeManagerAlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAlarmVC.swift; sourceTree = "<group>"; };
+		C398BFBD273FF0FF008E8BA5 /* HomeManagerAddPublicWorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAddPublicWorkVC.swift; sourceTree = "<group>"; };
+		C398BFBF273FF15F008E8BA5 /* HomeManagerAddPrivateWorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAddPrivateWorkVC.swift; sourceTree = "<group>"; };
 		C3A1ADC9271C14E2005A61ED /* RegisterSelectPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSelectPositionVC.swift; sourceTree = "<group>"; };
 		C3A1ADCB271C5002005A61ED /* RegisterSearchStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSearchStoreVC.swift; sourceTree = "<group>"; };
 		C3A1ADCD271C62EF005A61ED /* RegisterWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterWorkerStoryboard.storyboard; sourceTree = "<group>"; };
@@ -1144,6 +1158,7 @@
 		C398BFAE273FCAC5008E8BA5 /* TodayWorkerList */ = {
 			isa = PBXGroup;
 			children = (
+				C398BFB3273FD26C008E8BA5 /* HomeManagerWorkerTodayWorkerListVC.swift */,
 			);
 			path = TodayWorkerList;
 			sourceTree = "<group>";
@@ -1151,6 +1166,9 @@
 		C398BFAF273FCADE008E8BA5 /* AddWork */ = {
 			isa = PBXGroup;
 			children = (
+				C398BFB9273FD860008E8BA5 /* HomeManagerAddWorkVC.swift */,
+				C398BFBD273FF0FF008E8BA5 /* HomeManagerAddPublicWorkVC.swift */,
+				C398BFBF273FF15F008E8BA5 /* HomeManagerAddPrivateWorkVC.swift */,
 			);
 			path = AddWork;
 			sourceTree = "<group>";
@@ -1158,6 +1176,7 @@
 		C398BFB0273FCAF0008E8BA5 /* TodayWork */ = {
 			isa = PBXGroup;
 			children = (
+				C398BFB7273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift */,
 			);
 			path = TodayWork;
 			sourceTree = "<group>";
@@ -1165,6 +1184,7 @@
 		C398BFB1273FCB60008E8BA5 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
+				C398BFB5273FD3D1008E8BA5 /* HomeManagerQRCodeVC.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -1172,6 +1192,7 @@
 		C398BFB2273FCB6B008E8BA5 /* Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				C398BFBB273FD889008E8BA5 /* HomeManagerAlarmVC.swift */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -1742,6 +1763,7 @@
 				C39083F32729B6F4006223CB /* OnboardingManagerVC.swift in Sources */,
 				C35982C02737931B00546F2C /* MyPageManagerAddWorkerRequest.swift in Sources */,
 				C3CB0164273CC9AF000EA353 /* MyPageManagerProfileResponse.swift in Sources */,
+				C398BFC0273FF15F008E8BA5 /* HomeManagerAddPrivateWorkVC.swift in Sources */,
 				C3CB016E273D5F7E000EA353 /* MyPageWorkerWriteResponse.swift in Sources */,
 				C3CC57C727369BAB00657EE9 /* MyPageWorkerSelectProfileImageVC.swift in Sources */,
 				C34A00642731C82200C24102 /* MyPageWorkerPositionVC.swift in Sources */,
@@ -1764,6 +1786,7 @@
 				C3B022E92726D91400013988 /* RegisterStoreInfoVC.swift in Sources */,
 				C34BCB402732CCD90085ADB3 /* MyPageDetailClearWorkVC.swift in Sources */,
 				C3AD3B2B2739786D0030905C /* MyPageManagerWorkerPositionDeleteTableViewCell.swift in Sources */,
+				C398BFBA273FD860008E8BA5 /* HomeManagerAddWorkVC.swift in Sources */,
 				C30EC2DD272A4F7D00EEF218 /* RegisterNumberExistDataManager.swift in Sources */,
 				C3B93386273BFA6F0056E381 /* SettingLogoutVC.swift in Sources */,
 				C3CFC2F0273E27C1001B2EB6 /* MyPageManagerContentResponse.swift in Sources */,
@@ -1782,6 +1805,8 @@
 				C398BFAC273F9FE5008E8BA5 /* HomeManagerCoummunityCollectionViewCell.swift in Sources */,
 				C30EC2E3272A4FEF00EEF218 /* RegisterNumberExistResponse.swift in Sources */,
 				C398BF9C273F77F9008E8BA5 /* HomeManagerVC.swift in Sources */,
+				C398BFB8273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift in Sources */,
+				C398BFBE273FF0FF008E8BA5 /* HomeManagerAddPublicWorkVC.swift in Sources */,
 				C384425C27147E3F00B84E8A /* UIViewController.swift in Sources */,
 				C3CFC2EE273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift in Sources */,
 				C384425027147E2900B84E8A /* Device.swift in Sources */,
@@ -1801,6 +1826,7 @@
 				C39083F12729B559006223CB /* OnboardingCollectionViewCell.swift in Sources */,
 				C3B93384273BFA220056E381 /* SettingNoticeVC.swift in Sources */,
 				C398BFA8273F974F008E8BA5 /* HomeManagerCommunityTableViewCell.swift in Sources */,
+				C398BFB6273FD3D1008E8BA5 /* HomeManagerQRCodeVC.swift in Sources */,
 				C3B022EF2726F28A00013988 /* RegisterSelectStoreTypeVC.swift in Sources */,
 				C3CFC304273EC3F2001B2EB6 /* MyPageManagerWorkerInfoDataManager.swift in Sources */,
 				C3CFC30A273ED375001B2EB6 /* MyPageManagerWorkerWriteDatamanager.swift in Sources */,
@@ -1856,6 +1882,7 @@
 				C3D69457273ACDC500BF540C /* SettingVC.swift in Sources */,
 				C34BCB3C2732BFB20085ADB3 /* MyPageDetailCommuteRecordVC.swift in Sources */,
 				C3B022EB2726D9C300013988 /* RegisterManagerInfoVC.swift in Sources */,
+				C398BFBC273FD889008E8BA5 /* HomeManagerAlarmVC.swift in Sources */,
 				C3CDB53A2738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift in Sources */,
 				C34BCB572732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.swift in Sources */,
 				C38CA0B5272F646100EA7BB3 /* LoginResetPasswordDataManager.swift in Sources */,
@@ -1867,6 +1894,7 @@
 				C3CFC302273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift in Sources */,
 				C3CFC2FA273E9180001B2EB6 /* MyPageWorkerMyInfoResponse.swift in Sources */,
 				C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */,
+				C398BFB4273FD26C008E8BA5 /* HomeManagerWorkerTodayWorkerListVC.swift in Sources */,
 				C37B0B57272972720017D179 /* RegisterResponse.swift in Sources */,
 				C3AD3B332739874D0030905C /* MyPageManagerWorkerPositionTableViewCell.swift in Sources */,
 				C384425B27147E3F00B84E8A /* UIButton.swift in Sources */,
