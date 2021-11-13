@@ -396,14 +396,18 @@ extension RegisterMoreInfoVC : UITextFieldDelegate{
 
 extension RegisterMoreInfoVC {
     func didSuccessRegisterManager(_ result: RegisterManagerResponse) {
-        if(result.message == "성공적으로 관리자 가입이 완료되었습니다."){
-            
-            let newStoryboard = UIStoryboard(name: "OnboardingManagerStoryboard", bundle: nil)
+        
+        //
+        //우선 유저 토큰 로컬에 저장
+        UserDefaults.standard.set(result.data?.token ,forKey: "token")
+        print("token: \(UserDefaults.standard.string(forKey: "token")!)")
+        UserDefaults.standard.set(1 ,forKey: "job")
+        print("job: \(UserDefaults.standard.string(forKey: "job")!)")
+        // 온보딩 페이지로 이동
+        let newStoryboard = UIStoryboard(name: "OnboardingManagerStoryboard", bundle: nil)
                     let newViewController = newStoryboard.instantiateViewController(identifier: "OnboardingManagerVC")
-                    self.changeRootViewController(newViewController)
-        }else{
-            self.presentAlert(title: result.message)
-        }
+        self.changeRootViewController(newViewController)
+        
     }
     
     func failedToRegisterManager(message: String) {

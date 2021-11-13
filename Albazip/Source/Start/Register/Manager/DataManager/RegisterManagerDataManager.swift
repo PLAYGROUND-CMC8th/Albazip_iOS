@@ -16,9 +16,17 @@ class RegisterManagerDataManager{
             .validate()
             .responseDecodable(of: RegisterManagerResponse.self) { response in
                 switch response.result {
+                
                 case .success(let response):
                     // 성공했을 때
-                    delegate.didSuccessRegisterManager(response)
+                    switch response.code {
+                    case "200":
+                        delegate.didSuccessRegisterManager(response)
+                        break
+                    default:
+                        delegate.failedToRegisterManager(message: response.message)
+                        break
+                }
                 case .failure(let error):
                     print(error.localizedDescription)
                     delegate.failedToRegisterManager(message: "서버와의 연결이 원활하지 않습니다")

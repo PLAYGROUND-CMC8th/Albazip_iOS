@@ -103,18 +103,10 @@ extension LoginViewController {
         
         //포지션 정보 있으면 모든 가입절차 완료한 사람임 -> Main 화면으로
         // 이때 근무자인지 관리자인지에 따라 다른 화면 보여줘야함. 우선 관리자만 해놨음
-        if let position = result.data?.positionInfo{
-            //우선 유저 토큰 로컬에 저장
-            UserDefaults.standard.set(result.data?.token.token,forKey: "token")
-            print("token: \(UserDefaults.standard.string(forKey: "token")!)")
-            
-            let newStoryboard = UIStoryboard(name: "MainManager", bundle: nil)
-            let newViewController = newStoryboard.instantiateViewController(identifier: "MainManagerTabBarController")
-            self.changeRootViewController(newViewController)
-        }
-        
-        //포지션 정보 없으면 포지션 선택 안한것, 포지션 선택 페이지로!
-        else{
+        // 수정!!
+        print("job \(result.data!.job)")
+        // 기본가입만 한 상태: job == 0,  포지션 선택 페이지로!
+        if result.data!.job == 0{
             //토큰은 RegisterBasicInfo.shared 싱글톤에 저장
             let data = RegisterBasicInfo.shared
             data.token = result.data?.token.token
@@ -123,6 +115,30 @@ extension LoginViewController {
             let newViewController = newStoryboard.instantiateViewController(identifier: "RegisterNavigationSelectPositionVC")
             self.changeRootViewController(newViewController)
         }
+        // 관리자일 때: job == 1,  관리자 페이지로!
+        else if result.data!.job == 1{
+            //우선 유저 토큰 로컬에 저장
+            UserDefaults.standard.set(result.data?.token.token,forKey: "token")
+            print("token: \(UserDefaults.standard.string(forKey: "token")!)")
+            UserDefaults.standard.set(result.data!.job ,forKey: "job")
+            print("job: \(UserDefaults.standard.string(forKey: "job")!)")
+            let newStoryboard = UIStoryboard(name: "MainManager", bundle: nil)
+            let newViewController = newStoryboard.instantiateViewController(identifier: "MainManagerTabBarController")
+            self.changeRootViewController(newViewController)
+        }
+        //근무자일 때: job == 2, 근무자 페이지로!
+        else if result.data!.job == 2{
+            //우선 유저 토큰 로컬에 저장
+            UserDefaults.standard.set(result.data?.token.token,forKey: "token")
+            print("token: \(UserDefaults.standard.string(forKey: "token")!)")
+            UserDefaults.standard.set(result.data!.job ,forKey: "job")
+            print("job: \(UserDefaults.standard.string(forKey: "job")!)")
+            let newStoryboard = UIStoryboard(name: "MainWorker", bundle: nil)
+            let newViewController = newStoryboard.instantiateViewController(identifier: "MainWorkerTabBarController")
+            self.changeRootViewController(newViewController)
+        }
+        
+        
     }
     
     func failedToRequest(message: String) {

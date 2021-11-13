@@ -8,7 +8,7 @@
 import Alamofire
 class LoginResetPasswordDataManager{
     func postLoginResetPassword(_ parameters: LoginResetPasswordRequest, delegate: LoginResetPasswordVC) {
-        AF.request("\(Constant.BASE_URL)/user/profile/password", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
+        AF.request("\(Constant.BASE_URL)/user/signin/password", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
             .validate()
             .responseDecodable(of: LoginResetPasswordResponse.self) { response in
                 switch response.result {

@@ -88,6 +88,11 @@ extension RegisterWorkerCodeVC{
         if(result.message == "성공적으로 근무자 가입이 완료되었습니다."){
             errorLabel.isHidden = true
             codeTextField.borderColor = .lightGray
+            //우선 유저 토큰 로컬에 저장
+            UserDefaults.standard.set(result.data?.token ,forKey: "token")
+            print("token: \(UserDefaults.standard.string(forKey: "token")!)")
+            UserDefaults.standard.set(2 ,forKey: "job")
+            print("job: \(UserDefaults.standard.string(forKey: "job")!)")
             //온보딩 화면으로 넘어가기
             let newStoryboard = UIStoryboard(name: "OnboardingWorkerStoryboard", bundle: nil)
                     let newViewController = newStoryboard.instantiateViewController(identifier: "OnboardingWorkerVC")

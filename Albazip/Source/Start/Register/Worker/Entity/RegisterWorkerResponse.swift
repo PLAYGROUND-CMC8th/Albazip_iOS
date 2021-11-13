@@ -7,4 +7,9 @@
 
 struct RegisterWorkerResponse: Decodable {
     var message: String
+    var code: String
+    var data: RegisterWorkerData?
+}
+struct RegisterWorkerData :Decodable{
+    var token: String
 }

@@ -116,7 +116,7 @@ extension RegisterBasicInfoVC {
         //self.presentAlert(title: "회원 가입에 성공하였습니다", message: result.message)
         //UserDefaults.standard.set(result.data?.token,forKey: "token")
         let data = RegisterBasicInfo.shared
-        data.token = result.data?.token
+        data.token = result.data?.token.token
         //print("token: \(UserDefaults.standard.string(forKey: "token")!)")
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterSelectPositionVC") as? RegisterSelectPositionVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)

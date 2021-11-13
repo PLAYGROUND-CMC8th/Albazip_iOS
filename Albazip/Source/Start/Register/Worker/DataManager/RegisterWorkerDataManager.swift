@@ -10,7 +10,7 @@ class RegisterWorkerDataManager{
     func postRegisterWorker(_ parameters: RegisterWorkerRequset, delegate: RegisterWorkerCodeVC) {
         
         let header: HTTPHeaders = [ "Content-Type":"application/json",
-                                    "token":"\(UserDefaults.standard.string(forKey: "token")!)"]
+                                    "token":"\(RegisterBasicInfo.shared.token!)"]
         
         AF.request("\(Constant.BASE_URL)/user/signup/worker", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: header)
             .validate()
@@ -18,7 +18,14 @@ class RegisterWorkerDataManager{
                 switch response.result {
                 case .success(let response):
                     // 성공했을 때
-                    delegate.didSuccessRegisterWorker(response)
+                    switch response.code {
+                    case "200":
+                        delegate.didSuccessRegisterWorker(response)
+                        break
+                    default:
+                        delegate.failedToRegisterWorker(message: response.message)
+                        break
+                    }
                 case .failure(let error):
                     print(error.localizedDescription)
                     delegate.failedToRegisterWorker(message: "서버와의 연결이 원활하지 않습니다")

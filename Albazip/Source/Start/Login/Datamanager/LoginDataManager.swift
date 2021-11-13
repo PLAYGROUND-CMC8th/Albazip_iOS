@@ -13,16 +13,15 @@ class LoginDataManager{
             .responseDecodable(of: LoginResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    
-                    // 연결 성공했을 때
-                    
-                    if ((response.data) != nil) {
+                    switch response.code {
+                    case "200":
                         delegate.didSuccessLogin(response)
-                    }
-                    // 실패했을 때
-                    else {
+                        break
+                    default:
                         delegate.failedToRequest(message: response.message)
+                        break
                     }
+                    
                 case .failure(let error):
                     print(error.localizedDescription)
                     delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")

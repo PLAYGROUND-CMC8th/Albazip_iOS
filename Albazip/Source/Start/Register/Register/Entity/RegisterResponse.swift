@@ -11,5 +11,8 @@ struct RegisterResponse: Decodable {
 }
 
 struct RegisterResponseData: Decodable {
+    var token: RegisterResponseToken
+}
+struct RegisterResponseToken: Decodable{
     var token: String
 }
