@@ -19,8 +19,9 @@ class StartViewController: UIViewController{
         print("token: \(UserDefaults.standard.string(forKey: "token")!)")
         UserDefaults.standard.set("",forKey: "job")
         print("job: \(UserDefaults.standard.string(forKey: "job")!)")
-        
         */
+        
+       
         autoLogin()
         
     }

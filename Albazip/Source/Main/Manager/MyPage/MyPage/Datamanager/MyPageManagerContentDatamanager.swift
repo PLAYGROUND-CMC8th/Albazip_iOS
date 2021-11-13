@@ -12,7 +12,7 @@ class MyPageManagerContentDatamanager {
         let url = "\(Constant.BASE_URL)/mypage/workers"
         
         let header: HTTPHeaders = [ "Content-Type":"application/json",
-                                     "token":"\(Constant.tokenManager)"]
+                                     "token":"\(UserDefaults.standard.string(forKey: "token")!)"]
         
         AF.request(url, method: .get ,parameters: nil, encoding: JSONEncoding.default, headers: header)
             .validate()

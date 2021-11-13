@@ -11,7 +11,7 @@ class MyPageWorkerProfileDatamanager {
         let url = "\(Constant.BASE_URL)/mypage/profile"
         
         let header: HTTPHeaders = [ "Content-Type":"application/json",
-                                     "token":"\(Constant.tokenWorker)"]
+                                     "token":"\(UserDefaults.standard.string(forKey: "token")!)"]
         
         AF.request(url, method: .get ,parameters: nil, encoding: JSONEncoding.default, headers: header)
             .validate()
