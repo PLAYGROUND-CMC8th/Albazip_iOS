@@ -13,11 +13,12 @@ class RegisterSelectPositionVC: UIViewController{
     @IBOutlet weak var managerView: UIView!
     @IBOutlet weak var workerView: UIView!
     
+    @IBOutlet var nameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-
+        let data = RegisterBasicInfo.shared
+        nameLabel.text = "\(data.firstName!)님 반가워요 :)\n포지션을 선택해주세요!"
         
         // view 클릭 시, 함수 정의
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(managerViewTapped))

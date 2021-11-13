@@ -1020,6 +1020,7 @@
                     <navigationItem key="navigationItem" id="Yuk-AG-2F2"/>
                     <connections>
                         <outlet property="managerView" destination="r33-LO-x08" id="Voe-GC-JdY"/>
+                        <outlet property="nameLabel" destination="1Ui-9q-xt7" id="hzi-5y-HQO"/>
                         <outlet property="workerView" destination="vEJ-RV-N3M" id="AvQ-BX-S0J"/>
                     </connections>
                 </viewController>

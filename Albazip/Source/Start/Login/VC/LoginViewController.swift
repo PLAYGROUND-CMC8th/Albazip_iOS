@@ -110,7 +110,7 @@ extension LoginViewController {
             //토큰은 RegisterBasicInfo.shared 싱글톤에 저장
             let data = RegisterBasicInfo.shared
             data.token = result.data?.token.token
-            
+            data.firstName = result.data?.userFirstName
             let newStoryboard = UIStoryboard(name: "RegisterStoryboard", bundle: nil)
             let newViewController = newStoryboard.instantiateViewController(identifier: "RegisterNavigationSelectPositionVC")
             self.changeRootViewController(newViewController)

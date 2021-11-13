@@ -117,6 +117,8 @@ extension RegisterBasicInfoVC {
         //UserDefaults.standard.set(result.data?.token,forKey: "token")
         let data = RegisterBasicInfo.shared
         data.token = result.data?.token.token
+        // 이름 정보 저장
+        data.firstName = nameTextfield.text
         //print("token: \(UserDefaults.standard.string(forKey: "token")!)")
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterSelectPositionVC") as? RegisterSelectPositionVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
