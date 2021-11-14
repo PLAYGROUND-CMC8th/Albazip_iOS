@@ -263,6 +263,16 @@
 		C3E9C8DF274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8DD274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.swift */; };
 		C3E9C8E0274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E9C8DE274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.xib */; };
 		C3E9C8E227411DC100B0139C /* MyPageManagerWorkerExitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8E127411DC100B0139C /* MyPageManagerWorkerExitVC.swift */; };
+		C3E9C8E6274168F600B0139C /* MyPageDetailClearWorkDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8E5274168F600B0139C /* MyPageDetailClearWorkDataManager.swift */; };
+		C3E9C8E82741691000B0139C /* MyPageDetailClearWorkMonthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8E72741691000B0139C /* MyPageDetailClearWorkMonthDataManager.swift */; };
+		C3E9C8EA2741692E00B0139C /* MyPageDetailClearWorkDayDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8E92741692E00B0139C /* MyPageDetailClearWorkDayDatamanager.swift */; };
+		C3E9C8EC2741696000B0139C /* MyPageDetailClearWorkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8EB2741696000B0139C /* MyPageDetailClearWorkResponse.swift */; };
+		C3E9C8EE2741697100B0139C /* MyPageDetailClearWorkMonthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8ED2741697100B0139C /* MyPageDetailClearWorkMonthResponse.swift */; };
+		C3E9C8F02741698000B0139C /* MyPageDetailClearWorkDayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8EF2741698000B0139C /* MyPageDetailClearWorkDayResponse.swift */; };
+		C3E9C8F227416C8000B0139C /* MyPageDetailPublicWorkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8F127416C8000B0139C /* MyPageDetailPublicWorkResponse.swift */; };
+		C3E9C8F427416D5100B0139C /* MyPageDetailPublicWorkDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8F327416D5100B0139C /* MyPageDetailPublicWorkDataManager.swift */; };
+		C3E9C8F627416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8F527416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift */; };
+		C3E9C8F827416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8F727416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -528,6 +538,16 @@
 		C3E9C8DD274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAddPrivateWorkCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3E9C8DE274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeManagerAddPrivateWorkCollectionViewCell.xib; sourceTree = "<group>"; };
 		C3E9C8E127411DC100B0139C /* MyPageManagerWorkerExitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerExitVC.swift; sourceTree = "<group>"; };
+		C3E9C8E5274168F600B0139C /* MyPageDetailClearWorkDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailClearWorkDataManager.swift; sourceTree = "<group>"; };
+		C3E9C8E72741691000B0139C /* MyPageDetailClearWorkMonthDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailClearWorkMonthDataManager.swift; sourceTree = "<group>"; };
+		C3E9C8E92741692E00B0139C /* MyPageDetailClearWorkDayDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailClearWorkDayDatamanager.swift; sourceTree = "<group>"; };
+		C3E9C8EB2741696000B0139C /* MyPageDetailClearWorkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailClearWorkResponse.swift; sourceTree = "<group>"; };
+		C3E9C8ED2741697100B0139C /* MyPageDetailClearWorkMonthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailClearWorkMonthResponse.swift; sourceTree = "<group>"; };
+		C3E9C8EF2741698000B0139C /* MyPageDetailClearWorkDayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailClearWorkDayResponse.swift; sourceTree = "<group>"; };
+		C3E9C8F127416C8000B0139C /* MyPageDetailPublicWorkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailPublicWorkResponse.swift; sourceTree = "<group>"; };
+		C3E9C8F327416D5100B0139C /* MyPageDetailPublicWorkDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailPublicWorkDataManager.swift; sourceTree = "<group>"; };
+		C3E9C8F527416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailCommuteRecordResponse.swift; sourceTree = "<group>"; };
+		C3E9C8F727416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailCommuteRecordDatamanager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -743,6 +763,8 @@
 		C34BCB342732B52D0085ADB3 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				C3E9C8E4274168CE00B0139C /* Datamanager */,
+				C3E9C8E3274168C500B0139C /* Entity */,
 				C34BCB3A2732BF790085ADB3 /* VC */,
 				C34BCB352732B5380085ADB3 /* Cell */,
 			);
@@ -1500,6 +1522,30 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C3E9C8E3274168C500B0139C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C3E9C8EB2741696000B0139C /* MyPageDetailClearWorkResponse.swift */,
+				C3E9C8ED2741697100B0139C /* MyPageDetailClearWorkMonthResponse.swift */,
+				C3E9C8EF2741698000B0139C /* MyPageDetailClearWorkDayResponse.swift */,
+				C3E9C8F127416C8000B0139C /* MyPageDetailPublicWorkResponse.swift */,
+				C3E9C8F527416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C3E9C8E4274168CE00B0139C /* Datamanager */ = {
+			isa = PBXGroup;
+			children = (
+				C3E9C8E5274168F600B0139C /* MyPageDetailClearWorkDataManager.swift */,
+				C3E9C8E72741691000B0139C /* MyPageDetailClearWorkMonthDataManager.swift */,
+				C3E9C8E92741692E00B0139C /* MyPageDetailClearWorkDayDatamanager.swift */,
+				C3E9C8F327416D5100B0139C /* MyPageDetailPublicWorkDataManager.swift */,
+				C3E9C8F727416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift */,
+			);
+			path = Datamanager;
+			sourceTree = "<group>";
+		};
 		C3F54E7A272C31E100FE412B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1791,6 +1837,7 @@
 				C38442372714797000B84E8A /* SceneDelegate.swift in Sources */,
 				C384425F27147E3F00B84E8A /* Color.swift in Sources */,
 				C3CC57C327362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift in Sources */,
+				C3E9C8EE2741697100B0139C /* MyPageDetailClearWorkMonthResponse.swift in Sources */,
 				C3B93388273BFAA00056E381 /* SettingUseTermVC.swift in Sources */,
 				C3A1ADD0271C698D005A61ED /* RegisterWorkerCodeVC.swift in Sources */,
 				C3CB0170273D78D4000EA353 /* MyPageManagerWriteDatamanager.swift in Sources */,
@@ -1809,6 +1856,7 @@
 				C3CB016E273D5F7E000EA353 /* MyPageWorkerWriteResponse.swift in Sources */,
 				C3CC57C727369BAB00657EE9 /* MyPageWorkerSelectProfileImageVC.swift in Sources */,
 				C34A00642731C82200C24102 /* MyPageWorkerPositionVC.swift in Sources */,
+				C3E9C8F02741698000B0139C /* MyPageDetailClearWorkDayResponse.swift in Sources */,
 				C384426C27147E6E00B84E8A /* BaseViewController.swift in Sources */,
 				C3A968422719FA7A00E27DA1 /* StartViewController.swift in Sources */,
 				C3E1FEB5272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.swift in Sources */,
@@ -1842,8 +1890,10 @@
 				C38BFB7D273AA30700E79BF5 /* UIApplication.swift in Sources */,
 				C3CC57CA2736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.swift in Sources */,
 				C34BCB482732F1040085ADB3 /* MyPageDetailPublicWorkTableViewCell.swift in Sources */,
+				C3E9C8EA2741692E00B0139C /* MyPageDetailClearWorkDayDatamanager.swift in Sources */,
 				C3E1FEA9272D8C5B00CE44C6 /* MyPageManagerContentVC.swift in Sources */,
 				C3CFC2F4273E5241001B2EB6 /* MyPageManagerWorkerDetailProfileResponse.swift in Sources */,
+				C3E9C8F627416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift in Sources */,
 				C398BFAC273F9FE5008E8BA5 /* HomeManagerCoummunityCollectionViewCell.swift in Sources */,
 				C30EC2E3272A4FEF00EEF218 /* RegisterNumberExistResponse.swift in Sources */,
 				C398BF9C273F77F9008E8BA5 /* HomeManagerVC.swift in Sources */,
@@ -1853,10 +1903,12 @@
 				C3CFC2EE273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift in Sources */,
 				C384425027147E2900B84E8A /* Device.swift in Sources */,
 				C30EC2EB272B121900EEF218 /* RegisterManagerInfo.swift in Sources */,
+				C3E9C8E82741691000B0139C /* MyPageDetailClearWorkMonthDataManager.swift in Sources */,
 				C3CC57C52736442C00657EE9 /* MyPageManagerSelectProfileImageVC.swift in Sources */,
 				C33F9986272E977700E9FF05 /* RegisterWorkerDataManager.swift in Sources */,
 				C384424B27147E1700B84E8A /* Constant.swift in Sources */,
 				C30AFE7E2733CE670075CDE2 /* MyPageManagerSelectInfo3TableViewCell.swift in Sources */,
+				C3E9C8EC2741696000B0139C /* MyPageDetailClearWorkResponse.swift in Sources */,
 				C3CFC2F8273E916F001B2EB6 /* MyPageWorkerMyInfoDatamanager.swift in Sources */,
 				C34BCB532732F6C50085ADB3 /* MyPageDetailCommuteMonthTableViewCell.swift in Sources */,
 				C384425A27147E3F00B84E8A /* String.swift in Sources */,
@@ -1867,6 +1919,7 @@
 				C37B0B5B272978F80017D179 /* RegisterBasicInfo.swift in Sources */,
 				C39083F12729B559006223CB /* OnboardingCollectionViewCell.swift in Sources */,
 				C3B93384273BFA220056E381 /* SettingNoticeVC.swift in Sources */,
+				C3E9C8F827416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift in Sources */,
 				C398BFA8273F974F008E8BA5 /* HomeManagerCommunityTableViewCell.swift in Sources */,
 				C398BFB6273FD3D1008E8BA5 /* HomeManagerQRCodeVC.swift in Sources */,
 				C3B022EF2726F28A00013988 /* RegisterSelectStoreTypeVC.swift in Sources */,
@@ -1912,11 +1965,13 @@
 				C33F9984272E973500E9FF05 /* RegisterWorkerRequest.swift in Sources */,
 				C3CB0169273D5980000EA353 /* MyPageWorkerProfileDatamanager.swift in Sources */,
 				C3CFC2FC273E94DE001B2EB6 /* MyPageWorkerPositionResponse.swift in Sources */,
+				C3E9C8F227416C8000B0139C /* MyPageDetailPublicWorkResponse.swift in Sources */,
 				C34A00582731AA2D00C24102 /* MyPageWorkerMyInfoTableViewCell.swift in Sources */,
 				C3CFC308273EC957001B2EB6 /* MyPageManagerWorkerCodeDatamanager.swift in Sources */,
 				C30AFE8627341CD70075CDE2 /* MyPageManagerWorkList1TableViewCell.swift in Sources */,
 				C3B9338A273BFAC30056E381 /* SettingVersionVC.swift in Sources */,
 				C3AD3B3727398C130030905C /* MyPageManagerWorkerCodeTableViewCell.swift in Sources */,
+				C3E9C8E6274168F600B0139C /* MyPageDetailClearWorkDataManager.swift in Sources */,
 				C37EBF4F271AD97900DEC2CA /* RegisterBasicInfoVC.swift in Sources */,
 				C3B93382273BF8FC0056E381 /* SettingMyInfoVC.swift in Sources */,
 				C38CA0B9272F649000EA7BB3 /* LoginResetPasswordResponse.swift in Sources */,
@@ -1935,6 +1990,7 @@
 				C30AFE6F2733BF0A0075CDE2 /* MyPageManagerNoWorkerTableViewCell.swift in Sources */,
 				C3CFC302273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift in Sources */,
 				C3E9C8E227411DC100B0139C /* MyPageManagerWorkerExitVC.swift in Sources */,
+				C3E9C8F427416D5100B0139C /* MyPageDetailPublicWorkDataManager.swift in Sources */,
 				C3CFC2FA273E9180001B2EB6 /* MyPageWorkerMyInfoResponse.swift in Sources */,
 				C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */,
 				C398BFB4273FD26C008E8BA5 /* HomeManagerWorkerTodayWorkerListVC.swift in Sources */,
