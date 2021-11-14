@@ -27,13 +27,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wav-to-vBY">
+                                <rect key="frame" x="279" y="13" width="24" height="24"/>
+                                <color key="backgroundColor" red="0.98039215800000001" green="0.88627451660000001" blue="0.54901963470000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="TAl-eT-EPU"/>
+                                    <constraint firstAttribute="height" constant="24" id="exp-Z1-f4Q"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfu-Vc-sMV">
                                 <rect key="frame" x="279" y="13" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="GmM-YQ-ORp"/>
                                     <constraint firstAttribute="height" constant="24" id="w8e-bZ-SKN"/>
                                 </constraints>
-                                <state key="normal" image="btnExit"/>
+                                <state key="normal" image="iconCopy24Px"/>
                                 <connections>
                                     <action selector="btnCopy:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PGH-zl-GWt"/>
                                 </connections>
@@ -43,6 +51,8 @@
                         <constraints>
                             <constraint firstItem="2M9-pn-LfX" firstAttribute="centerY" secondItem="Sjn-3R-lzl" secondAttribute="centerY" id="1MO-48-h2U"/>
                             <constraint firstAttribute="trailing" secondItem="hfu-Vc-sMV" secondAttribute="trailing" constant="24" id="GDi-MD-k1L"/>
+                            <constraint firstItem="Wav-to-vBY" firstAttribute="centerY" secondItem="hfu-Vc-sMV" secondAttribute="centerY" id="N8p-Zi-Ai7"/>
+                            <constraint firstItem="Wav-to-vBY" firstAttribute="centerX" secondItem="hfu-Vc-sMV" secondAttribute="centerX" id="SFB-i9-Pck"/>
                             <constraint firstItem="hfu-Vc-sMV" firstAttribute="centerY" secondItem="2M9-pn-LfX" secondAttribute="centerY" id="VSt-WI-sbz"/>
                             <constraint firstAttribute="height" constant="50" id="jFv-EL-DjG"/>
                             <constraint firstItem="2M9-pn-LfX" firstAttribute="centerX" secondItem="Sjn-3R-lzl" secondAttribute="centerX" id="slo-Fc-zVn"/>
@@ -73,12 +83,13 @@
             <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <connections>
                 <outlet property="codeLabel" destination="2M9-pn-LfX" id="9Fp-4s-wXP"/>
+                <outlet property="codeView" destination="Wav-to-vBY" id="FTM-4z-Vlw"/>
             </connections>
             <point key="canvasLocation" x="159.19999999999999" y="23.645320197044335"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="btnExit" width="24" height="24"/>
+        <image name="iconCopy24Px" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

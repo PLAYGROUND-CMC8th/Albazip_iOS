@@ -88,6 +88,7 @@ extension MyPageManagerWorkerInfoVC: UITableViewDataSource {
                 cell.codeLabel.text = code
                 //cell.delegate = self
                 //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                cell.delegate = self
                 print(indexPath.row)
                 return cell
             }
@@ -259,4 +260,11 @@ extension MyPageManagerWorkerInfoVC {
         presentAlert(title: message)
         
     }
+}
+extension MyPageManagerWorkerInfoVC: MyPageManagerWorkerCodeDelegate{
+    func copyAlert() {
+        presentBottomAlert(message: "코드가 복사되었습니다.")
+    }
+    
+    
 }
