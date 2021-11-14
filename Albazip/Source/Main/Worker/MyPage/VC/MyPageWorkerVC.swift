@@ -30,6 +30,7 @@ class MyPageWorkerVC: BaseViewController{
     var selectedTabView = UIView()
     //선택된 탭 인덱스
     var selectedTabIndex = 0
+    
     // Datamanager
     lazy var dataManager: MyPageWorkerProfileDatamanager = MyPageWorkerProfileDatamanager()
     //
@@ -37,7 +38,7 @@ class MyPageWorkerVC: BaseViewController{
     @IBOutlet var storeNameLabel: UILabel!
     @IBOutlet var positionLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
-    
+    var jobTitle = ""
     //MARK:- View Model
     
     var pageCollection = PageCollection()
@@ -47,11 +48,11 @@ class MyPageWorkerVC: BaseViewController{
         super.viewDidLoad()
         showIndicator()
         dataManager.getMyPageManagerProfile(vc: self)
-        setupCollectionView()
-        setupPagingViewController()
-        populateBottomView()
-        addPanGestureToTopViewAndCollectionView()
-        setUI()
+        //setupCollectionView()
+        //setupPagingViewController()
+        //populateBottomView()
+        //addPanGestureToTopViewAndCollectionView()
+        //setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -149,7 +150,10 @@ class MyPageWorkerVC: BaseViewController{
             }else if(subTabCount==1){
                 let tabContentVC = MyPageWorkerPositionVC()
                 tabContentVC.myPageWorkerPositionTableViewScrollDelegate = self
+                
                 //tabContentVC.numberOfCells = 30
+                tabContentVC.jobTitle = jobTitle
+                
                 let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
                 let page = Page(with: displayName, _vc: tabContentVC)
                 pageCollection.pages.append(page)
@@ -529,8 +533,14 @@ extension MyPageWorkerVC {
         }
         positionLabel.text = profileData?.jobTitle!
         storeNameLabel.text = profileData?.shopName!
-        nameLabel.text = "\(profileData!.lastName!)\(profileData!.firstName!)"
+        nameLabel.text = "\(profileData!.firstName!)"
+        jobTitle = (profileData?.jobTitle!)!
         
+        setupCollectionView()
+        setupPagingViewController()
+        populateBottomView()
+        addPanGestureToTopViewAndCollectionView()
+        setUI()
     }
     
     func failedToRequestMyPageManagerProfile(message: String) {

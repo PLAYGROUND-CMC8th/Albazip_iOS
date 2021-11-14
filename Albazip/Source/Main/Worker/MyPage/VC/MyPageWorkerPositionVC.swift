@@ -32,13 +32,14 @@ class MyPageWorkerPositionVC: UIViewController {
     var positionInfo: MyPageWorkerPositionData?
     lazy var dataManager: MyPageWorkerPositionDatamanager = MyPageWorkerPositionDatamanager()
     //var numberOfCells: Int = 5
-    
+    var jobTitle = ""
     //MARK:- View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
@@ -72,6 +73,7 @@ extension MyPageWorkerPositionVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageWorkerPositionTableViewCell") as? MyPageWorkerPositionTableViewCell {
+            
             if let data = positionInfo{
                 cell.breakTimeLabel.text = "휴게시간 " + data.breakTime!
                 if data.salaryType == 0{
@@ -84,6 +86,7 @@ extension MyPageWorkerPositionVC: UITableViewDataSource {
                 cell.workDayLabel.text = data.workDay!
                 let workTime = data.workTime!.insertWorkTime
                 cell.workTimeLabel.text = "\(data.startTime!.insertTime) ~ \(data.endTime!.insertTime) \(workTime)"
+                cell.positionLabel.text = jobTitle
             }
             
             

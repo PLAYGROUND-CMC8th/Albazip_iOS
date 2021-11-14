@@ -18,13 +18,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평일 마감" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yW-v9-dpH">
-                        <rect key="frame" x="24" y="24" width="66.5" height="46"/>
+                        <rect key="frame" x="24" y="24" width="66.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Esq-cD-Ms8"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <color key="textColor" red="0.19607841970000001" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p6A-MN-Mp1">
-                        <rect key="frame" x="24" y="84" width="334" height="282"/>
+                        <rect key="frame" x="24" y="59" width="334" height="282"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uX-hz-GjJ">
                                 <rect key="frame" x="0.0" y="0.0" width="334" height="110"/>
@@ -197,7 +200,7 @@
                 <outlet property="workDayLabel" destination="QEo-ws-hjp" id="4Yv-mZ-R3S"/>
                 <outlet property="workTimeLabel" destination="5cP-eW-sSR" id="cYT-FY-r8r"/>
             </connections>
-            <point key="canvasLocation" x="64" y="119"/>
+            <point key="canvasLocation" x="-118" y="53"/>
         </tableViewCell>
     </objects>
     <resources>
