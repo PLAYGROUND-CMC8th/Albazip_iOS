@@ -108,6 +108,7 @@ extension MyPageManagerContentVC: MyPageManagerWorkerCollectionViewCellDelegate{
         guard let vc = storyboard.instantiateViewController(withIdentifier: "MyPageManagerWorkerDetailVC") as? MyPageManagerWorkerDetailVC else { return }
         vc.positionId = contentData![index].positionId!
         vc.status = contentData![index].status!
+        vc.firstName = contentData![index].first_name!
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

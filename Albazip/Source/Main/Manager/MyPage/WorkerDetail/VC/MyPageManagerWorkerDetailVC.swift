@@ -36,7 +36,7 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
     var selectedTabView = UIView()
     //선택된 탭 인덱스
     var selectedTabIndex = 0
-    
+    var firstName = ""
     // 이전 뷰에서 받아올 정보
     var positionId = 0
     var status = 0
@@ -66,6 +66,14 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
         //퇴사 알림창 띄워주기!
         if status == 2{
             
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyPageManagerWorkerExitVC") as? MyPageManagerWorkerExitVC {
+                vc.modalPresentationStyle = .overFullScreen
+                vc.name = firstName
+                
+                //myPageManagerWorkerPositionAlertDelegate?.modalShow()
+                
+            self.present(vc, animated: true, completion: nil)
+        }
         }
         
     }

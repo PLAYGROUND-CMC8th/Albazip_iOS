@@ -603,23 +603,122 @@
             </objects>
             <point key="canvasLocation" x="1917.5999999999999" y="704.92610837438428"/>
         </scene>
-        <!--View Controller-->
+        <!--My Page Manager Worker ExitVC-->
         <scene sceneID="6qR-mn-GVI">
             <objects>
-                <viewController id="zfd-E2-Wfi" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPageManagerWorkerExitVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zfd-E2-Wfi" customClass="MyPageManagerWorkerExitVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fa7-jX-9b4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t9M-KS-NqV">
-                                <rect key="frame" x="39" y="306" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSV-Ox-kCj">
+                                <rect key="frame" x="0.0" y="456" width="375" height="322"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="희영님이 퇴사 요청을 보냈어요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhF-Ej-4p0">
+                                        <rect key="frame" x="36" y="124.00000000000001" width="303" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea0-7H-vFs">
+                                        <rect key="frame" x="47.333333333333343" y="159.66666666666663" width="280.66666666666663" height="33.666666666666657"/>
+                                        <string key="text">퇴사 요청을 수락하면 근무자가 삭제되며, 포지션 
+데이터는 그대로 남습니다. 요청을 수락하시겠어요?</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="nm8-FA-lPO">
+                                        <rect key="frame" x="24" y="229.33333333333337" width="327" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1a1-bm-gRi">
+                                                <rect key="frame" x="0.0" y="0.0" width="156" height="52"/>
+                                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="LSD-Ej-91F"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <state key="normal" title="거절하기">
+                                                    <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnCancel:" destination="5HF-zf-fcY" eventType="touchUpInside" id="PlY-Sq-4Un"/>
+                                                    <action selector="btnCancel:" destination="sQJ-uQ-VCG" eventType="touchUpInside" id="SKg-Zi-RCf"/>
+                                                    <action selector="btnCancel:" destination="zfd-E2-Wfi" eventType="touchUpInside" id="Y8O-mS-8FJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhB-hr-jPc">
+                                                <rect key="frame" x="171" y="0.0" width="156" height="52"/>
+                                                <color key="backgroundColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="ygT-62-p95"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <state key="normal" title="수락하기">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnNext:" destination="5HF-zf-fcY" eventType="touchUpInside" id="HRS-ZI-qxe"/>
+                                                    <action selector="btnNext:" destination="zfd-E2-Wfi" eventType="touchUpInside" id="q9c-Go-nFg"/>
+                                                    <action selector="btnNext:" destination="sQJ-uQ-VCG" eventType="touchUpInside" id="xtq-jz-3HO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="Eg7-gZ-WfV"/>
+                                            <constraint firstAttribute="width" constant="327" id="l2e-fl-F8X"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgWaring" translatesAutoresizingMaskIntoConstraints="NO" id="dcb-zI-rAm">
+                                        <rect key="frame" x="147.66666666666666" y="36" width="80" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="7Ob-bZ-nSS"/>
+                                            <constraint firstAttribute="height" constant="64" id="9Lm-ZZ-ATZ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                                <constraints>
+                                    <constraint firstItem="YhF-Ej-4p0" firstAttribute="top" secondItem="dcb-zI-rAm" secondAttribute="bottom" constant="24" id="6e3-Iv-c4Z"/>
+                                    <constraint firstItem="nm8-FA-lPO" firstAttribute="leading" secondItem="PSV-Ox-kCj" secondAttribute="leading" constant="24" id="AeD-i3-Q7C"/>
+                                    <constraint firstItem="YhF-Ej-4p0" firstAttribute="leading" secondItem="PSV-Ox-kCj" secondAttribute="leading" constant="36" id="Gn9-8d-tdM"/>
+                                    <constraint firstAttribute="trailing" secondItem="nm8-FA-lPO" secondAttribute="trailing" constant="24" id="WMv-Nm-HFD"/>
+                                    <constraint firstAttribute="height" constant="322" id="gqq-06-TRL"/>
+                                    <constraint firstAttribute="trailing" secondItem="YhF-Ej-4p0" secondAttribute="trailing" constant="36" id="icb-VZ-Yqy"/>
+                                    <constraint firstAttribute="bottom" secondItem="nm8-FA-lPO" secondAttribute="bottom" constant="40.670000000000002" id="jS2-BP-4EY"/>
+                                    <constraint firstItem="Ea0-7H-vFs" firstAttribute="centerX" secondItem="PSV-Ox-kCj" secondAttribute="centerX" id="kZp-MA-2Rz"/>
+                                    <constraint firstItem="nm8-FA-lPO" firstAttribute="top" secondItem="Ea0-7H-vFs" secondAttribute="bottom" constant="36" id="o04-k5-qWL"/>
+                                    <constraint firstItem="dcb-zI-rAm" firstAttribute="centerX" secondItem="PSV-Ox-kCj" secondAttribute="centerX" id="rWa-Cm-28O"/>
+                                    <constraint firstItem="Ea0-7H-vFs" firstAttribute="top" secondItem="YhF-Ej-4p0" secondAttribute="bottom" constant="14" id="t8U-gA-VB8"/>
+                                    <constraint firstItem="dcb-zI-rAm" firstAttribute="top" secondItem="PSV-Ox-kCj" secondAttribute="top" constant="36" id="tzb-hw-m1R"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z8U-7X-s1n"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PSV-Ox-kCj" firstAttribute="leading" secondItem="Fa7-jX-9b4" secondAttribute="leading" id="Il3-hx-1dq"/>
+                            <constraint firstItem="z8U-7X-s1n" firstAttribute="bottom" secondItem="PSV-Ox-kCj" secondAttribute="bottom" id="nCO-xB-3AR"/>
+                            <constraint firstItem="z8U-7X-s1n" firstAttribute="trailing" secondItem="PSV-Ox-kCj" secondAttribute="trailing" id="oNU-8a-yV8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="YhF-Ej-4p0" id="yJt-IG-7hK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jfy-ke-EdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
