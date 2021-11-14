@@ -30,7 +30,7 @@
         <!--Home Manager Worker Today Worker ListVC-->
         <scene sceneID="fx6-jk-oMF">
             <objects>
-                <viewController storyboardIdentifier="HomeManagerWorkerTodayWorkerListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lh9-Zd-N0W" customClass="HomeManagerWorkerTodayWorkerListVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeManagerWorkerTodayWorkerListVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lh9-Zd-N0W" customClass="HomeManagerWorkerTodayWorkerListVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mSQ-cO-1dE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +89,7 @@
         <!--Home ManagerQR CodeVC-->
         <scene sceneID="p97-s8-6RH">
             <objects>
-                <viewController storyboardIdentifier="HomeManagerQRCodeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2iX-eP-GUt" customClass="HomeManagerQRCodeVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeManagerQRCodeVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2iX-eP-GUt" customClass="HomeManagerQRCodeVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TSf-TM-xEf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -300,7 +300,7 @@
         <!--Home Manager Add Public WorkVC-->
         <scene sceneID="Cwf-5f-FlF">
             <objects>
-                <viewController storyboardIdentifier="HomeManagerAddPublicWorkVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y1T-hg-WGM" customClass="HomeManagerAddPublicWorkVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeManagerAddPublicWorkVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y1T-hg-WGM" customClass="HomeManagerAddPublicWorkVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mR4-70-uGa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,19 +330,42 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="vni-9P-XW6"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="maR-XZ-tIg">
+                                <rect key="frame" x="0.0" y="102" width="375" height="676"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeg-Dv-rLD">
+                                <rect key="frame" x="329" y="60" width="30" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="완료">
+                                    <color key="titleColor" red="0.96078431610000004" green="0.77647060160000003" blue="0.26274511220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNext:" destination="y1T-hg-WGM" eventType="touchUpInside" id="ceT-kY-Vuv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o68-ni-YHV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oeM-50-Noz" firstAttribute="leading" secondItem="mR4-70-uGa" secondAttribute="leading" id="5Ky-wh-vWQ"/>
                             <constraint firstAttribute="trailing" secondItem="oeM-50-Noz" secondAttribute="trailing" id="7DY-Ji-GQT"/>
+                            <constraint firstItem="maR-XZ-tIg" firstAttribute="top" secondItem="oeM-50-Noz" secondAttribute="bottom" id="83j-YL-FTA"/>
+                            <constraint firstItem="o68-ni-YHV" firstAttribute="trailing" secondItem="jeg-Dv-rLD" secondAttribute="trailing" constant="16" id="LqP-9k-lWa"/>
+                            <constraint firstItem="maR-XZ-tIg" firstAttribute="leading" secondItem="o68-ni-YHV" secondAttribute="leading" id="N6T-fc-Epl"/>
                             <constraint firstItem="vuC-k7-u8x" firstAttribute="centerY" secondItem="yTX-tC-yba" secondAttribute="centerY" id="OSL-UG-xOe"/>
                             <constraint firstItem="vuC-k7-u8x" firstAttribute="leading" secondItem="o68-ni-YHV" secondAttribute="leading" constant="24" id="YHO-25-ZA0"/>
                             <constraint firstItem="yTX-tC-yba" firstAttribute="centerX" secondItem="mR4-70-uGa" secondAttribute="centerX" id="c6U-r8-jcu"/>
                             <constraint firstItem="yTX-tC-yba" firstAttribute="top" secondItem="o68-ni-YHV" secondAttribute="top" constant="21" id="d9e-4c-J3t"/>
+                            <constraint firstItem="o68-ni-YHV" firstAttribute="trailing" secondItem="maR-XZ-tIg" secondAttribute="trailing" id="nyi-gW-B2Z"/>
+                            <constraint firstItem="o68-ni-YHV" firstAttribute="bottom" secondItem="maR-XZ-tIg" secondAttribute="bottom" id="pTd-lT-Qt5"/>
                             <constraint firstItem="oeM-50-Noz" firstAttribute="top" secondItem="yTX-tC-yba" secondAttribute="bottom" constant="14" id="pXB-hk-nn2"/>
+                            <constraint firstItem="jeg-Dv-rLD" firstAttribute="centerY" secondItem="yTX-tC-yba" secondAttribute="centerY" id="ugZ-Rg-y8E"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="maR-XZ-tIg" id="zwc-Wm-l7z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wm8-re-aP7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -466,7 +489,7 @@
         <!--Home Manager Add Private WorkVC-->
         <scene sceneID="qcQ-P9-r3v">
             <objects>
-                <viewController storyboardIdentifier="HomeManagerAddPrivateWorkVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ta5-4r-hSb" customClass="HomeManagerAddPrivateWorkVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeManagerAddPrivateWorkVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ta5-4r-hSb" customClass="HomeManagerAddPrivateWorkVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rrM-B5-gPh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -496,19 +519,42 @@
                                     <constraint firstAttribute="height" constant="1" id="Jxy-GG-KKS"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VuI-3u-Bxy">
+                                <rect key="frame" x="0.0" y="102" width="375" height="676"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyS-Dn-QyK">
+                                <rect key="frame" x="329" y="60" width="30" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="완료">
+                                    <color key="titleColor" red="0.96078431610000004" green="0.77647060160000003" blue="0.26274511220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNext:" destination="Ta5-4r-hSb" eventType="touchUpInside" id="mQ2-VX-JEn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QWO-uN-dKW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="st2-6Q-dav" firstAttribute="top" secondItem="aMs-OR-5Rh" secondAttribute="bottom" constant="14" id="4xW-Nf-dxw"/>
+                            <constraint firstItem="QWO-uN-dKW" firstAttribute="bottom" secondItem="VuI-3u-Bxy" secondAttribute="bottom" id="9jw-h3-DV4"/>
                             <constraint firstItem="aMs-OR-5Rh" firstAttribute="centerX" secondItem="rrM-B5-gPh" secondAttribute="centerX" id="Afg-hh-ZDp"/>
+                            <constraint firstItem="VuI-3u-Bxy" firstAttribute="leading" secondItem="QWO-uN-dKW" secondAttribute="leading" id="TS7-9c-5Tw"/>
+                            <constraint firstItem="VuI-3u-Bxy" firstAttribute="top" secondItem="st2-6Q-dav" secondAttribute="bottom" id="XCm-Vs-mo8"/>
                             <constraint firstItem="st2-6Q-dav" firstAttribute="leading" secondItem="rrM-B5-gPh" secondAttribute="leading" id="dDt-9f-57S"/>
                             <constraint firstItem="wFs-Ek-yH6" firstAttribute="centerY" secondItem="aMs-OR-5Rh" secondAttribute="centerY" id="dsc-Go-b1m"/>
                             <constraint firstAttribute="trailing" secondItem="st2-6Q-dav" secondAttribute="trailing" id="pa0-Rb-FDn"/>
+                            <constraint firstItem="QWO-uN-dKW" firstAttribute="trailing" secondItem="wyS-Dn-QyK" secondAttribute="trailing" constant="16" id="rtU-J2-z8A"/>
                             <constraint firstItem="wFs-Ek-yH6" firstAttribute="leading" secondItem="QWO-uN-dKW" secondAttribute="leading" constant="24" id="syH-dI-yf7"/>
                             <constraint firstItem="aMs-OR-5Rh" firstAttribute="top" secondItem="QWO-uN-dKW" secondAttribute="top" constant="21" id="vKm-jE-K16"/>
+                            <constraint firstItem="wyS-Dn-QyK" firstAttribute="centerY" secondItem="aMs-OR-5Rh" secondAttribute="centerY" id="yIJ-hp-9II"/>
+                            <constraint firstItem="QWO-uN-dKW" firstAttribute="trailing" secondItem="VuI-3u-Bxy" secondAttribute="trailing" id="yR9-W7-yVU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="VuI-3u-Bxy" id="bSy-CY-EFw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4Z-KZ-gY7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -517,7 +563,7 @@
         <!--Home Manager Today WorkVC-->
         <scene sceneID="5aa-Ay-caf">
             <objects>
-                <viewController storyboardIdentifier="HomeManagerTodayWorkVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nti-Hd-vSa" customClass="HomeManagerTodayWorkVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeManagerTodayWorkVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nti-Hd-vSa" customClass="HomeManagerTodayWorkVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TNW-OZ-Rue">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -600,7 +646,7 @@
         <!--Home Manager AlarmVC-->
         <scene sceneID="yzG-3n-Rfm">
             <objects>
-                <viewController storyboardIdentifier="HomeManagerAlarmVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qic-gK-YGX" customClass="HomeManagerAlarmVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeManagerAlarmVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qic-gK-YGX" customClass="HomeManagerAlarmVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cd8-QM-PJZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

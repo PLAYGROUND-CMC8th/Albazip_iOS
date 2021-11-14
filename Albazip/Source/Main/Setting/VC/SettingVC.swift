@@ -102,7 +102,7 @@ class SettingVC : UIViewController, SettingLogoutDelegate{
     }
     
     func logout() {
-        showMessage(message: "로그아웃", controller: self)
+        presentBottomAlert(message: "로그아웃")
     }
     
     @IBAction func btnCancel(_ sender: Any) {

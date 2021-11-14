@@ -22,7 +22,7 @@
                         <rect key="frame" x="24" y="6" width="327" height="99.666666666666671"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqv-rX-TWT">
-                                <rect key="frame" x="16" y="50.333333333333336" width="287" height="1"/>
+                                <rect key="frame" x="16" y="50.333333333333336" width="295" height="1"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Hgy-um-vUX"/>
@@ -59,13 +59,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Rqv-rX-TWT" secondAttribute="trailing" constant="16" id="2l5-yQ-aYH"/>
                             <constraint firstItem="Rqv-rX-TWT" firstAttribute="leading" secondItem="aH1-T0-BL5" secondAttribute="leading" constant="16" id="B27-sQ-gSG"/>
                             <constraint firstItem="p0M-ks-BO7" firstAttribute="top" secondItem="aH1-T0-BL5" secondAttribute="top" constant="16" id="BzV-ia-Psn"/>
                             <constraint firstItem="Sd1-DU-ech" firstAttribute="top" secondItem="Rqv-rX-TWT" secondAttribute="bottom" constant="16" id="Dq8-Jc-tjB"/>
                             <constraint firstAttribute="trailing" secondItem="7HT-az-SpX" secondAttribute="trailing" constant="24" id="Fhg-1B-alq"/>
                             <constraint firstItem="p0M-ks-BO7" firstAttribute="leading" secondItem="aH1-T0-BL5" secondAttribute="leading" constant="24" id="Hsq-Le-a8m"/>
                             <constraint firstItem="Sd1-DU-ech" firstAttribute="leading" secondItem="aH1-T0-BL5" secondAttribute="leading" constant="24" id="V9U-rC-1XQ"/>
-                            <constraint firstItem="Rqv-rX-TWT" firstAttribute="trailing" secondItem="Sd1-DU-ech" secondAttribute="trailing" id="X9H-jz-QMx"/>
                             <constraint firstItem="Rqv-rX-TWT" firstAttribute="centerY" secondItem="aH1-T0-BL5" secondAttribute="centerY" id="ciT-jM-xDh"/>
                             <constraint firstItem="Rqv-rX-TWT" firstAttribute="top" secondItem="7HT-az-SpX" secondAttribute="bottom" constant="15.000000000000007" id="kl0-9w-VWH"/>
                             <constraint firstAttribute="bottom" secondItem="Sd1-DU-ech" secondAttribute="bottom" constant="17.329999999999998" id="pli-NZ-iLh"/>
@@ -94,9 +94,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="subLabel" destination="Sd1-DU-ech" id="g0A-eR-HFe"/>
+                <outlet property="textView" destination="aH1-T0-BL5" id="PaN-En-Ken"/>
                 <outlet property="titleLabel" destination="p0M-ks-BO7" id="qY0-oW-aMI"/>
             </connections>
-            <point key="canvasLocation" x="172" y="142.61083743842366"/>
+            <point key="canvasLocation" x="377" y="142"/>
         </tableViewCell>
     </objects>
     <resources>

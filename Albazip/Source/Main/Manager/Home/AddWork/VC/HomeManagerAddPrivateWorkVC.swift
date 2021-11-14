@@ -1,56 +1,44 @@
 //
-//  MyPageManagerWorkListVC.swift
+//  HomeManagerAddPrivateWorkVC.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2021/11/05.
+//  Created by 김수빈 on 2021/11/13.
 //
 
 import Foundation
-import UIKit
-
-struct WorkList{
-    var title: String
-    var content: String
-}
-
-class MyPageManagerWorkListVC: UIViewController{
-    
-    
+class HomeManagerAddPrivateWorkVC: UIViewController{
     @IBOutlet var tableView: UITableView!
     var totalCount = 0
     var totalList = [WorkList]()
     var taskList = [TaskLists]()
-    // Datamanager
-    lazy var dataManager: MyPageManagerAddWorkerDatamanager = MyPageManagerAddWorkerDatamanager()
-    
+    var selectedItem = -1
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
         setUI()
-    }
-    //MARK:- View Setup
-    func setUI(){
-        self.tabBarController?.tabBar.isHidden = true
-        self.dismissKeyboardWhenTappedAround()
-    }
-    func setupTableView() {
-        
-        tableView.register(UINib(nibName: "MyPageManagerWorkList1TableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageManagerWorkList1TableViewCell")
-        tableView.register(UINib(nibName: "MyPageManagerWorkList2TableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageManagerWorkList2TableViewCell")
-        tableView.register(UINib(nibName: "MyPageManagerWorkList3TableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageManagerWorkList3TableViewCell")
-        //MyPageManagerWriteCommunityTableViewCell
-        tableView.dataSource = self
-        tableView.delegate = self
-        //tableView.estimatedRowHeight = 74
+        setupTableView()
     }
     
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
+    //MARK:- View Setup
+    func setUI(){
+        
+        self.dismissKeyboardWhenTappedAround()
+    }
+    func setupTableView() {
+        
+        tableView.register(UINib(nibName: "HomeManagerAddPublicWorkTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "HomeManagerAddPublicWorkTableViewCell")
+        tableView.register(UINib(nibName: "MyPageManagerWorkList2TableViewCell", bundle: nil),forCellReuseIdentifier: "MyPageManagerWorkList2TableViewCell")
+        tableView.register(UINib(nibName: "MyPageManagerWorkList3TableViewCell", bundle: nil),forCellReuseIdentifier: "MyPageManagerWorkList3TableViewCell")
+        tableView.register(UINib(nibName: "HomeManagerAddPrivateWorkTableViewCell", bundle: nil),forCellReuseIdentifier: "HomeManagerAddPrivateWorkTableViewCell")
+        //HomeManagerAddPrivateWorkTableViewCell
+        //MyPageManagerWriteCommunityTableViewCell
+        tableView.dataSource = self
+        tableView.delegate = self
+        //tableView.estimatedRowHeight = 74
+    }
     @IBAction func btnNext(_ sender: Any) {
         taskList.removeAll()
      
@@ -69,6 +57,7 @@ class MyPageManagerWorkListVC: UIViewController{
            
             
         }
+        /*
         //api 호출
         let data = MyPageManagerAddWorkerInfo.shared
         let input = MyPageManagerAddWorkerRequest(rank: data.rank!, title: data.title!, startTime: data.startTime!, endTime: data.endTime!,  workDays: data.workDays!, breakTime: data.breakTime!, salary: data.salary!, salaryType: data.salaryType!, taskLists: taskList)
@@ -76,31 +65,36 @@ class MyPageManagerWorkListVC: UIViewController{
         dataManager.postAddWorker(input, vc: self)
         showIndicator()
         //self.navigationController?.popViewController(animated: true)
+ */
     }
-    
-    
-    
 }
-
 //MARK:- Table View Data Source
 
-extension  MyPageManagerWorkListVC: UITableViewDataSource, UITableViewDelegate {
+extension HomeManagerAddPrivateWorkVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return totalList.count + 2
+        return totalList.count + 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.row {
         case 0:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkList1TableViewCell") as? MyPageManagerWorkList1TableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeManagerAddPublicWorkTableViewCell") as? HomeManagerAddPublicWorkTableViewCell {
+                cell.titleLabel.text = "포지션 선택"
                 cell.selectionStyle = .none
                 return cell
             }
-        
-        case totalList.count+1:
+        case 1:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeManagerAddPrivateWorkTableViewCell") as? HomeManagerAddPrivateWorkTableViewCell {
+                cell.delegate = self
+                //cell.titleLabel.text = "포지션 선택"
+                //cell.homeManagerAddPrivateWorkCollectionViewCellDelegate = self
+                cell.selectionStyle = .none
+                return cell
+            }
+        case totalList.count+2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkList3TableViewCell") as? MyPageManagerWorkList3TableViewCell {
                 cell.selectionStyle = .none
                 cell.myPageManagerWorkList3Delegate = self
@@ -113,8 +107,8 @@ extension  MyPageManagerWorkListVC: UITableViewDataSource, UITableViewDelegate {
                 cell.selectionStyle = .none
                 cell.cellIndex = indexPath.row
                 cell.myPageManagerWorkList2Delegate = self
-                cell.titleLabel.text = totalList[indexPath.row - 1].title
-                cell.subLabel.text = totalList[indexPath.row - 1].content
+                cell.titleLabel.text = totalList[indexPath.row - 2].title
+                cell.subLabel.text = totalList[indexPath.row - 2].content
                 
                 
                 print(indexPath.row)
@@ -126,8 +120,10 @@ extension  MyPageManagerWorkListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
         switch indexPath.row {
         case 0:
-            return 143
-        case totalList.count+1:
+            return 124
+        case 1:
+            return 110
+        case totalList.count+2:
             return 60
         default:
             
@@ -139,44 +135,42 @@ extension  MyPageManagerWorkListVC: UITableViewDataSource, UITableViewDelegate {
         
     }
 }
-
-extension MyPageManagerWorkListVC: MyPageManagerWorkList3Delegate, MyPageManagerWorkList2Delegate{
+extension HomeManagerAddPrivateWorkVC: MyPageManagerWorkList3Delegate, MyPageManagerWorkList2Delegate{
     
     func setTitleTextField(index: Int,text: String) {
-        totalList[index-1].title = text
+        totalList[index-2].title = text
         print(totalList)
     }
     func setSubTextField(index: Int, text:String){
-        totalList[index-1].content = text
+        totalList[index-2].content = text
         print(totalList)
     }
     func deleteCell(index: Int) {
-        totalList.remove(at: index - 1)
+        totalList.remove(at: index - 2)
         print(totalList)
         tableView.reloadData()
         print(totalList)
     }
 
     func addWork() {
-            
-        totalList.append(WorkList(title: "",content: ""))
-        print(totalList)
-        tableView.reloadData()
-        print(totalList)
+        if selectedItem != -1{
+            totalList.append(WorkList(title: "",content: ""))
+            print(totalList)
+            tableView.reloadData()
+            print(totalList)
+        }else{
+            presentBottomAlert(message: "먼저 업무를 추가할 포지션을 선택해주세요.")
+        }
+        
     }
     
     
 }
 
-extension MyPageManagerWorkListVC {
-    func didSuccessAddWorker(_ result: MyPageManagerAddWorkerResponse) {
-        dismissIndicator()
-        //self.presentAlert(title: result.message)
-        self.navigationController?.popToRootViewController(animated: false)
-    }
-    
-    func failedToRequestAddWorker(message: String) {
-        dismissIndicator()
-        self.presentAlert(title: message)
+extension  HomeManagerAddPrivateWorkVC: HomeManagerAddPrivateWorkTableViewCellDelegate{
+    func changePostition(index: Int) {
+        selectedItem = index
+        print("선택된 아이템 \(index)")
     }
 }
+

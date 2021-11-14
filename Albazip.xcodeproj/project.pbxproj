@@ -256,6 +256,12 @@
 		C3E1FEB6272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E1FEB4272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.xib */; };
 		C3E1FEB9272DB1EA00CE44C6 /* MyPageManagerWriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEB7272DB1EA00CE44C6 /* MyPageManagerWriteVC.swift */; };
 		C3E1FEBA272DB1EA00CE44C6 /* MyPageManagerWriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E1FEB8272DB1EA00CE44C6 /* MyPageManagerWriteVC.xib */; };
+		C3E9C8D52740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8D32740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.swift */; };
+		C3E9C8D62740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E9C8D42740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.xib */; };
+		C3E9C8DB2740FEE600B0139C /* HomeManagerAddPrivateWorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8D92740FEE600B0139C /* HomeManagerAddPrivateWorkTableViewCell.swift */; };
+		C3E9C8DC2740FEE600B0139C /* HomeManagerAddPrivateWorkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E9C8DA2740FEE600B0139C /* HomeManagerAddPrivateWorkTableViewCell.xib */; };
+		C3E9C8DF274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8DD274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.swift */; };
+		C3E9C8E0274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E9C8DE274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -514,6 +520,12 @@
 		C3E1FEB4272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerWriteTableViewCell.xib; sourceTree = "<group>"; };
 		C3E1FEB7272DB1EA00CE44C6 /* MyPageManagerWriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWriteVC.swift; sourceTree = "<group>"; };
 		C3E1FEB8272DB1EA00CE44C6 /* MyPageManagerWriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerWriteVC.xib; sourceTree = "<group>"; };
+		C3E9C8D32740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAddPublicWorkTableViewCell.swift; sourceTree = "<group>"; };
+		C3E9C8D42740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeManagerAddPublicWorkTableViewCell.xib; sourceTree = "<group>"; };
+		C3E9C8D92740FEE600B0139C /* HomeManagerAddPrivateWorkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAddPrivateWorkTableViewCell.swift; sourceTree = "<group>"; };
+		C3E9C8DA2740FEE600B0139C /* HomeManagerAddPrivateWorkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeManagerAddPrivateWorkTableViewCell.xib; sourceTree = "<group>"; };
+		C3E9C8DD274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAddPrivateWorkCollectionViewCell.swift; sourceTree = "<group>"; };
+		C3E9C8DE274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeManagerAddPrivateWorkCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1166,9 +1178,8 @@
 		C398BFAF273FCADE008E8BA5 /* AddWork */ = {
 			isa = PBXGroup;
 			children = (
-				C398BFB9273FD860008E8BA5 /* HomeManagerAddWorkVC.swift */,
-				C398BFBD273FF0FF008E8BA5 /* HomeManagerAddPublicWorkVC.swift */,
-				C398BFBF273FF15F008E8BA5 /* HomeManagerAddPrivateWorkVC.swift */,
+				C3E9C8D22740E8AA00B0139C /* Cell */,
+				C3E9C8D12740E89B00B0139C /* VC */,
 			);
 			path = AddWork;
 			sourceTree = "<group>";
@@ -1463,6 +1474,29 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C3E9C8D12740E89B00B0139C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C398BFB9273FD860008E8BA5 /* HomeManagerAddWorkVC.swift */,
+				C398BFBD273FF0FF008E8BA5 /* HomeManagerAddPublicWorkVC.swift */,
+				C398BFBF273FF15F008E8BA5 /* HomeManagerAddPrivateWorkVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		C3E9C8D22740E8AA00B0139C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C3E9C8D32740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.swift */,
+				C3E9C8D42740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.xib */,
+				C3E9C8D92740FEE600B0139C /* HomeManagerAddPrivateWorkTableViewCell.swift */,
+				C3E9C8DA2740FEE600B0139C /* HomeManagerAddPrivateWorkTableViewCell.xib */,
+				C3E9C8DD274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.swift */,
+				C3E9C8DE274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		C3F54E7A272C31E100FE412B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1609,6 +1643,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3AD3B23273963C80030905C /* MyPageManagerWorkerPositionVC.xib in Resources */,
+				C3E9C8DC2740FEE600B0139C /* HomeManagerAddPrivateWorkTableViewCell.xib in Resources */,
 				C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */,
 				C30AFE8727341CD70075CDE2 /* MyPageManagerWorkList1TableViewCell.xib in Resources */,
 				C37EBF45271ABE7B00DEC2CA /* LoginStoryboard.storyboard in Resources */,
@@ -1639,7 +1674,9 @@
 				C38CA0C5273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.xib in Resources */,
 				C34A00612731BF2900C24102 /* MyPageWorkerPositionTableViewCell.xib in Resources */,
 				C3B93398273C081B0056E381 /* SettingNoticeTableViewCell.xib in Resources */,
+				C3E9C8E0274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.xib in Resources */,
 				C398BFA9273F974F008E8BA5 /* HomeManagerCommunityTableViewCell.xib in Resources */,
+				C3E9C8D62740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.xib in Resources */,
 				C30AFE8B27341F330075CDE2 /* MyPageManagerWorkList2TableViewCell.xib in Resources */,
 				C34BCB582732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.xib in Resources */,
 				C3AD3B3827398C130030905C /* MyPageManagerWorkerCodeTableViewCell.xib in Resources */,
@@ -1732,6 +1769,7 @@
 				C38BFB7B2739EFA000E79BF5 /* MyPageManagerWorkerPositionDelete2VC.swift in Sources */,
 				C3AD3B1527394BFC0030905C /* MyPageManagerWorkerDetailVC.swift in Sources */,
 				C3B022F12727193100013988 /* RegisterSelectSalaryDateVC.swift in Sources */,
+				C3E9C8DB2740FEE600B0139C /* HomeManagerAddPrivateWorkTableViewCell.swift in Sources */,
 				C30EC2E5272B0A8D00EEF218 /* RegisterManagerDataManager.swift in Sources */,
 				C34C4AE02721BF6700300454 /* RegisterSelectYearVC.swift in Sources */,
 				C38442352714797000B84E8A /* AppDelegate.swift in Sources */,
@@ -1740,6 +1778,7 @@
 				C3B933AB273C3E690056E381 /* MyPageDetailAllClearWorkTableViewCell.swift in Sources */,
 				C384425927147E3F00B84E8A /* Date.swift in Sources */,
 				C34A005C2731BA1B00C24102 /* MyPageWorkerInfoVC.swift in Sources */,
+				C3E9C8DF274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.swift in Sources */,
 				C3CFC2F6273E5263001B2EB6 /* MyPageManagerWorkerDetailProfileDatamanger.swift in Sources */,
 				C34BCB4C2732F3C00085ADB3 /* MyPageDetailPublicDateTableViewCell.swift in Sources */,
 				C37EBF51271AF29B00DEC2CA /* UITextField.swift in Sources */,
@@ -1895,6 +1934,7 @@
 				C3CFC2FA273E9180001B2EB6 /* MyPageWorkerMyInfoResponse.swift in Sources */,
 				C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */,
 				C398BFB4273FD26C008E8BA5 /* HomeManagerWorkerTodayWorkerListVC.swift in Sources */,
+				C3E9C8D52740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.swift in Sources */,
 				C37B0B57272972720017D179 /* RegisterResponse.swift in Sources */,
 				C3AD3B332739874D0030905C /* MyPageManagerWorkerPositionTableViewCell.swift in Sources */,
 				C384425B27147E3F00B84E8A /* UIButton.swift in Sources */,

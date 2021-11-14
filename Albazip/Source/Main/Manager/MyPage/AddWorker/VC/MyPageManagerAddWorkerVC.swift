@@ -292,7 +292,7 @@ extension MyPageManagerAddWorkerVC: MyPageManagerTimeDateModalDelegate, MyPageMa
         checkContent()
     }
     func presentAlert(text: String) {
-        showMessage(message: text, controller: self)
+        presentBottomAlert(message: text)
     }
     
     func openView() {

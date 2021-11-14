@@ -66,8 +66,8 @@ extension UIViewController {
     // MARK: 커스텀 하단 경고창
     func presentBottomAlert(message: String, target: ConstraintRelatableTarget? = nil, offset: Double? = -12) {
         let alertSuperview = UIView()
-        alertSuperview.backgroundColor = UIColor.black.withAlphaComponent(0.9)
-        alertSuperview.layer.cornerRadius = 15
+        alertSuperview.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        alertSuperview.layer.cornerRadius = 17
         alertSuperview.isHidden = true
     
         let alertLabel = UILabel()
@@ -83,10 +83,10 @@ extension UIViewController {
         
         alertSuperview.addSubview(alertLabel)
         alertLabel.snp.makeConstraints { make in
-            make.top.equalTo(6)
-            make.bottom.equalTo(-6)
-            make.leading.equalTo(12)
-            make.trailing.equalTo(-12)
+            make.top.equalTo(8)
+            make.bottom.equalTo(-8)
+            make.leading.equalTo(16)
+            make.trailing.equalTo(-16)
         }
         
         alertLabel.text = message

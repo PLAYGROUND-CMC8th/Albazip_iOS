@@ -18,6 +18,9 @@ class HomeManagerVC: BaseViewController{
         setTableView()
         setUI()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        setUI()
+    }
     func setTableView(){
         tableView.dataSource = self
         tableView.delegate = self
@@ -37,6 +40,7 @@ class HomeManagerVC: BaseViewController{
             tableView.backgroundColor = #colorLiteral(red: 0.9991409183, green: 0.9350905418, blue: 0.7344018817, alpha: 1)
             mainView.backgroundColor = #colorLiteral(red: 0.9991409183, green: 0.9350905418, blue: 0.7344018817, alpha: 1)
         }
+        self.tabBarController?.tabBar.isHidden = false
     }
     //큐알 페이지로
     @IBAction func btnQRCode(_ sender: Any) {
