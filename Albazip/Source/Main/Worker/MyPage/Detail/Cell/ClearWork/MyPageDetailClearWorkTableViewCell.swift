@@ -13,6 +13,7 @@ class MyPageDetailClearWorkTableViewCell: UITableViewCell {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var totalLabel: UILabel!
     @IBOutlet var countLabel: UILabel!
+    @IBOutlet var segment: UIProgressView!
     
     
     override func awakeFromNib() {

@@ -806,11 +806,9 @@
 		C34BCB3A2732BF790085ADB3 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				C3A228C02742B41500187587 /* ClearWork */,
 				C34BCB3B2732BFB20085ADB3 /* MyPageDetailCommuteRecordVC.swift */,
 				C34BCB3D2732CCB80085ADB3 /* MyPageDetailPublicWorkVC.swift */,
-				C34BCB3F2732CCD90085ADB3 /* MyPageDetailClearWorkVC.swift */,
-				C3B93399273C2ECD0056E381 /* MyPageDetailClearWorkMonthVC.swift */,
-				C3B9339B273C2EFA0056E381 /* MyPageDetailClearWorkDayVC.swift */,
 				C3B933AD273C43AA0056E381 /* MyPageDetailStopWorkVC.swift */,
 			);
 			path = VC;
@@ -1304,6 +1302,36 @@
 			path = Alarm;
 			sourceTree = "<group>";
 		};
+		C3A228BE2742B36A00187587 /* ClearWork */ = {
+			isa = PBXGroup;
+			children = (
+				C3E9C8EB2741696000B0139C /* MyPageDetailClearWorkResponse.swift */,
+				C3E9C8ED2741697100B0139C /* MyPageDetailClearWorkMonthResponse.swift */,
+				C3E9C8EF2741698000B0139C /* MyPageDetailClearWorkDayResponse.swift */,
+			);
+			path = ClearWork;
+			sourceTree = "<group>";
+		};
+		C3A228BF2742B37900187587 /* ClearWork */ = {
+			isa = PBXGroup;
+			children = (
+				C3E9C8E5274168F600B0139C /* MyPageDetailClearWorkDataManager.swift */,
+				C3E9C8E72741691000B0139C /* MyPageDetailClearWorkMonthDataManager.swift */,
+				C3E9C8E92741692E00B0139C /* MyPageDetailClearWorkDayDatamanager.swift */,
+			);
+			path = ClearWork;
+			sourceTree = "<group>";
+		};
+		C3A228C02742B41500187587 /* ClearWork */ = {
+			isa = PBXGroup;
+			children = (
+				C34BCB3F2732CCD90085ADB3 /* MyPageDetailClearWorkVC.swift */,
+				C3B93399273C2ECD0056E381 /* MyPageDetailClearWorkMonthVC.swift */,
+				C3B9339B273C2EFA0056E381 /* MyPageDetailClearWorkDayVC.swift */,
+			);
+			path = ClearWork;
+			sourceTree = "<group>";
+		};
 		C3AD3B1227394B940030905C /* WorkerDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -1597,9 +1625,7 @@
 		C3E9C8E3274168C500B0139C /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				C3E9C8EB2741696000B0139C /* MyPageDetailClearWorkResponse.swift */,
-				C3E9C8ED2741697100B0139C /* MyPageDetailClearWorkMonthResponse.swift */,
-				C3E9C8EF2741698000B0139C /* MyPageDetailClearWorkDayResponse.swift */,
+				C3A228BE2742B36A00187587 /* ClearWork */,
 				C3E9C8F127416C8000B0139C /* MyPageDetailPublicWorkResponse.swift */,
 				C3E9C8F527416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift */,
 			);
@@ -1609,9 +1635,7 @@
 		C3E9C8E4274168CE00B0139C /* Datamanager */ = {
 			isa = PBXGroup;
 			children = (
-				C3E9C8E5274168F600B0139C /* MyPageDetailClearWorkDataManager.swift */,
-				C3E9C8E72741691000B0139C /* MyPageDetailClearWorkMonthDataManager.swift */,
-				C3E9C8E92741692E00B0139C /* MyPageDetailClearWorkDayDatamanager.swift */,
+				C3A228BF2742B37900187587 /* ClearWork */,
 				C3E9C8F327416D5100B0139C /* MyPageDetailPublicWorkDataManager.swift */,
 				C3E9C8F727416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift */,
 			);

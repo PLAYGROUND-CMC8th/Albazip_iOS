@@ -13,13 +13,13 @@ struct MyPageDetailClearWorkResponse: Decodable {
 
 struct MyPageDetailClearWorkData: Decodable {
     var taskRate: MyPageDetailClearWorkTaskRate?
-    var taskData: [MyPageDetailClearWorktaskData]?
+    var taskData: [MyPageDetailClearWorkTaskData]?
 }
 struct MyPageDetailClearWorkTaskRate: Decodable{
     var completeTaskCount: Int?
     var totalTaskCount: Int?
 }
-struct MyPageDetailClearWorktaskData: Decodable{
+struct MyPageDetailClearWorkTaskData: Decodable{
     var year: String?
     var month: String?
     var totalCount: Int?

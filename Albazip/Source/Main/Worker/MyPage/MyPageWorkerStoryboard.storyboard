@@ -588,7 +588,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJ5-ON-XDJ">
                                 <rect key="frame" x="24" y="126" width="327" height="67"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="완료한 업무" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqs-xp-FBs">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업무완수율" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqs-xp-FBs">
                                         <rect key="frame" x="24" y="24" width="203" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="203" id="Tbm-6F-i89"/>
@@ -597,14 +597,14 @@
                                         <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20784312490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvO-hX-Yb4">
-                                        <rect key="frame" x="289" y="23.666666666666657" width="14" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvO-hX-Yb4">
+                                        <rect key="frame" x="286.66666666666669" y="23.666666666666657" width="16.333333333333314" height="20"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JI-P2-T6S">
-                                        <rect key="frame" x="272" y="19" width="16" height="29"/>
+                                        <rect key="frame" x="269.66666666666669" y="19" width="16" height="29"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -660,6 +660,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="X9h-CC-AyA"/>
                     <connections>
+                        <outlet property="completeRateLabel" destination="8JI-P2-T6S" id="bGX-bL-1wc"/>
                         <outlet property="tableView" destination="8j4-1P-N2E" id="cMd-wj-rKH"/>
                     </connections>
                 </viewController>

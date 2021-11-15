@@ -46,7 +46,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="95s-jb-oKL">
-                                <rect key="frame" x="24" y="78" width="279" height="4"/>
+                                <rect key="frame" x="24" y="78" width="279" height="8"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="7h5-Iy-Vql"/>
+                                </constraints>
                                 <color key="progressTintColor" red="0.95686274770000002" green="0.70588237050000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="trackTintColor" red="0.98431372640000003" green="0.90588235859999999" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <userDefinedRuntimeAttributes>
@@ -95,6 +98,7 @@
             <connections>
                 <outlet property="countLabel" destination="IJP-v8-QS9" id="3Yy-XP-eAC"/>
                 <outlet property="dateLabel" destination="e4e-pk-NK8" id="v0V-cI-248"/>
+                <outlet property="segment" destination="95s-jb-oKL" id="JzB-JF-ELw"/>
                 <outlet property="totalLabel" destination="plS-nR-VPn" id="iyf-52-R6a"/>
             </connections>
             <point key="canvasLocation" x="18.399999999999999" y="122.29064039408867"/>

@@ -216,6 +216,7 @@ extension MyPageManagerWorkerInfoVC: MyPageWorkerMyInfoDelegate {
         print("완료 업무 페이지로..")
         let storyboard = UIStoryboard(name: "MyPageWorkerStoryboard", bundle: Bundle.main)
         guard let nextVC = storyboard.instantiateViewController(identifier: "MyPageDetailClearWorkVC") as? MyPageDetailClearWorkVC else {return}
+        nextVC.positionId = positionId
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     func goLeaveWorkVC(){
