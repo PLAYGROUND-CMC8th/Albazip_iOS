@@ -8,8 +8,14 @@
 import Alamofire
 
 class MyPageDetailCommuteRecordDatamanager {
-    func getMyPageDetailCommuteRecord(vc: MyPageDetailCommuteRecordVC, year: Int, month: Int) {
-        let url = "\(Constant.BASE_URL)/mypage/myinfo/commuteInfo/\(year)/\(month)"
+    func getMyPageDetailCommuteRecord(vc: MyPageDetailCommuteRecordVC, year: Int, month: Int, positionId: Int) {
+        var url = ""
+        if positionId == -1{
+            url = "\(Constant.BASE_URL)/mypage/myinfo/commuteInfo/\(year)/\(month)"
+        }else{
+            url = "\(Constant.BASE_URL)/mypage/workers/\(positionId)/workerInfo/commuteInfo/\(year)/\(month)"
+        }
+        
         
         let header: HTTPHeaders = [ "Content-Type":"application/json",
                                      "token":"\(UserDefaults.standard.string(forKey: "token")!)"]

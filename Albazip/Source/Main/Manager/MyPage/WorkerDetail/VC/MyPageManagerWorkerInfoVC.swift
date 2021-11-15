@@ -203,6 +203,7 @@ extension MyPageManagerWorkerInfoVC: MyPageWorkerMyInfoDelegate {
         let storyboard = UIStoryboard(name: "MyPageWorkerStoryboard", bundle: Bundle.main)
         guard let nextVC = storyboard.instantiateViewController(identifier: "MyPageDetailCommuteRecordVC") as? MyPageDetailCommuteRecordVC else {return}
         nextVC.lateCount = lateCount
+        nextVC.positionId = positionId
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     func goPublicWorkVC(){

@@ -16,6 +16,9 @@ class MyPageDetailCommuteRecordVC: UIViewController{
     var year = Int("yyyy".stringFromDate())!
     var isNoData = true
     var lateCount = ""
+    //관리자라면 근무자 정보 받아와야한다.
+    var positionId = -1 // 근무자이면 디폴트값 -1
+    
     @IBOutlet var tableView: UITableView!
     lazy var dataManager: MyPageDetailCommuteRecordDatamanager = MyPageDetailCommuteRecordDatamanager()
     //
@@ -28,8 +31,14 @@ class MyPageDetailCommuteRecordVC: UIViewController{
         lateCountLabel.text = lateCount
         
         showIndicator()
-        dataManager.getMyPageDetailCommuteRecord(vc: self, year: year, month: month)
+        commuteRecordAPI()
+        
     }
+    func commuteRecordAPI(){
+        dataManager.getMyPageDetailCommuteRecord(vc: self, year: year, month: month, positionId: positionId)
+        
+    }
+    
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -39,13 +48,13 @@ class MyPageDetailCommuteRecordVC: UIViewController{
             month -= 1
             monthLabel.text = "\(month)월"
             showIndicator()
-            dataManager.getMyPageDetailCommuteRecord(vc: self, year: year, month: month)
+            commuteRecordAPI()
         }else{
             year -= 1
             month = 12
             monthLabel.text = "\(month)월"
             showIndicator()
-            dataManager.getMyPageDetailCommuteRecord(vc: self, year: year, month: month)
+            commuteRecordAPI()
         }
     }
     @IBAction func btnRight(_ sender: Any) {
@@ -54,12 +63,12 @@ class MyPageDetailCommuteRecordVC: UIViewController{
             year += 1
             monthLabel.text = "\(month)월"
             showIndicator()
-            dataManager.getMyPageDetailCommuteRecord(vc: self, year: year, month: month)
+            commuteRecordAPI()
         }else{
             month += 1
             monthLabel.text = "\(month)월"
             showIndicator()
-            dataManager.getMyPageDetailCommuteRecord(vc: self, year: year, month: month)
+            commuteRecordAPI()
         }
     }
     //MARK:- View Setup
