@@ -25,5 +25,6 @@ struct MyPageDetailCommuteRecordCommuteData: Decodable{
     var end_time: String?
     var real_start_time: String?
     var real_end_time: String?
+    var is_late: Int?
 }
 

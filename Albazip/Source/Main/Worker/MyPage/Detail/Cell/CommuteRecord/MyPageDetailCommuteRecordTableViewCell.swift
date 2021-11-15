@@ -12,6 +12,10 @@ class MyPageDetailCommuteRecordTableViewCell: UITableViewCell {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var startTime: UILabel!
     @IBOutlet var endTime: UILabel!
+    @IBOutlet var startFlagView: UIImageView!
+    @IBOutlet var endFlagView: UIImageView!
+    @IBOutlet var startTitle: UILabel!
+    @IBOutlet var endTitle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

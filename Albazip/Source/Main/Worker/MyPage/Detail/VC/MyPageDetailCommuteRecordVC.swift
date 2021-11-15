@@ -124,9 +124,27 @@ extension MyPageDetailCommuteRecordVC: UITableViewDataSource,UITableViewDelegate
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailCommuteRecordTableViewCell") as? MyPageDetailCommuteRecordTableViewCell {
                 cell.selectionStyle = .none
                 if let data = commuteData{
+                    //날짜
                     cell.dateLabel.text = "\(data[indexPath.row].year!).\(data[indexPath.row].month!).\(data[indexPath.row].day!)"
-                    cell.startTime.text = data[indexPath.row].start_time!.insertTime
-                    cell.endTime.text = data[indexPath.row].end_time!.insertTime
+                    //출퇴근 기록
+                    if let start = data[indexPath.row].real_start_time{
+                        cell.startTime.text = start.insertTime
+                    }else{
+                        cell.startTime.text = ""
+                    }
+                    if let end = data[indexPath.row].real_end_time{
+                        cell.endTime.text = end.insertTime
+                    }else{
+                        cell.endTime.text = ""
+                    }
+                    //지각일때!
+                    if data[indexPath.row].is_late! == 1{ // 지각일 때
+                        cell.startFlagView.backgroundColor = #colorLiteral(red: 0.9833402038, green: 0.2258323133, blue: 0, alpha: 1)
+                        cell.startTitle.textColor = #colorLiteral(red: 0.9833402038, green: 0.2258323729, blue: 0.01172234025, alpha: 1)
+                    }else{
+                        cell.startFlagView.backgroundColor = #colorLiteral(red: 0.1198061183, green: 0.7442358136, blue: 0.306361407, alpha: 1)
+                        cell.startTitle.textColor = #colorLiteral(red: 0.1198061183, green: 0.7442358136, blue: 0.306361407, alpha: 1)
+                    }
                 }
                 print(indexPath.row)
                 return cell

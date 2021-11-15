@@ -93,8 +93,12 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dateLabel" destination="9ax-Ha-WvZ" id="eCe-hL-QyB"/>
+                <outlet property="endFlagView" destination="DTp-Dv-an4" id="4vX-iC-Q7g"/>
                 <outlet property="endTime" destination="kwK-Zx-0If" id="UF5-G5-lln"/>
+                <outlet property="endTitle" destination="x0V-Tt-Bq8" id="adz-ut-KZR"/>
+                <outlet property="startFlagView" destination="9Jc-qt-auc" id="79J-Q9-G11"/>
                 <outlet property="startTime" destination="Nca-Sf-asd" id="rg7-KG-D7e"/>
+                <outlet property="startTitle" destination="lgz-t0-CR8" id="hGw-MN-YJM"/>
             </connections>
             <point key="canvasLocation" x="105.07246376811595" y="106.13839285714285"/>
         </tableViewCell>
