@@ -60,12 +60,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="v8J-aa-Ajp" firstAttribute="centerX" secondItem="JfW-Nu-fmp" secondAttribute="centerX" id="4KB-zP-WNo"/>
+                            <constraint firstItem="x6v-NG-UyV" firstAttribute="top" secondItem="JfW-Nu-fmp" secondAttribute="top" constant="71" id="D8z-xy-dLn"/>
                             <constraint firstItem="Fjl-7C-zZf" firstAttribute="top" secondItem="x6v-NG-UyV" secondAttribute="bottom" constant="7" id="IrD-3w-G7a"/>
                             <constraint firstItem="v8J-aa-Ajp" firstAttribute="top" secondItem="Fjl-7C-zZf" secondAttribute="bottom" constant="12" id="LQ7-1d-IEK"/>
                             <constraint firstItem="A69-HW-XdH" firstAttribute="top" secondItem="v8J-aa-Ajp" secondAttribute="bottom" constant="14" id="Ll8-dO-XRe"/>
                             <constraint firstItem="Fjl-7C-zZf" firstAttribute="centerX" secondItem="JfW-Nu-fmp" secondAttribute="centerX" id="P5N-bU-WPq"/>
                             <constraint firstItem="A69-HW-XdH" firstAttribute="centerX" secondItem="JfW-Nu-fmp" secondAttribute="centerX" id="RzY-mx-tls"/>
-                            <constraint firstItem="x6v-NG-UyV" firstAttribute="top" secondItem="JfW-Nu-fmp" secondAttribute="top" constant="71" id="ihn-XS-68p"/>
                             <constraint firstItem="x6v-NG-UyV" firstAttribute="centerX" secondItem="JfW-Nu-fmp" secondAttribute="centerX" id="olJ-Fn-j0M"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -87,10 +87,11 @@
             <connections>
                 <outlet property="btnAddWork" destination="A69-HW-XdH" id="FdU-Y3-OaJ"/>
                 <outlet property="dateLabel" destination="Fjl-7C-zZf" id="czd-bh-OP6"/>
+                <outlet property="heightConstraint" destination="D8z-xy-dLn" id="moZ-Sc-0wC"/>
                 <outlet property="honeyImage" destination="x6v-NG-UyV" id="81D-Wh-Li4"/>
                 <outlet property="titleLabel" destination="v8J-aa-Ajp" id="lcU-V0-FEN"/>
             </connections>
-            <point key="canvasLocation" x="85.599999999999994" y="91.625615763546804"/>
+            <point key="canvasLocation" x="-137" y="96"/>
         </tableViewCell>
     </objects>
     <resources>

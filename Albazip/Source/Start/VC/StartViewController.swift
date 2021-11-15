@@ -14,12 +14,12 @@ class StartViewController: UIViewController{
             // Do any additional setup after loading the view.
         
         //내맘대로 바꾸깅
-        
+        /*
         UserDefaults.standard.set("",forKey: "token")
         print("token: \(UserDefaults.standard.string(forKey: "token")!)")
         UserDefaults.standard.set("",forKey: "job")
         print("job: \(UserDefaults.standard.string(forKey: "job")!)")
-        
+        */
         
        
         autoLogin()

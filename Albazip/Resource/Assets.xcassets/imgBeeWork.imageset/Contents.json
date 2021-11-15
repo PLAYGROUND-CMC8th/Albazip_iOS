@@ -1,23 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "imgBeeWork.png",
       "idiom" : "universal",
-      "filename" : "img9068Px.png",
       "scale" : "1x"
     },
     {
+      "filename" : "imgBeeWork@2x.png",
       "idiom" : "universal",
-      "filename" : "img9068Px@2x.png",
       "scale" : "2x"
     },
     {
+      "filename" : "imgBeeWork@3x.png",
       "idiom" : "universal",
-      "filename" : "img9068Px@3x.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

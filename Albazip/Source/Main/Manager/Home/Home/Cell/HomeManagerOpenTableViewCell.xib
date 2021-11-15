@@ -24,7 +24,7 @@
                         <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 근무자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgq-dK-yXs">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 근무자" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgq-dK-yXs">
                         <rect key="frame" x="283.66666666666669" y="24" width="55.333333333333314" height="14.333333333333336"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                         <color key="textColor" red="0.20000001789999999" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -294,7 +294,7 @@
                 <outlet property="publicWorkView" destination="oDH-Hj-8qq" id="Pb3-Re-7s2"/>
                 <outlet property="todayWorkerView" destination="Zmw-ar-0SU" id="3ef-gx-5sW"/>
             </connections>
-            <point key="canvasLocation" x="85.599999999999994" y="91.625615763546804"/>
+            <point key="canvasLocation" x="154" y="62"/>
         </tableViewCell>
     </objects>
     <resources>
