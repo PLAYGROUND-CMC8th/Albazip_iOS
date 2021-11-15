@@ -83,6 +83,7 @@ extension MyPageDetailClearWorkVC: UITableViewDataSource,UITableViewDelegate {
         }*/
         if isNoData{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWriteTableViewCell") as? MyPageManagerNoWriteTableViewCell {
+                cell.selectionStyle = .none
                 cell.bgView.backgroundColor = .none
                 cell.titleLabel.text = "완료한 공동업무가 없어요."
                    print(indexPath.row)
@@ -115,11 +116,12 @@ extension MyPageDetailClearWorkVC: UITableViewDataSource,UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row) 입니다.")
-        if let data = taskData{
-          
-            goMonthPage(year: data[indexPath.row].year!,month: data[indexPath.row].month! )
+        if !isNoData{
+            if let data = taskData{
+              
+                goMonthPage(year: data[indexPath.row].year!,month: data[indexPath.row].month! )
+            }
         }
-        
     }
     
 }

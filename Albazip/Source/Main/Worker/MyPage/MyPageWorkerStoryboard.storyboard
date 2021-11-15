@@ -844,6 +844,7 @@
                     <navigationItem key="navigationItem" id="3tW-5S-Dsk"/>
                     <connections>
                         <outlet property="tableView" destination="KOV-cS-bKY" id="6PP-fT-dkH"/>
+                        <outlet property="titleLabel" destination="1W0-es-PbI" id="Ybw-hR-LgD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0F-3f-fVT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -15,6 +15,7 @@ struct MyPageDetailClearWorkMonthResponse: Decodable {
 struct MyPageDetailClearWorkMonthData: Decodable {
     var month: String?
     var day: String?
+    var week_day: String?
     var totalCount: Int?
     var completeCount: Int?
 }
