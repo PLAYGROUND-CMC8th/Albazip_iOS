@@ -909,6 +909,7 @@
                     <navigationItem key="navigationItem" title="9/22 수요일 업무" id="phY-YJ-kXp"/>
                     <connections>
                         <outlet property="tableView" destination="Lsd-QW-BCF" id="gbe-j9-Woi"/>
+                        <outlet property="titleLabel" destination="lAQ-lA-FsV" id="tmL-03-ryS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVg-CA-Mef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

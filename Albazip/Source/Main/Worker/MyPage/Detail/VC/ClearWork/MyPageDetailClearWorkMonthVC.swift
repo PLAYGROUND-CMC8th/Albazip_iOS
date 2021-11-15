@@ -42,8 +42,12 @@ class MyPageDetailClearWorkMonthVC: UIViewController{
         tableView.dataSource = self
         tableView.delegate = self
     }
-    func goDayPage(){
+    func goDayPage(year: String, month: String, day: String, week_day : String){
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageDetailClearWorkDayVC") as? MyPageDetailClearWorkDayVC else {return}
+        nextVC.year = year
+        nextVC.month = month
+        nextVC.day = day
+        nextVC.week_day = week_day
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     @IBAction func btnCancel(_ sender: Any) {
@@ -101,7 +105,10 @@ extension MyPageDetailClearWorkMonthVC: UITableViewDataSource,UITableViewDelegat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row) 입니다.")
         if !isNoData{
-            goDayPage()
+            if let x = data{
+                goDayPage(year: year,month: x[indexPath.row].month!,  day: x[indexPath.row].day!, week_day: x[indexPath.row].week_day!)
+            }
+            
         }
     }
     

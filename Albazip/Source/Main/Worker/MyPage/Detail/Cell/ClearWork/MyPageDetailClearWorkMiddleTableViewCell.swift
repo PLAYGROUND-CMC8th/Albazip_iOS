@@ -9,6 +9,7 @@ import UIKit
 
 class MyPageDetailClearWorkMiddleTableViewCell: UITableViewCell {
 
+    @IBOutlet var middleView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
