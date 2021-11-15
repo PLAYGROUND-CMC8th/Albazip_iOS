@@ -91,6 +91,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="9ax-Ha-WvZ" id="eCe-hL-QyB"/>
+                <outlet property="endTime" destination="kwK-Zx-0If" id="UF5-G5-lln"/>
+                <outlet property="startTime" destination="Nca-Sf-asd" id="rg7-KG-D7e"/>
+            </connections>
             <point key="canvasLocation" x="105.07246376811595" y="106.13839285714285"/>
         </tableViewCell>
     </objects>

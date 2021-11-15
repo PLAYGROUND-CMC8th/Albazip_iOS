@@ -174,10 +174,11 @@ extension MyPageWorkerInfoVC: MyPageWorkerMyInfoDelegate {
   
     
     
-    func goCommuteRecordVC(){
+    func goCommuteRecordVC(lateCount:String){
         print("출퇴근 기록 페이지로..")
         let storyboard = UIStoryboard(name: "MyPageWorkerStoryboard", bundle: Bundle.main)
         guard let nextVC = storyboard.instantiateViewController(identifier: "MyPageDetailCommuteRecordVC") as? MyPageDetailCommuteRecordVC else {return}
+        nextVC.lateCount = lateCount
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     func goPublicWorkVC(){

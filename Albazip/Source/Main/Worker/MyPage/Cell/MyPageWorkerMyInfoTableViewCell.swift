@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MyPageWorkerMyInfoDelegate {
-    func goCommuteRecordVC()
+    func goCommuteRecordVC(lateCount: String)
     func goPublicWorkVC()
     func goClearWorkVC()
     func goLeaveWorkVC()
@@ -61,7 +61,7 @@ class MyPageWorkerMyInfoTableViewCell: UITableViewCell {
     }
     @objc func lateCountViewTapped(sender: UITapGestureRecognizer) {
         print("지각횟수")
-        self.delegate?.goCommuteRecordVC()
+        self.delegate?.goCommuteRecordVC(lateCount: lateCountLabel.text!)
     }
     @objc func joinPublicViewTapped(sender: UITapGestureRecognizer) {
         print("공동업무 참여 횟수")

@@ -9,6 +9,10 @@ import UIKit
 
 class MyPageDetailCommuteRecordTableViewCell: UITableViewCell {
 
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var startTime: UILabel!
+    @IBOutlet var endTime: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

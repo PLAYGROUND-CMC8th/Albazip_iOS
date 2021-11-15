@@ -135,5 +135,14 @@ extension String {
         }
         
     }
+    //현재 날짜 구하기
+    func stringFromDate() -> String {
+            let now = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = self
+            dateFormatter.locale = Locale(identifier: "ko_KR")
+            return dateFormatter.string(from: now)
+    }
+    //print("yyyy-MM-dd HH:mm:ss".stringFromDate())
     
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class MyPageManagerNoWriteTableViewCell: UITableViewCell {
 
+    @IBOutlet var bgView: UIView!
     @IBOutlet var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

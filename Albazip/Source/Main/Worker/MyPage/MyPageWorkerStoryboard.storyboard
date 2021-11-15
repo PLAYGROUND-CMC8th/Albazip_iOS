@@ -480,6 +480,9 @@
                                     <constraint firstAttribute="height" constant="24" id="yLD-XI-C96"/>
                                 </constraints>
                                 <state key="normal" image="icChevronLeft24Px"/>
+                                <connections>
+                                    <action selector="btnLeft:" destination="ekD-Ct-XRa" eventType="touchUpInside" id="FGF-hB-ZwW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wec-lS-eO9">
                                 <rect key="frame" x="322" y="219.33333333333334" width="24" height="24"/>
@@ -488,6 +491,9 @@
                                     <constraint firstAttribute="height" constant="24" id="wcM-jS-9NO"/>
                                 </constraints>
                                 <state key="normal" image="icChevronRight24Px"/>
+                                <connections>
+                                    <action selector="btnRight:" destination="ekD-Ct-XRa" eventType="touchUpInside" id="hZK-ck-E2G"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="39U-np-Ier"/>
@@ -517,6 +523,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="출퇴근 기록" id="cNo-oo-lwG"/>
                     <connections>
+                        <outlet property="lateCountLabel" destination="r7y-HL-4d6" id="wsn-jM-Bzt"/>
+                        <outlet property="monthLabel" destination="TTe-M0-y9d" id="aXq-DO-YgV"/>
                         <outlet property="tableView" destination="F8C-6O-fWI" id="cEd-r7-1VN"/>
                     </connections>
                 </viewController>
