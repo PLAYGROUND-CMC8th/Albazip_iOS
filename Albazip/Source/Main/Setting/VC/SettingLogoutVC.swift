@@ -18,8 +18,15 @@ class SettingLogoutVC: UIViewController{
     }
     @IBAction func btnLogout(_ sender: Any) {
         self.delegate?.modalDismiss()
-        self.delegate?.logout()
-        self.dismiss(animated: true, completion: nil)
+        //self.delegate?.logout()
+        //self.dismiss(animated: true, completion: nil)
+        
+        //로그아웃 시 토큰 삭제, job 정보 삭제, startviewcontroller로 돌아가기,
+        UserDefaults.standard.set("", forKey: "token")
+        UserDefaults.standard.set("", forKey: "job")
+        let newStoryboard = UIStoryboard(name: "StartStoryboard", bundle: nil)
+                let newViewController = newStoryboard.instantiateViewController(identifier: "StartNavigationViewController")
+                self.changeRootViewController(newViewController)
     }
     @IBAction func btnCancel(_ sender: Any) {
         self.delegate?.modalDismiss()

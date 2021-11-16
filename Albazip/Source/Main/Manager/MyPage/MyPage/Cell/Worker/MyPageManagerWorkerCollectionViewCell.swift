@@ -34,8 +34,10 @@ class MyPageManagerWorkerCollectionViewCell: UICollectionViewCell {
         }else{
             workerView.borderColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
             //이미지 갱신
-            if let img = data.imagePath {
-                let url = URL(string: img)
+            //print("img: \(data.imagePath!)")
+            if  data.imagePath != nil {
+                print("img: \(data.imagePath!)")
+                let url = URL(string: data.imagePath!)
                 workerImage.kf.setImage(with: url)
             }else{
                     workerImage.image = #imageLiteral(resourceName: "imgProfile84Px1")

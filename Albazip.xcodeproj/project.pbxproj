@@ -39,6 +39,7 @@
 		C30EC2E7272B0A9F00EEF218 /* RegisterManagerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E6272B0A9F00EEF218 /* RegisterManagerResponse.swift */; };
 		C30EC2E9272B0AB500EEF218 /* RegisterManagerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E8272B0AB500EEF218 /* RegisterManagerRequest.swift */; };
 		C30EC2EB272B121900EEF218 /* RegisterManagerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2EA272B121900EEF218 /* RegisterManagerInfo.swift */; };
+		C33574122743D4C100644E9B /* SettingWorkerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33574112743D4C100644E9B /* SettingWorkerVC.swift */; };
 		C33E00042731D30600D88267 /* MyPageWorkerWriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E00022731D30600D88267 /* MyPageWorkerWriteTableViewCell.swift */; };
 		C33E00052731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33E00032731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib */; };
 		C33E00082731D80500D88267 /* MyPageWorkerWriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E00062731D80500D88267 /* MyPageWorkerWriteVC.swift */; };
@@ -318,6 +319,7 @@
 		C30EC2E6272B0A9F00EEF218 /* RegisterManagerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerResponse.swift; sourceTree = "<group>"; };
 		C30EC2E8272B0AB500EEF218 /* RegisterManagerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerRequest.swift; sourceTree = "<group>"; };
 		C30EC2EA272B121900EEF218 /* RegisterManagerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerInfo.swift; sourceTree = "<group>"; };
+		C33574112743D4C100644E9B /* SettingWorkerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWorkerVC.swift; sourceTree = "<group>"; };
 		C33E00022731D30600D88267 /* MyPageWorkerWriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerWriteTableViewCell.swift; sourceTree = "<group>"; };
 		C33E00032731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageWorkerWriteTableViewCell.xib; sourceTree = "<group>"; };
 		C33E00062731D80500D88267 /* MyPageWorkerWriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerWriteVC.swift; sourceTree = "<group>"; };
@@ -1564,6 +1566,7 @@
 				C3B9338D273BFB2F0056E381 /* SettingSubscribVC.swift */,
 				C3B93390273C054C0056E381 /* SettingEditBasicInfoVC.swift */,
 				C3B93392273C05E60056E381 /* SettingEditPhoneNumberVC.swift */,
+				C33574112743D4C100644E9B /* SettingWorkerVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1998,6 +2001,7 @@
 				C398BFAC273F9FE5008E8BA5 /* HomeManagerCoummunityCollectionViewCell.swift in Sources */,
 				C30EC2E3272A4FEF00EEF218 /* RegisterNumberExistResponse.swift in Sources */,
 				C398BF9C273F77F9008E8BA5 /* HomeManagerVC.swift in Sources */,
+				C33574122743D4C100644E9B /* SettingWorkerVC.swift in Sources */,
 				C398BFB8273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift in Sources */,
 				C398BFBE273FF0FF008E8BA5 /* HomeManagerAddPublicWorkVC.swift in Sources */,
 				C384425C27147E3F00B84E8A /* UIViewController.swift in Sources */,

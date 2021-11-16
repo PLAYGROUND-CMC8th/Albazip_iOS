@@ -95,7 +95,7 @@ class MyPageWorkerVC: BaseViewController{
     
     @IBAction func btnSetting(_ sender: Any) {
         let newStoryboard = UIStoryboard(name: "SettingStoryboard", bundle: nil)
-        guard let nextVC = newStoryboard.instantiateViewController(identifier: "SettingVC") as? SettingVC else {return}
+        guard let nextVC = newStoryboard.instantiateViewController(identifier: "SettingWorkerVC") as? SettingWorkerVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

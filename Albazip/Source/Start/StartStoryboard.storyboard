@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Start Navigation View Controller-->
         <scene sceneID="dNK-AE-qLB">
             <objects>
-                <navigationController navigationBarHidden="YES" id="Vwd-qv-1dC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="StartNavigationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="Vwd-qv-1dC" customClass="StartNavigationViewController" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ePX-bl-wgJ">
                         <autoresizingMask key="autoresizingMask"/>
