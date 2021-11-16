@@ -20,6 +20,10 @@ class SettingMyInfoVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
         showIndicator()
         dataManager.getSettingMyInfo(vc: self)
     }
