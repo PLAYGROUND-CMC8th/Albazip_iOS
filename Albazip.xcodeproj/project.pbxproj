@@ -45,6 +45,9 @@
 		C335741A2743ECB800644E9B /* SettingEditBasicInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33574192743ECB800644E9B /* SettingEditBasicInfoResponse.swift */; };
 		C335741C2743ECCE00644E9B /* SettingEditBasicInfoDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C335741B2743ECCE00644E9B /* SettingEditBasicInfoDatamanager.swift */; };
 		C335741E2743ED1800644E9B /* SettingEditBasicInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C335741D2743ED1800644E9B /* SettingEditBasicInfoRequest.swift */; };
+		C33574202744042900644E9B /* SettingEditPhoneNumberDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C335741F2744042900644E9B /* SettingEditPhoneNumberDatamanager.swift */; };
+		C33574222744044600644E9B /* SettingEditPhoneNumberResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33574212744044600644E9B /* SettingEditPhoneNumberResponse.swift */; };
+		C33574242744045800644E9B /* SettingEditPhoneNumberRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33574232744045800644E9B /* SettingEditPhoneNumberRequest.swift */; };
 		C33E00042731D30600D88267 /* MyPageWorkerWriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E00022731D30600D88267 /* MyPageWorkerWriteTableViewCell.swift */; };
 		C33E00052731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33E00032731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib */; };
 		C33E00082731D80500D88267 /* MyPageWorkerWriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E00062731D80500D88267 /* MyPageWorkerWriteVC.swift */; };
@@ -330,6 +333,9 @@
 		C33574192743ECB800644E9B /* SettingEditBasicInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEditBasicInfoResponse.swift; sourceTree = "<group>"; };
 		C335741B2743ECCE00644E9B /* SettingEditBasicInfoDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEditBasicInfoDatamanager.swift; sourceTree = "<group>"; };
 		C335741D2743ED1800644E9B /* SettingEditBasicInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEditBasicInfoRequest.swift; sourceTree = "<group>"; };
+		C335741F2744042900644E9B /* SettingEditPhoneNumberDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEditPhoneNumberDatamanager.swift; sourceTree = "<group>"; };
+		C33574212744044600644E9B /* SettingEditPhoneNumberResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEditPhoneNumberResponse.swift; sourceTree = "<group>"; };
+		C33574232744045800644E9B /* SettingEditPhoneNumberRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEditPhoneNumberRequest.swift; sourceTree = "<group>"; };
 		C33E00022731D30600D88267 /* MyPageWorkerWriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerWriteTableViewCell.swift; sourceTree = "<group>"; };
 		C33E00032731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageWorkerWriteTableViewCell.xib; sourceTree = "<group>"; };
 		C33E00062731D80500D88267 /* MyPageWorkerWriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerWriteVC.swift; sourceTree = "<group>"; };
@@ -767,6 +773,7 @@
 			children = (
 				C33574172743E42800644E9B /* SettingMyInfoDatamanager.swift */,
 				C335741B2743ECCE00644E9B /* SettingEditBasicInfoDatamanager.swift */,
+				C335741F2744042900644E9B /* SettingEditPhoneNumberDatamanager.swift */,
 			);
 			path = Datamanager;
 			sourceTree = "<group>";
@@ -777,6 +784,8 @@
 				C33574152743E41A00644E9B /* SettingMyInfoResponse.swift */,
 				C33574192743ECB800644E9B /* SettingEditBasicInfoResponse.swift */,
 				C335741D2743ED1800644E9B /* SettingEditBasicInfoRequest.swift */,
+				C33574212744044600644E9B /* SettingEditPhoneNumberResponse.swift */,
+				C33574232744045800644E9B /* SettingEditPhoneNumberRequest.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1963,6 +1972,7 @@
 				C3CFC2F6273E5263001B2EB6 /* MyPageManagerWorkerDetailProfileDatamanger.swift in Sources */,
 				C34BCB4C2732F3C00085ADB3 /* MyPageDetailPublicDateTableViewCell.swift in Sources */,
 				C37EBF51271AF29B00DEC2CA /* UITextField.swift in Sources */,
+				C33574242744045800644E9B /* SettingEditPhoneNumberRequest.swift in Sources */,
 				C3C97BCC2730E940002C8584 /* MyPageWorkerVC.swift in Sources */,
 				C30EC2E9272B0AB500EEF218 /* RegisterManagerRequest.swift in Sources */,
 				C3CB0166273D49F6000EA353 /* MyPageManagerProfileDatamanager.swift in Sources */,
@@ -2015,6 +2025,7 @@
 				C398BFBA273FD860008E8BA5 /* HomeManagerAddWorkVC.swift in Sources */,
 				C30EC2DD272A4F7D00EEF218 /* RegisterNumberExistDataManager.swift in Sources */,
 				C3B93386273BFA6F0056E381 /* SettingLogoutVC.swift in Sources */,
+				C33574202744042900644E9B /* SettingEditPhoneNumberDatamanager.swift in Sources */,
 				C3CFC2F0273E27C1001B2EB6 /* MyPageManagerContentResponse.swift in Sources */,
 				C3B933AE273C43AA0056E381 /* MyPageDetailStopWorkVC.swift in Sources */,
 				C398BFA4273F8A0B008E8BA5 /* HomeManagerOpenTableViewCell.swift in Sources */,
@@ -2129,6 +2140,7 @@
 				C3546F832725083B00C4C3DC /* RegisterSearchStoreDataManager.swift in Sources */,
 				C30AFE93273451060075CDE2 /* MyPageManagerWorkListVC.swift in Sources */,
 				C3CB016B273D5F4F000EA353 /* MyPageWorkerWriteDatamanager.swift in Sources */,
+				C33574222744044600644E9B /* SettingEditPhoneNumberResponse.swift in Sources */,
 				C35982C42737A0F300546F2C /* MyPageManagerAddWorkerInfo.swift in Sources */,
 				C30AFE6F2733BF0A0075CDE2 /* MyPageManagerNoWorkerTableViewCell.swift in Sources */,
 				C3CFC302273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift in Sources */,
