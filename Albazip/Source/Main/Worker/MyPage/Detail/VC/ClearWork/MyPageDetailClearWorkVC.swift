@@ -132,7 +132,7 @@ extension MyPageDetailClearWorkVC {
         print(result.message!)
         if let data = taskRate{
             if data.totalTaskCount! != 0{
-                completeRateLabel.text = String(Float(data.completeTaskCount!) / Float(data.totalTaskCount!) * 100)
+                completeRateLabel.text = String(Int(Float(data.completeTaskCount!) / Float(data.totalTaskCount!) * 100))
             }else{
                 completeRateLabel.text = "0"
             }

@@ -9,6 +9,7 @@ import UIKit
 
 class MyPageDetailAllClearWorkTableViewCell: UITableViewCell {
 
+    @IBOutlet var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

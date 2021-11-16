@@ -677,7 +677,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uOf-lZ-Vib">
-                                <rect key="frame" x="0.0" y="217" width="375" height="561"/>
+                                <rect key="frame" x="0.0" y="193" width="375" height="585"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scrollGradation" translatesAutoresizingMaskIntoConstraints="NO" id="0xL-UF-Q3r">
@@ -768,7 +768,7 @@
                             <constraint firstItem="Eg0-h3-bMd" firstAttribute="top" secondItem="K1i-6h-Uq8" secondAttribute="top" constant="21" id="NAM-ko-Fu8"/>
                             <constraint firstItem="0xL-UF-Q3r" firstAttribute="top" secondItem="LtI-VU-cA6" secondAttribute="bottom" constant="14" id="YvW-Ox-XsS"/>
                             <constraint firstItem="0xL-UF-Q3r" firstAttribute="trailing" secondItem="K1i-6h-Uq8" secondAttribute="trailing" id="dlW-Eo-TAH"/>
-                            <constraint firstItem="uOf-lZ-Vib" firstAttribute="top" secondItem="RyP-fJ-e25" secondAttribute="bottom" constant="24" id="dzP-jc-FvS"/>
+                            <constraint firstItem="uOf-lZ-Vib" firstAttribute="top" secondItem="RyP-fJ-e25" secondAttribute="bottom" id="dzP-jc-FvS"/>
                             <constraint firstItem="K1i-6h-Uq8" firstAttribute="trailing" secondItem="RyP-fJ-e25" secondAttribute="trailing" constant="24" id="jOS-xH-Gtu"/>
                             <constraint firstAttribute="trailing" secondItem="O6i-BV-u1W" secondAttribute="trailing" id="n8N-pz-vor"/>
                             <constraint firstItem="LtI-VU-cA6" firstAttribute="leading" secondItem="K1i-6h-Uq8" secondAttribute="leading" constant="16" id="qsB-9d-XwE"/>
@@ -779,6 +779,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="공동 업무" id="qf5-WP-HqF"/>
                     <connections>
+                        <outlet property="countLabel" destination="d9Q-L2-dYK" id="0b5-uy-soy"/>
                         <outlet property="tableView" destination="uOf-lZ-Vib" id="z8c-jT-E1A"/>
                     </connections>
                 </viewController>

@@ -13,25 +13,31 @@
         <tableViewCell contentMode="scaleToFill" restorationIdentifier="MyPageDetailPublicDateTableViewCell" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MyPageDetailPublicDateTableViewCell" customModule="Albazip" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.07.03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMt-b8-216">
-                        <rect key="frame" x="36" y="0.0" width="73" height="36"/>
+                        <rect key="frame" x="36" y="24" width="73" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="oOU-Fn-6Pe"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="dMt-b8-216" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="1eV-x6-Bi5"/>
                     <constraint firstAttribute="bottom" secondItem="dMt-b8-216" secondAttribute="bottom" constant="8" id="3kg-3D-nVB"/>
                     <constraint firstItem="dMt-b8-216" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="bOD-9i-2pr"/>
+                    <constraint firstItem="dMt-b8-216" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="xTY-pU-cB9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="333" y="130"/>
+            <connections>
+                <outlet property="titleLabel" destination="dMt-b8-216" id="0IX-j2-rm8"/>
+            </connections>
+            <point key="canvasLocation" x="331.8840579710145" y="129.91071428571428"/>
         </tableViewCell>
     </objects>
 </document>

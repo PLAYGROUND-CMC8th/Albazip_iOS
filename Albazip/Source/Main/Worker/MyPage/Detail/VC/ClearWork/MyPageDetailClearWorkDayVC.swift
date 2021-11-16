@@ -133,6 +133,7 @@ extension MyPageDetailClearWorkDayVC: UITableViewDataSource,UITableViewDelegate 
         if indexPath.section == 0{
             if isNoNonCompleteData{
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailAllClearWorkTableViewCell") as? MyPageDetailAllClearWorkTableViewCell {
+                    cell.titleLabel.text = "업무를 모두 완료했어요!"
                     cell.selectionStyle = .none
                     print(indexPath.row)
                     return cell
@@ -152,6 +153,7 @@ extension MyPageDetailClearWorkDayVC: UITableViewDataSource,UITableViewDelegate 
         }else if indexPath.section == 1{
             if isNoCompleteData{
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailAllClearWorkTableViewCell") as? MyPageDetailAllClearWorkTableViewCell {
+                    cell.titleLabel.text = "완료된 업무가 없어요."
                     cell.selectionStyle = .none
                     print(indexPath.row)
                     return cell
@@ -161,7 +163,7 @@ extension MyPageDetailClearWorkDayVC: UITableViewDataSource,UITableViewDelegate 
                     cell.selectionStyle = .none
                     if let data = completeTaskData{
                         cell.titleLabel.text = data[indexPath.row].title!
-                        cell.subLabel.text = "완료  \(data[indexPath.row].complete_date!.insertDate)"
+                        cell.subLabel.text = "완료  \(data[indexPath.row].complete_date!.substring(from: 11, to: 16))"
                         
                     }
                     print(indexPath.row)

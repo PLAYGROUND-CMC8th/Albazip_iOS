@@ -78,7 +78,7 @@ extension MyPageDetailClearWorkMonthVC: UITableViewDataSource,UITableViewDelegat
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWriteTableViewCell") as? MyPageManagerNoWriteTableViewCell {
                 cell.selectionStyle = .none
                 cell.bgView.backgroundColor = .none
-                cell.titleLabel.text = "완료한 공동업무가 없어요."
+                cell.titleLabel.text = "완료한 업무가 없어요."
                    print(indexPath.row)
                return cell
             }
