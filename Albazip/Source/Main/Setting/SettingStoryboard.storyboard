@@ -1110,6 +1110,12 @@
                             <constraint firstItem="qkA-SC-M4q" firstAttribute="leading" secondItem="qTO-K0-JxX" secondAttribute="leading" constant="16" id="x69-v8-f8w"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="genderLabel" destination="Kbv-zr-z5W" id="riv-po-Oe0"/>
+                        <outlet property="nameLabel" destination="CFR-dm-f7q" id="QzF-GC-QMl"/>
+                        <outlet property="phoneNumberLabel" destination="nUI-Em-i9A" id="xMw-cw-KMZ"/>
+                        <outlet property="yearLabel" destination="XQt-6P-7Gq" id="i5q-pZ-ByG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKR-gx-MLM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

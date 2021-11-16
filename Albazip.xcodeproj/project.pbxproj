@@ -40,6 +40,8 @@
 		C30EC2E9272B0AB500EEF218 /* RegisterManagerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E8272B0AB500EEF218 /* RegisterManagerRequest.swift */; };
 		C30EC2EB272B121900EEF218 /* RegisterManagerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2EA272B121900EEF218 /* RegisterManagerInfo.swift */; };
 		C33574122743D4C100644E9B /* SettingWorkerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33574112743D4C100644E9B /* SettingWorkerVC.swift */; };
+		C33574162743E41A00644E9B /* SettingMyInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33574152743E41A00644E9B /* SettingMyInfoResponse.swift */; };
+		C33574182743E42800644E9B /* SettingMyInfoDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33574172743E42800644E9B /* SettingMyInfoDatamanager.swift */; };
 		C33E00042731D30600D88267 /* MyPageWorkerWriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E00022731D30600D88267 /* MyPageWorkerWriteTableViewCell.swift */; };
 		C33E00052731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33E00032731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib */; };
 		C33E00082731D80500D88267 /* MyPageWorkerWriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E00062731D80500D88267 /* MyPageWorkerWriteVC.swift */; };
@@ -320,6 +322,8 @@
 		C30EC2E8272B0AB500EEF218 /* RegisterManagerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerRequest.swift; sourceTree = "<group>"; };
 		C30EC2EA272B121900EEF218 /* RegisterManagerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerInfo.swift; sourceTree = "<group>"; };
 		C33574112743D4C100644E9B /* SettingWorkerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWorkerVC.swift; sourceTree = "<group>"; };
+		C33574152743E41A00644E9B /* SettingMyInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyInfoResponse.swift; sourceTree = "<group>"; };
+		C33574172743E42800644E9B /* SettingMyInfoDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyInfoDatamanager.swift; sourceTree = "<group>"; };
 		C33E00022731D30600D88267 /* MyPageWorkerWriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerWriteTableViewCell.swift; sourceTree = "<group>"; };
 		C33E00032731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageWorkerWriteTableViewCell.xib; sourceTree = "<group>"; };
 		C33E00062731D80500D88267 /* MyPageWorkerWriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerWriteVC.swift; sourceTree = "<group>"; };
@@ -750,6 +754,22 @@
 				C30D2EB127315E4A00D4C1C1 /* CommunityWorkerStoryboard.storyboard */,
 			);
 			path = Community;
+			sourceTree = "<group>";
+		};
+		C33574132743E3DB00644E9B /* Datamanager */ = {
+			isa = PBXGroup;
+			children = (
+				C33574172743E42800644E9B /* SettingMyInfoDatamanager.swift */,
+			);
+			path = Datamanager;
+			sourceTree = "<group>";
+		};
+		C33574142743E3E400644E9B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C33574152743E41A00644E9B /* SettingMyInfoResponse.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		C33F997F272E963400E9FF05 /* Entity */ = {
@@ -1545,6 +1565,8 @@
 		C3D69452273ACC5E00BF540C /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				C33574142743E3E400644E9B /* Entity */,
+				C33574132743E3DB00644E9B /* Datamanager */,
 				C3B93394273C06C00056E381 /* Cell */,
 				C3D69455273ACDAD00BF540C /* VC */,
 				C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */,
@@ -2062,6 +2084,7 @@
 				C37B0B5F27299EA70017D179 /* LoginResponse.swift in Sources */,
 				C398BFA0273F861D008E8BA5 /* HomeManagerMainTableViewCell.swift in Sources */,
 				C37EBF4D271AD71700DEC2CA /* RegisterPasswordVC.swift in Sources */,
+				C33574162743E41A00644E9B /* SettingMyInfoResponse.swift in Sources */,
 				C30EC2E1272A4FDB00EEF218 /* RegisterNumberMatchResponse.swift in Sources */,
 				C3AD3B2F273982360030905C /* MyPageManagerWorklistTableViewCell.swift in Sources */,
 				C3AD3B1E273963AA0030905C /* MyPageManagerWorkerInfoVC.swift in Sources */,
@@ -2107,6 +2130,7 @@
 				C3AD3B332739874D0030905C /* MyPageManagerWorkerPositionTableViewCell.swift in Sources */,
 				C384425B27147E3F00B84E8A /* UIButton.swift in Sources */,
 				C3CFC300273EBA7F001B2EB6 /* MyPageManagerWorkerPositionDatamanager.swift in Sources */,
+				C33574182743E42800644E9B /* SettingMyInfoDatamanager.swift in Sources */,
 				C37B0B6127299EC50017D179 /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

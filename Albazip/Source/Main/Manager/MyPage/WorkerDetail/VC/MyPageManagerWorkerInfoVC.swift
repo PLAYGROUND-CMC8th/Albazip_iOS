@@ -108,7 +108,8 @@ extension MyPageManagerWorkerInfoVC: UITableViewDataSource {
                 if let data = workInfo{
                     cell.lateCountLabel.text = String(data.lateCount!)
                     if data.totalTaskCount! != 0{
-                        cell.clearRateLabel.text = String(data.completeTaskCount! / data.totalTaskCount! * 100)
+                        print("\(data.completeTaskCount!)\(data.totalTaskCount!)")
+                        cell.clearRateLabel.text = String(Int(Float(data.completeTaskCount!) / Float(data.totalTaskCount!) * 100))
                     }else{
                         cell.clearRateLabel.text = "0"
                     }
