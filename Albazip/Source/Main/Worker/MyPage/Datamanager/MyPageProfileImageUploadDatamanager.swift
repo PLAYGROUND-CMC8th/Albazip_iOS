@@ -6,60 +6,94 @@
 //
 import Alamofire
 import Foundation
-/*
-class MyPageProfileImageUploadDatamanager{
-    func requestIdentify(userName: String,
-                             imgData: Data,
-                             completion: @escaping (DataResponse<HttpStatusCode>) -> Void) {
 
-            var urlComponent = URLComponents(string: BaseAPI.shared.getBaseString())
-            urlComponent?.path = RequestURL.identify.getRequestURL
-            let header: [String: String] = [
-                "Content-Type": "multipart/form-data"
-            ]
-            let parameters = [
-                "userName" : userName
-            ]
-            guard let url = urlComponent?.url else {
-                return
-            }
+import Foundation
+import Alamofire
 
-            Alamofire.upload(multipartFormData: { multipartFormData in
-                for (key, value) in parameters {
-                    multipartFormData.append("\(value)".data(using: .utf8)!, withName: key, mimeType: "text/plain")
-                }
-
-                multipartFormData.append(imgData, withName: "img", fileName: "\(userName).jpg", mimeType: "image/jpg")
-
-            }, to: url, method: .post, headers: header) { result in
-                switch result {
-                case .success(let upload, _, _):
-                    upload.responseJSON { response in
-                        print(response)
-                        guard let data = response.data else { return }
-                        if let decodedData = try? JSONDecoder().decode(ResponseSimple<Int>.self, from: data) {
-                            print(decodedData)
-                            guard let httpStatusCode
-                                = HttpStatusCode(rawValue: decodedData.statusCode) else {
-                                    completion(.failed(NSError(domain: "status error",
-                                                               code: 0,
-                                                               userInfo: nil)))
-                                    return
-                            }
-                            completion(.success(httpStatusCode))
-
-                        } else {
-                            completion(.failed(NSError(domain: "decode error",
-                                                       code: 0,
-                                                       userInfo: nil)))
-                            return
-                        }
-                    }
-                case .failure(let err):
-                    completion(.failed(err))
-                }
-            }
-        }
-     ]
-}
+class MyPageProfileImageUploadDatamanager {
+    
+    func postMyPageProfileImageUpload(imageData: UIImage?, vc: MyPageWorkerSelectProfileImageVC) {
+        
+        let url = "\(Constant.BASE_URL)/mypage/profile/image"
+        
+        let header: HTTPHeaders = [ "Content-Type" : "multipart/form-data",
+                                     "token":"\(UserDefaults.standard.string(forKey: "token")!)"]
+        /*
+        let resizedImage = resizeImage(image: imageData, newWidth: 300)
+                
+                let imageData = resizedImage.jpegData(compressionQuality: 0.5)
 */
+        AF.upload(
+                    
+                    multipartFormData: { MultipartFormData in
+                        if((imageData) != nil){
+                            if let image = imageData?.pngData() {
+                                MultipartFormData.append(image, withName: "uploadImage", fileName: "profileImage.png", mimeType: "image/png")
+                            }
+                           
+                        }
+         
+                }, to: url, method: .post, headers: header).validate()
+            .responseDecodable(of: MyPageProfileImageDefaultResponse.self) { response in
+                switch response.result {
+                
+                case .success(let response):
+                    // 성공했을 때
+                    switch response.code {
+                    case "200":
+                        vc.didSuccessMyPageProfileImageUpload(result: response)
+                        break
+                    default:
+                        vc.failedToRequestMyPageProfileImageUpload(message: response.message!)
+                        break
+                }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    vc.failedToRequestMyPageProfileImageUpload(message: "서버와의 연결이 원활하지 않습니다")
+                }
+         
+            }
+    }
+    func postMyPageProfileImageUpload(imageData: UIImage?, vc: MyPageManagerSelectProfileImageVC) {
+        
+        let url = "\(Constant.BASE_URL)/mypage/profile/image"
+        
+        let header: HTTPHeaders = [ "Content-Type" : "multipart/form-data",
+                                     "token":"\(UserDefaults.standard.string(forKey: "token")!)"]
+        /*
+        let resizedImage = resizeImage(image: imageData, newWidth: 300)
+                
+                let imageData = resizedImage.jpegData(compressionQuality: 0.5)
+*/
+        AF.upload(
+                    
+                    multipartFormData: { MultipartFormData in
+                        if((imageData) != nil){
+                            if let image = imageData?.pngData() {
+                                MultipartFormData.append(image, withName: "uploadImage", fileName: "profileImage.png", mimeType: "image/png")
+                            }
+                           
+                        }
+         
+                }, to: url, method: .post, headers: header).validate()
+            .responseDecodable(of: MyPageProfileImageDefaultResponse.self) { response in
+                switch response.result {
+                
+                case .success(let response):
+                    // 성공했을 때
+                    switch response.code {
+                    case "200":
+                        vc.didSuccessMyPageProfileImageUpload(result: response)
+                        break
+                    default:
+                        vc.failedToRequestMyPageProfileImageUpload(message: response.message!)
+                        break
+                }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    vc.failedToRequestMyPageProfileImageUpload(message: "서버와의 연결이 원활하지 않습니다")
+                }
+         
+            }
+    }
+}

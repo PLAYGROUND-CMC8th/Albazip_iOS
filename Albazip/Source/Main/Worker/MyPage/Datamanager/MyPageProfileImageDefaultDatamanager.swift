@@ -10,7 +10,7 @@ import Alamofire
 
 class MyPageProfileImageDefaultDatamanager {
     func postMyPageProfileImageDefault(_ parameters: MyPageProfileImageDefaultRequest, vc: MyPageWorkerSelectProfileImageVC) {
-        let url = "\(Constant.BASE_URL)/mypage/profile/image"
+       
         
         let header: HTTPHeaders = [ "Content-Type":"application/json",
                                      "token":"\(UserDefaults.standard.string(forKey: "token")!)"]

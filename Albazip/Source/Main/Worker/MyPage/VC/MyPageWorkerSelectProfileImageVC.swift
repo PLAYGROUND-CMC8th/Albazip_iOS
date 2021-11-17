@@ -26,7 +26,7 @@ class MyPageWorkerSelectProfileImageVC: UIViewController{
     var imageDefaultPost = ["w2", "w1", "w3", "w5", "w4"]
     var selectProfileImageDelegate : SelectProfileImageDelegate?
     lazy var dataManager: MyPageProfileImageDefaultDatamanager = MyPageProfileImageDefaultDatamanager()
-    
+    lazy var dataManager2: MyPageProfileImageUploadDatamanager = MyPageProfileImageUploadDatamanager()
     var isGally = false
     var isSelected = false
     override func viewDidLoad() {
@@ -175,6 +175,8 @@ class MyPageWorkerSelectProfileImageVC: UIViewController{
             self.dismiss(animated: true, completion: nil)
         }else if isGally{
             print("이미지 업로드 api")
+            showIndicator()
+            dataManager2.postMyPageProfileImageUpload(imageData: mainImage.image, vc: self)
         }else{
             print("디폴트 이미지 api")
             showIndicator()
@@ -235,3 +237,18 @@ extension MyPageWorkerSelectProfileImageVC {
     }
 }
 
+extension MyPageWorkerSelectProfileImageVC {
+    func didSuccessMyPageProfileImageUpload(result:  MyPageProfileImageDefaultResponse) {
+        print(result)
+        dismissIndicator()
+        selectProfileImageDelegate?.imageModalDismiss()
+        selectProfileImageDelegate?.changeImage()
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func failedToRequestMyPageProfileImageUpload(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
+}
