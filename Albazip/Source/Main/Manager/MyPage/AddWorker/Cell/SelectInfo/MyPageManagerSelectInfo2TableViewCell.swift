@@ -124,5 +124,43 @@ class MyPageManagerSelectInfo2TableViewCell: UITableViewCell {
             myPageManagerTimeDateModalDelegate?.checkValue2(value: true)
         }
     }
-    
+    func setCell(data:MyPageManagerEditWorkerData ){
+        if data.breakTime == "없음"{
+            btn1.isSelected = true
+            btn1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btn2.backgroundColor = .none
+            btn2.isSelected = false
+            btn3.backgroundColor = .none
+            btn3.isSelected = false
+            btn4.backgroundColor = .none
+            btn4.isSelected = false
+        }else if data.breakTime == "30분"{
+            btn2.isSelected = true
+            btn2.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btn1.backgroundColor = .none
+            btn1.isSelected = false
+            btn3.backgroundColor = .none
+            btn3.isSelected = false
+            btn4.backgroundColor = .none
+            btn4.isSelected = false
+        }else if data.breakTime == "60분"{
+            btn3.isSelected = true
+            btn3.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btn2.backgroundColor = .none
+            btn2.isSelected = false
+            btn1.backgroundColor = .none
+            btn1.isSelected = false
+            btn4.backgroundColor = .none
+            btn4.isSelected = false
+        }else{
+            btn4.isSelected = true
+            btn4.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btn2.backgroundColor = .none
+            btn2.isSelected = false
+            btn3.backgroundColor = .none
+            btn3.isSelected = false
+            btn1.backgroundColor = .none
+            btn1.isSelected = false
+        }
+    }
 }

@@ -1,32 +1,33 @@
 //
-//  MyPageManagerAddWorkerVC.swift
+//  MyPageManagerEditWorkerVC.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2021/11/04.
+//  Created by 김수빈 on 2021/11/18.
 //
 
 import Foundation
-import UIKit
-
-class MyPageManagerAddWorkerVC: UIViewController{
-    
-    
-    @IBOutlet var modalBgView: UIView!
+class MyPageManagerEditWorkerVC: UIViewController{
     
     @IBOutlet var btnNext: UIButton!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var modalBgView: UIView!
     
+    //이전 데이터
+    var loadData : MyPageManagerEditWorkerData?
+    
+    //최초 실행인지여부
+    var isLoaded = false
     // 시간 변수
     var startTime = ""
     var endTime = ""
     var payTime = "시급"
     var hour = "0시간"
     // 테이블뷰 접었다 펴기
-    var isDateSelected = false
+    var isDateSelected = true
     
     //폼 요소 다 채워졌는지 확인
-    var checkValue1 = false
-    var checkValue2 = false
+    var checkValue1 = true
+    var checkValue2 = true
     var checkValue3 = true
     
     // data
@@ -35,11 +36,19 @@ class MyPageManagerAddWorkerVC: UIViewController{
     var workDay = [String]()
     var breakTime = ""
     var salary = "8720"
+    // 이전 뷰에서 받아올 정보
+    var positionId = 0
+    
+    // Datamanager
+    lazy var dataManager: MyPageManagerEditWorkerDatamanager = MyPageManagerEditWorkerDatamanager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setUI()
+        showIndicator()
+        dataManager.getMyPageManagerEditWorker(vc: self, index: positionId)
     }
     //MARK:- View Setup
     func setUI(){
@@ -79,11 +88,10 @@ class MyPageManagerAddWorkerVC: UIViewController{
         data.workDays = workDay
         
         print("data:\(data.rank) \(data.title) \(data.startTime) \(data.endTime) \(data.workDays) \(data.breakTime) \(data.salary) \(data.salaryType)")
-        
+        /*
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageManagerWorkListVC") as? MyPageManagerWorkListVC else {return}
-                self.navigationController?.pushViewController(nextVC, animated: true)
+                self.navigationController?.pushViewController(nextVC, animated: true)*/
     }
-    
     //모든 값이 입력되었는지 확인
     func checkContent(){
         if checkValue1, checkValue2, checkValue3, startTime != "", endTime != ""{
@@ -96,7 +104,6 @@ class MyPageManagerAddWorkerVC: UIViewController{
             btnNext.setTitleColor(#colorLiteral(red: 0.678363204, green: 0.678479135, blue: 0.6783478856, alpha: 1), for: .normal)
         }
     }
-    
     //시간차 구하기
     func calculateTime(){
         if startTime != "", endTime != "" {
@@ -126,11 +133,10 @@ class MyPageManagerAddWorkerVC: UIViewController{
             self.hour  = "\(hour)시간\(minute)분"
         }
     }
-
 }
 //MARK:- Table View Data Source
 
-extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
+extension MyPageManagerEditWorkerVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -144,12 +150,22 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerSelectInfo1TableViewCell") as? MyPageManagerSelectInfo1TableViewCell {
                 cell.selectionStyle = .none
                 cell.myPageManagerSelectInfo1Delegate = self
+                if !isLoaded{
+                    if let data = loadData{
+                        cell.setCell(data: data)
+                    }
+                }
                 return cell
             }
         case 1:
             if isDateSelected{
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerSelectInfo2TableViewCell") as? MyPageManagerSelectInfo2TableViewCell {
                     cell.selectionStyle = .none
+                    if !isLoaded{
+                        if let data = loadData{
+                            cell.setCell(data: data)
+                        }
+                    }
                     cell.myPageManagerTimeDateModalDelegate = self
                     if startTime != ""{
                         cell.startButton.setTitle(startTime, for: .normal)
@@ -175,6 +191,12 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerSelectInfo3TableViewCell") as? MyPageManagerSelectInfo3TableViewCell {
                 cell.selectionStyle = .none
+                if !isLoaded{
+                    if loadData != nil{
+                        cell.payTypeLabel.text = payTime
+                        cell.moneyTextField.text = salary
+                    }
+                }
                 print(indexPath.row)
                 cell.myPageManagerPayTypeModalDelegate = self
                 if payTime != ""{
@@ -211,30 +233,33 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
         print("선택된 행은 \(indexPath.row) 입니다.")
     }
 }
-extension MyPageManagerAddWorkerVC: TimeDateModalDelegate {
+extension MyPageManagerEditWorkerVC: TimeDateModalDelegate {
     func timeModalDismiss() {
         modalBgView.isHidden = true
         //checkValue()
     }
 
     func openTimeTextFieldData(data: String) {
+        isLoaded = true
         startTime = data
         tableView.reloadData()
         calculateTime()
     }
 
     func endTimeTextFieldData(data: String) {
+        isLoaded = true
         endTime = data
         tableView.reloadData()
         calculateTime()
     }
 }
 
-extension MyPageManagerAddWorkerVC: SelectPayTypeDelegate {
+extension MyPageManagerEditWorkerVC: SelectPayTypeDelegate {
     func modalDismiss(){
         modalBgView.isHidden = true
     }
     func textFieldData(data: String){
+        isLoaded = true
         payTime = data
         tableView.reloadData()
     }
@@ -242,7 +267,7 @@ extension MyPageManagerAddWorkerVC: SelectPayTypeDelegate {
     
 }
 
-extension MyPageManagerAddWorkerVC: MyPageManagerTimeDateModalDelegate, MyPageManagerPayTypeModalDelegate, MyPageManagerSelectInfo1Delegate{
+extension MyPageManagerEditWorkerVC: MyPageManagerTimeDateModalDelegate, MyPageManagerPayTypeModalDelegate, MyPageManagerSelectInfo1Delegate{
     
     func setRank(text: String) {
         rank = text
@@ -296,11 +321,13 @@ extension MyPageManagerAddWorkerVC: MyPageManagerTimeDateModalDelegate, MyPageMa
     }
     
     func openView() {
+        isLoaded = true
         isDateSelected = true
         tableView.reloadData()
     }
     
     func closeView() {
+        isLoaded = true
         isDateSelected = false
         tableView.reloadData()
     }
@@ -340,4 +367,37 @@ extension MyPageManagerAddWorkerVC: MyPageManagerTimeDateModalDelegate, MyPageMa
     
     
 }
-
+extension MyPageManagerEditWorkerVC {
+    func didSuccessMyPageMyPageManagerEditWorker(_ result: MyPageManagerEditWorkerResponse) {
+        dismissIndicator()
+        //self.presentAlert(title: result.message)
+        print(result)
+        loadData = result.data
+        if let x = result.data{
+            setRank(text: x.rank)
+            setTitle(text: x.title)
+            setBreaktime(text: x.breakTime)
+            
+            startTime = x.startTime.insertTime
+            endTime = x.endTime.insertTime
+            if x.salaryType == 0{
+                payTime = "시급"
+            }else if x.salaryType == 1{
+                payTime = "주급"
+            }else{
+                payTime = "월급"
+            }
+            
+            salary = x.salary
+            workDay = x.workDay
+        }
+        btnNext.isEnabled = true
+        tableView.reloadData()
+        //isLoaded = true
+    }
+    
+    func failedToRequestMyPageManagerEditWorker(message: String) {
+        dismissIndicator()
+        self.presentAlert(title: message)
+    }
+}

@@ -379,4 +379,83 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
             myPageManagerSelectInfo1Delegate?.checkValue1(value: false)
         }
     }
+    func setCell(data:MyPageManagerEditWorkerData ){
+        // 직급
+        if data.rank == "알바생"{
+            btn1_1.isSelected = true
+            btn1_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            //직원
+            btn1_2.isEnabled = false
+            btn1_2.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            //매니저, 점장
+            btn2_3.isEnabled = false
+            btn2_3.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            btn2_4.isEnabled = false
+            btn2_4.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            //교대근무
+            btn4_8.isEnabled = false
+            btn4_8.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            
+            //myPageManagerSelectInfo1Delegate?.setRank(text: "알바생")
+        }
+        //포지션
+        if data.title == "오픈"{
+            btn3_1.isSelected = true
+            btn3_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btn3_2.backgroundColor = .none
+            btn3_2.isSelected = false
+            btn3_3.backgroundColor = .none
+            btn3_3.isSelected = false
+            //myPageManagerSelectInfo1Delegate?.setTitle(text: "오픈")
+        }else if data.title == "미들"{
+            btn3_2.isSelected = true
+            btn3_2.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btn3_1.backgroundColor = .none
+            btn3_1.isSelected = false
+            btn3_3.backgroundColor = .none
+            btn3_3.isSelected = false
+            //myPageManagerSelectInfo1Delegate?.setTitle(text: "미들")
+        }else{
+            btn3_3.isSelected = true
+            btn3_3.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btn3_2.backgroundColor = .none
+            btn3_2.isSelected = false
+            btn3_1.backgroundColor = .none
+            btn3_1.isSelected = false
+            //myPageManagerSelectInfo1Delegate?.setTitle(text: "마감")
+        }
+        
+        if data.workDay.contains("월"){
+            btn4_1.isSelected = true
+            btn4_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+        }
+        if data.workDay.contains("화"){
+            btn4_2.isSelected = true
+            btn4_2.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+        }
+        if data.workDay.contains("수"){
+            btn4_3.isSelected = true
+            btn4_3.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+        }
+        
+        if data.workDay.contains("목"){
+            btn4_4.isSelected = true
+            btn4_4.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+        }
+        if data.workDay.contains("금"){
+            btn4_5.isSelected = true
+            btn4_5.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+        }
+        if data.workDay.contains("토"){
+            btn4_6.isSelected = true
+            btn4_6.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+        }
+        if data.workDay.contains("일"){
+            btn4_7.isSelected = true
+            btn4_7.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            //myPageManagerSelectInfo1Delegate?.addDay(text: "일")
+        }
+        btn4_8.isEnabled = false
+        btn4_8.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+    }
 }

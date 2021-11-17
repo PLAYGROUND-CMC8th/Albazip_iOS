@@ -405,6 +405,94 @@
             </objects>
             <point key="canvasLocation" x="1172" y="1404.6798029556651"/>
         </scene>
+        <!--My Page Manager Edit WorkerVC-->
+        <scene sceneID="q3l-I0-Gmk">
+            <objects>
+                <viewController storyboardIdentifier="MyPageManagerEditWorkerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hCP-KL-J7g" customClass="MyPageManagerEditWorkerVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eTi-46-Ywu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pC-7l-nqu">
+                                <rect key="frame" x="329" y="60" width="30" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNext:" destination="By3-ao-wND" eventType="touchUpInside" id="H4Z-G4-BYH"/>
+                                    <action selector="btnNext:" destination="CaM-An-g2a" eventType="touchUpInside" id="UUR-Kg-mRM"/>
+                                    <action selector="btnNext:" destination="hCP-KL-J7g" eventType="touchUpInside" id="uI6-yW-BDd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="근무자 편집" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcK-ed-JHh">
+                                <rect key="frame" x="146.66666666666666" y="65" width="82" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnT-4A-Uky">
+                                <rect key="frame" x="16" y="64" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="MNU-eX-0iI"/>
+                                    <constraint firstAttribute="height" constant="24" id="Mgj-cP-zbO"/>
+                                </constraints>
+                                <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="CaM-An-g2a" eventType="touchUpInside" id="4gE-sc-cQP"/>
+                                    <action selector="btnCancel:" destination="By3-ao-wND" eventType="touchUpInside" id="GdY-nB-mz9"/>
+                                    <action selector="btnCancel:" destination="hCP-KL-J7g" eventType="touchUpInside" id="mrq-RI-A47"/>
+                                    <action selector="btnCancel:" destination="3et-ET-s4f" eventType="touchUpInside" id="zgJ-9s-Q80"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFV-hE-wFQ">
+                                <rect key="frame" x="0.0" y="106" width="375" height="1"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="FCC-8B-oxP"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kra-xG-AlN">
+                                <rect key="frame" x="0.0" y="107" width="375" height="671"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5E-ho-fJ7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="go9-x7-ICJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="go9-x7-ICJ" firstAttribute="bottom" secondItem="r5E-ho-fJ7" secondAttribute="bottom" id="FeQ-tZ-1Ch"/>
+                            <constraint firstItem="go9-x7-ICJ" firstAttribute="trailing" secondItem="Kra-xG-AlN" secondAttribute="trailing" id="Gef-UE-5gb"/>
+                            <constraint firstItem="KcK-ed-JHh" firstAttribute="top" secondItem="go9-x7-ICJ" secondAttribute="top" constant="21" id="HRc-ZN-uy4"/>
+                            <constraint firstItem="go9-x7-ICJ" firstAttribute="trailing" secondItem="4pC-7l-nqu" secondAttribute="trailing" constant="16" id="I7N-S0-smx"/>
+                            <constraint firstItem="r5E-ho-fJ7" firstAttribute="trailing" secondItem="go9-x7-ICJ" secondAttribute="trailing" id="JMB-iK-QbR"/>
+                            <constraint firstItem="Kra-xG-AlN" firstAttribute="leading" secondItem="go9-x7-ICJ" secondAttribute="leading" id="OYX-h9-UR9"/>
+                            <constraint firstItem="OFV-hE-wFQ" firstAttribute="top" secondItem="4pC-7l-nqu" secondAttribute="bottom" constant="14" id="Snu-H1-Vc2"/>
+                            <constraint firstItem="4pC-7l-nqu" firstAttribute="centerY" secondItem="KcK-ed-JHh" secondAttribute="centerY" id="TMe-7j-uVY"/>
+                            <constraint firstItem="KcK-ed-JHh" firstAttribute="centerX" secondItem="eTi-46-Ywu" secondAttribute="centerX" id="V8o-oL-pls"/>
+                            <constraint firstItem="pnT-4A-Uky" firstAttribute="leading" secondItem="go9-x7-ICJ" secondAttribute="leading" constant="16" id="VmH-Ud-ezy"/>
+                            <constraint firstItem="r5E-ho-fJ7" firstAttribute="leading" secondItem="go9-x7-ICJ" secondAttribute="leading" id="kiw-y7-Kli"/>
+                            <constraint firstItem="pnT-4A-Uky" firstAttribute="centerY" secondItem="KcK-ed-JHh" secondAttribute="centerY" id="lgg-jh-D7O"/>
+                            <constraint firstItem="go9-x7-ICJ" firstAttribute="trailing" secondItem="OFV-hE-wFQ" secondAttribute="trailing" id="nQ1-62-HsH"/>
+                            <constraint firstItem="r5E-ho-fJ7" firstAttribute="top" secondItem="eTi-46-Ywu" secondAttribute="top" id="pb5-bg-5ih"/>
+                            <constraint firstItem="OFV-hE-wFQ" firstAttribute="leading" secondItem="go9-x7-ICJ" secondAttribute="leading" id="vyG-RC-aoZ"/>
+                            <constraint firstItem="Kra-xG-AlN" firstAttribute="top" secondItem="OFV-hE-wFQ" secondAttribute="bottom" id="wbk-gb-J0j"/>
+                            <constraint firstItem="go9-x7-ICJ" firstAttribute="bottom" secondItem="Kra-xG-AlN" secondAttribute="bottom" id="wuo-st-MdL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnNext" destination="4pC-7l-nqu" id="589-ag-ll4"/>
+                        <outlet property="modalBgView" destination="r5E-ho-fJ7" id="NYn-g9-j4i"/>
+                        <outlet property="tableView" destination="Kra-xG-AlN" id="bwp-uM-Eb0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MY6-Mh-uI2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1176.8" y="2085.960591133005"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="enu-eN-kun">
             <objects>

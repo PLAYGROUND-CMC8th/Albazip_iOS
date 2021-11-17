@@ -97,6 +97,10 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
     }
     @IBAction func btnNext(_ sender: Any) {
         
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageManagerEditWorkerVC") as? MyPageManagerEditWorkerVC else {return}
+        
+        nextVC.positionId = positionId
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     
