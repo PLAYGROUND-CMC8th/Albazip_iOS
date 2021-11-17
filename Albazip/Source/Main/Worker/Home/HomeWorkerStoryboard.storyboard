@@ -222,34 +222,59 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="QXq-ab-QXZ"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XNh-MA-ADN">
-                                <rect key="frame" x="0.0" y="102" width="375" height="676"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yw8-r1-q1n">
+                                <rect key="frame" x="0.0" y="102" width="375" height="710"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgReadyPx" translatesAutoresizingMaskIntoConstraints="NO" id="4mX-eZ-ZAX">
+                                        <rect key="frame" x="153.66666666666666" y="237" width="68" height="68"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="68" id="2yW-Ni-hGw"/>
+                                            <constraint firstAttribute="width" constant="68" id="4Vr-MV-DGF"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="준비중인 기능입니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2W4-4h-vQY">
+                                        <rect key="frame" x="96" y="319" width="183" height="27"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" red="0.20000001789999999" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다음 업데이트에서 만나요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2m-3K-y8z">
+                                        <rect key="frame" x="99.666666666666686" y="358" width="176" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4mX-eZ-ZAX" firstAttribute="top" secondItem="yw8-r1-q1n" secondAttribute="top" constant="237" id="0y1-tY-Jvz"/>
+                                    <constraint firstItem="2W4-4h-vQY" firstAttribute="centerX" secondItem="yw8-r1-q1n" secondAttribute="centerX" id="Cs4-Qg-ySl"/>
+                                    <constraint firstItem="f2m-3K-y8z" firstAttribute="top" secondItem="2W4-4h-vQY" secondAttribute="bottom" constant="12" id="Woa-Rh-NPY"/>
+                                    <constraint firstItem="4mX-eZ-ZAX" firstAttribute="centerX" secondItem="yw8-r1-q1n" secondAttribute="centerX" id="jSe-Li-3xW"/>
+                                    <constraint firstItem="2W4-4h-vQY" firstAttribute="top" secondItem="4mX-eZ-ZAX" secondAttribute="bottom" constant="14" id="jdo-7p-lNe"/>
+                                    <constraint firstItem="f2m-3K-y8z" firstAttribute="centerX" secondItem="2W4-4h-vQY" secondAttribute="centerX" id="kpe-D0-AcT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZZK-rQ-SMG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HeV-YA-4hT" firstAttribute="leading" secondItem="ZZK-rQ-SMG" secondAttribute="leading" constant="24" id="EKD-h1-20d"/>
-                            <constraint firstItem="XNh-MA-ADN" firstAttribute="top" secondItem="OPv-Sn-aoZ" secondAttribute="bottom" id="H5i-XY-Hyo"/>
                             <constraint firstAttribute="trailing" secondItem="OPv-Sn-aoZ" secondAttribute="trailing" id="LjD-5W-KnH"/>
                             <constraint firstItem="HeV-YA-4hT" firstAttribute="centerY" secondItem="Bp8-fj-snn" secondAttribute="centerY" id="R9I-bl-HBK"/>
+                            <constraint firstItem="yw8-r1-q1n" firstAttribute="trailing" secondItem="ZZK-rQ-SMG" secondAttribute="trailing" id="ZhX-CX-IoX"/>
                             <constraint firstItem="Bp8-fj-snn" firstAttribute="centerX" secondItem="TXH-0a-a14" secondAttribute="centerX" id="cXa-XB-EQu"/>
+                            <constraint firstItem="yw8-r1-q1n" firstAttribute="top" secondItem="OPv-Sn-aoZ" secondAttribute="bottom" id="eOk-V7-JK4"/>
+                            <constraint firstItem="yw8-r1-q1n" firstAttribute="leading" secondItem="ZZK-rQ-SMG" secondAttribute="leading" id="eob-Ty-h1O"/>
                             <constraint firstItem="OPv-Sn-aoZ" firstAttribute="top" secondItem="Bp8-fj-snn" secondAttribute="bottom" constant="14" id="fUl-yM-PhL"/>
-                            <constraint firstItem="XNh-MA-ADN" firstAttribute="bottom" secondItem="ZZK-rQ-SMG" secondAttribute="bottom" id="lcU-df-919"/>
+                            <constraint firstAttribute="bottom" secondItem="yw8-r1-q1n" secondAttribute="bottom" id="lr4-Y5-8KC"/>
                             <constraint firstItem="Bp8-fj-snn" firstAttribute="top" secondItem="ZZK-rQ-SMG" secondAttribute="top" constant="21" id="upL-Kz-lTo"/>
-                            <constraint firstItem="XNh-MA-ADN" firstAttribute="leading" secondItem="ZZK-rQ-SMG" secondAttribute="leading" id="vvt-hn-YA0"/>
                             <constraint firstItem="OPv-Sn-aoZ" firstAttribute="leading" secondItem="TXH-0a-a14" secondAttribute="leading" id="wXc-Z0-jxG"/>
-                            <constraint firstItem="XNh-MA-ADN" firstAttribute="trailing" secondItem="ZZK-rQ-SMG" secondAttribute="trailing" id="xmJ-op-zCX"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="XNh-MA-ADN" id="aMT-QR-Akm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIv-bp-hLi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="-865"/>
+            <point key="canvasLocation" x="973.60000000000002" y="-865.27093596059115"/>
         </scene>
         <!--Home WorkerQR CodeVC-->
         <scene sceneID="Hay-An-rOk">
@@ -309,6 +334,7 @@
         <image name="icHomeActive" width="24" height="24"/>
         <image name="icHomeInactive" width="24" height="24"/>
         <image name="icQrScan24Px" width="24" height="24"/>
+        <image name="imgReadyPx" width="68" height="68"/>
         <image name="qrScanArea" width="309" height="310"/>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

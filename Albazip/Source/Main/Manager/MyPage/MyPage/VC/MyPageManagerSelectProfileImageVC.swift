@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 protocol SelectProfileImageDelegate {
     func imageModalDismiss()
-    func changeImage(data: UIImage)
+    func changeImage()
 }
 class MyPageManagerSelectProfileImageVC: UIViewController{
     
@@ -22,10 +22,16 @@ class MyPageManagerSelectProfileImageVC: UIViewController{
     @IBOutlet var imageBorder5: UIImageView!
     @IBOutlet var cornerView: UIView!
     
+    var imageUrl = ""
     var selectedImageIndex = 0
     var selectedImage = #imageLiteral(resourceName: "icMoney")
     var imageArray = [#imageLiteral(resourceName: "imgProfileM128Px1"), #imageLiteral(resourceName: "imgProfileM128Px2"), #imageLiteral(resourceName: "imgProfileM128Px3"), #imageLiteral(resourceName: "imgProfileM128Px4"), #imageLiteral(resourceName: "imgProfileM128Px5")]
+    var imageDefaultUrl = ["https://albazip-bucket.s3.ap-northeast-2.amazonaws.com/default/m3.png","https://albazip-bucket.s3.ap-northeast-2.amazonaws.com/default/m2.png","https://albazip-bucket.s3.ap-northeast-2.amazonaws.com/default/m1.png","https://albazip-bucket.s3.ap-northeast-2.amazonaws.com/default/m5.png","https://albazip-bucket.s3.ap-northeast-2.amazonaws.com/default/m4.png"]
+    var imageDefaultPost = ["m3", "m2", "m1", "m5", "m4"]
     var selectProfileImageDelegate : SelectProfileImageDelegate?
+    lazy var dataManager: MyPageProfileImageDefaultDatamanager = MyPageProfileImageDefaultDatamanager()
+    var isGally = false
+    var isSelected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,33 +41,36 @@ class MyPageManagerSelectProfileImageVC: UIViewController{
         mainImage.layer.cornerRadius = mainImage.frame.width / 2
         mainImage.clipsToBounds = true
         
-        // 이미지 첫 변경일때 디폴트로 젤 가운데꺼
-        if selectedImage.imageAsset == imageArray[1].imageAsset{
+        // 1) 이미지 url null일 때
+        if imageUrl == "" {
+            print("이미지 url null")
             selectedImageIndex = 1
             changeImage(index: selectedImageIndex)
         }
-        // 사용자 지정 이미지이다
-        else if selectedImage != imageArray[0], selectedImage != imageArray[1], selectedImage != imageArray[2], selectedImage != imageArray[3], selectedImage != imageArray[4]{
+        // 2) 사용자 지정 이미지이다
+        else if imageUrl != imageDefaultUrl[0], imageUrl != imageDefaultUrl[1], imageUrl != imageDefaultUrl[2], imageUrl != imageDefaultUrl[3], imageUrl != imageDefaultUrl[4]{
             print("사용자 지정 이미지이다")
             mainImage.image = selectedImage
         }
+        // 3) 앱 이미지 이다.
+        
         //앱 이미지
         else{
-            if(selectedImage == #imageLiteral(resourceName: "imgProfileM128Px1")){
+            print("앱이미지이다")
+            if(imageUrl == imageDefaultUrl[0]){
                 selectedImageIndex = 0
-            }else if(selectedImage == #imageLiteral(resourceName: "imgProfileM128Px2")){
+            }else if(imageUrl == imageDefaultUrl[1]){
                 selectedImageIndex = 1
-            }else if(selectedImage == #imageLiteral(resourceName: "imgProfileM128Px3")){
+            }else if(imageUrl == imageDefaultUrl[2]){
                 print("3")
                 selectedImageIndex = 2
-            }else if(selectedImage == #imageLiteral(resourceName: "imgProfileM128Px4")){
+            }else if(imageUrl == imageDefaultUrl[3]){
                 selectedImageIndex = 3
-            }else if(selectedImage == #imageLiteral(resourceName: "imgProfileM128Px5")){
+            }else if(imageUrl == imageDefaultUrl[4]){
                 selectedImageIndex = 4
             }
             changeImage(index: selectedImageIndex)
         }
-        //changeImage(index: selectedImageIndex)
     }
     override func didReceiveMemoryWarning() {
           super.didReceiveMemoryWarning()
@@ -103,26 +112,36 @@ class MyPageManagerSelectProfileImageVC: UIViewController{
         selectedImageIndex = 0
         setUI()
         changeImage(index: 0)
+        isGally = false
+        isSelected = true
     }
     @IBAction func btnImage2(_ sender: Any) {
         selectedImageIndex = 1
         setUI()
         changeImage(index: 1)
+        isGally = false
+        isSelected = true
     }
     @IBAction func btnImage3(_ sender: Any) {
         selectedImageIndex = 2
         setUI()
         changeImage(index: 2)
+        isGally = false
+        isSelected = true
     }
     @IBAction func btnImage4(_ sender: Any) {
         selectedImageIndex = 3
         setUI()
         changeImage(index: 3)
+        isGally = false
+        isSelected = true
     }
     @IBAction func btnImage5(_ sender: Any) {
         selectedImageIndex = 4
         setUI()
         changeImage(index: 4)
+        isGally = false
+        isSelected = true
     }
     
     @IBAction func btnGallary(_ sender: Any) {
@@ -142,9 +161,18 @@ class MyPageManagerSelectProfileImageVC: UIViewController{
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func btnNext(_ sender: Any) {
-        selectProfileImageDelegate?.imageModalDismiss()
-        selectProfileImageDelegate?.changeImage(data: mainImage.image!)
-        self.dismiss(animated: true, completion: nil)
+        if !isSelected{
+            print("api 호출 x")
+            selectProfileImageDelegate?.imageModalDismiss()
+            selectProfileImageDelegate?.changeImage()
+            self.dismiss(animated: true, completion: nil)
+        }else if isGally{
+            print("이미지 업로드 api")
+        }else{
+            print("디폴트 이미지 api")
+            showIndicator()
+            dataManager.postMyPageProfileImageDefault(MyPageProfileImageDefaultRequest(defaultImage: imageDefaultPost[selectedImageIndex]),vc: self)
+        }
     }
     
 }
@@ -154,6 +182,7 @@ extension MyPageManagerSelectProfileImageVC: UIImagePickerControllerDelegate, UI
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     // 이미지 피커 컨트롤러 창 닫기
     picker.dismiss(animated:false)
+    /*
     self.dismiss(animated: false) { () in
       // 알림창 호출
       let alert = UIAlertController(title: "",
@@ -161,7 +190,7 @@ extension MyPageManagerSelectProfileImageVC: UIImagePickerControllerDelegate, UI
                                     preferredStyle: .alert)
       alert.addAction(UIAlertAction(title: "확인", style: .cancel))
       self.present(alert, animated: false)
-    }
+    }*/
   }
   
   // 이미지 피커에서 이미지를 선택했을 때 호출되는 메소드
@@ -175,8 +204,23 @@ extension MyPageManagerSelectProfileImageVC: UIImagePickerControllerDelegate, UI
             newImage = possibleImage // 원본 이미지가 있을 경우
         }
         self.mainImage.image = newImage
+        isGally = true
+        isSelected = true
         // 이미지 피커 컨트롤러 창 닫기
         setUI()
         picker.dismiss(animated: false)
+    }
+}
+extension MyPageManagerSelectProfileImageVC {
+    func didSuccessMyPageProfileImageDefault(result:  MyPageProfileImageDefaultResponse) {
+        dismissIndicator()
+        selectProfileImageDelegate?.imageModalDismiss()
+        selectProfileImageDelegate?.changeImage()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func failedToRequestMyPageProfileImageDefault(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
     }
 }

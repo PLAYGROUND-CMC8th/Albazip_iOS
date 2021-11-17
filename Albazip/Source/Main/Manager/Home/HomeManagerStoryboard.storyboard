@@ -680,10 +680,38 @@
                                     <constraint firstAttribute="height" constant="1" id="pZK-Fr-F67"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dGV-cx-tqZ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hv3-qh-1sw">
                                 <rect key="frame" x="0.0" y="102" width="375" height="676"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgReadyPx" translatesAutoresizingMaskIntoConstraints="NO" id="EBa-RT-NWg">
+                                        <rect key="frame" x="153.66666666666666" y="237" width="68" height="68"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="68" id="6lM-I5-9JY"/>
+                                            <constraint firstAttribute="width" constant="68" id="pAX-2G-Bdt"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="준비중인 기능입니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kn3-BY-OQl">
+                                        <rect key="frame" x="96" y="319" width="183" height="27"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" red="0.20000001789999999" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다음 업데이트에서 만나요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2H-le-txY">
+                                        <rect key="frame" x="99.666666666666686" y="358" width="176" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="g2H-le-txY" firstAttribute="centerX" secondItem="Kn3-BY-OQl" secondAttribute="centerX" id="2QP-tZ-gA0"/>
+                                    <constraint firstItem="EBa-RT-NWg" firstAttribute="centerX" secondItem="hv3-qh-1sw" secondAttribute="centerX" id="4s1-9B-Y7K"/>
+                                    <constraint firstItem="g2H-le-txY" firstAttribute="top" secondItem="Kn3-BY-OQl" secondAttribute="bottom" constant="12" id="Fwc-NL-qd1"/>
+                                    <constraint firstItem="EBa-RT-NWg" firstAttribute="top" secondItem="hv3-qh-1sw" secondAttribute="top" constant="237" id="Nu1-bj-vfh"/>
+                                    <constraint firstItem="Kn3-BY-OQl" firstAttribute="centerX" secondItem="hv3-qh-1sw" secondAttribute="centerX" id="ZzK-66-Vcw"/>
+                                    <constraint firstItem="Kn3-BY-OQl" firstAttribute="top" secondItem="EBa-RT-NWg" secondAttribute="bottom" constant="14" id="o00-Q8-GMv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wAb-TU-Gcz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -691,20 +719,20 @@
                             <constraint firstItem="MZI-5A-Rwi" firstAttribute="leading" secondItem="Cd8-QM-PJZ" secondAttribute="leading" id="2aR-EM-84h"/>
                             <constraint firstItem="YnC-cB-HdR" firstAttribute="centerY" secondItem="Sj8-Ub-H04" secondAttribute="centerY" id="5tY-M7-fip"/>
                             <constraint firstAttribute="trailing" secondItem="MZI-5A-Rwi" secondAttribute="trailing" id="7qv-oa-Zt0"/>
+                            <constraint firstItem="hv3-qh-1sw" firstAttribute="top" secondItem="MZI-5A-Rwi" secondAttribute="bottom" id="Fpn-xY-RCi"/>
                             <constraint firstItem="YnC-cB-HdR" firstAttribute="leading" secondItem="wAb-TU-Gcz" secondAttribute="leading" constant="24" id="HZa-kZ-ZQQ"/>
-                            <constraint firstItem="dGV-cx-tqZ" firstAttribute="leading" secondItem="wAb-TU-Gcz" secondAttribute="leading" id="JWl-Nl-rwb"/>
-                            <constraint firstItem="dGV-cx-tqZ" firstAttribute="top" secondItem="MZI-5A-Rwi" secondAttribute="bottom" id="T8H-hi-0UV"/>
                             <constraint firstItem="Sj8-Ub-H04" firstAttribute="top" secondItem="wAb-TU-Gcz" secondAttribute="top" constant="21" id="ZaK-iq-0Bp"/>
-                            <constraint firstItem="wAb-TU-Gcz" firstAttribute="bottom" secondItem="dGV-cx-tqZ" secondAttribute="bottom" id="dUU-ah-ViW"/>
+                            <constraint firstItem="hv3-qh-1sw" firstAttribute="leading" secondItem="Cd8-QM-PJZ" secondAttribute="leading" id="cQW-I8-JBf"/>
                             <constraint firstItem="MZI-5A-Rwi" firstAttribute="top" secondItem="Sj8-Ub-H04" secondAttribute="bottom" constant="14" id="gMp-Ez-KIO"/>
-                            <constraint firstItem="wAb-TU-Gcz" firstAttribute="trailing" secondItem="dGV-cx-tqZ" secondAttribute="trailing" id="snU-KQ-WPN"/>
+                            <constraint firstItem="wAb-TU-Gcz" firstAttribute="trailing" secondItem="hv3-qh-1sw" secondAttribute="trailing" id="l3v-Nj-Fwo"/>
+                            <constraint firstItem="wAb-TU-Gcz" firstAttribute="bottom" secondItem="hv3-qh-1sw" secondAttribute="bottom" id="oaq-1t-ZLg"/>
                             <constraint firstItem="Sj8-Ub-H04" firstAttribute="centerX" secondItem="Cd8-QM-PJZ" secondAttribute="centerX" id="yOI-8Z-Sc0"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwe-OK-Xue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150" y="77"/>
+            <point key="canvasLocation" x="1149.5999999999999" y="76.847290640394093"/>
         </scene>
     </scenes>
     <resources>
@@ -717,6 +745,7 @@
         <image name="icX24Px" width="24" height="24"/>
         <image name="imgPrivateWork68Px" width="68" height="68"/>
         <image name="imgPublicWork68Px" width="68" height="68"/>
+        <image name="imgReadyPx" width="68" height="68"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

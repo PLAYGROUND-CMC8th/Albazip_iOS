@@ -136,7 +136,15 @@ class MyPageManagerVC : BaseViewController{
             modalBgView.isHidden = false
             //UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.7763934135, green: 0.7765250206, blue: 0.7849833965, alpha: 1)
             vc.selectProfileImageDelegate = self
-            vc.selectedImage = profileImage.image!
+            if let x = profileImage.image{
+                vc.selectedImage = x
+                
+            }
+            if let x = profileData {
+                if let y = x.imagePath{
+                    vc.imageUrl = y
+                }
+            }
                     
             //테스트용임
             
@@ -554,10 +562,12 @@ extension MyPageManagerVC: SelectProfileImageDelegate{
     func imageModalDismiss(){
         modalBgView.isHidden = true
     }
-    func changeImage(data: UIImage){
+    func changeImage(){
         print("이미지 변경")
         
-        profileImage.image = data
+        //profileImage.image = data
+        showIndicator()
+        dataManager.getMyPageManagerProfile(vc: self)
     }
 }
 
@@ -565,7 +575,7 @@ extension MyPageManagerVC {
     func didSuccessMyPageManagerProfile(result: MyPageManagerProfileResponse) {
         dismissIndicator()
         profileData = result.data
-        
+        print("내정보 \(profileData?.imagePath)" )
         print(result.message!)
         if let img = profileData?.imagePath{
             let url = URL(string: img)
