@@ -56,13 +56,15 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
         populateBottomView()
         addPanGestureToTopViewAndCollectionView()
         setUI()
-        showIndicator()
-        dataManager.getMyPageManagerWorkerDetailProfile(vc: self, index: positionId)
+        //showIndicator()
+        //dataManager.getMyPageManagerWorkerDetailProfile(vc: self, index: positionId)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         print("MainviewWillAppear")
+        showIndicator()
+        dataManager.getMyPageManagerWorkerDetailProfile(vc: self, index: positionId)
         //퇴사 알림창 띄워주기!
         if status == 2{
             

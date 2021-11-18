@@ -51,6 +51,10 @@ class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositi
         super.viewDidLoad()
 
         setupTableView()
+       // showIndicator()
+        //dataManager.getMyPageManagerWorkerPosition(vc: self, index: positionId)
+    }
+    override func viewWillAppear(_ animated: Bool) {
         showIndicator()
         dataManager.getMyPageManagerWorkerPosition(vc: self, index: positionId)
     }

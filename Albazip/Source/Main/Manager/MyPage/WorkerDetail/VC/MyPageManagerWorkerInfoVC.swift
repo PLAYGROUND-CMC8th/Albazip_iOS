@@ -44,6 +44,20 @@ class MyPageManagerWorkerInfoVC: UIViewController {
         super.viewDidLoad()
 
         setupTableView()
+        /*
+        if status != -1, positionId != -1{
+            if status == 0{
+                // 근무자 코드
+                dataManager2.getMyPageManagerWorkerCode(vc: self, index: positionId)
+            }else {
+                // 포지션
+                showIndicator()
+                dataManager.getMyPageWorkerMyInfo(vc: self, index: positionId)
+            }
+        }*/
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
         if status != -1, positionId != -1{
             if status == 0{
                 // 근무자 코드
@@ -54,7 +68,6 @@ class MyPageManagerWorkerInfoVC: UIViewController {
                 dataManager.getMyPageWorkerMyInfo(vc: self, index: positionId)
             }
         }
-        
     }
 
 

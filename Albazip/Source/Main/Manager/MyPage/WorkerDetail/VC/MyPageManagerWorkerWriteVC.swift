@@ -39,6 +39,10 @@ class MyPageManagerWorkerWriteVC: UIViewController {
         super.viewDidLoad()
 
         setupTableView()
+        //showIndicator()
+        //dataManager.getMyPageManagerWorkerWrite(vc: self, index: positionId)
+    }
+    override func viewWillAppear(_ animated: Bool) {
         showIndicator()
         dataManager.getMyPageManagerWorkerWrite(vc: self, index: positionId)
     }

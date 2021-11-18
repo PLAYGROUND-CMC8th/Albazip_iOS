@@ -284,13 +284,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrScanArea" translatesAutoresizingMaskIntoConstraints="NO" id="aod-MD-adh">
-                                <rect key="frame" x="35" y="253.66666666666663" width="305" height="305"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyJ-T7-rI8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onh-f0-gGX" customClass="ReaderView" customModule="Albazip" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="305" id="9va-5E-Xik"/>
-                                    <constraint firstAttribute="width" constant="305" id="PmG-R5-jOb"/>
+                                    <constraint firstItem="onh-f0-gGX" firstAttribute="leading" secondItem="xyJ-T7-rI8" secondAttribute="leading" id="5mk-g1-7Fl"/>
+                                    <constraint firstItem="onh-f0-gGX" firstAttribute="top" secondItem="xyJ-T7-rI8" secondAttribute="top" id="93M-sH-Cvx"/>
+                                    <constraint firstAttribute="trailing" secondItem="onh-f0-gGX" secondAttribute="trailing" id="HmN-2l-Rra"/>
+                                    <constraint firstAttribute="bottom" secondItem="onh-f0-gGX" secondAttribute="bottom" id="jPK-DS-0UC"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매장 QR코드 스캔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZw-32-bD6">
+                                <rect key="frame" x="123.66666666666669" y="65" width="128" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrScanArea" translatesAutoresizingMaskIntoConstraints="NO" id="aod-MD-adh">
+                                <rect key="frame" x="33" y="251" width="309" height="310"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="310" id="TCr-HJ-lpQ"/>
+                                    <constraint firstAttribute="width" constant="309" id="vRH-39-xDc"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAi-qY-rnp">
+                                <rect key="frame" x="96.666666666666686" y="151" width="182" height="39"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmy-3O-pKV">
+                                        <rect key="frame" x="90.999999999999986" y="19.666666666666657" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647058959999999" green="0.85490196939999996" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="Hmy-3O-pKV" firstAttribute="centerX" secondItem="fAi-qY-rnp" secondAttribute="centerX" id="77j-f6-gfM"/>
+                                    <constraint firstAttribute="height" constant="39" id="VoO-XB-xkb"/>
+                                    <constraint firstItem="Hmy-3O-pKV" firstAttribute="centerY" secondItem="fAi-qY-rnp" secondAttribute="centerY" id="Wlg-Rx-2rz"/>
+                                    <constraint firstAttribute="width" constant="182" id="dgX-Mq-N3G"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiX-xy-IWs">
                                 <rect key="frame" x="24" y="64" width="24" height="24"/>
                                 <constraints>
@@ -302,28 +345,34 @@
                                     <action selector="btnCancel:" destination="m5A-A6-bSr" eventType="touchUpInside" id="B5O-P6-NO4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매장 QR코드 스캔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZw-32-bD6">
-                                <rect key="frame" x="123.66666666666669" y="65" width="128" height="22"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2NY-Mu-Qub"/>
-                        <color key="backgroundColor" systemColor="separatorColor"/>
                         <constraints>
                             <constraint firstItem="aod-MD-adh" firstAttribute="centerY" secondItem="MKr-SV-AHJ" secondAttribute="centerY" id="8cf-oa-Azw"/>
+                            <constraint firstItem="2NY-Mu-Qub" firstAttribute="trailing" secondItem="aod-MD-adh" secondAttribute="trailing" constant="33" id="DMt-dR-dg1"/>
+                            <constraint firstItem="fAi-qY-rnp" firstAttribute="top" secondItem="MKr-SV-AHJ" secondAttribute="topMargin" constant="107" id="DWa-0y-Wme"/>
+                            <constraint firstAttribute="trailing" secondItem="xyJ-T7-rI8" secondAttribute="trailing" id="Ftw-YS-VKE"/>
+                            <constraint firstItem="xyJ-T7-rI8" firstAttribute="top" secondItem="MKr-SV-AHJ" secondAttribute="top" id="Hpe-08-V1h"/>
                             <constraint firstItem="UZw-32-bD6" firstAttribute="centerX" secondItem="MKr-SV-AHJ" secondAttribute="centerX" id="KqG-1m-Df5"/>
+                            <constraint firstItem="aod-MD-adh" firstAttribute="leading" secondItem="2NY-Mu-Qub" secondAttribute="leading" constant="33" id="Nud-yq-hiU"/>
                             <constraint firstItem="yiX-xy-IWs" firstAttribute="leading" secondItem="2NY-Mu-Qub" secondAttribute="leading" constant="24" id="TVt-HG-DnD"/>
                             <constraint firstItem="yiX-xy-IWs" firstAttribute="centerY" secondItem="UZw-32-bD6" secondAttribute="centerY" id="Ufi-2D-Oei"/>
                             <constraint firstItem="UZw-32-bD6" firstAttribute="top" secondItem="2NY-Mu-Qub" secondAttribute="top" constant="21" id="Xbt-Bq-e7a"/>
+                            <constraint firstItem="fAi-qY-rnp" firstAttribute="centerX" secondItem="MKr-SV-AHJ" secondAttribute="centerX" id="ZvE-0m-eSd"/>
+                            <constraint firstItem="xyJ-T7-rI8" firstAttribute="leading" secondItem="MKr-SV-AHJ" secondAttribute="leading" id="eGJ-mk-mCW"/>
+                            <constraint firstAttribute="bottom" secondItem="xyJ-T7-rI8" secondAttribute="bottom" id="nd6-1H-VGV"/>
                             <constraint firstItem="aod-MD-adh" firstAttribute="centerX" secondItem="MKr-SV-AHJ" secondAttribute="centerX" id="xZ5-vu-Z8y"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="Hmy-3O-pKV" id="3VT-JU-Tc0"/>
+                        <outlet property="readRect" destination="aod-MD-adh" id="BY4-9V-4CV"/>
+                        <outlet property="readerView" destination="onh-f0-gGX" id="3EH-8F-1lN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sl6-qF-wBt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="-865"/>
+            <point key="canvasLocation" x="261.60000000000002" y="-865.27093596059115"/>
         </scene>
     </scenes>
     <resources>
@@ -336,9 +385,6 @@
         <image name="icQrScan24Px" width="24" height="24"/>
         <image name="imgReadyPx" width="68" height="68"/>
         <image name="qrScanArea" width="309" height="310"/>
-        <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
