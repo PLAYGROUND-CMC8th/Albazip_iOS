@@ -4,11 +4,14 @@
 //
 //  Created by 김수빈 on 2021/11/11.
 //
-
+protocol MyPageDetailStopWorkDelegate {
+    func requestStopWork()
+}
 import Foundation
 class MyPageDetailStopWorkVC: UIViewController{
     var transparentView = UIView()
     @IBOutlet var cornerView: UIView!
+    var myPageDetailStopWorkDelegate : MyPageDetailStopWorkDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
@@ -23,7 +26,9 @@ class MyPageDetailStopWorkVC: UIViewController{
     }
     @IBAction func btnNext(_ sender: Any) {
         self.transparentView.isHidden = true
+        self.myPageDetailStopWorkDelegate?.requestStopWork()
         self.dismiss(animated: true)
     }
     
 }
+

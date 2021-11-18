@@ -28,7 +28,10 @@ class MyPageWorkerInfoVC: UIViewController {
     
     private var dragDirection: DragDirection = .Up
     private var oldContentOffset = CGPoint.zero
+    //마이페이지 조회
     lazy var dataManager: MyPageWorkerMyInfoDatamanager = MyPageWorkerMyInfoDatamanager()
+    // 퇴사 요청 관련
+    lazy var dataManager2: MyPageWorkerStopWorkDatamanager = MyPageWorkerStopWorkDatamanager()
     //MARK:- Data Source
     var userInfo: MyPageWorkerMyInfoUserInfo?
     var workInfo: MyPageWorkerMyInfoWorkInfo?
@@ -200,7 +203,7 @@ extension MyPageWorkerInfoVC: MyPageWorkerMyInfoDelegate {
         if let vc = storyboard.instantiateViewController(withIdentifier: "MyPageDetailStopWorkVC") as? MyPageDetailStopWorkVC {
             vc.modalPresentationStyle = .overFullScreen
             //myPageManagerWorkerPositionAlertDelegate?.modalShow()
-            
+            vc.myPageDetailStopWorkDelegate = self
         self.present(vc, animated: true, completion: nil)
         }
     }
@@ -225,3 +228,22 @@ extension MyPageWorkerInfoVC {
     }
 }
 
+extension MyPageWorkerInfoVC: MyPageDetailStopWorkDelegate{
+    func requestStopWork() {
+        showIndicator()
+        dataManager2.putMyPageWorkerStopWork(vc: self)
+    }
+}
+extension MyPageWorkerInfoVC{
+    func didSuccessMMyPageWorkerStopWork(result: MyPageWorkerStopWorkResponse) {
+        print(result.message!)
+        dismissIndicator()
+        
+    }
+    
+    func failedToRequestMyPageWorkerStopWork(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+        
+    }
+}
