@@ -92,7 +92,14 @@ class MyPageManagerEditWorkerVC: UIViewController{
         
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageManagerEditWorkerListVC") as? MyPageManagerEditWorkerListVC else {return}
         if let data = loadData{
-            nextVC.taskList = data.taskList
+            var i = 0
+            var editTaskList2 = [EditTaskLists2]()
+            while i < data.taskList.count{
+                editTaskList2.append(EditTaskLists2(title: data.taskList[i].title, content: data.taskList[i].content, id: data.taskList[i].id))
+                i += 1
+            }
+            
+            nextVC.taskList = editTaskList2
         }
         nextVC.positionId = positionId
                 self.navigationController?.pushViewController(nextVC, animated: true)

@@ -20,6 +20,6 @@ struct MyPageManagerEditWorkerData2: Encodable {
 }
 struct EditTaskLists2: Encodable{
     var title: String
-    var content: String
-    var id: Int
+    var content: String?
+    var id: Int?
 }

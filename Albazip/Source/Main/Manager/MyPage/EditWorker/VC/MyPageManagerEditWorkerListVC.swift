@@ -6,14 +6,20 @@
 //
 
 import Foundation
+
+struct EditWorkList{
+    var title: String
+    var content: String?
+    var id:Int?
+}
 class MyPageManagerEditWorkerListVC: UIViewController{
     // 이전 뷰에서 받아올 정보
     var positionId = 0
     @IBOutlet var btnNext: UIButton!
     @IBOutlet var tableView: UITableView!
     var totalCount = 0
-    var totalList = [WorkList]()
-    var taskList = [EditTaskLists]()
+    var totalList = [EditWorkList]()
+    var taskList = [EditTaskLists2]()
     // Datamanager
     lazy var dataManager: MyPageManagerEditWorkerListDataManger = MyPageManagerEditWorkerListDataManger()
     override func viewDidLoad() {
@@ -21,7 +27,7 @@ class MyPageManagerEditWorkerListVC: UIViewController{
         print(taskList)
         var i = 0
         while i < taskList.count{
-            totalList.append(WorkList(title: taskList[i].title, content: taskList[i].content))
+            totalList.append(EditWorkList(title: taskList[i].title, content: taskList[i].content, id: taskList[i].id))
             i += 1
         }
         setupTableView()
@@ -49,12 +55,7 @@ class MyPageManagerEditWorkerListVC: UIViewController{
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnNext(_ sender: Any) {
-        var taskList2 = [EditTaskLists2]()
-        var i = 0
-        while i < taskList.count{
-            taskList2.append(EditTaskLists2(title: taskList[i].title, content: taskList[i].content, id: i+1))
-            i += 1
-        }
+        
         taskList.removeAll()
      
         if totalList.count != 0{
@@ -64,7 +65,7 @@ class MyPageManagerEditWorkerListVC: UIViewController{
                     return presentBottomAlert(message: "업무명을 입력해주세요.")
                 }
                 
-                taskList.append(EditTaskLists(title: totalList[x].title ,content: totalList[x].content, id: x+1))
+                taskList.append(EditTaskLists2(title: totalList[x].title ,content: totalList[x].content ?? nil, id: totalList[x].id ?? nil))
             }
             print("완료")
             
@@ -81,8 +82,8 @@ class MyPageManagerEditWorkerListVC: UIViewController{
         }else{
             salaryType2 = 2
         }
-        let input = MyPageManagerEditWorkerData2(rank: data.rank!, title: data.title!, startTime: data.startTime!, endTime: data.endTime!,  workDay: data.workDays!, breakTime: data.breakTime!, salary: data.salary!, salaryType: salaryType2, taskList: taskList2)
-        taskList2.removeAll()
+        let input = MyPageManagerEditWorkerData2(rank: data.rank!, title: data.title!, startTime: data.startTime!, endTime: data.endTime!,  workDay: data.workDays!, breakTime: data.breakTime!, salary: data.salary!, salaryType: salaryType2, taskList: taskList)
+      
         print(input)
         dataManager.getMyPageManagerEditWorkerList(input, vc: self, index: positionId)
         showIndicator()
@@ -165,7 +166,7 @@ extension MyPageManagerEditWorkerListVC: MyPageManagerWorkList3Delegate, MyPageM
 
     func addWork() {
             
-        totalList.append(WorkList(title: "",content: ""))
+        totalList.append(EditWorkList(title: "",content: "", id: nil))
         print(totalList)
         tableView.reloadData()
         print(totalList)
@@ -175,12 +176,16 @@ extension MyPageManagerEditWorkerListVC: MyPageManagerWorkList3Delegate, MyPageM
 }
 extension MyPageManagerEditWorkerListVC {
     func didSuccessMyPageManagerEditWorkerList(result: MyPageEditWorkerListResponse) {
-        
         dismissIndicator()
+        backTwo()
     }
     
     func failedToRequestMyPageEditWorkerList(message: String) {
         dismissIndicator()
         presentAlert(title: message)
+    }
+    func backTwo() {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: false)
     }
 }
