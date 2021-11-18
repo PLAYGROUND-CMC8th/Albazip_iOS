@@ -74,11 +74,13 @@ class MyPageWorkerWriteVC: UIViewController {
 extension MyPageWorkerWriteVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        if isNoData{
+            return 1
+        }
         if let data = writeData{
             return data.count
         }
-        return 1
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -188,11 +190,13 @@ extension MyPageWorkerWriteVC {
         
         writeData = result.data?.postInfo
         print(result.message!)
+        print(writeData)
         if writeData!.count != 0{
             isNoData = false
         }else{
             isNoData = true
         }
+        print(isNoData)
         tableView.reloadData()
         dismissIndicator()
         

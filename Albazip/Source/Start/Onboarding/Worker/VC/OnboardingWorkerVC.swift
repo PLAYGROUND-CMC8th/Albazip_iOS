@@ -72,6 +72,11 @@ class OnboardingWorkerVC: UIViewController{
         print(currentPage)
         pageControl.currentPage = currentPage
     }
+    @IBAction func btnStart(_ sender: Any) {
+        let newStoryboard = UIStoryboard(name: "MainWorker", bundle: nil)
+        let newViewController = newStoryboard.instantiateViewController(identifier: "MainWorkerTabBarController")
+        self.changeRootViewController(newViewController)
+    }
 }
 
 // MARK: - DataSource & Delegate
