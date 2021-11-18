@@ -32,7 +32,8 @@ class MyPageManagerEditWorkerVC: UIViewController{
     
     // data
     var rank = ""
-    var title2 = ""
+    var title2 = "" // 오픈 미들 마감
+    var title3 = "" // 평일 주말
     var workDay = [String]()
     var breakTime = ""
     var salary = "8720"
@@ -83,14 +84,18 @@ class MyPageManagerEditWorkerVC: UIViewController{
         data.salaryType = payTime
         data.salary = salary
         data.breakTime = breakTime
-        data.title = title2
+        data.title = title3 + title2
         data.rank = rank
         data.workDays = workDay
         
         print("data:\(data.rank) \(data.title) \(data.startTime) \(data.endTime) \(data.workDays) \(data.breakTime) \(data.salary) \(data.salaryType)")
-        /*
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageManagerWorkListVC") as? MyPageManagerWorkListVC else {return}
-                self.navigationController?.pushViewController(nextVC, animated: true)*/
+        
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageManagerEditWorkerListVC") as? MyPageManagerEditWorkerListVC else {return}
+        if let data = loadData{
+            nextVC.taskList = data.taskList
+        }
+        nextVC.positionId = positionId
+                self.navigationController?.pushViewController(nextVC, animated: true)
     }
     //모든 값이 입력되었는지 확인
     func checkContent(){
@@ -278,6 +283,10 @@ extension MyPageManagerEditWorkerVC: MyPageManagerTimeDateModalDelegate, MyPageM
         title2 = text
         print("title:\(title2)")
     }
+    func setTitle3(text: String){
+        title3 = text
+        print("title:\(title3)")
+    }
     func setBreaktime(text: String) {
         breakTime = text
         print("breakTime:\(breakTime)")
@@ -375,7 +384,22 @@ extension MyPageManagerEditWorkerVC {
         loadData = result.data
         if let x = result.data{
             setRank(text: x.rank)
-            setTitle(text: x.title)
+            //오픈 미들 마감
+            if x.title.contains("오픈"){
+                setTitle(text: "오픈")
+            }else if x.title.contains("미들"){
+                setTitle(text: "미들")
+            }else{
+                setTitle(text: "마감")
+            }
+            
+            //평일 주말
+            if x.title.contains("평일"){
+                setTitle3(text: "평일")
+            }else {
+                setTitle3(text: "주말")
+            }
+            
             setBreaktime(text: x.breakTime)
             
             startTime = x.startTime.insertTime

@@ -14,6 +14,7 @@ protocol MyPageManagerSelectInfo1Delegate {
     func checkValue1(value: Bool)
     func setRank(text:String)
     func setTitle(text:String)
+    func setTitle3(text:String)
     func addDay(text:String)
     func deleteDay(text:String)
     
@@ -106,6 +107,7 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
             btn2_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
             btn2_2.backgroundColor = .none
             btn2_2.isSelected = false
+            myPageManagerSelectInfo1Delegate?.setTitle3(text: "평일")
         }else{
             btn2_1.backgroundColor = .none
         }
@@ -117,6 +119,7 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
             btn2_2.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
             btn2_1.backgroundColor = .none
             btn2_1.isSelected = false
+            myPageManagerSelectInfo1Delegate?.setTitle3(text: "주말")
         }else{
             btn2_2.backgroundColor = .none
         }
@@ -399,7 +402,7 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
             //myPageManagerSelectInfo1Delegate?.setRank(text: "알바생")
         }
         //포지션
-        if data.title == "오픈"{
+        if data.title.contains("오픈"){
             btn3_1.isSelected = true
             btn3_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
             btn3_2.backgroundColor = .none
@@ -407,7 +410,7 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
             btn3_3.backgroundColor = .none
             btn3_3.isSelected = false
             //myPageManagerSelectInfo1Delegate?.setTitle(text: "오픈")
-        }else if data.title == "미들"{
+        }else if data.title.contains("미들"){
             btn3_2.isSelected = true
             btn3_2.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
             btn3_1.backgroundColor = .none
@@ -424,6 +427,19 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
             btn3_1.isSelected = false
             //myPageManagerSelectInfo1Delegate?.setTitle(text: "마감")
         }
+        
+        if data.title.contains("평일"){
+            btn2_1.isSelected = true
+            btn2_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btn2_2.backgroundColor = .none
+            btn2_2.isSelected = false
+        }else{
+            btn2_2.isSelected = true
+            btn2_2.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btn2_1.backgroundColor = .none
+            btn2_1.isSelected = false
+        }
+        
         
         if data.workDay.contains("월"){
             btn4_1.isSelected = true

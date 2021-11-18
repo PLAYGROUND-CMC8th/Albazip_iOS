@@ -32,6 +32,7 @@ class MyPageManagerAddWorkerVC: UIViewController{
     // data
     var rank = ""
     var title2 = ""
+    var title3 = ""
     var workDay = [String]()
     var breakTime = ""
     var salary = "8720"
@@ -74,7 +75,7 @@ class MyPageManagerAddWorkerVC: UIViewController{
         data.salaryType = payTime
         data.salary = salary
         data.breakTime = breakTime
-        data.title = title2
+        data.title = title3 + title2
         data.rank = rank
         data.workDays = workDay
         
@@ -252,6 +253,10 @@ extension MyPageManagerAddWorkerVC: MyPageManagerTimeDateModalDelegate, MyPageMa
     func setTitle(text: String) {
         title2 = text
         print("title:\(title2)")
+    }
+    func setTitle3(text: String) {
+        title3 = text
+        print("title:\(title3)")
     }
     func setBreaktime(text: String) {
         breakTime = text
