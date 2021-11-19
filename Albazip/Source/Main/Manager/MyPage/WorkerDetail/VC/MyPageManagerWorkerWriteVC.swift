@@ -93,7 +93,7 @@ extension MyPageManagerWorkerWriteVC: UITableViewDataSource {
                    
                cell.selectionStyle = .none //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
                if let data = workListData{
-                   cell.subLabel.text = data[indexPath.row].content!
+                   cell.subLabel.text = data[indexPath.row].content ?? "내용 없음"
                    cell.titleLabel.text = data[indexPath.row].title!
                }
                    print(indexPath.row)

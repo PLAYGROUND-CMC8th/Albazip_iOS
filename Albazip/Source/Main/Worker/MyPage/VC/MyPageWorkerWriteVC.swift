@@ -104,7 +104,7 @@ extension MyPageWorkerWriteVC: UITableViewDataSource {
                     let date2 = date.replace(target: "-", with: ". ")
                     cell.dateLabel.text = date2
                     cell.positionLabel.text = data[indexPath.row].writerJob!
-                    cell.subLabel.text = data[indexPath.row].content!
+                    cell.subLabel.text = data[indexPath.row].content ?? "내용 없음"
                     cell.titleLabel.text = data[indexPath.row].title!
                     print(indexPath.row)
                 }

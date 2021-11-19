@@ -405,6 +405,11 @@ extension MyPageWorkerVC: UIPageViewControllerDelegate {
         tabBarCollectionView.scrollToItem(at: indexPathAtCollectionView,
                                           at: .centeredHorizontally,
                                           animated: true)
+        // FIX
+        // 선택된 셀이라면 텍스트 색상 진하게 변경
+        selectedTabIndex = currentVCIndex
+        //선택 안된 셀이라면 텍스트 색상 디폴트 값, 연하게
+        tabBarCollectionView.reloadData()
     }
 }
 

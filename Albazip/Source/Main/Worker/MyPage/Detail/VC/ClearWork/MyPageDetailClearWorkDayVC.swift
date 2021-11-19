@@ -143,7 +143,7 @@ extension MyPageDetailClearWorkDayVC: UITableViewDataSource,UITableViewDelegate 
                     cell.selectionStyle = .none
                     if let data = nonCompleteTaskData{
                         cell.titlelLabel.text = data[indexPath.row].title!
-                        cell.subLabel.text = data[indexPath.row].content!
+                        cell.subLabel.text = data[indexPath.row].content ?? "내용 없음"
                         
                     }
                     print(indexPath.row)
