@@ -21,6 +21,7 @@ class MyPageDetailClearWorkDayVC: UIViewController{
     //
     var nonCompleteTaskData: [MyPageDetailClearWorkDayNonCompleteTaskData]?
     var completeTaskData: [MyPageDetailClearWorkDayCompleteTaskData]?
+    var isFolded = [Bool]()
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var tableView: UITableView!
@@ -59,6 +60,10 @@ class MyPageDetailClearWorkDayVC: UIViewController{
         //미완료 82
         tableView.register(UINib(nibName: "MyPageDetailNoClearWorkTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageDetailNoClearWorkTableViewCell")
+        //미완료 펼쳤을때 버전 137
+        tableView.register(UINib(nibName: "MyPageDetailNoClearWorkOpenTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageDetailNoClearWorkOpenTableViewCell")
+        
         //완료 82
         tableView.register(UINib(nibName: "MyPageDetailPublicWorkTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageDetailPublicWorkTableViewCell")
@@ -79,7 +84,23 @@ class MyPageDetailClearWorkDayVC: UIViewController{
     
 }
 extension MyPageDetailClearWorkDayVC: UITableViewDataSource,UITableViewDelegate {
-
+    /*
+    //섹션 헤더 고정 해제
+    @available(iOS 2.0, *)
+        public func scrollViewDidScroll(_ scrollView: UIScrollView){
+            // let scrollHeaderHeight = friendsTableView.sectionHeaderHeight
+            let scrollHeaderHeight = tableView.rowHeight
+            
+            if scrollView.contentOffset.y <= scrollHeaderHeight{
+                if scrollView.contentOffset.y >= 0 {
+                    scrollView.contentInset = UIEdgeInsets(top: -scrollView.contentOffset.y, left: 0, bottom: 0, right: 0)
+                }
+            } else if (scrollView.contentOffset.y >= scrollHeaderHeight){
+                scrollView.contentInset = UIEdgeInsets(top: -scrollHeaderHeight, left: 0, bottom: 0, right: 0)
+            }
+        }*/
+    
+    
     //섹션 헤더 개수
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -140,16 +161,43 @@ extension MyPageDetailClearWorkDayVC: UITableViewDataSource,UITableViewDelegate 
                     return cell
                 }
             }else{
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailNoClearWorkTableViewCell") as? MyPageDetailNoClearWorkTableViewCell {
-                    cell.selectionStyle = .none
-                    if let data = nonCompleteTaskData{
-                        cell.titlelLabel.text = data[indexPath.row].title!
-                        cell.subLabel.text = data[indexPath.row].content ?? "내용 없음"
-                        
+                // 접폈는지 펴졌는지
+                if isFolded[indexPath.row]{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailNoClearWorkTableViewCell") as? MyPageDetailNoClearWorkTableViewCell {
+                        cell.selectionStyle = .none
+                        if let data = nonCompleteTaskData{
+                            cell.titlelLabel.text = data[indexPath.row].title!
+                            if data[indexPath.row].content == ""{
+                                cell.subLabel.text = "내용 없음"
+                            }else{
+                                cell.subLabel.text = data[indexPath.row].content ?? "내용 없음"
+                            }
+                            
+                        }
+                        print(indexPath.row)
+                        return cell
                     }
-                    print(indexPath.row)
-                    return cell
+                }else{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailNoClearWorkOpenTableViewCell") as? MyPageDetailNoClearWorkOpenTableViewCell {
+                        cell.selectionStyle = .none
+                        if let data = nonCompleteTaskData{
+                            cell.titleLabel.text = data[indexPath.row].title!
+                            if data[indexPath.row].content == ""{
+                                cell.subLabel.text = "내용 없음"
+                            }else{
+                                cell.subLabel.text = data[indexPath.row].content ?? "내용 없음"
+                            }
+                            let position = data[indexPath.row].writer_position ?? ""
+                            let name = data[indexPath.row].writer_name ?? ""
+                            let date = data[indexPath.row].register_date!.insertDate
+                            cell.writerNameLabel.text = position + " " + name + " · " + date
+                            
+                        }
+                        print(indexPath.row)
+                        return cell
+                    }
                 }
+                
             }
         }else if indexPath.section == 1{
             if isNoCompleteData{
@@ -180,7 +228,21 @@ extension MyPageDetailClearWorkDayVC: UITableViewDataSource,UITableViewDelegate 
         return 50
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 82
+        if indexPath.section == 0{
+            if isNoNonCompleteData{
+                return 82
+            }else{
+                if isFolded[indexPath.row] == true{
+                    return 82
+                }else{
+                    return 137
+                }
+            }
+            
+        }else{
+            return 82
+        }
+        
     }
     //푸터
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -208,6 +270,17 @@ extension MyPageDetailClearWorkDayVC: UITableViewDataSource,UITableViewDelegate 
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        print("\(indexPath.section): \(indexPath.row)")
+        if indexPath.section == 0{
+            if isFolded[indexPath.row] == true{
+                isFolded[indexPath.row] = false
+                tableView.reloadData()
+            }else{
+                isFolded[indexPath.row] = true
+                tableView.reloadData()
+            }
+        }else{
+            presentBottomAlert(message: "이미 완료된 업무입니다.")
+        }
     }
 }
 extension MyPageDetailClearWorkDayVC {
@@ -219,6 +292,12 @@ extension MyPageDetailClearWorkDayVC {
         
         if nonCompleteTaskData!.count != 0{
             isNoNonCompleteData = false
+            // 테이블뷰 접고 펴기 배열
+            var i = 0
+            while i < nonCompleteTaskData!.count{
+                isFolded.append(true)
+                i += 1
+            }
         }else{
             isNoNonCompleteData = true
         }
@@ -229,6 +308,9 @@ extension MyPageDetailClearWorkDayVC {
             isNoCompleteData = true
         }
         print(isNoCompleteData)
+        
+        
+        
         tableView.reloadData()
         dismissIndicator()
         print(completeTaskData)

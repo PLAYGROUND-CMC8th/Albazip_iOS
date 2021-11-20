@@ -150,6 +150,8 @@
 		C38CA0C1273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38CA0BF273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.xib */; };
 		C38CA0C4273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38CA0C2273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.swift */; };
 		C38CA0C5273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38CA0C3273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.xib */; };
+		C38D9322274968CA00AFFDE9 /* MyPageDetailNoClearWorkOpenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38D9320274968CA00AFFDE9 /* MyPageDetailNoClearWorkOpenTableViewCell.swift */; };
+		C38D9323274968CA00AFFDE9 /* MyPageDetailNoClearWorkOpenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38D9321274968CA00AFFDE9 /* MyPageDetailNoClearWorkOpenTableViewCell.xib */; };
 		C38EDCBD2745CF9200564A17 /* MyPageManagerEditWorkerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EDCBC2745CF9200564A17 /* MyPageManagerEditWorkerListVC.swift */; };
 		C38EDCBF2745F4B500564A17 /* MyPageManagerEditWorkerRepuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EDCBE2745F4B500564A17 /* MyPageManagerEditWorkerRepuest.swift */; };
 		C38EDCC12745FFE800564A17 /* MyPageMangerEditWorkerListDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EDCC02745FFE800564A17 /* MyPageMangerEditWorkerListDatamanager.swift */; };
@@ -459,6 +461,8 @@
 		C38CA0BF273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerWorkerCollectionViewCell.xib; sourceTree = "<group>"; };
 		C38CA0C2273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerTableViewCell.swift; sourceTree = "<group>"; };
 		C38CA0C3273054F300EA7BB3 /* MyPageManagerWorkerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerWorkerTableViewCell.xib; sourceTree = "<group>"; };
+		C38D9320274968CA00AFFDE9 /* MyPageDetailNoClearWorkOpenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailNoClearWorkOpenTableViewCell.swift; sourceTree = "<group>"; };
+		C38D9321274968CA00AFFDE9 /* MyPageDetailNoClearWorkOpenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageDetailNoClearWorkOpenTableViewCell.xib; sourceTree = "<group>"; };
 		C38EDCBC2745CF9200564A17 /* MyPageManagerEditWorkerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerEditWorkerListVC.swift; sourceTree = "<group>"; };
 		C38EDCBE2745F4B500564A17 /* MyPageManagerEditWorkerRepuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerEditWorkerRepuest.swift; sourceTree = "<group>"; };
 		C38EDCC02745FFE800564A17 /* MyPageMangerEditWorkerListDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMangerEditWorkerListDatamanager.swift; sourceTree = "<group>"; };
@@ -960,6 +964,8 @@
 				C3B933A6273C3DD00056E381 /* MyPageDetailClearWorkMiddleTableViewCell.xib */,
 				C3B933A9273C3E690056E381 /* MyPageDetailAllClearWorkTableViewCell.swift */,
 				C3B933AA273C3E690056E381 /* MyPageDetailAllClearWorkTableViewCell.xib */,
+				C38D9320274968CA00AFFDE9 /* MyPageDetailNoClearWorkOpenTableViewCell.swift */,
+				C38D9321274968CA00AFFDE9 /* MyPageDetailNoClearWorkOpenTableViewCell.xib */,
 			);
 			path = ClearWork;
 			sourceTree = "<group>";
@@ -2000,6 +2006,7 @@
 				C30AFE682733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib in Resources */,
 				C34BCB492732F1040085ADB3 /* MyPageDetailPublicWorkTableViewCell.xib in Resources */,
 				C398BFA1273F861D008E8BA5 /* HomeManagerMainTableViewCell.xib in Resources */,
+				C38D9323274968CA00AFFDE9 /* MyPageDetailNoClearWorkOpenTableViewCell.xib in Resources */,
 				C3AD3B30273982360030905C /* MyPageManagerWorklistTableViewCell.xib in Resources */,
 				C38442742714932300B84E8A /* HomeManagerStoryboard.storyboard in Resources */,
 				C3546F8627253A3100C4C3DC /* GoogleService-Info.plist in Resources */,
@@ -2186,6 +2193,7 @@
 				C33485FB27480D38000E2D14 /* HomeWorkerPublicWorkNoCompleteTableViewCell.swift in Sources */,
 				C335741C2743ECCE00644E9B /* SettingEditBasicInfoDatamanager.swift in Sources */,
 				C3E9C8F827416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift in Sources */,
+				C38D9322274968CA00AFFDE9 /* MyPageDetailNoClearWorkOpenTableViewCell.swift in Sources */,
 				C398BFA8273F974F008E8BA5 /* HomeManagerCommunityTableViewCell.swift in Sources */,
 				C398BFB6273FD3D1008E8BA5 /* HomeManagerQRCodeVC.swift in Sources */,
 				C3A228AC27427A5300187587 /* HomeWorkerVC.swift in Sources */,

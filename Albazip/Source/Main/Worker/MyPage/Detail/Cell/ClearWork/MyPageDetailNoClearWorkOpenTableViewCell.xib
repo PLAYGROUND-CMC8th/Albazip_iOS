@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="137" id="KGk-i7-Jjw" customClass="MyPageDetailNoClearWorkOpenTableViewCell" customModule="Albazip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ud9-dP-p5j">
+                        <rect key="frame" x="24" y="6" width="327" height="125"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간판 안으로 들여놓기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsM-iU-yug">
+                                <rect key="frame" x="24" y="16" width="116" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문 뒤에 들여놓으세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICh-B9-ptQ">
+                                <rect key="frame" x="24" y="66" width="104" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fe-tS-onz">
+                                <rect key="frame" x="30" y="49" width="267" height="1"/>
+                                <color key="backgroundColor" red="0.98823523520000001" green="0.93725490570000003" blue="0.7607843876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="YHH-pZ-Yao"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사장님 김형준 · 2021.10.21." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbX-Jj-VP6">
+                                <rect key="frame" x="173" y="95" width="130" height="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                                <color key="textColor" red="0.63921570780000003" green="0.63921570780000003" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99607843159999998" green="0.98039215800000001" blue="0.92549026010000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="NbX-Jj-VP6" secondAttribute="bottom" constant="16" id="AYs-Rz-cO4"/>
+                            <constraint firstAttribute="trailing" secondItem="NbX-Jj-VP6" secondAttribute="trailing" constant="24" id="BPP-aF-7YQ"/>
+                            <constraint firstItem="IsM-iU-yug" firstAttribute="top" secondItem="ud9-dP-p5j" secondAttribute="top" constant="16" id="FM1-Ao-khc"/>
+                            <constraint firstAttribute="height" constant="125" id="M7h-wv-sev"/>
+                            <constraint firstItem="6Fe-tS-onz" firstAttribute="top" secondItem="IsM-iU-yug" secondAttribute="bottom" constant="16" id="V2q-tr-bni"/>
+                            <constraint firstItem="6Fe-tS-onz" firstAttribute="leading" secondItem="ud9-dP-p5j" secondAttribute="leading" constant="30" id="WQI-Um-akZ"/>
+                            <constraint firstAttribute="trailing" secondItem="6Fe-tS-onz" secondAttribute="trailing" constant="30" id="XdB-l1-gom"/>
+                            <constraint firstItem="IsM-iU-yug" firstAttribute="leading" secondItem="ud9-dP-p5j" secondAttribute="leading" constant="24" id="Y7Q-Qh-DH2"/>
+                            <constraint firstItem="ICh-B9-ptQ" firstAttribute="leading" secondItem="IsM-iU-yug" secondAttribute="leading" id="rLp-Cx-HcQ"/>
+                            <constraint firstItem="ICh-B9-ptQ" firstAttribute="top" secondItem="6Fe-tS-onz" secondAttribute="bottom" constant="16" id="y8d-FA-ryF"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.97647058959999999" green="0.85098040100000005" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ud9-dP-p5j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="2Bv-iT-ygj"/>
+                    <constraint firstAttribute="bottom" secondItem="ud9-dP-p5j" secondAttribute="bottom" constant="6" id="6jl-RS-aiH"/>
+                    <constraint firstAttribute="trailing" secondItem="ud9-dP-p5j" secondAttribute="trailing" constant="24" id="FSa-pT-cAK"/>
+                    <constraint firstItem="ud9-dP-p5j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="jdu-F1-z3E"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="subLabel" destination="ICh-B9-ptQ" id="cGt-Pl-jug"/>
+                <outlet property="titleLabel" destination="IsM-iU-yug" id="YNB-tI-Zkv"/>
+                <outlet property="writerNameLabel" destination="NbX-Jj-VP6" id="SH2-fk-Exp"/>
+            </connections>
+            <point key="canvasLocation" x="-39" y="162"/>
+        </tableViewCell>
+    </objects>
+</document>
