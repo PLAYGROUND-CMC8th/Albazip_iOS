@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Phm-6k-S5q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <rect key="frame" x="24" y="0.0" width="327" height="49"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미확인" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXA-oW-06B">
                                 <rect key="frame" x="16" y="16" width="35" height="17"/>
@@ -62,12 +62,16 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="Phm-6k-S5q" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3ET-YJ-Aqn"/>
+                <constraint firstItem="Phm-6k-S5q" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="3ET-YJ-Aqn"/>
                 <constraint firstItem="Phm-6k-S5q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="a2l-Am-ms7"/>
-                <constraint firstAttribute="trailing" secondItem="Phm-6k-S5q" secondAttribute="trailing" id="aSC-Kk-dFt"/>
+                <constraint firstAttribute="trailing" secondItem="Phm-6k-S5q" secondAttribute="trailing" constant="24" id="aSC-Kk-dFt"/>
                 <constraint firstAttribute="bottom" secondItem="Phm-6k-S5q" secondAttribute="bottom" id="sOH-Za-x3Y"/>
             </constraints>
             <size key="customSize" width="291" height="70"/>
+            <connections>
+                <outlet property="statusLabel" destination="DXA-oW-06B" id="pWg-03-DMe"/>
+                <outlet property="titleLabel" destination="CAh-wO-JCo" id="lDT-8K-s2S"/>
+            </connections>
             <point key="canvasLocation" x="190" y="140"/>
         </collectionViewCell>
     </objects>

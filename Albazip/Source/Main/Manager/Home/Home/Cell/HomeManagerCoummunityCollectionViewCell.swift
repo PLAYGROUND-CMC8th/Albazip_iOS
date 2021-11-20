@@ -9,6 +9,9 @@ import UIKit
 
 class HomeManagerCoummunityCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet var statusLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
