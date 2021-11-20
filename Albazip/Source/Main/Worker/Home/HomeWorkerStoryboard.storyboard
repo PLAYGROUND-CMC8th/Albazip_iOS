@@ -76,8 +76,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mnw-zZ-PeE">
-                                <rect key="frame" x="0.0" y="188" width="375" height="590"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="mnw-zZ-PeE">
+                                <rect key="frame" x="0.0" y="168" width="375" height="610"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -86,7 +86,7 @@
                         <constraints>
                             <constraint firstItem="mnw-zZ-PeE" firstAttribute="trailing" secondItem="NyR-i6-0jE" secondAttribute="trailing" id="Akc-UW-fk8"/>
                             <constraint firstItem="JBi-DY-6xz" firstAttribute="top" secondItem="NyR-i6-0jE" secondAttribute="top" constant="21" id="Fbg-OP-G6S"/>
-                            <constraint firstItem="mnw-zZ-PeE" firstAttribute="top" secondItem="KSZ-qK-rTw" secondAttribute="bottom" constant="20" id="KIr-xm-T8m"/>
+                            <constraint firstItem="mnw-zZ-PeE" firstAttribute="top" secondItem="KSZ-qK-rTw" secondAttribute="bottom" id="KIr-xm-T8m"/>
                             <constraint firstItem="VV9-pK-jXq" firstAttribute="top" secondItem="JBi-DY-6xz" secondAttribute="bottom" constant="14" id="MNU-I9-zKv"/>
                             <constraint firstAttribute="trailing" secondItem="VV9-pK-jXq" secondAttribute="trailing" id="WHL-xG-Ogt"/>
                             <constraint firstItem="NyR-i6-0jE" firstAttribute="trailing" secondItem="KSZ-qK-rTw" secondAttribute="trailing" constant="24" id="fCV-Aq-RA7"/>
@@ -155,6 +155,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDi-ut-KFG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1743" y="-158"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yf0-y5-jES">
+            <objects>
+                <viewController id="DbN-DO-rdF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FZh-Fz-lX2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-8p-pvc">
+                                <rect key="frame" x="202" y="492" width="137" height="117"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="완료한 인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dQ-oE-XU8">
+                                        <rect key="frame" x="16" y="16" width="64.666666666666671" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qiy-4D-0D7">
+                                        <rect key="frame" x="16" y="35" width="105" height="72"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="3dQ-oE-XU8" firstAttribute="leading" secondItem="eH9-8p-pvc" secondAttribute="leading" constant="16" id="1AX-iA-keh"/>
+                                    <constraint firstItem="Qiy-4D-0D7" firstAttribute="top" secondItem="3dQ-oE-XU8" secondAttribute="bottom" constant="2" id="P0z-yc-6cJ"/>
+                                    <constraint firstItem="Qiy-4D-0D7" firstAttribute="leading" secondItem="eH9-8p-pvc" secondAttribute="leading" constant="16" id="QXS-yn-sni"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qiy-4D-0D7" secondAttribute="trailing" constant="16" id="T3F-2v-5oE"/>
+                                    <constraint firstAttribute="height" constant="117" id="ZQ8-az-2uG"/>
+                                    <constraint firstItem="3dQ-oE-XU8" firstAttribute="top" secondItem="eH9-8p-pvc" secondAttribute="top" constant="16" id="dIH-jP-NwR"/>
+                                    <constraint firstAttribute="width" constant="137" id="gvW-vf-gcf"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qiy-4D-0D7" secondAttribute="bottom" constant="10" id="yCv-js-mhf"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ig7-cm-1Qe"/>
+                        <constraints>
+                            <constraint firstItem="ig7-cm-1Qe" firstAttribute="trailing" secondItem="eH9-8p-pvc" secondAttribute="trailing" constant="36" id="Mu0-8G-x99"/>
+                            <constraint firstItem="eH9-8p-pvc" firstAttribute="top" secondItem="ig7-cm-1Qe" secondAttribute="top" constant="448" id="t5B-sq-epQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKY-l4-JrJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1748" y="502.46305418719214"/>
         </scene>
         <!--Home WorkerVC-->
         <scene sceneID="s0d-6b-0kx">

@@ -52,6 +52,18 @@ class HomeManagerVC: BaseViewController{
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerAlarmVC") as? HomeManagerAlarmVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+
+}
+extension HomeManagerVC: HomeCommunityViewCellDelegate{
+    //각각의 소통창 페이지로
+    func collectionView(collectionviewcell: HomeManagerCoummunityCollectionViewCell?, index: Int, didTappedInTableViewCell: HomeManagerCommunityTableViewCell) {
+        
+    }
+    //소통창 페이지로
+    func goCommunityPage() {
+        
+    }
+    
     
 }
 // 테이블뷰 extension

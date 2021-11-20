@@ -27,6 +27,9 @@
                                     <constraint firstAttribute="width" constant="22" id="b3K-U8-CcO"/>
                                 </constraints>
                                 <state key="normal" image="icCheckBoxChecked"/>
+                                <connections>
+                                    <action selector="btnCheck:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Z1i-aO-OOA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20c-pp-jMP">
                                 <rect key="frame" x="24" y="39" width="249" height="15"/>
@@ -74,6 +77,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnCheck" destination="TlT-x6-TEM" id="lze-cU-9Y7"/>
+                <outlet property="subLabel" destination="20c-pp-jMP" id="jsA-pR-f8N"/>
+                <outlet property="titleLabel" destination="849-h7-QaT" id="gUe-Co-leo"/>
+            </connections>
             <point key="canvasLocation" x="91" y="116"/>
         </tableViewCell>
     </objects>

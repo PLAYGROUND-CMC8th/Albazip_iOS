@@ -1,17 +1,18 @@
 //
-//  HomeWorkerPublicWorkCompleteTableViewCell.swift
+//  HomeWorkerCompletePeopleTableViewCell.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2021/11/20.
+//  Created by 김수빈 on 2021/11/21.
 //
 
 import UIKit
 
-class HomeWorkerPublicWorkCompleteTableViewCell: UITableViewCell {
+class HomeWorkerCompletePeopleTableViewCell: UITableViewCell {
 
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var subLabel: UILabel!
-    @IBOutlet var btnCheck: UIButton!
+    @IBOutlet var countLabel: UILabel!
+    @IBOutlet var positionLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var profileImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,4 @@ class HomeWorkerPublicWorkCompleteTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func btnCheck(_ sender: Any) {
-    }
 }

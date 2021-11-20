@@ -7,10 +7,19 @@
 
 import UIKit
 import MSPeekCollectionViewDelegateImplementation
+
+//MARK: Protocol
+protocol HomeCommunityViewCellDelegate: AnyObject {
+    func collectionView(collectionviewcell: HomeManagerCoummunityCollectionViewCell?, index: Int, didTappedInTableViewCell: HomeManagerCommunityTableViewCell)
+    func goCommunityPage()
+}
+
 class HomeManagerCommunityTableViewCell: UITableViewCell {
     var currentPage = 0
     // 스크롤
     let behavior = MSCollectionViewPeekingBehavior()
+    // 프로토콜 변수
+    weak var delegate: HomeCommunityViewCellDelegate?
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var collectionView: UICollectionView!
     override func awakeFromNib() {
@@ -85,5 +94,13 @@ extension HomeManagerCommunityTableViewCell: UICollectionViewDelegate, UICollect
     }
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         behavior.scrollViewWillEndDragging(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print("콜렉션 뷰 " + String(indexPath.row))
+        
+        let cell = collectionView.cellForItem(at: indexPath) as? HomeManagerCoummunityCollectionViewCell
+        self.delegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTappedInTableViewCell: self)
+
     }
 }

@@ -54,16 +54,20 @@ class HomeWorkerTodayWorkVC: UIViewController{
         
         //테이블뷰 헤더 등록
         // Register the custom header view.
+        //미완료 헤더
            tableView.register(UINib(nibName: "MyPageDetailClearWorkNoCompleteTableViewCell", bundle: nil),
                forHeaderFooterViewReuseIdentifier: "MyPageDetailClearWorkNoCompleteTableViewCell")
-        
+        //완료 헤더
+        tableView.register(UINib(nibName: "HomeWorkerPublicWorkCompleteHeaderTableViewCell", bundle: nil),
+            forHeaderFooterViewReuseIdentifier: "HomeWorkerPublicWorkCompleteHeaderTableViewCell")
+        //HomeWorkerPublicWorkCompleteHeaderTableViewCell
         
         //미완료 82
-        tableView.register(UINib(nibName: "MyPageDetailNoClearWorkTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageDetailNoClearWorkTableViewCell")
+        tableView.register(UINib(nibName: "HomeWorkerPublicWorkNoCompleteTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "HomeWorkerPublicWorkNoCompleteTableViewCell")
         //완료 82
-        tableView.register(UINib(nibName: "MyPageDetailPublicWorkTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageDetailPublicWorkTableViewCell")
+        tableView.register(UINib(nibName: "HomeWorkerPublicWorkCompleteTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "HomeWorkerPublicWorkCompleteTableViewCell")
         /*
         //미완료, 완료 헤더 50
         tableView.register(UINib(nibName: "MyPageDetailClearWorkNoCompleteTableViewCell", bundle: nil),
@@ -93,6 +97,8 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         //let  headerCell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailClearWorkNoCompleteTableViewCell") as! MyPageDetailClearWorkNoCompleteTableViewCell
         let headerCell = Bundle.main.loadNibNamed("MyPageDetailClearWorkNoCompleteTableViewCell", owner: self, options: nil)?.first as! MyPageDetailClearWorkNoCompleteTableViewCell
+        
+        let headerCell2 = Bundle.main.loadNibNamed("HomeWorkerPublicWorkCompleteHeaderTableViewCell", owner: self, options: nil)?.first as! HomeWorkerPublicWorkCompleteHeaderTableViewCell
         switch (section) {
         case 0:
             headerCell.titleLabel.text = "미완료"
@@ -100,13 +106,14 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
             if let x = nonCompleteTaskData{
                 headerCell.countLabel.text = String(x.count)
             }*/
+            return headerCell
         case 1:
-            headerCell.titleLabel.text = "완료"
+            
             /*
             if let x = completeTaskData{
                 headerCell.countLabel.text = String(x.count)
             }*/
-          
+            return headerCell2
           //return sectionHeaderView
         default:
             headerCell.titleLabel.text = "Other";
