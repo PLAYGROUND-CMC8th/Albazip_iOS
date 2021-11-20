@@ -18,6 +18,9 @@ struct MyPageDetailClearWorkDayData: Decodable {
 struct MyPageDetailClearWorkDayNonCompleteTaskData: Decodable{
     var title: String?
     var content: String?
+    var writer_name: String?
+    var writer_position: String?
+    var register_date: String?
 }
 struct MyPageDetailClearWorkDayCompleteTaskData: Decodable{
     var title: String?

@@ -12,7 +12,7 @@ class SettingEditPhoneNumberDatamanager{
         let header: HTTPHeaders = [ "Content-Type":"application/json",
                                     "token":"\(UserDefaults.standard.string(forKey: "token")!)"]
         
-        AF.request("\(Constant.BASE_URL)/mypage/setting/myinfo/phone/update", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: header)
+        AF.request("\(Constant.BASE_URL)/mypage/setting/myinfo/phone", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: header)
             .validate()
             .responseDecodable(of: SettingEditPhoneNumberResponse.self) { response in
                 switch response.result {

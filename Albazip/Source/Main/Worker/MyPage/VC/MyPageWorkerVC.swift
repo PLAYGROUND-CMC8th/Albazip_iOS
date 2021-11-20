@@ -46,18 +46,21 @@ class MyPageWorkerVC: BaseViewController{
     //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        showIndicator()
-        dataManager.getMyPageManagerProfile(vc: self)
-        //setupCollectionView()
-        //setupPagingViewController()
-        //populateBottomView()
-        //addPanGestureToTopViewAndCollectionView()
-        //setUI()
+        //showIndicator()
+        //dataManager.getMyPageManagerProfile(vc: self)
+        //버그 BUG: 프로필 사진 바꾸면 다시 리로드 되어야함
+        setupCollectionView()
+        setupPagingViewController()
+        populateBottomView()
+        addPanGestureToTopViewAndCollectionView()
+        setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         print("MainviewWillAppear")
+        showIndicator()
+        dataManager.getMyPageManagerProfile(vc: self)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
@@ -551,11 +554,11 @@ extension MyPageWorkerVC {
         nameLabel.text = "\(profileData!.firstName!)"
         jobTitle = (profileData?.jobTitle!)!
         
-        setupCollectionView()
-        setupPagingViewController()
-        populateBottomView()
-        addPanGestureToTopViewAndCollectionView()
-        setUI()
+        //setupCollectionView()
+        //setupPagingViewController()
+        //populateBottomView()
+        //addPanGestureToTopViewAndCollectionView()
+        //setUI()
     }
     
     func failedToRequestMyPageManagerProfile(message: String) {

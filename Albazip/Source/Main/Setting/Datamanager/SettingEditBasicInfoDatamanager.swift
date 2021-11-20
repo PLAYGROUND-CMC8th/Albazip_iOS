@@ -12,7 +12,7 @@ class SettingEditBasicInfoDatamanager{
         let header: HTTPHeaders = [ "Content-Type":"application/json",
                                     "token":"\(UserDefaults.standard.string(forKey: "token")!)"]
         
-        AF.request("\(Constant.BASE_URL)/mypage/setting/myinfo/update", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: header)
+        AF.request("\(Constant.BASE_URL)/mypage/setting/myinfo", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: header)
             .validate()
             .responseDecodable(of: SettingEditBasicInfoResponse.self) { response in
                 switch response.result {

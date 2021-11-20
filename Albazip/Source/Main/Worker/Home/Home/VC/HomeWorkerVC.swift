@@ -8,7 +8,7 @@
 import Foundation
 class HomeWorkerVC: BaseViewController{
     
-    var isWork = false
+    var isWork = true
     
     @IBOutlet var mainView: UIView!
     @IBOutlet var storeNameView: UIStackView!

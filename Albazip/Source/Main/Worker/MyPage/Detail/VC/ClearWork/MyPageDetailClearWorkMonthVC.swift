@@ -48,6 +48,8 @@ class MyPageDetailClearWorkMonthVC: UIViewController{
         nextVC.month = month
         nextVC.day = day
         nextVC.week_day = week_day
+        nextVC.positionId = positionId
+        print("\(year)\(month)\(day)\(week_day)")
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     @IBAction func btnCancel(_ sender: Any) {

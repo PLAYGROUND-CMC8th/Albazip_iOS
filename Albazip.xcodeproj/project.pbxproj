@@ -39,6 +39,10 @@
 		C30EC2E7272B0A9F00EEF218 /* RegisterManagerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E6272B0A9F00EEF218 /* RegisterManagerResponse.swift */; };
 		C30EC2E9272B0AB500EEF218 /* RegisterManagerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E8272B0AB500EEF218 /* RegisterManagerRequest.swift */; };
 		C30EC2EB272B121900EEF218 /* RegisterManagerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2EA272B121900EEF218 /* RegisterManagerInfo.swift */; };
+		C33485FB27480D38000E2D14 /* HomeWorkerPublicWorkNoCompleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33485F927480D38000E2D14 /* HomeWorkerPublicWorkNoCompleteTableViewCell.swift */; };
+		C33485FC27480D38000E2D14 /* HomeWorkerPublicWorkNoCompleteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33485FA27480D38000E2D14 /* HomeWorkerPublicWorkNoCompleteTableViewCell.xib */; };
+		C33485FF2748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33485FD2748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.swift */; };
+		C33486002748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33485FE2748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.xib */; };
 		C33574122743D4C100644E9B /* SettingWorkerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33574112743D4C100644E9B /* SettingWorkerVC.swift */; };
 		C33574162743E41A00644E9B /* SettingMyInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33574152743E41A00644E9B /* SettingMyInfoResponse.swift */; };
 		C33574182743E42800644E9B /* SettingMyInfoDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33574172743E42800644E9B /* SettingMyInfoDatamanager.swift */; };
@@ -341,6 +345,10 @@
 		C30EC2E6272B0A9F00EEF218 /* RegisterManagerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerResponse.swift; sourceTree = "<group>"; };
 		C30EC2E8272B0AB500EEF218 /* RegisterManagerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerRequest.swift; sourceTree = "<group>"; };
 		C30EC2EA272B121900EEF218 /* RegisterManagerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerInfo.swift; sourceTree = "<group>"; };
+		C33485F927480D38000E2D14 /* HomeWorkerPublicWorkNoCompleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerPublicWorkNoCompleteTableViewCell.swift; sourceTree = "<group>"; };
+		C33485FA27480D38000E2D14 /* HomeWorkerPublicWorkNoCompleteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeWorkerPublicWorkNoCompleteTableViewCell.xib; sourceTree = "<group>"; };
+		C33485FD2748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerPublicWorkCompleteTableViewCell.swift; sourceTree = "<group>"; };
+		C33485FE2748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeWorkerPublicWorkCompleteTableViewCell.xib; sourceTree = "<group>"; };
 		C33574112743D4C100644E9B /* SettingWorkerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWorkerVC.swift; sourceTree = "<group>"; };
 		C33574152743E41A00644E9B /* SettingMyInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyInfoResponse.swift; sourceTree = "<group>"; };
 		C33574172743E42800644E9B /* SettingMyInfoDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyInfoDatamanager.swift; sourceTree = "<group>"; };
@@ -793,6 +801,24 @@
 				C30D2EB127315E4A00D4C1C1 /* CommunityWorkerStoryboard.storyboard */,
 			);
 			path = Community;
+			sourceTree = "<group>";
+		};
+		C33485F727480CD8000E2D14 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C33485F827480CE6000E2D14 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C33485F927480D38000E2D14 /* HomeWorkerPublicWorkNoCompleteTableViewCell.swift */,
+				C33485FA27480D38000E2D14 /* HomeWorkerPublicWorkNoCompleteTableViewCell.xib */,
+				C33485FD2748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.swift */,
+				C33485FE2748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C33574132743E3DB00644E9B /* Datamanager */ = {
@@ -1335,6 +1361,7 @@
 		C398BFB0273FCAF0008E8BA5 /* TodayWork */ = {
 			isa = PBXGroup;
 			children = (
+				C33485F727480CD8000E2D14 /* Cell */,
 				C398BFB7273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift */,
 			);
 			path = TodayWork;
@@ -1396,6 +1423,7 @@
 		C3A228B62742971700187587 /* TodayWork */ = {
 			isa = PBXGroup;
 			children = (
+				C33485F827480CE6000E2D14 /* Cell */,
 				C3A228B9274297DF00187587 /* HomeWorkerTodayWorkVC.swift */,
 			);
 			path = TodayWork;
@@ -1963,6 +1991,7 @@
 				C30AFE702733BF0A0075CDE2 /* MyPageManagerNoWorkerTableViewCell.xib in Resources */,
 				C384423C2714797000B84E8A /* MainManager.storyboard in Resources */,
 				C3C97BC62730B404002C8584 /* MainWorker.storyboard in Resources */,
+				C33485FC27480D38000E2D14 /* HomeWorkerPublicWorkNoCompleteTableViewCell.xib in Resources */,
 				C3E1FEB6272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.xib in Resources */,
 				C3B933A4273C39DD0056E381 /* MyPageDetailClearWorkNoCompleteTableViewCell.xib in Resources */,
 				C3AD3B2C2739786D0030905C /* MyPageManagerWorkerPositionDeleteTableViewCell.xib in Resources */,
@@ -1976,6 +2005,7 @@
 				C3546F8627253A3100C4C3DC /* GoogleService-Info.plist in Resources */,
 				C3C97BC92730B42E002C8584 /* MyPageWorkerStoryboard.storyboard in Resources */,
 				C37B0B442728FF070017D179 /* OnboardingManagerStoryboard.storyboard in Resources */,
+				C33486002748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2117,6 +2147,7 @@
 				C38BFB7D273AA30700E79BF5 /* UIApplication.swift in Sources */,
 				C3CC57CA2736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.swift in Sources */,
 				C34BCB482732F1040085ADB3 /* MyPageDetailPublicWorkTableViewCell.swift in Sources */,
+				C33485FF2748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.swift in Sources */,
 				C3E9C8EA2741692E00B0139C /* MyPageDetailClearWorkDayDatamanager.swift in Sources */,
 				C3A228BD274298EC00187587 /* HomeWorkerAlarmVC.swift in Sources */,
 				C3E1FEA9272D8C5B00CE44C6 /* MyPageManagerContentVC.swift in Sources */,
@@ -2152,6 +2183,7 @@
 				C37B0B5B272978F80017D179 /* RegisterBasicInfo.swift in Sources */,
 				C39083F12729B559006223CB /* OnboardingCollectionViewCell.swift in Sources */,
 				C3B93384273BFA220056E381 /* SettingNoticeVC.swift in Sources */,
+				C33485FB27480D38000E2D14 /* HomeWorkerPublicWorkNoCompleteTableViewCell.swift in Sources */,
 				C335741C2743ECCE00644E9B /* SettingEditBasicInfoDatamanager.swift in Sources */,
 				C3E9C8F827416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift in Sources */,
 				C398BFA8273F974F008E8BA5 /* HomeManagerCommunityTableViewCell.swift in Sources */,

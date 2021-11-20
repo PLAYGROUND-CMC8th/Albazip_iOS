@@ -31,6 +31,7 @@ class MyPageDetailClearWorkDayVC: UIViewController{
         titleLabel.text = "\(month)/\(day) \(week_day) 업무"
         
         showIndicator()
+        
         dataManager.getMyPageDetailClearWorkDay(vc: self, year: year , month: month ,day: day, positionId: positionId)
     }
     override func didReceiveMemoryWarning() {

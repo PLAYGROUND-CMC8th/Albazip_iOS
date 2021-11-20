@@ -16,7 +16,7 @@ class MyPageDetailClearWorkDayDatamanager {
             url = "\(Constant.BASE_URL)/mypage/workers/\(positionId)/workerInfo/taskInfo/\(year)/\(month)/\(day)"
         }
         
-        
+        print("url: \(url)")
         let header: HTTPHeaders = [ "Content-Type":"application/json",
                                      "token":"\(UserDefaults.standard.string(forKey: "token")!)"]
         

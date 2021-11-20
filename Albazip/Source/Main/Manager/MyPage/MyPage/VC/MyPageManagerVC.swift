@@ -126,15 +126,12 @@ class MyPageManagerVC : BaseViewController{
     }
     @IBAction func btnProfileImage(_ sender: Any) {
         
-        //UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.7763934135, green: 0.7765250206, blue: 0.7849833965, alpha: 1)
-        
-        
         
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyPageManagerSelectProfileImageVC") as? MyPageManagerSelectProfileImageVC {
                     vc.modalPresentationStyle = .overFullScreen
             
             modalBgView.isHidden = false
-            //UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.7763934135, green: 0.7765250206, blue: 0.7849833965, alpha: 1)
+  
             vc.selectProfileImageDelegate = self
             if let x = profileImage.image{
                 vc.selectedImage = x
@@ -199,15 +196,16 @@ class MyPageManagerVC : BaseViewController{
             if(subTabCount==0){
                 let tabContentVC = MyPageManagerContentVC()
                 tabContentVC.innerTableViewScrollDelegate = self
-                //tabContentVC.numberOfCells = 30
-                let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
+               
+                let displayName = tabName[subTabCount]
                 let page = Page(with: displayName, _vc: tabContentVC)
                 pageCollection.pages.append(page)
-            }else if(subTabCount==1){
+            }
+            else if(subTabCount==1){
                 let tabContentVC = MyPageManagerWriteVC()
                 tabContentVC.myPageManagerWriteTableViewScrollDelegate = self
-                //tabContentVC.numberOfCells = 30
-                let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
+               
+                let displayName = tabName[subTabCount]
                 let page = Page(with: displayName, _vc: tabContentVC)
                 pageCollection.pages.append(page)
             }
@@ -247,14 +245,6 @@ class MyPageManagerVC : BaseViewController{
         stickyHeaderView.isUserInteractionEnabled = true
         stickyHeaderView.addGestureRecognizer(topViewPanGesture)
         
-        /* Adding pan gesture to collection view is overriding the collection view scroll.
-         
-        let collViewPanGesture = UIPanGestureRecognizer(target: self, action: #selector(topViewMoved))
-        
-        tabBarCollectionView.isUserInteractionEnabled = true
-        tabBarCollectionView.addGestureRecognizer(collViewPanGesture)
-         
-        */
     }
     
     var dragInitialY: CGFloat = 0
@@ -467,20 +457,11 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
        
         headerViewHeightConstraint.constant -= scrollDistance
         
-         //Don't restrict the downward scroll.
  
         if headerViewHeightConstraint.constant > topViewInitialHeight {
 
-            /*
-            showIndicator()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                    self.dismissIndicator()
-            }
-            */
-            
-            
             headerViewHeightConstraint.constant = topViewInitialHeight
-            //bottomViewTopConstraint.constant += scrollDistance
+           
         }
          
         if headerViewHeightConstraint.constant < topViewFinalHeight {
@@ -493,13 +474,6 @@ extension MyPageManagerVC: InnerTableViewScrollDelegate, MyPageManagerWriteTable
         
         let topViewHeight = headerViewHeightConstraint.constant
         
-        /*
-         *  Scroll is not restricted.
-         *  So this check might cause the view to get stuck in the header height is greater than initial height.
- 
-        if topViewHeight >= topViewInitialHeight || topViewHeight <= topViewFinalHeight { return }
-         
-        */
         
         if topViewHeight <= topViewFinalHeight + 20 {
             
@@ -570,7 +544,6 @@ extension MyPageManagerVC: SelectProfileImageDelegate{
     func changeImage(){
         print("이미지 변경")
         
-        //profileImage.image = data
         showIndicator()
         dataManager.getMyPageManagerProfile(vc: self)
     }
@@ -580,7 +553,7 @@ extension MyPageManagerVC {
     func didSuccessMyPageManagerProfile(result: MyPageManagerProfileResponse) {
         dismissIndicator()
         profileData = result.data
-        print("내정보 \(profileData?.imagePath)" )
+        
         print(result.message!)
         if let img = profileData?.imagePath{
             let url = URL(string: img)
