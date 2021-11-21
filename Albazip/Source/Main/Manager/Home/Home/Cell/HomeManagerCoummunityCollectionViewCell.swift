@@ -16,5 +16,7 @@ class HomeManagerCoummunityCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    func setCell(boardInfo: HomeWorkerBoardInfo){
+        titleLabel.text = boardInfo.title!
+    }
 }

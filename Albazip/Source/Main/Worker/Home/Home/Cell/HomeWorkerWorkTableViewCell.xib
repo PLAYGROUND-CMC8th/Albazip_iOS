@@ -296,6 +296,7 @@
                 <outlet property="dateLabel" destination="BnF-1i-Di6" id="NAI-SQ-Kzf"/>
                 <outlet property="endTimeLabel" destination="01i-rn-B7P" id="jsi-Lp-LJ6"/>
                 <outlet property="honeyImage" destination="p6G-cU-rIp" id="D8s-OF-xNa"/>
+                <outlet property="positionImage" destination="Y4K-3G-owr" id="1ox-8U-HV5"/>
                 <outlet property="positionLabel" destination="U6b-Ta-sUz" id="b0y-9m-un6"/>
                 <outlet property="privateBar" destination="meQ-97-DuH" id="jg9-KZ-IQK"/>
                 <outlet property="privateView" destination="lYT-Xk-fzC" id="oAe-KK-GkI"/>

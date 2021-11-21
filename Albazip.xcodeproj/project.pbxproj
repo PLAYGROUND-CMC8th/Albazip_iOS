@@ -317,6 +317,7 @@
 		C3E9C8F627416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8F527416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift */; };
 		C3E9C8F827416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8F727416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift */; };
 		C3EBC257274A31890017BB85 /* HomeWorkerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBC256274A31890017BB85 /* HomeWorkerResponse.swift */; };
+		C3EBC259274A5D210017BB85 /* HomeWorkerDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBC258274A5D210017BB85 /* HomeWorkerDatamanager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -636,6 +637,7 @@
 		C3E9C8F527416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailCommuteRecordResponse.swift; sourceTree = "<group>"; };
 		C3E9C8F727416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailCommuteRecordDatamanager.swift; sourceTree = "<group>"; };
 		C3EBC256274A31890017BB85 /* HomeWorkerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerResponse.swift; sourceTree = "<group>"; };
+		C3EBC258274A5D210017BB85 /* HomeWorkerDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerDatamanager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1826,6 +1828,7 @@
 		C3EBC254274A2FF70017BB85 /* Datamanager */ = {
 			isa = PBXGroup;
 			children = (
+				C3EBC258274A5D210017BB85 /* HomeWorkerDatamanager.swift */,
 			);
 			path = Datamanager;
 			sourceTree = "<group>";
@@ -2287,6 +2290,7 @@
 				C30EC2E1272A4FDB00EEF218 /* RegisterNumberMatchResponse.swift in Sources */,
 				C3AD3B2F273982360030905C /* MyPageManagerWorklistTableViewCell.swift in Sources */,
 				C3AD3B1E273963AA0030905C /* MyPageManagerWorkerInfoVC.swift in Sources */,
+				C3EBC259274A5D210017BB85 /* HomeWorkerDatamanager.swift in Sources */,
 				C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */,
 				C384424F27147E2900B84E8A /* IndicatorView.swift in Sources */,
 				C384425D27147E3F00B84E8A /* UINavigationBar.swift in Sources */,

@@ -9,6 +9,17 @@ import Foundation
 class HomeWorkerVC: BaseViewController{
     
     var isWork = true
+    var status = 0
+    //
+    var homeWorkerData: HomeWorkerData?
+    var todayInfo: HomeWorkerTodayInfo?
+    var shopInfo: HomeWorkerShopInfo?
+    var scheduleInfo: HomeWorkerScheduleInfo?
+    var taskInfo: HomeWorkerTaskInfo?
+    var boardInfo: [HomeWorkerBoardInfo]?
+    
+    // Datamanager
+    lazy var dataManager: HomeWorkerDatamanager = HomeWorkerDatamanager()
     
     @IBOutlet var mainView: UIView!
     @IBOutlet var storeNameView: UIStackView!
@@ -21,8 +32,13 @@ class HomeWorkerVC: BaseViewController{
         setUI()
     }
     override func viewWillAppear(_ animated: Bool) {
-        setUI()
+        super.viewWillAppear(false)
+        print("MainviewWillAppear")
+        
+        showIndicator()
+        dataManager.getHomeWorker(vc: self)
     }
+    
     func setTableView(){
         tableView.dataSource = self
         tableView.delegate = self
@@ -46,11 +62,18 @@ class HomeWorkerVC: BaseViewController{
     }
     //큐알 페이지로
     @IBAction func btnQRCode(_ sender: Any) {
-        if let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerQRCodeVC") as? HomeWorkerQRCodeVC {
-            nextVC.modalPresentationStyle = .overFullScreen
-            
-        self.present(nextVC, animated: true, completion: nil)
+        if status == 3{ // 쉬는날
+            presentBottomAlert(message: "오늘은 쉬는날이에요")
+        }else if status == 2{ // 근무후
+            presentBottomAlert(message: "이미 근무를 마치고 퇴근한 상태에요")
+        }else{
+            if let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerQRCodeVC") as? HomeWorkerQRCodeVC {
+                nextVC.modalPresentationStyle = .overFullScreen
+                
+            self.present(nextVC, animated: true, completion: nil)
+            }
         }
+       
     }
     //알람 페이지로
     @IBAction func btnAlarm(_ sender: Any) {
@@ -73,20 +96,88 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
             if isWork{
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerWorkTableViewCell") as? HomeWorkerWorkTableViewCell {
                     cell.selectionStyle = .none
-                    //cell.bannerCellDelegate = self
-                    //if let x = todayData{
-                    //    cell.setCell(row: x.getBannerRes)
-                    //}
+                    if let data = todayInfo{
+                        cell.dateLabel.text = "\(data.month!)/\(data.date!) \(data.day!)요일"
+                    }
+                    if let data = scheduleInfo{
+                        cell.startTimeLabel.text = data.startTime!.insertTime
+                        cell.endTimeLabel.text = data.endTime!.insertTime
+                        let position = data.positionTitle!
+                        cell.positionLabel.text = position.replace(target: " ", with: "")
+                        if position.contains("미들"){
+                            cell.positionImage.image = #imageLiteral(resourceName: "iconMiddle15Px")
+                        }else if position.contains("마감"){
+                            cell.positionImage.image = #imageLiteral(resourceName: "iconDone15Px")
+                        }else{
+                            cell.positionImage.image = #imageLiteral(resourceName: "iconOpen15Px")
+                        }
+                        
+                        //cell.positionImage.image =
+                    }
+                    if let data = taskInfo{
+                        cell.clearPublicCountLabel.text =
+                            "\(data.coTask!.completeCount!)"
+                        cell.totalPublicCountLabel.text =
+                            "/ \(data.coTask!.totalCount!)"
+                        if data.coTask!.totalCount! == 0{
+                            cell.publicBar.progress = 0.0
+                        }else{
+                            cell.publicBar.progress = Float(data.coTask!.completeCount!) / Float(data.coTask!.totalCount!)
+                        }
+                        
+                        cell.clearPrivateCountLabel.text =
+                            "\(data.perTask!.completeCount!)"
+                        cell.totalPrivateCountLabel.text =
+                            "/ \(data.perTask!.totalCount!)"
+                        if data.perTask!.totalCount! == 0{
+                            cell.privateBar.progress = 0.0
+                            cell.honeyImage.image = #imageLiteral(resourceName: "img068Px")
+                        }else{
+                            let rate = Float(data.perTask!.completeCount!) / Float(data.perTask!.totalCount!)
+                            cell.privateBar.progress = rate
+                            if rate >= 0, rate < 30{
+                                cell.honeyImage.image = #imageLiteral(resourceName: "img068Px")
+                            }else if rate >= 30, rate < 60{
+                                cell.honeyImage.image = #imageLiteral(resourceName: "img3068Px")
+                            }else if rate >= 60, rate < 90{
+                                cell.honeyImage.image = #imageLiteral(resourceName: "img6068Px")
+                            }else{
+                                cell.honeyImage.image = #imageLiteral(resourceName: "img9068Px")
+                            }
+                        }
+                    }
+                    
                     cell.delegate = self
                     return cell
                 }
             }else{
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerMainTableViewCell") as? HomeWorkerMainTableViewCell {
                     cell.selectionStyle = .none
-                    //cell.bannerCellDelegate = self
+                    cell.delegate = self
                     //if let x = todayData{
                     //    cell.setCell(row: x.getBannerRes)
                     //}
+                    if let data = todayInfo{
+                        cell.dateLabel.text = "\(data.month!)/\(data.date!) \(data.day!)요일"
+                    }
+                     
+                    switch status {
+                    case 0: // 근무전
+                        cell.heightConstraint.constant = 65
+                        cell.beeImage.image = #imageLiteral(resourceName: "imgBeeWork")
+                        cell.btnNextPage.setTitle("출근하기", for: .normal)
+                        cell.titleLabel.text = "오늘은 근무날이에요!"
+                    case 2: // 근무 후
+                        cell.heightConstraint.constant = 65
+                        cell.beeImage.image = #imageLiteral(resourceName: "imgBeeDone")
+                        cell.btnNextPage.setTitle("완료한 업무", for: .normal)
+                        cell.titleLabel.text = "오늘 하루도 수고했어요."
+                    default: // 3 휴무
+                        cell.heightConstraint.constant = 80
+                        cell.beeImage.image = #imageLiteral(resourceName: "imgBeeSleep")
+                        cell.btnNextPage.isHidden = true
+                        cell.titleLabel.text = "오늘은 쉬는날이에요."
+                    }
                     cell.delegate = self
                     return cell
                 }
@@ -94,8 +185,11 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
             
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeManagerCommunityTableViewCell") as? HomeManagerCommunityTableViewCell {
-                //cell.eventCellDelegate = self
-                //cell.setCell(event: eventArray, eventText: eventTextArray)
+                cell.delegate = self
+                if let data = boardInfo{
+                    cell.setCell(boardInfo: data)
+                }
+                
                 cell.selectionStyle = .none
                 return cell
             }
@@ -124,11 +218,18 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
 extension HomeWorkerVC: HomeWorkerAddWorkDelegate{
     // 완료 업무 페이지 or QR 페이지
     func goNextPage() {
-        if let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerQRCodeVC") as? HomeWorkerQRCodeVC {
-            nextVC.modalPresentationStyle = .overFullScreen
-            
-        self.present(nextVC, animated: true, completion: nil)
+        if status == 2{
+            if let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerTodayWorkVC") as? HomeWorkerTodayWorkVC {
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            }
+        }else{
+            if let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerQRCodeVC") as? HomeWorkerQRCodeVC {
+                nextVC.modalPresentationStyle = .overFullScreen
+                
+            self.present(nextVC, animated: true, completion: nil)
+            }
         }
+        
     }
 }
 extension HomeWorkerVC: HomeWorkerWorkDeleagate{
@@ -146,4 +247,49 @@ extension HomeWorkerVC: HomeWorkerWorkDeleagate{
     }
     
     
+}
+extension HomeWorkerVC: HomeCommunityViewCellDelegate{
+    func collectionView(collectionviewcell: HomeManagerCoummunityCollectionViewCell?, index: Int, didTappedInTableViewCell: HomeManagerCommunityTableViewCell) {
+        print("\(index)번째 셀입니다.")
+    }
+    
+    func goCommunityPage() {
+        print("소통창 페이지로 이동")
+    }
+    
+    
+}
+extension HomeWorkerVC {
+    func didSuccessHomeWorker(result: HomeWorkerResponse) {
+        
+        
+        homeWorkerData = result.data
+        if let data = homeWorkerData{
+            todayInfo = data.todayInfo
+            shopInfo = data.shopInfo
+            print(shopInfo)
+            scheduleInfo = data.scheduleInfo
+            taskInfo = data.taskInfo
+            boardInfo = data.boardInfo
+            //status 설정
+            status = (shopInfo!.status)!
+            if status == 1{
+                isWork = true
+            }else{
+                isWork = false
+            }
+            storeNameLabel.text = shopInfo!.shopName!
+            
+        }
+        print(homeWorkerData)
+        setUI()
+        
+        tableView.reloadData()
+        dismissIndicator()
+    }
+    
+    func failedToRequestHomeWorker(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
 }

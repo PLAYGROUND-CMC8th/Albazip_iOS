@@ -13,6 +13,7 @@ import UIKit
 class HomeWorkerWorkTableViewCell: UITableViewCell {
 
     @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var positionImage: UIImageView!
     @IBOutlet var positionLabel: UILabel!
     @IBOutlet var startTimeLabel: UILabel!
     @IBOutlet var endTimeLabel: UILabel!

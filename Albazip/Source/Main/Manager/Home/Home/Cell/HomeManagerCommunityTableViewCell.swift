@@ -22,6 +22,9 @@ class HomeManagerCommunityTableViewCell: UITableViewCell {
     weak var delegate: HomeCommunityViewCellDelegate?
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var collectionView: UICollectionView!
+    
+
+    var data = [HomeWorkerBoardInfo]()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,7 +37,7 @@ class HomeManagerCommunityTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func setUI(){
-        pageControl.numberOfPages = 5
+        //pageControl.numberOfPages = 5
         pageControl.isEnabled = true
         pageControl.pageIndicatorTintColor = #colorLiteral(red: 0.9176470588, green: 0.9176470588, blue: 0.9176470588, alpha: 1)
         pageControl.currentPageIndicatorTintColor = .mainYellow
@@ -66,13 +69,13 @@ class HomeManagerCommunityTableViewCell: UITableViewCell {
 }
 extension HomeManagerCommunityTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeManagerCoummunityCollectionViewCell", for: indexPath) as? HomeManagerCoummunityCollectionViewCell {
+            cell.setCell(boardInfo: data[indexPath.row])
             
-            //cell.setCell( sale: saleArray[indexPath.row])
             return cell
         }
         return UICollectionViewCell()
@@ -102,5 +105,11 @@ extension HomeManagerCommunityTableViewCell: UICollectionViewDelegate, UICollect
         let cell = collectionView.cellForItem(at: indexPath) as? HomeManagerCoummunityCollectionViewCell
         self.delegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTappedInTableViewCell: self)
 
+    }
+    //데이터 가져올 함수
+    func setCell(boardInfo: [HomeWorkerBoardInfo])  {
+        data = boardInfo
+        pageControl.numberOfPages = data.count
+        self.collectionView.reloadData()
     }
 }
