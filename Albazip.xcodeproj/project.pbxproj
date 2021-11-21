@@ -318,6 +318,8 @@
 		C3E9C8F827416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8F727416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift */; };
 		C3EBC257274A31890017BB85 /* HomeWorkerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBC256274A31890017BB85 /* HomeWorkerResponse.swift */; };
 		C3EBC259274A5D210017BB85 /* HomeWorkerDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBC258274A5D210017BB85 /* HomeWorkerDatamanager.swift */; };
+		C3EBC25D274A9A540017BB85 /* HomeManagerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBC25C274A9A540017BB85 /* HomeManagerResponse.swift */; };
+		C3EBC25F274A9A610017BB85 /* HomeManagerDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBC25E274A9A610017BB85 /* HomeManagerDatamanager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -638,6 +640,8 @@
 		C3E9C8F727416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailCommuteRecordDatamanager.swift; sourceTree = "<group>"; };
 		C3EBC256274A31890017BB85 /* HomeWorkerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerResponse.swift; sourceTree = "<group>"; };
 		C3EBC258274A5D210017BB85 /* HomeWorkerDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerDatamanager.swift; sourceTree = "<group>"; };
+		C3EBC25C274A9A540017BB85 /* HomeManagerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerResponse.swift; sourceTree = "<group>"; };
+		C3EBC25E274A9A610017BB85 /* HomeManagerDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerDatamanager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1346,6 +1350,8 @@
 		C398BF99273F77DF008E8BA5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C3EBC25B274A9A350017BB85 /* Entity */,
+				C3EBC25A274A9A2D0017BB85 /* Datamanager */,
 				C398BF9D273F85F6008E8BA5 /* Cell */,
 				C398BF9A273F77E9008E8BA5 /* VC */,
 			);
@@ -1841,6 +1847,22 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		C3EBC25A274A9A2D0017BB85 /* Datamanager */ = {
+			isa = PBXGroup;
+			children = (
+				C3EBC25E274A9A610017BB85 /* HomeManagerDatamanager.swift */,
+			);
+			path = Datamanager;
+			sourceTree = "<group>";
+		};
+		C3EBC25B274A9A350017BB85 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C3EBC25C274A9A540017BB85 /* HomeManagerResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		C3F54E7A272C31E100FE412B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2257,6 +2279,7 @@
 				C35982C6273810E300546F2C /* MyPageManagerAddWorkerDatamanager.swift in Sources */,
 				C34A00602731BF2900C24102 /* MyPageWorkerPositionTableViewCell.swift in Sources */,
 				C37B0B59272972840017D179 /* RegisterRequest.swift in Sources */,
+				C3EBC25D274A9A540017BB85 /* HomeManagerResponse.swift in Sources */,
 				C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */,
 				C3A1ADCC271C5002005A61ED /* RegisterSearchStoreVC.swift in Sources */,
 				C37B0B50272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift in Sources */,
@@ -2291,6 +2314,7 @@
 				C3AD3B2F273982360030905C /* MyPageManagerWorklistTableViewCell.swift in Sources */,
 				C3AD3B1E273963AA0030905C /* MyPageManagerWorkerInfoVC.swift in Sources */,
 				C3EBC259274A5D210017BB85 /* HomeWorkerDatamanager.swift in Sources */,
+				C3EBC25F274A9A610017BB85 /* HomeManagerDatamanager.swift in Sources */,
 				C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */,
 				C384424F27147E2900B84E8A /* IndicatorView.swift in Sources */,
 				C384425D27147E3F00B84E8A /* UINavigationBar.swift in Sources */,

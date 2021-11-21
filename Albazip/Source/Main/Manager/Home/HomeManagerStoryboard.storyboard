@@ -293,6 +293,8 @@
                     <navigationItem key="navigationItem" id="zB4-Jp-DEf"/>
                     <connections>
                         <outlet property="mainView" destination="Oqg-n0-Au3" id="Ib2-S2-Ldx"/>
+                        <outlet property="storeNameLabel" destination="Moo-of-I0m" id="fHo-j8-JH5"/>
+                        <outlet property="storeNameView" destination="vUL-Ux-IbW" id="Zqt-mh-IcO"/>
                         <outlet property="tableView" destination="VPL-3P-un4" id="VoM-94-nN2"/>
                     </connections>
                 </viewController>

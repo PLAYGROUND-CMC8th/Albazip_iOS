@@ -8,18 +8,36 @@
 import Foundation
 class HomeManagerVC: BaseViewController{
     
-    var isOpen = false
+    var isOpen = true
+    var status = 0
+    //
+    var homeManagerData: HomeManagerData?
+    var todayInfo: HomeManagerTodayInfo?
+    var shopInfo: HomeManagerShopInfo?
+    var workerInfo: [HomeManagerWorkerInfo]?
+    var taskInfo: HomeManagerTaskInfo?
+    //근무자꺼 재사용
+    var boardInfo: [HomeWorkerBoardInfo]?
     
+    // 오픈 미들 마감 근무자
+    var openInfo = [HomeManagerWorkerInfo]()
+    var middleInfo = [HomeManagerWorkerInfo]()
+    var closeInfo = [HomeManagerWorkerInfo]()
+    
+    // Datamanager
+    lazy var dataManager: HomeManagerDatamanager = HomeManagerDatamanager()
     @IBOutlet var mainView: UIView!
     @IBOutlet var tableView: UITableView!
-   
+    @IBOutlet var storeNameView: UIStackView!
+    @IBOutlet var storeNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         setUI()
     }
     override func viewWillAppear(_ animated: Bool) {
-        setUI()
+        showIndicator()
+        dataManager.getHomeManager(vc: self)
     }
     func setTableView(){
         tableView.dataSource = self
@@ -81,29 +99,136 @@ extension HomeManagerVC: UITableViewDataSource, UITableViewDelegate{
             if isOpen{
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeManagerOpenTableViewCell") as? HomeManagerOpenTableViewCell {
                     cell.selectionStyle = .none
-                    //cell.bannerCellDelegate = self
-                    //if let x = todayData{
-                    //    cell.setCell(row: x.getBannerRes)
-                    //}
                     cell.delegate = self
+                    // 날짜
+                    if let data = todayInfo{
+                        cell.dateLabel.text = "\(data.month!)/\(data.date!) \(data.day!)요일"
+                    }
+                    
+                    // 오늘의 할일
+                    if let data = taskInfo{
+                        cell.clearPublicCountLabel.text =
+                            "\(data.coTask!.completeCount!)"
+                        cell.totalPublicCountLabel.text =
+                            "/ \(data.coTask!.totalCount!)"
+                        if data.coTask!.totalCount! == 0{
+                            cell.publicBar.progress = 0.0
+                        }else{
+                            cell.publicBar.progress = Float(data.coTask!.completeCount!) / Float(data.coTask!.totalCount!)
+                        }
+                        
+                        cell.clearPrivateCountLabel.text =
+                            "\(data.perTask!.completeCount!)"
+                        cell.totalPrivateCountLabel.text =
+                            "/ \(data.perTask!.totalCount!)"
+                        if data.perTask!.totalCount! == 0{
+                            cell.privateBar.progress = 0.0
+                            
+                        }else{
+                            let rate = Float(data.perTask!.completeCount!) / Float(data.perTask!.totalCount!)
+                            cell.privateBar.progress = rate
+                        }
+                    }
+                    //오늘 근무자
+                    
+                    if openInfo.count == 0{
+                        cell.firstStack.isHidden = true
+                    }else if openInfo.count == 1{
+                        cell.firstStack.isHidden = false
+                        cell.firstLabel.isHidden = true
+                        cell.firstName1.text = openInfo[0].firstName
+                        cell.firstView2.isHidden = true
+                        cell.firstView3.isHidden = true
+                    }else if openInfo.count == 2{
+                        cell.firstStack.isHidden = false
+                        cell.firstLabel.isHidden = true
+                        cell.firstName1.text = openInfo[0].firstName
+                        cell.firstName2.text = openInfo[1].firstName
+                        cell.firstView3.isHidden = true
+                    }else{
+                        cell.firstStack.isHidden = false
+                        cell.firstLabel.isHidden = true
+                        cell.firstName1.text = openInfo[0].firstName
+                        cell.firstName2.text = openInfo[1].firstName
+                    }
+                    
+                    if middleInfo.count == 0{
+                        cell.secondStack.isHidden = true
+                    }else if middleInfo.count == 1{
+                        cell.secondStack.isHidden = false
+                        cell.secondLabel.isHidden = true
+                        cell.secondName1.text = middleInfo[0].firstName
+                        cell.secondView2.isHidden = true
+                        cell.secondView3.isHidden = true
+                    }else if middleInfo.count == 2{
+                        cell.secondStack.isHidden = false
+                        cell.secondLabel.isHidden = true
+                        cell.secondName1.text = middleInfo[0].firstName
+                        cell.secondName2.text = middleInfo[1].firstName
+                        cell.secondView3.isHidden = true
+                    }else{
+                        cell.secondStack.isHidden = false
+                        cell.secondLabel.isHidden = true
+                        cell.secondName1.text = middleInfo[0].firstName
+                        cell.secondName2.text = middleInfo[1].firstName
+                    }
+                    
+                    if closeInfo.count == 0{
+                        cell.thirdStack.isHidden = true
+                    }else if closeInfo.count == 1{
+                        cell.thirdStack.isHidden = false
+                        cell.thirdLabel.isHidden = true
+                        cell.thirdName1.text = closeInfo[0].firstName
+                        cell.thirdView2.isHidden = true
+                        cell.thirdView3.isHidden = true
+                    }else if closeInfo.count == 2{
+                        cell.thirdStack.isHidden = false
+                        cell.thirdLabel.isHidden = true
+                        cell.thirdName1.text = closeInfo[0].firstName
+                        cell.thirdName2.text = closeInfo[1].firstName
+                        cell.thirdView3.isHidden = true
+                    }else{
+                        cell.thirdStack.isHidden = false
+                        cell.thirdLabel.isHidden = true
+                        cell.thirdName1.text = closeInfo[0].firstName
+                        cell.thirdName2.text = closeInfo[1].firstName
+                    }
                     return cell
                 }
             }else{
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeManagerMainTableViewCell") as? HomeManagerMainTableViewCell {
                     cell.selectionStyle = .none
-                    //cell.bannerCellDelegate = self
-                    //if let x = todayData{
-                    //    cell.setCell(row: x.getBannerRes)
-                    //}
                     cell.delegate = self
+                    if let data = todayInfo{
+                        cell.dateLabel.text = "\(data.month!)/\(data.date!) \(data.day!)요일"
+                    }
+                    switch status {
+                    case 0: // 근무전
+                        cell.heightConstraint.constant = 71
+                        cell.honeyImage.image = #imageLiteral(resourceName: "imgHoneyReady")
+                        cell.btnAddWork.setTitle("업무추가", for: .normal)
+                        cell.titleLabel.text = "오픈 준비중 이에요."
+                    case 2: // 근무 후
+                        cell.heightConstraint.constant = 71
+                        cell.honeyImage.image = #imageLiteral(resourceName: "imgHoneyDone")
+                        cell.btnAddWork.setTitle("완료한 업무", for: .normal)
+                        cell.titleLabel.text = "마감 됐어요."
+                    default: // 3 휴무
+                        cell.heightConstraint.constant = 91
+                        cell.honeyImage.image = #imageLiteral(resourceName: "imgHoneySleeping")
+                        cell.btnAddWork.isHidden = true
+                        cell.titleLabel.text = "오늘은 휴무일이에요."
+                    }
                     return cell
                 }
             }
             
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeManagerCommunityTableViewCell") as? HomeManagerCommunityTableViewCell {
-                //cell.eventCellDelegate = self
-                //cell.setCell(event: eventArray, eventText: eventTextArray)
+                cell.delegate = self
+                if let data = boardInfo{
+                    cell.setCell(boardInfo: data)
+                }
                 cell.selectionStyle = .none
                 return cell
             }
@@ -186,5 +311,52 @@ extension HomeManagerVC: HomeManagerAddWorkSelectDelegate{
         
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerAddPrivateWorkVC") as? HomeManagerAddPrivateWorkVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
+extension HomeManagerVC {
+    func didSuccessHomeManager(result: HomeManagerResponse) {
+        
+        
+        homeManagerData = result.data
+        if let data = homeManagerData{
+            todayInfo = data.todayInfo
+            shopInfo = data.shopInfo
+            workerInfo = data.workerInfo
+            taskInfo = data.taskInfo
+            boardInfo = data.boardInfo
+            //status 설정
+            status = (shopInfo!.status!)
+            if status == 1{
+                isOpen = true
+            }else{
+                isOpen = false
+            }
+            storeNameLabel.text = shopInfo!.name!
+            
+        }
+        print(homeManagerData)
+        setUI()
+        //오픈 미들 마감 선별
+        var i = 0
+        if let data = workerInfo{
+            while(i < data.count){
+                if data[i].title == "오픈"{
+                    openInfo.append(data[i])
+                }else if data[i].title == "미들"{
+                    middleInfo.append(data[i])
+                }else{
+                    closeInfo.append(data[i])
+                }
+                i += 1
+            }
+        }
+        
+        tableView.reloadData()
+        dismissIndicator()
+    }
+    
+    func failedToRequestHomeManager(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
     }
 }

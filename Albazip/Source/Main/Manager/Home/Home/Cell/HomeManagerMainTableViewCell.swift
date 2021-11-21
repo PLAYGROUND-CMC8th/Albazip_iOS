@@ -23,8 +23,8 @@ class HomeManagerMainTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         //status에 따라 높이, 버튼 유무 조절하면 될듯!
-        btnAddWork.isHidden = true
-        heightConstraint.constant = 91
+        //btnAddWork.isHidden = true
+        //heightConstraint.constant = 91
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
