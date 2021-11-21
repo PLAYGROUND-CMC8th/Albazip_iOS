@@ -5,16 +5,17 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeWorkerPublicWorkCompleteHeaderTableViewCell" customModule="Albazip" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="185" id="KGk-i7-Jjw" customClass="HomeWorkerPublicWorkCompleteHeaderTableViewCell" customModule="Albazip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VX-EB-UpS">
@@ -61,10 +62,49 @@
                         <color key="textColor" red="0.41568624970000001" green="0.41568624970000001" blue="0.41568624970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKZ-eU-beJ">
+                        <rect key="frame" x="147" y="52.5" width="137" height="45"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="완료한 인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOH-pa-77D">
+                                <rect key="frame" x="16" y="16" width="64.5" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YbF-jB-aM6">
+                                <rect key="frame" x="16" y="35" width="105" height="0.0"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="YbF-jB-aM6" secondAttribute="bottom" constant="10" id="5FD-gb-Hy4"/>
+                            <constraint firstAttribute="height" constant="45" id="FZo-rW-12M"/>
+                            <constraint firstAttribute="width" constant="137" id="OhD-K7-wNd"/>
+                            <constraint firstAttribute="trailing" secondItem="YbF-jB-aM6" secondAttribute="trailing" constant="16" id="QMM-Mt-5IQ"/>
+                            <constraint firstItem="aOH-pa-77D" firstAttribute="top" secondItem="sKZ-eU-beJ" secondAttribute="top" constant="16" id="Wme-SL-GGE"/>
+                            <constraint firstItem="YbF-jB-aM6" firstAttribute="leading" secondItem="sKZ-eU-beJ" secondAttribute="leading" constant="16" id="ZSe-8A-1zK"/>
+                            <constraint firstItem="YbF-jB-aM6" firstAttribute="top" secondItem="aOH-pa-77D" secondAttribute="bottom" constant="2" id="ZWp-0s-sxa"/>
+                            <constraint firstItem="aOH-pa-77D" firstAttribute="leading" secondItem="sKZ-eU-beJ" secondAttribute="leading" constant="16" id="kHS-r9-3AB"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="sKZ-eU-beJ" firstAttribute="trailing" secondItem="Xwo-7M-RmF" secondAttribute="trailing" id="EWQ-1B-c1b"/>
                     <constraint firstItem="8VX-EB-UpS" firstAttribute="leading" secondItem="8co-oN-G9G" secondAttribute="trailing" constant="2" id="FB7-vO-wwH"/>
                     <constraint firstItem="8VX-EB-UpS" firstAttribute="centerY" secondItem="8co-oN-G9G" secondAttribute="centerY" id="INf-kM-8ix"/>
+                    <constraint firstItem="sKZ-eU-beJ" firstAttribute="top" secondItem="Xwo-7M-RmF" secondAttribute="bottom" constant="8" id="cDt-rg-Wej"/>
                     <constraint firstItem="8co-oN-G9G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="cad-Ha-U5K"/>
                     <constraint firstItem="8co-oN-G9G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="eIZ-KH-JTe"/>
                     <constraint firstAttribute="trailing" secondItem="Xwo-7M-RmF" secondAttribute="trailing" constant="36" id="ejP-Le-YIi"/>
@@ -73,14 +113,20 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="completePeopleView" destination="sKZ-eU-beJ" id="UzT-Qh-zss"/>
+                <outlet property="completePeopleViewHeight" destination="FZo-rW-12M" id="DYi-7a-W8b"/>
                 <outlet property="countLabel" destination="8VX-EB-UpS" id="CDr-Zc-507"/>
                 <outlet property="peopleCountLabel" destination="c60-gH-8Qk" id="kfs-Wh-g5S"/>
                 <outlet property="personView" destination="Xwo-7M-RmF" id="t7i-Ay-Qky"/>
+                <outlet property="tableView" destination="YbF-jB-aM6" id="w2A-28-QtT"/>
             </connections>
-            <point key="canvasLocation" x="225" y="152"/>
+            <point key="canvasLocation" x="223" y="140"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="icMan17Px" width="13" height="17"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

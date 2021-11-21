@@ -316,6 +316,7 @@
 		C3E9C8F427416D5100B0139C /* MyPageDetailPublicWorkDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8F327416D5100B0139C /* MyPageDetailPublicWorkDataManager.swift */; };
 		C3E9C8F627416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8F527416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift */; };
 		C3E9C8F827416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E9C8F727416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift */; };
+		C3EBC257274A31890017BB85 /* HomeWorkerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBC256274A31890017BB85 /* HomeWorkerResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -634,6 +635,7 @@
 		C3E9C8F327416D5100B0139C /* MyPageDetailPublicWorkDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailPublicWorkDataManager.swift; sourceTree = "<group>"; };
 		C3E9C8F527416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailCommuteRecordResponse.swift; sourceTree = "<group>"; };
 		C3E9C8F727416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailCommuteRecordDatamanager.swift; sourceTree = "<group>"; };
+		C3EBC256274A31890017BB85 /* HomeWorkerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1418,6 +1420,8 @@
 		C3A228A827427A2700187587 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C3EBC255274A30030017BB85 /* Entity */,
+				C3EBC254274A2FF70017BB85 /* Datamanager */,
 				C3A228AA27427A3A00187587 /* VC */,
 				C3A228A927427A3100187587 /* Cell */,
 			);
@@ -1819,6 +1823,21 @@
 			path = Datamanager;
 			sourceTree = "<group>";
 		};
+		C3EBC254274A2FF70017BB85 /* Datamanager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Datamanager;
+			sourceTree = "<group>";
+		};
+		C3EBC255274A30030017BB85 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C3EBC256274A31890017BB85 /* HomeWorkerResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		C3F54E7A272C31E100FE412B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2197,6 +2216,7 @@
 				C33574122743D4C100644E9B /* SettingWorkerVC.swift in Sources */,
 				C398BFB8273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift in Sources */,
 				C398BFBE273FF0FF008E8BA5 /* HomeManagerAddPublicWorkVC.swift in Sources */,
+				C3EBC257274A31890017BB85 /* HomeWorkerResponse.swift in Sources */,
 				C384425C27147E3F00B84E8A /* UIViewController.swift in Sources */,
 				C3476619274564A50001B220 /* MyPageManagerEditWorkerDatamanager.swift in Sources */,
 				C3CFC2EE273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift in Sources */,
