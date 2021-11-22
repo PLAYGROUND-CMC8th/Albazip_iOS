@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FkT-qM-6pX">
                                 <rect key="frame" x="0.0" y="100.66666666666669" width="375" height="156"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileM128Px2" translatesAutoresizingMaskIntoConstraints="NO" id="UxZ-4B-8Ad">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileM128Px2" translatesAutoresizingMaskIntoConstraints="NO" id="UxZ-4B-8Ad">
                                         <rect key="frame" x="24" y="35.999999999999986" width="84" height="84"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="84" id="SoX-7O-8HM"/>
@@ -270,7 +270,7 @@
                                         <color key="textColor" red="0.63921570780000003" green="0.63921570780000003" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileNone84Px" translatesAutoresizingMaskIntoConstraints="NO" id="8Lo-s2-Nhu">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileNone84Px" translatesAutoresizingMaskIntoConstraints="NO" id="8Lo-s2-Nhu">
                                         <rect key="frame" x="145.66666666666666" y="24" width="84" height="84"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="84" id="Heh-CW-w8g"/>
@@ -910,7 +910,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileM128Px2" translatesAutoresizingMaskIntoConstraints="NO" id="uHt-VR-p4p">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileM128Px2" translatesAutoresizingMaskIntoConstraints="NO" id="uHt-VR-p4p">
                                         <rect key="frame" x="123.66666666666669" y="69.666666666666686" width="128" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="128" id="Ycm-2w-pP1"/>

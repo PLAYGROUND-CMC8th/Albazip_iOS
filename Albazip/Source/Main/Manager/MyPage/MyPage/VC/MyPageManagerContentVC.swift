@@ -229,7 +229,7 @@ extension MyPageManagerContentVC: UITableViewDelegate {
 extension MyPageManagerContentVC {
     func didSuccessMyPageManagerContent(result: MyPageManagerContentResponse) {
         contentData = result.data
-       
+       print(contentData)
         print(result.message!)
         if contentData!.count != 0{
             isNoWorker = false

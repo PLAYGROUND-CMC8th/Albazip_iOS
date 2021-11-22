@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sbp-Tj-XD3">
                                 <rect key="frame" x="0.0" y="101" width="375" height="156"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileW128Px2" translatesAutoresizingMaskIntoConstraints="NO" id="1gc-eZ-wE0">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileW128Px2" translatesAutoresizingMaskIntoConstraints="NO" id="1gc-eZ-wE0">
                                         <rect key="frame" x="24" y="36" width="84" height="84"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="84" id="HKj-qV-uTR"/>
@@ -169,7 +169,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileW128Px2" translatesAutoresizingMaskIntoConstraints="NO" id="V4s-8M-b7y">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfileW128Px2" translatesAutoresizingMaskIntoConstraints="NO" id="V4s-8M-b7y">
                                         <rect key="frame" x="123.66666666666669" y="69.666666666666686" width="128" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="128" id="Acm-xS-Ep4"/>
