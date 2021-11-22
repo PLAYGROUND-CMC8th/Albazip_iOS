@@ -101,7 +101,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="178" y="133"/>
+            <connections>
+                <outlet property="completeCount" destination="bqT-UW-yLU" id="fTR-e3-zEY"/>
+                <outlet property="honeyImage" destination="MPy-Sw-6nE" id="hDq-Vh-f2q"/>
+                <outlet property="honeyView" destination="4yQ-2d-bJJ" id="jIr-Ia-hcv"/>
+                <outlet property="progress" destination="tZB-tQ-QXK" id="mA4-bB-7tj"/>
+                <outlet property="titleLabel" destination="HxA-lb-fgX" id="Zzc-Lt-gym"/>
+                <outlet property="totalCount" destination="rX3-og-FDu" id="EmM-xF-61G"/>
+            </connections>
+            <point key="canvasLocation" x="343" y="50"/>
         </tableViewCell>
     </objects>
     <resources>

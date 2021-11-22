@@ -7,15 +7,28 @@
 
 import Foundation
 class HomeManagerTodayWorkVC: UIViewController{
-    
+    var isNoNonCompleteCoData = true
+    var isNoCompleteCoData = true
+    var isNoPerData = true
     @IBOutlet var segment: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
     
     var segValue = 0 // 0이면 공동업무, 1이면 개인업무!
+    // 공동 업무
+    var nonComCoTask: [HomeWorkerNonComCoTask]?
+    var comCoTask: [HomeWorkerComCoTask]?
+    var isCoFolded = [Bool]()
+    // 개인 업무
+    var perTask: [HomeManagerPerTaskList]?
+    // Datamanager
+    lazy var dataManager: HomeManagerTodayWorkDatamanager = HomeManagerTodayWorkDatamanager()
     override func viewDidLoad() {
         super.viewDidLoad()
         print(segValue)
         setUI()
+        setupTableView()
+        showIndicator()
+        dataManager.getHomeManagerTodayWork(vc: self)
     }
     func setUI() {
         
@@ -31,19 +44,384 @@ class HomeManagerTodayWorkVC: UIViewController{
             NSAttributedString.Key.font : UIFont(name: "AppleSDGothicNeo-Medium", size: 16) as Any
         ] as [NSAttributedString.Key : Any]
         segment.setTitleTextAttributes(attributes2 , for: .normal)
-        /*
-        //corner radius
-        let cornerRadius = segment.bounds.height / 2
-        let maskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        //background
-        segment.clipsToBounds = true
-        segment.layer.cornerRadius = cornerRadius
-        segment.layer.maskedCorners = maskedCorners*/
+        
         segment.selectedSegmentIndex = segValue
         
+    }
+    func setupTableView() {
+        
+//MyPageDetailClearWorkNoCompleteTableViewCell
+        
+        //테이블뷰 헤더 등록
+        // Register the custom header view.
+        //미완료 헤더
+           tableView.register(UINib(nibName: "MyPageDetailClearWorkNoCompleteTableViewCell", bundle: nil),
+               forHeaderFooterViewReuseIdentifier: "MyPageDetailClearWorkNoCompleteTableViewCell")
+        //완료 헤더
+        tableView.register(UINib(nibName: "HomeWorkerPublicWorkCompleteHeaderTableViewCell", bundle: nil),
+            forHeaderFooterViewReuseIdentifier: "HomeWorkerPublicWorkCompleteHeaderTableViewCell")
+        //HomeWorkerPublicWorkCompleteHeaderTableViewCell
+        
+        //미완료 82
+        tableView.register(UINib(nibName: "HomeWorkerPublicWorkTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "HomeWorkerPublicWorkTableViewCell")
+        //미완료 펼쳤을때 버전 137
+        tableView.register(UINib(nibName: "MyPageDetailNoClearWorkOpenTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageDetailNoClearWorkOpenTableViewCell")
+        //완료 82
+        tableView.register(UINib(nibName: "HomeWorkerPublicWorkCompleteTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "HomeWorkerPublicWorkCompleteTableViewCell")
+        /*
+        //미완료, 완료 헤더 50
+        tableView.register(UINib(nibName: "MyPageDetailClearWorkNoCompleteTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageDetailClearWorkNoCompleteTableViewCell")*/
+        //모두 완료: 100
+        tableView.register(UINib(nibName: "MyPageDetailAllClearWorkTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageDetailAllClearWorkTableViewCell")
+        
+        //미완료, 완료 중간 구분자 43
+        tableView.register(UINib(nibName: "MyPageDetailClearWorkMiddleTableViewCell", bundle: nil),
+                           forHeaderFooterViewReuseIdentifier: "MyPageDetailClearWorkMiddleTableViewCell")
+        
+        // 개인 업무
+        tableView.register(UINib(nibName: "HomeManagerWorkPrivateTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "HomeManagerWorkPrivateTableViewCell")
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func indexChanged(_ sender: Any) {
+        switch segment.selectedSegmentIndex {
+            case 0:
+                segValue = 0
+                tableView.reloadData()
+            case 1:
+                segValue = 1
+                tableView.reloadData()
+            default:
+                break;
+            }
+    }
+}
     
+
+
+extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
+
+    //섹션 헤더 개수
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if segValue == 0{
+            return 2
+        }else{
+            return 1
+        }
+    }
+    //섹션 헤더 셀 지정
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        //let  headerCell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailClearWorkNoCompleteTableViewCell") as! MyPageDetailClearWorkNoCompleteTableViewCell
+        let headerCell = Bundle.main.loadNibNamed("MyPageDetailClearWorkNoCompleteTableViewCell", owner: self, options: nil)?.first as! MyPageDetailClearWorkNoCompleteTableViewCell
+        
+        let headerCell2 = Bundle.main.loadNibNamed("HomeWorkerPublicWorkCompleteHeaderTableViewCell", owner: self, options: nil)?.first as! HomeWorkerPublicWorkCompleteHeaderTableViewCell
+        
+        if segValue == 0{ // 공동업무
+            switch (section) {
+            case 0:
+                headerCell.titleLabel.text = "미완료"
+                
+                if let x = nonComCoTask{
+                    headerCell.countLabel.text = String(x.count)
+                }
+                return headerCell
+            case 1:
+                
+                if let x = comCoTask{
+                    headerCell2.countLabel.text = String(x.count)
+                }
+                return headerCell2
+              
+            default:
+                headerCell.titleLabel.text = "Other";
+            }
+        }else{ // 개인 업무
+            return nil
+        }
+
+        return headerCell
+    }
+    //섹션별 행 개수
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if segValue == 0{ // 공동업무
+            if section == 0 {
+                if isNoNonCompleteCoData{
+                       return 1
+                }else{
+                    
+                    if let x = nonComCoTask{
+                        return x.count
+                    }
+                }
+            }else if section == 1 {
+                if isNoCompleteCoData{
+                       return 1
+                }else{
+                    
+                    if let x = comCoTask{
+                        return x.count
+                    }
+                }
+            }
+        }else{ // 개인업무
+            
+            if isNoPerData{
+                    return 1
+            }else{
+                    
+                if let x = perTask{
+                        return x.count
+                }
+            }
+            
+        }
+       
+        return 0
+    }
+    //셀의 값
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if segValue == 0{ // 공동업무
+            if indexPath.section == 0{
+                if isNoNonCompleteCoData{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailAllClearWorkTableViewCell") as? MyPageDetailAllClearWorkTableViewCell {
+                        cell.titleLabel.text = "업무를 모두 완료했어요!"
+                        cell.selectionStyle = .none
+                        print(indexPath.row)
+                        return cell
+                    }
+                }else{
+                    // 접폈는지 펴졌는지
+                    if isCoFolded[indexPath.row]{
+                        if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerPublicWorkTableViewCell") as? HomeWorkerPublicWorkTableViewCell {
+                            cell.selectionStyle = .none
+                            
+                            if let data = nonComCoTask{
+                                cell.titleLabel.text = data[indexPath.row].takTitle!
+                                if let x = data[indexPath.row].taskContent, x == ""{
+                                    cell.subLabel.text = "내용 없음"
+                                }else{
+                                    cell.subLabel.text = data[indexPath.row].taskContent ?? "내용 없음"
+                                }
+                                
+                                
+                            }
+                            print(indexPath.row)
+                            return cell
+                        }
+                    }else{
+                        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailNoClearWorkOpenTableViewCell") as? MyPageDetailNoClearWorkOpenTableViewCell {
+                            cell.selectionStyle = .none
+                            if let data = nonComCoTask{
+                                cell.titleLabel.text = data[indexPath.row].takTitle!
+                                if data[indexPath.row].taskContent == ""{
+                                    cell.subLabel.text = "내용 없음"
+                                }else{
+                                    cell.subLabel.text = data[indexPath.row].taskContent ?? "내용 없음"
+                                }
+                                let position = data[indexPath.row].writerTitle ?? ""
+                                let name = data[indexPath.row].writerName ?? ""
+                                let date = data[indexPath.row].registerDate!.insertDate
+                                cell.writerNameLabel.text = position + " " + name + " · " + date
+                                
+                            }
+                            print(indexPath.row)
+                            return cell
+                        }
+                    }
+                    
+                }
+            }else if indexPath.section == 1{
+                if isNoCompleteCoData{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailAllClearWorkTableViewCell") as? MyPageDetailAllClearWorkTableViewCell {
+                        cell.titleLabel.text = "완료된 업무가 없어요."
+                        cell.selectionStyle = .none
+                        print(indexPath.row)
+                        return cell
+                    }
+                }else{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerPublicWorkCompleteTableViewCell") as? HomeWorkerPublicWorkCompleteTableViewCell {
+                        cell.selectionStyle = .none
+                        
+                        if let data = comCoTask{
+                            cell.titleLabel.text = data[indexPath.row].takTitle!
+                            cell.subLabel.text = "완료  \(data[indexPath.row].completeTime!.substring(from: 11, to: 16))"
+                            
+                        }
+                        print(indexPath.row)
+                        return cell
+                    }
+                }
+            }
+        }else{ // 개인 업무
+            if isNoPerData{
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailAllClearWorkTableViewCell") as? MyPageDetailAllClearWorkTableViewCell {
+                    cell.titleLabel.text = "개인 업무가 없어요."
+                    cell.selectionStyle = .none
+                    print(indexPath.row)
+                    return cell
+                }
+            }else{
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeManagerWorkPrivateTableViewCell") as? HomeManagerWorkPrivateTableViewCell {
+                    if let data = perTask{
+                        cell.titleLabel.text = data[indexPath.row].workerTitle! + " 업무"
+                        cell.completeCount.text = "\(data[indexPath.row].completeCount!)"
+                        cell.totalCount.text = "/ \(data[indexPath.row].totalCount!)"
+                        if data[indexPath.row].totalCount! == 0{
+                            cell.progress.progress = 0.0
+                            cell.honeyImage.image = #imageLiteral(resourceName: "img068Px")
+                        }else{
+                            let rate = Float(data[indexPath.row].completeCount!) / Float(data[indexPath.row].totalCount!)
+                            cell.progress.progress = rate
+                            if rate >= 0, rate < 30{
+                                cell.honeyImage.image = #imageLiteral(resourceName: "img068Px")
+                            }else if rate >= 30, rate < 60{
+                                cell.honeyImage.image = #imageLiteral(resourceName: "img3068Px")
+                            }else if rate >= 60, rate < 90{
+                                cell.honeyImage.image = #imageLiteral(resourceName: "img6068Px")
+                            }else{
+                                cell.honeyImage.image = #imageLiteral(resourceName: "img9068Px")
+                            }
+                        }
+                    }
+                    
+                    cell.selectionStyle = .none
+                    print(indexPath.row)
+                    return cell
+                }
+            }
+        }
+        
+        return UITableViewCell()
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if segValue == 0{
+            return 50
+        }else{
+            return 0
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if segValue == 0{
+            if indexPath.section == 0{
+                if isNoNonCompleteCoData{
+                    return 82
+                }else{
+                    if isCoFolded[indexPath.row] == true{
+                        return 82
+                    }else{
+                        return 137
+                    }
+                }
+                
+            }else{
+                return 82
+            }
+        }else{
+            return 133
+        }
+    }
+    //푸터
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerCell = Bundle.main.loadNibNamed("MyPageDetailClearWorkMiddleTableViewCell", owner: self, options: nil)?.first as! MyPageDetailClearWorkMiddleTableViewCell
+        // 마지막 section은 footer 미표출
+
+        if section == 0{
+            return footerCell
+        }else{
+            
+            return nil
+        }
+        
+    }
+    
+    //푸터 높이
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        // footer 영역 크기 = 12 (마지막 section의 footer 크기는 0)
+        if segValue == 0{
+            if section == 0{
+                return 43
+            }
+            return 0
+        }else{
+            return 0
+        }
+    }
+    // Select Cell
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       print("\(indexPath.section): \(indexPath.row)")
+        if segValue == 0{
+            if indexPath.section == 0{
+                if isCoFolded[indexPath.row] == true{
+                    isCoFolded[indexPath.row] = false
+                    tableView.reloadData()
+                }else{
+                    isCoFolded[indexPath.row] = true
+                    tableView.reloadData()
+                }
+            }else{
+                presentBottomAlert(message: "이미 완료된 업무입니다.")
+            }
+        }else{
+            //개인업무 페이지로
+        }
+    }
+}
+extension HomeManagerTodayWorkVC {
+    func didSuccessHomeManagerTodayWork(result: HomeManagerTodayWorkResponse) {
+        
+        if let data = result.data{
+            //공동 업무
+            if let coTask = data.coTask{
+                nonComCoTask = coTask.nonComCoTask
+                if nonComCoTask!.count != 0{
+                    isNoNonCompleteCoData = false
+                    // 테이블뷰 접고 펴기 배열
+                    var i = 0
+                    while i < nonComCoTask!.count{
+                        isCoFolded.append(true)
+                        i += 1
+                    }
+                }else{
+                    isNoNonCompleteCoData = true
+                }
+                comCoTask = coTask.comCoTask
+                if comCoTask!.count != 0{
+                    isNoCompleteCoData = false
+                    
+                }else{
+                    isNoCompleteCoData = true
+                }
+            }
+           
+            // 개인 업무
+            perTask = data.perTask
+            if perTask!.count != 0{
+                isNoPerData = false
+                    
+            }else{
+                    isNoPerData = true
+            }
+        }
+        
+        tableView.reloadData()
+        print(result)
+        dismissIndicator()
+    }
+    
+    func failedToRequestHomeManagerTodayWork(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
 }
