@@ -15,7 +15,7 @@ struct MyPageManagerContentData: Decodable {
     var workerId: Int?
     var status: Int?
     var rank: String?
-    var imagePath: String?
+    var image_path: String?
     var title: String?
     var first_name: String?
 }

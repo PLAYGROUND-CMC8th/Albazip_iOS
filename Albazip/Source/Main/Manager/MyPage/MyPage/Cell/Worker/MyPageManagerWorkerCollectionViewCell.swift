@@ -20,6 +20,9 @@ class MyPageManagerWorkerCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        //workerImage
+        workerImage.layer.cornerRadius = workerImage.frame.width / 2
+        workerImage.clipsToBounds = true
     }
 
     func setCell(data: MyPageManagerContentData){
@@ -35,9 +38,9 @@ class MyPageManagerWorkerCollectionViewCell: UICollectionViewCell {
             workerView.borderColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
             //이미지 갱신
             //print("img: \(data.imagePath!)")
-            if  data.imagePath != nil {
-                print("img: \(data.imagePath!)")
-                let url = URL(string: data.imagePath!)
+            if  data.image_path != nil {
+                print("img: \(data.image_path!)")
+                let url = URL(string: data.image_path!)
                 workerImage.kf.setImage(with: url)
             }else{
                     workerImage.image = #imageLiteral(resourceName: "imgProfile84Px1")

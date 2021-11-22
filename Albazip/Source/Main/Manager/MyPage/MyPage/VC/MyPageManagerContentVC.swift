@@ -150,6 +150,7 @@ extension MyPageManagerContentVC: UITableViewDataSource, MyPageManagerNoWorkerDe
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerTableViewCell") as? MyPageManagerWorkerTableViewCell {
                 cell.myPageManagerWorkerCollectionViewCellDelegate = self
                 cell.setCell(data: contentData!)
+                
                 cell.totalCount.text = String(contentData!.count)
                 return cell
             }
