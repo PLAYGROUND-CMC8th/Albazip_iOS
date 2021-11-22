@@ -27,8 +27,9 @@
                                     <constraint firstAttribute="width" constant="22" id="vNi-No-9Bo"/>
                                 </constraints>
                                 <state key="normal" image="icCheckBoxNormal"/>
+                                <state key="selected" image="icCheckBoxChecked"/>
                                 <connections>
-                                    <action selector="btnCheck:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eSf-GU-rZu"/>
+                                    <action selector="btnCheck:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kF7-fb-Fng"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGS-eY-cfj">
@@ -40,7 +41,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3X-Ix-pxL">
                                 <rect key="frame" x="24" y="39" width="249" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.5647059083" green="0.56862747670000002" blue="0.56862747670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -78,14 +79,15 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="btnCheck" destination="iQf-Xs-b67" id="BmF-n1-jeK"/>
+                <outlet property="btnCheck" destination="iQf-Xs-b67" id="kij-wB-Qea"/>
                 <outlet property="subLabel" destination="d3X-Ix-pxL" id="hju-oc-iEJ"/>
                 <outlet property="titleLabel" destination="RGS-eY-cfj" id="fSm-pv-XKb"/>
             </connections>
-            <point key="canvasLocation" x="97.826086956521749" y="91.741071428571431"/>
+            <point key="canvasLocation" x="96.799999999999997" y="91.625615763546804"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="icCheckBoxChecked" width="20" height="20"/>
         <image name="icCheckBoxNormal" width="22" height="22"/>
     </resources>
 </document>

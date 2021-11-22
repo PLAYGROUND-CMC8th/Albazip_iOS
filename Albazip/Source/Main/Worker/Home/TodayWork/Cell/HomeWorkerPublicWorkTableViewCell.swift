@@ -1,5 +1,5 @@
 //
-//  HomeWorkerPublicWorkNoCompleteTableViewCell.swift
+//  HomeWorkerPublicWorkTableViewCell.swift
 //  Albazip
 //
 //  Created by 김수빈 on 2021/11/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeWorkerPublicWorkNoCompleteTableViewCell: UITableViewCell {
+class HomeWorkerPublicWorkTableViewCell: UITableViewCell {
 
     @IBOutlet var btnCheck: UIButton!
     @IBOutlet var titleLabel: UILabel!
@@ -22,7 +22,8 @@ class HomeWorkerPublicWorkNoCompleteTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @IBAction func btnCheck(_ sender: Any) {
-    }
     
+    @IBAction func btnCheck(_ sender: Any) {
+        btnCheck.isSelected.toggle()
+    }
 }

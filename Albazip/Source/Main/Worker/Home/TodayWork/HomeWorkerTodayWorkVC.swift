@@ -7,14 +7,26 @@
 
 import Foundation
 class HomeWorkerTodayWorkVC: UIViewController{
-    var isNoNonCompleteData = true
-    var isNoCompleteData = true
+    
+    var isNoNonCompleteCoData = true
+    var isNoCompleteCoData = true
+    var isNoNonCompletePerData = true
+    var isNoCompletePerData = true
+    
     @IBOutlet var segment: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
-    // 임시 데이터
-    var nonCompleteTaskData: [MyPageDetailClearWorkDayNonCompleteTaskData]?
-    var completeTaskData: [MyPageDetailClearWorkDayCompleteTaskData]?
     
+    // 공동 업무
+    var nonComCoTask: [HomeWorkerNonComCoTask]?
+    var comCoTask: [HomeWorkerComCoTask]?
+    var isCoFolded = [Bool]()
+    
+    // 개인 업무
+    var nonComPerTask: [HomeWorkerNonComCoTask]?
+    var compPerTask: [HomeWorkerComCoTask]?
+    var isPerFolded = [Bool]()
+    // Datamanager
+    lazy var dataManager: HomeWorkerTodayWorkDatamanager = HomeWorkerTodayWorkDatamanager()
     
     var segValue = 0 // 0이면 공동업무, 1이면 개인업무!
     override func viewDidLoad() {
@@ -22,6 +34,8 @@ class HomeWorkerTodayWorkVC: UIViewController{
         print(segValue)
         setUI()
         setupTableView()
+        showIndicator()
+        dataManager.getHomeWorkerTodayWork(vc: self)
     }
     func setUI() {
         
@@ -63,8 +77,11 @@ class HomeWorkerTodayWorkVC: UIViewController{
         //HomeWorkerPublicWorkCompleteHeaderTableViewCell
         
         //미완료 82
-        tableView.register(UINib(nibName: "HomeWorkerPublicWorkNoCompleteTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "HomeWorkerPublicWorkNoCompleteTableViewCell")
+        tableView.register(UINib(nibName: "HomeWorkerPublicWorkTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "HomeWorkerPublicWorkTableViewCell")
+        //미완료 펼쳤을때 버전 137
+        tableView.register(UINib(nibName: "MyPageDetailNoClearWorkOpenTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageDetailNoClearWorkOpenTableViewCell")
         //완료 82
         tableView.register(UINib(nibName: "HomeWorkerPublicWorkCompleteTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "HomeWorkerPublicWorkCompleteTableViewCell")
@@ -85,6 +102,18 @@ class HomeWorkerTodayWorkVC: UIViewController{
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func indexChanged(_ sender: Any) {
+        switch segment.selectedSegmentIndex {
+            case 0:
+                segValue = 0
+                tableView.reloadData()
+            case 1:
+                segValue = 1
+                tableView.reloadData()
+            default:
+                break;
+            }
+    }
 }
 extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
 
@@ -99,105 +128,278 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
         let headerCell = Bundle.main.loadNibNamed("MyPageDetailClearWorkNoCompleteTableViewCell", owner: self, options: nil)?.first as! MyPageDetailClearWorkNoCompleteTableViewCell
         
         let headerCell2 = Bundle.main.loadNibNamed("HomeWorkerPublicWorkCompleteHeaderTableViewCell", owner: self, options: nil)?.first as! HomeWorkerPublicWorkCompleteHeaderTableViewCell
-        switch (section) {
-        case 0:
-            headerCell.titleLabel.text = "미완료"
-            /*
-            if let x = nonCompleteTaskData{
-                headerCell.countLabel.text = String(x.count)
-            }*/
-            return headerCell
-        case 1:
-            
-            /*
-            if let x = completeTaskData{
-                headerCell.countLabel.text = String(x.count)
-            }*/
-            return headerCell2
-          //return sectionHeaderView
-        default:
-            headerCell.titleLabel.text = "Other";
+        
+        if segValue == 0{ // 공동업무
+            switch (section) {
+            case 0:
+                headerCell.titleLabel.text = "미완료"
+                
+                if let x = nonComCoTask{
+                    headerCell.countLabel.text = String(x.count)
+                }
+                return headerCell
+            case 1:
+                
+                if let x = comCoTask{
+                    headerCell2.countLabel.text = String(x.count)
+                }
+                return headerCell2
+              
+            default:
+                headerCell.titleLabel.text = "Other";
+            }
+        }else{ // 개인 업무
+            switch (section) {
+            case 0:
+                headerCell.titleLabel.text = "미완료"
+                if let x = nonComPerTask{
+                    headerCell.countLabel.text = String(x.count)
+                }
+                return headerCell
+            case 1:
+                headerCell.titleLabel.text = "완료"
+                if let x = compPerTask{
+                    headerCell.countLabel.text = String(x.count)
+                }
+                return headerCell
+            default:
+                headerCell.titleLabel.text = "Other";
+            }
         }
-        print("헤더헤더")
+
         return headerCell
     }
     //섹션별 행 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            if isNoNonCompleteData{
-                   return 1
-            }else{
-                /*
-                if let x = nonCompleteTaskData{
-                    return x.count
-                }*/
+        
+        if segValue == 0{ // 공동업무
+            if section == 0 {
+                if isNoNonCompleteCoData{
+                       return 1
+                }else{
+                    
+                    if let x = nonComCoTask{
+                        return x.count
+                    }
+                }
+            }else if section == 1 {
+                if isNoCompleteCoData{
+                       return 1
+                }else{
+                    
+                    if let x = comCoTask{
+                        return x.count
+                    }
+                }
             }
-        }else if section == 1 {
-            if isNoCompleteData{
-                   return 1
-            }else{
-                /*
-                if let x = completeTaskData{
-                    return x.count
-                }*/
+        }else{ // 개인업무
+            if section == 0 {
+                if isNoNonCompletePerData{
+                       return 1
+                }else{
+                    
+                    if let x = nonComPerTask{
+                        return x.count
+                    }
+                }
+            }else if section == 1 {
+                if isNoCompletePerData{
+                       return 1
+                }else{
+                    
+                    if let x = compPerTask{
+                        return x.count
+                    }
+                }
             }
         }
+       
         return 0
     }
     //셀의 값
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0{
-            if isNoNonCompleteData{
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailAllClearWorkTableViewCell") as? MyPageDetailAllClearWorkTableViewCell {
-                    cell.titleLabel.text = "업무를 모두 완료했어요!"
-                    cell.selectionStyle = .none
-                    print(indexPath.row)
-                    return cell
+        if segValue == 0{ // 공동업무
+            if indexPath.section == 0{
+                if isNoNonCompleteCoData{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailAllClearWorkTableViewCell") as? MyPageDetailAllClearWorkTableViewCell {
+                        cell.titleLabel.text = "업무를 모두 완료했어요!"
+                        cell.selectionStyle = .none
+                        print(indexPath.row)
+                        return cell
+                    }
+                }else{
+                    // 접폈는지 펴졌는지
+                    if isCoFolded[indexPath.row]{
+                        if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerPublicWorkTableViewCell") as? HomeWorkerPublicWorkTableViewCell {
+                            cell.selectionStyle = .none
+                            
+                            if let data = nonComCoTask{
+                                cell.titleLabel.text = data[indexPath.row].takTitle!
+                                if let x = data[indexPath.row].taskContent, x == ""{
+                                    cell.subLabel.text = "내용 없음"
+                                }else{
+                                    cell.subLabel.text = data[indexPath.row].taskContent ?? "내용 없음"
+                                }
+                                
+                                
+                            }
+                            print(indexPath.row)
+                            return cell
+                        }
+                    }else{
+                        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailNoClearWorkOpenTableViewCell") as? MyPageDetailNoClearWorkOpenTableViewCell {
+                            cell.selectionStyle = .none
+                            if let data = nonComCoTask{
+                                cell.titleLabel.text = data[indexPath.row].takTitle!
+                                if data[indexPath.row].taskContent == ""{
+                                    cell.subLabel.text = "내용 없음"
+                                }else{
+                                    cell.subLabel.text = data[indexPath.row].taskContent ?? "내용 없음"
+                                }
+                                let position = data[indexPath.row].writerTitle ?? ""
+                                let name = data[indexPath.row].writerName ?? ""
+                                let date = data[indexPath.row].registerDate!.insertDate
+                                cell.writerNameLabel.text = position + " " + name + " · " + date
+                                
+                            }
+                            print(indexPath.row)
+                            return cell
+                        }
+                    }
+                    
                 }
-            }else{
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailNoClearWorkTableViewCell") as? MyPageDetailNoClearWorkTableViewCell {
-                    cell.selectionStyle = .none
-                    /*
-                    if let data = nonCompleteTaskData{
-                        cell.titlelLabel.text = data[indexPath.row].title!
-                        cell.subLabel.text = data[indexPath.row].content ?? "내용 없음"
+            }else if indexPath.section == 1{
+                if isNoCompleteCoData{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailAllClearWorkTableViewCell") as? MyPageDetailAllClearWorkTableViewCell {
+                        cell.titleLabel.text = "완료된 업무가 없어요."
+                        cell.selectionStyle = .none
+                        print(indexPath.row)
+                        return cell
+                    }
+                }else{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerPublicWorkCompleteTableViewCell") as? HomeWorkerPublicWorkCompleteTableViewCell {
+                        cell.selectionStyle = .none
                         
-                    }*/
-                    print(indexPath.row)
-                    return cell
+                        if let data = comCoTask{
+                            cell.titleLabel.text = data[indexPath.row].takTitle!
+                            cell.subLabel.text = "완료  \(data[indexPath.row].completeTime!.substring(from: 11, to: 16))"
+                            
+                        }
+                        print(indexPath.row)
+                        return cell
+                    }
                 }
             }
-        }else if indexPath.section == 1{
-            if isNoCompleteData{
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailAllClearWorkTableViewCell") as? MyPageDetailAllClearWorkTableViewCell {
-                    cell.titleLabel.text = "완료된 업무가 없어요."
-                    cell.selectionStyle = .none
-                    print(indexPath.row)
-                    return cell
+        }else{ // 개인 업무
+            if indexPath.section == 0{
+                if isNoNonCompletePerData{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailAllClearWorkTableViewCell") as? MyPageDetailAllClearWorkTableViewCell {
+                        cell.titleLabel.text = "업무를 모두 완료했어요!"
+                        cell.selectionStyle = .none
+                        print(indexPath.row)
+                        return cell
+                    }
+                }else{
+                    // 접폈는지 펴졌는지
+                    if isPerFolded[indexPath.row]{
+                        if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerPublicWorkTableViewCell") as? HomeWorkerPublicWorkTableViewCell {
+                            cell.selectionStyle = .none
+                            
+                            if let data = nonComPerTask{
+                                cell.titleLabel.text = data[indexPath.row].takTitle!
+                                if let x = data[indexPath.row].taskContent, x == ""{
+                                    cell.subLabel.text = "내용 없음"
+                                }else{
+                                    cell.subLabel.text = data[indexPath.row].taskContent ?? "내용 없음"
+                                }
+                                
+                            }
+                            print(indexPath.row)
+                            return cell
+                        }
+                    }else{
+                        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailNoClearWorkOpenTableViewCell") as? MyPageDetailNoClearWorkOpenTableViewCell {
+                            cell.selectionStyle = .none
+                            if let data = nonComPerTask{
+                                cell.titleLabel.text = data[indexPath.row].takTitle!
+                                if data[indexPath.row].taskContent == ""{
+                                    cell.subLabel.text = "내용 없음"
+                                }else{
+                                    cell.subLabel.text = data[indexPath.row].taskContent ?? "내용 없음"
+                                }
+                                let position = data[indexPath.row].writerTitle ?? ""
+                                let name = data[indexPath.row].writerName ?? ""
+                                let date = data[indexPath.row].registerDate!.insertDate
+                                cell.writerNameLabel.text = position + " " + name + " · " + date
+                                
+                            }
+                            print(indexPath.row)
+                            return cell
+                        }
+                    }
+                    
                 }
-            }else{
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailPublicWorkTableViewCell") as? MyPageDetailPublicWorkTableViewCell {
-                    cell.selectionStyle = .none
-                    /*
-                    if let data = completeTaskData{
-                        cell.titleLabel.text = data[indexPath.row].title!
-                        cell.subLabel.text = "완료  \(data[indexPath.row].complete_date!.substring(from: 11, to: 16))"
+            }else if indexPath.section == 1{
+                if isNoCompletePerData{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailAllClearWorkTableViewCell") as? MyPageDetailAllClearWorkTableViewCell {
+                        cell.titleLabel.text = "완료된 업무가 없어요."
+                        cell.selectionStyle = .none
+                        print(indexPath.row)
+                        return cell
+                    }
+                }else{
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerPublicWorkCompleteTableViewCell") as? HomeWorkerPublicWorkCompleteTableViewCell {
+                        cell.selectionStyle = .none
                         
-                    }*/
-                    print(indexPath.row)
-                    return cell
+                        if let data = compPerTask{
+                            cell.titleLabel.text = data[indexPath.row].takTitle!
+                            cell.subLabel.text = "완료  \(data[indexPath.row].completeTime!.substring(from: 11, to: 16))"
+                            
+                        }
+                        print(indexPath.row)
+                        return cell
+                    }
                 }
             }
-        }else{
-            return UITableViewCell()
         }
+        
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 82
+        if segValue == 0{
+            if indexPath.section == 0{
+                if isNoNonCompleteCoData{
+                    return 82
+                }else{
+                    if isCoFolded[indexPath.row] == true{
+                        return 82
+                    }else{
+                        return 137
+                    }
+                }
+                
+            }else{
+                return 82
+            }
+        }else{
+            if indexPath.section == 0{
+                if isNoNonCompletePerData{
+                    return 82
+                }else{
+                    if isPerFolded[indexPath.row] == true{
+                        return 82
+                    }else{
+                        return 137
+                    }
+                }
+                
+            }else{
+                return 82
+            }
+        }
     }
     //푸터
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -225,5 +427,113 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        print("\(indexPath.section): \(indexPath.row)")
+        if segValue == 0{
+            if indexPath.section == 0{
+                if isCoFolded[indexPath.row] == true{
+                    isCoFolded[indexPath.row] = false
+                    tableView.reloadData()
+                }else{
+                    isCoFolded[indexPath.row] = true
+                    tableView.reloadData()
+                }
+            }else{
+                presentBottomAlert(message: "이미 완료된 업무입니다.")
+            }
+        }else{
+            if indexPath.section == 0{
+                if isPerFolded[indexPath.row] == true{
+                    isPerFolded[indexPath.row] = false
+                    tableView.reloadData()
+                }else{
+                    isPerFolded[indexPath.row] = true
+                    tableView.reloadData()
+                }
+            }else{
+                presentBottomAlert(message: "이미 완료된 업무입니다.")
+            }
+        }
+    }
+}
+extension HomeWorkerTodayWorkVC {
+    func didSuccessHomeWorkerTodayWork(result: HomeWorkerTodayWorkResponse) {
+        
+        if let data = result.data{
+            if let coTask = data.coTask{
+                nonComCoTask = coTask.nonComCoTask
+                if nonComCoTask!.count != 0{
+                    isNoNonCompleteCoData = false
+                    // 테이블뷰 접고 펴기 배열
+                    var i = 0
+                    while i < nonComCoTask!.count{
+                        isCoFolded.append(true)
+                        i += 1
+                    }
+                }else{
+                    isNoNonCompleteCoData = true
+                }
+                comCoTask = coTask.comCoTask
+                if comCoTask!.count != 0{
+                    isNoCompleteCoData = false
+                    
+                }else{
+                    isNoCompleteCoData = true
+                }
+            }
+            if let perTask = data.perTask{
+                segment.setTitle(perTask.positionTitle!, forSegmentAt: 1)
+                nonComPerTask = perTask.nonComPerTask
+                if nonComPerTask!.count != 0{
+                    isNoNonCompletePerData = false
+                    // 테이블뷰 접고 펴기 배열
+                    var i = 0
+                    while i < nonComPerTask!.count{
+                        isPerFolded.append(true)
+                        i += 1
+                    }
+                }else{
+                    isNoNonCompletePerData = true
+                }
+                compPerTask = perTask.compPerTask
+                if compPerTask!.count != 0{
+                    isNoCompletePerData = false
+                }else{
+                    isNoCompletePerData = true
+                }
+            }
+        }
+        
+        
+        /*
+        homeWorkerData = result.data
+        if let data = homeWorkerData{
+            todayInfo = data.todayInfo
+            shopInfo = data.shopInfo
+            print(shopInfo)
+            scheduleInfo = data.scheduleInfo
+            taskInfo = data.taskInfo
+            boardInfo = data.boardInfo
+            //status 설정
+            status = (shopInfo!.status)!
+            if status == 1{
+                isWork = true
+            }else{
+                isWork = false
+            }
+            storeNameLabel.text = shopInfo!.shopName!
+            
+        }
+        print(homeWorkerData)
+        setUI()
+        
+        tableView.reloadData()*/
+        
+        tableView.reloadData()
+        print(result)
+        dismissIndicator()
+    }
+    
+    func failedToRequestHomeWorkerTodayWork(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
     }
 }
