@@ -350,7 +350,7 @@ extension HomeManagerVC {
                 i += 1
             }
         }
-        
+        isOpen = true
         tableView.reloadData()
         dismissIndicator()
     }

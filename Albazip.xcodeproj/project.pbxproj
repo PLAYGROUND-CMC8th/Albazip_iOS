@@ -269,6 +269,10 @@
 		C3CC57C727369BAB00657EE9 /* MyPageWorkerSelectProfileImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC57C627369BAB00657EE9 /* MyPageWorkerSelectProfileImageVC.swift */; };
 		C3CC57CA2736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC57C82736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.swift */; };
 		C3CC57CB2736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CC57C92736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.xib */; };
+		C3CDB04A274B46F8006D7A92 /* TodayWorkerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CDB048274B46F8006D7A92 /* TodayWorkerListTableViewCell.swift */; };
+		C3CDB04B274B46F8006D7A92 /* TodayWorkerListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CDB049274B46F8006D7A92 /* TodayWorkerListTableViewCell.xib */; };
+		C3CDB051274B4A3D006D7A92 /* TodayWorkerListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CDB050274B4A3D006D7A92 /* TodayWorkerListResponse.swift */; };
+		C3CDB053274B4A55006D7A92 /* TodayWorkerListDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CDB052274B4A55006D7A92 /* TodayWorkerListDatamanager.swift */; };
 		C3CDB53A2738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CDB5382738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift */; };
 		C3CDB53B2738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CDB5392738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib */; };
 		C3CFC2EE273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2ED273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift */; };
@@ -591,6 +595,10 @@
 		C3CC57C627369BAB00657EE9 /* MyPageWorkerSelectProfileImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerSelectProfileImageVC.swift; sourceTree = "<group>"; };
 		C3CC57C82736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerNoHeightTableViewCell.swift; sourceTree = "<group>"; };
 		C3CC57C92736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerNoHeightTableViewCell.xib; sourceTree = "<group>"; };
+		C3CDB048274B46F8006D7A92 /* TodayWorkerListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWorkerListTableViewCell.swift; sourceTree = "<group>"; };
+		C3CDB049274B46F8006D7A92 /* TodayWorkerListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayWorkerListTableViewCell.xib; sourceTree = "<group>"; };
+		C3CDB050274B4A3D006D7A92 /* TodayWorkerListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWorkerListResponse.swift; sourceTree = "<group>"; };
+		C3CDB052274B4A55006D7A92 /* TodayWorkerListDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWorkerListDatamanager.swift; sourceTree = "<group>"; };
 		C3CDB5382738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerNoWriteTableViewCell.swift; sourceTree = "<group>"; };
 		C3CDB5392738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerNoWriteTableViewCell.xib; sourceTree = "<group>"; };
 		C3CFC2ED273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerContentDatamanager.swift; sourceTree = "<group>"; };
@@ -1384,9 +1392,10 @@
 		C398BFAE273FCAC5008E8BA5 /* TodayWorkerList */ = {
 			isa = PBXGroup;
 			children = (
-				C398BFB3273FD26C008E8BA5 /* HomeManagerWorkerTodayWorkerListVC.swift */,
-				C38D932D2749AD8A00AFFDE9 /* HomeManagerWorkPrivateTableViewCell.swift */,
-				C38D932E2749AD8A00AFFDE9 /* HomeManagerWorkPrivateTableViewCell.xib */,
+				C3CDB04F274B4A1C006D7A92 /* Entity */,
+				C3CDB04E274B4A11006D7A92 /* DataManager */,
+				C3CDB04D274B4A01006D7A92 /* VC */,
+				C3CDB04C274B49E0006D7A92 /* Cell */,
 			);
 			path = TodayWorkerList;
 			sourceTree = "<group>";
@@ -1656,6 +1665,41 @@
 				C347660D274524250001B220 /* MyPageProfileImageDefaultResponse.swift */,
 				C347660F274524890001B220 /* MyPageProfileImageDefaultRequest.swift */,
 				C38EDCEC2746C82100564A17 /* MyPageWorkerStopWorkResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C3CDB04C274B49E0006D7A92 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C3CDB048274B46F8006D7A92 /* TodayWorkerListTableViewCell.swift */,
+				C3CDB049274B46F8006D7A92 /* TodayWorkerListTableViewCell.xib */,
+				C38D932D2749AD8A00AFFDE9 /* HomeManagerWorkPrivateTableViewCell.swift */,
+				C38D932E2749AD8A00AFFDE9 /* HomeManagerWorkPrivateTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C3CDB04D274B4A01006D7A92 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C398BFB3273FD26C008E8BA5 /* HomeManagerWorkerTodayWorkerListVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		C3CDB04E274B4A11006D7A92 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C3CDB052274B4A55006D7A92 /* TodayWorkerListDatamanager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C3CDB04F274B4A1C006D7A92 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C3CDB050274B4A3D006D7A92 /* TodayWorkerListResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -2044,6 +2088,7 @@
 				C3B93398273C081B0056E381 /* SettingNoticeTableViewCell.xib in Resources */,
 				C3E9C8E0274100AC00B0139C /* HomeManagerAddPrivateWorkCollectionViewCell.xib in Resources */,
 				C398BFA9273F974F008E8BA5 /* HomeManagerCommunityTableViewCell.xib in Resources */,
+				C3CDB04B274B46F8006D7A92 /* TodayWorkerListTableViewCell.xib in Resources */,
 				C3E9C8D62740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.xib in Resources */,
 				C30AFE8B27341F330075CDE2 /* MyPageManagerWorkList2TableViewCell.xib in Resources */,
 				C34BCB582732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.xib in Resources */,
@@ -2220,6 +2265,7 @@
 				C398BFA4273F8A0B008E8BA5 /* HomeManagerOpenTableViewCell.swift in Sources */,
 				C3476617274564900001B220 /* MyPageManagerEditWorkerResponse.swift in Sources */,
 				C33E00082731D80500D88267 /* MyPageWorkerWriteVC.swift in Sources */,
+				C3CDB051274B4A3D006D7A92 /* TodayWorkerListResponse.swift in Sources */,
 				C34BCB3E2732CCB80085ADB3 /* MyPageDetailPublicWorkVC.swift in Sources */,
 				C3E1FEA6272D8AAB00CE44C6 /* Page.swift in Sources */,
 				C3B93397273C081B0056E381 /* SettingNoticeTableViewCell.swift in Sources */,
@@ -2266,6 +2312,7 @@
 				C39083F12729B559006223CB /* OnboardingCollectionViewCell.swift in Sources */,
 				C3B93384273BFA220056E381 /* SettingNoticeVC.swift in Sources */,
 				C33485FB27480D38000E2D14 /* HomeWorkerPublicWorkNoCompleteTableViewCell.swift in Sources */,
+				C3CDB053274B4A55006D7A92 /* TodayWorkerListDatamanager.swift in Sources */,
 				C335741C2743ECCE00644E9B /* SettingEditBasicInfoDatamanager.swift in Sources */,
 				C3E9C8F827416E5200B0139C /* MyPageDetailCommuteRecordDatamanager.swift in Sources */,
 				C38D9322274968CA00AFFDE9 /* MyPageDetailNoClearWorkOpenTableViewCell.swift in Sources */,
@@ -2339,6 +2386,7 @@
 				C34BCB3C2732BFB20085ADB3 /* MyPageDetailCommuteRecordVC.swift in Sources */,
 				C3B022EB2726D9C300013988 /* RegisterManagerInfoVC.swift in Sources */,
 				C398BFBC273FD889008E8BA5 /* HomeManagerAlarmVC.swift in Sources */,
+				C3CDB04A274B46F8006D7A92 /* TodayWorkerListTableViewCell.swift in Sources */,
 				C3CDB53A2738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift in Sources */,
 				C3A228B82742973200187587 /* HomeWorkerQRCodeVC.swift in Sources */,
 				C34BCB572732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.swift in Sources */,
