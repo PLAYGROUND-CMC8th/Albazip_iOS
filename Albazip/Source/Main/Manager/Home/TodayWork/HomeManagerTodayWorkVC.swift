@@ -363,18 +363,30 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
        print("\(indexPath.section): \(indexPath.row)")
         if segValue == 0{
             if indexPath.section == 0{
-                if isCoFolded[indexPath.row] == true{
-                    isCoFolded[indexPath.row] = false
-                    tableView.reloadData()
-                }else{
-                    isCoFolded[indexPath.row] = true
-                    tableView.reloadData()
+                if !isNoNonCompleteCoData{
+                    if isCoFolded[indexPath.row] == true{
+                        isCoFolded[indexPath.row] = false
+                        tableView.reloadData()
+                    }else{
+                        isCoFolded[indexPath.row] = true
+                        tableView.reloadData()
+                    }
                 }
+                
             }else{
-                presentBottomAlert(message: "이미 완료된 업무입니다.")
+                if !isNoCompleteCoData{
+                    presentBottomAlert(message: "이미 완료된 업무입니다.")
+                }
+                
             }
         }else{
             //개인업무 페이지로
+            if let data = perTask{
+                
+                guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerTodayWorkDetailVC") as? HomeManagerTodayWorkDetailVC else {return}
+                nextVC.workerId = data[indexPath.row].workerId!
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            }
         }
     }
 }

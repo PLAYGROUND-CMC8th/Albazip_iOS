@@ -99,6 +99,9 @@
 		C35982C6273810E300546F2C /* MyPageManagerAddWorkerDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35982C5273810E300546F2C /* MyPageManagerAddWorkerDatamanager.swift */; };
 		C35DB30D274C17830011BC5A /* HomeManagerTodayWorkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB30C274C17830011BC5A /* HomeManagerTodayWorkResponse.swift */; };
 		C35DB30F274C191D0011BC5A /* HomeManagerTodayWorkDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB30E274C191D0011BC5A /* HomeManagerTodayWorkDatamanager.swift */; };
+		C35DB311274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB310274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift */; };
+		C35DB313274C2E5F0011BC5A /* HomeManagerTodayWorkDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB312274C2E5F0011BC5A /* HomeManagerTodayWorkDetailResponse.swift */; };
+		C35DB315274C2E790011BC5A /* HomeManagerTodayWorkDetailDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB314274C2E790011BC5A /* HomeManagerTodayWorkDetailDatamanager.swift */; };
 		C37B0B442728FF070017D179 /* OnboardingManagerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37B0B432728FF070017D179 /* OnboardingManagerStoryboard.storyboard */; };
 		C37B0B482728FF300017D179 /* OnboardingWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37B0B472728FF300017D179 /* OnboardingWorkerStoryboard.storyboard */; };
 		C37B0B4A272901AB0017D179 /* OnboardingWorkerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B49272901AB0017D179 /* OnboardingWorkerVC.swift */; };
@@ -426,6 +429,9 @@
 		C35982C5273810E300546F2C /* MyPageManagerAddWorkerDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerAddWorkerDatamanager.swift; sourceTree = "<group>"; };
 		C35DB30C274C17830011BC5A /* HomeManagerTodayWorkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkResponse.swift; sourceTree = "<group>"; };
 		C35DB30E274C191D0011BC5A /* HomeManagerTodayWorkDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDatamanager.swift; sourceTree = "<group>"; };
+		C35DB310274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDetailVC.swift; sourceTree = "<group>"; };
+		C35DB312274C2E5F0011BC5A /* HomeManagerTodayWorkDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDetailResponse.swift; sourceTree = "<group>"; };
+		C35DB314274C2E790011BC5A /* HomeManagerTodayWorkDetailDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDetailDatamanager.swift; sourceTree = "<group>"; };
 		C37B0B432728FF070017D179 /* OnboardingManagerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingManagerStoryboard.storyboard; sourceTree = "<group>"; };
 		C37B0B472728FF300017D179 /* OnboardingWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingWorkerStoryboard.storyboard; sourceTree = "<group>"; };
 		C37B0B49272901AB0017D179 /* OnboardingWorkerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWorkerVC.swift; sourceTree = "<group>"; };
@@ -1066,6 +1072,7 @@
 			isa = PBXGroup;
 			children = (
 				C35DB30E274C191D0011BC5A /* HomeManagerTodayWorkDatamanager.swift */,
+				C35DB314274C2E790011BC5A /* HomeManagerTodayWorkDetailDatamanager.swift */,
 			);
 			path = Datamanger;
 			sourceTree = "<group>";
@@ -1074,6 +1081,7 @@
 			isa = PBXGroup;
 			children = (
 				C35DB30C274C17830011BC5A /* HomeManagerTodayWorkResponse.swift */,
+				C35DB312274C2E5F0011BC5A /* HomeManagerTodayWorkDetailResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1440,6 +1448,7 @@
 				C35DB30A274C17520011BC5A /* Datamanger */,
 				C33485F727480CD8000E2D14 /* Cell */,
 				C398BFB7273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift */,
+				C35DB310274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift */,
 			);
 			path = TodayWork;
 			sourceTree = "<group>";
@@ -2390,11 +2399,14 @@
 				C3B93393273C05E60056E381 /* SettingEditPhoneNumberVC.swift in Sources */,
 				C38BFB792739EC6C00E79BF5 /* MyPageManagerWorkerPositionDeleteVC.swift in Sources */,
 				C30AFE7A2733CE4F0075CDE2 /* MyPageManagerSelectInfo2TableViewCell.swift in Sources */,
+				C35DB311274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift in Sources */,
 				C3B9339A273C2ECD0056E381 /* MyPageDetailClearWorkMonthVC.swift in Sources */,
 				C30AFE672733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift in Sources */,
+				C35DB315274C2E790011BC5A /* HomeManagerTodayWorkDetailDatamanager.swift in Sources */,
 				C3546F812725082100C4C3DC /* RegisterSearchStoreResponse.swift in Sources */,
 				C37B0B552729724E0017D179 /* RegisterDataManager.swift in Sources */,
 				C33E00042731D30600D88267 /* MyPageWorkerWriteTableViewCell.swift in Sources */,
+				C35DB313274C2E5F0011BC5A /* HomeManagerTodayWorkDetailResponse.swift in Sources */,
 				C33F9982272E971800E9FF05 /* RegisterWorkerResponse.swift in Sources */,
 				C38CA0C0273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.swift in Sources */,
 				C38CA0B7272F647600EA7BB3 /* LoginResetPasswordRequest.swift in Sources */,

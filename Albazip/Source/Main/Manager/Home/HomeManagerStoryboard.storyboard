@@ -654,6 +654,69 @@
             </objects>
             <point key="canvasLocation" x="1150" y="1419"/>
         </scene>
+        <!--Home Manager Today Work DetailVC-->
+        <scene sceneID="oql-If-MKv">
+            <objects>
+                <viewController storyboardIdentifier="HomeManagerTodayWorkDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sHa-5b-JhF" customClass="HomeManagerTodayWorkDetailVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GO0-tN-FsL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 할일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etC-F7-eb8">
+                                <rect key="frame" x="146.66666666666666" y="65" width="82" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qt-Ka-OPX">
+                                <rect key="frame" x="24" y="64" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="IMH-B0-16L"/>
+                                    <constraint firstAttribute="height" constant="24" id="LCY-ul-3Za"/>
+                                </constraints>
+                                <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="sHa-5b-JhF" eventType="touchUpInside" id="f6k-KW-YlM"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jL-Rr-ODr">
+                                <rect key="frame" x="0.0" y="101" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.90588235859999999" green="0.90588235859999999" blue="0.90588235859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="a4d-tA-SuG"/>
+                                    <constraint firstAttribute="height" constant="1" id="obc-7O-G8A"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Fd-Wn-mj8">
+                                <rect key="frame" x="0.0" y="102" width="375" height="676"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EwN-qt-pdO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1qt-Ka-OPX" firstAttribute="centerY" secondItem="etC-F7-eb8" secondAttribute="centerY" id="Atj-9H-ZmG"/>
+                            <constraint firstItem="1qt-Ka-OPX" firstAttribute="leading" secondItem="EwN-qt-pdO" secondAttribute="leading" constant="24" id="JdQ-88-huj"/>
+                            <constraint firstItem="6Fd-Wn-mj8" firstAttribute="top" secondItem="8jL-Rr-ODr" secondAttribute="bottom" id="Mfg-or-Wyr"/>
+                            <constraint firstItem="etC-F7-eb8" firstAttribute="centerX" secondItem="GO0-tN-FsL" secondAttribute="centerX" id="Y3X-z6-lrk"/>
+                            <constraint firstItem="EwN-qt-pdO" firstAttribute="bottom" secondItem="6Fd-Wn-mj8" secondAttribute="bottom" id="ZrT-HA-tw8"/>
+                            <constraint firstAttribute="trailing" secondItem="8jL-Rr-ODr" secondAttribute="trailing" id="fhh-HB-X8k"/>
+                            <constraint firstItem="etC-F7-eb8" firstAttribute="top" secondItem="EwN-qt-pdO" secondAttribute="top" constant="21" id="jUr-xZ-Pzx"/>
+                            <constraint firstItem="6Fd-Wn-mj8" firstAttribute="leading" secondItem="EwN-qt-pdO" secondAttribute="leading" id="nfH-me-qfD"/>
+                            <constraint firstItem="EwN-qt-pdO" firstAttribute="trailing" secondItem="6Fd-Wn-mj8" secondAttribute="trailing" id="o8n-eZ-hCO"/>
+                            <constraint firstItem="8jL-Rr-ODr" firstAttribute="top" secondItem="etC-F7-eb8" secondAttribute="bottom" constant="14" id="pZg-df-r6e"/>
+                            <constraint firstItem="8jL-Rr-ODr" firstAttribute="leading" secondItem="GO0-tN-FsL" secondAttribute="leading" id="umW-eS-fhq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="6Fd-Wn-mj8" id="kNy-Q7-PM8"/>
+                        <outlet property="titleLabel" destination="etC-F7-eb8" id="4KP-ut-5GV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgx-VW-ezy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1890" y="1852"/>
+        </scene>
         <!--Home Manager AlarmVC-->
         <scene sceneID="yzG-3n-Rfm">
             <objects>
