@@ -1268,7 +1268,7 @@
         <image name="icArrowMore" width="8" height="53"/>
         <image name="icBackArrow" width="24" height="24"/>
         <image name="icCheckBoxChecked" width="20" height="20"/>
-        <image name="icCheckBoxNormal" width="20" height="20"/>
+        <image name="icCheckBoxNormal" width="22" height="22"/>
         <image name="icCheckedNormal" width="24" height="24"/>
         <image name="icSetting" width="24" height="24"/>
         <image name="illustManager" width="94" height="146.33332824707031"/>

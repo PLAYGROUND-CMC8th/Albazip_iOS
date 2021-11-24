@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "scale" : "1x",
+      "idiom" : "universal",
+      "filename" : "icSearch24Px.png"
+    },
+    {
+      "scale" : "2x",
+      "filename" : "icSearch24Px@2x.png",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "icSearch24Px@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

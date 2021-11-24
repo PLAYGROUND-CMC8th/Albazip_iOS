@@ -120,7 +120,7 @@
                 <outlet property="personView" destination="Xwo-7M-RmF" id="t7i-Ay-Qky"/>
                 <outlet property="tableView" destination="YbF-jB-aM6" id="w2A-28-QtT"/>
             </connections>
-            <point key="canvasLocation" x="223" y="140"/>
+            <point key="canvasLocation" x="271" y="141"/>
         </tableViewCell>
     </objects>
     <resources>
