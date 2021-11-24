@@ -46,6 +46,18 @@
 		C32E4A84274E52000015463F /* CommunityWorkerAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4A83274E52000015463F /* CommunityWorkerAlarmVC.swift */; };
 		C32E4A86274E5C5A0015463F /* CommunityWorkerNoticeAlertDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4A85274E5C5A0015463F /* CommunityWorkerNoticeAlertDetailVC.swift */; };
 		C32E4A88274E5F3B0015463F /* CommunityWorkerNoticeAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4A87274E5F3B0015463F /* CommunityWorkerNoticeAlertVC.swift */; };
+		C32E4A8C274E73D80015463F /* CommunityManagerTopTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4A8B274E73D80015463F /* CommunityManagerTopTabVC.swift */; };
+		C32E4A8E274E74660015463F /* CommunityManagerNoticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4A8D274E74660015463F /* CommunityManagerNoticeVC.swift */; };
+		C32E4A92274E81D30015463F /* CommunityManagerSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4A91274E81D30015463F /* CommunityManagerSearchVC.swift */; };
+		C32E4A94274E85F70015463F /* CommunityManagerAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4A93274E85F70015463F /* CommunityManagerAlarmVC.swift */; };
+		C32E4A98274E881A0015463F /* CommunityManagerNoticeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4A97274E881A0015463F /* CommunityManagerNoticeDetailVC.swift */; };
+		C32E4A9A274E8EBC0015463F /* CommunityManagerNoticeAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4A99274E8EBC0015463F /* CommunityManagerNoticeAlertVC.swift */; };
+		C32E4A9C274E8ED80015463F /* CommunityManagerNoticeAlertDeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4A9B274E8ED80015463F /* CommunityManagerNoticeAlertDeleteVC.swift */; };
+		C32E4A9F274EA4D60015463F /* CommunityManagerWriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4A9E274EA4D60015463F /* CommunityManagerWriteVC.swift */; };
+		C32E4AA3274EA7BE0015463F /* CommunityManagerWriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4AA1274EA7BE0015463F /* CommunityManagerWriteTableViewCell.swift */; };
+		C32E4AA4274EA7BE0015463F /* CommunityManagerWriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32E4AA2274EA7BE0015463F /* CommunityManagerWriteTableViewCell.xib */; };
+		C32E4AA7274EA8B80015463F /* CommunityManagerPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4AA5274EA8B80015463F /* CommunityManagerPhotoTableViewCell.swift */; };
+		C32E4AA8274EA8B80015463F /* CommunityManagerPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32E4AA6274EA8B80015463F /* CommunityManagerPhotoTableViewCell.xib */; };
 		C33485FB27480D38000E2D14 /* HomeWorkerPublicWorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33485F927480D38000E2D14 /* HomeWorkerPublicWorkTableViewCell.swift */; };
 		C33485FC27480D38000E2D14 /* HomeWorkerPublicWorkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33485FA27480D38000E2D14 /* HomeWorkerPublicWorkTableViewCell.xib */; };
 		C33485FF2748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33485FD2748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.swift */; };
@@ -386,6 +398,18 @@
 		C32E4A83274E52000015463F /* CommunityWorkerAlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerAlarmVC.swift; sourceTree = "<group>"; };
 		C32E4A85274E5C5A0015463F /* CommunityWorkerNoticeAlertDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerNoticeAlertDetailVC.swift; sourceTree = "<group>"; };
 		C32E4A87274E5F3B0015463F /* CommunityWorkerNoticeAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerNoticeAlertVC.swift; sourceTree = "<group>"; };
+		C32E4A8B274E73D80015463F /* CommunityManagerTopTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerTopTabVC.swift; sourceTree = "<group>"; };
+		C32E4A8D274E74660015463F /* CommunityManagerNoticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoticeVC.swift; sourceTree = "<group>"; };
+		C32E4A91274E81D30015463F /* CommunityManagerSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerSearchVC.swift; sourceTree = "<group>"; };
+		C32E4A93274E85F70015463F /* CommunityManagerAlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerAlarmVC.swift; sourceTree = "<group>"; };
+		C32E4A97274E881A0015463F /* CommunityManagerNoticeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoticeDetailVC.swift; sourceTree = "<group>"; };
+		C32E4A99274E8EBC0015463F /* CommunityManagerNoticeAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoticeAlertVC.swift; sourceTree = "<group>"; };
+		C32E4A9B274E8ED80015463F /* CommunityManagerNoticeAlertDeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoticeAlertDeleteVC.swift; sourceTree = "<group>"; };
+		C32E4A9E274EA4D60015463F /* CommunityManagerWriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerWriteVC.swift; sourceTree = "<group>"; };
+		C32E4AA1274EA7BE0015463F /* CommunityManagerWriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerWriteTableViewCell.swift; sourceTree = "<group>"; };
+		C32E4AA2274EA7BE0015463F /* CommunityManagerWriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityManagerWriteTableViewCell.xib; sourceTree = "<group>"; };
+		C32E4AA5274EA8B80015463F /* CommunityManagerPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerPhotoTableViewCell.swift; sourceTree = "<group>"; };
+		C32E4AA6274EA8B80015463F /* CommunityManagerPhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityManagerPhotoTableViewCell.xib; sourceTree = "<group>"; };
 		C33485F927480D38000E2D14 /* HomeWorkerPublicWorkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerPublicWorkTableViewCell.swift; sourceTree = "<group>"; };
 		C33485FA27480D38000E2D14 /* HomeWorkerPublicWorkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeWorkerPublicWorkTableViewCell.xib; sourceTree = "<group>"; };
 		C33485FD2748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerPublicWorkCompleteTableViewCell.swift; sourceTree = "<group>"; };
@@ -736,6 +760,7 @@
 		C309D894272D08D000A91E9F /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C32E4A95274E87F70015463F /* NoticeDetail */,
 				C384426F271480C600B84E8A /* Home */,
 				C3844275271493E800B84E8A /* Community */,
 				C38442782714946D00B84E8A /* Schedule */,
@@ -908,6 +933,77 @@
 				C32E4A83274E52000015463F /* CommunityWorkerAlarmVC.swift */,
 			);
 			path = Alarm;
+			sourceTree = "<group>";
+		};
+		C32E4A89274E73C20015463F /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				C32E4A8A274E73CA0015463F /* VC */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
+		C32E4A8A274E73CA0015463F /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C32E4A8B274E73D80015463F /* CommunityManagerTopTabVC.swift */,
+				C32E4A8D274E74660015463F /* CommunityManagerNoticeVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		C32E4A8F274E81A60015463F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C32E4A91274E81D30015463F /* CommunityManagerSearchVC.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		C32E4A90274E81AE0015463F /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				C32E4A93274E85F70015463F /* CommunityManagerAlarmVC.swift */,
+			);
+			path = Alarm;
+			sourceTree = "<group>";
+		};
+		C32E4A95274E87F70015463F /* NoticeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C32E4A96274E88030015463F /* VC */,
+			);
+			path = NoticeDetail;
+			sourceTree = "<group>";
+		};
+		C32E4A96274E88030015463F /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C32E4A97274E881A0015463F /* CommunityManagerNoticeDetailVC.swift */,
+				C32E4A99274E8EBC0015463F /* CommunityManagerNoticeAlertVC.swift */,
+				C32E4A9B274E8ED80015463F /* CommunityManagerNoticeAlertDeleteVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		C32E4A9D274EA4C20015463F /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				C32E4AA0274EA79B0015463F /* Cell */,
+				C32E4A9E274EA4D60015463F /* CommunityManagerWriteVC.swift */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		C32E4AA0274EA79B0015463F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C32E4AA1274EA7BE0015463F /* CommunityManagerWriteTableViewCell.swift */,
+				C32E4AA2274EA7BE0015463F /* CommunityManagerWriteTableViewCell.xib */,
+				C32E4AA5274EA8B80015463F /* CommunityManagerPhotoTableViewCell.swift */,
+				C32E4AA6274EA8B80015463F /* CommunityManagerPhotoTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C33485F727480CD8000E2D14 /* Cell */ = {
@@ -1398,6 +1494,10 @@
 		C3844275271493E800B84E8A /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				C32E4A9D274EA4C20015463F /* Write */,
+				C32E4A90274E81AE0015463F /* Alarm */,
+				C32E4A8F274E81A60015463F /* Search */,
+				C32E4A89274E73C20015463F /* Notice */,
 				C38442762714940100B84E8A /* CommunityManagerStoryboard.storyboard */,
 			);
 			path = Community;
@@ -2204,6 +2304,7 @@
 			files = (
 				C3AD3B23273963C80030905C /* MyPageManagerWorkerPositionVC.xib in Resources */,
 				C3E9C8DC2740FEE600B0139C /* HomeManagerAddPrivateWorkTableViewCell.xib in Resources */,
+				C32E4AA8274EA8B80015463F /* CommunityManagerPhotoTableViewCell.xib in Resources */,
 				C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */,
 				C30AFE8727341CD70075CDE2 /* MyPageManagerWorkList1TableViewCell.xib in Resources */,
 				C37EBF45271ABE7B00DEC2CA /* LoginStoryboard.storyboard in Resources */,
@@ -2229,6 +2330,7 @@
 				C33E00052731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib in Resources */,
 				C30AFE7F2733CE670075CDE2 /* MyPageManagerSelectInfo3TableViewCell.xib in Resources */,
 				C384427A2714948200B84E8A /* ScheduleManagerStoryboard.storyboard in Resources */,
+				C32E4AA4274EA7BE0015463F /* CommunityManagerWriteTableViewCell.xib in Resources */,
 				C3AC1F8A274D22760007AA95 /* CommunityWorkerNoticeTableViewCell.xib in Resources */,
 				C34BCB542732F6C50085ADB3 /* MyPageDetailCommuteMonthTableViewCell.xib in Resources */,
 				C3E1FEBA272DB1EA00CE44C6 /* MyPageManagerWriteVC.xib in Resources */,
@@ -2343,8 +2445,10 @@
 				C3B022F12727193100013988 /* RegisterSelectSalaryDateVC.swift in Sources */,
 				C38EDCE8274695B300564A17 /* ReaderView.swift in Sources */,
 				C3E9C8DB2740FEE600B0139C /* HomeManagerAddPrivateWorkTableViewCell.swift in Sources */,
+				C32E4A92274E81D30015463F /* CommunityManagerSearchVC.swift in Sources */,
 				C30EC2E5272B0A8D00EEF218 /* RegisterManagerDataManager.swift in Sources */,
 				C34C4AE02721BF6700300454 /* RegisterSelectYearVC.swift in Sources */,
+				C32E4A98274E881A0015463F /* CommunityManagerNoticeDetailVC.swift in Sources */,
 				C38442352714797000B84E8A /* AppDelegate.swift in Sources */,
 				C3A1ADCA271C14E2005A61ED /* RegisterSelectPositionVC.swift in Sources */,
 				C3E1FEB1272D901300CE44C6 /* MyPageTabBarCollectionViewCell.swift in Sources */,
@@ -2364,6 +2468,7 @@
 				C3CC57C327362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift in Sources */,
 				C3E9C8EE2741697100B0139C /* MyPageDetailClearWorkMonthResponse.swift in Sources */,
 				C3B93388273BFAA00056E381 /* SettingUseTermVC.swift in Sources */,
+				C32E4AA7274EA8B80015463F /* CommunityManagerPhotoTableViewCell.swift in Sources */,
 				C3A1ADD0271C698D005A61ED /* RegisterWorkerCodeVC.swift in Sources */,
 				C3CB0170273D78D4000EA353 /* MyPageManagerWriteDatamanager.swift in Sources */,
 				C3CB0172273D78EE000EA353 /* MyPageManagerWriteResponse.swift in Sources */,
@@ -2424,6 +2529,7 @@
 				C35DB30F274C191D0011BC5A /* HomeManagerTodayWorkDatamanager.swift in Sources */,
 				C33E00082731D80500D88267 /* MyPageWorkerWriteVC.swift in Sources */,
 				C3CDB051274B4A3D006D7A92 /* TodayWorkerListResponse.swift in Sources */,
+				C32E4A9A274E8EBC0015463F /* CommunityManagerNoticeAlertVC.swift in Sources */,
 				C34BCB3E2732CCB80085ADB3 /* MyPageDetailPublicWorkVC.swift in Sources */,
 				C3E1FEA6272D8AAB00CE44C6 /* Page.swift in Sources */,
 				C3B93397273C081B0056E381 /* SettingNoticeTableViewCell.swift in Sources */,
@@ -2453,6 +2559,7 @@
 				C384425027147E2900B84E8A /* Device.swift in Sources */,
 				C30EC2EB272B121900EEF218 /* RegisterManagerInfo.swift in Sources */,
 				C3E9C8E82741691000B0139C /* MyPageDetailClearWorkMonthDataManager.swift in Sources */,
+				C32E4A9F274EA4D60015463F /* CommunityManagerWriteVC.swift in Sources */,
 				C347660E274524250001B220 /* MyPageProfileImageDefaultResponse.swift in Sources */,
 				C3CC57C52736442C00657EE9 /* MyPageManagerSelectProfileImageVC.swift in Sources */,
 				C33F9986272E977700E9FF05 /* RegisterWorkerDataManager.swift in Sources */,
@@ -2461,6 +2568,7 @@
 				C3E9C8EC2741696000B0139C /* MyPageDetailClearWorkResponse.swift in Sources */,
 				C3CFC2F8273E916F001B2EB6 /* MyPageWorkerMyInfoDatamanager.swift in Sources */,
 				C34BCB532732F6C50085ADB3 /* MyPageDetailCommuteMonthTableViewCell.swift in Sources */,
+				C32E4A8C274E73D80015463F /* CommunityManagerTopTabVC.swift in Sources */,
 				C384425A27147E3F00B84E8A /* String.swift in Sources */,
 				C384425E27147E3F00B84E8A /* UIFont.swift in Sources */,
 				C38EDCC12745FFE800564A17 /* MyPageMangerEditWorkerListDatamanager.swift in Sources */,
@@ -2468,6 +2576,7 @@
 				C34BCB442732D9DF0085ADB3 /* MyPageDetailClearWorkTableViewCell.swift in Sources */,
 				C37B0B4A272901AB0017D179 /* OnboardingWorkerVC.swift in Sources */,
 				C37B0B5B272978F80017D179 /* RegisterBasicInfo.swift in Sources */,
+				C32E4A8E274E74660015463F /* CommunityManagerNoticeVC.swift in Sources */,
 				C32E4A7A274DB5A80015463F /* CommunityWorkerNoticeDetailTableViewCell.swift in Sources */,
 				C39083F12729B559006223CB /* OnboardingCollectionViewCell.swift in Sources */,
 				C3B93384273BFA220056E381 /* SettingNoticeVC.swift in Sources */,
@@ -2480,6 +2589,7 @@
 				C398BFA8273F974F008E8BA5 /* HomeManagerCommunityTableViewCell.swift in Sources */,
 				C398BFB6273FD3D1008E8BA5 /* HomeManagerQRCodeVC.swift in Sources */,
 				C3A228AC27427A5300187587 /* HomeWorkerVC.swift in Sources */,
+				C32E4A9C274E8ED80015463F /* CommunityManagerNoticeAlertDeleteVC.swift in Sources */,
 				C3B022EF2726F28A00013988 /* RegisterSelectStoreTypeVC.swift in Sources */,
 				C3CFC304273EC3F2001B2EB6 /* MyPageManagerWorkerInfoDataManager.swift in Sources */,
 				C3A228B3274286B600187587 /* HomeWorkerWorkTableViewCell.swift in Sources */,
@@ -2525,6 +2635,7 @@
 				C30EC2E1272A4FDB00EEF218 /* RegisterNumberMatchResponse.swift in Sources */,
 				C3AD3B2F273982360030905C /* MyPageManagerWorklistTableViewCell.swift in Sources */,
 				C3AD3B1E273963AA0030905C /* MyPageManagerWorkerInfoVC.swift in Sources */,
+				C32E4AA3274EA7BE0015463F /* CommunityManagerWriteTableViewCell.swift in Sources */,
 				C3EBC259274A5D210017BB85 /* HomeWorkerDatamanager.swift in Sources */,
 				C3EBC25F274A9A610017BB85 /* HomeManagerDatamanager.swift in Sources */,
 				C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */,
@@ -2572,6 +2683,7 @@
 				C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */,
 				C398BFB4273FD26C008E8BA5 /* HomeManagerWorkerTodayWorkerListVC.swift in Sources */,
 				C3E9C8D52740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.swift in Sources */,
+				C32E4A94274E85F70015463F /* CommunityManagerAlarmVC.swift in Sources */,
 				C35DB30D274C17830011BC5A /* HomeManagerTodayWorkResponse.swift in Sources */,
 				C37B0B57272972720017D179 /* RegisterResponse.swift in Sources */,
 				C3AD3B332739874D0030905C /* MyPageManagerWorkerPositionTableViewCell.swift in Sources */,

@@ -1,20 +1,22 @@
 //
-//  CommunityWorkerNoticeVC.swift
+//  CommunityManagerNoticeVC.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2021/11/23.
+//  Created by 김수빈 on 2021/11/24.
 //
-
-import UIKit
 import XLPagerTabStrip
+import Foundation
 
-class CommunityWorkerNoticeVC: UIViewController,IndicatorInfoProvider {
-
+class CommunityManagerNoticeVC: UIViewController, IndicatorInfoProvider {
+   
     @IBOutlet var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        print("viewWillAppear1")
     }
     func setTableView(){
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 18))
@@ -29,10 +31,9 @@ class CommunityWorkerNoticeVC: UIViewController,IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "공지사항")
       }
-    
 }
 // 테이블뷰 extension
-extension CommunityWorkerNoticeVC: UITableViewDataSource, UITableViewDelegate{
+extension CommunityManagerNoticeVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //print(String(lists.count) + " 줄")
@@ -50,7 +51,8 @@ extension CommunityWorkerNoticeVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row) 입니다.")
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CommunityWorkerNoticeDetailVC") as? CommunityWorkerNoticeDetailVC else {return}
+        
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CommunityManagerNoticeDetailVC") as? CommunityManagerNoticeDetailVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
