@@ -9,13 +9,18 @@ import Foundation
 class CommunityWorkerNoticeDetailVC: UIViewController{
     
     @IBOutlet var tableView: UITableView!
-    
+    var noticeId = -1
     @IBOutlet var modalBgView: UIView!
+    var noticeData : CommunityManagerNoticeDetailData?
+    // Datamanager
+    lazy var dataManager: CommunityManagerNoticeDetailDatamanager = CommunityManagerNoticeDetailDatamanager()
     // CommunityWorkerNoticeDetailTableViewCell
     override func viewDidLoad() {
         super.viewDidLoad()
         modalBgView.isHidden = true
         setTableView()
+        showIndicator()
+        dataManager.getCommunityWorkerNoticeDetail(noticeId: noticeId, vc: self)
     }
     func setTableView(){
         tableView.dataSource = self
@@ -60,7 +65,27 @@ extension CommunityWorkerNoticeDetailVC: UITableViewDataSource, UITableViewDeleg
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityWorkerNoticeDetailTableViewCell") as? CommunityWorkerNoticeDetailTableViewCell {
             cell.selectionStyle = .none
-            cell.detailLabel.text = "출입자명부 작성 철저하게 해주세요!\n 주문 받은 뒤, 홀 손님에겐 꼭 명부작성 권유 해야합니다.\n테이크아웃 손님은 매장에 들어와서 주문시에 권유 해주세요!\n"
+            if let data = noticeData{
+                if let writerInfo = data.writerInfo{
+                    cell.nameLabel.text = writerInfo.name!
+                    cell.positionLabel.text = writerInfo.title!
+                    /*
+                    cell.profileImage.image = writerInfo.name!*/
+                    if let img = writerInfo.image{
+                        let url = URL(string: img)
+                        cell.profileImage.kf.setImage(with: url)
+                    }
+                }
+                if let boardInfo = data.boardInfo{
+                    cell.titleLabel.text = boardInfo.title!
+                    cell.detailLabel.text = boardInfo.content!
+                    cell.dateLabel.text = boardInfo.registerDate!.insertDate
+                }
+                if let confirmInfo = data.writerInfo{
+                    
+                }
+                
+            }
             return cell
         }
         return UITableViewCell()
@@ -71,5 +96,19 @@ extension CommunityWorkerNoticeDetailVC: UITableViewDataSource, UITableViewDeleg
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.estimatedRowHeight
+    }
+}
+extension CommunityWorkerNoticeDetailVC {
+    func didSuccessCommunityWorkerNoticeDetail(result: CommunityManagerNoticeDetailResponse) {
+        
+        noticeData = result.data
+        print(noticeData)
+        tableView.reloadData()
+        dismissIndicator()
+    }
+    
+    func failedToRequestCommunityWorkerNoticeDetail(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
     }
 }

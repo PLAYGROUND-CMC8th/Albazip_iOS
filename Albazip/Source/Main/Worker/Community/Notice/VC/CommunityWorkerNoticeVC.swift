@@ -105,6 +105,7 @@ extension CommunityWorkerNoticeVC: UITableViewDataSource, UITableViewDelegate{
         print("선택된 행은 \(indexPath.row) 입니다.")
         if !isNoData{
             guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CommunityWorkerNoticeDetailVC") as? CommunityWorkerNoticeDetailVC else {return}
+            nextVC.noticeId = noticeList![indexPath.row].id!
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
