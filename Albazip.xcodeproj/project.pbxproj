@@ -373,6 +373,12 @@
 		C3F05A5B274FA3260025DB24 /* RegisterPermissionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A5A274FA3260025DB24 /* RegisterPermissionVC.swift */; };
 		C3F05A5F274FBBA10025DB24 /* RegisterPermissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A5D274FBBA10025DB24 /* RegisterPermissionTableViewCell.swift */; };
 		C3F05A60274FBBA10025DB24 /* RegisterPermissionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F05A5E274FBBA10025DB24 /* RegisterPermissionTableViewCell.xib */; };
+		C3F05A64274FC55C0025DB24 /* CommunityManagerNoticeDatamanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A63274FC55C0025DB24 /* CommunityManagerNoticeDatamanger.swift */; };
+		C3F05A66274FC5710025DB24 /* CommunityManagerNoticeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A65274FC5710025DB24 /* CommunityManagerNoticeResponse.swift */; };
+		C3F05A6A274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A68274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.swift */; };
+		C3F05A6B274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F05A69274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.xib */; };
+		C3F05A6E274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A6C274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.swift */; };
+		C3F05A6F274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F05A6D274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -748,6 +754,12 @@
 		C3F05A5A274FA3260025DB24 /* RegisterPermissionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPermissionVC.swift; sourceTree = "<group>"; };
 		C3F05A5D274FBBA10025DB24 /* RegisterPermissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPermissionTableViewCell.swift; sourceTree = "<group>"; };
 		C3F05A5E274FBBA10025DB24 /* RegisterPermissionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPermissionTableViewCell.xib; sourceTree = "<group>"; };
+		C3F05A63274FC55C0025DB24 /* CommunityManagerNoticeDatamanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoticeDatamanger.swift; sourceTree = "<group>"; };
+		C3F05A65274FC5710025DB24 /* CommunityManagerNoticeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoticeResponse.swift; sourceTree = "<group>"; };
+		C3F05A68274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoNoticeTableViewCell.swift; sourceTree = "<group>"; };
+		C3F05A69274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityManagerNoNoticeTableViewCell.xib; sourceTree = "<group>"; };
+		C3F05A6C274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoticeTableViewCell.swift; sourceTree = "<group>"; };
+		C3F05A6D274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityManagerNoticeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -975,6 +987,9 @@
 		C32E4A89274E73C20015463F /* Notice */ = {
 			isa = PBXGroup;
 			children = (
+				C3F05A67274FCDDF0025DB24 /* Cell */,
+				C3F05A62274FC5360025DB24 /* Datamanager */,
+				C3F05A61274FC52E0025DB24 /* Entity */,
 				C32E4A8A274E73CA0015463F /* VC */,
 			);
 			path = Notice;
@@ -2285,6 +2300,33 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C3F05A61274FC52E0025DB24 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C3F05A65274FC5710025DB24 /* CommunityManagerNoticeResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C3F05A62274FC5360025DB24 /* Datamanager */ = {
+			isa = PBXGroup;
+			children = (
+				C3F05A63274FC55C0025DB24 /* CommunityManagerNoticeDatamanger.swift */,
+			);
+			path = Datamanager;
+			sourceTree = "<group>";
+		};
+		C3F05A67274FCDDF0025DB24 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C3F05A68274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.swift */,
+				C3F05A69274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.xib */,
+				C3F05A6C274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.swift */,
+				C3F05A6D274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		C3F54E7A272C31E100FE412B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2445,6 +2487,7 @@
 				C30D2EB027315DC400D4C1C1 /* HomeWorkerStoryboard.storyboard in Resources */,
 				C38D932C2749AAA800AFFDE9 /* HomeWorkerCompletePeopleTableViewCell.xib in Resources */,
 				C3CC57CB2736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.xib in Resources */,
+				C3F05A6F274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.xib in Resources */,
 				C38442412714797100B84E8A /* LaunchScreen.storyboard in Resources */,
 				C30D2EB427315EC400D4C1C1 /* ScheduleWorkerStoryboard.storyboard in Resources */,
 				C34A005D2731BA1B00C24102 /* MyPageWorkerInfoVC.xib in Resources */,
@@ -2499,6 +2542,7 @@
 				C384423C2714797000B84E8A /* MainManager.storyboard in Resources */,
 				C3C97BC62730B404002C8584 /* MainWorker.storyboard in Resources */,
 				C33485FC27480D38000E2D14 /* HomeWorkerPublicWorkTableViewCell.xib in Resources */,
+				C3F05A6B274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.xib in Resources */,
 				C3E1FEB6272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.xib in Resources */,
 				C3B933A4273C39DD0056E381 /* MyPageDetailClearWorkNoCompleteTableViewCell.xib in Resources */,
 				C3AD3B2C2739786D0030905C /* MyPageManagerWorkerPositionDeleteTableViewCell.xib in Resources */,
@@ -2601,6 +2645,7 @@
 				C3CC57C327362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift in Sources */,
 				C3E9C8EE2741697100B0139C /* MyPageDetailClearWorkMonthResponse.swift in Sources */,
 				C3B93388273BFAA00056E381 /* SettingUseTermVC.swift in Sources */,
+				C3F05A6A274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.swift in Sources */,
 				C32E4AA7274EA8B80015463F /* CommunityManagerPhotoTableViewCell.swift in Sources */,
 				C3A1ADD0271C698D005A61ED /* RegisterWorkerCodeVC.swift in Sources */,
 				C3CB0170273D78D4000EA353 /* MyPageManagerWriteDatamanager.swift in Sources */,
@@ -2612,6 +2657,7 @@
 				C3A1ADD2271C773F005A61ED /* RegisterSettingVC.swift in Sources */,
 				C3F05A35274F38D20025DB24 /* HomeManagerAddPublicWorkDatamanager.swift in Sources */,
 				C347660A2744B1BE0001B220 /* MyPageProfileImageDefaultDatamanager.swift in Sources */,
+				C3F05A64274FC55C0025DB24 /* CommunityManagerNoticeDatamanger.swift in Sources */,
 				C3B93391273C054C0056E381 /* SettingEditBasicInfoVC.swift in Sources */,
 				C347660C2744B1EB0001B220 /* MyPageProfileImageUploadDatamanager.swift in Sources */,
 				C3834770272D1D7E00EE0D55 /* RegisterSelectTimeVC.swift in Sources */,
@@ -2655,6 +2701,7 @@
 				C398BFBA273FD860008E8BA5 /* HomeManagerAddWorkVC.swift in Sources */,
 				C30EC2DD272A4F7D00EEF218 /* RegisterNumberExistDataManager.swift in Sources */,
 				C38EDCED2746C82100564A17 /* MyPageWorkerStopWorkResponse.swift in Sources */,
+				C3F05A66274FC5710025DB24 /* CommunityManagerNoticeResponse.swift in Sources */,
 				C3B93386273BFA6F0056E381 /* SettingLogoutVC.swift in Sources */,
 				C33574202744042900644E9B /* SettingEditPhoneNumberDatamanager.swift in Sources */,
 				C3F05A37274F38E60025DB24 /* HomeManagerAddPublicWorkRequest.swift in Sources */,
@@ -2786,6 +2833,7 @@
 				C384424F27147E2900B84E8A /* IndicatorView.swift in Sources */,
 				C384425D27147E3F00B84E8A /* UINavigationBar.swift in Sources */,
 				C38EDCEB2746C78A00564A17 /* MyPageWorkerStopWorkDatamanager.swift in Sources */,
+				C3F05A6E274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.swift in Sources */,
 				C38D932B2749AAA800AFFDE9 /* HomeWorkerCompletePeopleTableViewCell.swift in Sources */,
 				C3B9338E273BFB2F0056E381 /* SettingSubscribVC.swift in Sources */,
 				C3CDB057274BC306006D7A92 /* HomeWorkerTodayWorkDatamanager.swift in Sources */,

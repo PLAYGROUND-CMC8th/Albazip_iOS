@@ -101,7 +101,7 @@
                 <outlet property="subLabel" destination="Vlt-c1-oTy" id="OxG-CP-kw4"/>
                 <outlet property="titleLabel" destination="Ac3-8r-lN8" id="vzl-UR-vsM"/>
             </connections>
-            <point key="canvasLocation" x="176.80000000000001" y="171.79802955665025"/>
+            <point key="canvasLocation" x="319" y="168"/>
         </tableViewCell>
     </objects>
     <resources>

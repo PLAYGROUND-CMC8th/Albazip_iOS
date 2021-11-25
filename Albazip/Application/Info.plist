@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>소통창 내 매장 관련 사진 업로드, 사용자 프로필 이미지 변경에 앨범이 사용됩니다.</string>
+	<string>소통창 내 매장 관련 사진 업로드, 사용자 프로필 이미지 변경, QR코드 이미지 저장에 앨범이 사용됩니다.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>카메라는 QR 코드 인식을 통한 근무자 출퇴근 관리에 사용됩니다.</string>
 	<key>NSAppTransportSecurity</key>
