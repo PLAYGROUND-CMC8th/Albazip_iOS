@@ -22,10 +22,6 @@ protocol MyPageManagerWorkerPositionAlertDelegate {
 
 class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositionDeleteDelegate {
     
-    
-    
-
-    
     @IBOutlet var tableView: UITableView!
     
     //MARK:- Scroll Delegate
@@ -77,6 +73,7 @@ class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositi
         let newStoryboard = UIStoryboard(name: "MyPageManagerStoryboard", bundle: nil)
         
         if let vc = newStoryboard.instantiateViewController(withIdentifier: "MyPageManagerWorkerPositionDeleteVC") as? MyPageManagerWorkerPositionDeleteVC {
+            vc.myPageManagerWorkerPositionDeleteAlertDelegate = self
             vc.modalPresentationStyle = .overFullScreen
             myPageManagerWorkerPositionAlertDelegate?.modalShow()
             
@@ -216,3 +213,38 @@ extension MyPageManagerWorkerPositionVC {
     }
 }
 
+extension MyPageManagerWorkerPositionVC: MyPageManagerWorkerPositionDeleteAlertDelegate, MyPageManagerPositionDelete2VCDelegate{
+    
+    // 포지션 삭제 api 성공하면 이전 페이지로
+    func successDeletePosition() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func modalDismiss() {
+        print("modalDismiss")
+    }
+    
+    //진짜 포지션 삭제하시겠습니까?
+    func nextDeleteModal() {
+        print("nextDeleteModal")
+        let newStoryboard = UIStoryboard(name: "MyPageManagerStoryboard", bundle: nil)
+        
+        if let vc = newStoryboard.instantiateViewController(withIdentifier: "MyPageManagerWorkerPositionDelete2VC") as? MyPageManagerWorkerPositionDelete2VC {
+            vc.delegate = self
+            vc.positionId = positionId
+            vc.modalPresentationStyle = .overFullScreen
+            myPageManagerWorkerPositionAlertDelegate?.modalShow()
+            self.present(vc, animated: true, completion: nil)
+            /*
+            guard let pvc = self.presentingViewController else { return }
+                
+            self.transparentView.isHidden = true
+            self.dismiss(animated: false) {
+              pvc.present(vc, animated: false, completion: nil)
+                
+            }*/
+    }
+    }
+    
+    
+}

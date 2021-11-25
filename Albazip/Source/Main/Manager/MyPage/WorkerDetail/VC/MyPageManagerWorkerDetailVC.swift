@@ -537,8 +537,6 @@ extension MyPageManagerWorkerDetailVC : MyPageManagerWorkerPositionAlertDelegate
         print("modalShow")
         modalBgView.isHidden = false
     }
-    
-    
 }
 extension MyPageManagerWorkerDetailVC {
     func didSuccessMyPageManagerWorkerDetailProfile(result: MyPageManagerWorkerDetailProfileResponse) {

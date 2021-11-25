@@ -368,6 +368,8 @@
 		C3F05A4C274F67090025DB24 /* SettingWithdrawResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A4B274F67090025DB24 /* SettingWithdrawResponse.swift */; };
 		C3F05A50274F70B10025DB24 /* MyPageStopWorkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A4F274F70B10025DB24 /* MyPageStopWorkResponse.swift */; };
 		C3F05A52274F70C30025DB24 /* MyPageStopWorkDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A51274F70C30025DB24 /* MyPageStopWorkDatamanager.swift */; };
+		C3F05A56274F8A6F0025DB24 /* MyPageDeletePositionDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A55274F8A6F0025DB24 /* MyPageDeletePositionDatamanager.swift */; };
+		C3F05A59274F8AC70025DB24 /* MyPageDeletePositionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A58274F8AC70025DB24 /* MyPageDeletePositionResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -738,6 +740,8 @@
 		C3F05A4B274F67090025DB24 /* SettingWithdrawResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWithdrawResponse.swift; sourceTree = "<group>"; };
 		C3F05A4F274F70B10025DB24 /* MyPageStopWorkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageStopWorkResponse.swift; sourceTree = "<group>"; };
 		C3F05A51274F70C30025DB24 /* MyPageStopWorkDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageStopWorkDatamanager.swift; sourceTree = "<group>"; };
+		C3F05A55274F8A6F0025DB24 /* MyPageDeletePositionDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDeletePositionDatamanager.swift; sourceTree = "<group>"; };
+		C3F05A58274F8AC70025DB24 /* MyPageDeletePositionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDeletePositionResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1805,6 +1809,7 @@
 		C3AD3B1327394BB70030905C /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				C3F05A54274F8A330025DB24 /* Alert */,
 				C3AD3B1427394BFC0030905C /* MyPageManagerWorkerDetailVC.swift */,
 				C3AD3B1C273963AA0030905C /* MyPageManagerWorkerInfoVC.swift */,
 				C3AD3B1D273963AA0030905C /* MyPageManagerWorkerInfoVC.xib */,
@@ -1812,9 +1817,6 @@
 				C3AD3B21273963C80030905C /* MyPageManagerWorkerPositionVC.xib */,
 				C3AD3B24273963E30030905C /* MyPageManagerWorkerWriteVC.swift */,
 				C3AD3B25273963E30030905C /* MyPageManagerWorkerWriteVC.xib */,
-				C38BFB782739EC6C00E79BF5 /* MyPageManagerWorkerPositionDeleteVC.swift */,
-				C38BFB7A2739EFA000E79BF5 /* MyPageManagerWorkerPositionDelete2VC.swift */,
-				C3E9C8E127411DC100B0139C /* MyPageManagerWorkerExitVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1994,6 +1996,7 @@
 		C3CFC2F1273E51F7001B2EB6 /* Datamanager */ = {
 			isa = PBXGroup;
 			children = (
+				C3F05A53274F8A160025DB24 /* DeletePosition */,
 				C3F05A4D274F6E7F0025DB24 /* StopWork */,
 				C3CFC309273ED375001B2EB6 /* MyPageManagerWorkerWriteDatamanager.swift */,
 				C3CFC2F5273E5263001B2EB6 /* MyPageManagerWorkerDetailProfileDatamanger.swift */,
@@ -2007,6 +2010,7 @@
 		C3CFC2F2273E5200001B2EB6 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				C3F05A57274F8AAD0025DB24 /* DeletePosition */,
 				C3F05A4E274F6F020025DB24 /* StopWork */,
 				C3CFC2F3273E5241001B2EB6 /* MyPageManagerWorkerDetailProfileResponse.swift */,
 				C3CFC301273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift */,
@@ -2237,6 +2241,32 @@
 				C3F05A4F274F70B10025DB24 /* MyPageStopWorkResponse.swift */,
 			);
 			path = StopWork;
+			sourceTree = "<group>";
+		};
+		C3F05A53274F8A160025DB24 /* DeletePosition */ = {
+			isa = PBXGroup;
+			children = (
+				C3F05A55274F8A6F0025DB24 /* MyPageDeletePositionDatamanager.swift */,
+			);
+			path = DeletePosition;
+			sourceTree = "<group>";
+		};
+		C3F05A54274F8A330025DB24 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				C3E9C8E127411DC100B0139C /* MyPageManagerWorkerExitVC.swift */,
+				C38BFB7A2739EFA000E79BF5 /* MyPageManagerWorkerPositionDelete2VC.swift */,
+				C38BFB782739EC6C00E79BF5 /* MyPageManagerWorkerPositionDeleteVC.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		C3F05A57274F8AAD0025DB24 /* DeletePosition */ = {
+			isa = PBXGroup;
+			children = (
+				C3F05A58274F8AC70025DB24 /* MyPageDeletePositionResponse.swift */,
+			);
+			path = DeletePosition;
 			sourceTree = "<group>";
 		};
 		C3F54E7A272C31E100FE412B /* Cell */ = {
@@ -2633,6 +2663,7 @@
 				C32E4A84274E52000015463F /* CommunityWorkerAlarmVC.swift in Sources */,
 				C3CFC2F4273E5241001B2EB6 /* MyPageManagerWorkerDetailProfileResponse.swift in Sources */,
 				C3E9C8F627416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift in Sources */,
+				C3F05A59274F8AC70025DB24 /* MyPageDeletePositionResponse.swift in Sources */,
 				C3476610274524890001B220 /* MyPageProfileImageDefaultRequest.swift in Sources */,
 				C3F05A46274F58AB0025DB24 /* HomeManagerQRCodeDatamanager.swift in Sources */,
 				C398BFAC273F9FE5008E8BA5 /* HomeManagerCoummunityCollectionViewCell.swift in Sources */,
@@ -2683,6 +2714,7 @@
 				C32E4A9C274E8ED80015463F /* CommunityManagerNoticeAlertDeleteVC.swift in Sources */,
 				C3B022EF2726F28A00013988 /* RegisterSelectStoreTypeVC.swift in Sources */,
 				C3CFC304273EC3F2001B2EB6 /* MyPageManagerWorkerInfoDataManager.swift in Sources */,
+				C3F05A56274F8A6F0025DB24 /* MyPageDeletePositionDatamanager.swift in Sources */,
 				C3A228B3274286B600187587 /* HomeWorkerWorkTableViewCell.swift in Sources */,
 				C3CFC30A273ED375001B2EB6 /* MyPageManagerWorkerWriteDatamanager.swift in Sources */,
 				C35982C6273810E300546F2C /* MyPageManagerAddWorkerDatamanager.swift in Sources */,
