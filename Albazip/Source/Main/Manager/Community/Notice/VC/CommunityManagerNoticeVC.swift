@@ -31,7 +31,7 @@ class CommunityManagerNoticeVC: UIViewController, IndicatorInfoProvider {
         tableView.register(UINib(nibName: "CommunityManagerNoticeTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "CommunityManagerNoticeTableViewCell")
         //417
-        tableView.tableHeaderView = header
+  
         tableView.register(UINib(nibName: "CommunityManagerNoNoticeTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "CommunityManagerNoNoticeTableViewCell")
         tableView.dataSource = self

@@ -161,7 +161,7 @@
                 <outlet property="tableView" destination="ASO-gu-VtR" id="AoI-Sh-gl6"/>
                 <outlet property="titleLabel" destination="W67-Ev-bPZ" id="6XL-sj-T9u"/>
             </connections>
-            <point key="canvasLocation" x="548" y="13.669950738916256"/>
+            <point key="canvasLocation" x="372" y="31"/>
         </tableViewCell>
     </objects>
     <resources>
