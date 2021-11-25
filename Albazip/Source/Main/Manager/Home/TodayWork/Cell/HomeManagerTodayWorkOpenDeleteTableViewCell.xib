@@ -51,7 +51,7 @@
                                     <constraint firstAttribute="height" constant="20" id="F37-oF-NRZ"/>
                                     <constraint firstAttribute="width" constant="20" id="L9O-6e-bmO"/>
                                 </constraints>
-                                <state key="normal" image="icX20Px"/>
+                                <state key="normal" image="icYellowX20Px"/>
                                 <connections>
                                     <action selector="btnDelete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BKX-Ic-vwf"/>
                                 </connections>
@@ -103,6 +103,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icX20Px" width="20" height="20"/>
+        <image name="icYellowX20Px" width="20" height="20"/>
     </resources>
 </document>

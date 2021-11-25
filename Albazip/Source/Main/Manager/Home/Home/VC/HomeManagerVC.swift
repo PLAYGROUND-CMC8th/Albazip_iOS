@@ -63,6 +63,7 @@ class HomeManagerVC: BaseViewController{
     //큐알 페이지로
     @IBAction func btnQRCode(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerQRCodeVC") as? HomeManagerQRCodeVC else {return}
+        nextVC.storeName = storeNameLabel.text!
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     //알람 페이지로

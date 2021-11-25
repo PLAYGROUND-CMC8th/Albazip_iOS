@@ -362,6 +362,8 @@
 		C3F05A3F274F48020025DB24 /* HomeManagerTodayWorkDeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A3E274F48020025DB24 /* HomeManagerTodayWorkDeleteVC.swift */; };
 		C3F05A41274F4D2F0025DB24 /* HomeManagerTodayWorkDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A40274F4D2F0025DB24 /* HomeManagerTodayWorkDeleteResponse.swift */; };
 		C3F05A43274F4D5E0025DB24 /* HomeManagerTodayWorkDeleteDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A42274F4D5E0025DB24 /* HomeManagerTodayWorkDeleteDatamanager.swift */; };
+		C3F05A46274F58AB0025DB24 /* HomeManagerQRCodeDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A45274F58AB0025DB24 /* HomeManagerQRCodeDatamanager.swift */; };
+		C3F05A48274F58BD0025DB24 /* HomeManagerQRCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A47274F58BD0025DB24 /* HomeManagerQRCodeResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -726,6 +728,8 @@
 		C3F05A3E274F48020025DB24 /* HomeManagerTodayWorkDeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDeleteVC.swift; sourceTree = "<group>"; };
 		C3F05A40274F4D2F0025DB24 /* HomeManagerTodayWorkDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDeleteResponse.swift; sourceTree = "<group>"; };
 		C3F05A42274F4D5E0025DB24 /* HomeManagerTodayWorkDeleteDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDeleteDatamanager.swift; sourceTree = "<group>"; };
+		C3F05A45274F58AB0025DB24 /* HomeManagerQRCodeDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerQRCodeDatamanager.swift; sourceTree = "<group>"; };
+		C3F05A47274F58BD0025DB24 /* HomeManagerQRCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerQRCodeResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1627,12 +1631,10 @@
 		C398BFB0273FCAF0008E8BA5 /* TodayWork */ = {
 			isa = PBXGroup;
 			children = (
+				C3F05A44274F58410025DB24 /* VC */,
 				C35DB30B274C175B0011BC5A /* Entity */,
 				C35DB30A274C17520011BC5A /* Datamanger */,
 				C33485F727480CD8000E2D14 /* Cell */,
-				C398BFB7273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift */,
-				C35DB310274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift */,
-				C3F05A3E274F48020025DB24 /* HomeManagerTodayWorkDeleteVC.swift */,
 			);
 			path = TodayWork;
 			sourceTree = "<group>";
@@ -1641,6 +1643,8 @@
 			isa = PBXGroup;
 			children = (
 				C398BFB5273FD3D1008E8BA5 /* HomeManagerQRCodeVC.swift */,
+				C3F05A45274F58AB0025DB24 /* HomeManagerQRCodeDatamanager.swift */,
+				C3F05A47274F58BD0025DB24 /* HomeManagerQRCodeResponse.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -2197,6 +2201,16 @@
 			path = Datamanager;
 			sourceTree = "<group>";
 		};
+		C3F05A44274F58410025DB24 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				C398BFB7273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift */,
+				C35DB310274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift */,
+				C3F05A3E274F48020025DB24 /* HomeManagerTodayWorkDeleteVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		C3F54E7A272C31E100FE412B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2569,6 +2583,7 @@
 				C3CFC2F0273E27C1001B2EB6 /* MyPageManagerContentResponse.swift in Sources */,
 				C3B933AE273C43AA0056E381 /* MyPageDetailStopWorkVC.swift in Sources */,
 				C398BFA4273F8A0B008E8BA5 /* HomeManagerOpenTableViewCell.swift in Sources */,
+				C3F05A48274F58BD0025DB24 /* HomeManagerQRCodeResponse.swift in Sources */,
 				C3476617274564900001B220 /* MyPageManagerEditWorkerResponse.swift in Sources */,
 				C35DB30F274C191D0011BC5A /* HomeManagerTodayWorkDatamanager.swift in Sources */,
 				C33E00082731D80500D88267 /* MyPageWorkerWriteVC.swift in Sources */,
@@ -2590,6 +2605,7 @@
 				C3CFC2F4273E5241001B2EB6 /* MyPageManagerWorkerDetailProfileResponse.swift in Sources */,
 				C3E9C8F627416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift in Sources */,
 				C3476610274524890001B220 /* MyPageProfileImageDefaultRequest.swift in Sources */,
+				C3F05A46274F58AB0025DB24 /* HomeManagerQRCodeDatamanager.swift in Sources */,
 				C398BFAC273F9FE5008E8BA5 /* HomeManagerCoummunityCollectionViewCell.swift in Sources */,
 				C30EC2E3272A4FEF00EEF218 /* RegisterNumberExistResponse.swift in Sources */,
 				C398BF9C273F77F9008E8BA5 /* HomeManagerVC.swift in Sources */,

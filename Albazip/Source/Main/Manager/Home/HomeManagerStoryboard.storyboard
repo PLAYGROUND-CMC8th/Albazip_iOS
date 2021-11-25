@@ -157,26 +157,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="dLB-PQ-GN2">
-                                <rect key="frame" x="64" y="605.66666666666663" width="247" height="52"/>
+                                <rect key="frame" x="109.66666666666669" y="605.66666666666663" width="156" height="52"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvl-Ve-5le">
-                                        <rect key="frame" x="0.0" y="0.0" width="116" height="52"/>
-                                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="52" id="5Ff-Se-ugn"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <state key="normal" title="내보내기">
-                                            <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="15"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aj-T5-jgu">
-                                        <rect key="frame" x="131" y="0.0" width="116" height="52"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="52"/>
                                         <color key="backgroundColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="8xU-Zf-QAV"/>
@@ -190,11 +174,14 @@
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnDownLoad:" destination="2iX-eP-GUt" eventType="touchUpInside" id="foI-xS-SgU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="euA-0U-N5k"/>
-                                    <constraint firstAttribute="width" constant="247" id="qQc-hh-rNR"/>
+                                    <constraint firstAttribute="width" constant="156" id="qQc-hh-rNR"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -219,6 +206,10 @@
                             <constraint firstItem="YaQ-Zs-MtC" firstAttribute="centerY" secondItem="9fx-Zm-ZYU" secondAttribute="centerY" id="y9a-xd-fej"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="qrImage" destination="r3d-QL-Qjq" id="89h-E3-RXp"/>
+                        <outlet property="storeNameLabel" destination="Af7-DE-ufw" id="yyQ-Y6-T9d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5oG-Fx-0hc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
