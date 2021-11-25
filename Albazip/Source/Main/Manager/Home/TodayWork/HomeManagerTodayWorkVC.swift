@@ -22,6 +22,10 @@ class HomeManagerTodayWorkVC: UIViewController{
     var perTask: [HomeManagerPerTaskList]?
     // Datamanager
     lazy var dataManager: HomeManagerTodayWorkDatamanager = HomeManagerTodayWorkDatamanager()
+    
+    lazy var dataManager2: HomeManagerTodayWorkDeleteDatamanager = HomeManagerTodayWorkDeleteDatamanager()
+    
+    var deleteIndex = -1
     override func viewDidLoad() {
         super.viewDidLoad()
         print(segValue)
@@ -66,8 +70,8 @@ class HomeManagerTodayWorkVC: UIViewController{
         tableView.register(UINib(nibName: "HomeWorkerPublicWorkTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "HomeWorkerPublicWorkTableViewCell")
         //미완료 펼쳤을때 버전 137
-        tableView.register(UINib(nibName: "MyPageDetailNoClearWorkOpenTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "MyPageDetailNoClearWorkOpenTableViewCell")
+        tableView.register(UINib(nibName: "HomeManagerTodayWorkOpenDeleteTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "HomeManagerTodayWorkOpenDeleteTableViewCell")
         //완료 82
         tableView.register(UINib(nibName: "HomeWorkerPublicWorkCompleteTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "HomeWorkerPublicWorkCompleteTableViewCell")
@@ -220,8 +224,10 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                             return cell
                         }
                     }else{
-                        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailNoClearWorkOpenTableViewCell") as? MyPageDetailNoClearWorkOpenTableViewCell {
+                        if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeManagerTodayWorkOpenDeleteTableViewCell") as? HomeManagerTodayWorkOpenDeleteTableViewCell {
                             cell.selectionStyle = .none
+                            cell.cellIndex = indexPath.row
+                            cell.delegate = self
                             if let data = nonComCoTask{
                                 cell.titleLabel.text = data[indexPath.row].takTitle!
                                 if data[indexPath.row].taskContent == ""{
@@ -433,6 +439,44 @@ extension HomeManagerTodayWorkVC {
     }
     
     func failedToRequestHomeManagerTodayWork(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
+}
+
+extension HomeManagerTodayWorkVC: HomeManagerTodayWorkOpenDeleteDelegate, HomeManagerTodayWorkDeleteDelegate{
+    func deletePublicWork(index: Int) {
+        print("\(index) 열 삭제")
+        deleteIndex = index
+        showIndicator()
+        dataManager2.getHomeManagerTodayWorkDelete(taskId: nonComCoTask![index].taskId!, vc: self)
+    }
+    
+    func deletePublicWorkAlert(index: Int) {
+        print("\(index) 열 삭제하는 알림창")
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeManagerTodayWorkDeleteVC") as? HomeManagerTodayWorkDeleteVC {
+            vc.modalPresentationStyle = .overFullScreen
+            vc.cellIndex = index
+            vc.delegate = self
+            
+            self.present(vc, animated: true, completion: nil)
+            
+        }
+    }
+    
+    
+}
+//공동업무 삭제 api
+extension HomeManagerTodayWorkVC {
+    func didSuccessHomeManagerTodayWorkDelete(result: HomeManagerTodayWorkDeleteResponse) {
+        
+        print(result)
+        nonComCoTask!.remove(at: deleteIndex)
+        tableView.reloadData()
+        dismissIndicator()
+    }
+    
+    func failedToRequestHomeManagerTodayWorkDelete(message: String) {
         dismissIndicator()
         presentAlert(title: message)
     }

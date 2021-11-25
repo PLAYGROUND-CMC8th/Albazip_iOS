@@ -379,6 +379,104 @@
             </objects>
             <point key="canvasLocation" x="1881" y="1179"/>
         </scene>
+        <!--Home Manager Today Work DeleteVC-->
+        <scene sceneID="ChI-KE-jqL">
+            <objects>
+                <viewController storyboardIdentifier="HomeManagerTodayWorkDeleteVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wec-W0-0AH" customClass="HomeManagerTodayWorkDeleteVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oyp-r1-NFt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3l-y0-ujI">
+                                <rect key="frame" x="0.0" y="597" width="375" height="215"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업무를 삭제할까요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkl-9U-IgN">
+                                        <rect key="frame" x="24" y="36" width="327" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="yGF-WT-OjN">
+                                        <rect key="frame" x="24" y="93" width="327" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLO-Bx-eFb">
+                                                <rect key="frame" x="0.0" y="0.0" width="156" height="52"/>
+                                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="yuD-dO-emF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <state key="normal" title="취소">
+                                                    <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnCancel:" destination="wec-W0-0AH" eventType="touchUpInside" id="9Ga-jj-f5r"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMz-KQ-hqO">
+                                                <rect key="frame" x="171" y="0.0" width="156" height="52"/>
+                                                <color key="backgroundColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="FQ5-zw-Hmp"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <state key="normal" title="삭제하기">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnDelete:" destination="wec-W0-0AH" eventType="touchUpInside" id="54N-y1-q7Q"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="fuj-6p-zk2"/>
+                                            <constraint firstAttribute="width" constant="327" id="gXc-AA-uss"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="1Y9-X2-uHm"/>
+                                    <constraint firstAttribute="height" constant="215" id="6tX-dM-nun"/>
+                                    <constraint firstItem="gkl-9U-IgN" firstAttribute="top" secondItem="j3l-y0-ujI" secondAttribute="top" constant="36" id="ATs-tI-EKM"/>
+                                    <constraint firstAttribute="trailing" secondItem="yGF-WT-OjN" secondAttribute="trailing" constant="24" id="M9I-yc-H4q"/>
+                                    <constraint firstItem="yGF-WT-OjN" firstAttribute="leading" secondItem="j3l-y0-ujI" secondAttribute="leading" constant="24" id="Ngx-Sa-Gfe"/>
+                                    <constraint firstAttribute="trailing" secondItem="gkl-9U-IgN" secondAttribute="trailing" constant="24" id="OII-xs-SUx"/>
+                                    <constraint firstItem="gkl-9U-IgN" firstAttribute="leading" secondItem="j3l-y0-ujI" secondAttribute="leading" constant="24" id="ak8-0y-FHg"/>
+                                    <constraint firstAttribute="bottom" secondItem="yGF-WT-OjN" secondAttribute="bottom" constant="70" id="eiT-sP-OxW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KZT-Rd-EsN"/>
+                        <constraints>
+                            <constraint firstItem="KZT-Rd-EsN" firstAttribute="bottom" secondItem="j3l-y0-ujI" secondAttribute="bottom" constant="-34" id="5MR-ii-UJb"/>
+                            <constraint firstItem="j3l-y0-ujI" firstAttribute="leading" secondItem="KZT-Rd-EsN" secondAttribute="leading" id="HKQ-oG-rbP"/>
+                            <constraint firstAttribute="trailing" secondItem="j3l-y0-ujI" secondAttribute="trailing" id="iwt-Yj-j7h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cornorView" destination="j3l-y0-ujI" id="3B1-Mg-F2I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dsh-ab-fw5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2700" y="1187.4384236453202"/>
+        </scene>
         <!--Home Manager Add WorkVC-->
         <scene sceneID="uZk-ak-W6P">
             <objects>

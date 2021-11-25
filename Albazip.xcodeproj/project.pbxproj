@@ -357,6 +357,11 @@
 		C3F05A35274F38D20025DB24 /* HomeManagerAddPublicWorkDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A34274F38D20025DB24 /* HomeManagerAddPublicWorkDatamanager.swift */; };
 		C3F05A37274F38E60025DB24 /* HomeManagerAddPublicWorkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A36274F38E60025DB24 /* HomeManagerAddPublicWorkRequest.swift */; };
 		C3F05A39274F38F10025DB24 /* HomeManagerAddPublicWorkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A38274F38F10025DB24 /* HomeManagerAddPublicWorkResponse.swift */; };
+		C3F05A3C274F40810025DB24 /* HomeManagerTodayWorkOpenDeleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A3A274F40810025DB24 /* HomeManagerTodayWorkOpenDeleteTableViewCell.swift */; };
+		C3F05A3D274F40810025DB24 /* HomeManagerTodayWorkOpenDeleteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F05A3B274F40810025DB24 /* HomeManagerTodayWorkOpenDeleteTableViewCell.xib */; };
+		C3F05A3F274F48020025DB24 /* HomeManagerTodayWorkDeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A3E274F48020025DB24 /* HomeManagerTodayWorkDeleteVC.swift */; };
+		C3F05A41274F4D2F0025DB24 /* HomeManagerTodayWorkDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A40274F4D2F0025DB24 /* HomeManagerTodayWorkDeleteResponse.swift */; };
+		C3F05A43274F4D5E0025DB24 /* HomeManagerTodayWorkDeleteDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A42274F4D5E0025DB24 /* HomeManagerTodayWorkDeleteDatamanager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -716,6 +721,11 @@
 		C3F05A34274F38D20025DB24 /* HomeManagerAddPublicWorkDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAddPublicWorkDatamanager.swift; sourceTree = "<group>"; };
 		C3F05A36274F38E60025DB24 /* HomeManagerAddPublicWorkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAddPublicWorkRequest.swift; sourceTree = "<group>"; };
 		C3F05A38274F38F10025DB24 /* HomeManagerAddPublicWorkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAddPublicWorkResponse.swift; sourceTree = "<group>"; };
+		C3F05A3A274F40810025DB24 /* HomeManagerTodayWorkOpenDeleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkOpenDeleteTableViewCell.swift; sourceTree = "<group>"; };
+		C3F05A3B274F40810025DB24 /* HomeManagerTodayWorkOpenDeleteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeManagerTodayWorkOpenDeleteTableViewCell.xib; sourceTree = "<group>"; };
+		C3F05A3E274F48020025DB24 /* HomeManagerTodayWorkDeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDeleteVC.swift; sourceTree = "<group>"; };
+		C3F05A40274F4D2F0025DB24 /* HomeManagerTodayWorkDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDeleteResponse.swift; sourceTree = "<group>"; };
+		C3F05A42274F4D5E0025DB24 /* HomeManagerTodayWorkDeleteDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDeleteDatamanager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1014,6 +1024,8 @@
 		C33485F727480CD8000E2D14 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C3F05A3A274F40810025DB24 /* HomeManagerTodayWorkOpenDeleteTableViewCell.swift */,
+				C3F05A3B274F40810025DB24 /* HomeManagerTodayWorkOpenDeleteTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1235,6 +1247,7 @@
 			children = (
 				C35DB30E274C191D0011BC5A /* HomeManagerTodayWorkDatamanager.swift */,
 				C35DB314274C2E790011BC5A /* HomeManagerTodayWorkDetailDatamanager.swift */,
+				C3F05A42274F4D5E0025DB24 /* HomeManagerTodayWorkDeleteDatamanager.swift */,
 			);
 			path = Datamanger;
 			sourceTree = "<group>";
@@ -1244,6 +1257,7 @@
 			children = (
 				C35DB30C274C17830011BC5A /* HomeManagerTodayWorkResponse.swift */,
 				C35DB312274C2E5F0011BC5A /* HomeManagerTodayWorkDetailResponse.swift */,
+				C3F05A40274F4D2F0025DB24 /* HomeManagerTodayWorkDeleteResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1618,6 +1632,7 @@
 				C33485F727480CD8000E2D14 /* Cell */,
 				C398BFB7273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift */,
 				C35DB310274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift */,
+				C3F05A3E274F48020025DB24 /* HomeManagerTodayWorkDeleteVC.swift */,
 			);
 			path = TodayWork;
 			sourceTree = "<group>";
@@ -2347,6 +2362,7 @@
 				C3AD3B1F273963AA0030905C /* MyPageManagerWorkerInfoVC.xib in Resources */,
 				C38442772714940100B84E8A /* CommunityManagerStoryboard.storyboard in Resources */,
 				C30AFE91273425170075CDE2 /* MyPageManagerWorkList3TableViewCell.xib in Resources */,
+				C3F05A3D274F40810025DB24 /* HomeManagerTodayWorkOpenDeleteTableViewCell.xib in Resources */,
 				C3CDB53B2738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib in Resources */,
 				C398BFA5273F8A0B008E8BA5 /* HomeManagerOpenTableViewCell.xib in Resources */,
 				C384423E2714797100B84E8A /* Assets.xcassets in Resources */,
@@ -2486,6 +2502,7 @@
 				C37EBF51271AF29B00DEC2CA /* UITextField.swift in Sources */,
 				C33574242744045800644E9B /* SettingEditPhoneNumberRequest.swift in Sources */,
 				C3C97BCC2730E940002C8584 /* MyPageWorkerVC.swift in Sources */,
+				C3F05A3C274F40810025DB24 /* HomeManagerTodayWorkOpenDeleteTableViewCell.swift in Sources */,
 				C30EC2E9272B0AB500EEF218 /* RegisterManagerRequest.swift in Sources */,
 				C3CB0166273D49F6000EA353 /* MyPageManagerProfileDatamanager.swift in Sources */,
 				C38442372714797000B84E8A /* SceneDelegate.swift in Sources */,
@@ -2597,6 +2614,7 @@
 				C34BCB532732F6C50085ADB3 /* MyPageDetailCommuteMonthTableViewCell.swift in Sources */,
 				C32E4A8C274E73D80015463F /* CommunityManagerTopTabVC.swift in Sources */,
 				C384425A27147E3F00B84E8A /* String.swift in Sources */,
+				C3F05A43274F4D5E0025DB24 /* HomeManagerTodayWorkDeleteDatamanager.swift in Sources */,
 				C384425E27147E3F00B84E8A /* UIFont.swift in Sources */,
 				C38EDCC12745FFE800564A17 /* MyPageMangerEditWorkerListDatamanager.swift in Sources */,
 				C30AFE8327340B1B0075CDE2 /* MyPageManagerAddWorkerVC.swift in Sources */,
@@ -2710,6 +2728,7 @@
 				C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */,
 				C398BFB4273FD26C008E8BA5 /* HomeManagerWorkerTodayWorkerListVC.swift in Sources */,
 				C3E9C8D52740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.swift in Sources */,
+				C3F05A3F274F48020025DB24 /* HomeManagerTodayWorkDeleteVC.swift in Sources */,
 				C32E4A94274E85F70015463F /* CommunityManagerAlarmVC.swift in Sources */,
 				C3F05A39274F38F10025DB24 /* HomeManagerAddPublicWorkResponse.swift in Sources */,
 				C35DB30D274C17830011BC5A /* HomeManagerTodayWorkResponse.swift in Sources */,
@@ -2717,6 +2736,7 @@
 				C3AD3B332739874D0030905C /* MyPageManagerWorkerPositionTableViewCell.swift in Sources */,
 				C384425B27147E3F00B84E8A /* UIButton.swift in Sources */,
 				C3CFC300273EBA7F001B2EB6 /* MyPageManagerWorkerPositionDatamanager.swift in Sources */,
+				C3F05A41274F4D2F0025DB24 /* HomeManagerTodayWorkDeleteResponse.swift in Sources */,
 				C38EDCC32746011D00564A17 /* MyPageEditWorkerListResponse.swift in Sources */,
 				C33574182743E42800644E9B /* SettingMyInfoDatamanager.swift in Sources */,
 				C37B0B6127299EC50017D179 /* LoginRequest.swift in Sources */,

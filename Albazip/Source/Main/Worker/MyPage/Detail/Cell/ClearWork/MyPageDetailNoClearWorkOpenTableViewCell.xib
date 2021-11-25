@@ -85,7 +85,7 @@
                 <outlet property="titleLabel" destination="IsM-iU-yug" id="YNB-tI-Zkv"/>
                 <outlet property="writerNameLabel" destination="NbX-Jj-VP6" id="SH2-fk-Exp"/>
             </connections>
-            <point key="canvasLocation" x="-39" y="162"/>
+            <point key="canvasLocation" x="-84" y="62"/>
         </tableViewCell>
     </objects>
 </document>
