@@ -354,6 +354,9 @@
 		C3EBC259274A5D210017BB85 /* HomeWorkerDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBC258274A5D210017BB85 /* HomeWorkerDatamanager.swift */; };
 		C3EBC25D274A9A540017BB85 /* HomeManagerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBC25C274A9A540017BB85 /* HomeManagerResponse.swift */; };
 		C3EBC25F274A9A610017BB85 /* HomeManagerDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EBC25E274A9A610017BB85 /* HomeManagerDatamanager.swift */; };
+		C3F05A35274F38D20025DB24 /* HomeManagerAddPublicWorkDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A34274F38D20025DB24 /* HomeManagerAddPublicWorkDatamanager.swift */; };
+		C3F05A37274F38E60025DB24 /* HomeManagerAddPublicWorkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A36274F38E60025DB24 /* HomeManagerAddPublicWorkRequest.swift */; };
+		C3F05A39274F38F10025DB24 /* HomeManagerAddPublicWorkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A38274F38F10025DB24 /* HomeManagerAddPublicWorkResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -710,6 +713,9 @@
 		C3EBC258274A5D210017BB85 /* HomeWorkerDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerDatamanager.swift; sourceTree = "<group>"; };
 		C3EBC25C274A9A540017BB85 /* HomeManagerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerResponse.swift; sourceTree = "<group>"; };
 		C3EBC25E274A9A610017BB85 /* HomeManagerDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerDatamanager.swift; sourceTree = "<group>"; };
+		C3F05A34274F38D20025DB24 /* HomeManagerAddPublicWorkDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAddPublicWorkDatamanager.swift; sourceTree = "<group>"; };
+		C3F05A36274F38E60025DB24 /* HomeManagerAddPublicWorkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAddPublicWorkRequest.swift; sourceTree = "<group>"; };
+		C3F05A38274F38F10025DB24 /* HomeManagerAddPublicWorkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerAddPublicWorkResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -760,7 +766,6 @@
 		C309D894272D08D000A91E9F /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				C32E4A95274E87F70015463F /* NoticeDetail */,
 				C384426F271480C600B84E8A /* Home */,
 				C3844275271493E800B84E8A /* Community */,
 				C38442782714946D00B84E8A /* Schedule */,
@@ -1494,6 +1499,7 @@
 		C3844275271493E800B84E8A /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				C32E4A95274E87F70015463F /* NoticeDetail */,
 				C32E4A9D274EA4C20015463F /* Write */,
 				C32E4A90274E81AE0015463F /* Alarm */,
 				C32E4A8F274E81A60015463F /* Search */,
@@ -1596,6 +1602,8 @@
 		C398BFAF273FCADE008E8BA5 /* AddWork */ = {
 			isa = PBXGroup;
 			children = (
+				C3F05A33274F38960025DB24 /* Datamanager */,
+				C3F05A32274F387F0025DB24 /* Entity */,
 				C3E9C8D22740E8AA00B0139C /* Cell */,
 				C3E9C8D12740E89B00B0139C /* VC */,
 			);
@@ -2157,6 +2165,23 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		C3F05A32274F387F0025DB24 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C3F05A36274F38E60025DB24 /* HomeManagerAddPublicWorkRequest.swift */,
+				C3F05A38274F38F10025DB24 /* HomeManagerAddPublicWorkResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C3F05A33274F38960025DB24 /* Datamanager */ = {
+			isa = PBXGroup;
+			children = (
+				C3F05A34274F38D20025DB24 /* HomeManagerAddPublicWorkDatamanager.swift */,
+			);
+			path = Datamanager;
+			sourceTree = "<group>";
+		};
 		C3F54E7A272C31E100FE412B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2477,6 +2502,7 @@
 				C30EC2E7272B0A9F00EEF218 /* RegisterManagerResponse.swift in Sources */,
 				C3B9339C273C2EFA0056E381 /* MyPageDetailClearWorkDayVC.swift in Sources */,
 				C3A1ADD2271C773F005A61ED /* RegisterSettingVC.swift in Sources */,
+				C3F05A35274F38D20025DB24 /* HomeManagerAddPublicWorkDatamanager.swift in Sources */,
 				C347660A2744B1BE0001B220 /* MyPageProfileImageDefaultDatamanager.swift in Sources */,
 				C3B93391273C054C0056E381 /* SettingEditBasicInfoVC.swift in Sources */,
 				C347660C2744B1EB0001B220 /* MyPageProfileImageUploadDatamanager.swift in Sources */,
@@ -2522,6 +2548,7 @@
 				C38EDCED2746C82100564A17 /* MyPageWorkerStopWorkResponse.swift in Sources */,
 				C3B93386273BFA6F0056E381 /* SettingLogoutVC.swift in Sources */,
 				C33574202744042900644E9B /* SettingEditPhoneNumberDatamanager.swift in Sources */,
+				C3F05A37274F38E60025DB24 /* HomeManagerAddPublicWorkRequest.swift in Sources */,
 				C3CFC2F0273E27C1001B2EB6 /* MyPageManagerContentResponse.swift in Sources */,
 				C3B933AE273C43AA0056E381 /* MyPageDetailStopWorkVC.swift in Sources */,
 				C398BFA4273F8A0B008E8BA5 /* HomeManagerOpenTableViewCell.swift in Sources */,
@@ -2684,6 +2711,7 @@
 				C398BFB4273FD26C008E8BA5 /* HomeManagerWorkerTodayWorkerListVC.swift in Sources */,
 				C3E9C8D52740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.swift in Sources */,
 				C32E4A94274E85F70015463F /* CommunityManagerAlarmVC.swift in Sources */,
+				C3F05A39274F38F10025DB24 /* HomeManagerAddPublicWorkResponse.swift in Sources */,
 				C35DB30D274C17830011BC5A /* HomeManagerTodayWorkResponse.swift in Sources */,
 				C37B0B57272972720017D179 /* RegisterResponse.swift in Sources */,
 				C3AD3B332739874D0030905C /* MyPageManagerWorkerPositionTableViewCell.swift in Sources */,

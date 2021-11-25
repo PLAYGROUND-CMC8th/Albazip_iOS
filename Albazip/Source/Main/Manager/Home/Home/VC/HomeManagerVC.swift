@@ -268,6 +268,12 @@ extension HomeManagerVC: HomeManagerOpenDeleagate, HomeManagerAddWorkDelegate{
     
     //업무 추가 알림창!
     func goAddWorkPage() {
+        //공동 업무 추가 페이지로
+        print("goAddPublicWork")
+        
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerAddPublicWorkVC") as? HomeManagerAddPublicWorkVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        /*
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeManagerAddWorkVC") as? HomeManagerAddWorkVC {
             vc.modalPresentationStyle = .overFullScreen
             
@@ -275,7 +281,7 @@ extension HomeManagerVC: HomeManagerOpenDeleagate, HomeManagerAddWorkDelegate{
             //vc.delegate = self
             vc.delegate = self
             self.present(vc, animated: true, completion: nil)
-        }
+        }*/
     }
     
     // 공동 업무 상세

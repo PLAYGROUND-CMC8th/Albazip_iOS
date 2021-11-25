@@ -11,11 +11,13 @@ class HomeManagerAddPublicWorkVC: UIViewController{
     var totalList = [WorkList]()
     var taskList = [TaskLists]()
     @IBOutlet var tableView: UITableView!
-    
+    // Datamanager
+    lazy var dataManager: HomeManagerAddPublicWorkDatamanager = HomeManagerAddPublicWorkDatamanager()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setupTableView()
+        
     }
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -54,8 +56,11 @@ class HomeManagerAddPublicWorkVC: UIViewController{
            
             
         }
+        showIndicator()
+        dataManager.postHomeManagerAddPublicWork(HomeManagerAddPublicWorkRequest(coTaskList: taskList), delegate: self)
         /*
         //api 호출
+         
         let data = MyPageManagerAddWorkerInfo.shared
         let input = MyPageManagerAddWorkerRequest(rank: data.rank!, title: data.title!, startTime: data.startTime!, endTime: data.endTime!,  workDays: data.workDays!, breakTime: data.breakTime!, salary: data.salary!, salaryType: data.salaryType!, taskLists: taskList)
         print(input)
@@ -149,4 +154,18 @@ extension HomeManagerAddPublicWorkVC: MyPageManagerWorkList3Delegate, MyPageMana
     }
     
     
+}
+extension HomeManagerAddPublicWorkVC {
+    func didSuccessHomeManagerAddPublicWork(result: HomeManagerAddPublicWorkResponse) {
+        
+        print(result.message)
+        
+        dismissIndicator()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func failedToRequestHomeManagerAddPublicWork(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
 }
