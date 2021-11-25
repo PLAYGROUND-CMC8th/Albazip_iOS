@@ -4,12 +4,18 @@
 //
 //  Created by 김수빈 on 2021/11/14.
 //
-
+protocol MyPageManagerWorkerExitDelegate {
+    func successExitWork()
+}
 import Foundation
 class MyPageManagerWorkerExitVC: UIViewController{
     @IBOutlet var titleLabel: UILabel!
     var name = ""
     var transparentView = UIView()
+    // 이전 뷰에서 받아올 정보
+    var positionId = 0
+    var delegate: MyPageManagerWorkerExitDelegate?
+    lazy var datamanager :MyPageStopWorkDatamanager = MyPageStopWorkDatamanager()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +31,24 @@ class MyPageManagerWorkerExitVC: UIViewController{
         self.dismiss(animated: true)
     }
     @IBAction func btnNext(_ sender: Any) {
+       showIndicator()
+        datamanager.deleteMyPageStopWork( positionId: positionId, vc: self)
+    }
+}
+extension MyPageManagerWorkerExitVC {
+    func didSuccessMyPageStopWork(result: MyPageStopWorkResponse) {
+    
+        print(result.message!)
+        //profileImage.image = .none
+       
+        dismissIndicator()
+        delegate?.successExitWork()
         self.transparentView.isHidden = true
         self.dismiss(animated: true)
+    }
+    
+    func failedToRequestMyPageStopWork(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
     }
 }

@@ -71,7 +71,8 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
             if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyPageManagerWorkerExitVC") as? MyPageManagerWorkerExitVC {
                 vc.modalPresentationStyle = .overFullScreen
                 vc.name = firstName
-                
+                vc.positionId = positionId
+                vc.delegate = self
                 //myPageManagerWorkerPositionAlertDelegate?.modalShow()
                 
             self.present(vc, animated: true, completion: nil)
@@ -567,4 +568,11 @@ extension MyPageManagerWorkerDetailVC {
         dismissIndicator()
         presentAlert(title: message)
     }
+}
+extension MyPageManagerWorkerDetailVC: MyPageManagerWorkerExitDelegate{
+    func successExitWork() {
+        print("퇴사 완료! 이전 페이지로 넘어가기")
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
