@@ -140,6 +140,9 @@
                                 <state key="normal" title="보기">
                                     <color key="titleColor" red="0.80784313725490198" green="0.80784313725490198" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnPermission1:" destination="QRx-D5-UYM" eventType="touchUpInside" id="T8f-wc-wPg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDf-oA-oqv">
                                 <rect key="frame" x="312" y="343.66666666666669" width="30" height="29"/>
@@ -147,6 +150,9 @@
                                 <state key="normal" title="보기">
                                     <color key="titleColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnPermission2:" destination="QRx-D5-UYM" eventType="touchUpInside" id="gvd-gl-MwL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wbR-Wz-qb6"/>
@@ -195,6 +201,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5G-NF-qqd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-378.39999999999998" y="-42.857142857142861"/>
+        </scene>
+        <!--Register PermissionVC-->
+        <scene sceneID="AeZ-1S-2rC">
+            <objects>
+                <viewController storyboardIdentifier="RegisterPermissionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LXM-Wz-ZZz" customClass="RegisterPermissionVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HGj-Xd-U3U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHC-mq-ypw">
+                                <rect key="frame" x="16" y="64" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="YeJ-lK-ujj"/>
+                                    <constraint firstAttribute="width" constant="24" id="uc4-AY-xjd"/>
+                                </constraints>
+                                <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="QRx-D5-UYM" eventType="touchUpInside" id="3zQ-xW-09S"/>
+                                    <action selector="btnCancel:" destination="LXM-Wz-ZZz" eventType="touchUpInside" id="aDp-86-AsF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 처리방침" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dL-Kx-0v2">
+                                <rect key="frame" x="123" y="65" width="129" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GHT-Ov-d4M">
+                                <rect key="frame" x="0.0" y="101" width="375" height="677"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FYd-ze-bi7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FYd-ze-bi7" firstAttribute="bottom" secondItem="GHT-Ov-d4M" secondAttribute="bottom" id="3Rx-l6-rHJ"/>
+                            <constraint firstItem="9dL-Kx-0v2" firstAttribute="centerY" secondItem="dHC-mq-ypw" secondAttribute="centerY" id="3wJ-nn-FJM"/>
+                            <constraint firstItem="dHC-mq-ypw" firstAttribute="leading" secondItem="FYd-ze-bi7" secondAttribute="leading" constant="16" id="Ea5-6e-cX7"/>
+                            <constraint firstItem="GHT-Ov-d4M" firstAttribute="leading" secondItem="FYd-ze-bi7" secondAttribute="leading" id="WDi-yy-tpG"/>
+                            <constraint firstItem="FYd-ze-bi7" firstAttribute="trailing" secondItem="GHT-Ov-d4M" secondAttribute="trailing" id="a9b-kP-qEZ"/>
+                            <constraint firstItem="GHT-Ov-d4M" firstAttribute="top" secondItem="9dL-Kx-0v2" secondAttribute="bottom" constant="14" id="m0U-fV-IuO"/>
+                            <constraint firstItem="9dL-Kx-0v2" firstAttribute="centerX" secondItem="HGj-Xd-U3U" secondAttribute="centerX" id="ub6-1n-3Fi"/>
+                            <constraint firstItem="dHC-mq-ypw" firstAttribute="top" secondItem="FYd-ze-bi7" secondAttribute="top" constant="20" id="vMG-4X-tfL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="GHT-Ov-d4M" id="wDF-Hj-RCz"/>
+                        <outlet property="titleLabel" destination="9dL-Kx-0v2" id="13j-72-7PE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9LE-fG-WKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-378" y="660"/>
         </scene>
         <!--Register Phone NumberVC-->
         <scene sceneID="ejj-P0-NEO">

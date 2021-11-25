@@ -95,4 +95,16 @@ class RegisterViewController: UIViewController{
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    // //RegisterPermissionVC
+    @IBAction func btnPermission1(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterPermissionVC") as? RegisterPermissionVC else {return}
+        nextVC.status = 0
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    @IBAction func btnPermission2(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterPermissionVC") as? RegisterPermissionVC else {return}
+        nextVC.status = 1
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
 }

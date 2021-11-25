@@ -370,6 +370,9 @@
 		C3F05A52274F70C30025DB24 /* MyPageStopWorkDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A51274F70C30025DB24 /* MyPageStopWorkDatamanager.swift */; };
 		C3F05A56274F8A6F0025DB24 /* MyPageDeletePositionDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A55274F8A6F0025DB24 /* MyPageDeletePositionDatamanager.swift */; };
 		C3F05A59274F8AC70025DB24 /* MyPageDeletePositionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A58274F8AC70025DB24 /* MyPageDeletePositionResponse.swift */; };
+		C3F05A5B274FA3260025DB24 /* RegisterPermissionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A5A274FA3260025DB24 /* RegisterPermissionVC.swift */; };
+		C3F05A5F274FBBA10025DB24 /* RegisterPermissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A5D274FBBA10025DB24 /* RegisterPermissionTableViewCell.swift */; };
+		C3F05A60274FBBA10025DB24 /* RegisterPermissionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F05A5E274FBBA10025DB24 /* RegisterPermissionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -742,6 +745,9 @@
 		C3F05A51274F70C30025DB24 /* MyPageStopWorkDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageStopWorkDatamanager.swift; sourceTree = "<group>"; };
 		C3F05A55274F8A6F0025DB24 /* MyPageDeletePositionDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDeletePositionDatamanager.swift; sourceTree = "<group>"; };
 		C3F05A58274F8AC70025DB24 /* MyPageDeletePositionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDeletePositionResponse.swift; sourceTree = "<group>"; };
+		C3F05A5A274FA3260025DB24 /* RegisterPermissionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPermissionVC.swift; sourceTree = "<group>"; };
+		C3F05A5D274FBBA10025DB24 /* RegisterPermissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPermissionTableViewCell.swift; sourceTree = "<group>"; };
+		C3F05A5E274FBBA10025DB24 /* RegisterPermissionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPermissionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1908,6 +1914,7 @@
 		C3CB0162273CC977000EA353 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				C3F05A5C274FBB820025DB24 /* Cell */,
 				C37B0B52272972040017D179 /* Entity */,
 				C37B0B53272972100017D179 /* DataManager */,
 				C3F54E7C272C4D6400FE412B /* VC */,
@@ -2269,6 +2276,15 @@
 			path = DeletePosition;
 			sourceTree = "<group>";
 		};
+		C3F05A5C274FBB820025DB24 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C3F05A5D274FBBA10025DB24 /* RegisterPermissionTableViewCell.swift */,
+				C3F05A5E274FBBA10025DB24 /* RegisterPermissionTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		C3F54E7A272C31E100FE412B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2301,6 +2317,7 @@
 				C3A1ADD1271C773F005A61ED /* RegisterSettingVC.swift */,
 				C3A1ADC9271C14E2005A61ED /* RegisterSelectPositionVC.swift */,
 				C34C4ADF2721BF6700300454 /* RegisterSelectYearVC.swift */,
+				C3F05A5A274FA3260025DB24 /* RegisterPermissionVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -2490,6 +2507,7 @@
 				C30AFE682733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib in Resources */,
 				C34BCB492732F1040085ADB3 /* MyPageDetailPublicWorkTableViewCell.xib in Resources */,
 				C38D93302749AD8A00AFFDE9 /* HomeManagerWorkPrivateTableViewCell.xib in Resources */,
+				C3F05A60274FBBA10025DB24 /* RegisterPermissionTableViewCell.xib in Resources */,
 				C398BFA1273F861D008E8BA5 /* HomeManagerMainTableViewCell.xib in Resources */,
 				C38D9323274968CA00AFFDE9 /* MyPageDetailNoClearWorkOpenTableViewCell.xib in Resources */,
 				C3AD3B30273982360030905C /* MyPageManagerWorklistTableViewCell.xib in Resources */,
@@ -2610,6 +2628,7 @@
 				C3E9C8F02741698000B0139C /* MyPageDetailClearWorkDayResponse.swift in Sources */,
 				C384426C27147E6E00B84E8A /* BaseViewController.swift in Sources */,
 				C3A228BA274297DF00187587 /* HomeWorkerTodayWorkVC.swift in Sources */,
+				C3F05A5B274FA3260025DB24 /* RegisterPermissionVC.swift in Sources */,
 				C3A968422719FA7A00E27DA1 /* StartViewController.swift in Sources */,
 				C3E1FEB5272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.swift in Sources */,
 				C3A228AF2742831D00187587 /* HomeWorkerMainTableViewCell.swift in Sources */,
@@ -2710,6 +2729,7 @@
 				C38D9322274968CA00AFFDE9 /* MyPageDetailNoClearWorkOpenTableViewCell.swift in Sources */,
 				C398BFA8273F974F008E8BA5 /* HomeManagerCommunityTableViewCell.swift in Sources */,
 				C398BFB6273FD3D1008E8BA5 /* HomeManagerQRCodeVC.swift in Sources */,
+				C3F05A5F274FBBA10025DB24 /* RegisterPermissionTableViewCell.swift in Sources */,
 				C3A228AC27427A5300187587 /* HomeWorkerVC.swift in Sources */,
 				C32E4A9C274E8ED80015463F /* CommunityManagerNoticeAlertDeleteVC.swift in Sources */,
 				C3B022EF2726F28A00013988 /* RegisterSelectStoreTypeVC.swift in Sources */,
