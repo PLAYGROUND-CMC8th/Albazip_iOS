@@ -364,6 +364,8 @@
 		C3F05A43274F4D5E0025DB24 /* HomeManagerTodayWorkDeleteDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A42274F4D5E0025DB24 /* HomeManagerTodayWorkDeleteDatamanager.swift */; };
 		C3F05A46274F58AB0025DB24 /* HomeManagerQRCodeDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A45274F58AB0025DB24 /* HomeManagerQRCodeDatamanager.swift */; };
 		C3F05A48274F58BD0025DB24 /* HomeManagerQRCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A47274F58BD0025DB24 /* HomeManagerQRCodeResponse.swift */; };
+		C3F05A4A274F65250025DB24 /* SettingWithdrawDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A49274F65250025DB24 /* SettingWithdrawDatamanager.swift */; };
+		C3F05A4C274F67090025DB24 /* SettingWithdrawResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A4B274F67090025DB24 /* SettingWithdrawResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -730,6 +732,8 @@
 		C3F05A42274F4D5E0025DB24 /* HomeManagerTodayWorkDeleteDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDeleteDatamanager.swift; sourceTree = "<group>"; };
 		C3F05A45274F58AB0025DB24 /* HomeManagerQRCodeDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerQRCodeDatamanager.swift; sourceTree = "<group>"; };
 		C3F05A47274F58BD0025DB24 /* HomeManagerQRCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerQRCodeResponse.swift; sourceTree = "<group>"; };
+		C3F05A49274F65250025DB24 /* SettingWithdrawDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWithdrawDatamanager.swift; sourceTree = "<group>"; };
+		C3F05A4B274F67090025DB24 /* SettingWithdrawResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWithdrawResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1054,6 +1058,7 @@
 				C33574172743E42800644E9B /* SettingMyInfoDatamanager.swift */,
 				C335741B2743ECCE00644E9B /* SettingEditBasicInfoDatamanager.swift */,
 				C335741F2744042900644E9B /* SettingEditPhoneNumberDatamanager.swift */,
+				C3F05A49274F65250025DB24 /* SettingWithdrawDatamanager.swift */,
 			);
 			path = Datamanager;
 			sourceTree = "<group>";
@@ -1066,6 +1071,7 @@
 				C335741D2743ED1800644E9B /* SettingEditBasicInfoRequest.swift */,
 				C33574212744044600644E9B /* SettingEditPhoneNumberResponse.swift */,
 				C33574232744045800644E9B /* SettingEditPhoneNumberRequest.swift */,
+				C3F05A4B274F67090025DB24 /* SettingWithdrawResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -2619,6 +2625,7 @@
 				C384425027147E2900B84E8A /* Device.swift in Sources */,
 				C30EC2EB272B121900EEF218 /* RegisterManagerInfo.swift in Sources */,
 				C3E9C8E82741691000B0139C /* MyPageDetailClearWorkMonthDataManager.swift in Sources */,
+				C3F05A4C274F67090025DB24 /* SettingWithdrawResponse.swift in Sources */,
 				C32E4A9F274EA4D60015463F /* CommunityManagerWriteVC.swift in Sources */,
 				C347660E274524250001B220 /* MyPageProfileImageDefaultResponse.swift in Sources */,
 				C3CC57C52736442C00657EE9 /* MyPageManagerSelectProfileImageVC.swift in Sources */,
@@ -2663,6 +2670,7 @@
 				C3A1ADCC271C5002005A61ED /* RegisterSearchStoreVC.swift in Sources */,
 				C37B0B50272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift in Sources */,
 				C3CFC306273EC929001B2EB6 /* MyPageManagerWorkerCodeResponse.swift in Sources */,
+				C3F05A4A274F65250025DB24 /* SettingWithdrawDatamanager.swift in Sources */,
 				C30AFE8A27341F330075CDE2 /* MyPageManagerWorkList2TableViewCell.swift in Sources */,
 				C3B933A7273C3DD00056E381 /* MyPageDetailClearWorkMiddleTableViewCell.swift in Sources */,
 				C3A1ADD4271C86B6005A61ED /* LoginResetPhoneVC.swift in Sources */,
