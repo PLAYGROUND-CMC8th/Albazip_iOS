@@ -28,6 +28,10 @@ class CommunityWorkerNoticeDetailTableViewCell: UITableViewCell {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(personViewTapped))
         personView.addGestureRecognizer(tapGestureRecognizer)
         completePeopleViewHeight.constant = CGFloat(45 + 36 * cellCount)
+        //이미지뷰 동그랗게
+        profileImage.layer.cornerRadius = profileImage.frame.width / 2
+        profileImage.clipsToBounds = true
+        
         setTableView()
     }
     func setTableView(){

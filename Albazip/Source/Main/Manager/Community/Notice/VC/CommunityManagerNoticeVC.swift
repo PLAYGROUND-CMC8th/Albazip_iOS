@@ -90,6 +90,7 @@ extension CommunityManagerNoticeVC: UITableViewDataSource, UITableViewDelegate{
         
         if !isNoData{
             guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CommunityManagerNoticeDetailVC") as? CommunityManagerNoticeDetailVC else {return}
+            nextVC.noticeId = noticeList![indexPath.row].id!
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }

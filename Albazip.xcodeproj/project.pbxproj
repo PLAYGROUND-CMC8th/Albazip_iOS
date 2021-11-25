@@ -379,6 +379,8 @@
 		C3F05A6B274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F05A69274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.xib */; };
 		C3F05A6E274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A6C274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.swift */; };
 		C3F05A6F274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F05A6D274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.xib */; };
+		C3F05A73274FDBAE0025DB24 /* CommunityManagerNoticeDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A72274FDBAE0025DB24 /* CommunityManagerNoticeDetailResponse.swift */; };
+		C3F05A75274FDD7C0025DB24 /* CommunityManagerNoticeDetailDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F05A74274FDD7C0025DB24 /* CommunityManagerNoticeDetailDatamanager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -760,6 +762,8 @@
 		C3F05A69274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityManagerNoNoticeTableViewCell.xib; sourceTree = "<group>"; };
 		C3F05A6C274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoticeTableViewCell.swift; sourceTree = "<group>"; };
 		C3F05A6D274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityManagerNoticeTableViewCell.xib; sourceTree = "<group>"; };
+		C3F05A72274FDBAE0025DB24 /* CommunityManagerNoticeDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoticeDetailResponse.swift; sourceTree = "<group>"; };
+		C3F05A74274FDD7C0025DB24 /* CommunityManagerNoticeDetailDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoticeDetailDatamanager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1023,6 +1027,8 @@
 		C32E4A95274E87F70015463F /* NoticeDetail */ = {
 			isa = PBXGroup;
 			children = (
+				C3F05A71274FDB8D0025DB24 /* Entity */,
+				C3F05A70274FDB840025DB24 /* Datamanager */,
 				C32E4A96274E88030015463F /* VC */,
 			);
 			path = NoticeDetail;
@@ -2327,6 +2333,22 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C3F05A70274FDB840025DB24 /* Datamanager */ = {
+			isa = PBXGroup;
+			children = (
+				C3F05A74274FDD7C0025DB24 /* CommunityManagerNoticeDetailDatamanager.swift */,
+			);
+			path = Datamanager;
+			sourceTree = "<group>";
+		};
+		C3F05A71274FDB8D0025DB24 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C3F05A72274FDBAE0025DB24 /* CommunityManagerNoticeDetailResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		C3F54E7A272C31E100FE412B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2719,8 +2741,10 @@
 				C3B93397273C081B0056E381 /* SettingNoticeTableViewCell.swift in Sources */,
 				C38D932F2749AD8A00AFFDE9 /* HomeManagerWorkPrivateTableViewCell.swift in Sources */,
 				C3B9338C273BFAE80056E381 /* SettingWithdrawVC.swift in Sources */,
+				C3F05A73274FDBAE0025DB24 /* CommunityManagerNoticeDetailResponse.swift in Sources */,
 				C38BFB7D273AA30700E79BF5 /* UIApplication.swift in Sources */,
 				C3CC57CA2736C34100657EE9 /* MyPageManagerNoHeightTableViewCell.swift in Sources */,
+				C3F05A75274FDD7C0025DB24 /* CommunityManagerNoticeDetailDatamanager.swift in Sources */,
 				C34BCB482732F1040085ADB3 /* MyPageDetailPublicWorkTableViewCell.swift in Sources */,
 				C33485FF2748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.swift in Sources */,
 				C3E9C8EA2741692E00B0139C /* MyPageDetailClearWorkDayDatamanager.swift in Sources */,
