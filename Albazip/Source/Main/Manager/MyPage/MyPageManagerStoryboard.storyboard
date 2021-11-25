@@ -256,7 +256,7 @@
         <!--근무자-->
         <scene sceneID="APm-L2-Dro">
             <objects>
-                <viewController storyboardIdentifier="MyPageManagerWorkerDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CaM-An-g2a" customClass="MyPageManagerWorkerDetailVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPageManagerWorkerDetailVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CaM-An-g2a" customClass="MyPageManagerWorkerDetailVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dfw-Z7-lqX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -408,7 +408,7 @@
         <!--My Page Manager Edit WorkerVC-->
         <scene sceneID="q3l-I0-Gmk">
             <objects>
-                <viewController storyboardIdentifier="MyPageManagerEditWorkerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hCP-KL-J7g" customClass="MyPageManagerEditWorkerVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPageManagerEditWorkerVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hCP-KL-J7g" customClass="MyPageManagerEditWorkerVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eTi-46-Ywu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -496,7 +496,7 @@
         <!--My Page Manager Edit Worker ListVC-->
         <scene sceneID="wAh-Mi-P2k">
             <objects>
-                <viewController storyboardIdentifier="MyPageManagerEditWorkerListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aN5-3W-WBD" customClass="MyPageManagerEditWorkerListVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPageManagerEditWorkerListVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aN5-3W-WBD" customClass="MyPageManagerEditWorkerListVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6t9-yP-lKu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

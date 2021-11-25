@@ -29,7 +29,7 @@ class StartViewController: UIViewController{
     func autoLogin(){
         // 자동 로그인
         if let token = UserDefaults.standard.string(forKey: "token"), let job = UserDefaults.standard.string(forKey: "job"){
-            
+            print("token: \(token)")
             if job == "1"{ //관리자 페이지로
                 let newStoryboard = UIStoryboard(name: "MainManager", bundle: nil)
                 let newViewController = newStoryboard.instantiateViewController(identifier: "MainManagerTabBarController")

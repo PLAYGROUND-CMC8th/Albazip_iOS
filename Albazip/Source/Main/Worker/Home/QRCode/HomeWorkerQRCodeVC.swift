@@ -47,7 +47,11 @@ extension HomeWorkerQRCodeVC: ReaderViewDelegate {
 
             title = "알림"
             //message = "인식성공\n\(code)"
-            message = "HH:mm".stringFromDate() + "에 출근이 기록되었습니다."
+            if code == "success"{
+                message = "HH:mm".stringFromDate() + "에 출근이 기록되었습니다."
+            }else{
+                message = "매장의 QR 코드가 아닙니다."
+            }
         case .fail:
             title = "에러"
             message = "QR코드 or 바코드를 인식하지 못했습니다.\n다시 시도해주세요."
@@ -69,5 +73,9 @@ extension HomeWorkerQRCodeVC: ReaderViewDelegate {
         //alert.addAction(okAction)
         //self.present(alert, animated: true, completion: nil)
         presentBottomAlert(message: message)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+          // 1초 후 실행될 부분
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
