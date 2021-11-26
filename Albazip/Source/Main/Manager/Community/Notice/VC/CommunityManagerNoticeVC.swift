@@ -63,7 +63,7 @@ extension CommunityManagerNoticeVC: UITableViewDataSource, UITableViewDelegate{
         if isNoData{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityManagerNoNoticeTableViewCell") as? CommunityManagerNoNoticeTableViewCell {
                 cell.selectionStyle = .none
-                
+                cell.delegate = self
                 return cell
             }
         }else{
@@ -93,6 +93,7 @@ extension CommunityManagerNoticeVC: UITableViewDataSource, UITableViewDelegate{
         if !isNoData{
             guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CommunityManagerNoticeDetailVC") as? CommunityManagerNoticeDetailVC else {return}
             nextVC.noticeId = noticeList![indexPath.row].id!
+            
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
@@ -132,3 +133,12 @@ extension CommunityManagerNoticeVC {
     }
 }
 
+extension CommunityManagerNoticeVC: CommunityManagerNoNoticeDelegate{
+    func goWritePage() {
+        //쓰기 버튼~
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CommunityManagerWriteVC") as? CommunityManagerWriteVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    
+}

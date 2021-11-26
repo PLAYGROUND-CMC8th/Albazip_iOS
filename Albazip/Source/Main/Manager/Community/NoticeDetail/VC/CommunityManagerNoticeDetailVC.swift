@@ -9,6 +9,7 @@ import Foundation
 class CommunityManagerNoticeDetailVC: UIViewController{
     
     var noticeId = -1
+    var imageArray = [UIImage]()
     @IBOutlet var tableView: UITableView!
     @IBOutlet var modalBgView: UIView!
     var noticeData : CommunityManagerNoticeDetailData?
@@ -18,6 +19,12 @@ class CommunityManagerNoticeDetailVC: UIViewController{
         super.viewDidLoad()
         modalBgView.isHidden = true
         setTableView()
+        /*
+        showIndicator()
+        dataManager.getCommunityManagerNoticeDetail(noticeId: noticeId, vc: self)*/
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
         showIndicator()
         dataManager.getCommunityManagerNoticeDetail(noticeId: noticeId, vc: self)
     }
@@ -78,18 +85,29 @@ extension CommunityManagerNoticeDetailVC: UITableViewDataSource, UITableViewDele
                     }
                 }
                 if let boardInfo = data.boardInfo{
+                   
                     cell.titleLabel.text = boardInfo.title!
                     cell.detailLabel.text = boardInfo.content!
                     cell.dateLabel.text = boardInfo.registerDate!.insertDate
                     if boardInfo.image!.count == 1{
+                        cell.image1.isHidden = false
                         let url = URL(string: boardInfo.image![0].image_path!)
                         cell.image1.kf.setImage(with: url)
+                        
+                        
                         cell.image2.isHidden = true
+                        cell.height1.constant = 48
+                        cell.height2.constant = 120
                     }else if boardInfo.image!.count == 2{
+                        cell.image1.isHidden = false
+                        cell.image2.isHidden = false
                         let url = URL(string: boardInfo.image![0].image_path!)
                         cell.image1.kf.setImage(with: url)
                         let url2 = URL(string: boardInfo.image![1].image_path!)
                         cell.image2.kf.setImage(with: url2)
+                        cell.height1.constant = 48
+                        cell.height2.constant = 120
+                        
                     }else{
                         cell.image1.isHidden = true
                         cell.image2.isHidden = true
@@ -142,7 +160,28 @@ extension CommunityManagerNoticeDetailVC: CommunityManagerNoticeAlertVCDelegate,
     }
     func goEditPage(){
         //수정하기 페이지로
+        imageArray.removeAll()
         print("수정하기 페이지로")
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CommunityMangerNoticeEditVC") as? CommunityMangerNoticeEditVC else {return}
+        nextVC.noticeId = noticeId
+        if let data = noticeData{
+            if let board = data.boardInfo{
+                nextVC.titleText = board.title!
+                nextVC.contentText = board.content!
+                var i = 0
+                while i < board.image!.count{
+                    let image = UIImageView()
+                    let url = URL(string: board.image![i].image_path!)
+                    image.kf.setImage(with: url)
+                    imageArray.append(image.image!)
+                    i += 1
+                }
+                nextVC.imageArray = imageArray
+                
+            }
+        }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     //공지사항 삭제 성공하면 이전 페이지로

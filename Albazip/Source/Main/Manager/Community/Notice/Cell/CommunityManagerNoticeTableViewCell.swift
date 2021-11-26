@@ -6,9 +6,12 @@
 //
 
 import UIKit
-
+protocol CommunityManagerNoticeDelegate {
+    func pinAPI()
+}
 class CommunityManagerNoticeTableViewCell: UITableViewCell {
 
+    var delegate: CommunityManagerNoticeDelegate?
     @IBOutlet var noticeView: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subLabel: UILabel!

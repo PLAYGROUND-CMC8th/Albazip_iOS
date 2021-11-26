@@ -7,8 +7,11 @@
 
 import UIKit
 
+protocol CommunityManagerNoNoticeDelegate {
+    func goWritePage()
+}
 class CommunityManagerNoNoticeTableViewCell: UITableViewCell {
-
+    var delegate: CommunityManagerNoNoticeDelegate?
     @IBOutlet var btnAddNotice: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +25,6 @@ class CommunityManagerNoNoticeTableViewCell: UITableViewCell {
     }
     
     @IBAction func btnAddNotice(_ sender: Any) {
+        delegate?.goWritePage()
     }
 }

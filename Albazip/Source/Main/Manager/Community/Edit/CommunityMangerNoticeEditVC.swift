@@ -1,29 +1,33 @@
 //
-//  CommunityManagerWriteVC.swift
+//  CommunityMangerNoticeEditVC.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2021/11/25.
+//  Created by 김수빈 on 2021/11/27.
 //
 
 import Foundation
-class CommunityManagerWriteVC: UIViewController{
-    
+class CommunityMangerNoticeEditVC:UIViewController{
     var titleText = ""
     var contentText = ""
+    var noticeId = -1
     var imageArray = [UIImage]()
     @IBOutlet var tableView: UITableView!
     @IBOutlet var btnNext: UIButton!
-    
     // Datamanager
     lazy var dataManager: CommunityManagerWriteDatamanager = CommunityManagerWriteDatamanager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(imageArray)
         setTableView()
         self.dismissKeyboardWhenTappedAround()
     }
-    @IBAction func btnCancel(_ sender: Any) {
+    @IBAction func btnEdit(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func btnNext(_ sender: Any) {
+        showIndicator()
+        dataManager.postCommunityManagerWriteEdit(noticeId: noticeId, title: titleText, content: contentText, pin: 0, imageData: imageArray, vc: self)
     }
     func setTableView(){
         
@@ -34,11 +38,6 @@ class CommunityManagerWriteVC: UIViewController{
         tableView.dataSource = self
         tableView.delegate = self
     }
-    @IBAction func btnNext(_ sender: Any) {
-        showIndicator()
-        dataManager.postCommunityManagerWrite(title: titleText, content: contentText, pin: 0, imageData: imageArray, vc: self)
-    }
-    
     func checkBtn(){
         if titleText != "", contentText != ""{
             btnNext.isEnabled = true
@@ -49,8 +48,9 @@ class CommunityManagerWriteVC: UIViewController{
         }
     }
 }
+
 // 테이블뷰 extension
-extension CommunityManagerWriteVC: UITableViewDataSource, UITableViewDelegate{
+extension CommunityMangerNoticeEditVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //print(String(lists.count) + " 줄")
@@ -61,6 +61,8 @@ extension CommunityManagerWriteVC: UITableViewDataSource, UITableViewDelegate{
         
         if indexPath.row == 0{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityManagerWriteTableViewCell") as? CommunityManagerWriteTableViewCell {
+                cell.titleTextField.text = titleText
+                cell.subTextField.text = contentText
                 cell.selectionStyle = .none
                 cell.delegate = self
                 return cell
@@ -108,8 +110,7 @@ extension CommunityManagerWriteVC: UITableViewDataSource, UITableViewDelegate{
         //return tableView.estimatedRowHeight
     }
 }
-
-extension CommunityManagerWriteVC: CommunityManagerWriteDelegate, CommunityManagerPhotoDelegate{
+extension CommunityMangerNoticeEditVC: CommunityManagerWriteDelegate, CommunityManagerPhotoDelegate{
     func deleteImage1() {
         //
         imageArray.remove(at: 0)
@@ -159,7 +160,7 @@ extension CommunityManagerWriteVC: CommunityManagerWriteDelegate, CommunityManag
     }
 }
 // MARK:- 이미지 피커 컨트롤러 델리게이트 메소드
-extension CommunityManagerWriteVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension CommunityMangerNoticeEditVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   // 이미지 피커에서 이미지를 선택하지 않고 취소했을 때 호출되는 메소드
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     // 이미지 피커 컨트롤러 창 닫기
@@ -195,14 +196,15 @@ extension CommunityManagerWriteVC: UIImagePickerControllerDelegate, UINavigation
     }
 }
 
-extension CommunityManagerWriteVC{
-    func didSuccessCommunityManagerWriteVC(result: CommunityManagerWriteResponse){
+extension CommunityMangerNoticeEditVC{
+    func didSuccessCommunityManagerNoticeEdit(result: CommunityManagerWriteResponse){
         print(result)
         dismissIndicator()
         self.navigationController?.popViewController(animated: true)
     }
-    func failedToRequestCommunityManagerWriteVC(message: String){
+    func failedToRequestCommunityManagerNoticeEdit(message: String){
         dismissIndicator()
         presentAlert(title: message)
     }
 }
+
