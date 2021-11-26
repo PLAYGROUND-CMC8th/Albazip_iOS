@@ -37,6 +37,7 @@ class CommunityManagerNoticeDetailVC: UIViewController{
             vc.modalPresentationStyle = .overFullScreen
             modalBgView.isHidden = false
             vc.modalDelegate = self
+            vc.delegate = self
         self.present(vc, animated: true, completion: nil)
     }
     }
@@ -127,5 +128,25 @@ extension CommunityManagerNoticeDetailVC {
         dismissIndicator()
         presentAlert(title: message)
     }
+    
 }
 
+extension CommunityManagerNoticeDetailVC: CommunityManagerNoticeAlertVCDelegate, CommunityManagerNoticeAlertDeleteDelegate{
+    func goDeleteModal() {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "CommunityManagerNoticeAlertDeleteVC") as? CommunityManagerNoticeAlertDeleteVC {
+            vc.modalPresentationStyle = .overFullScreen
+            vc.delegate = self
+            vc.noticeId = noticeId
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    func goEditPage(){
+        //수정하기 페이지로
+        print("수정하기 페이지로")
+    }
+    
+    //공지사항 삭제 성공하면 이전 페이지로
+    func successDeleteNotice() {
+        self.navigationController?.popViewController(animated: true)
+    }
+}

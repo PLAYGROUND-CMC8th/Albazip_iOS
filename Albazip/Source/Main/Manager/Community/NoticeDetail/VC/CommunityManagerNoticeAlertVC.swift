@@ -4,7 +4,10 @@
 //
 //  Created by 김수빈 on 2021/11/25.
 //
-
+protocol CommunityManagerNoticeAlertVCDelegate {
+    func goDeleteModal()
+    func goEditPage()
+}
 import Foundation
 class CommunityManagerNoticeAlertVC: UIViewController{
     var modalDelegate : ModalDelegate?
@@ -12,6 +15,8 @@ class CommunityManagerNoticeAlertVC: UIViewController{
     @IBOutlet var backgroundView: UIView!
     @IBOutlet var view1: UIView!
     @IBOutlet var view2: UIView!
+    var delegate : CommunityManagerNoticeAlertVCDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,16 +31,25 @@ class CommunityManagerNoticeAlertVC: UIViewController{
     }
     @objc func view1Tapped(sender: UITapGestureRecognizer) {
         view1.backgroundColor = #colorLiteral(red: 0.9994661212, green: 0.979791224, blue: 0.9194086194, alpha: 1)
+        modalDelegate?.modalDismiss()
+        delegate?.goEditPage()
+        self.dismiss(animated: true, completion: nil)
        //수정하기
     }
     @objc func view2Tapped(sender: UITapGestureRecognizer) {
         view2.backgroundColor = #colorLiteral(red: 0.9994661212, green: 0.979791224, blue: 0.9194086194, alpha: 1)
-        goDeletePage()
+        modalDelegate?.modalDismiss()
+      
+        self.dismiss(animated: false){
+            self.delegate?.goDeleteModal()
+        }
+        //goDeletePage()
     }
     @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
         modalDelegate?.modalDismiss()
         self.dismiss(animated: true, completion: nil)
     }
+    /*
     func goDeletePage()  {
         //modalDelegate?.modalDismiss()
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "CommunityManagerNoticeAlertDeleteVC") as? CommunityManagerNoticeAlertDeleteVC {
@@ -48,5 +62,5 @@ class CommunityManagerNoticeAlertVC: UIViewController{
         }
             
         }
-    }
+    }*/
 }

@@ -90,6 +90,8 @@
 		C34972F82750900B009EFCD1 /* CommunityManagerWriteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34972F72750900B009EFCD1 /* CommunityManagerWriteRequest.swift */; };
 		C34972FA27509025009EFCD1 /* CommunityManagerWriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34972F927509025009EFCD1 /* CommunityManagerWriteResponse.swift */; };
 		C34972FC27509034009EFCD1 /* CommunityManagerWriteDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34972FB27509034009EFCD1 /* CommunityManagerWriteDatamanager.swift */; };
+		C34972FE2751372E009EFCD1 /* CommunityManagerNoticeDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34972FD2751372E009EFCD1 /* CommunityManagerNoticeDeleteResponse.swift */; };
+		C34973002751381C009EFCD1 /* CommunityManagerNoticeDeleteDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34972FF2751381C009EFCD1 /* CommunityManagerNoticeDeleteDatamanager.swift */; };
 		C34A00582731AA2D00C24102 /* MyPageWorkerMyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A00562731AA2D00C24102 /* MyPageWorkerMyInfoTableViewCell.swift */; };
 		C34A00592731AA2D00C24102 /* MyPageWorkerMyInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34A00572731AA2D00C24102 /* MyPageWorkerMyInfoTableViewCell.xib */; };
 		C34A005C2731BA1B00C24102 /* MyPageWorkerInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A005A2731BA1B00C24102 /* MyPageWorkerInfoVC.swift */; };
@@ -474,6 +476,8 @@
 		C34972F72750900B009EFCD1 /* CommunityManagerWriteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerWriteRequest.swift; sourceTree = "<group>"; };
 		C34972F927509025009EFCD1 /* CommunityManagerWriteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerWriteResponse.swift; sourceTree = "<group>"; };
 		C34972FB27509034009EFCD1 /* CommunityManagerWriteDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerWriteDatamanager.swift; sourceTree = "<group>"; };
+		C34972FD2751372E009EFCD1 /* CommunityManagerNoticeDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoticeDeleteResponse.swift; sourceTree = "<group>"; };
+		C34972FF2751381C009EFCD1 /* CommunityManagerNoticeDeleteDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoticeDeleteDatamanager.swift; sourceTree = "<group>"; };
 		C34A00562731AA2D00C24102 /* MyPageWorkerMyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerMyInfoTableViewCell.swift; sourceTree = "<group>"; };
 		C34A00572731AA2D00C24102 /* MyPageWorkerMyInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageWorkerMyInfoTableViewCell.xib; sourceTree = "<group>"; };
 		C34A005A2731BA1B00C24102 /* MyPageWorkerInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerInfoVC.swift; sourceTree = "<group>"; };
@@ -2368,6 +2372,7 @@
 			isa = PBXGroup;
 			children = (
 				C3F05A74274FDD7C0025DB24 /* CommunityManagerNoticeDetailDatamanager.swift */,
+				C34972FF2751381C009EFCD1 /* CommunityManagerNoticeDeleteDatamanager.swift */,
 			);
 			path = Datamanager;
 			sourceTree = "<group>";
@@ -2376,6 +2381,7 @@
 			isa = PBXGroup;
 			children = (
 				C3F05A72274FDBAE0025DB24 /* CommunityManagerNoticeDetailResponse.swift */,
+				C34972FD2751372E009EFCD1 /* CommunityManagerNoticeDeleteResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -2764,6 +2770,7 @@
 				C398BFA4273F8A0B008E8BA5 /* HomeManagerOpenTableViewCell.swift in Sources */,
 				C3F05A48274F58BD0025DB24 /* HomeManagerQRCodeResponse.swift in Sources */,
 				C3476617274564900001B220 /* MyPageManagerEditWorkerResponse.swift in Sources */,
+				C34973002751381C009EFCD1 /* CommunityManagerNoticeDeleteDatamanager.swift in Sources */,
 				C35DB30F274C191D0011BC5A /* HomeManagerTodayWorkDatamanager.swift in Sources */,
 				C33E00082731D80500D88267 /* MyPageWorkerWriteVC.swift in Sources */,
 				C3CDB051274B4A3D006D7A92 /* TodayWorkerListResponse.swift in Sources */,
@@ -2822,6 +2829,7 @@
 				C37B0B4A272901AB0017D179 /* OnboardingWorkerVC.swift in Sources */,
 				C37B0B5B272978F80017D179 /* RegisterBasicInfo.swift in Sources */,
 				C32E4A8E274E74660015463F /* CommunityManagerNoticeVC.swift in Sources */,
+				C34972FE2751372E009EFCD1 /* CommunityManagerNoticeDeleteResponse.swift in Sources */,
 				C32E4A7A274DB5A80015463F /* CommunityWorkerNoticeDetailTableViewCell.swift in Sources */,
 				C39083F12729B559006223CB /* OnboardingCollectionViewCell.swift in Sources */,
 				C3B93384273BFA220056E381 /* SettingNoticeVC.swift in Sources */,

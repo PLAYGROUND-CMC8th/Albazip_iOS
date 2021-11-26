@@ -4,11 +4,18 @@
 //
 //  Created by 김수빈 on 2021/11/25.
 //
-
+protocol CommunityManagerNoticeAlertDeleteDelegate {
+    func successDeleteNotice()
+}
 import Foundation
 class CommunityManagerNoticeAlertDeleteVC: UIViewController{
     var transparentView = UIView()
     var modalDelegate : ModalDelegate?
+    var noticeId = -1
+    var delegate: CommunityManagerNoticeAlertDeleteDelegate?
+    
+    // Datamanager
+    lazy var dataManager: CommunityManagerNoticeDeleteDatamanager = CommunityManagerNoticeDeleteDatamanager()
     @IBOutlet var cornorView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +32,24 @@ class CommunityManagerNoticeAlertDeleteVC: UIViewController{
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func btnDelete(_ sender: Any) {
+        showIndicator()
+        dataManager.getCommunityManagerNoticeDelete(noticeId: noticeId, vc: self)
+    }
+    
+}
+
+extension CommunityManagerNoticeAlertDeleteVC{
+    //공지사항 삭제 api
+    func didSuccessCommunityManagerNoticeDelete(result: CommunityManagerNoticeDeleteResponse){
+        print(result)
+        dismissIndicator()
         transparentView.isHidden = true
+        delegate?.successDeleteNotice()
         self.dismiss(animated: true, completion: nil)
     }
     
+    func failedToRequestCommunityManagerNoticeDelete(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
 }
