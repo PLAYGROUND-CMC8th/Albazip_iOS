@@ -20,6 +20,13 @@ class CommunityWorkerNoticeDetailTableViewCell: UITableViewCell {
     @IBOutlet var detailLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var profileImage: UIImageView!
+    
+    @IBOutlet var image1: UIImageView!
+    @IBOutlet var image2: UIImageView!
+    
+    @IBOutlet var height1: NSLayoutConstraint!
+    @IBOutlet var height2: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

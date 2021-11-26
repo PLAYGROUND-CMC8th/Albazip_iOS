@@ -80,6 +80,21 @@ extension CommunityWorkerNoticeDetailVC: UITableViewDataSource, UITableViewDeleg
                     cell.titleLabel.text = boardInfo.title!
                     cell.detailLabel.text = boardInfo.content!
                     cell.dateLabel.text = boardInfo.registerDate!.insertDate
+                    if boardInfo.image!.count == 1{
+                        let url = URL(string: boardInfo.image![0].image_path!)
+                        cell.image1.kf.setImage(with: url)
+                        cell.image2.isHidden = true
+                    }else if boardInfo.image!.count == 2{
+                        let url = URL(string: boardInfo.image![0].image_path!)
+                        cell.image1.kf.setImage(with: url)
+                        let url2 = URL(string: boardInfo.image![1].image_path!)
+                        cell.image2.kf.setImage(with: url2)
+                    }else{
+                        cell.image1.isHidden = true
+                        cell.image2.isHidden = true
+                        cell.height1.constant = 0
+                        cell.height2.constant = 0
+                    }
                 }
                 if let confirmInfo = data.writerInfo{
                     
