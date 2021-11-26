@@ -61,8 +61,14 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </textField>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0자 / 최소20자" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1d-GP-coR">
-                        <rect key="frame" x="276" y="361.33333333333331" width="75" height="14.333333333333314"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자 / 최소20자" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1d-GP-coR">
+                        <rect key="frame" x="283.66666666666669" y="361.33333333333331" width="67.333333333333314" height="14.333333333333314"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                        <color key="textColor" red="0.63921570780000003" green="0.63921570780000003" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6F-Vf-TNI">
+                        <rect key="frame" x="275.66666666666669" y="361.33333333333331" width="8" height="14.333333333333314"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                         <color key="textColor" red="0.63921570780000003" green="0.63921570780000003" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -71,10 +77,12 @@
                 <constraints>
                     <constraint firstItem="iVL-DY-2xG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="3GC-xC-h7a"/>
                     <constraint firstItem="ELF-pi-PGY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="4Ni-wt-KMy"/>
+                    <constraint firstItem="q1d-GP-coR" firstAttribute="leading" secondItem="Y6F-Vf-TNI" secondAttribute="trailing" id="Dot-Yu-xyu"/>
                     <constraint firstAttribute="trailing" secondItem="ELF-pi-PGY" secondAttribute="trailing" constant="24" id="Fav-Dd-Zu6"/>
                     <constraint firstItem="q1d-GP-coR" firstAttribute="top" secondItem="ELF-pi-PGY" secondAttribute="bottom" constant="14" id="WZw-BY-Dmw"/>
                     <constraint firstItem="ELF-pi-PGY" firstAttribute="top" secondItem="iVL-DY-2xG" secondAttribute="bottom" constant="14" id="Zj9-Um-j9d"/>
                     <constraint firstItem="iVL-DY-2xG" firstAttribute="top" secondItem="0AR-D5-GYt" secondAttribute="bottom" constant="14" id="dwY-iP-at8"/>
+                    <constraint firstItem="Y6F-Vf-TNI" firstAttribute="centerY" secondItem="q1d-GP-coR" secondAttribute="centerY" id="je2-Xc-bZ0"/>
                     <constraint firstItem="0AR-D5-GYt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="k3H-CC-HL5"/>
                     <constraint firstAttribute="trailing" secondItem="q1d-GP-coR" secondAttribute="trailing" constant="24" id="lNg-rb-tie"/>
                     <constraint firstItem="0AR-D5-GYt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="qU6-xC-giL"/>
@@ -82,7 +90,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="28.800000000000001" y="183.62068965517241"/>
+            <connections>
+                <outlet property="labelCountTextField" destination="q1d-GP-coR" id="fQV-Mt-voU"/>
+                <outlet property="realTimeCountLabel" destination="Y6F-Vf-TNI" id="vWy-LO-Wnl"/>
+                <outlet property="subTextField" destination="ELF-pi-PGY" id="Uf9-d6-XRs"/>
+                <outlet property="titleTextField" destination="iVL-DY-2xG" id="csv-SD-OAu"/>
+            </connections>
+            <point key="canvasLocation" x="28" y="183.62068965517241"/>
         </tableViewCell>
     </objects>
 </document>

@@ -12,6 +12,8 @@ class CommunityManagerNoticeVC: UIViewController, IndicatorInfoProvider {
     var isNoData = true
     // Datamanager
     lazy var dataManager: CommunityManagerNoticeDatamanger = CommunityManagerNoticeDatamanger()
+    // Datamanager
+    lazy var dataManager2: CommunityManagerNoticePinDatamanager = CommunityManagerNoticePinDatamanager()
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,6 +116,17 @@ extension CommunityManagerNoticeVC {
     }
     
     func failedToRequestCommunityManagerNotice(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
+    //공지사항 핀 aPI
+    func didSuccessCommunityManagerNoticePin(result: CommunityManagerNoticePinResponse) {
+        
+        tableView.reloadData()
+        dismissIndicator()
+    }
+    
+    func failedToRequestCommunityManagerNoticePin(message: String) {
         dismissIndicator()
         presentAlert(title: message)
     }

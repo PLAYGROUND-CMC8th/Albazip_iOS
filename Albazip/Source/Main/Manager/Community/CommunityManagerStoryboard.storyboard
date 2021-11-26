@@ -251,6 +251,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnNext" destination="ZPD-Fb-DWd" id="d17-wz-D8P"/>
                         <outlet property="tableView" destination="Zn6-Pn-KRH" id="kd3-jj-iHA"/>
                     </connections>
                 </viewController>
