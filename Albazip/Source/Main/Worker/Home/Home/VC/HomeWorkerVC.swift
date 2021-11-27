@@ -67,12 +67,17 @@ class HomeWorkerVC: BaseViewController{
     @IBAction func btnQRCode(_ sender: Any) {
         if status == 3{ // 쉬는날
             presentBottomAlert(message: "오늘은 쉬는날이에요")
-        }else if status == 2{ // 근무후
+            
+        }
+        
+        else if status == 2{ // 근무후
             presentBottomAlert(message: "이미 근무를 마치고 퇴근한 상태에요")
-        }else{
+        }
+        
+        else{
             if let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerQRCodeVC") as? HomeWorkerQRCodeVC {
                 nextVC.modalPresentationStyle = .overFullScreen
-                
+                nextVC.delegate = self
             self.present(nextVC, animated: true, completion: nil)
             }
         }
@@ -292,7 +297,7 @@ extension HomeWorkerVC {
         }
         print(homeWorkerData)
         setUI()
-        isWork = true
+        //isWork = true
         tableView.reloadData()
         dismissIndicator()
     }
@@ -304,3 +309,10 @@ extension HomeWorkerVC {
 }
 
 
+extension HomeWorkerVC: HomeWorkerQRCodeDelegate{
+    func workStart() {
+        print("workStart")
+        showIndicator()
+        dataManager.getHomeWorker(vc: self)
+    }
+}

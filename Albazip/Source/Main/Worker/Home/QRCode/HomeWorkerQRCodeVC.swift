@@ -4,13 +4,17 @@
 //
 //  Created by 김수빈 on 2021/11/15.
 //
-
+protocol HomeWorkerQRCodeDelegate {
+    func workStart()
+}
 import Foundation
 class HomeWorkerQRCodeVC: UIViewController{
     @IBOutlet var readerView: ReaderView!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var readRect: UIImageView!
-    
+    var delegate: HomeWorkerQRCodeDelegate?
+    // Datamanager
+    lazy var dataManager: HomeWorkerQRCodeDatamanager = HomeWorkerQRCodeDatamanager()
     override func viewDidLoad() {
         super.viewDidLoad()
         dateLabel.text = "yy. MM. dd EEEE".stringFromDate()
@@ -73,9 +77,27 @@ extension HomeWorkerQRCodeVC: ReaderViewDelegate {
         //alert.addAction(okAction)
         //self.present(alert, animated: true, completion: nil)
         presentBottomAlert(message: message)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { [self] in
           // 1초 후 실행될 부분
-            self.dismiss(animated: true, completion: nil)
+            dataManager.putHomeWorkerQRCode(vc: self)
+            
         }
+    }
+}
+//업무 되돌리기, 완료하기 api
+extension HomeWorkerQRCodeVC {
+    func didSuccessHomeWorkerQRCode(result: HomeWorkerQRCodeReponse) {
+        print(result.message)
+        //tableView.reloadData()
+        dismissIndicator()
+        delegate?.workStart()
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func failedToRequestHomeWorkerQRCode(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
     }
 }

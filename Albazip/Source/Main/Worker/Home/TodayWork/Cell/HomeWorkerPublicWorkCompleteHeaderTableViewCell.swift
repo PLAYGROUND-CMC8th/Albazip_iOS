@@ -68,7 +68,10 @@ extension HomeWorkerPublicWorkCompleteHeaderTableViewCell: UITableViewDataSource
                     cell.countLabel.text = String(data[indexPath.row].count!)
                     let url = URL(string: data[indexPath.row].image!)
                     cell.profileImage.kf.setImage(with: url)
-                    cell.nameLabel.text = data[indexPath.row].worker!
+                    let result = data[indexPath.row].worker!.components(separatedBy: " ")
+                    
+                    cell.nameLabel.text = result[1]
+                    cell.positionLabel.text = result[0]
                 }
                 print(indexPath.row)
                 return cell
