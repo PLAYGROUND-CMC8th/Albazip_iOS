@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeWorkerPublicWorkCompleteHeaderTableViewCell: UITableViewCell {
-
+    var comWorker: [HomeWorkerComWorkerList]?
     @IBOutlet var completePeopleViewHeight: NSLayoutConstraint!
     @IBOutlet var personView: UIView!
     @IBOutlet var countLabel: UILabel!
@@ -42,18 +42,34 @@ class HomeWorkerPublicWorkCompleteHeaderTableViewCell: UITableViewCell {
         print("몇명일까요")
         completePeopleView.isHidden.toggle()
     }
+    //데이터 가져올 함수
+    func setCell(data: [HomeWorkerComWorkerList])  {
+        comWorker = data
+        peopleCountLabel.text = String(data.count)
+        completePeopleViewHeight.constant = CGFloat(45 + 36 * data.count)
+        self.tableView.reloadData()
+    }
+
 }
 extension HomeWorkerPublicWorkCompleteHeaderTableViewCell: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return cellCount
+        if let data = comWorker{
+            return data.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerCompletePeopleTableViewCell") as? HomeWorkerCompletePeopleTableViewCell {
                 cell.selectionStyle = .none
-                
+                if let data = comWorker{
+                    cell.countLabel.text = String(data[indexPath.row].count!)
+                    let url = URL(string: data[indexPath.row].image!)
+                    cell.profileImage.kf.setImage(with: url)
+                    cell.nameLabel.text = data[indexPath.row].worker!
+                }
                 print(indexPath.row)
                 return cell
             }
@@ -61,10 +77,11 @@ extension HomeWorkerPublicWorkCompleteHeaderTableViewCell: UITableViewDataSource
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
-        
+        if let data = comWorker{
             return 36
-        
-        
+        }else{
+            return 0
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row) 입니다.")

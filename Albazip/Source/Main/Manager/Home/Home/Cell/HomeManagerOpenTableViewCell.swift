@@ -9,6 +9,7 @@ protocol HomeManagerOpenDeleagate: AnyObject {
     func goPublicWork()
     func goPrivateWork()
     func goTodayWorkerList()
+    func goAddPublicWork()
 }
 import UIKit
 
@@ -88,7 +89,7 @@ class HomeManagerOpenTableViewCell: UITableViewCell {
         thirdView3.asCircle()
     }
     @IBAction func btnAddWork(_ sender: Any) {
-        delegate?.goAddWorkPage()
+        delegate?.goAddPublicWork()
     }
     @objc func publicWorkViewTapped(sender: UITapGestureRecognizer) {
         self.delegate?.goPublicWork()

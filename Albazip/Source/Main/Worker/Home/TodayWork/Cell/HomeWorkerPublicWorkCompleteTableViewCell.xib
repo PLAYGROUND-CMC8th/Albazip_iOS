@@ -82,7 +82,7 @@
                 <outlet property="subLabel" destination="20c-pp-jMP" id="jsA-pR-f8N"/>
                 <outlet property="titleLabel" destination="849-h7-QaT" id="gUe-Co-leo"/>
             </connections>
-            <point key="canvasLocation" x="508" y="112"/>
+            <point key="canvasLocation" x="-63" y="160"/>
         </tableViewCell>
     </objects>
     <resources>

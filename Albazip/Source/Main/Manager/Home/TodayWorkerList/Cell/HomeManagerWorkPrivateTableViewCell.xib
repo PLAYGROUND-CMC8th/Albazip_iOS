@@ -109,7 +109,7 @@
                 <outlet property="titleLabel" destination="HxA-lb-fgX" id="Zzc-Lt-gym"/>
                 <outlet property="totalCount" destination="rX3-og-FDu" id="EmM-xF-61G"/>
             </connections>
-            <point key="canvasLocation" x="343" y="50"/>
+            <point key="canvasLocation" x="126" y="28"/>
         </tableViewCell>
     </objects>
     <resources>

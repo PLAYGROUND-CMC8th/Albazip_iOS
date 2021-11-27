@@ -20,10 +20,16 @@ class HomeManagerTodayWorkVC: UIViewController{
     var isCoFolded = [Bool]()
     // 개인 업무
     var perTask: [HomeManagerPerTaskList]?
-    // Datamanager
-    lazy var dataManager: HomeManagerTodayWorkDatamanager = HomeManagerTodayWorkDatamanager()
     
+    //완료한 사람 배열
+    var comWorker: [HomeWorkerComWorkerList]?
+    
+    // 전체조회
+    lazy var dataManager: HomeManagerTodayWorkDatamanager = HomeManagerTodayWorkDatamanager()
+    // 삭제하기
     lazy var dataManager2: HomeManagerTodayWorkDeleteDatamanager = HomeManagerTodayWorkDeleteDatamanager()
+    // 완료하기, 미완료하기
+    lazy var dataManager3: HomeTodayWorkCheckDatamanager = HomeTodayWorkCheckDatamanager()
     
     var deleteIndex = -1
     override func viewDidLoad() {
@@ -100,9 +106,11 @@ class HomeManagerTodayWorkVC: UIViewController{
         switch segment.selectedSegmentIndex {
             case 0:
                 segValue = 0
+                //setupTableView()
                 tableView.reloadData()
             case 1:
                 segValue = 1
+                //setupTableView()
                 tableView.reloadData()
             default:
                 break;
@@ -131,6 +139,7 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
         let headerCell2 = Bundle.main.loadNibNamed("HomeWorkerPublicWorkCompleteHeaderTableViewCell", owner: self, options: nil)?.first as! HomeWorkerPublicWorkCompleteHeaderTableViewCell
         
         if segValue == 0{ // 공동업무
+            print("첫번째 헤더")
             switch (section) {
             case 0:
                 headerCell.titleLabel.text = "미완료"
@@ -143,13 +152,18 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                 
                 if let x = comCoTask{
                     headerCell2.countLabel.text = String(x.count)
+                    
+                }
+                if let x = comWorker{
+                    headerCell2.setCell(data: x)
                 }
                 return headerCell2
               
             default:
                 headerCell.titleLabel.text = "Other";
             }
-        }else{ // 개인 업무
+        }else if segValue == 1{ // 개인 업무
+            print("두번째 헤더")
             return nil
         }
 
@@ -209,6 +223,7 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                     if isCoFolded[indexPath.row]{
                         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerPublicWorkTableViewCell") as? HomeWorkerPublicWorkTableViewCell {
                             cell.selectionStyle = .none
+                            cell.delegate = self
                             
                             if let data = nonComCoTask{
                                 cell.titleLabel.text = data[indexPath.row].takTitle!
@@ -217,7 +232,7 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                                 }else{
                                     cell.subLabel.text = data[indexPath.row].taskContent ?? "내용 없음"
                                 }
-                                
+                                cell.taskId =  data[indexPath.row].taskId!
                                 
                             }
                             print(indexPath.row)
@@ -258,11 +273,11 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                 }else{
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerPublicWorkCompleteTableViewCell") as? HomeWorkerPublicWorkCompleteTableViewCell {
                         cell.selectionStyle = .none
-                        
+                        cell.delegate = self
                         if let data = comCoTask{
                             cell.titleLabel.text = data[indexPath.row].takTitle!
                             cell.subLabel.text = "완료  \(data[indexPath.row].completeTime!.substring(from: 11, to: 16))"
-                            
+                            cell.taskId = data[indexPath.row].taskId!
                         }
                         print(indexPath.row)
                         return cell
@@ -278,6 +293,7 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                     return cell
                 }
             }else{
+                
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeManagerWorkPrivateTableViewCell") as? HomeManagerWorkPrivateTableViewCell {
                     if let data = perTask{
                         cell.titleLabel.text = data[indexPath.row].workerTitle! + " 업무"
@@ -386,13 +402,16 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                 
             }
         }else{
-            //개인업무 페이지로
-            if let data = perTask{
-                
-                guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerTodayWorkDetailVC") as? HomeManagerTodayWorkDetailVC else {return}
-                nextVC.workerId = data[indexPath.row].workerId!
-                self.navigationController?.pushViewController(nextVC, animated: true)
+            if !isNoPerData{
+                //개인업무 페이지로
+                if let data = perTask{
+                    
+                    guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerTodayWorkDetailVC") as? HomeManagerTodayWorkDetailVC else {return}
+                    nextVC.workerId = data[indexPath.row].workerId!
+                    self.navigationController?.pushViewController(nextVC, animated: true)
+                }
             }
+            
         }
     }
 }
@@ -421,6 +440,12 @@ extension HomeManagerTodayWorkVC {
                 }else{
                     isNoCompleteCoData = true
                 }
+                
+                if let comWorker = coTask.comWorker{
+                    if let x = comWorker.comWorker{
+                        self.comWorker = x
+                    }
+                }
             }
            
             // 개인 업무
@@ -431,6 +456,9 @@ extension HomeManagerTodayWorkVC {
             }else{
                     isNoPerData = true
             }
+            
+            
+           
         }
         
         tableView.reloadData()
@@ -479,5 +507,26 @@ extension HomeManagerTodayWorkVC {
     func failedToRequestHomeManagerTodayWorkDelete(message: String) {
         dismissIndicator()
         presentAlert(title: message)
+    }
+}
+extension HomeManagerTodayWorkVC {
+    func didSuccessHomeTodayWorkCheck(result: HomeWorkerTodayWorkResponse) {
+        print(result.message)
+        //tableView.reloadData()
+        dataManager.getHomeManagerTodayWork(vc: self)
+        
+    }
+    
+    func failedToRequestHomeTodayWorkCheck(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
+}
+
+extension HomeManagerTodayWorkVC: CheckUnCompleteWorkDelegate{
+    func checkUnCompleteWork(taskId: Int) {
+        print(taskId)
+        showIndicator()
+        dataManager3.getHomeTodayWorkCheck(taskId: taskId, vc: self)
     }
 }

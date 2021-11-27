@@ -6,9 +6,12 @@
 //
 
 import UIKit
-
+protocol CheckUnCompleteWorkDelegate{
+    func checkUnCompleteWork(taskId:Int)
+}
 class HomeWorkerPublicWorkTableViewCell: UITableViewCell {
-
+    var delegate :CheckUnCompleteWorkDelegate?
+    var taskId = -1
     @IBOutlet var btnCheck: UIButton!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subLabel: UILabel!
@@ -24,6 +27,7 @@ class HomeWorkerPublicWorkTableViewCell: UITableViewCell {
     }
     
     @IBAction func btnCheck(_ sender: Any) {
-        btnCheck.isSelected.toggle()
+        //btnCheck.isSelected.toggle()
+        delegate?.checkUnCompleteWork(taskId: taskId)
     }
 }

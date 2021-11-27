@@ -277,13 +277,26 @@ extension HomeManagerVC: HomeManagerOpenDeleagate, HomeManagerAddWorkDelegate{
     
     
     
-    //업무 추가 알림창!
+    //완료한 업무 버튼 or 공동업무 추가 페이지
+    
     func goAddWorkPage() {
-        //공동 업무 추가 페이지로
-        print("goAddPublicWork")
         
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerAddPublicWorkVC") as? HomeManagerAddPublicWorkVC else {return}
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        if status == 2{ //완료한 업무
+            //공동 업무 상세 페이지로
+            print("goPublicWork")
+            
+            guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerTodayWorkVC") as? HomeManagerTodayWorkVC else {return}
+            nextVC.segValue = 0
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
+        else if status == 0 { //업무 추가
+            //공동 업무 추가 페이지로
+            print("goAddPublicWork")
+            
+            guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerAddPublicWorkVC") as? HomeManagerAddPublicWorkVC else {return}
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
+        
         /*
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeManagerAddWorkVC") as? HomeManagerAddWorkVC {
             vc.modalPresentationStyle = .overFullScreen

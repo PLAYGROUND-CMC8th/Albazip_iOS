@@ -32,10 +32,12 @@ struct HomeWorkerNonComCoTask: Decodable {
 
 struct HomeWorkerComWorker: Decodable {
     var comWorkerNum: Int?
-    var comWorker: HomeWorkerComWorkerList? // 에라모르겠다!
+    var comWorker: [HomeWorkerComWorkerList]? // 에라모르겠다!
 }
 struct HomeWorkerComWorkerList :Decodable{
-    
+    var worker: String?
+    var count: Int?
+    var image: String?
 }
 struct HomeWorkerComCoTask: Decodable {
     var taskId: Int?
