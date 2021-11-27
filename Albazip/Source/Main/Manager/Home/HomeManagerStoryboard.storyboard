@@ -1827,6 +1827,9 @@
                                     <constraint firstAttribute="height" constant="24" id="lqe-J9-1o1"/>
                                 </constraints>
                                 <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="vcu-JG-Goq" eventType="touchUpInside" id="4c6-Ke-g0d"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매장 삭제" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcI-mF-imA">
                                 <rect key="frame" x="35.999999999999993" y="112" width="88.333333333333314" height="28.666666666666657"/>
@@ -1894,10 +1897,13 @@
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnCancel2:" destination="vcu-JG-Goq" eventType="touchUpInside" id="xNI-gq-Yd7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYB-D8-qGR">
                                         <rect key="frame" x="171" y="0.0" width="156" height="52"/>
-                                        <color key="backgroundColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.62352943419999995" green="0.62352943419999995" blue="0.62352943419999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="FL0-Tp-EgF"/>
                                         </constraints>
@@ -1910,6 +1916,9 @@
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnDelete:" destination="vcu-JG-Goq" eventType="touchUpInside" id="Csd-Ty-WSd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1923,11 +1932,30 @@
                                 <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pH-C7-8gq">
+                                <rect key="frame" x="20" y="364.33333333333331" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="O9i-Dt-943"/>
+                                    <constraint firstAttribute="width" constant="20" id="qjf-xh-7cC"/>
+                                </constraints>
+                                <state key="normal" image="icCheckBoxNormalGray"/>
+                                <state key="selected" image="icCheckBoxChecked"/>
+                                <connections>
+                                    <action selector="btnCheck:" destination="vcu-JG-Goq" eventType="touchUpInside" id="RZc-L5-2Rb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위 내용을 이해했으며, 약관에 동의합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vc-bA-Z12">
+                                <rect key="frame" x="50.000000000000014" y="366" width="229.33333333333337" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20784312490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xhf-rC-1Uj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="adt-vp-yMY" firstAttribute="leading" secondItem="g3R-Ka-exq" secondAttribute="leading" id="1qk-Fk-aXy"/>
+                            <constraint firstItem="5vc-bA-Z12" firstAttribute="centerY" secondItem="6pH-C7-8gq" secondAttribute="centerY" id="3MA-Am-9Xn"/>
                             <constraint firstItem="tRS-6c-fYa" firstAttribute="centerY" secondItem="GIn-aH-fMD" secondAttribute="centerY" id="53I-rs-jph"/>
                             <constraint firstItem="ltl-DF-FDt" firstAttribute="leading" secondItem="uBR-jF-Tkd" secondAttribute="leading" id="7Ij-n9-ddl"/>
                             <constraint firstItem="dX1-w5-ecs" firstAttribute="leading" secondItem="rPD-Xb-5cc" secondAttribute="leading" id="7YU-EG-2EG"/>
@@ -1935,7 +1963,9 @@
                             <constraint firstItem="jH8-G3-93J" firstAttribute="top" secondItem="xhf-rC-1Uj" secondAttribute="top" constant="20" id="9zZ-nJ-a4E"/>
                             <constraint firstItem="jH8-G3-93J" firstAttribute="leading" secondItem="xhf-rC-1Uj" secondAttribute="leading" constant="16" id="GJK-NJ-L1P"/>
                             <constraint firstItem="g3R-Ka-exq" firstAttribute="leading" secondItem="rPD-Xb-5cc" secondAttribute="trailing" constant="6" id="IHE-1t-ykZ"/>
+                            <constraint firstItem="6pH-C7-8gq" firstAttribute="top" secondItem="adt-vp-yMY" secondAttribute="bottom" constant="36" id="Io0-pA-pfu"/>
                             <constraint firstItem="rPD-Xb-5cc" firstAttribute="leading" secondItem="xhf-rC-1Uj" secondAttribute="leading" constant="24" id="OdC-xi-0LN"/>
+                            <constraint firstItem="6pH-C7-8gq" firstAttribute="leading" secondItem="xhf-rC-1Uj" secondAttribute="leading" constant="20" id="RDO-ZA-u3N"/>
                             <constraint firstAttribute="trailing" secondItem="g3R-Ka-exq" secondAttribute="trailing" constant="30" id="VpY-ra-pcK"/>
                             <constraint firstItem="dX1-w5-ecs" firstAttribute="centerY" secondItem="adt-vp-yMY" secondAttribute="centerY" id="VrY-Im-VPv"/>
                             <constraint firstItem="mnD-1H-Yp1" firstAttribute="leading" secondItem="xhf-rC-1Uj" secondAttribute="leading" constant="24" id="YEj-Ta-FHU"/>
@@ -1947,10 +1977,16 @@
                             <constraint firstItem="GIn-aH-fMD" firstAttribute="top" secondItem="g3R-Ka-exq" secondAttribute="bottom" constant="33" id="bGW-gR-ScL"/>
                             <constraint firstItem="g3R-Ka-exq" firstAttribute="top" secondItem="KcI-mF-imA" secondAttribute="bottom" constant="38" id="et7-Q6-SFq"/>
                             <constraint firstItem="xhf-rC-1Uj" firstAttribute="trailing" secondItem="mnD-1H-Yp1" secondAttribute="trailing" constant="24" id="hTi-qw-So2"/>
+                            <constraint firstItem="5vc-bA-Z12" firstAttribute="leading" secondItem="6pH-C7-8gq" secondAttribute="trailing" constant="10" id="oUC-5w-5xF"/>
                             <constraint firstItem="KcI-mF-imA" firstAttribute="top" secondItem="jH8-G3-93J" secondAttribute="bottom" constant="24" id="xOi-7J-V72"/>
                             <constraint firstItem="rPD-Xb-5cc" firstAttribute="top" secondItem="jH8-G3-93J" secondAttribute="bottom" constant="100" id="ydW-8G-xVb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnCheck" destination="6pH-C7-8gq" id="azR-AN-9jk"/>
+                        <outlet property="btnDelete" destination="xYB-D8-qGR" id="afu-cu-OZg"/>
+                        <outlet property="storeNameLabel" destination="ltl-DF-FDt" id="t5l-An-5WV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCk-Jk-W5V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1961,6 +1997,8 @@
         <image name="circle" width="39" height="38"/>
         <image name="icBackArrow" width="24" height="24"/>
         <image name="icBell" width="24" height="24"/>
+        <image name="icCheckBoxChecked" width="20" height="20"/>
+        <image name="icCheckBoxNormalGray" width="20" height="20"/>
         <image name="icChevronDown" width="24" height="24"/>
         <image name="icChevronDownBlack" width="20" height="20"/>
         <image name="icHomeActive" width="24" height="24"/>

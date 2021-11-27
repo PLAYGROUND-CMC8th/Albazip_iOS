@@ -63,6 +63,7 @@ extension HomeManagerStoreListVC: UITableViewDataSource, UITableViewDelegate {
                         cell.btnDelete.isHidden = false
                         cell.btnEdit.isHidden = false
                         cell.managerId = data[indexPath.row].managerId!
+                        cell.index = indexPath.row
                     }
                     
                     cell.storeNameLabel.text = data[indexPath.row].shop_name!
@@ -132,8 +133,16 @@ extension HomeManagerStoreListVC: HomeManagerStoreListDelegate {
         //HomeManagerEditStore1VC
     }
     
-    func goDetailPage(managerId:Int) {
+    func goDetailPage(managerId:Int, index: Int) {
         print("goDetailPage")
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerDeleteStoreVC") as? HomeManagerDeleteStoreVC else {return}
+        nextVC.managerId = managerId
+        if let data = storeList{
+            nextVC.storeName = data[index].shop_name!
+        }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        //HomeManagerDeleteStoreVC
     }
     
     

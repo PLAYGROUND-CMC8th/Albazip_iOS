@@ -8,10 +8,11 @@
 import UIKit
 protocol HomeManagerStoreListDelegate {
     func goEditPage(managerId:Int)
-    func goDetailPage(managerId:Int)
+    func goDetailPage(managerId:Int, index: Int)
 }
 class HomeManagerStoreListTableViewCell: UITableViewCell {
     var managerId = -1
+    var index = -1
     var delegate:  HomeManagerStoreListDelegate?
     @IBOutlet var btnDelete: UIButton!
     @IBOutlet var btnEdit: UIButton!
@@ -31,7 +32,7 @@ class HomeManagerStoreListTableViewCell: UITableViewCell {
         delegate?.goEditPage(managerId: managerId)
     }
     @IBAction func btnDelete(_ sender: Any) {
-        delegate?.goDetailPage(managerId: managerId)
+        delegate?.goDetailPage(managerId: managerId, index: index)
     }
     
 }
