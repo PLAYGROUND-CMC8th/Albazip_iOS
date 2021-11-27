@@ -17,13 +17,16 @@ class HomeManagerEditStore1VC:UIViewController{
     @IBOutlet var btnNext: UIButton!
     var storeName = ""
     var storeLocation = ""
-    
-    var selectedType = false
-    
-    
+    var managerId = -1
+    var selectedType = true
+    // Datamanager
+    lazy var dataManager: HomeManagerEditStoreBeforeDatamanager = HomeManagerEditStoreBeforeDatamanager()
+    var storeData: HomeManagerEditStoreBeforeData?
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        showIndicator()
+        dataManager.getHomeManagerEditStoreBefore(managerId: managerId, vc: self)
     }
     func setUI() {
         storeNameTextField.addLeftPadding()
@@ -59,12 +62,12 @@ class HomeManagerEditStore1VC:UIViewController{
         if storeNameTextField.text!.count > 0 , storeLocationTextField.text!.count > 0, storeLocationDetailTextField.text!.count > 0, selectedType{
             
             btnNext.isEnabled = true
-            btnNext.backgroundColor = .mainYellow
-            btnNext.setTitleColor(.gray, for: .normal)
+            //btnNext.backgroundColor = .mainYellow
+            btnNext.setTitleColor(#colorLiteral(red: 1, green: 0.7672405243, blue: 0.01259230357, alpha: 1), for: .normal)
         }else{
             btnNext.isEnabled = false
-            btnNext.backgroundColor = .semiYellow
-            btnNext.setTitleColor(.semiGray, for: .normal)
+            //btnNext.backgroundColor = .semiYellow
+            btnNext.setTitleColor(#colorLiteral(red: 0.678363204, green: 0.678479135, blue: 0.6783478856, alpha: 1), for: .normal)
         }
     }
     @IBAction func btnCancel(_ sender: Any) {
@@ -77,6 +80,13 @@ class HomeManagerEditStore1VC:UIViewController{
         registerManagerInfo.address = storeLocationTextField.text! + " " + storeLocationDetailTextField.text!
        
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerEditStore2VC") as? HomeManagerEditStore2VC else {return}
+        if let x = storeData{
+            nextVC.startTime = x.startTime!.insertTime
+            nextVC.endTime = x.endTime!.insertTime
+            nextVC.salary = x.payday!
+            nextVC.holiday = x.holiday!
+            nextVC.managerId = managerId
+        }
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
@@ -131,5 +141,25 @@ extension HomeManagerEditStore1VC: ModalDelegate {
         storeTypeTextField.text = data
         selectedType = true
         checkTextField()
+    }
+}
+extension HomeManagerEditStore1VC {
+    func didSuccessHomeManagerEditStore(result: HomeManagerEditStoreBeforeResponse) {
+        //print(result.data)
+        
+        if let data = result.data{
+            storeData = data
+            print(storeData)
+            storeNameTextField.text = data.name!
+            storeTypeTextField.text = data.type!
+            storeLocationTextField.text = data.address!
+            
+        }
+        dismissIndicator()
+    }
+    
+    func failedToRequestHomeManagerEditStore(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
     }
 }

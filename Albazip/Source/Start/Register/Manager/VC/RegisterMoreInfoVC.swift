@@ -318,8 +318,14 @@ class RegisterMoreInfoVC: UIViewController {
             if btnFri.isSelected{
                 holiday.append("금")
             }
+            if btnSat.isSelected{
+                holiday.append("토")
+            }
+            if btnSun.isSelected{
+                holiday.append("일")
+            }
             if btnBreak.isSelected{
-                holiday.append("휴무일")
+                holiday.append("공휴일")
             }
         }else{
             holiday.append("연중무휴")
@@ -332,7 +338,7 @@ class RegisterMoreInfoVC: UIViewController {
     
     @IBAction func btnNext(_ sender: Any) {
         // 몇시간 몇분 시간 계산
-        
+        holiday.removeAll()
         // 휴무일 정보 불러오기
         getHoliday()
         
@@ -341,7 +347,7 @@ class RegisterMoreInfoVC: UIViewController {
         
         //시간에서 : 문자 제거
         let removeStartTime = startTextField.text!.replace(target: ":", with: "")
-        let removeEndTime = startTextField.text!.replace(target: ":", with: "")
+        let removeEndTime = endTextField.text!.replace(target: ":", with: "")
         
         //로그인화면에서 포지션 선택으로 온것인지 관리자 가입에서 온것인지 잘 판단해야할듯, => 둘다 토큰을 Userdault말고 RegisterBasicInfo에 저장하자!
         

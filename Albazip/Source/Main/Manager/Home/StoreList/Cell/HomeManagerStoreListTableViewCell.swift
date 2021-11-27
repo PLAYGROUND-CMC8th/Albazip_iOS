@@ -7,11 +7,11 @@
 
 import UIKit
 protocol HomeManagerStoreListDelegate {
-    func goEditPage()
-    func goDetailPage()
+    func goEditPage(managerId:Int)
+    func goDetailPage(managerId:Int)
 }
 class HomeManagerStoreListTableViewCell: UITableViewCell {
-
+    var managerId = -1
     var delegate:  HomeManagerStoreListDelegate?
     @IBOutlet var btnDelete: UIButton!
     @IBOutlet var btnEdit: UIButton!
@@ -28,10 +28,10 @@ class HomeManagerStoreListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func btnEdit(_ sender: Any) {
-        delegate?.goEditPage()
+        delegate?.goEditPage(managerId: managerId)
     }
     @IBAction func btnDelete(_ sender: Any) {
-        delegate?.goDetailPage()
+        delegate?.goDetailPage(managerId: managerId)
     }
     
 }

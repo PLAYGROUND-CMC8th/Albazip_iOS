@@ -26,15 +26,18 @@ class HomeManagerEditStore2VC: UIViewController{
     @IBOutlet var salaryTextField: UITextField!
     @IBOutlet var btnNext: UIButton!
     
-    
-    //버튼 선택 정보 저장
-    var btnArray = [false, false, false, false, false, false,false, false, false]
+    var startTime = ""
+    var endTime = ""
+    var salary = ""
     
     var holiday = [String]()
-    
+    var managerId = -1
+    // Datamanager
+    lazy var dataManager: HomeManagerEditStoreDatamanager = HomeManagerEditStoreDatamanager()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        setBeforeData()
     }
     func setUI(){
         self.dismissKeyboardWhenTappedAround()
@@ -48,6 +51,59 @@ class HomeManagerEditStore2VC: UIViewController{
         salaryTextField.attributedPlaceholder = NSAttributedString(string: "1 - 31    ", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
         startTextField.attributedPlaceholder = NSAttributedString(string: "00:00", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 30)!])
         endTextField.attributedPlaceholder = NSAttributedString(string: "00:00", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 30)!])
+    }
+    func setBeforeData(){
+        startTextField.text = startTime
+        endTextField.text = endTime
+        salaryTextField.text = salary
+        calculateTime()
+        if holiday.contains("연중무휴"){
+            btnNoBreak.isSelected = true
+            disableBtn(btn: btnMon)
+            disableBtn(btn: btnTue)
+            disableBtn(btn: btnWed)
+            disableBtn(btn: btnThu)
+            disableBtn(btn: btnFri)
+            disableBtn(btn: btnSat)
+            disableBtn(btn: btnSun)
+            disableBtn(btn: btnBreak)
+            selectedBtn(btn: btnNoBreak)
+        }else{
+            disableBtn(btn: btnNoBreak)
+            if holiday.contains("월"){
+                btnMon.isSelected = true
+                selectedBtn(btn: btnMon)
+                //selectedBtn(btn: btnMon)
+            }
+            if holiday.contains("화"){
+                btnTue.isSelected = true
+                selectedBtn(btn: btnTue)
+            }
+            if holiday.contains("수"){
+                btnWed.isSelected = true
+                selectedBtn(btn: btnWed)
+            }
+            if holiday.contains("목"){
+                btnThu.isSelected = true
+                selectedBtn(btn: btnThu)
+            }
+            if holiday.contains("금"){
+                btnFri.isSelected = true
+                selectedBtn(btn: btnFri)
+            }
+            if holiday.contains("토"){
+                btnSat.isSelected = true
+                selectedBtn(btn: btnSat)
+            }
+            if holiday.contains("일"){
+                btnSun.isSelected = true
+                selectedBtn(btn: btnSun)
+            }
+            if holiday.contains("공휴일"){
+                btnBreak.isSelected = true
+                selectedBtn(btn: btnBreak)
+            }
+        }
     }
     
     @IBAction func btnNoBreak(_ sender: Any) {
@@ -245,23 +301,23 @@ class HomeManagerEditStore2VC: UIViewController{
             if btnNoBreak.isSelected{
                 //연중무휴 체크
                 btnNext.isEnabled = true
-                btnNext.backgroundColor = .mainYellow
-                btnNext.setTitleColor(.gray, for: .normal)
+                //btnNext.backgroundColor = .mainYellow
+                btnNext.setTitleColor(#colorLiteral(red: 1, green: 0.7672405243, blue: 0.01259230357, alpha: 1), for: .normal)
             }else if !btnMon.isSelected, !btnTue.isSelected, !btnWed.isSelected, !btnThu.isSelected, !btnFri.isSelected, !btnSat.isSelected, !btnSun.isSelected, !btnBreak.isSelected{
                 // 아무것도 체크 안됨
                 btnNext.isEnabled = false
-                btnNext.backgroundColor = .semiYellow
-                btnNext.setTitleColor(.semiGray, for: .normal)
+                //btnNext.backgroundColor = .semiYellow
+                btnNext.setTitleColor(#colorLiteral(red: 0.678363204, green: 0.678479135, blue: 0.6783478856, alpha: 1), for: .normal)
             }else{
                 //버튼중에 하나는 선택되어있음
                 btnNext.isEnabled = true
-                btnNext.backgroundColor = .mainYellow
-                btnNext.setTitleColor(.gray, for: .normal)
+                //btnNext.backgroundColor = .mainYellow
+                btnNext.setTitleColor(#colorLiteral(red: 1, green: 0.7672405243, blue: 0.01259230357, alpha: 1), for: .normal)
             }
         }else{
             btnNext.isEnabled = false
-            btnNext.backgroundColor = .semiYellow
-            btnNext.setTitleColor(.semiGray, for: .normal)
+            //btnNext.backgroundColor = .semiYellow
+            btnNext.setTitleColor(#colorLiteral(red: 0.678363204, green: 0.678479135, blue: 0.6783478856, alpha: 1), for: .normal)
         }
     }
     
@@ -314,16 +370,23 @@ class HomeManagerEditStore2VC: UIViewController{
             if btnFri.isSelected{
                 holiday.append("금")
             }
+            if btnSat.isSelected{
+                holiday.append("토")
+            }
+            if btnSun.isSelected{
+                holiday.append("일")
+            }
             if btnBreak.isSelected{
-                holiday.append("휴무일")
+                holiday.append("공휴일")
             }
         }else{
             holiday.append("연중무휴")
         }
+        print(holiday)
     }
     @IBAction func btnNext(_ sender: Any) {
         // 몇시간 몇분 시간 계산
-        
+        holiday.removeAll()
         // 휴무일 정보 불러오기
         getHoliday()
         
@@ -332,18 +395,19 @@ class HomeManagerEditStore2VC: UIViewController{
         
         //시간에서 : 문자 제거
         let removeStartTime = startTextField.text!.replace(target: ":", with: "")
-        let removeEndTime = startTextField.text!.replace(target: ":", with: "")
+        let removeEndTime = endTextField.text!.replace(target: ":", with: "")
         
         //로그인화면에서 포지션 선택으로 온것인지 관리자 가입에서 온것인지 잘 판단해야할듯, => 둘다 토큰을 Userdault말고 RegisterBasicInfo에 저장하자!
         
         // api resquest 데이터
-        /*
-        let input = RegisterManagerRequset(name: data.name!, type: data.type!, address: data.address!, ownerName: data.ownerName!, registerNumber: data.registerNumber!, startTime: removeStartTime, endTime: removeEndTime, breakTime: "0",holiday: holiday, payday: salaryTextField.text!)
+        
+        let input = HomeManagerEditStoreRequest(name: data.name!, type: data.type!, address: data.address!, startTime: removeStartTime, endTime: removeEndTime, holiday: holiday, payday: salaryTextField.text!)
         print(input)
         
         // api 통신
-        dataManager.postRegisterManager(input, delegate: self)
-        */
+        showIndicator()
+        dataManager.postEditStore(managerId: managerId, input, delegate: self)
+        
         
         //휴무일 정보 reset
         holiday.removeAll()
@@ -391,4 +455,22 @@ extension HomeManagerEditStore2VC : UITextFieldDelegate{
             
             return true
         }
+}
+
+extension HomeManagerEditStore2VC {
+    func didSuccessEditStore(result: HomeManagerEditStoreReponse) {
+        print(result.message)
+        
+        dismissIndicator()
+        backTwo()
+    }
+    
+    func failedToEditStore(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
+    func backTwo() {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: false)
+    }
 }

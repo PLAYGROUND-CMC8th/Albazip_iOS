@@ -55,6 +55,16 @@ extension HomeManagerStoreListVC: UITableViewDataSource, UITableViewDelegate {
                 cell.selectionStyle = .none
                 if let data = storeList{
                     cell.delegate = self
+                    if let x = data[indexPath.row].workerId{
+                        // 근무자일때는 수정, 편집 버튼 비활성화
+                        cell.btnDelete.isHidden = true
+                        cell.btnEdit.isHidden = true
+                    }else{
+                        cell.btnDelete.isHidden = false
+                        cell.btnEdit.isHidden = false
+                        cell.managerId = data[indexPath.row].managerId!
+                    }
+                    
                     cell.storeNameLabel.text = data[indexPath.row].shop_name!
                     if data[indexPath.row].status! == 0{
                         cell.mainView.backgroundColor = #colorLiteral(red: 0.9994661212, green: 0.979791224, blue: 0.9194086194, alpha: 1)
@@ -114,14 +124,15 @@ extension HomeManagerStoreListVC {
 }
 
 extension HomeManagerStoreListVC: HomeManagerStoreListDelegate {
-    func goEditPage() {
+    func goEditPage(managerId:Int) {
        print("goEditPage")
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerEditStore1VC") as? HomeManagerEditStore1VC else {return}
+        nextVC.managerId = managerId
         self.navigationController?.pushViewController(nextVC, animated: true)
         //HomeManagerEditStore1VC
     }
     
-    func goDetailPage() {
+    func goDetailPage(managerId:Int) {
         print("goDetailPage")
     }
     

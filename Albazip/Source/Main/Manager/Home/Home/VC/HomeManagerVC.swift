@@ -79,6 +79,7 @@ class HomeManagerVC: BaseViewController{
     //매장 목록 페이지로
     @objc func storeNameViewTapped(sender: UITapGestureRecognizer) {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerStoreListVC") as? HomeManagerStoreListVC else {return}
+        
         self.navigationController?.pushViewController(nextVC, animated: true)
         
     }

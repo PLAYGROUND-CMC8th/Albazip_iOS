@@ -13,6 +13,7 @@ struct HomeManagerStoreListResponse: Decodable {
 
 struct HomeManagerStoreListData : Decodable{
     var workerId: Int?
+    var managerId: Int?
     var shop_name: String?
     var status: Int?
 }

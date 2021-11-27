@@ -229,11 +229,11 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="fDv-G3-LFW"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oQ-VJ-oiW">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oQ-VJ-oiW">
                                 <rect key="frame" x="329" y="60" width="30" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <state key="normal" title="완료">
-                                    <color key="titleColor" red="0.96470588450000005" green="0.77647060160000003" blue="0.26274511220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.6784313917" green="0.6784313917" blue="0.6784313917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="btnNext:" destination="nbZ-0f-1DD" eventType="touchUpInside" id="nbm-fp-d7T"/>
@@ -293,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTh-wK-nf6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2799" y="-466"/>
+            <point key="canvasLocation" x="-2799.1999999999998" y="-466.25615763546801"/>
         </scene>
         <!--Home Manager Edit Store2VC-->
         <scene sceneID="XqH-pq-2gg">
@@ -690,8 +690,8 @@
                                     <constraint firstAttribute="height" constant="31" id="T2c-gh-Vki"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bFx-CS-seF">
-                                <rect key="frame" x="0.0" y="690" width="375" height="122"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFx-CS-seF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" systemColor="separatorColor"/>
                             </view>
                         </subviews>

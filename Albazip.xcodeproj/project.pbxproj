@@ -258,6 +258,11 @@
 		C3A7C7ED2752709E00271EFE /* HomeManagerEditStore1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C7EC2752709E00271EFE /* HomeManagerEditStore1VC.swift */; };
 		C3A7C7EF275270AE00271EFE /* HomeManagerEditStore2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C7EE275270AE00271EFE /* HomeManagerEditStore2VC.swift */; };
 		C3A7C7F1275270C800271EFE /* HomeManagerDeleteStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C7F0275270C800271EFE /* HomeManagerDeleteStoreVC.swift */; };
+		C3A7C7F42752904000271EFE /* HomeManagerEditStoreBeforeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C7F32752904000271EFE /* HomeManagerEditStoreBeforeResponse.swift */; };
+		C3A7C7F72752913900271EFE /* HomeManagerEditStoreBeforeDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C7F62752913900271EFE /* HomeManagerEditStoreBeforeDatamanager.swift */; };
+		C3A7C7F92752A33100271EFE /* HomeManagerEditStoreReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C7F82752A33100271EFE /* HomeManagerEditStoreReponse.swift */; };
+		C3A7C7FB2752A35200271EFE /* HomeManagerEditStoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C7FA2752A35200271EFE /* HomeManagerEditStoreRequest.swift */; };
+		C3A7C7FD2752A3D800271EFE /* HomeManagerEditStoreDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C7FC2752A3D800271EFE /* HomeManagerEditStoreDatamanager.swift */; };
 		C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9683E2719F8E500E27DA1 /* UIView.swift */; };
 		C3A968422719FA7A00E27DA1 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A968412719FA7A00E27DA1 /* StartViewController.swift */; };
 		C3AC1F83274D195D0007AA95 /* CommunityWorkerTopTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC1F82274D195D0007AA95 /* CommunityWorkerTopTabVC.swift */; };
@@ -666,6 +671,11 @@
 		C3A7C7EC2752709E00271EFE /* HomeManagerEditStore1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerEditStore1VC.swift; sourceTree = "<group>"; };
 		C3A7C7EE275270AE00271EFE /* HomeManagerEditStore2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerEditStore2VC.swift; sourceTree = "<group>"; };
 		C3A7C7F0275270C800271EFE /* HomeManagerDeleteStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerDeleteStoreVC.swift; sourceTree = "<group>"; };
+		C3A7C7F32752904000271EFE /* HomeManagerEditStoreBeforeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerEditStoreBeforeResponse.swift; sourceTree = "<group>"; };
+		C3A7C7F62752913900271EFE /* HomeManagerEditStoreBeforeDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerEditStoreBeforeDatamanager.swift; sourceTree = "<group>"; };
+		C3A7C7F82752A33100271EFE /* HomeManagerEditStoreReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerEditStoreReponse.swift; sourceTree = "<group>"; };
+		C3A7C7FA2752A35200271EFE /* HomeManagerEditStoreRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerEditStoreRequest.swift; sourceTree = "<group>"; };
+		C3A7C7FC2752A3D800271EFE /* HomeManagerEditStoreDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerEditStoreDatamanager.swift; sourceTree = "<group>"; };
 		C3A9683E2719F8E500E27DA1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C3A968412719FA7A00E27DA1 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		C3AC1F82274D195D0007AA95 /* CommunityWorkerTopTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerTopTabVC.swift; sourceTree = "<group>"; };
@@ -1949,6 +1959,8 @@
 		C3A7C7EA2752704B00271EFE /* EditStore */ = {
 			isa = PBXGroup;
 			children = (
+				C3A7C7F52752911E00271EFE /* Datamanager */,
+				C3A7C7F22752902300271EFE /* Entity */,
 				C3A7C7EC2752709E00271EFE /* HomeManagerEditStore1VC.swift */,
 				C3A7C7EE275270AE00271EFE /* HomeManagerEditStore2VC.swift */,
 			);
@@ -1961,6 +1973,25 @@
 				C3A7C7F0275270C800271EFE /* HomeManagerDeleteStoreVC.swift */,
 			);
 			path = DeleteStore;
+			sourceTree = "<group>";
+		};
+		C3A7C7F22752902300271EFE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C3A7C7F32752904000271EFE /* HomeManagerEditStoreBeforeResponse.swift */,
+				C3A7C7F82752A33100271EFE /* HomeManagerEditStoreReponse.swift */,
+				C3A7C7FA2752A35200271EFE /* HomeManagerEditStoreRequest.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C3A7C7F52752911E00271EFE /* Datamanager */ = {
+			isa = PBXGroup;
+			children = (
+				C3A7C7F62752913900271EFE /* HomeManagerEditStoreBeforeDatamanager.swift */,
+				C3A7C7FC2752A3D800271EFE /* HomeManagerEditStoreDatamanager.swift */,
+			);
+			path = Datamanager;
 			sourceTree = "<group>";
 		};
 		C3AC1F81274D19230007AA95 /* VC */ = {
@@ -2955,6 +2986,7 @@
 				C3E9C8F627416E3A00B0139C /* MyPageDetailCommuteRecordResponse.swift in Sources */,
 				C3F05A59274F8AC70025DB24 /* MyPageDeletePositionResponse.swift in Sources */,
 				C3476610274524890001B220 /* MyPageProfileImageDefaultRequest.swift in Sources */,
+				C3A7C7F72752913900271EFE /* HomeManagerEditStoreBeforeDatamanager.swift in Sources */,
 				C3F05A46274F58AB0025DB24 /* HomeManagerQRCodeDatamanager.swift in Sources */,
 				C398BFAC273F9FE5008E8BA5 /* HomeManagerCoummunityCollectionViewCell.swift in Sources */,
 				C30EC2E3272A4FEF00EEF218 /* RegisterNumberExistResponse.swift in Sources */,
@@ -2963,7 +2995,9 @@
 				C398BFB8273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift in Sources */,
 				C398BFBE273FF0FF008E8BA5 /* HomeManagerAddPublicWorkVC.swift in Sources */,
 				C3EBC257274A31890017BB85 /* HomeWorkerResponse.swift in Sources */,
+				C3A7C7FB2752A35200271EFE /* HomeManagerEditStoreRequest.swift in Sources */,
 				C384425C27147E3F00B84E8A /* UIViewController.swift in Sources */,
+				C3A7C7FD2752A3D800271EFE /* HomeManagerEditStoreDatamanager.swift in Sources */,
 				C3476619274564A50001B220 /* MyPageManagerEditWorkerDatamanager.swift in Sources */,
 				C3CFC2EE273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift in Sources */,
 				C384425027147E2900B84E8A /* Device.swift in Sources */,
@@ -3009,6 +3043,7 @@
 				C34972F4275058E5009EFCD1 /* CommunityManagerNoticePinResponse.swift in Sources */,
 				C3B022EF2726F28A00013988 /* RegisterSelectStoreTypeVC.swift in Sources */,
 				C3CFC304273EC3F2001B2EB6 /* MyPageManagerWorkerInfoDataManager.swift in Sources */,
+				C3A7C7F92752A33100271EFE /* HomeManagerEditStoreReponse.swift in Sources */,
 				C3F05A56274F8A6F0025DB24 /* MyPageDeletePositionDatamanager.swift in Sources */,
 				C3A228B3274286B600187587 /* HomeWorkerWorkTableViewCell.swift in Sources */,
 				C3CFC30A273ED375001B2EB6 /* MyPageManagerWorkerWriteDatamanager.swift in Sources */,
@@ -3073,6 +3108,7 @@
 				C33F9984272E973500E9FF05 /* RegisterWorkerRequest.swift in Sources */,
 				C3CB0169273D5980000EA353 /* MyPageWorkerProfileDatamanager.swift in Sources */,
 				C3CFC2FC273E94DE001B2EB6 /* MyPageWorkerPositionResponse.swift in Sources */,
+				C3A7C7F42752904000271EFE /* HomeManagerEditStoreBeforeResponse.swift in Sources */,
 				C3AC1F83274D195D0007AA95 /* CommunityWorkerTopTabVC.swift in Sources */,
 				C3E9C8F227416C8000B0139C /* MyPageDetailPublicWorkResponse.swift in Sources */,
 				C34A00582731AA2D00C24102 /* MyPageWorkerMyInfoTableViewCell.swift in Sources */,
