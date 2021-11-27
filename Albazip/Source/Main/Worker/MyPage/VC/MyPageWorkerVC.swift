@@ -147,7 +147,8 @@ class MyPageWorkerVC: BaseViewController{
     //상단 탭바 글씨 지정
     func populateBottomView() {
         
-        let tabName = ["내정보", "포지션", "작성글"]
+        //let tabName = ["내정보", "포지션", "작성글"]
+        let tabName = ["내정보", "포지션"]
         for subTabCount in 0..<tabsCount {
             
             
@@ -168,14 +169,16 @@ class MyPageWorkerVC: BaseViewController{
                 let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
                 let page = Page(with: displayName, _vc: tabContentVC)
                 pageCollection.pages.append(page)
-            }else if(subTabCount==2){
+            }
+            /*
+            else if(subTabCount==2){
                 let tabContentVC = MyPageWorkerWriteVC()
                 tabContentVC.myPageWorkerWriteTableViewScrollDelegate = self
                 //tabContentVC.numberOfCells = 30
                 let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
                 let page = Page(with: displayName, _vc: tabContentVC)
                 pageCollection.pages.append(page)
-            }
+            }*/
             
         }
         

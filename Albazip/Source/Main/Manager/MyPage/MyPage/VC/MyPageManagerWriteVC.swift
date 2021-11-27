@@ -73,7 +73,10 @@ class MyPageManagerWriteVC: UIViewController, MyPageManagerWriteTabDelegate  {
     //MARK:- View Setup
     
     func setupTableView() {
-        
+        //여백셀
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 18))
+        header.backgroundColor = #colorLiteral(red: 0.9724535346, green: 0.9726160169, blue: 0.9724321961, alpha: 1)
+        tableView.tableHeaderView = header
         tableView.register(UINib(nibName: "MyPageManagerWriteTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageManagerWriteTableViewCell")
         tableView.register(UINib(nibName: "MyPageManagerWriteTabTableViewCell", bundle: nil),
@@ -106,13 +109,13 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
             if isNoNoticeData{
                 return 2
             }else{
-                return noticeData!.count + 1
+                return noticeData!.count //+ 1
             }
         }else{
             if isNoWriteData{
                 return 2
             }else{
-                return writeData!.count + 1
+                return writeData!.count //+ 1
             }
         }
         
@@ -121,13 +124,16 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        /*
         if indexPath.row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteTabTableViewCell") as? MyPageManagerWriteTabTableViewCell {
                 cell.delegate = self
                 cell.selectionStyle = .none
                 return cell
             }
-        }else{
+        }*/
+        //게시판 추가되면 indexPath.row에 -1 해줘야함.
+        
             if(selectedTab==0){ // 공지사항일때
                 if isNoNoticeData{
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWriteTableViewCell") as? MyPageManagerNoWriteTableViewCell {
@@ -140,12 +146,12 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteTableViewCell") as? MyPageManagerWriteTableViewCell {
                         cell.selectionStyle = .none
                         if let data = noticeData{
-                            let date = data[indexPath.row - 1].registerDate!.substring(from: 0, to: 10)
+                            let date = data[indexPath.row].registerDate!.substring(from: 0, to: 10)
                             print(date)
                             let date2 = date.replace(target: "-", with: ". ")
                             cell.subLabel.text = date2
-                            cell.cellLabel.text = data[indexPath.row - 1].title!
-                            if data[indexPath.row - 1].pin! == 1{
+                            cell.cellLabel.text = data[indexPath.row].title!
+                            if data[indexPath.row].pin! == 1{
                                 cell.pinImage.image = #imageLiteral(resourceName: "icPushpinActive")
                             }else{
                                 cell.pinImage.image = #imageLiteral(resourceName: "icPushpinInactive")
@@ -186,13 +192,18 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
                 
             }
             
-        }
+        
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
+        /*
         if indexPath.row == 0{
             return 51
-        }else{
+        }*/
+        
+        //else{
+            
+            
             if selectedTab == 0{
                 if isNoNoticeData{
                     return 326
@@ -206,7 +217,8 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
                     return 175
                 }
             }
-        }
+        //}
+        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row) 입니다.")
