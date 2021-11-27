@@ -220,11 +220,13 @@ extension HomeManagerVC: UITableViewDataSource, UITableViewDelegate{
                         cell.honeyImage.image = #imageLiteral(resourceName: "imgHoneyReady")
                         cell.btnAddWork.setTitle("업무추가", for: .normal)
                         cell.titleLabel.text = "오픈 준비중 이에요."
+                        cell.btnAddWork.isHidden = false
                     case 2: // 근무 후
                         cell.heightConstraint.constant = 71
                         cell.honeyImage.image = #imageLiteral(resourceName: "imgHoneyDone")
                         cell.btnAddWork.setTitle("완료한 업무", for: .normal)
                         cell.titleLabel.text = "마감 됐어요."
+                        cell.btnAddWork.isHidden = false
                     default: // 3 휴무
                         cell.heightConstraint.constant = 91
                         cell.honeyImage.image = #imageLiteral(resourceName: "imgHoneySleeping")
@@ -368,6 +370,9 @@ extension HomeManagerVC {
         print(homeManagerData)
         setUI()
         //오픈 미들 마감 선별
+        openInfo.removeAll()
+        middleInfo.removeAll()
+        closeInfo.removeAll()
         var i = 0
         if let data = workerInfo{
             while(i < data.count){

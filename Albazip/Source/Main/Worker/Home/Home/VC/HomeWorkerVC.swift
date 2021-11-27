@@ -180,11 +180,13 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
                         cell.heightConstraint.constant = 65
                         cell.beeImage.image = #imageLiteral(resourceName: "imgBeeWork")
                         cell.btnNextPage.setTitle("출근하기", for: .normal)
+                        cell.btnNextPage.isHidden = false
                         cell.titleLabel.text = "오늘은 근무날이에요!"
                     case 2: // 근무 후
                         cell.heightConstraint.constant = 65
                         cell.beeImage.image = #imageLiteral(resourceName: "imgBeeDone")
                         cell.btnNextPage.setTitle("완료한 업무", for: .normal)
+                        cell.btnNextPage.isHidden = false
                         cell.titleLabel.text = "오늘 하루도 수고했어요."
                     default: // 3 휴무
                         cell.heightConstraint.constant = 80
