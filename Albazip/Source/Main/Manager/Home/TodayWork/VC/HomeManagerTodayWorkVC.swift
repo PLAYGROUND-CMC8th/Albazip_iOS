@@ -32,6 +32,8 @@ class HomeManagerTodayWorkVC: UIViewController{
     lazy var dataManager3: HomeTodayWorkCheckDatamanager = HomeTodayWorkCheckDatamanager()
     
     var deleteIndex = -1
+    //업무 완료 창
+    var clearAlert = false
     override func viewDidLoad() {
         super.viewDidLoad()
         print(segValue)
@@ -464,11 +466,24 @@ extension HomeManagerTodayWorkVC {
         tableView.reloadData()
         print(result)
         dismissIndicator()
+        
+        if clearAlert{
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeManagerClearAlertVC") as? HomeManagerClearAlertVC {
+                vc.modalPresentationStyle = .overFullScreen
+                
+                self.present(vc, animated: false, completion: nil)
+            }
+        }
+        clearAlert = false
     }
     
     func failedToRequestHomeManagerTodayWork(message: String) {
         dismissIndicator()
         presentAlert(title: message)
+    }
+    
+    func showClearAlert(){
+        
     }
 }
 
@@ -523,10 +538,33 @@ extension HomeManagerTodayWorkVC {
     }
 }
 
-extension HomeManagerTodayWorkVC: CheckUnCompleteWorkDelegate{
-    func checkUnCompleteWork(taskId: Int) {
-        print(taskId)
+extension HomeManagerTodayWorkVC: CheckUnCompleteWorkDelegate, CheckCompleteWorkDelegate, CheckCompleteWorkAlertDelegate{
+    
+    // 진짜 되돌리겠습니까 경고창에서 삭제 눌렀을 때
+    func readyToUnCkeckWork(taskId: Int) {
         showIndicator()
         dataManager3.getHomeTodayWorkCheck(taskId: taskId, vc: self)
+    }
+    
+    
+    //미완료 셀 체크했을때
+    func checkUnCompleteWork(taskId: Int) {
+        print(taskId)
+        clearAlert = true
+        showIndicator()
+        dataManager3.getHomeTodayWorkCheck(taskId: taskId, vc: self)
+    }
+    //완료 셀 체크했을 때
+    func checkCompleteWork(taskId: Int) {
+        print(taskId)
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeManagerUnClearAlertVC") as? HomeManagerUnClearAlertVC {
+            vc.modalPresentationStyle = .overFullScreen
+            vc.taskId = taskId
+            vc.delegate = self
+            
+            self.present(vc, animated: true, completion: nil)
+            
+        }
+        
     }
 }

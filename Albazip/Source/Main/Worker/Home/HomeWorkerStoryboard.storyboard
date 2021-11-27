@@ -154,6 +154,10 @@
                             <constraint firstItem="DBS-K3-w7T" firstAttribute="centerX" secondItem="e11-JA-N6H" secondAttribute="centerX" id="jYr-UL-k62"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bgView" destination="e11-JA-N6H" id="4bv-qp-ao9"/>
+                        <outlet property="mainView" destination="DBS-K3-w7T" id="n74-E3-kNh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDi-ut-KFG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

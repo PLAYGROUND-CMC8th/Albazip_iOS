@@ -6,14 +6,16 @@
 //
 
 import UIKit
-
+protocol CheckCompleteWorkDelegate{
+    func checkCompleteWork(taskId:Int)
+}
 class HomeWorkerPublicWorkCompleteTableViewCell: UITableViewCell {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subLabel: UILabel!
     @IBOutlet var btnCheck: UIButton!
     var taskId = -1
-    var delegate :CheckUnCompleteWorkDelegate?
+    var delegate :CheckCompleteWorkDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,6 +28,6 @@ class HomeWorkerPublicWorkCompleteTableViewCell: UITableViewCell {
     }
     
     @IBAction func btnCheck(_ sender: Any) {
-        delegate?.checkUnCompleteWork(taskId: taskId)
+        delegate?.checkCompleteWork(taskId: taskId)
     }
 }

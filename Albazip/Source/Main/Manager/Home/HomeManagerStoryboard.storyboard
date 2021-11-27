@@ -731,6 +731,175 @@
             </objects>
             <point key="canvasLocation" x="1881" y="497"/>
         </scene>
+        <!--Home Manager Clear AlertVC-->
+        <scene sceneID="YUJ-YO-bPv">
+            <objects>
+                <viewController storyboardIdentifier="HomeManagerClearAlertVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Xw-T8-jIV" customClass="HomeManagerClearAlertVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VD0-34-SsB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUY-wm-1lg">
+                                <rect key="frame" x="36" y="332" width="303" height="148"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconCheck56Px" translatesAutoresizingMaskIntoConstraints="NO" id="F2w-vz-swO">
+                                        <rect key="frame" x="123.66666666666666" y="24" width="56" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="56" id="6kd-2R-bZZ"/>
+                                            <constraint firstAttribute="height" constant="56" id="UAN-7t-tT8"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업무가 완료되었습니다!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ciz-mU-UXa">
+                                        <rect key="frame" x="73" y="104" width="157" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20784312490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Ciz-mU-UXa" firstAttribute="top" secondItem="F2w-vz-swO" secondAttribute="bottom" constant="24" id="7uv-eU-I9h"/>
+                                    <constraint firstAttribute="height" constant="148" id="DAY-g5-wzn"/>
+                                    <constraint firstItem="Ciz-mU-UXa" firstAttribute="centerX" secondItem="F2w-vz-swO" secondAttribute="centerX" id="NJT-Pa-SVK"/>
+                                    <constraint firstItem="F2w-vz-swO" firstAttribute="centerX" secondItem="oUY-wm-1lg" secondAttribute="centerX" id="ig0-mj-ngN"/>
+                                    <constraint firstAttribute="width" constant="303" id="sNw-3D-W0N"/>
+                                    <constraint firstItem="F2w-vz-swO" firstAttribute="top" secondItem="oUY-wm-1lg" secondAttribute="top" constant="24" id="v9T-yR-aan"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2js-Z0-zLd"/>
+                        <constraints>
+                            <constraint firstItem="oUY-wm-1lg" firstAttribute="centerX" secondItem="VD0-34-SsB" secondAttribute="centerX" id="Q23-qC-FFx"/>
+                            <constraint firstItem="oUY-wm-1lg" firstAttribute="centerY" secondItem="VD0-34-SsB" secondAttribute="centerY" id="jpA-sm-er1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bgView" destination="oUY-wm-1lg" id="8dd-AB-A3Q"/>
+                        <outlet property="mainView" destination="VD0-34-SsB" id="JFw-93-xfW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGs-iV-P6j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2721" y="495"/>
+        </scene>
+        <!--Home Manager Un Clear AlertVC-->
+        <scene sceneID="Xjq-ZS-Opr">
+            <objects>
+                <viewController storyboardIdentifier="HomeManagerUnClearAlertVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3ew-v8-hl7" customClass="HomeManagerUnClearAlertVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wjz-tU-3UE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ9-SE-cXe">
+                                <rect key="frame" x="0.0" y="578" width="375" height="234"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="완료한 업무를 되돌릴까요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Moe-Ka-cKp">
+                                        <rect key="frame" x="24" y="36" width="327" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-xA-GTj">
+                                        <rect key="frame" x="24" y="146" width="327" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-tS-HRU">
+                                                <rect key="frame" x="0.0" y="0.0" width="156" height="52"/>
+                                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="ecC-uB-J37"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <state key="normal" title="취소">
+                                                    <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnCancel:" destination="3ew-v8-hl7" eventType="touchUpInside" id="Zg8-S9-61U"/>
+                                                    <action selector="btnCancel:" destination="wec-W0-0AH" eventType="touchUpInside" id="bu3-3s-oA8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lM-M0-Zdn">
+                                                <rect key="frame" x="171" y="0.0" width="156" height="52"/>
+                                                <color key="backgroundColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="foF-pr-tE9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <state key="normal" title="삭제하기">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnDelete:" destination="wec-W0-0AH" eventType="touchUpInside" id="btE-q8-rEo"/>
+                                                    <action selector="btnDelete:" destination="3ew-v8-hl7" eventType="touchUpInside" id="geJ-k2-TBz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="327" id="TDG-ce-e9Z"/>
+                                            <constraint firstAttribute="height" constant="52" id="nfr-Vk-pey"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjN-O5-j7k">
+                                        <rect key="frame" x="45.333333333333343" y="71.666666666666629" width="284.33333333333326" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="7mo-so-BwO"/>
+                                        </constraints>
+                                        <string key="text">업무를 되돌릴 시, 미완료 업무 리스트에 추가되며,
+완료한 기록이 삭제됩니다. 작업을 계속 진행할까요?</string>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                        <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ebc-xA-GTj" secondAttribute="bottom" constant="36" id="36q-ll-XDu"/>
+                                    <constraint firstItem="Moe-Ka-cKp" firstAttribute="top" secondItem="ZJ9-SE-cXe" secondAttribute="top" constant="36" id="SZk-Op-sfA"/>
+                                    <constraint firstItem="PjN-O5-j7k" firstAttribute="centerX" secondItem="Moe-Ka-cKp" secondAttribute="centerX" id="Vph-uR-phK"/>
+                                    <constraint firstItem="ebc-xA-GTj" firstAttribute="leading" secondItem="ZJ9-SE-cXe" secondAttribute="leading" constant="24" id="Wsy-hJ-YMV"/>
+                                    <constraint firstItem="PjN-O5-j7k" firstAttribute="top" secondItem="Moe-Ka-cKp" secondAttribute="bottom" constant="14" id="bUP-zk-H6z"/>
+                                    <constraint firstItem="Moe-Ka-cKp" firstAttribute="leading" secondItem="ZJ9-SE-cXe" secondAttribute="leading" constant="24" id="fCE-5C-NaG"/>
+                                    <constraint firstAttribute="trailing" secondItem="ebc-xA-GTj" secondAttribute="trailing" constant="24" id="iJt-jR-oFu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Moe-Ka-cKp" secondAttribute="trailing" constant="24" id="lY8-FO-4Qr"/>
+                                    <constraint firstAttribute="width" constant="375" id="pHH-qS-jgI"/>
+                                    <constraint firstAttribute="height" constant="234" id="pqm-fw-R0x"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="La8-09-KGD"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ZJ9-SE-cXe" secondAttribute="bottom" id="7Ff-gQ-rBL"/>
+                            <constraint firstItem="La8-09-KGD" firstAttribute="trailing" secondItem="ZJ9-SE-cXe" secondAttribute="trailing" id="ByJ-ua-gIi"/>
+                            <constraint firstItem="ZJ9-SE-cXe" firstAttribute="leading" secondItem="Wjz-tU-3UE" secondAttribute="leading" id="SCf-cO-cTC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cornorView" destination="ZJ9-SE-cXe" id="VDE-HP-csb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7eH-8N-mOs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3509.5999999999999" y="498.76847290640399"/>
+        </scene>
         <!--Home Manager Today WorkVC-->
         <scene sceneID="5aa-Ay-caf">
             <objects>
@@ -977,6 +1146,7 @@
         <image name="icHomeInactive" width="24" height="24"/>
         <image name="icQrCode" width="24" height="24"/>
         <image name="icX24Px" width="24" height="24"/>
+        <image name="iconCheck56Px" width="56" height="56"/>
         <image name="imgPrivateWork68Px" width="68" height="68"/>
         <image name="imgPublicWork68Px" width="68" height="68"/>
         <image name="imgReadyPx" width="68" height="68"/>

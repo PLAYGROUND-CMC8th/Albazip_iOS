@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="242" id="KGk-i7-Jjw" customClass="HomeManagerCommunityTableViewCell" customModule="Albazip" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="242"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="163" id="KGk-i7-Jjw" customClass="HomeManagerCommunityTableViewCell" customModule="Albazip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="242"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소통창" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbx-ac-omk">
@@ -57,42 +57,18 @@
                         <color key="pageIndicatorTintColor" red="0.92156863209999995" green="0.92156863209999995" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="currentPageIndicatorTintColor" red="0.96470588450000005" green="0.77647060160000003" blue="0.26666668059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </pageControl>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UEQ-kV-gtO">
-                        <rect key="frame" x="0.0" y="157" width="375" height="49"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="49" id="KLA-Sr-Icf"/>
-                        </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wla-pc-ovf">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                    </collectionView>
-                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="RQR-ip-gQa">
-                        <rect key="frame" x="87.666666666666671" y="218" width="29" height="4"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="29" id="2od-5T-2mQ"/>
-                            <constraint firstAttribute="height" constant="4" id="JuC-1d-Koi"/>
-                        </constraints>
-                    </pageControl>
                 </subviews>
                 <constraints>
                     <constraint firstItem="vTe-ni-tS1" firstAttribute="centerY" secondItem="sbx-ac-omk" secondAttribute="centerY" id="7Sp-8s-enJ"/>
-                    <constraint firstAttribute="trailing" secondItem="UEQ-kV-gtO" secondAttribute="trailing" id="BQB-8r-V5i"/>
                     <constraint firstItem="6uq-7t-jA6" firstAttribute="top" secondItem="JPK-jP-9ap" secondAttribute="bottom" constant="12" id="NQl-3J-hDy"/>
-                    <constraint firstItem="UEQ-kV-gtO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UlU-nY-5SM"/>
                     <constraint firstItem="sbx-ac-omk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="36" id="Yes-hO-3cb"/>
                     <constraint firstItem="JPK-jP-9ap" firstAttribute="top" secondItem="vTe-ni-tS1" secondAttribute="bottom" constant="16" id="cvV-0M-mvC"/>
-                    <constraint firstItem="UEQ-kV-gtO" firstAttribute="top" secondItem="6uq-7t-jA6" secondAttribute="bottom" constant="16" id="dE8-Mw-jmt"/>
                     <constraint firstItem="6uq-7t-jA6" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="lTT-fc-o7u"/>
                     <constraint firstAttribute="trailing" secondItem="JPK-jP-9ap" secondAttribute="trailing" id="nUm-6O-E7o"/>
                     <constraint firstItem="sbx-ac-omk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="oJx-gS-gkH"/>
-                    <constraint firstItem="RQR-ip-gQa" firstAttribute="leading" secondItem="6uq-7t-jA6" secondAttribute="leading" id="srS-xN-kTp"/>
-                    <constraint firstItem="RQR-ip-gQa" firstAttribute="top" secondItem="UEQ-kV-gtO" secondAttribute="bottom" constant="12" id="v2J-Sk-eYj"/>
                     <constraint firstItem="JPK-jP-9ap" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yjO-l9-h27"/>
                     <constraint firstAttribute="trailing" secondItem="vTe-ni-tS1" secondAttribute="trailing" constant="24" id="zGc-7S-gJz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="6uq-7t-jA6" secondAttribute="bottom" constant="11" id="zbc-0A-acw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -100,7 +76,7 @@
                 <outlet property="collectionView" destination="JPK-jP-9ap" id="c8U-Hn-dSz"/>
                 <outlet property="pageControl" destination="6uq-7t-jA6" id="ooh-Xh-dXL"/>
             </connections>
-            <point key="canvasLocation" x="124" y="64"/>
+            <point key="canvasLocation" x="124" y="32.142857142857146"/>
         </tableViewCell>
     </objects>
     <resources>
