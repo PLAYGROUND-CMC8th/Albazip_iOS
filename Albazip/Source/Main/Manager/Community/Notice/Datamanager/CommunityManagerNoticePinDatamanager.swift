@@ -23,6 +23,8 @@ class CommunityManagerNoticePinDatamanager {
                     switch response.code {
                     case "200":
                         vc.didSuccessCommunityManagerNoticePin(result: response)
+                    case "202":
+                        vc.didSuccessCommunityManagerNoticePinOver(message: response.message!)
                     default:
                         vc.failedToRequestCommunityManagerNoticePin(message: response.message!)
                     }

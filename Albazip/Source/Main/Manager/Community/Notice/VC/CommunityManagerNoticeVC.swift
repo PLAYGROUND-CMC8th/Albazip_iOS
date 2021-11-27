@@ -68,6 +68,7 @@ extension CommunityManagerNoticeVC: UITableViewDataSource, UITableViewDelegate{
             }
         }else{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityManagerNoticeTableViewCell") as? CommunityManagerNoticeTableViewCell {
+                cell.delegate = self
                 cell.selectionStyle = .none
                 if let data = noticeList{
                     //cell.checkLabel.isHidden = true
@@ -78,6 +79,7 @@ extension CommunityManagerNoticeVC: UITableViewDataSource, UITableViewDelegate{
                     }else{
                         cell.btnPin.setImage(#imageLiteral(resourceName: "icPushpinActive"), for: .normal)
                     }
+                    cell.noticeId = data[indexPath.row].id!
                     
                 }
                 return cell
@@ -121,12 +123,19 @@ extension CommunityManagerNoticeVC {
         presentAlert(title: message)
     }
     //공지사항 핀 aPI
-    func didSuccessCommunityManagerNoticePin(result: CommunityManagerNoticePinResponse) {
-        
-        tableView.reloadData()
-        dismissIndicator()
-    }
     
+    //핀 성공
+    func didSuccessCommunityManagerNoticePin(result: CommunityManagerNoticePinResponse) {
+        print(result.message)
+        dataManager.getCommunityManagerNotice(vc: self)
+    }
+    //핀 5개 초과시
+    func didSuccessCommunityManagerNoticePinOver(message: String) {
+        
+        dismissIndicator()
+        presentBottomAlert(message: message)
+    }
+    //핀 실패
     func failedToRequestCommunityManagerNoticePin(message: String) {
         dismissIndicator()
         presentAlert(title: message)
@@ -138,6 +147,15 @@ extension CommunityManagerNoticeVC: CommunityManagerNoNoticeDelegate{
         //쓰기 버튼~
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CommunityManagerWriteVC") as? CommunityManagerWriteVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    
+}
+// 핀 api
+extension CommunityManagerNoticeVC: CommunityManagerNoticeDelegate{
+    func pinAPI(noticeId:Int) {
+        print("핀 api 호출 \(noticeId)")
+        dataManager2.getCommunityManagerNoticePin(noticeId: noticeId, vc: self)
     }
     
     

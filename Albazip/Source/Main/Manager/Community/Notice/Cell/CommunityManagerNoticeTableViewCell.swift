@@ -7,10 +7,10 @@
 
 import UIKit
 protocol CommunityManagerNoticeDelegate {
-    func pinAPI()
+    func pinAPI(noticeId:Int)
 }
 class CommunityManagerNoticeTableViewCell: UITableViewCell {
-
+    var noticeId =  -1
     var delegate: CommunityManagerNoticeDelegate?
     @IBOutlet var noticeView: UIView!
     @IBOutlet var titleLabel: UILabel!
@@ -27,7 +27,7 @@ class CommunityManagerNoticeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func btnPin(_ sender: Any) {
-        
+        delegate?.pinAPI(noticeId: noticeId)
     }
     
 }

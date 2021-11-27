@@ -84,7 +84,7 @@ class RegisterStoreInfoVC: UIViewController{
         registerManagerInfo.name = storeNameTextField.text!
         registerManagerInfo.type = storeTypeTextField.text!
         registerManagerInfo.address = storeLocationTextField.text! + " " + storeLocationDetailTextField.text!
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerEditStore2VC") as? HomeManagerEditStore2VC else {return}
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterManagerInfoVC") as? RegisterManagerInfoVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

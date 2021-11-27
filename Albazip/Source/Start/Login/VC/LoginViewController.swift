@@ -146,3 +146,31 @@ extension LoginViewController {
         self.presentAlert(title: message)
     }
 }
+/*
+extension LoginViewController {
+    func didSuccessStartTokenCheck(result: StartTokenCheckResponse) {
+        
+        
+        print(result.message!)
+        
+        dismissIndicator()
+        /*
+        let job = UserDefaults.standard.string(forKey: "job")
+        if job == "1"{ //관리자 페이지로
+            let newStoryboard = UIStoryboard(name: "MainManager", bundle: nil)
+            let newViewController = newStoryboard.instantiateViewController(identifier: "MainManagerTabBarController")
+            self.changeRootViewController(newViewController)
+        }else if job == "2"{ //근무자 페이지로
+            let newStoryboard = UIStoryboard(name: "MainWorker", bundle: nil)
+            let newViewController = newStoryboard.instantiateViewController(identifier: "MainWorkerTabBarController")
+            self.changeRootViewController(newViewController)
+        }*/
+    }
+    
+    func failedToRequestStartTokenCheck(message: String) {
+        dismissIndicator()
+        //presentAlert(title: message)
+        
+    }
+}
+*/
