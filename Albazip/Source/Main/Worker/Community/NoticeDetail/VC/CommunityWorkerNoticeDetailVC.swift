@@ -10,14 +10,13 @@ class CommunityWorkerNoticeDetailVC: UIViewController{
     
     @IBOutlet var tableView: UITableView!
     var noticeId = -1
-    @IBOutlet var modalBgView: UIView!
     var noticeData : CommunityManagerNoticeDetailData?
     // Datamanager
     lazy var dataManager: CommunityManagerNoticeDetailDatamanager = CommunityManagerNoticeDetailDatamanager()
     // CommunityWorkerNoticeDetailTableViewCell
     override func viewDidLoad() {
         super.viewDidLoad()
-        modalBgView.isHidden = true
+        
         setTableView()
         showIndicator()
         dataManager.getCommunityWorkerNoticeDetail(noticeId: noticeId, vc: self)
@@ -35,24 +34,13 @@ class CommunityWorkerNoticeDetailVC: UIViewController{
         //설정 알림창
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "CommunityWorkerNoticeAlertVC") as? CommunityWorkerNoticeAlertVC {
             vc.modalPresentationStyle = .overFullScreen
-            modalBgView.isHidden = false
-            vc.modalDelegate = self
+           
+            vc.delegate = self
         self.present(vc, animated: true, completion: nil)
     }
     }
 }
-extension CommunityWorkerNoticeDetailVC: ModalDelegate{
-    func modalDismiss() {
-        modalBgView.isHidden = true
-        print("모달 종료")
-    }
-    
-    func textFieldData(data: String) {
-        print(data)
-    }
-    
-    
-}
+
 // 테이블뷰 extension
 extension CommunityWorkerNoticeDetailVC: UITableViewDataSource, UITableViewDelegate{
     
@@ -126,4 +114,22 @@ extension CommunityWorkerNoticeDetailVC {
         dismissIndicator()
         presentAlert(title: message)
     }
+}
+
+extension CommunityWorkerNoticeDetailVC: CommunityWorkerNoticeAlertDetailDelegate, CommunityWorkerNoticeAlertDelegate{
+    func successReport() {
+        presentBottomAlert(message: "게시글이 신고되었습니다.")
+    }
+    
+    func goReportModal() {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "CommunityWorkerNoticeAlertDetailVC") as? CommunityWorkerNoticeAlertDetailVC {
+            vc.modalPresentationStyle = .overFullScreen
+            vc.delegate = self
+            
+            vc.noticeId = noticeId
+            self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+}
 }

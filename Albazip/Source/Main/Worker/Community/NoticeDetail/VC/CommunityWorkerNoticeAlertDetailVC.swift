@@ -4,11 +4,13 @@
 //
 //  Created by 김수빈 on 2021/11/24.
 //
-
+protocol CommunityWorkerNoticeAlertDetailDelegate {
+    func successReport()
+}
 import Foundation
 
 class CommunityWorkerNoticeAlertDetailVC: UIViewController{
-    var modalDelegate : ModalDelegate?
+   
     var transparentView = UIView()
     @IBOutlet var cornerView: UIView!
     @IBOutlet var view1: UIView!
@@ -18,7 +20,10 @@ class CommunityWorkerNoticeAlertDetailVC: UIViewController{
     @IBOutlet var view5: UIView!
     @IBOutlet var backgroundView: UIView!
     var reportType = ""
-    
+    var noticeId = -1
+    var delegate: CommunityWorkerNoticeAlertDetailDelegate?
+    // Datamanager
+    lazy var dataManager: CommunityWorkerReportDatamanager = CommunityWorkerReportDatamanager()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,13 +80,36 @@ class CommunityWorkerNoticeAlertDetailVC: UIViewController{
     }
     
     func setReportType(text : String)  {
+        //api 호출
+        let input = CommunityWorkerReportRequest(noticeId: noticeId, reportReason: text)
+        showIndicator()
+        dataManager.postCommunityWorkerReport(input, delegate: self)
+        /*
         modalDelegate?.modalDismiss()
         modalDelegate?.textFieldData(data: text)
         transparentView.isHidden = true
         self.dismiss(animated: true, completion: nil)
+ */
     }
     @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
         transparentView.isHidden = true
+     
         self.dismiss(animated: true, completion: nil)
+    }
+}
+extension CommunityWorkerNoticeAlertDetailVC{
+    //공지사항 신고 api
+    func didSuccessCommunityWorkerReport(result: CommunityWorkerReportResponse){
+        print(result)
+        dismissIndicator()
+     
+        transparentView.isHidden = true
+        delegate?.successReport()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func failedToCommunityWorkerReport(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
     }
 }

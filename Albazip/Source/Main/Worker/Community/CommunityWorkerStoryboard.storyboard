@@ -374,21 +374,14 @@
                                 <rect key="frame" x="0.0" y="101" width="375" height="677"/>
                                 <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86f-0k-VIK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <color key="backgroundColor" systemColor="separatorColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TaB-Sr-avo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="86f-0k-VIK" secondAttribute="trailing" id="DAj-hs-iPN"/>
                             <constraint firstItem="jm5-m2-4hg" firstAttribute="leading" secondItem="PkL-kZ-UWe" secondAttribute="leading" id="Da5-v4-LJk"/>
                             <constraint firstItem="WCT-wh-sWT" firstAttribute="centerY" secondItem="on8-9B-idf" secondAttribute="centerY" id="G2M-Ke-Ebq"/>
                             <constraint firstItem="TaB-Sr-avo" firstAttribute="bottom" secondItem="CYV-ed-nqX" secondAttribute="bottom" id="Hsq-Wj-Xdb"/>
                             <constraint firstItem="TaB-Sr-avo" firstAttribute="trailing" secondItem="CYV-ed-nqX" secondAttribute="trailing" id="Ka3-yZ-kuT"/>
-                            <constraint firstItem="86f-0k-VIK" firstAttribute="leading" secondItem="TaB-Sr-avo" secondAttribute="leading" id="PP1-Uh-rw1"/>
-                            <constraint firstItem="86f-0k-VIK" firstAttribute="top" secondItem="PkL-kZ-UWe" secondAttribute="top" id="TxX-n6-Pe1"/>
                             <constraint firstItem="jm5-m2-4hg" firstAttribute="top" secondItem="WCT-wh-sWT" secondAttribute="bottom" constant="12" id="W4S-1n-lOY"/>
                             <constraint firstAttribute="trailing" secondItem="jm5-m2-4hg" secondAttribute="trailing" id="b2Z-bS-C59"/>
                             <constraint firstItem="TaB-Sr-avo" firstAttribute="trailing" secondItem="pcN-7X-UwN" secondAttribute="trailing" constant="16" id="b41-W6-Lmo"/>
@@ -397,12 +390,10 @@
                             <constraint firstItem="on8-9B-idf" firstAttribute="top" secondItem="TaB-Sr-avo" secondAttribute="top" constant="21" id="ek9-b5-7VQ"/>
                             <constraint firstItem="CYV-ed-nqX" firstAttribute="leading" secondItem="TaB-Sr-avo" secondAttribute="leading" id="eyq-Cm-t5m"/>
                             <constraint firstItem="CYV-ed-nqX" firstAttribute="top" secondItem="jm5-m2-4hg" secondAttribute="bottom" id="h5c-kn-6IT"/>
-                            <constraint firstAttribute="bottom" secondItem="86f-0k-VIK" secondAttribute="bottom" id="pl6-M9-8zQ"/>
                             <constraint firstItem="on8-9B-idf" firstAttribute="centerX" secondItem="PkL-kZ-UWe" secondAttribute="centerX" id="uh5-mn-gHF"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="modalBgView" destination="86f-0k-VIK" id="abI-VU-bTT"/>
                         <outlet property="tableView" destination="CYV-ed-nqX" id="70f-IU-5k9"/>
                     </connections>
                 </viewController>
@@ -692,9 +683,6 @@
         <image name="icSearch18Px" width="18" height="18"/>
         <image name="icSearch24Px" width="24" height="24"/>
         <image name="imgReadyPx" width="68" height="68"/>
-        <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

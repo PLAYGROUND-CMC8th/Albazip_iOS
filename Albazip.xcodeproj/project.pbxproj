@@ -265,6 +265,9 @@
 		C3A7C7FD2752A3D800271EFE /* HomeManagerEditStoreDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C7FC2752A3D800271EFE /* HomeManagerEditStoreDatamanager.swift */; };
 		C3A7C8012752BD3B00271EFE /* HomeManagerDeleteStoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C8002752BD3B00271EFE /* HomeManagerDeleteStoreResponse.swift */; };
 		C3A7C8032752BD4C00271EFE /* HomeManagerDeleteStoreDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C8022752BD4C00271EFE /* HomeManagerDeleteStoreDatamanager.swift */; };
+		C3A7C8062752D51700271EFE /* CommunityWorkerReportRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C8052752D51700271EFE /* CommunityWorkerReportRequest.swift */; };
+		C3A7C8082752D52900271EFE /* CommunityWorkerReportResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C8072752D52900271EFE /* CommunityWorkerReportResponse.swift */; };
+		C3A7C80A2752D59A00271EFE /* CommunityWorkerReportDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C8092752D59A00271EFE /* CommunityWorkerReportDatamanager.swift */; };
 		C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9683E2719F8E500E27DA1 /* UIView.swift */; };
 		C3A968422719FA7A00E27DA1 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A968412719FA7A00E27DA1 /* StartViewController.swift */; };
 		C3AC1F83274D195D0007AA95 /* CommunityWorkerTopTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC1F82274D195D0007AA95 /* CommunityWorkerTopTabVC.swift */; };
@@ -680,6 +683,9 @@
 		C3A7C7FC2752A3D800271EFE /* HomeManagerEditStoreDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerEditStoreDatamanager.swift; sourceTree = "<group>"; };
 		C3A7C8002752BD3B00271EFE /* HomeManagerDeleteStoreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerDeleteStoreResponse.swift; sourceTree = "<group>"; };
 		C3A7C8022752BD4C00271EFE /* HomeManagerDeleteStoreDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerDeleteStoreDatamanager.swift; sourceTree = "<group>"; };
+		C3A7C8052752D51700271EFE /* CommunityWorkerReportRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerReportRequest.swift; sourceTree = "<group>"; };
+		C3A7C8072752D52900271EFE /* CommunityWorkerReportResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerReportResponse.swift; sourceTree = "<group>"; };
+		C3A7C8092752D59A00271EFE /* CommunityWorkerReportDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerReportDatamanager.swift; sourceTree = "<group>"; };
 		C3A9683E2719F8E500E27DA1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C3A968412719FA7A00E27DA1 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		C3AC1F82274D195D0007AA95 /* CommunityWorkerTopTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerTopTabVC.swift; sourceTree = "<group>"; };
@@ -2016,6 +2022,16 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		C3A7C8042752D4EE00271EFE /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				C3A7C8052752D51700271EFE /* CommunityWorkerReportRequest.swift */,
+				C3A7C8072752D52900271EFE /* CommunityWorkerReportResponse.swift */,
+				C3A7C8092752D59A00271EFE /* CommunityWorkerReportDatamanager.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
 		C3AC1F81274D19230007AA95 /* VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2037,6 +2053,7 @@
 		C3AC1F8B274D28BF0007AA95 /* NoticeDetail */ = {
 			isa = PBXGroup;
 			children = (
+				C3A7C8042752D4EE00271EFE /* Report */,
 				C32E4A77274DB5770015463F /* Cell */,
 				C32E4A7E274DEA5A0015463F /* VC */,
 			);
@@ -2956,6 +2973,7 @@
 				C335741E2743ED1800644E9B /* SettingEditBasicInfoRequest.swift in Sources */,
 				C3A1ADD6271C86C9005A61ED /* LoginResetPasswordVC.swift in Sources */,
 				C32E4A86274E5C5A0015463F /* CommunityWorkerNoticeAlertDetailVC.swift in Sources */,
+				C3A7C8062752D51700271EFE /* CommunityWorkerReportRequest.swift in Sources */,
 				C38CA0BB272F9C5D00EA7BB3 /* RegisterPhoneNumberDuplicateDataManager.swift in Sources */,
 				C3B93380273BF8B80056E381 /* SettingAlarmVC.swift in Sources */,
 				C32E4A81274E069D0015463F /* CommunityWorkerSearchVC.swift in Sources */,
@@ -3011,6 +3029,7 @@
 				C3F05A59274F8AC70025DB24 /* MyPageDeletePositionResponse.swift in Sources */,
 				C3476610274524890001B220 /* MyPageProfileImageDefaultRequest.swift in Sources */,
 				C3A7C7F72752913900271EFE /* HomeManagerEditStoreBeforeDatamanager.swift in Sources */,
+				C3A7C80A2752D59A00271EFE /* CommunityWorkerReportDatamanager.swift in Sources */,
 				C3F05A46274F58AB0025DB24 /* HomeManagerQRCodeDatamanager.swift in Sources */,
 				C398BFAC273F9FE5008E8BA5 /* HomeManagerCoummunityCollectionViewCell.swift in Sources */,
 				C30EC2E3272A4FEF00EEF218 /* RegisterNumberExistResponse.swift in Sources */,
@@ -3107,6 +3126,7 @@
 				C3A7C7DF27521A8900271EFE /* HomeTodayWorkCheckDatamanager.swift in Sources */,
 				C38CA0C0273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.swift in Sources */,
 				C38CA0B7272F647600EA7BB3 /* LoginResetPasswordRequest.swift in Sources */,
+				C3A7C8082752D52900271EFE /* CommunityWorkerReportResponse.swift in Sources */,
 				C30AFE742733CE080075CDE2 /* MyPageManagerSelectInfo1TableViewCell.swift in Sources */,
 				C37B0B5F27299EA70017D179 /* LoginResponse.swift in Sources */,
 				C398BFA0273F861D008E8BA5 /* HomeManagerMainTableViewCell.swift in Sources */,
