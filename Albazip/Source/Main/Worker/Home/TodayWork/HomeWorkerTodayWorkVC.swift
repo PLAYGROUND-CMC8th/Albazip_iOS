@@ -25,10 +25,17 @@ class HomeWorkerTodayWorkVC: UIViewController{
     var nonComPerTask: [HomeWorkerNonComCoTask]?
     var compPerTask: [HomeWorkerComCoTask]?
     var isPerFolded = [Bool]()
+    
+    //완료한 사람 배열
+    var comWorker: [HomeWorkerComWorkerList]?
     // Datamanager
     lazy var dataManager: HomeWorkerTodayWorkDatamanager = HomeWorkerTodayWorkDatamanager()
-    
+    // 완료하기, 미완료하기
+    lazy var dataManager3: HomeTodayWorkCheckDatamanager = HomeTodayWorkCheckDatamanager()
     var segValue = 0 // 0이면 공동업무, 1이면 개인업무!
+    
+    //업무 완료 창
+    var clearAlert = false
     override func viewDidLoad() {
         super.viewDidLoad()
         print(segValue)
@@ -143,6 +150,9 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                 if let x = comCoTask{
                     headerCell2.countLabel.text = String(x.count)
                 }
+                if let x = comWorker{
+                    headerCell2.setCell(data: x)
+                }
                 return headerCell2
               
             default:
@@ -232,7 +242,7 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                     if isCoFolded[indexPath.row]{
                         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerPublicWorkTableViewCell") as? HomeWorkerPublicWorkTableViewCell {
                             cell.selectionStyle = .none
-                            
+                            cell.delegate = self
                             if let data = nonComCoTask{
                                 cell.titleLabel.text = data[indexPath.row].takTitle!
                                 if let x = data[indexPath.row].taskContent, x == ""{
@@ -240,7 +250,7 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                                 }else{
                                     cell.subLabel.text = data[indexPath.row].taskContent ?? "내용 없음"
                                 }
-                                
+                                cell.taskId = data[indexPath.row].taskId!
                                 
                             }
                             print(indexPath.row)
@@ -279,11 +289,11 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                 }else{
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerPublicWorkCompleteTableViewCell") as? HomeWorkerPublicWorkCompleteTableViewCell {
                         cell.selectionStyle = .none
-                        
+                        cell.delegate = self
                         if let data = comCoTask{
                             cell.titleLabel.text = data[indexPath.row].takTitle!
                             cell.subLabel.text = "완료  \(data[indexPath.row].completeTime!.substring(from: 11, to: 16))"
-                            
+                            cell.taskId = data[indexPath.row].taskId!
                         }
                         print(indexPath.row)
                         return cell
@@ -304,7 +314,7 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                     if isPerFolded[indexPath.row]{
                         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerPublicWorkTableViewCell") as? HomeWorkerPublicWorkTableViewCell {
                             cell.selectionStyle = .none
-                            
+                            cell.delegate = self
                             if let data = nonComPerTask{
                                 cell.titleLabel.text = data[indexPath.row].takTitle!
                                 if let x = data[indexPath.row].taskContent, x == ""{
@@ -312,7 +322,7 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                                 }else{
                                     cell.subLabel.text = data[indexPath.row].taskContent ?? "내용 없음"
                                 }
-                                
+                                cell.taskId = data[indexPath.row].taskId!
                             }
                             print(indexPath.row)
                             return cell
@@ -350,11 +360,11 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                 }else{
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerPublicWorkCompleteTableViewCell") as? HomeWorkerPublicWorkCompleteTableViewCell {
                         cell.selectionStyle = .none
-                        
+                        cell.delegate = self
                         if let data = compPerTask{
                             cell.titleLabel.text = data[indexPath.row].takTitle!
                             cell.subLabel.text = "완료  \(data[indexPath.row].completeTime!.substring(from: 11, to: 16))"
-                            
+                            cell.taskId = data[indexPath.row].taskId!
                         }
                         print(indexPath.row)
                         return cell
@@ -478,6 +488,14 @@ extension HomeWorkerTodayWorkVC {
                 }else{
                     isNoCompleteCoData = true
                 }
+                
+                //완료한 배열
+                if let comWorker = coTask.comWorker{
+                    if let x = comWorker.comWorker{
+                        self.comWorker = x
+                    }
+                }
+                
             }
             if let perTask = data.perTask{
                 segment.setTitle(perTask.positionTitle!, forSegmentAt: 1)
@@ -500,6 +518,8 @@ extension HomeWorkerTodayWorkVC {
                     isNoCompletePerData = true
                 }
             }
+            
+            
         }
         
         
@@ -527,13 +547,71 @@ extension HomeWorkerTodayWorkVC {
         
         tableView.reloadData()*/
         
+        
         tableView.reloadData()
         print(result)
         dismissIndicator()
+        
+        if clearAlert{
+            let newStoryboard = UIStoryboard(name: "HomeManagerStoryboard", bundle: nil)
+            if let vc = newStoryboard.instantiateViewController(withIdentifier: "HomeManagerClearAlertVC") as? HomeManagerClearAlertVC {
+                vc.modalPresentationStyle = .overFullScreen
+                
+                self.present(vc, animated: false, completion: nil)
+            }
+        }
+        clearAlert = false
     }
     
     func failedToRequestHomeWorkerTodayWork(message: String) {
         dismissIndicator()
         presentAlert(title: message)
+    }
+}
+
+//업무 되돌리기, 완료하기 api
+extension HomeWorkerTodayWorkVC {
+    func didSuccessHomeTodayWorkCheck(result: HomeWorkerTodayWorkResponse) {
+        print(result.message)
+        //tableView.reloadData()
+        dataManager.getHomeWorkerTodayWork(vc: self)
+        
+    }
+    
+    func failedToRequestHomeTodayWorkCheck(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
+}
+
+extension HomeWorkerTodayWorkVC: CheckUnCompleteWorkDelegate, CheckCompleteWorkDelegate, CheckCompleteWorkAlertDelegate{
+    
+    // 진짜 되돌리겠습니까 경고창에서 삭제 눌렀을 때
+    func readyToUnCkeckWork(taskId: Int) {
+        showIndicator()
+        dataManager3.getHomeTodayWorkCheck(taskId: taskId, vc: self)
+    }
+    
+    
+    //미완료 셀 체크했을때
+    func checkUnCompleteWork(taskId: Int) {
+        print(taskId)
+        clearAlert = true
+        showIndicator()
+        dataManager3.getHomeTodayWorkCheck(taskId: taskId, vc: self)
+    }
+    //완료 셀 체크했을 때
+    func checkCompleteWork(taskId: Int) {
+        print(taskId)
+        let newStoryboard = UIStoryboard(name: "HomeManagerStoryboard", bundle: nil)
+        if let vc = newStoryboard.instantiateViewController(withIdentifier: "HomeManagerUnClearAlertVC") as? HomeManagerUnClearAlertVC {
+            vc.modalPresentationStyle = .overFullScreen
+            vc.taskId = taskId
+            vc.delegate = self
+            
+            self.present(vc, animated: true, completion: nil)
+            
+        }
+        
     }
 }

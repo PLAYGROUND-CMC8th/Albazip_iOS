@@ -292,7 +292,7 @@ extension HomeWorkerVC {
         }
         print(homeWorkerData)
         setUI()
-        
+        isWork = true
         tableView.reloadData()
         dismissIndicator()
     }
@@ -302,3 +302,5 @@ extension HomeWorkerVC {
         presentAlert(title: message)
     }
 }
+
+
