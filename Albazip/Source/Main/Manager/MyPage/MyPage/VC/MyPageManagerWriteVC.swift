@@ -33,6 +33,8 @@ class MyPageManagerWriteVC: UIViewController, MyPageManagerWriteTabDelegate  {
     // Datamanager
     lazy var dataManager: MyPageManagerWriteDatamanager = MyPageManagerWriteDatamanager()
     //
+    // Datamanager
+    lazy var dataManager2: CommunityManagerNoticePinDatamanager = CommunityManagerNoticePinDatamanager()
     var writeData: [MyPageManagerWritePostInfo]?
     var noticeData: [MyPageManagerWriteNoticeInfo]?
     var isNoWriteData = true
@@ -85,6 +87,11 @@ class MyPageManagerWriteVC: UIViewController, MyPageManagerWriteTabDelegate  {
                            forCellReuseIdentifier: "MyPageManagerWriteCommunityTableViewCell")
         tableView.register(UINib(nibName: "MyPageManagerNoWriteTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageManagerNoWriteTableViewCell")
+        
+        
+        //핀 새로 추가
+        tableView.register(UINib(nibName: "CommunityManagerNoticeTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "CommunityManagerNoticeTableViewCell")
         
         //MyPageManagerNoWriteTableViewCell
         tableView.dataSource = self
@@ -143,19 +150,21 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
                         return cell
                     }
                 }else{
-                    if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteTableViewCell") as? MyPageManagerWriteTableViewCell {
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityManagerNoticeTableViewCell") as? CommunityManagerNoticeTableViewCell {
                         cell.selectionStyle = .none
+                        cell.delegate = self
                         if let data = noticeData{
                             let date = data[indexPath.row].registerDate!.substring(from: 0, to: 10)
                             print(date)
                             let date2 = date.replace(target: "-", with: ". ")
                             cell.subLabel.text = date2
-                            cell.cellLabel.text = data[indexPath.row].title!
-                            if data[indexPath.row].pin! == 1{
-                                cell.pinImage.image = #imageLiteral(resourceName: "icPushpinActive")
+                            cell.titleLabel.text = data[indexPath.row].title!
+                            if data[indexPath.row].pin! == 0{
+                                cell.btnPin.setImage(#imageLiteral(resourceName: "icPushpinInactive"), for: .normal)
                             }else{
-                                cell.pinImage.image = #imageLiteral(resourceName: "icPushpinInactive")
+                                cell.btnPin.setImage(#imageLiteral(resourceName: "icPushpinActive"), for: .normal)
                             }
+                            cell.noticeId = data[indexPath.row].id!
                         }
                         print(indexPath.row)
                         return cell
@@ -172,6 +181,7 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
                     }
                 }else{
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWriteCommunityTableViewCell") as? MyPageManagerWriteCommunityTableViewCell {
+                        
                         cell.selectionStyle = .none
                         if let data = writeData{
                             cell.nameLabel.text = data[indexPath.row - 1].writerName!
@@ -321,5 +331,34 @@ extension MyPageManagerWriteVC {
         dismissIndicator()
         presentAlert(title: message)
         
+    }
+}
+// 핀 api
+extension MyPageManagerWriteVC: CommunityManagerNoticeDelegate{
+    func pinAPI(noticeId:Int) {
+        print("핀 api 호출 \(noticeId)")
+        dataManager2.getCommunityManagerNoticePin(noticeId: noticeId, vc: self)
+    }
+    
+    
+}
+extension MyPageManagerWriteVC {
+    //공지사항 핀 aPI
+    
+    //핀 성공
+    func didSuccessCommunityManagerNoticePin(result: CommunityManagerNoticePinResponse) {
+        print(result.message)
+        dataManager.getMyPageManagerWrite(vc: self)
+    }
+    //핀 5개 초과시
+    func didSuccessCommunityManagerNoticePinOver(message: String) {
+        
+        dismissIndicator()
+        presentBottomAlert(message: message)
+    }
+    //핀 실패
+    func failedToRequestCommunityManagerNoticePin(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
     }
 }

@@ -241,7 +241,7 @@ extension HomeWorkerVC: HomeWorkerAddWorkDelegate{
         }else{
             if let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerQRCodeVC") as? HomeWorkerQRCodeVC {
                 nextVC.modalPresentationStyle = .overFullScreen
-                
+                nextVC.delegate = self
             self.present(nextVC, animated: true, completion: nil)
             }
         }
