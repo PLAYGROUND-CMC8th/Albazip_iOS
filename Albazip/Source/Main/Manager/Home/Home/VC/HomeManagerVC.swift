@@ -59,6 +59,10 @@ class HomeManagerVC: BaseViewController{
             mainView.backgroundColor = #colorLiteral(red: 0.9991409183, green: 0.9350905418, blue: 0.7344018817, alpha: 1)
         }
         self.tabBarController?.tabBar.isHidden = false
+        
+        // view 클릭 시, 함수 정의
+        let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(storeNameViewTapped))
+        storeNameView.addGestureRecognizer(tapGestureRecognizer1)
     }
     //큐알 페이지로
     @IBAction func btnQRCode(_ sender: Any) {
@@ -72,6 +76,12 @@ class HomeManagerVC: BaseViewController{
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 
+    //매장 목록 페이지로
+    @objc func storeNameViewTapped(sender: UITapGestureRecognizer) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerStoreListVC") as? HomeManagerStoreListVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        
+    }
 }
 extension HomeManagerVC: HomeCommunityViewCellDelegate{
     //각각의 소통창 페이지로
@@ -357,7 +367,7 @@ extension HomeManagerVC {
                 i += 1
             }
         }
-        isOpen = true
+        //isOpen = true
         tableView.reloadData()
         dismissIndicator()
     }

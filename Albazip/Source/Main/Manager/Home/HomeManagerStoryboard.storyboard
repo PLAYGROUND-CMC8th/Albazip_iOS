@@ -89,6 +89,80 @@
             </objects>
             <point key="canvasLocation" x="392" y="77"/>
         </scene>
+        <!--Home Manager Store ListVC-->
+        <scene sceneID="dxZ-yY-spJ">
+            <objects>
+                <viewController storyboardIdentifier="HomeManagerStoreListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R2D-Ke-fEU" customClass="HomeManagerStoreListVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hoe-Qr-p86">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매장 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pA2-ST-Q47">
+                                <rect key="frame" x="154.33333333333334" y="65" width="66.666666666666657" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1Y-Xk-RH0">
+                                <rect key="frame" x="16" y="64" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="In1-ak-BEN"/>
+                                    <constraint firstAttribute="height" constant="24" id="UvD-BI-75o"/>
+                                </constraints>
+                                <state key="normal" image="icX24Px"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="Lh9-Zd-N0W" eventType="touchUpInside" id="VBZ-k2-cG8"/>
+                                    <action selector="btnCancel:" destination="R2D-Ke-fEU" eventType="touchUpInside" id="atb-6d-OpK"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fKa-1Z-gfz">
+                                <rect key="frame" x="0.0" y="101" width="375" height="677"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4p-fc-zUa">
+                                <rect key="frame" x="24" y="692" width="327" height="50"/>
+                                <color key="backgroundColor" red="0.98823523520000001" green="0.93725490570000003" blue="0.76470589639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DCW-gr-PP2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="매장 추가하기">
+                                    <color key="titleColor" red="0.6784313917" green="0.6784313917" blue="0.6784313917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnAddStore:" destination="R2D-Ke-fEU" eventType="touchUpInside" id="IwL-AD-TQH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nPW-RC-78J"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pA2-ST-Q47" firstAttribute="top" secondItem="nPW-RC-78J" secondAttribute="top" constant="21" id="28E-eW-faq"/>
+                            <constraint firstItem="d4p-fc-zUa" firstAttribute="leading" secondItem="nPW-RC-78J" secondAttribute="leading" constant="24" id="4VL-fc-srL"/>
+                            <constraint firstItem="fKa-1Z-gfz" firstAttribute="leading" secondItem="nPW-RC-78J" secondAttribute="leading" id="B0F-e8-qdC"/>
+                            <constraint firstItem="pA2-ST-Q47" firstAttribute="centerX" secondItem="hoe-Qr-p86" secondAttribute="centerX" id="B3H-Or-k8g"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="d4p-fc-zUa" secondAttribute="bottom" constant="36" id="BGL-sz-qYO"/>
+                            <constraint firstItem="nPW-RC-78J" firstAttribute="bottom" secondItem="fKa-1Z-gfz" secondAttribute="bottom" id="Fnf-hp-emQ"/>
+                            <constraint firstItem="nPW-RC-78J" firstAttribute="trailing" secondItem="fKa-1Z-gfz" secondAttribute="trailing" id="HpE-Bm-fhT"/>
+                            <constraint firstItem="l1Y-Xk-RH0" firstAttribute="centerY" secondItem="pA2-ST-Q47" secondAttribute="centerY" id="Hxx-Zm-WLv"/>
+                            <constraint firstItem="l1Y-Xk-RH0" firstAttribute="leading" secondItem="nPW-RC-78J" secondAttribute="leading" constant="16" id="VyJ-sN-Xvz"/>
+                            <constraint firstItem="nPW-RC-78J" firstAttribute="trailing" secondItem="d4p-fc-zUa" secondAttribute="trailing" constant="24" id="XVb-SK-i4E"/>
+                            <constraint firstItem="fKa-1Z-gfz" firstAttribute="top" secondItem="pA2-ST-Q47" secondAttribute="bottom" constant="14" id="glX-UF-Vew"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="fKa-1Z-gfz" id="I0b-A4-feP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p2o-dZ-HTj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1214" y="87"/>
+        </scene>
         <!--Home ManagerQR CodeVC-->
         <scene sceneID="p97-s8-6RH">
             <objects>

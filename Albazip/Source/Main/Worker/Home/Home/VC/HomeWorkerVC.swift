@@ -59,6 +59,9 @@ class HomeWorkerVC: BaseViewController{
             mainView.backgroundColor = #colorLiteral(red: 0.9991409183, green: 0.9350905418, blue: 0.7344018817, alpha: 1)
         }
         self.tabBarController?.tabBar.isHidden = false
+        // view 클릭 시, 함수 정의
+        let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(storeNameViewTapped))
+        storeNameView.addGestureRecognizer(tapGestureRecognizer1)
     }
     //큐알 페이지로
     @IBAction func btnQRCode(_ sender: Any) {
@@ -79,6 +82,12 @@ class HomeWorkerVC: BaseViewController{
     @IBAction func btnAlarm(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerAlarmVC") as? HomeWorkerAlarmVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    //매장 목록 페이지로
+    @objc func storeNameViewTapped(sender: UITapGestureRecognizer) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerStoreListVC") as? HomeWorkerStoreListVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        
     }
 }
 // 테이블뷰 extension

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeManagerStoreListTableViewCell" customModule="Albazip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icHoneyStore24Px" translatesAutoresizingMaskIntoConstraints="NO" id="xqZ-Q4-d3E">
+                        <rect key="frame" x="24" y="24" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="hVb-yK-Lx0"/>
+                            <constraint firstAttribute="height" constant="24" id="uaX-mM-pLL"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서플라이 수완점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBQ-sC-R3U">
+                        <rect key="frame" x="65" y="26" width="101" height="20"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <color key="textColor" red="0.32156863810000003" green="0.32156863810000003" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Igj-2I-Kln">
+                        <rect key="frame" x="289" y="24" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="Kwr-LO-eYJ"/>
+                            <constraint firstAttribute="height" constant="24" id="VZ9-dp-lSk"/>
+                        </constraints>
+                        <state key="normal" image="icHoneyEdit24Px"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8K-6F-syc">
+                        <rect key="frame" x="327" y="24" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="oHW-ub-oW4"/>
+                            <constraint firstAttribute="height" constant="24" id="y2t-tV-FkJ"/>
+                        </constraints>
+                        <state key="normal" image="icHoneyTrash24Px"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="o8K-6F-syc" secondAttribute="trailing" constant="24" id="3Ba-81-bca"/>
+                    <constraint firstItem="o8K-6F-syc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4Jk-cb-dIn"/>
+                    <constraint firstItem="UBQ-sC-R3U" firstAttribute="leading" secondItem="xqZ-Q4-d3E" secondAttribute="trailing" constant="17" id="ARx-Lt-Dq7"/>
+                    <constraint firstItem="xqZ-Q4-d3E" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ah4-4n-KVq"/>
+                    <constraint firstItem="o8K-6F-syc" firstAttribute="leading" secondItem="Igj-2I-Kln" secondAttribute="trailing" constant="14" id="c3S-Fm-r2L"/>
+                    <constraint firstItem="xqZ-Q4-d3E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="e6Y-CV-qMo"/>
+                    <constraint firstItem="xqZ-Q4-d3E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="jtp-33-wi4"/>
+                    <constraint firstItem="UBQ-sC-R3U" firstAttribute="centerY" secondItem="xqZ-Q4-d3E" secondAttribute="centerY" id="kzu-56-PSd"/>
+                    <constraint firstAttribute="bottom" secondItem="xqZ-Q4-d3E" secondAttribute="bottom" constant="24" id="xgh-AM-XiE"/>
+                    <constraint firstItem="Igj-2I-Kln" firstAttribute="centerY" secondItem="o8K-6F-syc" secondAttribute="centerY" id="z7g-4j-8GG"/>
+                </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                        <real key="value" value="1"/>
+                    </userDefinedRuntimeAttribute>
+                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                        <color key="value" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnDelete" destination="o8K-6F-syc" id="UMu-QV-Z6t"/>
+                <outlet property="btnEdit" destination="Igj-2I-Kln" id="1nv-bm-XoK"/>
+                <outlet property="mainView" destination="H2p-sc-9uM" id="ktm-Tn-x3u"/>
+                <outlet property="storeNameLabel" destination="UBQ-sC-R3U" id="qiM-eV-kAd"/>
+            </connections>
+            <point key="canvasLocation" x="154" y="4"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icHoneyEdit24Px" width="24" height="24"/>
+        <image name="icHoneyStore24Px" width="24" height="24"/>
+        <image name="icHoneyTrash24Px" width="24" height="24"/>
+    </resources>
+</document>
