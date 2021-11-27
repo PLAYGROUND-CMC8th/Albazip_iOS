@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class StartViewController: UIViewController{
+    lazy var dataManager: StartTokenCheckDatamanager = StartTokenCheckDatamanager()
     override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view.
@@ -30,6 +31,10 @@ class StartViewController: UIViewController{
         // 자동 로그인
         if let token = UserDefaults.standard.string(forKey: "token"), let job = UserDefaults.standard.string(forKey: "job"){
             print("token: \(token)")
+            // 토큰 유효성 검사 API 실행
+            showIndicator()
+            dataManager.getStartTokenCheck(vc: self)
+            /*
             if job == "1"{ //관리자 페이지로
                 let newStoryboard = UIStoryboard(name: "MainManager", bundle: nil)
                 let newViewController = newStoryboard.instantiateViewController(identifier: "MainManagerTabBarController")
@@ -38,7 +43,7 @@ class StartViewController: UIViewController{
                 let newStoryboard = UIStoryboard(name: "MainWorker", bundle: nil)
                 let newViewController = newStoryboard.instantiateViewController(identifier: "MainWorkerTabBarController")
                 self.changeRootViewController(newViewController)
-            }
+            }*/
             
         }
         
@@ -52,5 +57,30 @@ class StartViewController: UIViewController{
         let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: Bundle.main)
         guard let nextVC = storyboard.instantiateViewController(identifier: "LoginResetPhoneVC") as? LoginResetPhoneVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
+extension StartViewController {
+    func didSuccessStartTokenCheck(result: StartTokenCheckResponse) {
+        
+        
+        print(result.message!)
+        
+        dismissIndicator()
+        let job = UserDefaults.standard.string(forKey: "job")
+        if job == "1"{ //관리자 페이지로
+            let newStoryboard = UIStoryboard(name: "MainManager", bundle: nil)
+            let newViewController = newStoryboard.instantiateViewController(identifier: "MainManagerTabBarController")
+            self.changeRootViewController(newViewController)
+        }else if job == "2"{ //근무자 페이지로
+            let newStoryboard = UIStoryboard(name: "MainWorker", bundle: nil)
+            let newViewController = newStoryboard.instantiateViewController(identifier: "MainWorkerTabBarController")
+            self.changeRootViewController(newViewController)
+        }
+    }
+    
+    func failedToRequestStartTokenCheck(message: String) {
+        dismissIndicator()
+        //presentAlert(title: message)
+        
     }
 }

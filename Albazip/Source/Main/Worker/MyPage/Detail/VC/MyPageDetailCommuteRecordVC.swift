@@ -146,8 +146,9 @@ extension MyPageDetailCommuteRecordVC: UITableViewDataSource,UITableViewDelegate
                     }else{
                         cell.endTime.text = ""
                     }
+                    
                     //지각일때!
-                    if data[indexPath.row].is_late! == 1{ // 지각일 때
+                    if data[indexPath.row].is_late ?? 0  == 1{ // 지각일 때
                         cell.startFlagView.backgroundColor = #colorLiteral(red: 0.9833402038, green: 0.2258323133, blue: 0, alpha: 1)
                         cell.startTitle.textColor = #colorLiteral(red: 0.9833402038, green: 0.2258323729, blue: 0.01172234025, alpha: 1)
                     }else{
