@@ -6,9 +6,13 @@
 //
 
 import UIKit
-
+protocol HomeManagerStoreListDelegate {
+    func goEditPage()
+    func goDetailPage()
+}
 class HomeManagerStoreListTableViewCell: UITableViewCell {
 
+    var delegate:  HomeManagerStoreListDelegate?
     @IBOutlet var btnDelete: UIButton!
     @IBOutlet var btnEdit: UIButton!
     @IBOutlet var mainView: UIView!
@@ -22,6 +26,12 @@ class HomeManagerStoreListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func btnEdit(_ sender: Any) {
+        delegate?.goEditPage()
+    }
+    @IBAction func btnDelete(_ sender: Any) {
+        delegate?.goDetailPage()
     }
     
 }

@@ -37,6 +37,9 @@
                             <constraint firstAttribute="height" constant="24" id="VZ9-dp-lSk"/>
                         </constraints>
                         <state key="normal" image="icHoneyEdit24Px"/>
+                        <connections>
+                            <action selector="btnEdit:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="S51-x6-rHF"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8K-6F-syc">
                         <rect key="frame" x="327" y="24" width="24" height="24"/>
@@ -45,6 +48,9 @@
                             <constraint firstAttribute="height" constant="24" id="y2t-tV-FkJ"/>
                         </constraints>
                         <state key="normal" image="icHoneyTrash24Px"/>
+                        <connections>
+                            <action selector="btnDelete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3of-FB-fQh"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

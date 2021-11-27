@@ -1,38 +1,30 @@
 //
-//  RegisterStoreInfoVC.swift
+//  HomeManagerEditStore1VC.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2021/10/25.
+//  Created by 김수빈 on 2021/11/27.
 //
 
-import UIKit
-
-class RegisterStoreInfoVC: UIViewController{
-  
+import Foundation
+class HomeManagerEditStore1VC:UIViewController{
     
+    @IBOutlet var modalBgView: UIView!
     @IBOutlet var storeNameTextField: UITextField!
     @IBOutlet var storeTypeTextField: UITextField!
     @IBOutlet var storeLocationTextField: UITextField!
     @IBOutlet var storeLocationDetailTextField: UITextField!
-    @IBOutlet var btnNext: UIButton!
-    @IBOutlet var modalBgView: UIView!
     
+    @IBOutlet var btnNext: UIButton!
     var storeName = ""
     var storeLocation = ""
     
     var selectedType = false
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        if(storeName != "" && storeLocation != ""){
-            storeNameTextField.text = storeName
-            storeLocationTextField.text = storeLocation
-            storeNameTextField.isEnabled = false
-            storeLocationTextField.isEnabled = false
-        }
     }
-    
     func setUI() {
         storeNameTextField.addLeftPadding()
         storeTypeTextField.addLeftPadding()
@@ -49,10 +41,10 @@ class RegisterStoreInfoVC: UIViewController{
         storeLocationTextField.attributedPlaceholder = NSAttributedString(string: "도로명이나 지번주소 입력", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
         storeLocationDetailTextField.attributedPlaceholder = NSAttributedString(string: "상세주소 입력", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
     }
-    
     @objc func textFieldDidChange(_ textField:UITextField) {
-        
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectStoreTypeVC") as? RegisterSelectStoreTypeVC {
+        let newStoryboard = UIStoryboard(name: "RegisterManagerStoryboard", bundle: nil)
+      
+        if let vc = newStoryboard.instantiateViewController(withIdentifier: "RegisterSelectStoreTypeVC") as? RegisterSelectStoreTypeVC {
             vc.modalPresentationStyle = .overFullScreen
             
             modalBgView.alpha = 1
@@ -79,19 +71,16 @@ class RegisterStoreInfoVC: UIViewController{
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnNext(_ sender: Any) {
-        
         let registerManagerInfo = RegisterManagerInfo.shared
         registerManagerInfo.name = storeNameTextField.text!
         registerManagerInfo.type = storeTypeTextField.text!
         registerManagerInfo.address = storeLocationTextField.text! + " " + storeLocationDetailTextField.text!
+       
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerEditStore2VC") as? HomeManagerEditStore2VC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    
-    
 }
-
-extension RegisterStoreInfoVC: UITextFieldDelegate{
+extension HomeManagerEditStore1VC: UITextFieldDelegate{
     // 텍스트 필드의 편집을 시작할 때 호출
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         print("텍스트 필드의 편집이 시작됩니다.")
@@ -132,7 +121,7 @@ extension RegisterStoreInfoVC: UITextFieldDelegate{
     }
 }
 
-extension RegisterStoreInfoVC: ModalDelegate {
+extension HomeManagerEditStore1VC: ModalDelegate {
     
     func modalDismiss() {
         modalBgView.alpha = 0.0

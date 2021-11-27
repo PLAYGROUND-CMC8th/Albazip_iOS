@@ -54,7 +54,7 @@ extension HomeManagerStoreListVC: UITableViewDataSource, UITableViewDelegate {
                     
                 cell.selectionStyle = .none
                 if let data = storeList{
-                   
+                    cell.delegate = self
                     cell.storeNameLabel.text = data[indexPath.row].shop_name!
                     if data[indexPath.row].status! == 0{
                         cell.mainView.backgroundColor = #colorLiteral(red: 0.9994661212, green: 0.979791224, blue: 0.9194086194, alpha: 1)
@@ -112,3 +112,19 @@ extension HomeManagerStoreListVC {
         presentAlert(title: message)
     }
 }
+
+extension HomeManagerStoreListVC: HomeManagerStoreListDelegate {
+    func goEditPage() {
+       print("goEditPage")
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerEditStore1VC") as? HomeManagerEditStore1VC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        //HomeManagerEditStore1VC
+    }
+    
+    func goDetailPage() {
+        print("goDetailPage")
+    }
+    
+    
+}
+ 
