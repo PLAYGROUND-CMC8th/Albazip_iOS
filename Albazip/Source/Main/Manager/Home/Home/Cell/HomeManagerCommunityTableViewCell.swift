@@ -57,6 +57,7 @@ class HomeManagerCommunityTableViewCell: UITableViewCell {
         collectionView.configureForPeekingBehavior(behavior: behavior)
     }
     @IBAction func btnGoCommunity(_ sender: Any) {
+        delegate?.goCommunityPage()
     }
     func checkPage(currentPage:Int) {
         if(currentPage == 2){

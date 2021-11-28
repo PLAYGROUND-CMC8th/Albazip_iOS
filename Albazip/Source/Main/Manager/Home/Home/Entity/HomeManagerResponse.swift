@@ -42,6 +42,7 @@ struct HomeManagerBoardInfo: Decodable{
     var status: Int?
     var id: Int?
     var title: String?
+    //var confirm: Int?
 }
 struct HomeManagerCoTask: Decodable{
     var completeCount: Int?

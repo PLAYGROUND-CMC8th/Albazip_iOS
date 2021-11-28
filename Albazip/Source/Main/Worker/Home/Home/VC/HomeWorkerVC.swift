@@ -267,10 +267,21 @@ extension HomeWorkerVC: HomeWorkerWorkDeleagate{
 extension HomeWorkerVC: HomeCommunityViewCellDelegate{
     func collectionView(collectionviewcell: HomeManagerCoummunityCollectionViewCell?, index: Int, didTappedInTableViewCell: HomeManagerCommunityTableViewCell) {
         print("\(index)번째 셀입니다.")
+        if let data = boardInfo{
+            if data.count != 0{
+                let newStoryboard = UIStoryboard(name: "CommunityWorkerStoryboard", bundle: nil)
+                guard let nextVC = newStoryboard.instantiateViewController(identifier: "CommunityWorkerNoticeDetailVC") as? CommunityWorkerNoticeDetailVC else {return}
+                nextVC.confirm = data[index].confirm!
+                nextVC.noticeId = data[index].id!
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            }
+        }
     }
     
     func goCommunityPage() {
         print("소통창 페이지로 이동")
+        guard let second = tabBarController?.viewControllers?[1] else { return }
+                tabBarController?.selectedViewController = second
     }
     
     

@@ -43,6 +43,7 @@ struct HomeWorkerBoardInfo: Decodable{
     var status: Int?
     var id: Int?
     var title: String?
+    var confirm: Int?
 }
 struct HomeWorkerCoTask: Decodable{
     var completeCount: Int?

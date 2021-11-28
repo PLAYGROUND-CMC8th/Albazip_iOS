@@ -70,6 +70,7 @@
             <size key="customSize" width="291" height="70"/>
             <connections>
                 <outlet property="statusLabel" destination="DXA-oW-06B" id="pWg-03-DMe"/>
+                <outlet property="statusWidth" destination="ylR-cv-JOp" id="y1t-Mj-XPf"/>
                 <outlet property="titleLabel" destination="CAh-wO-JCo" id="lDT-8K-s2S"/>
             </connections>
             <point key="canvasLocation" x="190" y="140"/>
