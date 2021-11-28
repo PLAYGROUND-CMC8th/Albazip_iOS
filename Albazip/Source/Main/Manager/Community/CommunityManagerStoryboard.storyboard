@@ -90,8 +90,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchTextField" destination="Fr3-Qg-RTf" id="ftJ-cK-HRL"/>
                         <outlet property="tableView" destination="nQX-9M-6Ob" id="Boj-7O-j9e"/>
-                        <outlet property="textField" destination="Fr3-Qg-RTf" id="gop-9i-W6D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KTt-5w-daL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

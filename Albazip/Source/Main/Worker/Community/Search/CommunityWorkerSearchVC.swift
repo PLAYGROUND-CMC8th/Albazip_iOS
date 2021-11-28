@@ -17,11 +17,13 @@ class CommunityWorkerSearchVC: UIViewController{
         super.viewDidLoad()
         setUI()
         setTableView()
+        tableView.isHidden = true
     }
     func setUI()  {
         searchTextField.addLeftPadding2()
         searchTextField.delegate = self
     }
+    
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -63,6 +65,30 @@ extension CommunityWorkerSearchVC: UITableViewDataSource, UITableViewDelegate{
         }else{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityWorkerNoticeTableViewCell") as? CommunityWorkerNoticeTableViewCell {
                 cell.selectionStyle = .none
+                if let data = noticeList{
+                    //cell.checkLabel.isHidden = true
+                    if data[indexPath.row].confirm! == 0{
+                        cell.checkLabel.text = "미확인"
+                        cell.checkLabel.textColor = #colorLiteral(red: 0.9833402038, green: 0.2258323133, blue: 0, alpha: 1)
+                        cell.checkLabel.backgroundColor = #colorLiteral(red: 1, green: 0.8983411193, blue: 0.8958156705, alpha: 1)
+                        cell.noticeView.backgroundColor =  #colorLiteral(red: 0.9994661212, green: 0.979791224, blue: 0.9194086194, alpha: 1)
+                        cell.noticeView.borderColor =  #colorLiteral(red: 0.9983271956, green: 0.9391896129, blue: 0.7384549379, alpha: 1)
+                    }else{
+                        cell.checkLabel.text = "확인"
+                        cell.checkLabel.textColor = #colorLiteral(red: 0.1636831164, green: 0.7599473596, blue: 0.3486425281, alpha: 1)
+                        cell.checkLabel.backgroundColor = #colorLiteral(red: 0.8957179189, green: 0.9912716746, blue: 0.9204327464, alpha: 1)
+                        cell.noticeView.backgroundColor =  .none
+                        cell.noticeView.borderColor =  #colorLiteral(red: 0.9293201566, green: 0.9294758439, blue: 0.9292996526, alpha: 1)
+                    }
+                    cell.titleLabel.text = data[indexPath.row].title!
+                    cell.subLabel.text = data[indexPath.row].registerDate!.insertDate
+                    if data[indexPath.row].pin! == 0{
+                        cell.pinImage.isHidden = true
+                    }else{
+                        cell.pinImage.isHidden = false
+                    }
+                    
+                }
                 return cell
             }
         }
@@ -73,6 +99,8 @@ extension CommunityWorkerSearchVC: UITableViewDataSource, UITableViewDelegate{
         print("선택된 행은 \(indexPath.row) 입니다.")
         if !isNoData{
             guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CommunityWorkerNoticeDetailVC") as? CommunityWorkerNoticeDetailVC else {return}
+            nextVC.noticeId = noticeList![indexPath.row].id!
+            nextVC.confirm = noticeList![indexPath.row].confirm!
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
@@ -91,7 +119,9 @@ extension CommunityWorkerSearchVC {
         }else{
             isNoData = true
         }
+        
         tableView.reloadData()
+        tableView.isHidden = false
         dismissIndicator()
     }
     
@@ -119,11 +149,13 @@ extension CommunityWorkerSearchVC: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         print("텍스트 필드의 리턴키가 눌러졌습니다.")
-        if let text = searchTextField.text{
+        if let text = searchTextField.text, text != ""{
             print(text)
             showIndicator()
             //api 호출
             dataManager.getCommunityWorkerSearch(searchWord: text, vc: self)
+        }else{
+            presentBottomAlert(message: "검색할 항목을 입력해주세요!")
         }
         
         return true

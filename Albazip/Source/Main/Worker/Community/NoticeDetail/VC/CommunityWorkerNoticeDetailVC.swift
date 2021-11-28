@@ -21,6 +21,10 @@ class CommunityWorkerNoticeDetailVC: UIViewController{
         
         setTableView()
         showIndicator()
+        if confirm == 0{// 미확인이면 확인 api 호출
+            ////
+            dataManager2.getCommunityWorkerNoticeDetail(noticeId: noticeId, vc: self)
+        }
         dataManager.getCommunityWorkerNoticeDetail(noticeId: noticeId, vc: self)
     }
     func setTableView(){
@@ -110,12 +114,8 @@ extension CommunityWorkerNoticeDetailVC {
         print(noticeData)
         tableView.reloadData()
         
-        if confirm == 0{// 미확인이면 확인 api 호출
-            ////
-            dataManager2.getCommunityWorkerNoticeDetail(noticeId: noticeId, vc: self)
-        }else{
-            dismissIndicator()
-        }
+        dismissIndicator()
+        
     }
     
     func failedToRequestCommunityWorkerNoticeDetail(message: String) {
@@ -146,12 +146,12 @@ extension CommunityWorkerNoticeDetailVC {
     func didSuccessCommunityWorkerConfirm(result: CommunityWorkerConfirmResponse) {
         
         print(result.message)
-        dismissIndicator()
+        //dismissIndicator()
         
     }
     
     func failedToRequestCommunityWorkerConfirm(message: String) {
-        dismissIndicator()
+        //dismissIndicator()
         presentAlert(title: message)
     }
 }

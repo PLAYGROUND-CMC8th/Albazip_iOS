@@ -8,15 +8,20 @@
 import Foundation
 class CommunityManagerSearchVC: UIViewController{
     var isNoData = true
-    @IBOutlet var textField: UITextField!
+    var searchWord = ""
+    @IBOutlet var searchTextField: UITextField!
     @IBOutlet var tableView: UITableView!
     var noticeList : [CommunitySearchData]?
     // Datamanager
     lazy var dataManager: CommunityWorkerSearchDatamanager = CommunityWorkerSearchDatamanager()
+    // Datamanager
+    lazy var dataManager2: CommunityManagerNoticePinDatamanager = CommunityManagerNoticePinDatamanager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        textField.addLeftPadding2()
+        searchTextField.addLeftPadding2()
+        searchTextField.delegate = self
         setTableView()
+        tableView.isHidden = true
     }
     func setTableView(){
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 18))
@@ -52,11 +57,25 @@ extension CommunityManagerSearchVC: UITableViewDataSource, UITableViewDelegate{
         if isNoData{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunitySearchNoDataTableViewCell") as? CommunitySearchNoDataTableViewCell {
                 cell.selectionStyle = .none
+                
                 return cell
             }
         }else{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityManagerNoticeTableViewCell") as? CommunityManagerNoticeTableViewCell {
                 cell.selectionStyle = .none
+                cell.delegate = self
+                if let data = noticeList{
+                    //cell.checkLabel.isHidden = true
+                    cell.titleLabel.text = data[indexPath.row].title!
+                    cell.subLabel.text = data[indexPath.row].registerDate!.insertDate
+                    if data[indexPath.row].pin! == 0{
+                        cell.btnPin.setImage(#imageLiteral(resourceName: "icPushpinInactive"), for: .normal)
+                    }else{
+                        cell.btnPin.setImage(#imageLiteral(resourceName: "icPushpinActive"), for: .normal)
+                    }
+                    cell.noticeId = data[indexPath.row].id!
+                    
+                }
                 return cell
             }
         }
@@ -68,6 +87,7 @@ extension CommunityManagerSearchVC: UITableViewDataSource, UITableViewDelegate{
         print("선택된 행은 \(indexPath.row) 입니다.")
         if !isNoData{
             guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CommunityManagerNoticeDetailVC") as? CommunityManagerNoticeDetailVC else {return}
+            nextVC.noticeId = noticeList![indexPath.row].id!
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
@@ -75,10 +95,11 @@ extension CommunityManagerSearchVC: UITableViewDataSource, UITableViewDelegate{
         return tableView.estimatedRowHeight
     }
 }
+
 extension CommunityManagerSearchVC {
-    func didSuccessCommunityManagerSearch(result: CommunitySearchResponse) {
+    func didSuccessCommunityWorkerSearch(result: CommunitySearchResponse) {
         
-        
+        print(result)
         noticeList = result.data
         print("noticeList: \(noticeList)")
         if  noticeList!.count != 0{
@@ -86,12 +107,80 @@ extension CommunityManagerSearchVC {
         }else{
             isNoData = true
         }
+        
         tableView.reloadData()
+        tableView.isHidden = false
         dismissIndicator()
     }
     
-    func failedToRequestCommunityManagerSearch(message: String) {
+    func failedToRequestCommunityWorkerSearch(message: String) {
         dismissIndicator()
         presentAlert(title: message)
+    }
+    
+    //핀 성공
+    func didSuccessCommunityManagerNoticePin(result: CommunityManagerNoticePinResponse) {
+        print(result.message)
+        dataManager.getCommunityWorkerSearch(searchWord: searchWord, vc: self)
+    }
+    //핀 5개 초과시
+    func didSuccessCommunityManagerNoticePinOver(message: String) {
+        
+        dismissIndicator()
+        presentBottomAlert(message: message)
+    }
+    //핀 실패
+    func failedToRequestCommunityManagerNoticePin(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
+}
+
+// 핀 api
+extension CommunityManagerSearchVC: CommunityManagerNoticeDelegate{
+    func pinAPI(noticeId:Int) {
+        print("핀 api 호출 \(noticeId)")
+        showIndicator()
+        dataManager2.getCommunityManagerNoticePin(noticeId: noticeId, vc: self)
+    }
+    
+    
+}
+
+
+extension CommunityManagerSearchVC: UITextFieldDelegate{
+    
+    // 텍스트 필드의 편집을 시작할 때 호출
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("텍스트 필드의 편집이 시작됩니다.")
+        
+        
+        return true
+    }
+    // 텍스트 필드의 편집이 종료되었을 때 호출
+    func textFieldDidEndEditing(_ textField: UITextField) {
+      
+        
+        print("텍스트 필드의 편집이 종료됩니다.")
+    }
+    // 텍스트 필드의 리턴키가 눌러졌을 때 호출
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        print("텍스트 필드의 리턴키가 눌러졌습니다.")
+        if let text = searchTextField.text, text != ""{
+            print(text)
+            showIndicator()
+            searchWord = text
+            //api 호출
+            dataManager.getCommunityWorkerSearch(searchWord: text, vc: self)
+        }else{
+            presentBottomAlert(message: "검색할 항목을 입력해주세요!")
+        }
+        
+        return true
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+       
+        return true
     }
 }
