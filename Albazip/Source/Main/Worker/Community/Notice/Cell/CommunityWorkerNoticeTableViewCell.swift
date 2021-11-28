@@ -9,7 +9,8 @@ import UIKit
 
 class CommunityWorkerNoticeTableViewCell: UITableViewCell {
 
-    @IBOutlet var btnPin: UIButton!
+  
+    @IBOutlet var pinImage: UIImageView!
     @IBOutlet var subLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var noticeView: UIView!

@@ -20,6 +20,7 @@ class CommunityWorkerSearchVC: UIViewController{
     }
     func setUI()  {
         searchTextField.addLeftPadding2()
+        searchTextField.delegate = self
     }
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -82,7 +83,7 @@ extension CommunityWorkerSearchVC: UITableViewDataSource, UITableViewDelegate{
 extension CommunityWorkerSearchVC {
     func didSuccessCommunityWorkerSearch(result: CommunitySearchResponse) {
         
-        
+        print(result.message)
         noticeList = result.data
         print("noticeList: \(noticeList)")
         if  noticeList!.count != 0{
@@ -97,5 +98,38 @@ extension CommunityWorkerSearchVC {
     func failedToRequestCommunityWorkerSearch(message: String) {
         dismissIndicator()
         presentAlert(title: message)
+    }
+}
+extension CommunityWorkerSearchVC: UITextFieldDelegate{
+    
+    // 텍스트 필드의 편집을 시작할 때 호출
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("텍스트 필드의 편집이 시작됩니다.")
+        
+        
+        return true
+    }
+    // 텍스트 필드의 편집이 종료되었을 때 호출
+    func textFieldDidEndEditing(_ textField: UITextField) {
+      
+        
+        print("텍스트 필드의 편집이 종료됩니다.")
+    }
+    // 텍스트 필드의 리턴키가 눌러졌을 때 호출
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        print("텍스트 필드의 리턴키가 눌러졌습니다.")
+        if let text = searchTextField.text{
+            print(text)
+            showIndicator()
+            //api 호출
+            dataManager.getCommunityWorkerSearch(searchWord: text, vc: self)
+        }
+        
+        return true
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+       
+        return true
     }
 }

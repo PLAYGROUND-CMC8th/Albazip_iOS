@@ -206,7 +206,7 @@
 		C391EAC527533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EAC427533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift */; };
 		C391EAC9275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EAC7275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.swift */; };
 		C391EACA275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C391EAC8275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.xib */; };
-		C391EACE27535A69002CD2E5 /* CommunityWorkerDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EACD27535A69002CD2E5 /* CommunityWorkerDatamanager.swift */; };
+		C391EACE27535A69002CD2E5 /* CommunityWorkerSearchDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EACD27535A69002CD2E5 /* CommunityWorkerSearchDatamanager.swift */; };
 		C391EAD027535A8C002CD2E5 /* CommunitySearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EACF27535A8C002CD2E5 /* CommunitySearchResponse.swift */; };
 		C391EAD227535ABE002CD2E5 /* CommunitySearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EAD127535ABE002CD2E5 /* CommunitySearchRequest.swift */; };
 		C398BF9C273F77F9008E8BA5 /* HomeManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BF9B273F77F9008E8BA5 /* HomeManagerVC.swift */; };
@@ -630,7 +630,7 @@
 		C391EAC427533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerConfirmDatamanager.swift; sourceTree = "<group>"; };
 		C391EAC7275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchNoDataTableViewCell.swift; sourceTree = "<group>"; };
 		C391EAC8275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunitySearchNoDataTableViewCell.xib; sourceTree = "<group>"; };
-		C391EACD27535A69002CD2E5 /* CommunityWorkerDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerDatamanager.swift; sourceTree = "<group>"; };
+		C391EACD27535A69002CD2E5 /* CommunityWorkerSearchDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerSearchDatamanager.swift; sourceTree = "<group>"; };
 		C391EACF27535A8C002CD2E5 /* CommunitySearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchResponse.swift; sourceTree = "<group>"; };
 		C391EAD127535ABE002CD2E5 /* CommunitySearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchRequest.swift; sourceTree = "<group>"; };
 		C398BF9B273F77F9008E8BA5 /* HomeManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerVC.swift; sourceTree = "<group>"; };
@@ -1760,7 +1760,7 @@
 		C391EACC27535A4A002CD2E5 /* Datamanager */ = {
 			isa = PBXGroup;
 			children = (
-				C391EACD27535A69002CD2E5 /* CommunityWorkerDatamanager.swift */,
+				C391EACD27535A69002CD2E5 /* CommunityWorkerSearchDatamanager.swift */,
 			);
 			path = Datamanager;
 			sourceTree = "<group>";
@@ -3065,7 +3065,7 @@
 				C32E4A9A274E8EBC0015463F /* CommunityManagerNoticeAlertVC.swift in Sources */,
 				C34BCB3E2732CCB80085ADB3 /* MyPageDetailPublicWorkVC.swift in Sources */,
 				C3E1FEA6272D8AAB00CE44C6 /* Page.swift in Sources */,
-				C391EACE27535A69002CD2E5 /* CommunityWorkerDatamanager.swift in Sources */,
+				C391EACE27535A69002CD2E5 /* CommunityWorkerSearchDatamanager.swift in Sources */,
 				C3B93397273C081B0056E381 /* SettingNoticeTableViewCell.swift in Sources */,
 				C38D932F2749AD8A00AFFDE9 /* HomeManagerWorkPrivateTableViewCell.swift in Sources */,
 				C3B9338C273BFAE80056E381 /* SettingWithdrawVC.swift in Sources */,

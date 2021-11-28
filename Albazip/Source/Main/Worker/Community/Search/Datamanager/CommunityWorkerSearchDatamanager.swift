@@ -9,13 +9,15 @@ import Foundation
 import Alamofire
 
 class CommunityWorkerSearchDatamanager {
-    func getCommunityWorkerSearch(_ parameters: CommunitySearchRequest, vc: CommunityManagerSearchVC) {
+    func getCommunityWorkerSearch(searchWord: String, vc: CommunityManagerSearchVC) {
         let url = "\(Constant.BASE_URL)/board/notice/search"
         
         let header: HTTPHeaders = [ "Content-Type":"application/json",
                                      "token":"\(UserDefaults.standard.string(forKey: "token")!)"]
-        
-        AF.request(url, method: .get ,parameters: parameters, encoder: JSONParameterEncoder(), headers: header)
+        let parameters: Parameters = [
+                "searchWord": "\(searchWord)"
+            ]
+        AF.request(url, method: .get ,parameters: parameters, encoding: URLEncoding(), headers: header)
             .validate()
             .responseDecodable(of: CommunitySearchResponse.self) { response in
                 switch response.result {
@@ -33,13 +35,17 @@ class CommunityWorkerSearchDatamanager {
                 }
             }
     }
-    func getCommunityWorkerSearch(_ parameters: CommunitySearchRequest,vc: CommunityWorkerSearchVC) {
+    func getCommunityWorkerSearch(searchWord: String,vc: CommunityWorkerSearchVC) {
         let url = "\(Constant.BASE_URL)/board/notice/search"
-        
+        let parameters = [
+                "searchWord": "\(searchWord)"
+            ]
+        print(parameters)
+      //: Parameters
         let header: HTTPHeaders = [ "Content-Type":"application/json",
                                      "token":"\(UserDefaults.standard.string(forKey: "token")!)"]
         
-        AF.request(url, method: .get ,parameters: parameters, encoder: JSONParameterEncoder(), headers: header)
+        AF.request(url, method: .get ,parameters: parameters, encoding: URLEncoding.default , headers: header)
             .validate()
             .responseDecodable(of: CommunitySearchResponse.self) { response in
                 switch response.result {

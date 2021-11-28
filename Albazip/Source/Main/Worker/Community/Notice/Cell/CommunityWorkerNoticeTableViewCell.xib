@@ -27,17 +27,6 @@
                                 <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGm-65-lPz">
-                                <rect key="frame" x="294" y="14" width="17" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="17" id="6px-5P-pbL"/>
-                                    <constraint firstAttribute="height" constant="17" id="w5P-U0-8ie"/>
-                                </constraints>
-                                <state key="normal" image="icPushpinActive"/>
-                                <connections>
-                                    <action selector="btnPin:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aoD-Gg-xT5"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vlt-c1-oTy">
                                 <rect key="frame" x="59" y="36" width="27" height="12"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
@@ -60,17 +49,24 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icPushpinActive" translatesAutoresizingMaskIntoConstraints="NO" id="6tO-yK-rL5">
+                                <rect key="frame" x="294" y="14" width="17" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="17" id="W6z-EJ-Kyr"/>
+                                    <constraint firstAttribute="height" constant="17" id="zUH-7Z-8UF"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6tO-yK-rL5" firstAttribute="top" secondItem="EjY-Uv-vb2" secondAttribute="top" constant="14" id="M9E-j6-aw0"/>
                             <constraint firstItem="OJi-cR-Xwk" firstAttribute="top" secondItem="EjY-Uv-vb2" secondAttribute="top" constant="14" id="Q6r-5H-gEm"/>
-                            <constraint firstAttribute="trailing" secondItem="XGm-65-lPz" secondAttribute="trailing" constant="16" id="Xh0-cu-rGa"/>
-                            <constraint firstItem="XGm-65-lPz" firstAttribute="centerY" secondItem="OJi-cR-Xwk" secondAttribute="centerY" id="hDV-bl-Ny5"/>
                             <constraint firstItem="Ac3-8r-lN8" firstAttribute="leading" secondItem="OJi-cR-Xwk" secondAttribute="trailing" constant="8" id="jRn-YN-97x"/>
                             <constraint firstItem="Ac3-8r-lN8" firstAttribute="centerY" secondItem="OJi-cR-Xwk" secondAttribute="centerY" id="k1i-ut-8pr"/>
                             <constraint firstItem="OJi-cR-Xwk" firstAttribute="leading" secondItem="EjY-Uv-vb2" secondAttribute="leading" constant="16" id="oI4-CU-xFM"/>
                             <constraint firstAttribute="height" constant="62" id="q99-Uo-6je"/>
                             <constraint firstItem="Vlt-c1-oTy" firstAttribute="leading" secondItem="Ac3-8r-lN8" secondAttribute="leading" id="qSm-Lf-J17"/>
+                            <constraint firstAttribute="trailing" secondItem="6tO-yK-rL5" secondAttribute="trailing" constant="16" id="uZ1-p7-bUh"/>
                             <constraint firstItem="Vlt-c1-oTy" firstAttribute="top" secondItem="Ac3-8r-lN8" secondAttribute="bottom" constant="5" id="wOS-cf-Nfx"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -95,9 +91,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="btnPin" destination="XGm-65-lPz" id="T3F-GT-6K5"/>
                 <outlet property="checkLabel" destination="OJi-cR-Xwk" id="Y0Y-89-jJ7"/>
                 <outlet property="noticeView" destination="EjY-Uv-vb2" id="tnR-M1-8f3"/>
+                <outlet property="pinImage" destination="6tO-yK-rL5" id="Guz-1L-tWn"/>
                 <outlet property="subLabel" destination="Vlt-c1-oTy" id="OxG-CP-kw4"/>
                 <outlet property="titleLabel" destination="Ac3-8r-lN8" id="vzl-UR-vsM"/>
             </connections>

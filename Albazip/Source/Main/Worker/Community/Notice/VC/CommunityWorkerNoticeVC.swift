@@ -65,7 +65,7 @@ extension CommunityWorkerNoticeVC: UITableViewDataSource, UITableViewDelegate{
         if isNoData{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityManagerNoNoticeTableViewCell") as? CommunityManagerNoNoticeTableViewCell {
                 cell.selectionStyle = .none
-                
+                cell.btnAddNotice.isHidden = true
                 return cell
             }
         }else{
@@ -89,9 +89,9 @@ extension CommunityWorkerNoticeVC: UITableViewDataSource, UITableViewDelegate{
                     cell.titleLabel.text = data[indexPath.row].title!
                     cell.subLabel.text = data[indexPath.row].registerDate!.insertDate
                     if data[indexPath.row].pin! == 0{
-                        cell.btnPin.setImage(.none, for: .normal)
+                        cell.pinImage.isHidden = true
                     }else{
-                        cell.btnPin.setImage(#imageLiteral(resourceName: "icPushpinActive"), for: .normal)
+                        cell.pinImage.isHidden = false
                     }
                     
                 }
