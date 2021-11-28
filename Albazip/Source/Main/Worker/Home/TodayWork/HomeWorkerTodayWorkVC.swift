@@ -438,28 +438,33 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        print("\(indexPath.section): \(indexPath.row)")
         if segValue == 0{
-            if indexPath.section == 0{
-                if isCoFolded[indexPath.row] == true{
-                    isCoFolded[indexPath.row] = false
-                    tableView.reloadData()
+            if !isNoNonCompleteCoData{
+                if indexPath.section == 0{
+                    if isCoFolded[indexPath.row] == true{
+                        isCoFolded[indexPath.row] = false
+                        tableView.reloadData()
+                    }else{
+                        isCoFolded[indexPath.row] = true
+                        tableView.reloadData()
+                    }
                 }else{
-                    isCoFolded[indexPath.row] = true
-                    tableView.reloadData()
+                    presentBottomAlert(message: "이미 완료된 업무입니다.")
                 }
-            }else{
-                presentBottomAlert(message: "이미 완료된 업무입니다.")
             }
+           
         }else{
-            if indexPath.section == 0{
-                if isPerFolded[indexPath.row] == true{
-                    isPerFolded[indexPath.row] = false
-                    tableView.reloadData()
+            if !isNoNonCompletePerData{
+                if indexPath.section == 0{
+                    if isPerFolded[indexPath.row] == true{
+                        isPerFolded[indexPath.row] = false
+                        tableView.reloadData()
+                    }else{
+                        isPerFolded[indexPath.row] = true
+                        tableView.reloadData()
+                    }
                 }else{
-                    isPerFolded[indexPath.row] = true
-                    tableView.reloadData()
+                    presentBottomAlert(message: "이미 완료된 업무입니다.")
                 }
-            }else{
-                presentBottomAlert(message: "이미 완료된 업무입니다.")
             }
         }
     }

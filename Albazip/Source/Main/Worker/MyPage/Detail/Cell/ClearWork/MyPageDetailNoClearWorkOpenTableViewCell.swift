@@ -9,6 +9,7 @@ import UIKit
 
 class MyPageDetailNoClearWorkOpenTableViewCell: UITableViewCell {
 
+    @IBOutlet var bgView: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subLabel: UILabel!
     @IBOutlet var writerNameLabel: UILabel!

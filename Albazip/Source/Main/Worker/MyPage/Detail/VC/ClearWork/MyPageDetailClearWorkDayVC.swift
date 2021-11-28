@@ -270,16 +270,18 @@ extension MyPageDetailClearWorkDayVC: UITableViewDataSource,UITableViewDelegate 
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        print("\(indexPath.section): \(indexPath.row)")
-        if indexPath.section == 0{
-            if isFolded[indexPath.row] == true{
-                isFolded[indexPath.row] = false
-                tableView.reloadData()
+        if !isNoNonCompleteData{
+            if indexPath.section == 0{
+                if isFolded[indexPath.row] == true{
+                    isFolded[indexPath.row] = false
+                    tableView.reloadData()
+                }else{
+                    isFolded[indexPath.row] = true
+                    tableView.reloadData()
+                }
             }else{
-                isFolded[indexPath.row] = true
-                tableView.reloadData()
+                presentBottomAlert(message: "이미 완료된 업무입니다.")
             }
-        }else{
-            presentBottomAlert(message: "이미 완료된 업무입니다.")
         }
     }
 }

@@ -81,6 +81,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bgView" destination="H2p-sc-9uM" id="fdX-Km-Xng"/>
                 <outlet property="subLabel" destination="ICh-B9-ptQ" id="cGt-Pl-jug"/>
                 <outlet property="titleLabel" destination="IsM-iU-yug" id="YNB-tI-Zkv"/>
                 <outlet property="writerNameLabel" destination="NbX-Jj-VP6" id="SH2-fk-Exp"/>

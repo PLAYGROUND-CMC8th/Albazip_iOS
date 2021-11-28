@@ -19,7 +19,7 @@ class MyPageManagerWorkerWriteVC: UIViewController {
 
     
     @IBOutlet var tableView: UITableView!
-    
+    var isFolded = [Bool]()
     //MARK:- Scroll Delegate
     
     weak var myPageManagerWorkerWriteTableViewScrollDelegate: MyPageManagerWorkerWriteTableViewScrollDelegate?
@@ -56,6 +56,10 @@ class MyPageManagerWorkerWriteVC: UIViewController {
                            forCellReuseIdentifier: "MyPageManagerWorklistTableViewCell")
         tableView.register(UINib(nibName: "MyPageManagerNoWriteTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageManagerNoWriteTableViewCell")
+        
+        //미완료 펼쳤을때 버전 137
+        tableView.register(UINib(nibName: "MyPageDetailNoClearWorkOpenTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageDetailNoClearWorkOpenTableViewCell")
         //MyPageManagerNoWriteTableViewCell
         tableView.dataSource = self
         tableView.delegate = self
@@ -89,17 +93,39 @@ extension MyPageManagerWorkerWriteVC: UITableViewDataSource {
                
            }
         }else{
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorklistTableViewCell") as? MyPageManagerWorklistTableViewCell {
+            // 접폈는지 펴졌는지
+            if isFolded[indexPath.row]{
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorklistTableViewCell") as? MyPageManagerWorklistTableViewCell {
+                       
+                   cell.selectionStyle = .none //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                   if let data = workListData{
+                       cell.subLabel.text = data[indexPath.row].content ?? "내용 없음"
+                       cell.titleLabel.text = data[indexPath.row].title!
+                   }
+                       print(indexPath.row)
+                   return cell
                    
-               cell.selectionStyle = .none //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
-               if let data = workListData{
-                   cell.subLabel.text = data[indexPath.row].content ?? "내용 없음"
-                   cell.titleLabel.text = data[indexPath.row].title!
                }
-                   print(indexPath.row)
-               return cell
-               
-           }
+            }else{
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailNoClearWorkOpenTableViewCell") as? MyPageDetailNoClearWorkOpenTableViewCell {
+                    
+                   cell.selectionStyle = .none //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
+                   if let data = workListData{
+                    cell.bgView.backgroundColor = #colorLiteral(red: 0.9724535346, green: 0.9726160169, blue: 0.9724321961, alpha: 1)
+                       cell.subLabel.text = data[indexPath.row].content ?? "내용 없음"
+                       cell.titleLabel.text = data[indexPath.row].title!
+                    
+                    let position = data[indexPath.row].writerTitle ?? ""
+                    let name = data[indexPath.row].writerName ?? ""
+                    let date = data[indexPath.row].registerDate!.insertDate
+                    cell.writerNameLabel.text = position + " " + name + " · " + date
+                   }
+                       print(indexPath.row)
+                   return cell
+                   
+               }
+            }
+            
         }
          
         
@@ -109,13 +135,30 @@ extension MyPageManagerWorkerWriteVC: UITableViewDataSource {
         if isNoWorkList{
             return 375
         }else{
-            return 82
+            if isFolded[indexPath.row] == true{
+                return 82
+            }else{
+                return 137
+            }
         }
 
         
     }
     
-    
+    // Select Cell
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       print("\(indexPath.section): \(indexPath.row)")
+        if !isNoWorkList{
+          if isFolded[indexPath.row] == true{
+                    isFolded[indexPath.row] = false
+                    tableView.reloadData()
+            }else{
+                isFolded[indexPath.row] = true
+                tableView.reloadData()
+            }
+        }
+    }
 }
 
 //MARK:- Scroll View Actions
@@ -181,6 +224,12 @@ extension MyPageManagerWorkerWriteVC {
         print(result.message!)
         if workListData!.count != 0{
             isNoWorkList = false
+            // 테이블뷰 접고 펴기 배열
+            var i = 0
+            while i < workListData!.count{
+                isFolded.append(true)
+                i += 1
+            }
         } else{
             isNoWorkList = true
         }
