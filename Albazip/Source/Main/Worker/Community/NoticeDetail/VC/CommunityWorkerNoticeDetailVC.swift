@@ -7,12 +7,14 @@
 
 import Foundation
 class CommunityWorkerNoticeDetailVC: UIViewController{
-    
+    var confirm = -1 // 0이면 미확인, 1이면 확인
     @IBOutlet var tableView: UITableView!
     var noticeId = -1
     var noticeData : CommunityManagerNoticeDetailData?
     // Datamanager
     lazy var dataManager: CommunityManagerNoticeDetailDatamanager = CommunityManagerNoticeDetailDatamanager()
+    // Datamanager
+    lazy var dataManager2: CommunityWorkerConfirmDatamanager = CommunityWorkerConfirmDatamanager()
     // CommunityWorkerNoticeDetailTableViewCell
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,7 +109,13 @@ extension CommunityWorkerNoticeDetailVC {
         noticeData = result.data
         print(noticeData)
         tableView.reloadData()
-        dismissIndicator()
+        
+        if confirm == 0{// 미확인이면 확인 api 호출
+            ////
+            dataManager2.getCommunityWorkerNoticeDetail(noticeId: noticeId, vc: self)
+        }else{
+            dismissIndicator()
+        }
     }
     
     func failedToRequestCommunityWorkerNoticeDetail(message: String) {
@@ -132,4 +140,18 @@ extension CommunityWorkerNoticeDetailVC: CommunityWorkerNoticeAlertDetailDelegat
     
     
 }
+}
+//공지사항 확인 api
+extension CommunityWorkerNoticeDetailVC {
+    func didSuccessCommunityWorkerConfirm(result: CommunityWorkerConfirmResponse) {
+        
+        print(result.message)
+        dismissIndicator()
+        
+    }
+    
+    func failedToRequestCommunityWorkerConfirm(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
 }

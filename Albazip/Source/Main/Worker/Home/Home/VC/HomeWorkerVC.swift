@@ -224,7 +224,7 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
         case 0:
             return 480
         case 1:
-            return 242
+            return 163
        
         default:
             return 0

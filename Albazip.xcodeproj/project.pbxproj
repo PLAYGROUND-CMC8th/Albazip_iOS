@@ -202,6 +202,8 @@
 		C39083EF2729B4E5006223CB /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39083EE2729B4E5006223CB /* OnboardingData.swift */; };
 		C39083F12729B559006223CB /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39083F02729B559006223CB /* OnboardingCollectionViewCell.swift */; };
 		C39083F32729B6F4006223CB /* OnboardingManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39083F22729B6F4006223CB /* OnboardingManagerVC.swift */; };
+		C391EAC327533B57002CD2E5 /* CommunityWorkerConfirmResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EAC227533B57002CD2E5 /* CommunityWorkerConfirmResponse.swift */; };
+		C391EAC527533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EAC427533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift */; };
 		C398BF9C273F77F9008E8BA5 /* HomeManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BF9B273F77F9008E8BA5 /* HomeManagerVC.swift */; };
 		C398BFA0273F861D008E8BA5 /* HomeManagerMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BF9E273F861D008E8BA5 /* HomeManagerMainTableViewCell.swift */; };
 		C398BFA1273F861D008E8BA5 /* HomeManagerMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C398BF9F273F861D008E8BA5 /* HomeManagerMainTableViewCell.xib */; };
@@ -619,6 +621,8 @@
 		C39083EE2729B4E5006223CB /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
 		C39083F02729B559006223CB /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		C39083F22729B6F4006223CB /* OnboardingManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManagerVC.swift; sourceTree = "<group>"; };
+		C391EAC227533B57002CD2E5 /* CommunityWorkerConfirmResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerConfirmResponse.swift; sourceTree = "<group>"; };
+		C391EAC427533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerConfirmDatamanager.swift; sourceTree = "<group>"; };
 		C398BF9B273F77F9008E8BA5 /* HomeManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerVC.swift; sourceTree = "<group>"; };
 		C398BF9E273F861D008E8BA5 /* HomeManagerMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerMainTableViewCell.swift; sourceTree = "<group>"; };
 		C398BF9F273F861D008E8BA5 /* HomeManagerMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeManagerMainTableViewCell.xib; sourceTree = "<group>"; };
@@ -1713,6 +1717,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C391EAC127533B2B002CD2E5 /* Confirm */ = {
+			isa = PBXGroup;
+			children = (
+				C391EAC227533B57002CD2E5 /* CommunityWorkerConfirmResponse.swift */,
+				C391EAC427533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift */,
+			);
+			path = Confirm;
+			sourceTree = "<group>";
+		};
 		C398BF99273F77DF008E8BA5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -2053,6 +2066,7 @@
 		C3AC1F8B274D28BF0007AA95 /* NoticeDetail */ = {
 			isa = PBXGroup;
 			children = (
+				C391EAC127533B2B002CD2E5 /* Confirm */,
 				C3A7C8042752D4EE00271EFE /* Report */,
 				C32E4A77274DB5770015463F /* Cell */,
 				C32E4A7E274DEA5A0015463F /* VC */,
@@ -2979,6 +2993,7 @@
 				C32E4A81274E069D0015463F /* CommunityWorkerSearchVC.swift in Sources */,
 				C39083EF2729B4E5006223CB /* OnboardingData.swift in Sources */,
 				C34BCB382732B5910085ADB3 /* MyPageDetailCountTableViewCell.swift in Sources */,
+				C391EAC327533B57002CD2E5 /* CommunityWorkerConfirmResponse.swift in Sources */,
 				C3CFC30C273ED3A6001B2EB6 /* MyPageManagerWorkerWriteResponse.swift in Sources */,
 				C30AFE90273425170075CDE2 /* MyPageManagerWorkList3TableViewCell.swift in Sources */,
 				C38CA0BD272F9CC200EA7BB3 /* RegisterPhoneNumberDuplicateResponse.swift in Sources */,
@@ -3145,6 +3160,7 @@
 				C384424F27147E2900B84E8A /* IndicatorView.swift in Sources */,
 				C384425D27147E3F00B84E8A /* UINavigationBar.swift in Sources */,
 				C38EDCEB2746C78A00564A17 /* MyPageWorkerStopWorkDatamanager.swift in Sources */,
+				C391EAC527533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift in Sources */,
 				C3F05A6E274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.swift in Sources */,
 				C38D932B2749AAA800AFFDE9 /* HomeWorkerCompletePeopleTableViewCell.swift in Sources */,
 				C3B9338E273BFB2F0056E381 /* SettingSubscribVC.swift in Sources */,

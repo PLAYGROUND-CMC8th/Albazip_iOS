@@ -7,7 +7,7 @@
 
 import Foundation
 class CommunityManagerNoticeDetailVC: UIViewController{
-    
+    //var confirm = -1 // 0이면 미확인, 1이면 확인
     var noticeId = -1
     var imageArray = [UIImage]()
     @IBOutlet var tableView: UITableView!
@@ -140,6 +140,8 @@ extension CommunityManagerNoticeDetailVC {
         print(noticeData)
         tableView.reloadData()
         dismissIndicator()
+        
+       
     }
     
     func failedToRequestCommunityManagerNoticeDetail(message: String) {

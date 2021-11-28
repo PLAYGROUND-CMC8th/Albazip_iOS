@@ -95,7 +95,7 @@ extension CommunityManagerNoticeVC: UITableViewDataSource, UITableViewDelegate{
         if !isNoData{
             guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CommunityManagerNoticeDetailVC") as? CommunityManagerNoticeDetailVC else {return}
             nextVC.noticeId = noticeList![indexPath.row].id!
-            
+           // nextVC.confirm = noticeList![indexPath.row].confirm!
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
@@ -155,6 +155,7 @@ extension CommunityManagerNoticeVC: CommunityManagerNoNoticeDelegate{
 extension CommunityManagerNoticeVC: CommunityManagerNoticeDelegate{
     func pinAPI(noticeId:Int) {
         print("핀 api 호출 \(noticeId)")
+        showIndicator()
         dataManager2.getCommunityManagerNoticePin(noticeId: noticeId, vc: self)
     }
     

@@ -106,6 +106,7 @@ extension CommunityWorkerNoticeVC: UITableViewDataSource, UITableViewDelegate{
         if !isNoData{
             guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CommunityWorkerNoticeDetailVC") as? CommunityWorkerNoticeDetailVC else {return}
             nextVC.noticeId = noticeList![indexPath.row].id!
+            nextVC.confirm = noticeList![indexPath.row].confirm!
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
