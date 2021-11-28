@@ -27,6 +27,7 @@ class HomeWorkerWorkTableViewCell: UITableViewCell {
     @IBOutlet var clearPrivateCountLabel: UILabel!
     @IBOutlet var honeyImage: UIImageView!
     weak var delegate : HomeWorkerWorkDeleagate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -52,4 +53,7 @@ class HomeWorkerWorkTableViewCell: UITableViewCell {
     @objc func privateViewTapped(sender: UITapGestureRecognizer) {
         self.delegate?.goPrivateWork()
     }
+    
+   
+    
 }

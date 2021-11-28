@@ -22,6 +22,8 @@ class SettingNoticeVC: UIViewController{
         tableView.tableHeaderView = header
         tableView.register(UINib(nibName: "SettingNoticeTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "SettingNoticeTableViewCell")
+        tableView.register(UINib(nibName: "MyPageManagerNoWriteTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MyPageManagerNoWriteTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -30,24 +32,35 @@ extension SettingNoticeVC: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 6
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingNoticeTableViewCell") as? SettingNoticeTableViewCell {
                 cell.selectionStyle = .none
                 
                 print(indexPath.row)
                 return cell
             }
+        }else{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerNoWriteTableViewCell") as? MyPageManagerNoWriteTableViewCell {
+                cell.selectionStyle = .none
+                cell.titleLabel.text = "작성된 글이 없어요."
+                print(indexPath.row)
+                return cell
+            }
+        }
         
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
-        
-            return 74
-        
-        
+        if indexPath.row == 0{
+            return 103
+        }else{
+            return 326
+        }
+
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row) 입니다.")

@@ -18,6 +18,10 @@ class HomeWorkerVC: BaseViewController{
     var taskInfo: HomeWorkerTaskInfo?
     var boardInfo: [HomeWorkerBoardInfo]?
     
+    //타이머
+    var minutes: Int = 0
+    var seconds: Int = 0
+    var secondsLeft: Int = 180
     // Datamanager
     lazy var dataManager: HomeWorkerDatamanager = HomeWorkerDatamanager()
     
@@ -30,6 +34,7 @@ class HomeWorkerVC: BaseViewController{
         super.viewDidLoad()
         setTableView()
         setUI()
+        //setTimer()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
@@ -63,6 +68,28 @@ class HomeWorkerVC: BaseViewController{
         let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(storeNameViewTapped))
         storeNameView.addGestureRecognizer(tapGestureRecognizer1)
     }
+    /*
+    func setTimer(){
+        //1초마다 타이머 반복 실행
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (t) in
+                //남은 시간(초)에서 1초 빼기
+                self.secondsLeft -= 1
+
+                //남은 분
+            self.minutes = self.secondsLeft / 60
+                //그러고도 남은 초
+            self.seconds = self.secondsLeft % 60
+
+                //남은 시간(초)가 0보다 크면
+                if self.secondsLeft > 0 {
+                    print("\(self.minutes):\(self.seconds)")
+                    //self.endTimeLabel.text = "\(minutes):\(seconds)"
+                    //self.endTimeLabel.text = String(format: "%02d:%02d", minutes, seconds)
+                } else {
+                    print("시간 끝!")
+                }
+            })
+    }*/
     //큐알 페이지로
     @IBAction func btnQRCode(_ sender: Any) {
         if status == 3{ // 쉬는날
@@ -110,6 +137,7 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
             if isWork{
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerWorkTableViewCell") as? HomeWorkerWorkTableViewCell {
                     cell.selectionStyle = .none
+                    //cell.setTimer()
                     if let data = todayInfo{
                         cell.dateLabel.text = "\(data.month!)/\(data.date!) \(data.day!)요일"
                     }
@@ -166,6 +194,16 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
                     }
                     
                     cell.delegate = self
+                    /*
+                    //타이머 관련
+                    //남은 시간(초)가 0보다 크면
+                    if self.secondsLeft > 0 {
+                        print("\(self.minutes):\(self.seconds)")
+                        //self.endTimeLabel.text = "\(minutes):\(seconds)"
+                        cell.endTimeLabel.text = String(format: "%02d:%02d", minutes, seconds)
+                    } else {
+                        print("시간 끝!")
+                    }*/
                     return cell
                 }
             }else{
@@ -178,7 +216,7 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
                     if let data = todayInfo{
                         cell.dateLabel.text = "\(data.month!)/\(data.date!) \(data.day!)요일"
                     }
-                     
+                    
                     switch status {
                     case 0: // 근무전
                         cell.heightConstraint.constant = 65
@@ -199,6 +237,10 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
                         cell.titleLabel.text = "오늘은 쉬는날이에요."
                     }
                     cell.delegate = self
+                    
+                    
+                    
+                    
                     return cell
                 }
             }
@@ -315,6 +357,7 @@ extension HomeWorkerVC {
         print(homeWorkerData)
         setUI()
         //isWork = true
+        //setTimer()
         tableView.reloadData()
         dismissIndicator()
     }
