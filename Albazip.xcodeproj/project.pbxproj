@@ -204,6 +204,11 @@
 		C39083F32729B6F4006223CB /* OnboardingManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39083F22729B6F4006223CB /* OnboardingManagerVC.swift */; };
 		C391EAC327533B57002CD2E5 /* CommunityWorkerConfirmResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EAC227533B57002CD2E5 /* CommunityWorkerConfirmResponse.swift */; };
 		C391EAC527533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EAC427533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift */; };
+		C391EAC9275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EAC7275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.swift */; };
+		C391EACA275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C391EAC8275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.xib */; };
+		C391EACE27535A69002CD2E5 /* CommunityWorkerDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EACD27535A69002CD2E5 /* CommunityWorkerDatamanager.swift */; };
+		C391EAD027535A8C002CD2E5 /* CommunitySearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EACF27535A8C002CD2E5 /* CommunitySearchResponse.swift */; };
+		C391EAD227535ABE002CD2E5 /* CommunitySearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EAD127535ABE002CD2E5 /* CommunitySearchRequest.swift */; };
 		C398BF9C273F77F9008E8BA5 /* HomeManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BF9B273F77F9008E8BA5 /* HomeManagerVC.swift */; };
 		C398BFA0273F861D008E8BA5 /* HomeManagerMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BF9E273F861D008E8BA5 /* HomeManagerMainTableViewCell.swift */; };
 		C398BFA1273F861D008E8BA5 /* HomeManagerMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C398BF9F273F861D008E8BA5 /* HomeManagerMainTableViewCell.xib */; };
@@ -623,6 +628,11 @@
 		C39083F22729B6F4006223CB /* OnboardingManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManagerVC.swift; sourceTree = "<group>"; };
 		C391EAC227533B57002CD2E5 /* CommunityWorkerConfirmResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerConfirmResponse.swift; sourceTree = "<group>"; };
 		C391EAC427533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerConfirmDatamanager.swift; sourceTree = "<group>"; };
+		C391EAC7275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchNoDataTableViewCell.swift; sourceTree = "<group>"; };
+		C391EAC8275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunitySearchNoDataTableViewCell.xib; sourceTree = "<group>"; };
+		C391EACD27535A69002CD2E5 /* CommunityWorkerDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerDatamanager.swift; sourceTree = "<group>"; };
+		C391EACF27535A8C002CD2E5 /* CommunitySearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchResponse.swift; sourceTree = "<group>"; };
+		C391EAD127535ABE002CD2E5 /* CommunitySearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchRequest.swift; sourceTree = "<group>"; };
 		C398BF9B273F77F9008E8BA5 /* HomeManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerVC.swift; sourceTree = "<group>"; };
 		C398BF9E273F861D008E8BA5 /* HomeManagerMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerMainTableViewCell.swift; sourceTree = "<group>"; };
 		C398BF9F273F861D008E8BA5 /* HomeManagerMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeManagerMainTableViewCell.xib; sourceTree = "<group>"; };
@@ -1050,6 +1060,9 @@
 		C32E4A7F274E068B0015463F /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				C391EACC27535A4A002CD2E5 /* Datamanager */,
+				C391EACB27535A39002CD2E5 /* Entity */,
+				C391EAC6275357AC002CD2E5 /* Cell */,
 				C32E4A80274E069D0015463F /* CommunityWorkerSearchVC.swift */,
 			);
 			path = Search;
@@ -1724,6 +1737,32 @@
 				C391EAC427533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift */,
 			);
 			path = Confirm;
+			sourceTree = "<group>";
+		};
+		C391EAC6275357AC002CD2E5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C391EAC7275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.swift */,
+				C391EAC8275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C391EACB27535A39002CD2E5 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C391EACF27535A8C002CD2E5 /* CommunitySearchResponse.swift */,
+				C391EAD127535ABE002CD2E5 /* CommunitySearchRequest.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C391EACC27535A4A002CD2E5 /* Datamanager */ = {
+			isa = PBXGroup;
+			children = (
+				C391EACD27535A69002CD2E5 /* CommunityWorkerDatamanager.swift */,
+			);
+			path = Datamanager;
 			sourceTree = "<group>";
 		};
 		C398BF99273F77DF008E8BA5 /* Home */ = {
@@ -2827,6 +2866,7 @@
 				C3AD3B342739874D0030905C /* MyPageManagerWorkerPositionTableViewCell.xib in Resources */,
 				C34A00592731AA2D00C24102 /* MyPageWorkerMyInfoTableViewCell.xib in Resources */,
 				C34A00652731C82200C24102 /* MyPageWorkerPositionVC.xib in Resources */,
+				C391EACA275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.xib in Resources */,
 				C30AFE6C2733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.xib in Resources */,
 				C38442722714913700B84E8A /* MyPageManagerStoryboard.storyboard in Resources */,
 				C3B933A0273C37100056E381 /* MyPageDetailNoClearWorkTableViewCell.xib in Resources */,
@@ -2947,6 +2987,7 @@
 				C3B93388273BFAA00056E381 /* SettingUseTermVC.swift in Sources */,
 				C3F05A6A274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.swift in Sources */,
 				C32E4AA7274EA8B80015463F /* CommunityManagerPhotoTableViewCell.swift in Sources */,
+				C391EAC9275357C9002CD2E5 /* CommunitySearchNoDataTableViewCell.swift in Sources */,
 				C3A7C7E92752666D00271EFE /* HomeWorkerQRCodeDatamanager.swift in Sources */,
 				C3A1ADD0271C698D005A61ED /* RegisterWorkerCodeVC.swift in Sources */,
 				C3CB0170273D78D4000EA353 /* MyPageManagerWriteDatamanager.swift in Sources */,
@@ -3024,6 +3065,7 @@
 				C32E4A9A274E8EBC0015463F /* CommunityManagerNoticeAlertVC.swift in Sources */,
 				C34BCB3E2732CCB80085ADB3 /* MyPageDetailPublicWorkVC.swift in Sources */,
 				C3E1FEA6272D8AAB00CE44C6 /* Page.swift in Sources */,
+				C391EACE27535A69002CD2E5 /* CommunityWorkerDatamanager.swift in Sources */,
 				C3B93397273C081B0056E381 /* SettingNoticeTableViewCell.swift in Sources */,
 				C38D932F2749AD8A00AFFDE9 /* HomeManagerWorkPrivateTableViewCell.swift in Sources */,
 				C3B9338C273BFAE80056E381 /* SettingWithdrawVC.swift in Sources */,
@@ -3202,10 +3244,12 @@
 				C3F05A50274F70B10025DB24 /* MyPageStopWorkResponse.swift in Sources */,
 				C3A7C7D92752018D00271EFE /* StartTokenCheckResponse.swift in Sources */,
 				C3CFC302273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift in Sources */,
+				C391EAD027535A8C002CD2E5 /* CommunitySearchResponse.swift in Sources */,
 				C3E9C8E227411DC100B0139C /* MyPageManagerWorkerExitVC.swift in Sources */,
 				C3E9C8F427416D5100B0139C /* MyPageDetailPublicWorkDataManager.swift in Sources */,
 				C3CFC2FA273E9180001B2EB6 /* MyPageWorkerMyInfoResponse.swift in Sources */,
 				C39019C0271F246500BC2830 /* SearchCollectionViewCell.swift in Sources */,
+				C391EAD227535ABE002CD2E5 /* CommunitySearchRequest.swift in Sources */,
 				C398BFB4273FD26C008E8BA5 /* HomeManagerWorkerTodayWorkerListVC.swift in Sources */,
 				C3E9C8D52740E92800B0139C /* HomeManagerAddPublicWorkTableViewCell.swift in Sources */,
 				C3F05A3F274F48020025DB24 /* HomeManagerTodayWorkDeleteVC.swift in Sources */,
