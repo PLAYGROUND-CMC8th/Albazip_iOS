@@ -1206,7 +1206,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBR-JD-5RO">
-                                <rect key="frame" x="16" y="63.666666666666657" width="24" height="24"/>
+                                <rect key="frame" x="16" y="64" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="awU-Y5-GvZ"/>
                                     <constraint firstAttribute="width" constant="24" id="vEG-Ci-lL3"/>
@@ -1226,7 +1226,7 @@
                                 <rect key="frame" x="0.0" y="100.66666666666669" width="375" height="677.33333333333326"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQ1-cc-mUf">
-                                        <rect key="frame" x="24" y="53.999999999999986" width="327" height="72"/>
+                                        <rect key="frame" x="24" y="54.333333333333329" width="327" height="72"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33K-yN-abh">
                                                 <rect key="frame" x="254" y="21" width="51" height="30"/>
@@ -2088,6 +2088,10 @@
                             <constraint firstItem="dTK-Lx-eoh" firstAttribute="leading" secondItem="hhf-5l-bsX" secondAttribute="leading" constant="48" id="yOa-GE-YeC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="privatePermission" destination="Xgi-c3-lUU" id="2IY-Z8-VM8"/>
+                        <outlet property="usePermission" destination="CRl-u3-Sub" id="k9h-t4-KYm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hz1-Ev-WRZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
