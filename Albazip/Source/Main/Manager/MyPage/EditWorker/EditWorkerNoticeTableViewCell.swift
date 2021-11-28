@@ -1,16 +1,14 @@
 //
-//  MyPageManagerWorkList1TableViewCell.swift
+//  EditWorkerNoticeTableViewCell.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2021/11/04.
+//  Created by 김수빈 on 2021/11/29.
 //
 
 import UIKit
 
-class MyPageManagerWorkList1TableViewCell: UITableViewCell {
+class EditWorkerNoticeTableViewCell: UITableViewCell {
 
-    @IBOutlet var cellHeight: NSLayoutConstraint!
-    @IBOutlet var cellTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

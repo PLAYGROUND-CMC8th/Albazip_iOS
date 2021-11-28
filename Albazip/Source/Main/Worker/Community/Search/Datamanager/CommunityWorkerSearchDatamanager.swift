@@ -36,7 +36,7 @@ class CommunityWorkerSearchDatamanager {
             }
     }
     func getCommunityWorkerSearch(searchWord: String,vc: CommunityWorkerSearchVC) {
-        let url = "\(Constant.BASE_URL)/board/notice/search"
+        let url = "\(Constant.BASE_URL)/board/notice/search?searchWord=\(searchWord)"
         let parameters = [
                 "searchWord": "\(searchWord)"
             ]
@@ -45,7 +45,7 @@ class CommunityWorkerSearchDatamanager {
         let header: HTTPHeaders = [ "Content-Type":"application/json",
                                      "token":"\(UserDefaults.standard.string(forKey: "token")!)"]
         
-        AF.request(url, method: .get ,parameters: parameters, encoding: URLEncoding.default , headers: header)
+        AF.request(url, method: .get ,parameters: parameters, encoding: JSONEncoding.default , headers: header)
             .validate()
             .responseDecodable(of: CommunitySearchResponse.self) { response in
                 switch response.result {

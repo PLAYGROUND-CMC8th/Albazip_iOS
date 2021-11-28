@@ -61,7 +61,7 @@ class CommunityWorkerNoticeAlertDetailVC: UIViewController{
     
     @objc func view2Tapped(sender: UITapGestureRecognizer) {
         view2.backgroundColor = #colorLiteral(red: 0.9994661212, green: 0.979791224, blue: 0.9194086194, alpha: 1)
-        setReportType(text : "음란물/불건잔한 대화")
+        setReportType(text : "음란물/불건전한 대화")
     }
     
     @objc func view3Tapped(sender: UITapGestureRecognizer) {

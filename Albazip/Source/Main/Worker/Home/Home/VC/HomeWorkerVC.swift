@@ -114,7 +114,11 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
                         cell.dateLabel.text = "\(data.month!)/\(data.date!) \(data.day!)요일"
                     }
                     if let data = scheduleInfo{
-                        cell.startTimeLabel.text = data.startTime!.insertTime
+                        if let x = data.realStartTime{
+                            cell.startTimeLabel.text = x.insertTime
+                        }else{
+                            cell.startTimeLabel.text = data.startTime!.insertTime
+                        }
                         cell.endTimeLabel.text = data.endTime!.insertTime
                         let position = data.positionTitle!
                         cell.positionLabel.text = position.replace(target: " ", with: "")

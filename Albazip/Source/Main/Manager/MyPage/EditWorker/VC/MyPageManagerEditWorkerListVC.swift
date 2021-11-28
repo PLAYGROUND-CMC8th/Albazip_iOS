@@ -104,6 +104,8 @@ extension MyPageManagerEditWorkerListVC: UITableViewDataSource, UITableViewDeleg
         switch indexPath.row {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkList1TableViewCell") as? MyPageManagerWorkList1TableViewCell {
+                cell.cellTitle.text = "근무자 편집 시 다음 근무일부터 모든 변경사항이 적용됩니다."
+                cell.cellHeight.constant = 47
                 cell.selectionStyle = .none
                 return cell
             }
@@ -134,7 +136,7 @@ extension MyPageManagerEditWorkerListVC: UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
         switch indexPath.row {
         case 0:
-            return 143
+            return 124//143
         case totalList.count+1:
             return 60
         default:

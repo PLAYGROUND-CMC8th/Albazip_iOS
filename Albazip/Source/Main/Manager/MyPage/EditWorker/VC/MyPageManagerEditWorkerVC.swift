@@ -68,6 +68,10 @@ class MyPageManagerEditWorkerVC: UIViewController{
                            forCellReuseIdentifier: "MyPageManagerSelectInfo3TableViewCell")
         tableView.register(UINib(nibName: "MyPageManagerNoHeightTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageManagerNoHeightTableViewCell")
+        
+        //안내글
+        tableView.register(UINib(nibName: "EditWorkerNoticeTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "EditWorkerNoticeTableViewCell")
         //MyPageManagerNoHeightTableViewCell
         self.tableView.estimatedRowHeight = 1
         tableView.dataSource = self
@@ -152,13 +156,20 @@ extension MyPageManagerEditWorkerVC: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.row {
         case 0:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "EditWorkerNoticeTableViewCell") as? EditWorkerNoticeTableViewCell {
+                cell.selectionStyle = .none
+                
+                
+                return cell
+            }
+        case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerSelectInfo1TableViewCell") as? MyPageManagerSelectInfo1TableViewCell {
                 cell.selectionStyle = .none
                 cell.myPageManagerSelectInfo1Delegate = self
@@ -169,7 +180,7 @@ extension MyPageManagerEditWorkerVC: UITableViewDataSource, UITableViewDelegate 
                 }
                 return cell
             }
-        case 1:
+        case 2:
             if isDateSelected{
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerSelectInfo2TableViewCell") as? MyPageManagerSelectInfo2TableViewCell {
                     cell.selectionStyle = .none
@@ -200,7 +211,7 @@ extension MyPageManagerEditWorkerVC: UITableViewDataSource, UITableViewDelegate 
                 }
             }
             
-        case 2:
+        case 3:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerSelectInfo3TableViewCell") as? MyPageManagerSelectInfo3TableViewCell {
                 cell.selectionStyle = .none
                 if !isLoaded{
@@ -226,15 +237,17 @@ extension MyPageManagerEditWorkerVC: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
         switch indexPath.row {
         case 0:
+            return 71
+        case 1:
             return 397
         
-        case 1:
+        case 2:
             if isDateSelected{
                 return 269
             }else{
                 return 1
             }
-        case 2:
+        case 3:
             return 208
         default:
             

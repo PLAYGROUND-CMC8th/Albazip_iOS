@@ -21,7 +21,7 @@
                         <rect key="frame" x="24" y="24" width="327" height="66"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해당 업무리스트는 포지션 담당 업무로, 업무를 작성하면 근무자의 근무일에 고정되어 노출됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E10-4J-67O">
-                                <rect key="frame" x="24" y="16" width="279" height="34"/>
+                                <rect key="frame" x="20" y="16" width="287" height="34"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.63921570780000003" green="0.63921570780000003" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -29,8 +29,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="E10-4J-67O" firstAttribute="leading" secondItem="Kvd-aT-ATP" secondAttribute="leading" constant="24" id="042-Ry-W0w"/>
-                            <constraint firstAttribute="trailing" secondItem="E10-4J-67O" secondAttribute="trailing" constant="24" id="1S4-xY-kma"/>
+                            <constraint firstItem="E10-4J-67O" firstAttribute="leading" secondItem="Kvd-aT-ATP" secondAttribute="leading" constant="20" id="042-Ry-W0w"/>
+                            <constraint firstAttribute="trailing" secondItem="E10-4J-67O" secondAttribute="trailing" constant="20" id="1S4-xY-kma"/>
                             <constraint firstAttribute="bottom" secondItem="E10-4J-67O" secondAttribute="bottom" constant="16" id="7d3-0i-Zb5"/>
                             <constraint firstItem="E10-4J-67O" firstAttribute="top" secondItem="Kvd-aT-ATP" secondAttribute="top" constant="16" id="QVn-o4-cZN"/>
                             <constraint firstAttribute="height" constant="66" id="fTO-4F-Xkl"/>
@@ -61,7 +61,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="-17" y="163"/>
+            <connections>
+                <outlet property="cellHeight" destination="fTO-4F-Xkl" id="Y3P-dk-xli"/>
+                <outlet property="cellTitle" destination="E10-4J-67O" id="Aag-jY-1lB"/>
+            </connections>
+            <point key="canvasLocation" x="-95" y="167"/>
         </tableViewCell>
     </objects>
 </document>

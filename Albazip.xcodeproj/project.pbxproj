@@ -209,6 +209,8 @@
 		C391EACE27535A69002CD2E5 /* CommunityWorkerSearchDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EACD27535A69002CD2E5 /* CommunityWorkerSearchDatamanager.swift */; };
 		C391EAD027535A8C002CD2E5 /* CommunitySearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EACF27535A8C002CD2E5 /* CommunitySearchResponse.swift */; };
 		C391EAD227535ABE002CD2E5 /* CommunitySearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EAD127535ABE002CD2E5 /* CommunitySearchRequest.swift */; };
+		C391EAD52753DB37002CD2E5 /* EditWorkerNoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391EAD32753DB37002CD2E5 /* EditWorkerNoticeTableViewCell.swift */; };
+		C391EAD62753DB37002CD2E5 /* EditWorkerNoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C391EAD42753DB37002CD2E5 /* EditWorkerNoticeTableViewCell.xib */; };
 		C398BF9C273F77F9008E8BA5 /* HomeManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BF9B273F77F9008E8BA5 /* HomeManagerVC.swift */; };
 		C398BFA0273F861D008E8BA5 /* HomeManagerMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398BF9E273F861D008E8BA5 /* HomeManagerMainTableViewCell.swift */; };
 		C398BFA1273F861D008E8BA5 /* HomeManagerMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C398BF9F273F861D008E8BA5 /* HomeManagerMainTableViewCell.xib */; };
@@ -633,6 +635,8 @@
 		C391EACD27535A69002CD2E5 /* CommunityWorkerSearchDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerSearchDatamanager.swift; sourceTree = "<group>"; };
 		C391EACF27535A8C002CD2E5 /* CommunitySearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchResponse.swift; sourceTree = "<group>"; };
 		C391EAD127535ABE002CD2E5 /* CommunitySearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchRequest.swift; sourceTree = "<group>"; };
+		C391EAD32753DB37002CD2E5 /* EditWorkerNoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkerNoticeTableViewCell.swift; sourceTree = "<group>"; };
+		C391EAD42753DB37002CD2E5 /* EditWorkerNoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditWorkerNoticeTableViewCell.xib; sourceTree = "<group>"; };
 		C398BF9B273F77F9008E8BA5 /* HomeManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerVC.swift; sourceTree = "<group>"; };
 		C398BF9E273F861D008E8BA5 /* HomeManagerMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerMainTableViewCell.swift; sourceTree = "<group>"; };
 		C398BF9F273F861D008E8BA5 /* HomeManagerMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeManagerMainTableViewCell.xib; sourceTree = "<group>"; };
@@ -1224,6 +1228,8 @@
 				C38EDCC42746663C00564A17 /* VC */,
 				C34766152745642C0001B220 /* Datamanager */,
 				C3476614274564260001B220 /* Entity */,
+				C391EAD32753DB37002CD2E5 /* EditWorkerNoticeTableViewCell.swift */,
+				C391EAD42753DB37002CD2E5 /* EditWorkerNoticeTableViewCell.xib */,
 			);
 			path = EditWorker;
 			sourceTree = "<group>";
@@ -2878,6 +2884,7 @@
 				C33485FC27480D38000E2D14 /* HomeWorkerPublicWorkTableViewCell.xib in Resources */,
 				C3F05A6B274FCE0A0025DB24 /* CommunityManagerNoNoticeTableViewCell.xib in Resources */,
 				C3E1FEB6272DABBE00CE44C6 /* MyPageManagerWriteTableViewCell.xib in Resources */,
+				C391EAD62753DB37002CD2E5 /* EditWorkerNoticeTableViewCell.xib in Resources */,
 				C3B933A4273C39DD0056E381 /* MyPageDetailClearWorkNoCompleteTableViewCell.xib in Resources */,
 				C3AD3B2C2739786D0030905C /* MyPageManagerWorkerPositionDeleteTableViewCell.xib in Resources */,
 				C34BCB4D2732F3C00085ADB3 /* MyPageDetailPublicDateTableViewCell.xib in Resources */,
@@ -3033,6 +3040,7 @@
 				C3B93380273BF8B80056E381 /* SettingAlarmVC.swift in Sources */,
 				C32E4A81274E069D0015463F /* CommunityWorkerSearchVC.swift in Sources */,
 				C39083EF2729B4E5006223CB /* OnboardingData.swift in Sources */,
+				C391EAD52753DB37002CD2E5 /* EditWorkerNoticeTableViewCell.swift in Sources */,
 				C34BCB382732B5910085ADB3 /* MyPageDetailCountTableViewCell.swift in Sources */,
 				C391EAC327533B57002CD2E5 /* CommunityWorkerConfirmResponse.swift in Sources */,
 				C3CFC30C273ED3A6001B2EB6 /* MyPageManagerWorkerWriteResponse.swift in Sources */,
