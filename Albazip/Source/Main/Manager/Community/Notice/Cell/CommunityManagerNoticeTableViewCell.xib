@@ -78,12 +78,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bgView" destination="H2p-sc-9uM" id="Sw5-GO-PGW"/>
                 <outlet property="btnPin" destination="U8M-jZ-f0O" id="IXY-Ff-X4a"/>
                 <outlet property="noticeView" destination="LNX-4l-SaG" id="sAZ-e9-gWd"/>
                 <outlet property="subLabel" destination="Hfa-KL-uQ1" id="Fgj-Og-ua6"/>
                 <outlet property="titleLabel" destination="U1f-Cp-YLO" id="bAi-WS-PvA"/>
             </connections>
-            <point key="canvasLocation" x="102" y="151"/>
+            <point key="canvasLocation" x="638" y="151"/>
         </tableViewCell>
     </objects>
     <resources>

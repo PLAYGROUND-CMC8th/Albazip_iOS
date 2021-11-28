@@ -11,6 +11,7 @@ protocol CommunityManagerNoticeDelegate {
 }
 class CommunityManagerNoticeTableViewCell: UITableViewCell {
     var noticeId =  -1
+    @IBOutlet var bgView: UIView!
     var delegate: CommunityManagerNoticeDelegate?
     @IBOutlet var noticeView: UIView!
     @IBOutlet var titleLabel: UILabel!

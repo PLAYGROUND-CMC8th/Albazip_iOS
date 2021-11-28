@@ -153,6 +153,7 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityManagerNoticeTableViewCell") as? CommunityManagerNoticeTableViewCell {
                         cell.selectionStyle = .none
                         cell.delegate = self
+                        cell.bgView.backgroundColor = #colorLiteral(red: 0.9724535346, green: 0.9726160169, blue: 0.9724321961, alpha: 1)
                         if let data = noticeData{
                             let date = data[indexPath.row].registerDate!.substring(from: 0, to: 10)
                             print(date)
@@ -232,6 +233,15 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row) 입니다.")
+        if !isNoWriteData{
+            if let data = noticeData{
+                let newStoryboard = UIStoryboard(name: "CommunityManagerStoryboard", bundle: nil)
+                guard let nextVC = newStoryboard.instantiateViewController(identifier: "CommunityManagerNoticeDetailVC") as? CommunityManagerNoticeDetailVC else {return}
+                //nextVC.confirm = data[index].confirm!
+                nextVC.noticeId = data[indexPath.row].id!
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            }
+        }
     }
     
 }
