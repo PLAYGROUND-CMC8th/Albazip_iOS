@@ -48,6 +48,7 @@ class RegisterWorkerCodeVC : UIViewController{
     
     @IBAction func btnNext(_ sender: Any) {
         if codeTextField.text!.count > 0{
+            showIndicator()
             dataManager.postRegisterWorker(RegisterWorkerRequset(code: codeTextField.text!), delegate: self)
         }
     }
@@ -86,6 +87,7 @@ extension RegisterWorkerCodeVC: UITextFieldDelegate{
 
 extension RegisterWorkerCodeVC{
     func didSuccessRegisterWorker(_ result: RegisterWorkerResponse) {
+        dismissIndicator()
         if(result.message == "성공적으로 근무자 가입이 완료되었습니다."){
             errorLabel.isHidden = true
             codeTextField.borderColor = .lightGray
@@ -108,6 +110,7 @@ extension RegisterWorkerCodeVC{
     }
     
     func failedToRegisterWorker(message: String) {
+        dismissIndicator()
         self.presentAlert(title: message)
         codeTextField.borderColor = .lightGray
         errorLabel.isHidden = true

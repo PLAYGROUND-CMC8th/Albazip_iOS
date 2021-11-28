@@ -8,9 +8,17 @@
 import Alamofire
 class SettingEditBasicInfoDatamanager{
     func postSettingEditBasicInfo(_ parameters: SettingEditBasicInfoRequest, delegate: SettingEditBasicInfoVC) {
+        //포지션 선택 > 설정인지, 마이페이지 > 설정인지 토큰 구분해주기
+        var token = ""
+        if let x = UserDefaults.standard.string(forKey: "token"), x != ""{
+            token = x
+        }else{
+            let data = RegisterBasicInfo.shared
+            token = data.token!
+        }
         
         let header: HTTPHeaders = [ "Content-Type":"application/json",
-                                    "token":"\(UserDefaults.standard.string(forKey: "token")!)"]
+                                    "token":"\(token)"]
         
         AF.request("\(Constant.BASE_URL)/mypage/setting/myinfo", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: header)
             .validate()

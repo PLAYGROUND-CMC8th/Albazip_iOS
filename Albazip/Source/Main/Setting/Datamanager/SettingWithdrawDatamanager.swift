@@ -9,9 +9,16 @@ import Foundation
 class SettingWithdrawDatamanager {
     func getSettingWithdraw(vc: SettingWithdrawVC) {
         let url = "\(Constant.BASE_URL)/mypage/setting"
-        
+        //포지션 선택 > 설정인지, 마이페이지 > 설정인지 토큰 구분해주기
+        var token = ""
+        if let x = UserDefaults.standard.string(forKey: "token"), x != ""{
+            token = x
+        }else{
+            let data = RegisterBasicInfo.shared
+            token = data.token!
+        }
         let header: HTTPHeaders = [ "Content-Type":"application/json",
-                                     "token":"\(UserDefaults.standard.string(forKey: "token")!)"]
+                                     "token":"\(token)"]
         
         AF.request(url, method: .delete ,parameters: nil, encoding: JSONEncoding.default, headers: header)
             .validate()

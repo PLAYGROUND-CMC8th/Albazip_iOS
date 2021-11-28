@@ -41,7 +41,8 @@ class RegisterSelectPositionVC: UIViewController{
     }
     
     @IBAction func btnSetting(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterSettingVC") as? RegisterSettingVC else {return}
+        let newStoryboard = UIStoryboard(name: "SettingStoryboard", bundle: nil)
+        guard let nextVC = newStoryboard.instantiateViewController(identifier: "SettingWorkerVC") as? SettingWorkerVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
