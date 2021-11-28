@@ -11,6 +11,7 @@ struct CommunitySearchResponse: Decodable {
     var message: String?
     var page: Int?
     var data: [CommunitySearchData]?
+    var req: SearchWord?
 }
 
 struct CommunitySearchData: Decodable {
@@ -21,3 +22,6 @@ struct CommunitySearchData: Decodable {
     var confirm: Int?
 }
 
+struct SearchWord: Decodable {
+    var searchWord: String?
+}

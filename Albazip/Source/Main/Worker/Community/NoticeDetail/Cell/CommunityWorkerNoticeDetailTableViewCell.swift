@@ -26,7 +26,7 @@ class CommunityWorkerNoticeDetailTableViewCell: UITableViewCell {
     
     @IBOutlet var height1: NSLayoutConstraint!
     @IBOutlet var height2: NSLayoutConstraint!
-    
+    var comWorker: [CommunityManagerNoticeConfirmer]?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -57,19 +57,36 @@ class CommunityWorkerNoticeDetailTableViewCell: UITableViewCell {
         print("몇명일까요")
         completePeopleView.isHidden.toggle()
     }
-    
+    //데이터 가져올 함수
+    func setCell(data: [CommunityManagerNoticeConfirmer])  {
+        comWorker = data
+        personCount.text = String(data.count)
+        completePeopleViewHeight.constant = CGFloat(45 + 36 * data.count)
+        self.tableView.reloadData()
+    }
 }
 extension CommunityWorkerNoticeDetailTableViewCell: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return cellCount
+        if let data = comWorker{
+            return data.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeWorkerCompletePeopleTableViewCell") as? HomeWorkerCompletePeopleTableViewCell {
                 cell.selectionStyle = .none
-                
+                if let data = comWorker{
+                    //cell.countLabel.text = String(data[indexPath.row].count!)
+                    let url = URL(string: data[indexPath.row].writerImage!)
+                    cell.profileImage.kf.setImage(with: url)
+                    //let result = data[indexPath.row].worker!.components(separatedBy: " ")
+                    cell.countLabel.isHidden = true
+                    cell.nameLabel.text = data[indexPath.row].writerName!
+                    cell.positionLabel.text = data[indexPath.row].writerTitle!
+                }
                 print(indexPath.row)
                 return cell
             }
@@ -78,9 +95,11 @@ extension CommunityWorkerNoticeDetailTableViewCell: UITableViewDataSource,UITabl
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
         
+        if let data = comWorker{
             return 36
-        
-        
+        }else{
+            return 0
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row) 입니다.")

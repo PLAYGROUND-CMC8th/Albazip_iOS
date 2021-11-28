@@ -86,8 +86,8 @@ extension CommunityWorkerNoticeDetailVC: UITableViewDataSource, UITableViewDeleg
                         cell.height2.constant = 0
                     }
                 }
-                if let confirmInfo = data.writerInfo{
-                    
+                if let confirmInfo = data.confirmInfo{
+                    cell.setCell(data: confirmInfo.confirmer!)
                 }
                 
             }

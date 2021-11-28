@@ -31,9 +31,14 @@ struct CommunityManagerNoticeBoardInfo: Decodable {
 }
 struct CommunityManagerNoticeConfirmInfo: Decodable {
     var count: Int?
-    //"confirmer": []
+    var confirmer: [CommunityManagerNoticeConfirmer]?
 }
 struct CommunityManagerNoticeImage: Decodable {
     var id: Int?
     var image_path: String?
+}
+struct CommunityManagerNoticeConfirmer: Decodable {
+    var writerTitle: String?
+    var writerName: String?
+    var writerImage: String?
 }

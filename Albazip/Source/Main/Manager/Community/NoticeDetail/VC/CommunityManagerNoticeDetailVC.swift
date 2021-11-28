@@ -115,8 +115,8 @@ extension CommunityManagerNoticeDetailVC: UITableViewDataSource, UITableViewDele
                         cell.height2.constant = 0
                     }
                 }
-                if let confirmInfo = data.writerInfo{
-                    
+                if let confirmInfo = data.confirmInfo{
+                    cell.setCell(data: confirmInfo.confirmer!)
                 }
                 
             }

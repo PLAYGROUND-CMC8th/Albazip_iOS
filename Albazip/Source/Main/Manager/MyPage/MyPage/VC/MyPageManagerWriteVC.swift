@@ -233,7 +233,7 @@ extension MyPageManagerWriteVC: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row) 입니다.")
-        if !isNoWriteData{
+        if !isNoNoticeData{
             if let data = noticeData{
                 let newStoryboard = UIStoryboard(name: "CommunityManagerStoryboard", bundle: nil)
                 guard let nextVC = newStoryboard.instantiateViewController(identifier: "CommunityManagerNoticeDetailVC") as? CommunityManagerNoticeDetailVC else {return}

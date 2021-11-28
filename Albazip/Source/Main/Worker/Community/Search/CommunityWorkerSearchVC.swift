@@ -83,7 +83,7 @@ extension CommunityWorkerSearchVC: UITableViewDataSource, UITableViewDelegate{
 extension CommunityWorkerSearchVC {
     func didSuccessCommunityWorkerSearch(result: CommunitySearchResponse) {
         
-        print(result.message)
+        print(result)
         noticeList = result.data
         print("noticeList: \(noticeList)")
         if  noticeList!.count != 0{
