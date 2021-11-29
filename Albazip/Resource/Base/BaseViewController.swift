@@ -37,5 +37,20 @@ class BaseViewController: UIViewController {
         tabBarController?.tabBar.isTranslucent = false
         //탭바 밑에 선 없애기
         //tabBarController?.tabBar.shadowImage = UIImage()
+        
+        if #available(iOS 15, *) {
+           let tabBarAppearance = UITabBarAppearance()
+           tabBarAppearance.backgroundColor = .white
+            /*
+           tabBarAppearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: selectedItemTextColor]
+           tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: unselectedItemTextColor]*/
+            tabBarController?.tabBar.standardAppearance = tabBarAppearance
+            //tabBarController?.tabBar.scrollEdgeAppearance = tabBarAppearance
+        } else {
+            /*
+           UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+           UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)*/
+            tabBarController?.tabBar.barTintColor = .white
+         }
     }
 }
