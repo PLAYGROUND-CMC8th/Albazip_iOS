@@ -184,6 +184,60 @@
             </objects>
             <point key="canvasLocation" x="1086" y="-142"/>
         </scene>
+        <!--Community Manager Notice Detail ImageVC-->
+        <scene sceneID="7M2-7A-4Rg">
+            <objects>
+                <viewController storyboardIdentifier="CommunityManagerNoticeDetailImageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5ir-6q-dJF" customClass="CommunityManagerNoticeDetailImageVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lZK-jw-5gN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7m2-3Z-u0W">
+                                <rect key="frame" x="16" y="64" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="6lg-IX-Pw1"/>
+                                    <constraint firstAttribute="height" constant="24" id="fNp-TP-hh5"/>
+                                </constraints>
+                                <state key="normal" image="icDeleteWhite24Px"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="5ir-6q-dJF" eventType="touchUpInside" id="juz-hC-066"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nfa-a1-lkc">
+                                <rect key="frame" x="0.0" y="218.66666666666663" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nfa-a1-lkc" secondAttribute="height" multiplier="1:1" id="DXI-jj-XMx"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFh-S7-FzF">
+                                <rect key="frame" x="175.66666666666666" y="65" width="24" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gpv-8G-z5e"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nfa-a1-lkc" firstAttribute="leading" secondItem="gpv-8G-z5e" secondAttribute="leading" id="5rQ-Sn-xKC"/>
+                            <constraint firstItem="nfa-a1-lkc" firstAttribute="centerX" secondItem="lZK-jw-5gN" secondAttribute="centerX" id="AAA-5z-yP0"/>
+                            <constraint firstItem="nfa-a1-lkc" firstAttribute="trailing" secondItem="gpv-8G-z5e" secondAttribute="trailing" id="d9A-gC-Q4J"/>
+                            <constraint firstItem="7m2-3Z-u0W" firstAttribute="leading" secondItem="gpv-8G-z5e" secondAttribute="leading" constant="16" id="emc-Jf-V5W"/>
+                            <constraint firstItem="nfa-a1-lkc" firstAttribute="centerY" secondItem="lZK-jw-5gN" secondAttribute="centerY" id="kHI-xp-7o9"/>
+                            <constraint firstItem="gFh-S7-FzF" firstAttribute="centerX" secondItem="lZK-jw-5gN" secondAttribute="centerX" id="lKq-N0-WmQ"/>
+                            <constraint firstItem="gFh-S7-FzF" firstAttribute="top" secondItem="gpv-8G-z5e" secondAttribute="top" constant="21" id="tzZ-fv-pez"/>
+                            <constraint firstItem="7m2-3Z-u0W" firstAttribute="top" secondItem="gpv-8G-z5e" secondAttribute="top" constant="20" id="xXS-MX-CjY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countLabel" destination="gFh-S7-FzF" id="hcv-jC-cnP"/>
+                        <outlet property="imageView" destination="nfa-a1-lkc" id="xDK-j1-J1D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aah-zh-L7y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-540" y="1293.8423645320197"/>
+        </scene>
         <!--Community Manager WriteVC-->
         <scene sceneID="BbI-HN-3aa">
             <objects>
@@ -791,6 +845,7 @@
         <image name="icBell" width="24" height="24"/>
         <image name="icCommunityActive" width="24" height="24"/>
         <image name="icCommunityInactive" width="24" height="24"/>
+        <image name="icDeleteWhite24Px" width="24" height="24"/>
         <image name="icMoreVertical24Px" width="24" height="24"/>
         <image name="icSearch18Px" width="18" height="18"/>
         <image name="icSearch24Px" width="24" height="24"/>

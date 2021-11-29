@@ -72,6 +72,7 @@ extension CommunityManagerNoticeDetailVC: UITableViewDataSource, UITableViewDele
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityWorkerNoticeDetailTableViewCell") as? CommunityWorkerNoticeDetailTableViewCell {
+            cell.delegate = self
             cell.selectionStyle = .none
             if let data = noticeData{
                 if let writerInfo = data.writerInfo{
@@ -190,4 +191,24 @@ extension CommunityManagerNoticeDetailVC: CommunityManagerNoticeAlertVCDelegate,
     func successDeleteNotice() {
         self.navigationController?.popViewController(animated: true)
     }
+}
+
+
+extension CommunityManagerNoticeDetailVC: CommunityWorkerNoticeDetailDelegate{
+    func showImagePage(index: Int) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "CommunityManagerNoticeDetailImageVC") as? CommunityManagerNoticeDetailImageVC {
+            vc.modalPresentationStyle = .overFullScreen
+            if let data = noticeData{
+                if let board = data.boardInfo{
+                    //let url = URL(string: board.image![index].image_path!)
+                    vc.imageUrl = board.image![index].image_path!
+                }
+            }
+            
+            self.present(vc, animated: false, completion: nil)
+            
+        }
+    }
+    
+    
 }

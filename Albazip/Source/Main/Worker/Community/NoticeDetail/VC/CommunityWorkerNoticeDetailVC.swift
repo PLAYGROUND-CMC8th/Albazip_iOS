@@ -58,6 +58,7 @@ extension CommunityWorkerNoticeDetailVC: UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityWorkerNoticeDetailTableViewCell") as? CommunityWorkerNoticeDetailTableViewCell {
+            cell.delegate = self
             cell.selectionStyle = .none
             if let data = noticeData{
                 if let writerInfo = data.writerInfo{
@@ -154,4 +155,23 @@ extension CommunityWorkerNoticeDetailVC {
         //dismissIndicator()
         presentAlert(title: message)
     }
+}
+extension CommunityWorkerNoticeDetailVC: CommunityWorkerNoticeDetailDelegate{
+    func showImagePage(index: Int) {
+        let newStoryboard = UIStoryboard(name: "CommunityManagerStoryboard", bundle: nil)
+        if let vc = newStoryboard.instantiateViewController(withIdentifier: "CommunityManagerNoticeDetailImageVC") as? CommunityManagerNoticeDetailImageVC {
+            vc.modalPresentationStyle = .overFullScreen
+            if let data = noticeData{
+                if let board = data.boardInfo{
+                    //let url = URL(string: board.image![index].image_path!)
+                    vc.imageUrl = board.image![index].image_path!
+                }
+            }
+            
+            self.present(vc, animated: false, completion: nil)
+            
+        }
+    }
+    
+    
 }

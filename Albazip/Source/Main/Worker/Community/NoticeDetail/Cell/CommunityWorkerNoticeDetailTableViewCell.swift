@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol CommunityWorkerNoticeDetailDelegate {
+    func showImagePage(index:Int)
+}
+
 class CommunityWorkerNoticeDetailTableViewCell: UITableViewCell {
     var cellCount = 3
+    
+    var delegate: CommunityWorkerNoticeDetailDelegate?
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var completePeopleView: UIView!
     @IBOutlet var completePeopleViewHeight: NSLayoutConstraint!
@@ -39,8 +45,21 @@ class CommunityWorkerNoticeDetailTableViewCell: UITableViewCell {
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
         profileImage.clipsToBounds = true
         
+        
+        // view 클릭 시, 함수 정의
+        let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(image1Tapped))
+        image1.addGestureRecognizer(tapGestureRecognizer2)
+        
+        // view 클릭 시, 함수 정의
+        let tapGestureRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(image2Tapped))
+        image2.addGestureRecognizer(tapGestureRecognizer3)
+        //image1.isUserInteractionEnable(true)
+        //image2.isUserInteractionEnable(true)
+        
+        
         setTableView()
     }
+    
     func setTableView(){
         
         tableView.register(UINib(nibName: "HomeWorkerCompletePeopleTableViewCell", bundle: nil),
@@ -57,6 +76,20 @@ class CommunityWorkerNoticeDetailTableViewCell: UITableViewCell {
         print("몇명일까요")
         completePeopleView.isHidden.toggle()
     }
+    
+    //이미지 상세보기 페이지로
+    @objc func image1Tapped(sender: UITapGestureRecognizer) {
+        print("이미지 1")
+        delegate?.showImagePage(index: 0)
+    }
+    
+    //이미지 상세보기
+    @objc func image2Tapped(sender: UITapGestureRecognizer) {
+        print("이미지 2")
+        delegate?.showImagePage(index: 1)
+    }
+    
+    
     //데이터 가져올 함수
     func setCell(data: [CommunityManagerNoticeConfirmer])  {
         comWorker = data
@@ -80,7 +113,7 @@ extension CommunityWorkerNoticeDetailTableViewCell: UITableViewDataSource,UITabl
                 cell.selectionStyle = .none
                 if let data = comWorker{
                     //cell.countLabel.text = String(data[indexPath.row].count!)
-                    let url = URL(string: data[indexPath.row].writerImage!)
+                    let url = URL(string: data[indexPath.row].writerImage ?? "")
                     cell.profileImage.kf.setImage(with: url)
                     //let result = data[indexPath.row].worker!.components(separatedBy: " ")
                     cell.countLabel.isHidden = true

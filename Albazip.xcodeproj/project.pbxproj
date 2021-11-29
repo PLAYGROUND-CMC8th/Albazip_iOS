@@ -75,6 +75,7 @@
 		C33E00052731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33E00032731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib */; };
 		C33E00082731D80500D88267 /* MyPageWorkerWriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E00062731D80500D88267 /* MyPageWorkerWriteVC.swift */; };
 		C33E00092731D80500D88267 /* MyPageWorkerWriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33E00072731D80500D88267 /* MyPageWorkerWriteVC.xib */; };
+		C33EA8A927544DE700F234F8 /* CommunityManagerNoticeDetailImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33EA8A827544DE700F234F8 /* CommunityManagerNoticeDetailImageVC.swift */; };
 		C33F9982272E971800E9FF05 /* RegisterWorkerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F9981272E971800E9FF05 /* RegisterWorkerResponse.swift */; };
 		C33F9984272E973500E9FF05 /* RegisterWorkerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F9983272E973500E9FF05 /* RegisterWorkerRequest.swift */; };
 		C33F9986272E977700E9FF05 /* RegisterWorkerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F9985272E977700E9FF05 /* RegisterWorkerDataManager.swift */; };
@@ -498,6 +499,7 @@
 		C33E00032731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageWorkerWriteTableViewCell.xib; sourceTree = "<group>"; };
 		C33E00062731D80500D88267 /* MyPageWorkerWriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerWriteVC.swift; sourceTree = "<group>"; };
 		C33E00072731D80500D88267 /* MyPageWorkerWriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageWorkerWriteVC.xib; sourceTree = "<group>"; };
+		C33EA8A827544DE700F234F8 /* CommunityManagerNoticeDetailImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityManagerNoticeDetailImageVC.swift; sourceTree = "<group>"; };
 		C33F9981272E971800E9FF05 /* RegisterWorkerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWorkerResponse.swift; sourceTree = "<group>"; };
 		C33F9983272E973500E9FF05 /* RegisterWorkerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWorkerRequest.swift; sourceTree = "<group>"; };
 		C33F9985272E977700E9FF05 /* RegisterWorkerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWorkerDataManager.swift; sourceTree = "<group>"; };
@@ -1132,6 +1134,7 @@
 				C32E4A97274E881A0015463F /* CommunityManagerNoticeDetailVC.swift */,
 				C32E4A99274E8EBC0015463F /* CommunityManagerNoticeAlertVC.swift */,
 				C32E4A9B274E8ED80015463F /* CommunityManagerNoticeAlertDeleteVC.swift */,
+				C33EA8A827544DE700F234F8 /* CommunityManagerNoticeDetailImageVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -3006,6 +3009,7 @@
 				C3B9339C273C2EFA0056E381 /* MyPageDetailClearWorkDayVC.swift in Sources */,
 				C3A7C7D22751EECA00271EFE /* HomeManagerStoreListDatamanager.swift in Sources */,
 				C34972FA27509025009EFCD1 /* CommunityManagerWriteResponse.swift in Sources */,
+				C33EA8A927544DE700F234F8 /* CommunityManagerNoticeDetailImageVC.swift in Sources */,
 				C3A1ADD2271C773F005A61ED /* RegisterSettingVC.swift in Sources */,
 				C3F05A35274F38D20025DB24 /* HomeManagerAddPublicWorkDatamanager.swift in Sources */,
 				C347660A2744B1BE0001B220 /* MyPageProfileImageDefaultDatamanager.swift in Sources */,
