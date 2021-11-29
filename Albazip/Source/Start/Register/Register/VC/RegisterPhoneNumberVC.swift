@@ -109,7 +109,7 @@ class RegisterPhoneNumberVC: UIViewController, UITextFieldDelegate{
             self.isFirstAuth = false
             
             btnNext.isEnabled = true
-            btnNext.backgroundColor = .mainYellow
+            btnNext.backgroundColor = .enableYellow
             btnNext.setTitleColor(.gray, for: .normal)
         }
     }

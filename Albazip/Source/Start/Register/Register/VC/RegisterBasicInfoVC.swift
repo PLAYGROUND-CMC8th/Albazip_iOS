@@ -83,13 +83,13 @@ class RegisterBasicInfoVC: UIViewController{
         if firstNameTextfield.text!.count > 0 , nameTextfield.text!.count > 0, selectAge{
             if(btnMan.isSelected || btnWoman.isSelected){
                 btnNext.isEnabled = true
-                btnNext.backgroundColor = .mainYellow
+                btnNext.backgroundColor = .enableYellow
                 btnNext.setTitleColor(.gray, for: .normal)
             }
             
         }else{
             btnNext.isEnabled = false
-            btnNext.backgroundColor = .semiYellow
+            btnNext.backgroundColor = .disableYellow
             btnNext.setTitleColor(.semiGray, for: .normal)
         }
     }

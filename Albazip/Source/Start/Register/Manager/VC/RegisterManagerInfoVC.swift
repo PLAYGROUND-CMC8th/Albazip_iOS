@@ -149,7 +149,7 @@ extension RegisterManagerInfoVC {
             checkImage2.image = #imageLiteral(resourceName: "icCheckedCorrect")
             errorLabel2.isHidden = true
             btnNext.isEnabled = true
-            btnNext.backgroundColor = .mainYellow
+            btnNext.backgroundColor = .enableYellow
             btnNext.setTitleColor(.gray, for: .normal)
             personNameTextField.borderColor = .lightGray
         }else{
@@ -157,7 +157,7 @@ extension RegisterManagerInfoVC {
             errorLabel2.text = result.message
             checkImage2.image = #imageLiteral(resourceName: "icCheckedNormal")
             btnNext.isEnabled = false
-            btnNext.backgroundColor = .semiYellow
+            btnNext.backgroundColor = .disableYellow
             btnNext.setTitleColor(.semiGray, for: .normal)
             personNameTextField.borderColor = .red
         }
@@ -169,7 +169,7 @@ extension RegisterManagerInfoVC {
         errorLabel2.isHidden = true
         checkImage2.image = #imageLiteral(resourceName: "icCheckedNormal")
         btnNext.isEnabled = false
-        btnNext.backgroundColor = .semiYellow
+        btnNext.backgroundColor = .disableYellow
         btnNext.setTitleColor(.semiGray, for: .normal)
         //errorLabel1.text = message
     }

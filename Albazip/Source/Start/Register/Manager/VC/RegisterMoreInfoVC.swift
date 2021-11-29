@@ -249,22 +249,22 @@ class RegisterMoreInfoVC: UIViewController {
             if btnNoBreak.isSelected{
                 //연중무휴 체크
                 btnNext.isEnabled = true
-                btnNext.backgroundColor = .mainYellow
+                btnNext.backgroundColor = .enableYellow
                 btnNext.setTitleColor(.gray, for: .normal)
             }else if !btnMon.isSelected, !btnTue.isSelected, !btnWed.isSelected, !btnThu.isSelected, !btnFri.isSelected, !btnSat.isSelected, !btnSun.isSelected, !btnBreak.isSelected{
                 // 아무것도 체크 안됨
                 btnNext.isEnabled = false
-                btnNext.backgroundColor = .semiYellow
+                btnNext.backgroundColor = .disableYellow
                 btnNext.setTitleColor(.semiGray, for: .normal)
             }else{
                 //버튼중에 하나는 선택되어있음
                 btnNext.isEnabled = true
-                btnNext.backgroundColor = .mainYellow
+                btnNext.backgroundColor = .enableYellow
                 btnNext.setTitleColor(.gray, for: .normal)
             }
         }else{
             btnNext.isEnabled = false
-            btnNext.backgroundColor = .semiYellow
+            btnNext.backgroundColor = .disableYellow
             btnNext.setTitleColor(.semiGray, for: .normal)
         }
     }

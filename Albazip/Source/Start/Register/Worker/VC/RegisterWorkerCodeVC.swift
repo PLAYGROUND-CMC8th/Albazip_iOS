@@ -34,11 +34,11 @@ class RegisterWorkerCodeVC : UIViewController{
     func checkCode(){
         if codeTextField.text!.count > 0{
             btnNext.isEnabled = true
-            btnNext.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btnNext.backgroundColor = .enableYellow
             btnNext.setTitleColor(#colorLiteral(red: 0.203897506, green: 0.2039385736, blue: 0.2081941962, alpha: 1), for: .normal)
         }else{
             btnNext.isEnabled = false
-            btnNext.backgroundColor = #colorLiteral(red: 0.9991410375, green: 0.9350907207, blue: 0.743348062, alpha: 1)
+            btnNext.backgroundColor = .disableYellow
             btnNext.setTitleColor(#colorLiteral(red: 0.678363204, green: 0.678479135, blue: 0.6783478856, alpha: 1), for: .normal)
         }
     }

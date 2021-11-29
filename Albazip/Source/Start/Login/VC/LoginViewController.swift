@@ -34,11 +34,11 @@ class LoginViewController: UIViewController{
     func checkTextField(){
         if phoneTextfield.text!.count > 0 , passwordTextfield.text!.count > 0{
             btnLogin.isEnabled = true
-            btnLogin.backgroundColor = .mainYellow
+            btnLogin.backgroundColor = .enableYellow
             btnLogin.setTitleColor(.gray, for: .normal)
         }else{
             btnLogin.isEnabled = false
-            btnLogin.backgroundColor = .semiYellow
+            btnLogin.backgroundColor = .disableYellow
             btnLogin.setTitleColor(.semiGray, for: .normal)
         }
     }

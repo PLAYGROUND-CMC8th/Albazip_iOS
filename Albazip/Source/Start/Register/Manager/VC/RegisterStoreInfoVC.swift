@@ -67,11 +67,11 @@ class RegisterStoreInfoVC: UIViewController{
         if storeNameTextField.text!.count > 0 , storeLocationTextField.text!.count > 0, storeLocationDetailTextField.text!.count > 0, selectedType{
             
             btnNext.isEnabled = true
-            btnNext.backgroundColor = .mainYellow
+            btnNext.backgroundColor = .enableYellow
             btnNext.setTitleColor(.gray, for: .normal)
         }else{
             btnNext.isEnabled = false
-            btnNext.backgroundColor = .semiYellow
+            btnNext.backgroundColor = .disableYellow
             btnNext.setTitleColor(.semiGray, for: .normal)
         }
     }
