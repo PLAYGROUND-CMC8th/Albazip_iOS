@@ -147,7 +147,12 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
                         }else{
                             cell.startTimeLabel.text = data.startTime!.insertTime
                         }
-                        cell.endTimeLabel.text = data.endTime!.insertTime
+                        if let x = data.remainTime{
+                            cell.endTimeLabel.text = x.insertTime
+                        }else{
+                            cell.endTimeLabel.text = data.endTime!.insertTime
+                        }
+                        
                         let position = data.positionTitle!
                         cell.positionLabel.text = position.replace(target: " ", with: "")
                         if position.contains("미들"){

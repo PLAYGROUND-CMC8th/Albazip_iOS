@@ -209,12 +209,6 @@
                                     <constraint firstAttribute="width" secondItem="nfa-a1-lkc" secondAttribute="height" multiplier="1:1" id="DXI-jj-XMx"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFh-S7-FzF">
-                                <rect key="frame" x="175.66666666666666" y="65" width="24" height="22"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gpv-8G-z5e"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -224,13 +218,10 @@
                             <constraint firstItem="nfa-a1-lkc" firstAttribute="trailing" secondItem="gpv-8G-z5e" secondAttribute="trailing" id="d9A-gC-Q4J"/>
                             <constraint firstItem="7m2-3Z-u0W" firstAttribute="leading" secondItem="gpv-8G-z5e" secondAttribute="leading" constant="16" id="emc-Jf-V5W"/>
                             <constraint firstItem="nfa-a1-lkc" firstAttribute="centerY" secondItem="lZK-jw-5gN" secondAttribute="centerY" id="kHI-xp-7o9"/>
-                            <constraint firstItem="gFh-S7-FzF" firstAttribute="centerX" secondItem="lZK-jw-5gN" secondAttribute="centerX" id="lKq-N0-WmQ"/>
-                            <constraint firstItem="gFh-S7-FzF" firstAttribute="top" secondItem="gpv-8G-z5e" secondAttribute="top" constant="21" id="tzZ-fv-pez"/>
                             <constraint firstItem="7m2-3Z-u0W" firstAttribute="top" secondItem="gpv-8G-z5e" secondAttribute="top" constant="20" id="xXS-MX-CjY"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="countLabel" destination="gFh-S7-FzF" id="hcv-jC-cnP"/>
                         <outlet property="imageView" destination="nfa-a1-lkc" id="xDK-j1-J1D"/>
                     </connections>
                 </viewController>

@@ -8,7 +8,6 @@
 import Foundation
 class CommunityManagerNoticeDetailImageVC: UIViewController{
     var imageUrl = ""
-    @IBOutlet var countLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
