@@ -24,16 +24,26 @@ class SettingUseTermVC: UIViewController{
     }
     
     @objc func usePermissionTapped(sender: UITapGestureRecognizer) {
+        //https://bronzed-balaur-143.notion.site/42041221d1a6413f84542f571bee6b9c
+        
+        if let url = URL(string: "https://bronzed-balaur-143.notion.site/42041221d1a6413f84542f571bee6b9c") {
+                    UIApplication.shared.open(url, options: [:])
+                }
+        /*
         let newStoryboard = UIStoryboard(name: "RegisterStoryboard", bundle: nil)
         guard let nextVC = newStoryboard.instantiateViewController(identifier: "RegisterPermissionVC") as? RegisterPermissionVC else {return}
         nextVC.status = 0
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        self.navigationController?.pushViewController(nextVC, animated: true)*/
     }
     
     @objc func privatePermissionTapped(sender: UITapGestureRecognizer) {
+        if let url = URL(string: "https://bronzed-balaur-143.notion.site/02e8b5a9cf514702977b4e01b82651ca") {
+                    UIApplication.shared.open(url, options: [:])
+                }
+        /*
         let newStoryboard = UIStoryboard(name: "RegisterStoryboard", bundle: nil)
         guard let nextVC = newStoryboard.instantiateViewController(identifier: "RegisterPermissionVC") as? RegisterPermissionVC else {return}
         nextVC.status = 1
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        self.navigationController?.pushViewController(nextVC, animated: true)*/
     }
 }

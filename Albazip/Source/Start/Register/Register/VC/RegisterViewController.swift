@@ -97,14 +97,14 @@ class RegisterViewController: UIViewController{
     }
     // //RegisterPermissionVC
     @IBAction func btnPermission1(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterPermissionVC") as? RegisterPermissionVC else {return}
-        nextVC.status = 0
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        if let url = URL(string: "https://bronzed-balaur-143.notion.site/42041221d1a6413f84542f571bee6b9c") {
+                    UIApplication.shared.open(url, options: [:])
+                }
     }
     @IBAction func btnPermission2(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterPermissionVC") as? RegisterPermissionVC else {return}
-        nextVC.status = 1
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        if let url = URL(string: "https://bronzed-balaur-143.notion.site/02e8b5a9cf514702977b4e01b82651ca") {
+                    UIApplication.shared.open(url, options: [:])
+                }
     }
     
 }
