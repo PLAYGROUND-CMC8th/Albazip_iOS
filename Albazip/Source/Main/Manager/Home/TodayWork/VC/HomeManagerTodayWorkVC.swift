@@ -215,7 +215,7 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
             if indexPath.section == 0{
                 if isNoNonCompleteCoData{
                     if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageDetailAllClearWorkTableViewCell") as? MyPageDetailAllClearWorkTableViewCell {
-                        cell.titleLabel.text = "업무를 모두 완료했어요!"
+                        cell.titleLabel.text = "추가된 업무가 없어요!"
                         cell.selectionStyle = .none
                         print(indexPath.row)
                         return cell
