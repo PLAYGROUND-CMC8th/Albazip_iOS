@@ -21,13 +21,13 @@
                         <rect key="frame" x="24" y="6" width="405" height="70"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간판 안으로 들여놓기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iL-s6-WTy">
-                                <rect key="frame" x="24" y="16" width="116" height="17"/>
+                                <rect key="frame" x="24" y="16" width="327" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문 뒤에 들여놓으세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7D-mH-ihz">
-                                <rect key="frame" x="24" y="39" width="104" height="15"/>
+                                <rect key="frame" x="24" y="39" width="327" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.56862747670000002" green="0.56862747670000002" blue="0.57254904510000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -35,11 +35,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99607843159999998" green="0.98039215800000001" blue="0.92549026010000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0iL-s6-WTy" secondAttribute="trailing" constant="54" id="AKu-Qb-Kp3"/>
                             <constraint firstAttribute="height" constant="70" id="JnR-FK-Gz9"/>
                             <constraint firstItem="0iL-s6-WTy" firstAttribute="leading" secondItem="mlU-ib-Hib" secondAttribute="leading" constant="24" id="K1t-o5-Tqm"/>
                             <constraint firstItem="o7D-mH-ihz" firstAttribute="top" secondItem="0iL-s6-WTy" secondAttribute="bottom" constant="6" id="OOi-6g-SQV"/>
                             <constraint firstItem="o7D-mH-ihz" firstAttribute="leading" secondItem="0iL-s6-WTy" secondAttribute="leading" id="Xxy-JO-jmH"/>
                             <constraint firstItem="0iL-s6-WTy" firstAttribute="top" secondItem="mlU-ib-Hib" secondAttribute="top" constant="16" id="ai0-IL-ZYt"/>
+                            <constraint firstAttribute="trailing" secondItem="o7D-mH-ihz" secondAttribute="trailing" constant="54" id="cO5-et-rdF"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -67,7 +69,7 @@
                 <outlet property="subLabel" destination="o7D-mH-ihz" id="rNG-dH-Gpq"/>
                 <outlet property="titleLabel" destination="0iL-s6-WTy" id="lpP-O4-6ak"/>
             </connections>
-            <point key="canvasLocation" x="276" y="206"/>
+            <point key="canvasLocation" x="398" y="147"/>
         </tableViewCell>
     </objects>
 </document>

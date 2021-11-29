@@ -99,7 +99,15 @@ extension MyPageManagerWorkerWriteVC: UITableViewDataSource {
                        
                    cell.selectionStyle = .none //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
                    if let data = workListData{
-                       cell.subLabel.text = data[indexPath.row].content ?? "내용 없음"
+                        if let x = data[indexPath.row].content{
+                            if x.count > 0{
+                                cell.subLabel.text = x
+                            }else{
+                                cell.subLabel.text =  "내용 없음"
+                            }
+                        }else{
+                            cell.subLabel.text = "내용 없음"
+                        }
                        cell.titleLabel.text = data[indexPath.row].title!
                    }
                        print(indexPath.row)
@@ -112,7 +120,16 @@ extension MyPageManagerWorkerWriteVC: UITableViewDataSource {
                    cell.selectionStyle = .none //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
                    if let data = workListData{
                     cell.bgView.backgroundColor = #colorLiteral(red: 0.9724535346, green: 0.9726160169, blue: 0.9724321961, alpha: 1)
-                       cell.subLabel.text = data[indexPath.row].content ?? "내용 없음"
+                    if let x = data[indexPath.row].content{
+                        if x.count > 0{
+                            cell.subLabel.text = x
+                        }else{
+                            cell.subLabel.text =  "내용 없음"
+                        }
+                    }else{
+                        cell.subLabel.text = "내용 없음"
+                    }
+                       
                        cell.titleLabel.text = data[indexPath.row].title!
                     
                     let position = data[indexPath.row].writerTitle ?? ""

@@ -59,6 +59,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Sd1-DU-ech" secondAttribute="trailing" constant="24" id="0Fi-sM-raY"/>
                             <constraint firstAttribute="trailing" secondItem="Rqv-rX-TWT" secondAttribute="trailing" constant="16" id="2l5-yQ-aYH"/>
                             <constraint firstItem="Rqv-rX-TWT" firstAttribute="leading" secondItem="aH1-T0-BL5" secondAttribute="leading" constant="16" id="B27-sQ-gSG"/>
                             <constraint firstItem="p0M-ks-BO7" firstAttribute="top" secondItem="aH1-T0-BL5" secondAttribute="top" constant="16" id="BzV-ia-Psn"/>
@@ -70,6 +71,7 @@
                             <constraint firstItem="Rqv-rX-TWT" firstAttribute="top" secondItem="7HT-az-SpX" secondAttribute="bottom" constant="15.000000000000007" id="kl0-9w-VWH"/>
                             <constraint firstAttribute="bottom" secondItem="Sd1-DU-ech" secondAttribute="bottom" constant="17.329999999999998" id="pli-NZ-iLh"/>
                             <constraint firstItem="7HT-az-SpX" firstAttribute="centerY" secondItem="p0M-ks-BO7" secondAttribute="centerY" id="u2R-6c-cnJ"/>
+                            <constraint firstItem="7HT-az-SpX" firstAttribute="leading" secondItem="p0M-ks-BO7" secondAttribute="trailing" constant="10" id="we1-1a-7Kt"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

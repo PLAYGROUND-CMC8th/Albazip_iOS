@@ -238,8 +238,8 @@
             filePath = "Albazip/Source/Main/Manager/MyPage/WorkerDetail/VC/MyPageManagerWorkerWriteVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>

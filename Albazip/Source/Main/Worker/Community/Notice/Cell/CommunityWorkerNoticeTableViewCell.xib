@@ -22,7 +22,7 @@
                         <rect key="frame" x="24" y="6" width="327" height="62"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ac3-8r-lN8">
-                                <rect key="frame" x="59" y="14" width="37.666666666666657" height="17"/>
+                                <rect key="frame" x="59" y="14" width="219" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -63,6 +63,7 @@
                             <constraint firstItem="OJi-cR-Xwk" firstAttribute="top" secondItem="EjY-Uv-vb2" secondAttribute="top" constant="14" id="Q6r-5H-gEm"/>
                             <constraint firstItem="Ac3-8r-lN8" firstAttribute="leading" secondItem="OJi-cR-Xwk" secondAttribute="trailing" constant="8" id="jRn-YN-97x"/>
                             <constraint firstItem="Ac3-8r-lN8" firstAttribute="centerY" secondItem="OJi-cR-Xwk" secondAttribute="centerY" id="k1i-ut-8pr"/>
+                            <constraint firstItem="6tO-yK-rL5" firstAttribute="leading" secondItem="Ac3-8r-lN8" secondAttribute="trailing" constant="16" id="lUb-9F-ajD"/>
                             <constraint firstItem="OJi-cR-Xwk" firstAttribute="leading" secondItem="EjY-Uv-vb2" secondAttribute="leading" constant="16" id="oI4-CU-xFM"/>
                             <constraint firstAttribute="height" constant="62" id="q99-Uo-6je"/>
                             <constraint firstItem="Vlt-c1-oTy" firstAttribute="leading" secondItem="Ac3-8r-lN8" secondAttribute="leading" id="qSm-Lf-J17"/>

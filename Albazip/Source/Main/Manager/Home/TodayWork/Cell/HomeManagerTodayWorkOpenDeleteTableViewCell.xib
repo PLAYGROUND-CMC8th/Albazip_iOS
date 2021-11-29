@@ -21,13 +21,13 @@
                         <rect key="frame" x="24" y="6" width="327" height="125"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간판 안으로 들여놓기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZb-TS-N7R">
-                                <rect key="frame" x="24" y="16" width="116" height="17"/>
+                                <rect key="frame" x="24" y="16" width="249" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문 뒤에 들여놓으세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaN-dM-Wdd">
-                                <rect key="frame" x="24" y="66" width="104" height="15"/>
+                                <rect key="frame" x="24" y="66" width="279" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -63,6 +63,7 @@
                             <constraint firstItem="gCS-8E-pbr" firstAttribute="leading" secondItem="TBo-Ax-8xy" secondAttribute="leading" constant="30" id="8br-e5-2lv"/>
                             <constraint firstAttribute="bottom" secondItem="ZKf-ec-rD1" secondAttribute="bottom" constant="16" id="BHA-ry-JSU"/>
                             <constraint firstAttribute="trailing" secondItem="ZKf-ec-rD1" secondAttribute="trailing" constant="24" id="Q54-V3-NLX"/>
+                            <constraint firstItem="WVX-mu-RFs" firstAttribute="leading" secondItem="nZb-TS-N7R" secondAttribute="trailing" constant="10" id="Ru8-08-Ydy"/>
                             <constraint firstItem="nZb-TS-N7R" firstAttribute="leading" secondItem="TBo-Ax-8xy" secondAttribute="leading" constant="24" id="ULu-Og-b1n"/>
                             <constraint firstItem="vaN-dM-Wdd" firstAttribute="top" secondItem="gCS-8E-pbr" secondAttribute="bottom" constant="16" id="X2Q-lT-1mU"/>
                             <constraint firstItem="WVX-mu-RFs" firstAttribute="centerY" secondItem="nZb-TS-N7R" secondAttribute="centerY" id="ZZn-k6-rWK"/>
@@ -70,6 +71,7 @@
                             <constraint firstAttribute="height" constant="125" id="eT9-kw-zwn"/>
                             <constraint firstItem="gCS-8E-pbr" firstAttribute="top" secondItem="nZb-TS-N7R" secondAttribute="bottom" constant="16" id="fyZ-m1-CEm"/>
                             <constraint firstAttribute="trailing" secondItem="WVX-mu-RFs" secondAttribute="trailing" constant="24" id="jt7-xp-lcA"/>
+                            <constraint firstAttribute="trailing" secondItem="vaN-dM-Wdd" secondAttribute="trailing" constant="24" id="kmE-gr-2AU"/>
                             <constraint firstItem="vaN-dM-Wdd" firstAttribute="leading" secondItem="nZb-TS-N7R" secondAttribute="leading" id="t1h-XI-p0Q"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>

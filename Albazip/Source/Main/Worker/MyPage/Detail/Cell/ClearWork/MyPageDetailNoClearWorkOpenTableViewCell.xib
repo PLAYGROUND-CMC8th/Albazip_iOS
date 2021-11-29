@@ -21,13 +21,13 @@
                         <rect key="frame" x="24" y="6" width="327" height="125"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간판 안으로 들여놓기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsM-iU-yug">
-                                <rect key="frame" x="24" y="16" width="116" height="17"/>
+                                <rect key="frame" x="24" y="16" width="279" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문 뒤에 들여놓으세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICh-B9-ptQ">
-                                <rect key="frame" x="24" y="66" width="104" height="15"/>
+                                <rect key="frame" x="24" y="66" width="279" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -56,6 +56,8 @@
                             <constraint firstItem="6Fe-tS-onz" firstAttribute="leading" secondItem="ud9-dP-p5j" secondAttribute="leading" constant="30" id="WQI-Um-akZ"/>
                             <constraint firstAttribute="trailing" secondItem="6Fe-tS-onz" secondAttribute="trailing" constant="30" id="XdB-l1-gom"/>
                             <constraint firstItem="IsM-iU-yug" firstAttribute="leading" secondItem="ud9-dP-p5j" secondAttribute="leading" constant="24" id="Y7Q-Qh-DH2"/>
+                            <constraint firstAttribute="trailing" secondItem="IsM-iU-yug" secondAttribute="trailing" constant="24" id="ZmT-Da-cya"/>
+                            <constraint firstAttribute="trailing" secondItem="ICh-B9-ptQ" secondAttribute="trailing" constant="24" id="cjf-7e-KEI"/>
                             <constraint firstItem="ICh-B9-ptQ" firstAttribute="leading" secondItem="IsM-iU-yug" secondAttribute="leading" id="rLp-Cx-HcQ"/>
                             <constraint firstItem="ICh-B9-ptQ" firstAttribute="top" secondItem="6Fe-tS-onz" secondAttribute="bottom" constant="16" id="y8d-FA-ryF"/>
                         </constraints>

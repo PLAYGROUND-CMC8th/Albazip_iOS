@@ -18,7 +18,8 @@ extension UIColor {
             alpha: CGFloat(alpha)
         )
     }
-    
+    //var color =  #colorLiteral(red: 1, green: 0.8452089429, blue: 0.3626143932, alpha: 1)
+    //var color3 =  #colorLiteral(red: 0.9983271956, green: 0.9391896129, blue: 0.7429286838, alpha: 1)
     // MARK: 메인 테마 색 또는 자주 쓰는 색을 정의
     // ex. label.textColor = .mainOrange
     class var mainYellow: UIColor { #colorLiteral(red: 1, green: 0.768627451, blue: 0, alpha: 1)}

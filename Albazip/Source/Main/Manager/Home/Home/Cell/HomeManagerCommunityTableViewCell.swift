@@ -84,12 +84,14 @@ extension HomeManagerCommunityTableViewCell: UICollectionViewDelegate, UICollect
                 //cell.setCell(boardInfo: data[indexPath.row])
                 cell.titleLabel.text = "작성된 공지사항이 없어요."
                 cell.titleLabel.textColor = #colorLiteral(red: 0.6391510963, green: 0.6392608881, blue: 0.6391366124, alpha: 1)
+                cell.statusLabel.isHidden = true
                 return cell
             }
         }else{
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeManagerCoummunityCollectionViewCell", for: indexPath) as? HomeManagerCoummunityCollectionViewCell {
                 cell.setCell(boardInfo: data[indexPath.row])
                 cell.titleLabel.textColor = #colorLiteral(red: 0.22350353, green: 0.2235475481, blue: 0.2234977186, alpha: 1)
+                cell.statusLabel.isHidden = false
                 return cell
             }
         }

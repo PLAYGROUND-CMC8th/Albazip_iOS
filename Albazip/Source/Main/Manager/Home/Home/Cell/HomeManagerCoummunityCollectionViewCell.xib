@@ -37,7 +37,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코로나 관련 매장 관리 공지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAh-wO-JCo">
-                                <rect key="frame" x="59.000000000000014" y="16" width="147.33333333333337" height="17"/>
+                                <rect key="frame" x="59" y="16" width="252" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,6 +50,7 @@
                             <constraint firstItem="CAh-wO-JCo" firstAttribute="leading" secondItem="DXA-oW-06B" secondAttribute="trailing" constant="8" id="Keq-4v-fZy"/>
                             <constraint firstAttribute="bottom" secondItem="DXA-oW-06B" secondAttribute="bottom" constant="16" id="aEK-gA-FkO"/>
                             <constraint firstItem="DXA-oW-06B" firstAttribute="leading" secondItem="Phm-6k-S5q" secondAttribute="leading" constant="16" id="eh4-Lx-umP"/>
+                            <constraint firstAttribute="trailing" secondItem="CAh-wO-JCo" secondAttribute="trailing" constant="16" id="hLd-wY-rZ4"/>
                             <constraint firstAttribute="height" constant="49" id="tBk-Kw-0Xm"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
