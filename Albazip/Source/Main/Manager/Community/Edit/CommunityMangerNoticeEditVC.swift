@@ -26,8 +26,12 @@ class CommunityMangerNoticeEditVC:UIViewController{
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnNext(_ sender: Any) {
-        showIndicator()
-        dataManager.postCommunityManagerWriteEdit(noticeId: noticeId, title: titleText, content: contentText, pin: 0, imageData: imageArray, vc: self)
+        if contentText.count >= 20{
+            showIndicator()
+            dataManager.postCommunityManagerWriteEdit(noticeId: noticeId, title: titleText, content: contentText, pin: 0, imageData: imageArray, vc: self)
+        }else{
+            presentBottomAlert(message: "공지 내용을 20자 이상 입력해주세요!")
+        }
     }
     func setTableView(){
         

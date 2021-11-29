@@ -42,7 +42,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ELF-pi-PGY">
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="공지할 내용을 입력하세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ELF-pi-PGY">
                         <rect key="frame" x="24" y="117.33333333333331" width="327" height="230"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="230" id="w1v-Xh-YcG"/>
@@ -96,7 +96,7 @@
                 <outlet property="subTextField" destination="ELF-pi-PGY" id="Uf9-d6-XRs"/>
                 <outlet property="titleTextField" destination="iVL-DY-2xG" id="csv-SD-OAu"/>
             </connections>
-            <point key="canvasLocation" x="28" y="183.62068965517241"/>
+            <point key="canvasLocation" x="-370" y="190"/>
         </tableViewCell>
     </objects>
 </document>

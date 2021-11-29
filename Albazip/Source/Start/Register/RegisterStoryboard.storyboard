@@ -40,7 +40,7 @@
                                     <constraint firstAttribute="width" constant="20" id="qgE-uT-bCl"/>
                                     <constraint firstAttribute="height" constant="20" id="zBY-zd-kec"/>
                                 </constraints>
-                                <state key="normal" image="icCheckBoxNormal"/>
+                                <state key="normal" image="icCheckBoxNormalGray"/>
                                 <state key="selected" image="icCheckBoxChecked"/>
                                 <connections>
                                     <action selector="btnAllAgree:" destination="QRx-D5-UYM" eventType="touchUpInside" id="Ky9-R9-KlM"/>
@@ -66,7 +66,7 @@
                                     <constraint firstAttribute="height" constant="20" id="2bH-q0-CTw"/>
                                     <constraint firstAttribute="width" constant="20" id="Akn-Nb-PVR"/>
                                 </constraints>
-                                <state key="normal" image="icCheckBoxNormal"/>
+                                <state key="normal" image="icCheckBoxNormalGray"/>
                                 <state key="selected" image="icCheckBoxChecked"/>
                                 <connections>
                                     <action selector="btnAgree1:" destination="QRx-D5-UYM" eventType="touchUpInside" id="0tJ-GG-unR"/>
@@ -84,7 +84,7 @@
                                     <constraint firstAttribute="height" constant="20" id="6Oy-e3-dzq"/>
                                     <constraint firstAttribute="width" constant="20" id="dmk-zJ-ejt"/>
                                 </constraints>
-                                <state key="normal" image="icCheckBoxNormal"/>
+                                <state key="normal" image="icCheckBoxNormalGray"/>
                                 <state key="selected" image="icCheckBoxChecked"/>
                                 <connections>
                                     <action selector="btnAgree3:" destination="QRx-D5-UYM" eventType="touchUpInside" id="KMd-LN-yDh"/>
@@ -102,7 +102,7 @@
                                     <constraint firstAttribute="width" constant="20" id="3k5-bh-A4O"/>
                                     <constraint firstAttribute="height" constant="20" id="JMR-UN-oQd"/>
                                 </constraints>
-                                <state key="normal" image="icCheckBoxNormal"/>
+                                <state key="normal" image="icCheckBoxNormalGray"/>
                                 <state key="selected" image="icCheckBoxChecked"/>
                                 <connections>
                                     <action selector="btnAgree2:" destination="QRx-D5-UYM" eventType="touchUpInside" id="efd-yj-0tz"/>
@@ -1327,7 +1327,7 @@
         <image name="icArrowMore" width="8" height="53"/>
         <image name="icBackArrow" width="24" height="24"/>
         <image name="icCheckBoxChecked" width="20" height="20"/>
-        <image name="icCheckBoxNormal" width="22" height="22"/>
+        <image name="icCheckBoxNormalGray" width="20" height="20"/>
         <image name="icCheckedNormal" width="24" height="24"/>
         <image name="icSetting" width="24" height="24"/>
         <image name="illustManager" width="94" height="146.33332824707031"/>
