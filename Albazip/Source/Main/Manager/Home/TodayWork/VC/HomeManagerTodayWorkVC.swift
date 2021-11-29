@@ -307,11 +307,11 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                         }else{
                             let rate = Float(data[indexPath.row].completeCount!) / Float(data[indexPath.row].totalCount!)
                             cell.progress.progress = rate
-                            if rate >= 0, rate < 30{
+                            if rate >= 0, rate < 0.3{
                                 cell.honeyImage.image = #imageLiteral(resourceName: "img068Px")
-                            }else if rate >= 30, rate < 60{
+                            }else if rate >= 0.3, rate < 0.6{
                                 cell.honeyImage.image = #imageLiteral(resourceName: "img3068Px")
-                            }else if rate >= 60, rate < 90{
+                            }else if rate >= 0.6, rate < 0.9{
                                 cell.honeyImage.image = #imageLiteral(resourceName: "img6068Px")
                             }else{
                                 cell.honeyImage.image = #imageLiteral(resourceName: "img9068Px")
