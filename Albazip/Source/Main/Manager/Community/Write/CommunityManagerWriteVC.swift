@@ -13,7 +13,7 @@ class CommunityManagerWriteVC: UIViewController{
     var imageArray = [UIImage]()
     @IBOutlet var tableView: UITableView!
     @IBOutlet var btnNext: UIButton!
-    
+    var setPlaceHolder = false
     // Datamanager
     lazy var dataManager: CommunityManagerWriteDatamanager = CommunityManagerWriteDatamanager()
     
@@ -68,6 +68,12 @@ extension CommunityManagerWriteVC: UITableViewDataSource, UITableViewDelegate{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityManagerWriteTableViewCell") as? CommunityManagerWriteTableViewCell {
                 cell.selectionStyle = .none
                 cell.delegate = self
+                if !setPlaceHolder{
+                    cell.subTextField.text = "공지할 내용을 입력하세요."
+                    cell.subTextField.textColor = #colorLiteral(red: 0.7881568074, green: 0.7882902026, blue: 0.7881392837, alpha: 1)
+                    setPlaceHolder = true
+                }
+                
                 return cell
             }
         }else{

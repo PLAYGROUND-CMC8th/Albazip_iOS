@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -42,25 +43,6 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="공지할 내용을 입력하세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ELF-pi-PGY">
-                        <rect key="frame" x="24" y="117.33333333333331" width="327" height="230"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="230" id="w1v-Xh-YcG"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="2"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="15"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.92549026010000002" green="0.92941176889999999" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자 / 최소20자" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1d-GP-coR">
                         <rect key="frame" x="283.66666666666669" y="361.33333333333331" width="67.333333333333314" height="14.333333333333314"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
@@ -73,19 +55,42 @@
                         <color key="textColor" red="0.63921570780000003" green="0.63921570780000003" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnW-EY-bzg">
+                        <rect key="frame" x="24" y="117.33333333333331" width="327" height="230"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="327" id="fZa-WH-tWo"/>
+                            <constraint firstAttribute="height" constant="230" id="hx5-dk-59c"/>
+                        </constraints>
+                        <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.92941176889999999" green="0.92941176889999999" blue="0.93333339689999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="NnW-EY-bzg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="2NT-IF-HKO"/>
                     <constraint firstItem="iVL-DY-2xG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="3GC-xC-h7a"/>
-                    <constraint firstItem="ELF-pi-PGY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="4Ni-wt-KMy"/>
+                    <constraint firstAttribute="trailing" secondItem="NnW-EY-bzg" secondAttribute="trailing" constant="24" id="7Pe-Ow-Tvt"/>
                     <constraint firstItem="q1d-GP-coR" firstAttribute="leading" secondItem="Y6F-Vf-TNI" secondAttribute="trailing" id="Dot-Yu-xyu"/>
-                    <constraint firstAttribute="trailing" secondItem="ELF-pi-PGY" secondAttribute="trailing" constant="24" id="Fav-Dd-Zu6"/>
-                    <constraint firstItem="q1d-GP-coR" firstAttribute="top" secondItem="ELF-pi-PGY" secondAttribute="bottom" constant="14" id="WZw-BY-Dmw"/>
-                    <constraint firstItem="ELF-pi-PGY" firstAttribute="top" secondItem="iVL-DY-2xG" secondAttribute="bottom" constant="14" id="Zj9-Um-j9d"/>
                     <constraint firstItem="iVL-DY-2xG" firstAttribute="top" secondItem="0AR-D5-GYt" secondAttribute="bottom" constant="14" id="dwY-iP-at8"/>
                     <constraint firstItem="Y6F-Vf-TNI" firstAttribute="centerY" secondItem="q1d-GP-coR" secondAttribute="centerY" id="je2-Xc-bZ0"/>
+                    <constraint firstItem="NnW-EY-bzg" firstAttribute="top" secondItem="iVL-DY-2xG" secondAttribute="bottom" constant="14" id="jko-pu-vjZ"/>
                     <constraint firstItem="0AR-D5-GYt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="k3H-CC-HL5"/>
                     <constraint firstAttribute="trailing" secondItem="q1d-GP-coR" secondAttribute="trailing" constant="24" id="lNg-rb-tie"/>
+                    <constraint firstItem="q1d-GP-coR" firstAttribute="top" secondItem="NnW-EY-bzg" secondAttribute="bottom" constant="14" id="nFT-Xi-WJF"/>
                     <constraint firstItem="0AR-D5-GYt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="qU6-xC-giL"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Y6F-Vf-TNI" secondAttribute="bottom" constant="-11.666666666666686" id="qcz-6g-gNT"/>
                     <constraint firstAttribute="trailing" secondItem="iVL-DY-2xG" secondAttribute="trailing" constant="24" id="ybH-Ki-Rt0"/>
                 </constraints>
             </tableViewCellContentView>
@@ -93,10 +98,15 @@
             <connections>
                 <outlet property="labelCountTextField" destination="q1d-GP-coR" id="fQV-Mt-voU"/>
                 <outlet property="realTimeCountLabel" destination="Y6F-Vf-TNI" id="vWy-LO-Wnl"/>
-                <outlet property="subTextField" destination="ELF-pi-PGY" id="Uf9-d6-XRs"/>
+                <outlet property="subTextField" destination="NnW-EY-bzg" id="hGf-Lh-DpO"/>
                 <outlet property="titleTextField" destination="iVL-DY-2xG" id="csv-SD-OAu"/>
             </connections>
-            <point key="canvasLocation" x="-370" y="190"/>
+            <point key="canvasLocation" x="-370.39999999999998" y="189.53201970443351"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
