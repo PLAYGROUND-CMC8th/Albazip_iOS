@@ -25,8 +25,8 @@ class CommunityWorkerTopTabVC: ButtonBarPagerTabStripViewController{
         
         settings.style.buttonBarMinimumLineSpacing = 0
         settings.style.buttonBarItemsShouldFillAvailableWidth = false
-        settings.style.buttonBarLeftContentInset = 24
-        settings.style.buttonBarRightContentInset = 24
+        settings.style.buttonBarLeftContentInset = 16
+        settings.style.buttonBarRightContentInset = 16
 
         settings.style.selectedBarHeight = 0.0
         settings.style.selectedBarBackgroundColor = #colorLiteral(red: 0.2038974464, green: 0.2039384246, blue: 0.2038920522, alpha: 1)

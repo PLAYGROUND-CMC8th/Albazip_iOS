@@ -28,7 +28,7 @@
                                     <action selector="btnCancel:" destination="NLm-da-Mb3" eventType="touchUpInside" id="bl5-mB-44M"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fr3-Qg-RTf">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="글 제목, 내용검색" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fr3-Qg-RTf">
                                 <rect key="frame" x="56" y="59" width="303" height="34"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -90,6 +90,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="middleView" destination="nNM-Ue-co4" id="oxF-TZ-4GH"/>
+                        <outlet property="noticeLabel" destination="Tre-yp-FRx" id="zac-6a-x5y"/>
                         <outlet property="searchTextField" destination="Fr3-Qg-RTf" id="ftJ-cK-HRL"/>
                         <outlet property="tableView" destination="nQX-9M-6Ob" id="Boj-7O-j9e"/>
                     </connections>

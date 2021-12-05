@@ -7,6 +7,8 @@
 
 import Foundation
 class CommunityWorkerSearchVC: UIViewController{
+    @IBOutlet var noticeLabel: UILabel!
+    @IBOutlet var middleView: UIView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchTextField: UITextField!
     var isNoData = true
@@ -18,6 +20,9 @@ class CommunityWorkerSearchVC: UIViewController{
         setUI()
         setTableView()
         tableView.isHidden = true
+        noticeLabel.isHidden = true
+        middleView.isHidden = true
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "글 제목, 내용검색", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Regular", size: 14)!, NSAttributedString.Key.foregroundColor :   #colorLiteral(red: 0.6391510963, green: 0.6392608881, blue: 0.6391366124, alpha: 1)])
     }
     func setUI()  {
         searchTextField.addLeftPadding2()
@@ -122,6 +127,8 @@ extension CommunityWorkerSearchVC {
         
         tableView.reloadData()
         tableView.isHidden = false
+        noticeLabel.isHidden = false
+        middleView.isHidden = false
         dismissIndicator()
     }
     

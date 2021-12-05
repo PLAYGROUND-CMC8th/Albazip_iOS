@@ -22,8 +22,8 @@ class CommunityManagerWriteTableViewCell: UITableViewCell , UITextFieldDelegate,
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        titleTextField.addLeftPadding()
-        subTextField.textContainerInset = UIEdgeInsets(top: 15, left: 10, bottom: 15, right: 10);
+        titleTextField.addCustomLeftPadding(left: 16.0)
+        subTextField.textContainerInset = UIEdgeInsets(top: 16, left: 11, bottom: 16, right: 11);
         titleTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)),  for: .editingChanged)
         //subTextField.addTarget(self, action: #selector(self.textFieldDidChange2(_:)),  for: .editingChanged)
         titleTextField.delegate = self

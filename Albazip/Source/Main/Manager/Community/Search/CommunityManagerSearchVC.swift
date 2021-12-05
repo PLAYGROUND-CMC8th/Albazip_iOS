@@ -7,6 +7,8 @@
 
 import Foundation
 class CommunityManagerSearchVC: UIViewController{
+    @IBOutlet var noticeLabel: UILabel!
+    @IBOutlet var middleView: UIView!
     var isNoData = true
     var searchWord = ""
     @IBOutlet var searchTextField: UITextField!
@@ -22,6 +24,10 @@ class CommunityManagerSearchVC: UIViewController{
         searchTextField.delegate = self
         setTableView()
         tableView.isHidden = true
+        noticeLabel.isHidden = true
+        middleView.isHidden = true
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "글 제목, 내용검색", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Regular", size: 14)!, NSAttributedString.Key.foregroundColor :   #colorLiteral(red: 0.6391510963, green: 0.6392608881, blue: 0.6391366124, alpha: 1)])
+      
     }
     func setTableView(){
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 18))
@@ -110,6 +116,8 @@ extension CommunityManagerSearchVC {
         
         tableView.reloadData()
         tableView.isHidden = false
+        noticeLabel.isHidden = false
+        middleView.isHidden = false
         dismissIndicator()
     }
     

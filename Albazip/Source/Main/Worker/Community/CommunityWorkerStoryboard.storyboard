@@ -231,6 +231,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="middleView" destination="P5D-Jn-pCI" id="fBP-z1-ake"/>
+                        <outlet property="noticeLabel" destination="1g0-Bh-n9d" id="fU0-ku-mQv"/>
                         <outlet property="searchTextField" destination="gNg-Si-v4S" id="MWJ-he-qO9"/>
                         <outlet property="tableView" destination="sKj-wI-Ei8" id="9sf-NA-YHW"/>
                     </connections>
