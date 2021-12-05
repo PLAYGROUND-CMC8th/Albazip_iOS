@@ -229,11 +229,11 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="fDv-G3-LFW"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oQ-VJ-oiW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oQ-VJ-oiW">
                                 <rect key="frame" x="329" y="60" width="30" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <state key="normal" title="다음">
-                                    <color key="titleColor" red="0.6784313917" green="0.6784313917" blue="0.6784313917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.96470588450000005" green="0.77647060160000003" blue="0.26274511220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="btnNext:" destination="nbZ-0f-1DD" eventType="touchUpInside" id="nbm-fp-d7T"/>

@@ -748,7 +748,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlE-Mm-ba9">
-                                <rect key="frame" x="0.0" y="531" width="375" height="281"/>
+                                <rect key="frame" x="0.0" y="531" width="375" height="293"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색결과" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQx-bK-uQ5">
                                         <rect key="frame" x="36" y="36" width="56" height="20"/>
@@ -757,7 +757,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZM-rd-b61">
-                                        <rect key="frame" x="24" y="195" width="327" height="50"/>
+                                        <rect key="frame" x="24" y="207" width="327" height="50"/>
                                         <color key="backgroundColor" red="0.97647058959999999" green="0.85098040100000005" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="TQc-Rq-PrH"/>
@@ -777,7 +777,7 @@
                                         </connections>
                                     </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U46-Xd-f66">
-                                        <rect key="frame" x="0.0" y="79" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="79" width="375" height="92"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ehI-DU-FLf">
                                             <size key="itemSize" width="128" height="128"/>
@@ -797,7 +797,7 @@
                                     <constraint firstAttribute="trailing" secondItem="LZM-rd-b61" secondAttribute="trailing" constant="24" id="PWt-gr-NS2"/>
                                     <constraint firstAttribute="width" constant="375" id="Pf9-ip-K5x"/>
                                     <constraint firstItem="LZM-rd-b61" firstAttribute="leading" secondItem="HlE-Mm-ba9" secondAttribute="leading" constant="24" id="UYW-v7-o1k"/>
-                                    <constraint firstAttribute="height" constant="281" id="dI5-OC-tfB"/>
+                                    <constraint firstAttribute="height" constant="293" id="dI5-OC-tfB"/>
                                     <constraint firstItem="U46-Xd-f66" firstAttribute="leading" secondItem="HlE-Mm-ba9" secondAttribute="leading" id="eXE-Hh-i8Q"/>
                                     <constraint firstItem="UQx-bK-uQ5" firstAttribute="top" secondItem="HlE-Mm-ba9" secondAttribute="top" constant="36" id="r1b-aF-X8V"/>
                                     <constraint firstItem="LZM-rd-b61" firstAttribute="top" secondItem="U46-Xd-f66" secondAttribute="bottom" constant="36" id="zzt-uw-fQ8"/>
@@ -882,7 +882,7 @@
                             <constraint firstItem="HlE-Mm-ba9" firstAttribute="trailing" secondItem="U0w-m3-nMD" secondAttribute="trailing" id="pmi-md-sO2"/>
                             <constraint firstItem="U0w-m3-nMD" firstAttribute="trailing" secondItem="Ohu-Pr-s4R" secondAttribute="trailing" constant="36" id="rFd-S1-7Kn"/>
                             <constraint firstItem="HlE-Mm-ba9" firstAttribute="leading" secondItem="U0w-m3-nMD" secondAttribute="leading" id="uUm-fW-CON"/>
-                            <constraint firstAttribute="bottom" secondItem="HlE-Mm-ba9" secondAttribute="bottom" id="vMf-11-H0J"/>
+                            <constraint firstAttribute="bottom" secondItem="HlE-Mm-ba9" secondAttribute="bottom" constant="-12" id="vMf-11-H0J"/>
                             <constraint firstItem="kU4-Nh-caB" firstAttribute="leading" secondItem="q73-31-zqP" secondAttribute="leading" id="vUp-US-ZJQ"/>
                             <constraint firstItem="vRM-46-Hm9" firstAttribute="leading" secondItem="U0w-m3-nMD" secondAttribute="leading" constant="16" id="ww8-yo-BqB"/>
                             <constraint firstItem="tML-qg-12a" firstAttribute="leading" secondItem="U0w-m3-nMD" secondAttribute="leading" constant="71" id="xgN-T0-gg2"/>

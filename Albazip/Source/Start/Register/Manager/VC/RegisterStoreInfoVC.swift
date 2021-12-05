@@ -64,7 +64,7 @@ class RegisterStoreInfoVC: UIViewController{
         
     }
     func checkTextField(){
-        if storeNameTextField.text!.count > 0 , storeLocationTextField.text!.count > 0, storeLocationDetailTextField.text!.count > 0, selectedType{
+        if storeNameTextField.text!.count > 0 , storeLocationTextField.text!.count > 0,  selectedType{
             
             btnNext.isEnabled = true
             btnNext.backgroundColor = .enableYellow

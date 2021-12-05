@@ -103,7 +103,7 @@ class RegisterSearchStoreVC: UIViewController{
             collectionView.isHidden = false
             noSearchView.isHidden = true
             // 위치 정보
-            let pointGeo = MTMapPointGeo(latitude: Double(data[0].y!)!, longitude: Double(data[0].x!)!)
+            let pointGeo = MTMapPointGeo(latitude: Double(data[0].y ?? "0")!, longitude: Double(data[0].x ?? "0")!)
             let point = MTMapPoint(geoCoord: pointGeo)
                 
             // 포인트를 맵의 센터로 사용
@@ -266,9 +266,10 @@ extension RegisterSearchStoreVC: UICollectionViewDelegate, UICollectionViewDataS
                 if(indexPath.row == selectedOne){
                     cell.searchView.backgroundColor = .semiYellow
                     cell.searchView.borderColor = .mainYellow
-                    
+                    cell.searchView.borderWidth = 2
                 }else{
                     cell.searchView.backgroundColor = #colorLiteral(red: 0.9999018312, green: 1, blue: 0.9998798966, alpha: 1)
+                    cell.searchView.borderWidth = 1
                     cell.searchView.borderColor = #colorLiteral(red: 0.8077629209, green: 0.8078994155, blue: 0.8077449799, alpha: 1)
                 }
                 cell.titleLabel.text = data[indexPath.row].place_name
