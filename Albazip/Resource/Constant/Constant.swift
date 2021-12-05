@@ -8,9 +8,9 @@
 import Alamofire
 
 struct Constant {
-    //static let BASE_URL = "http://3.128.114.36:3000"
+    static let BASE_URL = "http://3.140.50.45:3000" // 테스트 서버
     //18.222.46.235
-    static let BASE_URL = "http://18.222.46.235:3000"
+    //static let BASE_URL = "http://18.222.46.235:3000" // 실서버
     static let KAKAO_MAP_URL = "https://dapi.kakao.com/v2/local/search/keyword.json"
     static let KAKAO_KEY = "KakaoAK c9efb3f7084aaa3ca8193d1d2e73fea4"
     //

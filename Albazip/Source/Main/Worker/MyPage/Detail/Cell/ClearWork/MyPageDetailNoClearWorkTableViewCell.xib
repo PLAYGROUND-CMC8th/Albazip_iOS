@@ -21,13 +21,13 @@
                         <rect key="frame" x="24" y="6" width="327" height="70"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간판 안으로 들여놓기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufO-gz-dmy">
-                                <rect key="frame" x="24" y="16" width="116" height="17"/>
+                                <rect key="frame" x="24" y="16" width="249" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문 뒤에 들여놓으세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcn-2J-LUD">
-                                <rect key="frame" x="24" y="39" width="104" height="15"/>
+                                <rect key="frame" x="24" y="39" width="249" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.56862747670000002" green="0.56862747670000002" blue="0.57254904510000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -36,8 +36,10 @@
                         <color key="backgroundColor" red="0.99607843159999998" green="0.98039215800000001" blue="0.92549026010000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ufO-gz-dmy" firstAttribute="top" secondItem="cLf-gH-Agy" secondAttribute="top" constant="16" id="AoX-DE-y0y"/>
+                            <constraint firstAttribute="trailing" secondItem="lcn-2J-LUD" secondAttribute="trailing" constant="54" id="Heq-Bb-Ug5"/>
                             <constraint firstItem="ufO-gz-dmy" firstAttribute="leading" secondItem="cLf-gH-Agy" secondAttribute="leading" constant="24" id="N6y-yz-XBa"/>
                             <constraint firstAttribute="height" constant="70" id="ciM-od-PJg"/>
+                            <constraint firstAttribute="trailing" secondItem="ufO-gz-dmy" secondAttribute="trailing" constant="54" id="fC8-hp-Dfk"/>
                             <constraint firstItem="lcn-2J-LUD" firstAttribute="leading" secondItem="ufO-gz-dmy" secondAttribute="leading" id="jrv-4K-QQ8"/>
                             <constraint firstItem="lcn-2J-LUD" firstAttribute="top" secondItem="ufO-gz-dmy" secondAttribute="bottom" constant="6" id="t2T-VO-wA9"/>
                         </constraints>
@@ -66,7 +68,7 @@
                 <outlet property="subLabel" destination="lcn-2J-LUD" id="aM1-HM-CIM"/>
                 <outlet property="titlelLabel" destination="ufO-gz-dmy" id="kJd-qa-EHd"/>
             </connections>
-            <point key="canvasLocation" x="-138" y="159"/>
+            <point key="canvasLocation" x="324" y="62"/>
         </tableViewCell>
     </objects>
 </document>

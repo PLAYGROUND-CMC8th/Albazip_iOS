@@ -515,6 +515,11 @@ extension HomeManagerTodayWorkVC {
         
         print(result)
         nonComCoTask!.remove(at: deleteIndex)
+        if nonComCoTask!.count != 0{
+            isNoNonCompleteCoData = false
+        }else{
+            isNoNonCompleteCoData = true
+        }
         tableView.reloadData()
         dismissIndicator()
     }

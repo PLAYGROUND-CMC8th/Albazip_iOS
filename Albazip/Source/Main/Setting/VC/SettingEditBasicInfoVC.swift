@@ -15,7 +15,14 @@ class SettingEditBasicInfoVC: UIViewController{
     @IBOutlet var btnWoman: UIButton!
     @IBOutlet var btnMan: UIButton!
     @IBOutlet var btnNext: UIButton!
-    var selectAge = false
+    
+    //이전 뷰에서 받아올 값
+    var userFirstName = ""
+    var userName = ""
+    var userAge = ""
+    var userGender = -1
+    
+    var selectAge = true
     // Datamanager
     lazy var dataManager: SettingEditBasicInfoDatamanager = SettingEditBasicInfoDatamanager()
     
@@ -53,6 +60,30 @@ class SettingEditBasicInfoVC: UIViewController{
         btnWoman.adjustsImageWhenHighlighted = false
         btnMan.adjustsImageWhenHighlighted = false
         ageTextfield.addLeftPadding()
+        
+        if userGender == 0{ // 남자
+            btnMan.isSelected = true
+            btnMan.backgroundColor = .semiYellow
+            btnMan.borderColor = .mainYellow
+            btnWoman.isSelected = false
+            btnWoman.backgroundColor = .none
+            btnWoman.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+        }else{
+            btnWoman.isSelected = true
+            btnWoman.backgroundColor = .semiYellow
+            btnWoman.borderColor = .mainYellow
+            btnMan.isSelected = false
+            btnMan.backgroundColor = .none
+            btnMan.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+        }
+        
+        ageTextfield.text = userAge
+        firstNameTextfield.text = userFirstName
+        nameTextfield.text = userName
+        
+        //처음엔 버튼 활성화
+        btnNext.isEnabled = true
+        btnNext.setTitleColor(#colorLiteral(red: 1, green: 0.7672405243, blue: 0.01259230357, alpha: 1), for: .normal)
     }
     func checkTextField(){
         if firstNameTextfield.text!.count > 0 , nameTextfield.text!.count > 0, selectAge{

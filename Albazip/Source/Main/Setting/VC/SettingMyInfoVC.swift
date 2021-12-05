@@ -33,6 +33,14 @@ class SettingMyInfoVC: UIViewController{
     
     @IBAction func btnEditInfo(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SettingEditBasicInfoVC") as? SettingEditBasicInfoVC else {return}
+        if let data = myInfo{
+            nextVC.userName = data.firstName!
+            nextVC.userFirstName = data.lastName!
+            nextVC.userAge = data.birthyear!
+            nextVC.userGender = data.gender!
+        }
+        
+        
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

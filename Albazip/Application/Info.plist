@@ -2,15 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>소통창 내 매장 관련 사진 업로드, 사용자 프로필 이미지 변경, QR코드 이미지 저장에 앨범이 사용됩니다.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>카메라는 QR 코드 인식을 통한 근무자 출퇴근 관리에 사용됩니다.</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -37,11 +28,24 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>KAKAO_APP_KEY</key>
 	<string>5593732d878e7a44b177f9fa59ea3b95</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>출퇴근을 기록할 QR 스캔을 위해 필요합니다.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>사용자 위치 기반 매장 위치 검색에 필요합니다.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>게시글 사진 업로드, 프로필 사진 등록, QR코드 이미지 저장을 위해 필요합니다.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>사용자 위치 기반 매장 위치 검색에 필요합니다.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
