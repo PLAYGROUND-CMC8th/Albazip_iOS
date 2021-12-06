@@ -26,7 +26,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문 뒤에 들여놓으세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaN-dM-Wdd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="문 뒤에 들여놓으세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaN-dM-Wdd">
                                 <rect key="frame" x="24" y="66" width="279" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -68,8 +68,8 @@
                             <constraint firstItem="vaN-dM-Wdd" firstAttribute="top" secondItem="gCS-8E-pbr" secondAttribute="bottom" constant="16" id="X2Q-lT-1mU"/>
                             <constraint firstItem="WVX-mu-RFs" firstAttribute="centerY" secondItem="nZb-TS-N7R" secondAttribute="centerY" id="ZZn-k6-rWK"/>
                             <constraint firstAttribute="trailing" secondItem="gCS-8E-pbr" secondAttribute="trailing" constant="30" id="Zbv-mU-wGK"/>
-                            <constraint firstAttribute="height" constant="125" id="eT9-kw-zwn"/>
                             <constraint firstItem="gCS-8E-pbr" firstAttribute="top" secondItem="nZb-TS-N7R" secondAttribute="bottom" constant="16" id="fyZ-m1-CEm"/>
+                            <constraint firstItem="ZKf-ec-rD1" firstAttribute="top" secondItem="vaN-dM-Wdd" secondAttribute="bottom" constant="14" id="gT1-yw-30Y"/>
                             <constraint firstAttribute="trailing" secondItem="WVX-mu-RFs" secondAttribute="trailing" constant="24" id="jt7-xp-lcA"/>
                             <constraint firstAttribute="trailing" secondItem="vaN-dM-Wdd" secondAttribute="trailing" constant="24" id="kmE-gr-2AU"/>
                             <constraint firstItem="vaN-dM-Wdd" firstAttribute="leading" secondItem="nZb-TS-N7R" secondAttribute="leading" id="t1h-XI-p0Q"/>

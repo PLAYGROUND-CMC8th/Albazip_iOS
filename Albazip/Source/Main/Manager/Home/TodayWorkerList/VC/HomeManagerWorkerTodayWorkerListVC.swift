@@ -30,6 +30,9 @@ class HomeManagerWorkerTodayWorkerListVC: UIViewController{
                            forCellReuseIdentifier: "MyPageManagerNoWriteTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.tableFooterView = UIView()
+
+        
       
     }
 }

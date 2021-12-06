@@ -60,9 +60,10 @@
                                     <constraint firstAttribute="height" constant="1" id="jMA-Ma-SyU"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IEA-TW-xtA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IEA-TW-xtA">
                                 <rect key="frame" x="0.0" y="102" width="375" height="676"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HKP-fw-ve1"/>
@@ -767,7 +768,7 @@
         <!--Home Manager Store ListVC-->
         <scene sceneID="dxZ-yY-spJ">
             <objects>
-                <viewController storyboardIdentifier="HomeManagerStoreListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R2D-Ke-fEU" customClass="HomeManagerStoreListVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeManagerStoreListVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R2D-Ke-fEU" customClass="HomeManagerStoreListVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hoe-Qr-p86">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -806,7 +807,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
+                                        <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>

@@ -201,7 +201,7 @@ extension HomeManagerTodayWorkDetailVC: UITableViewDataSource,UITableViewDelegat
                 if isFolded[indexPath.row] == true{
                     return 82
                 }else{
-                    return 137
+                    return tableView.estimatedRowHeight
                 }
             }
             

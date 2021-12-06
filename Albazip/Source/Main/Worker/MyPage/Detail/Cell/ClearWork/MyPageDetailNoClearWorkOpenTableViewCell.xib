@@ -26,7 +26,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문 뒤에 들여놓으세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICh-B9-ptQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="문 뒤에 들여놓으세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICh-B9-ptQ">
                                 <rect key="frame" x="24" y="66" width="279" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -51,13 +51,13 @@
                             <constraint firstAttribute="bottom" secondItem="NbX-Jj-VP6" secondAttribute="bottom" constant="16" id="AYs-Rz-cO4"/>
                             <constraint firstAttribute="trailing" secondItem="NbX-Jj-VP6" secondAttribute="trailing" constant="24" id="BPP-aF-7YQ"/>
                             <constraint firstItem="IsM-iU-yug" firstAttribute="top" secondItem="ud9-dP-p5j" secondAttribute="top" constant="16" id="FM1-Ao-khc"/>
-                            <constraint firstAttribute="height" constant="125" id="M7h-wv-sev"/>
                             <constraint firstItem="6Fe-tS-onz" firstAttribute="top" secondItem="IsM-iU-yug" secondAttribute="bottom" constant="16" id="V2q-tr-bni"/>
                             <constraint firstItem="6Fe-tS-onz" firstAttribute="leading" secondItem="ud9-dP-p5j" secondAttribute="leading" constant="30" id="WQI-Um-akZ"/>
                             <constraint firstAttribute="trailing" secondItem="6Fe-tS-onz" secondAttribute="trailing" constant="30" id="XdB-l1-gom"/>
                             <constraint firstItem="IsM-iU-yug" firstAttribute="leading" secondItem="ud9-dP-p5j" secondAttribute="leading" constant="24" id="Y7Q-Qh-DH2"/>
                             <constraint firstAttribute="trailing" secondItem="IsM-iU-yug" secondAttribute="trailing" constant="24" id="ZmT-Da-cya"/>
                             <constraint firstAttribute="trailing" secondItem="ICh-B9-ptQ" secondAttribute="trailing" constant="24" id="cjf-7e-KEI"/>
+                            <constraint firstItem="NbX-Jj-VP6" firstAttribute="top" secondItem="ICh-B9-ptQ" secondAttribute="bottom" constant="14" id="qo8-xG-jlc"/>
                             <constraint firstItem="ICh-B9-ptQ" firstAttribute="leading" secondItem="IsM-iU-yug" secondAttribute="leading" id="rLp-Cx-HcQ"/>
                             <constraint firstItem="ICh-B9-ptQ" firstAttribute="top" secondItem="6Fe-tS-onz" secondAttribute="bottom" constant="16" id="y8d-FA-ryF"/>
                         </constraints>
@@ -88,7 +88,7 @@
                 <outlet property="titleLabel" destination="IsM-iU-yug" id="YNB-tI-Zkv"/>
                 <outlet property="writerNameLabel" destination="NbX-Jj-VP6" id="SH2-fk-Exp"/>
             </connections>
-            <point key="canvasLocation" x="-84" y="62"/>
+            <point key="canvasLocation" x="-156" y="77"/>
         </tableViewCell>
     </objects>
 </document>
