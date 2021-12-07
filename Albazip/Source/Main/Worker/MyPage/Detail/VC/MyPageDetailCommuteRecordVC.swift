@@ -147,13 +147,22 @@ extension MyPageDetailCommuteRecordVC: UITableViewDataSource,UITableViewDelegate
                         cell.endTime.text = ""
                     }
                     
-                    //지각일때!
-                    if data[indexPath.row].is_late ?? 0  == 1{ // 지각일 때
-                        cell.startFlagView.backgroundColor = #colorLiteral(red: 0.9833402038, green: 0.2258323133, blue: 0, alpha: 1)
+                    //출근 지각일때!
+                    if data[indexPath.row].start_late ?? 0  == 1{ // 지각일 때
+                        cell.startFlagView.image =  #imageLiteral(resourceName: "lateFlag")
                         cell.startTitle.textColor = #colorLiteral(red: 0.9833402038, green: 0.2258323729, blue: 0.01172234025, alpha: 1)
                     }else{
-                        cell.startFlagView.backgroundColor = #colorLiteral(red: 0.1198061183, green: 0.7442358136, blue: 0.306361407, alpha: 1)
+                        cell.startFlagView.image = #imageLiteral(resourceName: "716")
                         cell.startTitle.textColor = #colorLiteral(red: 0.1198061183, green: 0.7442358136, blue: 0.306361407, alpha: 1)
+                    }
+                    
+                    //퇴근 지각일때!
+                    if data[indexPath.row].end_late ?? 0  == 1{ // 지각일 때
+                        cell.endFlagView.image = #imageLiteral(resourceName: "716")
+                        cell.endTitle.textColor = #colorLiteral(red: 0.1198061183, green: 0.7442358136, blue: 0.306361407, alpha: 1)
+                    }else{
+                        cell.endFlagView.image = #imageLiteral(resourceName: "716")
+                        cell.endTitle.textColor = #colorLiteral(red: 0.1198061183, green: 0.7442358136, blue: 0.306361407, alpha: 1)
                     }
                 }
                 print(indexPath.row)

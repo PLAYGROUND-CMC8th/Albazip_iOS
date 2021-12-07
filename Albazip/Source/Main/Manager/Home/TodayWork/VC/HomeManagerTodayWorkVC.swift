@@ -58,7 +58,10 @@ class HomeManagerTodayWorkVC: UIViewController{
         segment.setTitleTextAttributes(attributes2 , for: .normal)
         
         segment.selectedSegmentIndex = segValue
-        
+        self.segment.layer.cornerRadius = 50.0
+        self.segment.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.segment.layer.borderWidth = 1.0
+        self.segment.layer.masksToBounds = true
     }
     func setupTableView() {
         
@@ -574,3 +577,4 @@ extension HomeManagerTodayWorkVC: CheckUnCompleteWorkDelegate, CheckCompleteWork
         
     }
 }
+

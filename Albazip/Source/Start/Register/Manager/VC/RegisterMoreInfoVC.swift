@@ -423,3 +423,4 @@ extension RegisterMoreInfoVC {
         self.presentAlert(title: message)
     }
 }
+
