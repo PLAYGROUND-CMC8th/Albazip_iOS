@@ -26,6 +26,7 @@ class MyPageWorkerVC: BaseViewController{
     
     //MARK:- Programatic UI Properties
     
+    var isFirstLoad = true
     var pageViewController = UIPageViewController()
     var selectedTabView = UIView()
     //선택된 탭 인덱스
@@ -49,11 +50,14 @@ class MyPageWorkerVC: BaseViewController{
         //showIndicator()
         //dataManager.getMyPageManagerProfile(vc: self)
         //버그 BUG: 프로필 사진 바꾸면 다시 리로드 되어야함
+        setUI()
+        /*
         setupCollectionView()
         setupPagingViewController()
         populateBottomView()
         addPanGestureToTopViewAndCollectionView()
-        setUI()
+        */
+ 
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -160,14 +164,14 @@ class MyPageWorkerVC: BaseViewController{
                 let page = Page(with: displayName, _vc: tabContentVC)
                 pageCollection.pages.append(page)
             }else if(subTabCount==1){
-                let tabContentVC = MyPageWorkerPositionVC()
-                tabContentVC.myPageWorkerPositionTableViewScrollDelegate = self
+                let tabContentVC2 = MyPageWorkerPositionVC()
+                tabContentVC2.myPageWorkerPositionTableViewScrollDelegate = self
                 
                 //tabContentVC.numberOfCells = 30
-                tabContentVC.jobTitle = jobTitle
+                tabContentVC2.jobTitle = jobTitle
                 
                 let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
-                let page = Page(with: displayName, _vc: tabContentVC)
+                let page = Page(with: displayName, _vc: tabContentVC2)
                 pageCollection.pages.append(page)
             }
             /*
@@ -557,11 +561,14 @@ extension MyPageWorkerVC {
         nameLabel.text = "\(profileData!.firstName!)"
         jobTitle = (profileData?.jobTitle!)!
         
-        //setupCollectionView()
-        //setupPagingViewController()
-        //populateBottomView()
-        //addPanGestureToTopViewAndCollectionView()
-        //setUI()
+        if isFirstLoad{
+            setupCollectionView()
+            setupPagingViewController()
+            populateBottomView()
+            addPanGestureToTopViewAndCollectionView()
+            isFirstLoad = false
+        }
+     
     }
     
     func failedToRequestMyPageManagerProfile(message: String) {

@@ -15,6 +15,8 @@ protocol MyPageWorkerPositionTableViewScrollDelegate: AnyObject {
     func innerTableViewScrollEnded(withScrollDirection scrollDirection: DragDirection)
 }
 
+
+
 class MyPageWorkerPositionVC: UIViewController {
 
     
@@ -39,7 +41,7 @@ class MyPageWorkerPositionVC: UIViewController {
         super.viewDidLoad()
 
         setupTableView()
-        
+   
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
@@ -56,9 +58,7 @@ class MyPageWorkerPositionVC: UIViewController {
         tableView.delegate = self
         tableView.estimatedRowHeight = 401
     }
-    
-
-
+  
 }
 
 //MARK:- Table View Data Source
