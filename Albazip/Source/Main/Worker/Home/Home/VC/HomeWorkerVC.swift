@@ -150,7 +150,15 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
                             cell.startTimeLabel.text = data.startTime!.insertTime
                         }
                         if let x = data.remainTime{
-                            cell.endTimeLabel.text = x.insertTime
+                            if x.contains("-"){
+                                cell.endTimeLabel.textColor = #colorLiteral(red: 0.9745560288, green: 0.0081703756, blue: 0.009261366911, alpha: 1)
+                                let remove = x.replace(target: "-", with: "")
+                                cell.endTimeLabel.text = "+ " + remove.insertTime
+                            }else{
+                                cell.endTimeLabel.textColor = #colorLiteral(red: 0.1411581933, green: 0.1411892474, blue: 0.1411541104, alpha: 1)
+                                cell.endTimeLabel.text = x.insertTime
+                            }
+                            
                         }else{
                             cell.endTimeLabel.text = data.endTime!.insertTime
                         }
