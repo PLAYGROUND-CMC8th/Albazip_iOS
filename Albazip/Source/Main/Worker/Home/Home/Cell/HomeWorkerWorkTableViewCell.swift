@@ -12,6 +12,7 @@ import UIKit
 
 class HomeWorkerWorkTableViewCell: UITableViewCell {
 
+    @IBOutlet var honeyPositionLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var positionImage: UIImageView!
     @IBOutlet var positionLabel: UILabel!

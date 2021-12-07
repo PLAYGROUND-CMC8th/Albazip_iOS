@@ -154,7 +154,9 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
                         }
                         
                         let position = data.positionTitle!
-                        cell.positionLabel.text = position.replace(target: " ", with: "")
+                        let removePosition = position.replace(target: " ", with: "")
+                        cell.positionLabel.text = removePosition
+                        cell.honeyPositionLabel.text = removePosition + " 업무"
                         if position.contains("미들"){
                             cell.positionImage.image = #imageLiteral(resourceName: "iconMiddle15Px")
                         }else if position.contains("마감"){
