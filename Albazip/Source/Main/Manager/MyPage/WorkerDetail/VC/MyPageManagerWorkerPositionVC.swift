@@ -40,6 +40,7 @@ class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositi
     var positionInfo: MyPageManagerWorkerPositionData?
     lazy var dataManager: MyPageManagerWorkerPositionDatamanager = MyPageManagerWorkerPositionDatamanager()
     var positionId = 0
+    var status = -1
     //MARK:- View Life Cycle
     
     
@@ -72,13 +73,18 @@ class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositi
         print("삭제 버튼")
         let newStoryboard = UIStoryboard(name: "MyPageManagerStoryboard", bundle: nil)
         
-        if let vc = newStoryboard.instantiateViewController(withIdentifier: "MyPageManagerWorkerPositionDeleteVC") as? MyPageManagerWorkerPositionDeleteVC {
-            vc.myPageManagerWorkerPositionDeleteAlertDelegate = self
-            vc.modalPresentationStyle = .overFullScreen
-            myPageManagerWorkerPositionAlertDelegate?.modalShow()
-            
-        self.present(vc, animated: true, completion: nil)
-    }
+        if status == 1{
+            presentBottomAlert(message: "근무자가 등록된 상태에선 포지션을 삭제할 수 없습니다.")
+        }else{
+            if let vc = newStoryboard.instantiateViewController(withIdentifier: "MyPageManagerWorkerPositionDeleteVC") as? MyPageManagerWorkerPositionDeleteVC {
+                vc.myPageManagerWorkerPositionDeleteAlertDelegate = self
+                vc.modalPresentationStyle = .overFullScreen
+                myPageManagerWorkerPositionAlertDelegate?.modalShow()
+                
+            self.present(vc, animated: true, completion: nil)
+            }
+        
+        }
     }
 }
 
@@ -117,7 +123,13 @@ extension MyPageManagerWorkerPositionVC: UITableViewDataSource {
         }else{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerPositionDeleteTableViewCell") as? MyPageManagerWorkerPositionDeleteTableViewCell {
                 cell.myPageManagerWorkerPositionDeleteDelegate = self
-                
+                if status == 1{
+                    cell.btnDelete.setTitleColor(#colorLiteral(red: 0.4304383695, green: 0.4354898334, blue: 0.4353147745, alpha: 1), for: .normal)
+                    cell.btnDelete.backgroundColor = #colorLiteral(red: 0.9018717408, green: 0.902023077, blue: 0.9018517733, alpha: 1)
+                }else{
+                    cell.btnDelete.setTitleColor(#colorLiteral(red: 0.203897506, green: 0.2039385736, blue: 0.2081941962, alpha: 1), for: .normal)
+                    cell.btnDelete.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+                }
                 //cell.cellLabel.text = "This is cell \(indexPath.row + 1)"
                 print(indexPath.row)
                 return cell
