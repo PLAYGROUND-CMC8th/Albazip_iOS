@@ -45,6 +45,14 @@ class CommunityWorkerNoticeDetailTableViewCell: UITableViewCell {
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
         profileImage.clipsToBounds = true
         
+        //그림자 주기
+        completePeopleView.layer.shadowOpacity = 0.1
+
+        completePeopleView.layer.shadowOffset = CGSize(width: 3, height: 3)
+
+        completePeopleView.layer.shadowRadius = 10
+
+        completePeopleView.layer.masksToBounds = false
         
         // view 클릭 시, 함수 정의
         let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(image1Tapped))
@@ -75,6 +83,11 @@ class CommunityWorkerNoticeDetailTableViewCell: UITableViewCell {
     @objc func personViewTapped(sender: UITapGestureRecognizer) {
         print("몇명일까요")
         completePeopleView.isHidden.toggle()
+        if completePeopleView.isHidden{
+            personView.backgroundColor = #colorLiteral(red: 0.9567686915, green: 0.9569286704, blue: 0.9567475915, alpha: 1)
+        }else{
+            personView.backgroundColor = #colorLiteral(red: 0.8705882353, green: 0.8705882353, blue: 0.8705882353, alpha: 1)
+        }
     }
     
     //이미지 상세보기 페이지로
@@ -94,7 +107,11 @@ class CommunityWorkerNoticeDetailTableViewCell: UITableViewCell {
     func setCell(data: [CommunityManagerNoticeConfirmer])  {
         comWorker = data
         personCount.text = String(data.count)
-        completePeopleViewHeight.constant = CGFloat(45 + 36 * data.count)
+        if data.count < 3{
+            completePeopleViewHeight.constant = CGFloat(45 + 36 * data.count)
+        }else{ // 3이상이면
+            completePeopleViewHeight.constant = CGFloat(45 + 36 * 3)
+        }
         self.tableView.reloadData()
     }
 }
