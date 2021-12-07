@@ -105,6 +105,8 @@ class HomeWorkerVC: BaseViewController{
             if let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerQRCodeVC") as? HomeWorkerQRCodeVC {
                 nextVC.modalPresentationStyle = .overFullScreen
                 nextVC.delegate = self
+                nextVC.workerStatus = status
+                
             self.present(nextVC, animated: true, completion: nil)
             }
         }
@@ -295,6 +297,8 @@ extension HomeWorkerVC: HomeWorkerAddWorkDelegate{
             if let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerQRCodeVC") as? HomeWorkerQRCodeVC {
                 nextVC.modalPresentationStyle = .overFullScreen
                 nextVC.delegate = self
+                nextVC.workerStatus = status
+               
             self.present(nextVC, animated: true, completion: nil)
             }
         }

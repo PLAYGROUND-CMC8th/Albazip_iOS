@@ -14,6 +14,8 @@ class HomeWorkerQRCodeVC: UIViewController{
     @IBOutlet var readRect: UIImageView!
     var delegate: HomeWorkerQRCodeDelegate?
     var isSucess = false
+    var workerStatus = -1
+    var isStart = false
     // Datamanager
     lazy var dataManager: HomeWorkerQRCodeDatamanager = HomeWorkerQRCodeDatamanager()
     override func viewDidLoad() {
@@ -53,7 +55,12 @@ extension HomeWorkerQRCodeVC: ReaderViewDelegate {
             title = "알림"
             //message = "인식성공\n\(code)"
             if code == "success"{
-                message = "HH:mm".stringFromDate() + "에 출근이 기록되었습니다."
+                if workerStatus == 0{
+                    message = "HH:mm".stringFromDate() + "에 출근이 기록되었습니다."
+                }else{
+                    message = "HH:mm".stringFromDate() + "에 퇴근이 기록되었습니다."
+                }
+                
                 isSucess = true
             }else{
                 message = "매장의 QR 코드가 아닙니다."
