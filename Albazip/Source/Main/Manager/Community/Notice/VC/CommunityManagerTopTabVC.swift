@@ -8,9 +8,11 @@
 import XLPagerTabStrip
 class CommunityManagerTopTabVC: ButtonBarPagerTabStripViewController{
     
+    @IBOutlet var btnWrite: UIButton!
     override func viewDidLoad() {
         configureButtonBar()
         super.viewDidLoad()
+        setUI()
     }
     override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
@@ -36,6 +38,17 @@ class CommunityManagerTopTabVC: ButtonBarPagerTabStripViewController{
             oldCell?.label.textColor = .gray
             newCell?.label.textColor =  #colorLiteral(red: 0.2038974464, green: 0.2039384246, blue: 0.2038920522, alpha: 1)
         }
+    }
+    
+    func setUI(){
+        //그림자 주기
+        btnWrite.layer.shadowOpacity = 0.05
+
+        btnWrite.layer.shadowOffset = CGSize(width: 3, height: 3)
+
+        btnWrite.layer.shadowRadius = 6
+
+        btnWrite.layer.masksToBounds = false
     }
     // MARK: - PagerTabStripDataSource
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

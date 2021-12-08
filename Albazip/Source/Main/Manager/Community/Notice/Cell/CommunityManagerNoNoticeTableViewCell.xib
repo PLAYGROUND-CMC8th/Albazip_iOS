@@ -30,31 +30,9 @@
                         <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKG-Lu-GoZ">
-                        <rect key="frame" x="139.66666666666666" y="305" width="96" height="36"/>
-                        <color key="backgroundColor" red="0.97647058959999999" green="0.85098040100000005" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="36" id="cUC-0u-VnN"/>
-                            <constraint firstAttribute="width" constant="96" id="gZq-eQ-Vwa"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                        <state key="normal" title="추가하기">
-                            <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </state>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="15"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                        <connections>
-                            <action selector="btnAddNotice:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tBl-D7-SZw"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="iKG-Lu-GoZ" secondAttribute="bottom" constant="65" id="6MM-rW-bIj"/>
-                    <constraint firstItem="iKG-Lu-GoZ" firstAttribute="top" secondItem="QDy-Qq-r1X" secondAttribute="bottom" constant="14" id="RAi-jU-UaS"/>
-                    <constraint firstItem="iKG-Lu-GoZ" firstAttribute="centerX" secondItem="Xcb-N7-3fe" secondAttribute="centerX" id="SvK-4C-CJp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="QDy-Qq-r1X" secondAttribute="bottom" constant="115" id="TG3-xZ-elU"/>
                     <constraint firstItem="Xcb-N7-3fe" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="UFD-HR-ek9"/>
                     <constraint firstItem="QDy-Qq-r1X" firstAttribute="centerX" secondItem="Xcb-N7-3fe" secondAttribute="centerX" id="erC-NN-epo"/>
                     <constraint firstItem="Xcb-N7-3fe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="182" id="gEl-oz-2SO"/>
@@ -62,9 +40,6 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <connections>
-                <outlet property="btnAddNotice" destination="iKG-Lu-GoZ" id="Va7-cG-afq"/>
-            </connections>
             <point key="canvasLocation" x="180" y="226.47783251231527"/>
         </tableViewCell>
     </objects>

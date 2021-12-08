@@ -65,7 +65,7 @@ extension CommunityWorkerNoticeVC: UITableViewDataSource, UITableViewDelegate{
         if isNoData{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityManagerNoNoticeTableViewCell") as? CommunityManagerNoNoticeTableViewCell {
                 cell.selectionStyle = .none
-                cell.btnAddNotice.isHidden = true
+                //cell.btnAddNotice.isHidden = true
                 return cell
             }
         }else{

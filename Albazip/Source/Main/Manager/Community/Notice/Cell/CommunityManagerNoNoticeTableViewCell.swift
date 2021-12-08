@@ -12,7 +12,6 @@ protocol CommunityManagerNoNoticeDelegate {
 }
 class CommunityManagerNoNoticeTableViewCell: UITableViewCell {
     var delegate: CommunityManagerNoNoticeDelegate?
-    @IBOutlet var btnAddNotice: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,7 +23,5 @@ class CommunityManagerNoNoticeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func btnAddNotice(_ sender: Any) {
-        delegate?.goWritePage()
-    }
+   
 }

@@ -444,12 +444,21 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBZ-Ab-c5v">
-                                <rect key="frame" x="289" y="643" width="66" height="66"/>
+                                <rect key="frame" x="138.66666666666666" y="665" width="98" height="44"/>
+                                <color key="backgroundColor" red="0.97647058959999999" green="0.85490196939999996" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="XZ3-RW-ohY"/>
-                                    <constraint firstAttribute="width" constant="66" id="dLd-3c-VJg"/>
+                                    <constraint firstAttribute="width" constant="98" id="G4m-Db-QxI"/>
+                                    <constraint firstAttribute="height" constant="44" id="N0c-UT-nS7"/>
                                 </constraints>
-                                <state key="normal" image="noticeEditFab"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <state key="normal" title="  글쓰기" image="icEdit18Px">
+                                    <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="btnWrite:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7mP-7l-chI"/>
                                 </connections>
@@ -460,6 +469,7 @@
                         <constraints>
                             <constraint firstItem="RSn-EO-Rr3" firstAttribute="leading" secondItem="Kwb-Xv-5Fl" secondAttribute="leading" id="03M-RY-fyv"/>
                             <constraint firstItem="moS-y3-gaq" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="04P-hq-AL7"/>
+                            <constraint firstItem="SBZ-Ab-c5v" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="1la-LZ-H3w"/>
                             <constraint firstItem="Kwb-Xv-5Fl" firstAttribute="top" secondItem="FSL-fe-Q9i" secondAttribute="bottom" constant="12.33" id="39T-sf-2lV"/>
                             <constraint firstItem="Kwb-Xv-5Fl" firstAttribute="top" secondItem="QLZ-6m-eMh" secondAttribute="bottom" constant="14" id="4Hf-Us-Wqp"/>
                             <constraint firstItem="QLZ-6m-eMh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="21" id="703-GI-EuY"/>
@@ -472,7 +482,6 @@
                             <constraint firstItem="moS-y3-gaq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Pur-SJ-Pwi"/>
                             <constraint firstItem="RSn-EO-Rr3" firstAttribute="top" secondItem="Kwb-Xv-5Fl" secondAttribute="bottom" id="bWS-fi-tbr"/>
                             <constraint firstItem="moS-y3-gaq" firstAttribute="top" secondItem="RSn-EO-Rr3" secondAttribute="bottom" id="dvY-01-Yrn"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SBZ-Ab-c5v" secondAttribute="trailing" constant="20" id="ftj-nW-hhZ"/>
                             <constraint firstAttribute="trailing" secondItem="RSn-EO-Rr3" secondAttribute="trailing" id="gKx-oQ-GlM"/>
                             <constraint firstItem="yU1-CN-ymt" firstAttribute="centerY" secondItem="QLZ-6m-eMh" secondAttribute="centerY" id="i5s-Gm-9Dd"/>
                             <constraint firstItem="moS-y3-gaq" firstAttribute="top" secondItem="RSn-EO-Rr3" secondAttribute="bottom" id="i8c-1b-keA"/>
@@ -482,6 +491,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="UhN-Nx-e5C"/>
                     <connections>
+                        <outlet property="btnWrite" destination="SBZ-Ab-c5v" id="TQ0-ER-wmf"/>
                         <outlet property="buttonBarView" destination="Kwb-Xv-5Fl" id="O3O-QA-fiw"/>
                         <outlet property="containerView" destination="moS-y3-gaq" id="vhz-Ce-mDx"/>
                     </connections>
@@ -839,11 +849,11 @@
         <image name="icCommunityActive" width="24" height="24"/>
         <image name="icCommunityInactive" width="24" height="24"/>
         <image name="icDeleteWhite24Px" width="24" height="24"/>
+        <image name="icEdit18Px" width="18" height="18"/>
         <image name="icMoreVertical24Px" width="24" height="24"/>
         <image name="icSearch18Px" width="18" height="18"/>
         <image name="icSearch24Px" width="24" height="24"/>
         <image name="imgReadyPx" width="68" height="68"/>
-        <image name="noticeEditFab" width="66" height="66"/>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
