@@ -783,7 +783,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하면 모든 활동 기록이 삭제됩니다. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBb-AX-3bL">
-                                <rect key="frame" x="43.999999999999986" y="176.66666666666666" width="246.66666666666663" height="19.333333333333343"/>
+                                <rect key="frame" x="44" y="176.66666666666666" width="301" height="19.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.43921568989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -795,21 +795,21 @@
                                     <constraint firstAttribute="height" constant="5" id="vpI-nY-D8R"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하면 모든 활동 기록이 삭제됩니다. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nX9-3h-YF9">
-                                <rect key="frame" x="43.999999999999986" y="229" width="246.66666666666663" height="19.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴로 인해 삭제된 정보는 복원할 수 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nX9-3h-YF9">
+                                <rect key="frame" x="44" y="229" width="301" height="19.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.43921568989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="0Pn-6V-A1M">
-                                <rect key="frame" x="29" y="288.66666666666669" width="5" height="5"/>
+                                <rect key="frame" x="29" y="288.33333333333331" width="5" height="5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="HHO-sd-GiI"/>
                                     <constraint firstAttribute="width" constant="5" id="JWz-20-Qaw"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하면 모든 활동 기록이 삭제됩니다. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSD-B7-eb5">
-                                <rect key="frame" x="43.999999999999986" y="281.33333333333331" width="246.66666666666663" height="19.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스의 재이용을 원할 땐 신규 회원으로 가입해야 합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSD-B7-eb5">
+                                <rect key="frame" x="44" y="281.33333333333331" width="301" height="38.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.43921568989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -871,17 +871,20 @@
                         <viewLayoutGuide key="safeArea" id="iUC-PZ-bxa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nSD-B7-eb5" secondAttribute="trailing" constant="30" id="6fY-Fx-BbA"/>
                             <constraint firstItem="nSD-B7-eb5" firstAttribute="leading" secondItem="zBb-AX-3bL" secondAttribute="leading" id="Bko-BX-dQN"/>
                             <constraint firstItem="oOt-pd-Vg5" firstAttribute="leading" secondItem="auk-YS-Day" secondAttribute="leading" constant="24" id="C8D-1h-eRn"/>
                             <constraint firstItem="xqp-he-O4N" firstAttribute="leading" secondItem="iUC-PZ-bxa" secondAttribute="leading" constant="29" id="Cbe-Yw-Y0r"/>
                             <constraint firstItem="iUC-PZ-bxa" firstAttribute="trailing" secondItem="oOt-pd-Vg5" secondAttribute="trailing" constant="24" id="EAz-7d-fad"/>
-                            <constraint firstItem="0Pn-6V-A1M" firstAttribute="centerY" secondItem="nSD-B7-eb5" secondAttribute="centerY" id="Jqo-SR-vJb"/>
+                            <constraint firstItem="iUC-PZ-bxa" firstAttribute="trailing" secondItem="zBb-AX-3bL" secondAttribute="trailing" constant="30" id="EWX-96-yb6"/>
                             <constraint firstItem="VPF-y4-ZDo" firstAttribute="leading" secondItem="iUC-PZ-bxa" secondAttribute="leading" constant="36" id="Jsz-S7-rJo"/>
+                            <constraint firstItem="iUC-PZ-bxa" firstAttribute="trailing" secondItem="nX9-3h-YF9" secondAttribute="trailing" constant="30" id="LF5-Q5-NdL"/>
                             <constraint firstItem="nX9-3h-YF9" firstAttribute="top" secondItem="zBb-AX-3bL" secondAttribute="bottom" constant="33" id="M1X-cO-vRd"/>
                             <constraint firstItem="hPU-6T-cRx" firstAttribute="leading" secondItem="iUC-PZ-bxa" secondAttribute="leading" constant="29" id="O0v-bj-ftb"/>
                             <constraint firstItem="nSD-B7-eb5" firstAttribute="top" secondItem="nX9-3h-YF9" secondAttribute="bottom" constant="33" id="ODM-C3-ORC"/>
                             <constraint firstItem="bjo-MS-qaG" firstAttribute="top" secondItem="iUC-PZ-bxa" secondAttribute="top" constant="20" id="Yig-UI-W5x"/>
                             <constraint firstItem="zBb-AX-3bL" firstAttribute="top" secondItem="VPF-y4-ZDo" secondAttribute="bottom" constant="36" id="agd-9h-OZq"/>
+                            <constraint firstItem="0Pn-6V-A1M" firstAttribute="top" secondItem="hPU-6T-cRx" secondAttribute="bottom" constant="47.329999999999998" id="beb-iS-ASt"/>
                             <constraint firstItem="nSD-B7-eb5" firstAttribute="leading" secondItem="nX9-3h-YF9" secondAttribute="leading" id="dTL-cx-INg"/>
                             <constraint firstItem="hPU-6T-cRx" firstAttribute="centerY" secondItem="nX9-3h-YF9" secondAttribute="centerY" id="hFO-vI-Ibp"/>
                             <constraint firstItem="iUC-PZ-bxa" firstAttribute="bottom" secondItem="oOt-pd-Vg5" secondAttribute="bottom" constant="36" id="hYa-Gd-ihe"/>
