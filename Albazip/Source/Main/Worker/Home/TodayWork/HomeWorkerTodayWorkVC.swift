@@ -636,37 +636,57 @@ extension HomeWorkerTodayWorkVC: CheckUnCompleteWorkDelegate, CheckCompleteWorkD
     //완료 셀 체크했을 때
     func checkCompleteWork(taskId: Int) {
         print(taskId)
-        var checkMySelf  = false
-        if let x = profileData, let y = comWorker{
-            //if x.firstName
-            
-            var i = 0
-            while(i < y.count){
-                if y[i].worker!.contains(x.firstName!){
-                    if y[i].taskId!.contains(taskId){
-                        //본인이 체크한거라서 돌릴 수 있음
-                        checkMySelf = true
-                        break
+        
+        //공동 업무
+        if segValue == 0{
+            var checkMySelf  = false
+            if let x = profileData, let y = comWorker{
+                //if x.firstName
+                
+                var i = 0
+                while(i < y.count){
+                    if y[i].worker!.contains(x.firstName!){
+                        if y[i].taskId!.contains(taskId){
+                            //본인이 체크한거라서 돌릴 수 있음
+                            checkMySelf = true
+                            break
+                        }
                     }
+                    i += 1
                 }
-                i += 1
-            }
-            
-            
-        }
-        if checkMySelf{ //본인이 체크한거라서 돌릴 수 있음
-            let newStoryboard = UIStoryboard(name: "HomeManagerStoryboard", bundle: nil)
-            if let vc = newStoryboard.instantiateViewController(withIdentifier: "HomeManagerUnClearAlertVC") as? HomeManagerUnClearAlertVC {
-                vc.modalPresentationStyle = .overFullScreen
-                vc.taskId = taskId
-                vc.delegate = self
                 
-                self.present(vc, animated: true, completion: nil)
                 
             }
-        }else{ // 다른사람이 완료한 것. 되돌릴 수 업음
-            presentBottomAlert(message: "다른 사람이 완료한 업무입니다.")
+            if checkMySelf{ //본인이 체크한거라서 돌릴 수 있음
+                let newStoryboard = UIStoryboard(name: "HomeManagerStoryboard", bundle: nil)
+                if let vc = newStoryboard.instantiateViewController(withIdentifier: "HomeManagerUnClearAlertVC") as? HomeManagerUnClearAlertVC {
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.taskId = taskId
+                    vc.delegate = self
+                    
+                    self.present(vc, animated: true, completion: nil)
+                    
+                }
+            }else{ // 다른사람이 완료한 것. 되돌릴 수 업음
+                presentBottomAlert(message: "다른 사람이 완료한 업무입니다.")
+            }
         }
+        
+        
+        // 개인 업무
+        else{
+            //본인이 체크한거라서 돌릴 수 있음
+                let newStoryboard = UIStoryboard(name: "HomeManagerStoryboard", bundle: nil)
+                if let vc = newStoryboard.instantiateViewController(withIdentifier: "HomeManagerUnClearAlertVC") as? HomeManagerUnClearAlertVC {
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.taskId = taskId
+                    vc.delegate = self
+                    
+                    self.present(vc, animated: true, completion: nil)
+                    
+                }
+        }
+        
         
         
     }
