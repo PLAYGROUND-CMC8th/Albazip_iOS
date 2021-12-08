@@ -60,7 +60,7 @@ extension HomeManagerWorkerTodayWorkerListVC: UITableViewDataSource, UITableView
                     }else{
                         cell.profileImage.image =  #imageLiteral(resourceName: "imgProfile84Px1")
                     }
-                    cell.positionLabel.text = data[indexPath.row].workerTitle!
+                    cell.positionLabel.text = data[indexPath.row].workerTitle!.replace(target: " ", with: "")
                     cell.nameLabel.text = data[indexPath.row].workerName!
                 }
                 

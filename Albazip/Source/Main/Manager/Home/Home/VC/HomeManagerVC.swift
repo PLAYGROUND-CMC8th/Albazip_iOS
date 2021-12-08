@@ -387,9 +387,9 @@ extension HomeManagerVC {
         var i = 0
         if let data = workerInfo{
             while(i < data.count){
-                if data[i].title == "오픈"{
+                if data[i].title!.contains("오픈"){
                     openInfo.append(data[i])
-                }else if data[i].title == "미들"{
+                }else if data[i].title!.contains("미들"){
                     middleInfo.append(data[i])
                 }else{
                     closeInfo.append(data[i])
