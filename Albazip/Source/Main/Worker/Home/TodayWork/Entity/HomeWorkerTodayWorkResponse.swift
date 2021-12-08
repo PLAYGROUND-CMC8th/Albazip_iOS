@@ -38,6 +38,7 @@ struct HomeWorkerComWorkerList :Decodable{
     var worker: String?
     var count: Int?
     var image: String?
+    var taskId: [Int]?
 }
 struct HomeWorkerComCoTask: Decodable {
     var taskId: Int?

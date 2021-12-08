@@ -36,6 +36,13 @@ class HomeWorkerTodayWorkVC: UIViewController{
     
     //업무 완료 창
     var clearAlert = false
+    
+    // 프로필 정보 불러오기
+    // Datamanager
+    lazy var profileDataManager: MyPageWorkerProfileDatamanager = MyPageWorkerProfileDatamanager()
+    //
+    var profileData: MyPageManagerProfileData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(segValue)
@@ -43,6 +50,7 @@ class HomeWorkerTodayWorkVC: UIViewController{
         setupTableView()
         showIndicator()
         dataManager.getHomeWorkerTodayWork(vc: self)
+        profileDataManager.getMyPageManagerProfile(vc: self)
     }
     func setUI() {
         
@@ -628,15 +636,53 @@ extension HomeWorkerTodayWorkVC: CheckUnCompleteWorkDelegate, CheckCompleteWorkD
     //완료 셀 체크했을 때
     func checkCompleteWork(taskId: Int) {
         print(taskId)
-        let newStoryboard = UIStoryboard(name: "HomeManagerStoryboard", bundle: nil)
-        if let vc = newStoryboard.instantiateViewController(withIdentifier: "HomeManagerUnClearAlertVC") as? HomeManagerUnClearAlertVC {
-            vc.modalPresentationStyle = .overFullScreen
-            vc.taskId = taskId
-            vc.delegate = self
+        var checkMySelf  = false
+        if let x = profileData, let y = comWorker{
+            //if x.firstName
             
-            self.present(vc, animated: true, completion: nil)
+            var i = 0
+            while(i < y.count){
+                if y[i].worker!.contains(x.firstName!){
+                    if y[i].taskId!.contains(taskId){
+                        //본인이 체크한거라서 돌릴 수 있음
+                        checkMySelf = true
+                        break
+                    }
+                }
+                i += 1
+            }
+            
             
         }
+        if checkMySelf{ //본인이 체크한거라서 돌릴 수 있음
+            let newStoryboard = UIStoryboard(name: "HomeManagerStoryboard", bundle: nil)
+            if let vc = newStoryboard.instantiateViewController(withIdentifier: "HomeManagerUnClearAlertVC") as? HomeManagerUnClearAlertVC {
+                vc.modalPresentationStyle = .overFullScreen
+                vc.taskId = taskId
+                vc.delegate = self
+                
+                self.present(vc, animated: true, completion: nil)
+                
+            }
+        }else{ // 다른사람이 완료한 것. 되돌릴 수 업음
+            presentBottomAlert(message: "다른 사람이 완료한 업무입니다.")
+        }
         
+        
+    }
+}
+extension HomeWorkerTodayWorkVC {
+    func didSuccessMyPageManagerProfile(result: MyPageManagerProfileResponse) {
+        dismissIndicator()
+        profileData = result.data
+        print(profileData)
+        print(result.message!)
+        
+     
+    }
+    
+    func failedToRequestMyPageManagerProfile(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
     }
 }
