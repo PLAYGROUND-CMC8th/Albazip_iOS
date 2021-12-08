@@ -311,7 +311,8 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                 
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeManagerWorkPrivateTableViewCell") as? HomeManagerWorkPrivateTableViewCell {
                     if let data = perTask{
-                        cell.titleLabel.text = data[indexPath.row].workerTitle! + " 업무"
+                        cell.titleLabel.text = data[indexPath.row].workerTitle!
+                        cell.workerName.text = data[indexPath.row].workerName!
                         cell.completeCount.text = "\(data[indexPath.row].completeCount!)"
                         cell.totalCount.text = "/ \(data[indexPath.row].totalCount!)"
                         if data[indexPath.row].totalCount! == 0{

@@ -40,41 +40,52 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ 5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rX3-og-FDu">
-                                <rect key="frame" x="288" y="39" width="15" height="14.666666666666664"/>
+                                <rect key="frame" x="288" y="39.333333333333336" width="15" height="14.666666666666664"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqT-UW-yLU">
-                                <rect key="frame" x="273.66666666666669" y="33" width="10.333333333333314" height="19.666666666666671"/>
+                                <rect key="frame" x="273.66666666666669" y="33.333333333333336" width="10.333333333333314" height="19.666666666666664"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20784312490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평일마감 업무" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxA-lb-fgX">
-                                <rect key="frame" x="121" y="32" width="98" height="21.666666666666671"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평일마감" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxA-lb-fgX">
+                                <rect key="frame" x="121" y="32" width="63" height="22"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.9529411793" green="0.70588237050000002" blue="0.24313727020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tZB-tQ-QXK">
-                                <rect key="frame" x="121" y="78.666666666666671" width="182" height="8"/>
+                                <rect key="frame" x="121" y="79" width="182" height="8"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="HCS-ni-a0A"/>
                                 </constraints>
                                 <color key="progressTintColor" red="0.95686274770000002" green="0.70588237050000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="trackTintColor" red="0.98431372640000003" green="0.90588235859999999" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카이트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxh-fT-v23">
+                                <rect key="frame" x="188" y="32" width="47" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="6xA-nk-FEH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843159999998" green="0.98039215800000001" blue="0.92549026010000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="bqT-UW-yLU" firstAttribute="centerY" secondItem="HxA-lb-fgX" secondAttribute="centerY" id="1YL-du-ew3"/>
                             <constraint firstItem="HxA-lb-fgX" firstAttribute="top" secondItem="Lwd-ip-397" secondAttribute="top" constant="32" id="2f0-Yl-ZqQ"/>
+                            <constraint firstItem="Bxh-fT-v23" firstAttribute="centerY" secondItem="HxA-lb-fgX" secondAttribute="centerY" id="EWP-Xb-5Nj"/>
                             <constraint firstAttribute="trailing" secondItem="rX3-og-FDu" secondAttribute="trailing" constant="24" id="IRc-9N-YNy"/>
                             <constraint firstItem="tZB-tQ-QXK" firstAttribute="top" secondItem="HxA-lb-fgX" secondAttribute="bottom" constant="25" id="Kre-rY-K0c"/>
                             <constraint firstAttribute="trailing" secondItem="tZB-tQ-QXK" secondAttribute="trailing" constant="24" id="Q39-m2-Kit"/>
                             <constraint firstItem="4yQ-2d-bJJ" firstAttribute="centerY" secondItem="Lwd-ip-397" secondAttribute="centerY" id="Qdx-W1-RHr"/>
                             <constraint firstItem="tZB-tQ-QXK" firstAttribute="leading" secondItem="HxA-lb-fgX" secondAttribute="leading" id="X3r-xI-u0X"/>
+                            <constraint firstItem="Bxh-fT-v23" firstAttribute="leading" secondItem="HxA-lb-fgX" secondAttribute="trailing" constant="4" id="Xgc-cu-TBZ"/>
                             <constraint firstItem="rX3-og-FDu" firstAttribute="leading" secondItem="bqT-UW-yLU" secondAttribute="trailing" constant="4" id="YBM-Wx-P7k"/>
                             <constraint firstItem="HxA-lb-fgX" firstAttribute="leading" secondItem="4yQ-2d-bJJ" secondAttribute="trailing" constant="20" id="axQ-Vd-wp8"/>
                             <constraint firstItem="4yQ-2d-bJJ" firstAttribute="leading" secondItem="Lwd-ip-397" secondAttribute="leading" constant="24" id="jUF-9q-aQb"/>
@@ -108,8 +119,9 @@
                 <outlet property="progress" destination="tZB-tQ-QXK" id="mA4-bB-7tj"/>
                 <outlet property="titleLabel" destination="HxA-lb-fgX" id="Zzc-Lt-gym"/>
                 <outlet property="totalCount" destination="rX3-og-FDu" id="EmM-xF-61G"/>
+                <outlet property="workerName" destination="Bxh-fT-v23" id="YcX-oC-Jhb"/>
             </connections>
-            <point key="canvasLocation" x="126" y="28"/>
+            <point key="canvasLocation" x="-177" y="26"/>
         </tableViewCell>
     </objects>
     <resources>

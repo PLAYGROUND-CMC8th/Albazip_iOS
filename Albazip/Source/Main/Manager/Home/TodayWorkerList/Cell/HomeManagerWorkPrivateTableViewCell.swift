@@ -15,6 +15,7 @@ class HomeManagerWorkPrivateTableViewCell: UITableViewCell {
     @IBOutlet var progress: UIProgressView!
     @IBOutlet var honeyView: UIView!
     @IBOutlet var honeyImage: UIImageView!
+    @IBOutlet var workerName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

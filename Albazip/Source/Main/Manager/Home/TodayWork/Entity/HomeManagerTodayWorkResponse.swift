@@ -23,6 +23,7 @@ struct HomeManagerTodayWorkData: Decodable {
 struct HomeManagerPerTaskList: Decodable {
     var workerId: Int?
     var workerTitle: String?
+    var workerName: String?
     var totalCount: Int?
     var completeCount: Int?
 }
