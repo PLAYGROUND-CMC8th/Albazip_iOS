@@ -569,9 +569,15 @@ extension MyPageManagerWorkerDetailVC {
     }
 }
 extension MyPageManagerWorkerDetailVC: MyPageManagerWorkerExitDelegate{
+    func cancelExitWork() {
+        print("퇴사 취소")
+        status = 1
+    }
+    
     func successExitWork() {
         print("퇴사 완료! 이전 페이지로 넘어가기")
         self.navigationController?.popViewController(animated: true)
     }
+    
     
 }

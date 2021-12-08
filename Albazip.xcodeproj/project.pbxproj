@@ -39,6 +39,8 @@
 		C30EC2E7272B0A9F00EEF218 /* RegisterManagerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E6272B0A9F00EEF218 /* RegisterManagerResponse.swift */; };
 		C30EC2E9272B0AB500EEF218 /* RegisterManagerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E8272B0AB500EEF218 /* RegisterManagerRequest.swift */; };
 		C30EC2EB272B121900EEF218 /* RegisterManagerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2EA272B121900EEF218 /* RegisterManagerInfo.swift */; };
+		C3120A512760DCE30010A668 /* MyPageStopWorkCancelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3120A502760DCE30010A668 /* MyPageStopWorkCancelResponse.swift */; };
+		C3120A532760DD0F0010A668 /* MyPageStopWorkCancelDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3120A522760DD0F0010A668 /* MyPageStopWorkCancelDatamanager.swift */; };
 		C32E4A7A274DB5A80015463F /* CommunityWorkerNoticeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4A78274DB5A80015463F /* CommunityWorkerNoticeDetailTableViewCell.swift */; };
 		C32E4A7B274DB5A80015463F /* CommunityWorkerNoticeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32E4A79274DB5A80015463F /* CommunityWorkerNoticeDetailTableViewCell.xib */; };
 		C32E4A7D274DEA4E0015463F /* CommunityWorkerNoticeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E4A7C274DEA4E0015463F /* CommunityWorkerNoticeDetailVC.swift */; };
@@ -463,6 +465,8 @@
 		C30EC2E6272B0A9F00EEF218 /* RegisterManagerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerResponse.swift; sourceTree = "<group>"; };
 		C30EC2E8272B0AB500EEF218 /* RegisterManagerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerRequest.swift; sourceTree = "<group>"; };
 		C30EC2EA272B121900EEF218 /* RegisterManagerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerInfo.swift; sourceTree = "<group>"; };
+		C3120A502760DCE30010A668 /* MyPageStopWorkCancelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageStopWorkCancelResponse.swift; sourceTree = "<group>"; };
+		C3120A522760DD0F0010A668 /* MyPageStopWorkCancelDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageStopWorkCancelDatamanager.swift; sourceTree = "<group>"; };
 		C32E4A78274DB5A80015463F /* CommunityWorkerNoticeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerNoticeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		C32E4A79274DB5A80015463F /* CommunityWorkerNoticeDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityWorkerNoticeDetailTableViewCell.xib; sourceTree = "<group>"; };
 		C32E4A7C274DEA4E0015463F /* CommunityWorkerNoticeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerNoticeDetailVC.swift; sourceTree = "<group>"; };
@@ -2572,6 +2576,7 @@
 			isa = PBXGroup;
 			children = (
 				C3F05A51274F70C30025DB24 /* MyPageStopWorkDatamanager.swift */,
+				C3120A522760DD0F0010A668 /* MyPageStopWorkCancelDatamanager.swift */,
 			);
 			path = StopWork;
 			sourceTree = "<group>";
@@ -2580,6 +2585,7 @@
 			isa = PBXGroup;
 			children = (
 				C3F05A4F274F70B10025DB24 /* MyPageStopWorkResponse.swift */,
+				C3120A502760DCE30010A668 /* MyPageStopWorkCancelResponse.swift */,
 			);
 			path = StopWork;
 			sourceTree = "<group>";
@@ -2991,6 +2997,7 @@
 				C3CB0166273D49F6000EA353 /* MyPageManagerProfileDatamanager.swift in Sources */,
 				C38442372714797000B84E8A /* SceneDelegate.swift in Sources */,
 				C384425F27147E3F00B84E8A /* Color.swift in Sources */,
+				C3120A532760DD0F0010A668 /* MyPageStopWorkCancelDatamanager.swift in Sources */,
 				C3CC57C327362E4C00657EE9 /* MyPageManagerSelectPayTypeVC.swift in Sources */,
 				C3A7C7F1275270C800271EFE /* HomeManagerDeleteStoreVC.swift in Sources */,
 				C3E9C8EE2741697100B0139C /* MyPageDetailClearWorkMonthResponse.swift in Sources */,
@@ -3255,6 +3262,7 @@
 				C30AFE6F2733BF0A0075CDE2 /* MyPageManagerNoWorkerTableViewCell.swift in Sources */,
 				C3F05A50274F70B10025DB24 /* MyPageStopWorkResponse.swift in Sources */,
 				C3A7C7D92752018D00271EFE /* StartTokenCheckResponse.swift in Sources */,
+				C3120A512760DCE30010A668 /* MyPageStopWorkCancelResponse.swift in Sources */,
 				C3CFC302273EBCAB001B2EB6 /* MyPageManagerWorkerPositionResponse.swift in Sources */,
 				C391EAD027535A8C002CD2E5 /* CommunitySearchResponse.swift in Sources */,
 				C3E9C8E227411DC100B0139C /* MyPageManagerWorkerExitVC.swift in Sources */,

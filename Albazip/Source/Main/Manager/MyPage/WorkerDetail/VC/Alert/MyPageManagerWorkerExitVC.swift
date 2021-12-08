@@ -6,6 +6,7 @@
 //
 protocol MyPageManagerWorkerExitDelegate {
     func successExitWork()
+    func cancelExitWork()
 }
 import Foundation
 class MyPageManagerWorkerExitVC: UIViewController{
@@ -16,6 +17,7 @@ class MyPageManagerWorkerExitVC: UIViewController{
     var positionId = 0
     var delegate: MyPageManagerWorkerExitDelegate?
     lazy var datamanager :MyPageStopWorkDatamanager = MyPageStopWorkDatamanager()
+    lazy var datamanager2 :MyPageStopWorkCancelDatamanager = MyPageStopWorkCancelDatamanager()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,17 +27,19 @@ class MyPageManagerWorkerExitVC: UIViewController{
         transparentView.frame = self.view.frame
         window?.addSubview(transparentView)
     }
-    
+    //퇴사 거절 api
     @IBAction func btnCancel(_ sender: Any) {
-        self.transparentView.isHidden = true
-        self.dismiss(animated: true)
+        showIndicator()
+         datamanager2.cancelMyPageStopWork( positionId: positionId, vc: self)
     }
+    //퇴사하기 api
     @IBAction func btnNext(_ sender: Any) {
        showIndicator()
         datamanager.deleteMyPageStopWork( positionId: positionId, vc: self)
     }
 }
 extension MyPageManagerWorkerExitVC {
+    //퇴사하기 api
     func didSuccessMyPageStopWork(result: MyPageStopWorkResponse) {
     
         print(result.message!)
@@ -48,6 +52,23 @@ extension MyPageManagerWorkerExitVC {
     }
     
     func failedToRequestMyPageStopWork(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
+    
+    //퇴사 거절 api
+    func didSuccessMyPageStopWorkCancel(result: MyPageStopWorkCancelResponse) {
+    
+        print(result.message!)
+        //profileImage.image = .none
+       
+        dismissIndicator()
+        delegate?.cancelExitWork()
+        self.transparentView.isHidden = true
+        self.dismiss(animated: true)
+    }
+    
+    func failedToRequestMyPageStopWorkCancel(message: String) {
         dismissIndicator()
         presentAlert(title: message)
     }
