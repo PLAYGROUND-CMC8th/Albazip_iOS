@@ -577,15 +577,42 @@ extension HomeManagerTodayWorkVC: CheckUnCompleteWorkDelegate, CheckCompleteWork
     //완료 셀 체크했을 때
     func checkCompleteWork(taskId: Int) {
         print(taskId)
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeManagerUnClearAlertVC") as? HomeManagerUnClearAlertVC {
-            vc.modalPresentationStyle = .overFullScreen
-            vc.taskId = taskId
-            vc.delegate = self
+        if segValue == 0{
             
-            self.present(vc, animated: true, completion: nil)
-            
+            var checkMySelf  = false
+            if let y = comWorker{
+                //if x.firstName
+                
+                var i = 0
+                while(i < y.count){
+                    if y[i].worker!.contains("사장님"){
+                        if y[i].taskId!.contains(taskId){
+                            //본인이 체크한거라서 돌릴 수 있음
+                            checkMySelf = true
+                            break
+                        }
+                    }
+                    i += 1
+                }
+                
+                
+            }
+            if checkMySelf{ //본인이 체크한거라서 돌릴 수 있음
+                if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeManagerUnClearAlertVC") as? HomeManagerUnClearAlertVC {
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.taskId = taskId
+                    vc.delegate = self
+                    
+                    self.present(vc, animated: true, completion: nil)
+                    
+                }
+            }else{ // 다른사람이 완료한 것. 되돌릴 수 업음
+                presentBottomAlert(message: "다른 사람이 완료한 업무입니다.")
+            }
         }
-        
+            
+            
     }
 }
+
 
