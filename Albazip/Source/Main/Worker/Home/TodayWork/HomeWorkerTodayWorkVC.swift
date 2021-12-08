@@ -12,7 +12,7 @@ class HomeWorkerTodayWorkVC: UIViewController{
     var isNoCompleteCoData = true
     var isNoNonCompletePerData = true
     var isNoCompletePerData = true
-    
+    var status = -1
     @IBOutlet var segment: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
     
@@ -254,6 +254,11 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                                 
                             }
                             print(indexPath.row)
+                            if status == 2{
+                                cell.btnCheck.isHidden = true
+                            }else{
+                                cell.btnCheck.isHidden = false
+                            }
                             return cell
                         }
                     }else{
@@ -296,6 +301,11 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                             cell.taskId = data[indexPath.row].taskId!
                         }
                         print(indexPath.row)
+                        if status == 2{
+                            cell.btnCheck.isHidden = true
+                        }else{
+                            cell.btnCheck.isHidden = false
+                        }
                         return cell
                     }
                 }
@@ -325,6 +335,11 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                                 cell.taskId = data[indexPath.row].taskId!
                             }
                             print(indexPath.row)
+                            if status == 2{
+                                cell.btnCheck.isHidden = true
+                            }else{
+                                cell.btnCheck.isHidden = false
+                            }
                             return cell
                         }
                     }else{
@@ -367,6 +382,11 @@ extension HomeWorkerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                             cell.taskId = data[indexPath.row].taskId!
                         }
                         print(indexPath.row)
+                        if status == 2{
+                            cell.btnCheck.isHidden = true
+                        }else{
+                            cell.btnCheck.isHidden = false
+                        }
                         return cell
                     }
                 }

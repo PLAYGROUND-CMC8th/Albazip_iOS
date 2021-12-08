@@ -301,6 +301,7 @@ extension HomeManagerVC: HomeManagerOpenDeleagate, HomeManagerAddWorkDelegate{
             
             guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerTodayWorkVC") as? HomeManagerTodayWorkVC else {return}
             nextVC.segValue = 0
+            nextVC.status = status
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
         else if status == 0 { //업무 추가
@@ -328,6 +329,7 @@ extension HomeManagerVC: HomeManagerOpenDeleagate, HomeManagerAddWorkDelegate{
         
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerTodayWorkVC") as? HomeManagerTodayWorkVC else {return}
         nextVC.segValue = 0
+        nextVC.status = status
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     // 개인 업무 상세
@@ -336,6 +338,7 @@ extension HomeManagerVC: HomeManagerOpenDeleagate, HomeManagerAddWorkDelegate{
         
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerTodayWorkVC") as? HomeManagerTodayWorkVC else {return}
         nextVC.segValue = 1
+        nextVC.status = status
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

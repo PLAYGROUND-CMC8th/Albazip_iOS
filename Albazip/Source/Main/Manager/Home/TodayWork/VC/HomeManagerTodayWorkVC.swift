@@ -12,7 +12,7 @@ class HomeManagerTodayWorkVC: UIViewController{
     var isNoPerData = true
     @IBOutlet var segment: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
-    
+    var status = -1
     var segValue = 0 // 0이면 공동업무, 1이면 개인업무!
     // 공동 업무
     var nonComCoTask: [HomeWorkerNonComCoTask]?
@@ -241,6 +241,11 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                                 
                             }
                             print(indexPath.row)
+                            if status == 2{
+                                cell.btnCheck.isHidden = true
+                            }else{
+                                cell.btnCheck.isHidden = false
+                            }
                             return cell
                         }
                     }else{
@@ -285,6 +290,11 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
                             cell.taskId = data[indexPath.row].taskId!
                         }
                         print(indexPath.row)
+                        if status == 2{
+                            cell.btnCheck.isHidden = true
+                        }else{
+                            cell.btnCheck.isHidden = false
+                        }
                         return cell
                     }
                 }

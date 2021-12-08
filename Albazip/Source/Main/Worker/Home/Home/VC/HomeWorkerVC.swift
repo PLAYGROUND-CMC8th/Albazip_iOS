@@ -299,6 +299,7 @@ extension HomeWorkerVC: HomeWorkerAddWorkDelegate{
     func goNextPage() {
         if status == 2{
             if let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerTodayWorkVC") as? HomeWorkerTodayWorkVC {
+                nextVC.status = status
                 self.navigationController?.pushViewController(nextVC, animated: true)
             }
         }else{
@@ -318,12 +319,14 @@ extension HomeWorkerVC: HomeWorkerWorkDeleagate{
     func goPublicWork() {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerTodayWorkVC") as? HomeWorkerTodayWorkVC else {return}
         nextVC.segValue = 0
+        nextVC.status = status
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     //개인 업무 페이지
     func goPrivateWork() {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeWorkerTodayWorkVC") as? HomeWorkerTodayWorkVC else {return}
         nextVC.segValue = 1
+        nextVC.status = status
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
