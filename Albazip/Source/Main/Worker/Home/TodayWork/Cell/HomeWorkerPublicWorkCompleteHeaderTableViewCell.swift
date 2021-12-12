@@ -85,7 +85,7 @@ extension HomeWorkerPublicWorkCompleteHeaderTableViewCell: UITableViewDataSource
                 cell.selectionStyle = .none
                 if let data = comWorker{
                     cell.countLabel.text = String(data[indexPath.row].count!)
-                    let url = URL(string: data[indexPath.row].image!)
+                    let url = URL(string: data[indexPath.row].image ?? "")
                     cell.profileImage.kf.setImage(with: url)
                     let result = data[indexPath.row].worker!.components(separatedBy: " ")
                     

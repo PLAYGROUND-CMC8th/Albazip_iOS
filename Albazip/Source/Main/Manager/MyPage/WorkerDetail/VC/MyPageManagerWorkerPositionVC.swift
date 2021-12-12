@@ -79,6 +79,7 @@ class MyPageManagerWorkerPositionVC: UIViewController, MyPageManagerWorkerPositi
             if let vc = newStoryboard.instantiateViewController(withIdentifier: "MyPageManagerWorkerPositionDeleteVC") as? MyPageManagerWorkerPositionDeleteVC {
                 vc.myPageManagerWorkerPositionDeleteAlertDelegate = self
                 vc.modalPresentationStyle = .overFullScreen
+                vc.positionId = positionId
                 myPageManagerWorkerPositionAlertDelegate?.modalShow()
                 
             self.present(vc, animated: true, completion: nil)

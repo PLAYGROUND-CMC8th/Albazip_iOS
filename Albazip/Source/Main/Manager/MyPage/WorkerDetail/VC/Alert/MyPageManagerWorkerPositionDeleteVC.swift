@@ -11,12 +11,16 @@ import UIKit
 protocol MyPageManagerWorkerPositionDeleteAlertDelegate {
     func modalDismiss()
     func nextDeleteModal()
+    func successDeletePosition()
 }
 
 class MyPageManagerWorkerPositionDeleteVC: UIViewController{
     
     var myPageManagerWorkerPositionDeleteAlertDelegate : MyPageManagerWorkerPositionDeleteAlertDelegate?
     var transparentView = UIView()
+    var positionId = 0
+    
+    lazy var dataManager: MyPageDeletePositionDatamanager = MyPageDeletePositionDatamanager()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,28 +36,31 @@ class MyPageManagerWorkerPositionDeleteVC: UIViewController{
     }
     
     @IBAction func btnNext(_ sender: Any) {
+        showIndicator()
+        dataManager.deletePosition(positionId: positionId, vc: self)
         
         /*
-        let newStoryboard = UIStoryboard(name: "MyPageManagerStoryboard", bundle: nil)
-        
-        if let vc = newStoryboard.instantiateViewController(withIdentifier: "MyPageManagerWorkerPositionDelete2VC") as? MyPageManagerWorkerPositionDelete2VC {
-            vc.modalPresentationStyle = .overFullScreen
-            
-        guard let pvc = self.presentingViewController else { return }
-            
         self.transparentView.isHidden = true
-        self.dismiss(animated: false) {
-          pvc.present(vc, animated: false, completion: nil)
-            
-        }
-        //self.dismiss(animated: true, completion: nil)
-    }*/self.transparentView.isHidden = true
         myPageManagerWorkerPositionDeleteAlertDelegate?.modalDismiss()
         
         
         self.dismiss(animated: false){
             self.myPageManagerWorkerPositionDeleteAlertDelegate?.nextDeleteModal()
         }
-    
+    */
 }
+}
+extension MyPageManagerWorkerPositionDeleteVC {
+    func didSuccessMyPageDeletePosition(result: MyPageStopWorkResponse) {
+        print(result.message!)
+        dismissIndicator()
+        self.transparentView.isHidden = true
+        self.myPageManagerWorkerPositionDeleteAlertDelegate?.successDeletePosition()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func failedToRequestMyPageDeletePosition(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
 }
