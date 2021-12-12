@@ -23,6 +23,9 @@ class MyPageDetailCommuteRecordVC: UIViewController{
     lazy var dataManager: MyPageDetailCommuteRecordDatamanager = MyPageDetailCommuteRecordDatamanager()
     //
     var commuteData: [MyPageDetailCommuteRecordCommuteData]?
+    //그림자
+    @IBOutlet var shadowImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -85,12 +88,24 @@ class MyPageDetailCommuteRecordVC: UIViewController{
         //MyPageDetailCommuteRecordTableViewCell
         tableView.dataSource = self
         tableView.delegate = self
+        
+        //그림자 hidden
+        shadowImage.isHidden = true
     }
     
 }
 //MARK:- Table View Data Source
 
 extension MyPageDetailCommuteRecordVC: UITableViewDataSource,UITableViewDelegate {
+    //스크롤 상태일 때만 그림자 show
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            if self.tableView.contentOffset.y == 0 {
+                shadowImage.isHidden = true
+                
+            }else{
+                shadowImage.isHidden = false
+            }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isNoData{

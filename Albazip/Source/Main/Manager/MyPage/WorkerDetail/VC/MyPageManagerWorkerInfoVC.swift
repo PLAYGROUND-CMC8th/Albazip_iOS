@@ -38,6 +38,7 @@ class MyPageManagerWorkerInfoVC: UIViewController {
     var numberOfCells: Int = 1
     var positionId = -1
     var status = -1
+    var workerName = ""
     //MARK:- View Life Cycle
     
     override func viewDidLoad() {
@@ -236,9 +237,12 @@ extension MyPageManagerWorkerInfoVC: MyPageWorkerMyInfoDelegate {
     }
     func goLeaveWorkVC(){
         print("퇴사 알림창..")
-        let storyboard = UIStoryboard(name: "MyPageWorkerStoryboard", bundle: Bundle.main)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "MyPageDetailStopWorkVC") as? MyPageDetailStopWorkVC {
+        let storyboard = UIStoryboard(name: "MyPageManagerStoryboard", bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "MyPageManagerWorkerDirectExitVC") as? MyPageManagerWorkerDirectExitVC {
             vc.modalPresentationStyle = .overFullScreen
+            vc.positionId = positionId
+            vc.name = workerName
+            vc.delegate = self
             //myPageManagerWorkerPositionAlertDelegate?.modalShow()
             
         self.present(vc, animated: true, completion: nil)
@@ -279,10 +283,17 @@ extension MyPageManagerWorkerInfoVC {
         
     }
 }
-extension MyPageManagerWorkerInfoVC: MyPageManagerWorkerCodeDelegate{
+extension MyPageManagerWorkerInfoVC: MyPageManagerWorkerCodeDelegate, MyPageManagerWorkerExitDelegate{
+    func cancelExitWork() {
+        
+    }
+    
     func copyAlert() {
         presentBottomAlert(message: "코드가 복사되었습니다.")
     }
     
-    
+    func successExitWork() {
+        print("퇴사 완료! 이전 페이지로 넘어가기")
+        self.navigationController?.popViewController(animated: true)
+    }
 }

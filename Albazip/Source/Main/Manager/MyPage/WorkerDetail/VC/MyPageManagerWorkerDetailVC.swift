@@ -161,6 +161,7 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
                 tabContentVC.myPageManagerWorkerInfoTableViewScrollDelegate = self
                 tabContentVC.positionId = self.positionId
                 tabContentVC.status = self.status
+                tabContentVC.workerName = self.firstName
                 let displayName = tabName[subTabCount]//"TAB \(subTabCount + 1)"
                 let page = Page(with: displayName, _vc: tabContentVC)
                 pageCollection.pages.append(page)

@@ -132,6 +132,7 @@
 		C35DB311274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB310274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift */; };
 		C35DB313274C2E5F0011BC5A /* HomeManagerTodayWorkDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB312274C2E5F0011BC5A /* HomeManagerTodayWorkDetailResponse.swift */; };
 		C35DB315274C2E790011BC5A /* HomeManagerTodayWorkDetailDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB314274C2E790011BC5A /* HomeManagerTodayWorkDetailDatamanager.swift */; };
+		C37632C62765F41F0092F435 /* MyPageManagerWorkerDirectExitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37632C52765F41F0092F435 /* MyPageManagerWorkerDirectExitVC.swift */; };
 		C37B0B442728FF070017D179 /* OnboardingManagerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37B0B432728FF070017D179 /* OnboardingManagerStoryboard.storyboard */; };
 		C37B0B482728FF300017D179 /* OnboardingWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37B0B472728FF300017D179 /* OnboardingWorkerStoryboard.storyboard */; };
 		C37B0B4A272901AB0017D179 /* OnboardingWorkerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B0B49272901AB0017D179 /* OnboardingWorkerVC.swift */; };
@@ -559,6 +560,7 @@
 		C35DB310274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDetailVC.swift; sourceTree = "<group>"; };
 		C35DB312274C2E5F0011BC5A /* HomeManagerTodayWorkDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDetailResponse.swift; sourceTree = "<group>"; };
 		C35DB314274C2E790011BC5A /* HomeManagerTodayWorkDetailDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDetailDatamanager.swift; sourceTree = "<group>"; };
+		C37632C52765F41F0092F435 /* MyPageManagerWorkerDirectExitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerDirectExitVC.swift; sourceTree = "<group>"; };
 		C37B0B432728FF070017D179 /* OnboardingManagerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingManagerStoryboard.storyboard; sourceTree = "<group>"; };
 		C37B0B472728FF300017D179 /* OnboardingWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingWorkerStoryboard.storyboard; sourceTree = "<group>"; };
 		C37B0B49272901AB0017D179 /* OnboardingWorkerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWorkerVC.swift; sourceTree = "<group>"; };
@@ -2604,6 +2606,7 @@
 				C3E9C8E127411DC100B0139C /* MyPageManagerWorkerExitVC.swift */,
 				C38BFB7A2739EFA000E79BF5 /* MyPageManagerWorkerPositionDelete2VC.swift */,
 				C38BFB782739EC6C00E79BF5 /* MyPageManagerWorkerPositionDeleteVC.swift */,
+				C37632C52765F41F0092F435 /* MyPageManagerWorkerDirectExitVC.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -2967,6 +2970,7 @@
 				C3CDB059274BC31A006D7A92 /* HomeWorkerTodayWorkResponse.swift in Sources */,
 				C38BFB7B2739EFA000E79BF5 /* MyPageManagerWorkerPositionDelete2VC.swift in Sources */,
 				C3AD3B1527394BFC0030905C /* MyPageManagerWorkerDetailVC.swift in Sources */,
+				C37632C62765F41F0092F435 /* MyPageManagerWorkerDirectExitVC.swift in Sources */,
 				C3B022F12727193100013988 /* RegisterSelectSalaryDateVC.swift in Sources */,
 				C38EDCE8274695B300564A17 /* ReaderView.swift in Sources */,
 				C3F05A52274F70C30025DB24 /* MyPageStopWorkDatamanager.swift in Sources */,
