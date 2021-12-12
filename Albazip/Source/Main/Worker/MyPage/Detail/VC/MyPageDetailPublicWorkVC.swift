@@ -14,8 +14,10 @@ class MyPageDetailPublicWorkVC: UIViewController{
     var isNoData = true
     lazy var dataManager: MyPageDetailPublicWorkDataManager = MyPageDetailPublicWorkDataManager()
     //
+    @IBOutlet var shadowImage: UIImageView!
     var data: [MyPageDetailPublicWorkData]?
     @IBOutlet var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -38,12 +40,24 @@ class MyPageDetailPublicWorkVC: UIViewController{
                            forCellReuseIdentifier: "MyPageManagerNoWriteTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
+        
+        //그림자 hidden
+        shadowImage.isHidden = true
     }
+    
 }
 //MARK:- Table View Data Source
 
 extension MyPageDetailPublicWorkVC: UITableViewDataSource,UITableViewDelegate {
-    
+    //스크롤 상태일 때만 그림자 show
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            if self.tableView.contentOffset.y == 0 {
+                shadowImage.isHidden = true
+                
+            }else{
+                shadowImage.isHidden = false
+            }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isNoData{
             return 1

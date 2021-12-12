@@ -661,6 +661,7 @@
                     <navigationItem key="navigationItem" id="X9h-CC-AyA"/>
                     <connections>
                         <outlet property="completeRateLabel" destination="8JI-P2-T6S" id="bGX-bL-1wc"/>
+                        <outlet property="shadowImage" destination="0na-bo-0qG" id="gEk-t2-oRw"/>
                         <outlet property="tableView" destination="8j4-1P-N2E" id="cMd-wj-rKH"/>
                     </connections>
                 </viewController>
@@ -780,6 +781,7 @@
                     <navigationItem key="navigationItem" title="공동 업무" id="qf5-WP-HqF"/>
                     <connections>
                         <outlet property="countLabel" destination="d9Q-L2-dYK" id="0b5-uy-soy"/>
+                        <outlet property="shadowImage" destination="0xL-UF-Q3r" id="E8P-hX-MPg"/>
                         <outlet property="tableView" destination="uOf-lZ-Vib" id="z8c-jT-E1A"/>
                     </connections>
                 </viewController>

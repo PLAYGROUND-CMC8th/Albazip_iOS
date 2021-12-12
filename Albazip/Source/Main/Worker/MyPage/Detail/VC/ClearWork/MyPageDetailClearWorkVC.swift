@@ -19,6 +19,9 @@ class MyPageDetailClearWorkVC: UIViewController{
     //
     var taskData: [MyPageDetailClearWorkTaskData]?
     var taskRate: MyPageDetailClearWorkTaskRate?
+    
+    @IBOutlet var shadowImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -51,11 +54,23 @@ class MyPageDetailClearWorkVC: UIViewController{
                            forCellReuseIdentifier: "MyPageManagerNoWriteTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
+        
+        //그림자 hidden
+        shadowImage.isHidden = true
     }
 }
 //MARK:- Table View Data Source
 
 extension MyPageDetailClearWorkVC: UITableViewDataSource,UITableViewDelegate {
+    //스크롤 상태일 때만 그림자 show
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            if self.tableView.contentOffset.y == 0 {
+                shadowImage.isHidden = true
+                
+            }else{
+                shadowImage.isHidden = false
+            }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
