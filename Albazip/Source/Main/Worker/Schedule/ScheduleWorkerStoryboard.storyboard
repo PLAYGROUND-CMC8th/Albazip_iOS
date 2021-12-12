@@ -34,8 +34,18 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvL-ab-SBM">
+                                <rect key="frame" x="184" y="383" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PvL-ab-SBM" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="3vf-52-GC2"/>
+                            <constraint firstItem="PvL-ab-SBM" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-50" id="5x3-vY-8gC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wBA-AZ-zsa"/>
                 </viewController>
