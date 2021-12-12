@@ -17,7 +17,7 @@ class HomeManagerAddPublicWorkVC: UIViewController{
         super.viewDidLoad()
         setUI()
         setupTableView()
-        
+        //setKeyboardObserver()
     }
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

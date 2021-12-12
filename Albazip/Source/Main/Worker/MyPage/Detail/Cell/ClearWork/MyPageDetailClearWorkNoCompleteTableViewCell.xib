@@ -43,7 +43,7 @@
                 <outlet property="countLabel" destination="rsP-Nc-L4p" id="tJS-gw-zdT"/>
                 <outlet property="titleLabel" destination="P6i-lA-5MI" id="Bx8-1Z-1BV"/>
             </connections>
-            <point key="canvasLocation" x="-202" y="29"/>
+            <point key="canvasLocation" x="-215" y="38"/>
         </tableViewCell>
     </objects>
 </document>

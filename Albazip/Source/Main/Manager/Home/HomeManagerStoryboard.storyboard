@@ -1628,6 +1628,19 @@
                                     <action selector="indexChanged:" destination="nti-Hd-vSa" eventType="valueChanged" id="RY9-U9-oZN"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가된 업무가 없어요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4D-cP-eug">
+                                <rect key="frame" x="127" y="438" width="121" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" red="0.63529413940000001" green="0.63921570780000003" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgAlert36Px" translatesAutoresizingMaskIntoConstraints="NO" id="F2z-hX-mZN">
+                                <rect key="frame" x="169.66666666666666" y="388" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="HO4-SU-3Gj"/>
+                                    <constraint firstAttribute="width" constant="36" id="jvA-8A-JgV"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bjU-cP-f1i">
                                 <rect key="frame" x="0.0" y="168" width="375" height="610"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1642,14 +1655,18 @@
                             <constraint firstItem="xRW-Jm-68V" firstAttribute="leading" secondItem="TNW-OZ-Rue" secondAttribute="leading" constant="24" id="8RA-TK-615"/>
                             <constraint firstItem="Gwd-O8-eIp" firstAttribute="leading" secondItem="1fF-om-MEe" secondAttribute="leading" constant="24" id="8Xg-DF-nAE"/>
                             <constraint firstItem="l0K-0W-5o3" firstAttribute="top" secondItem="aBm-Ec-CAg" secondAttribute="bottom" constant="14" id="8ry-DC-DQ5"/>
+                            <constraint firstItem="F2z-hX-mZN" firstAttribute="centerX" secondItem="TNW-OZ-Rue" secondAttribute="centerX" id="CA0-jp-5kX"/>
                             <constraint firstItem="aBm-Ec-CAg" firstAttribute="top" secondItem="1fF-om-MEe" secondAttribute="top" constant="21" id="GkI-26-Dpa"/>
                             <constraint firstItem="bjU-cP-f1i" firstAttribute="leading" secondItem="1fF-om-MEe" secondAttribute="leading" id="PcV-q1-LjA"/>
                             <constraint firstItem="Gwd-O8-eIp" firstAttribute="top" secondItem="l0K-0W-5o3" secondAttribute="bottom" constant="24" id="Tsi-YA-GW3"/>
-                            <constraint firstItem="bjU-cP-f1i" firstAttribute="top" secondItem="Gwd-O8-eIp" secondAttribute="bottom" id="aQz-bb-7l9"/>
+                            <constraint firstItem="g4D-cP-eug" firstAttribute="top" secondItem="F2z-hX-mZN" secondAttribute="bottom" constant="14" id="aHw-Qi-b91"/>
                             <constraint firstItem="xRW-Jm-68V" firstAttribute="centerY" secondItem="aBm-Ec-CAg" secondAttribute="centerY" id="ew6-ll-L26"/>
                             <constraint firstItem="l0K-0W-5o3" firstAttribute="leading" secondItem="TNW-OZ-Rue" secondAttribute="leading" id="hNk-jZ-nsX"/>
+                            <constraint firstItem="bjU-cP-f1i" firstAttribute="top" secondItem="Gwd-O8-eIp" secondAttribute="bottom" id="hRr-hu-mbQ"/>
                             <constraint firstItem="1fF-om-MEe" firstAttribute="bottom" secondItem="bjU-cP-f1i" secondAttribute="bottom" id="m8x-7T-CpY"/>
+                            <constraint firstItem="F2z-hX-mZN" firstAttribute="centerY" secondItem="TNW-OZ-Rue" secondAttribute="centerY" id="oQZ-qJ-NIH"/>
                             <constraint firstItem="xRW-Jm-68V" firstAttribute="leading" secondItem="1fF-om-MEe" secondAttribute="leading" constant="24" id="oaM-co-Pwa"/>
+                            <constraint firstItem="g4D-cP-eug" firstAttribute="centerX" secondItem="F2z-hX-mZN" secondAttribute="centerX" id="vSo-vS-vUd"/>
                             <constraint firstItem="1fF-om-MEe" firstAttribute="trailing" secondItem="Gwd-O8-eIp" secondAttribute="trailing" constant="24" id="x00-qg-nQq"/>
                         </constraints>
                     </view>
@@ -1660,7 +1677,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YU-Ae-DG3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150" y="1419"/>
+            <point key="canvasLocation" x="1149.5999999999999" y="1418.7192118226601"/>
         </scene>
         <!--Home Manager Today Work DetailVC-->
         <scene sceneID="oql-If-MKv">
@@ -2007,6 +2024,7 @@
         <image name="icQrCode" width="24" height="24"/>
         <image name="icX24Px" width="24" height="24"/>
         <image name="iconCheck56Px" width="56" height="56"/>
+        <image name="imgAlert36Px" width="36" height="36"/>
         <image name="imgPrivateWork68Px" width="68" height="68"/>
         <image name="imgPublicWork68Px" width="68" height="68"/>
         <image name="imgReadyPx" width="68" height="68"/>

@@ -121,7 +121,7 @@
                 <outlet property="totalCount" destination="rX3-og-FDu" id="EmM-xF-61G"/>
                 <outlet property="workerName" destination="Bxh-fT-v23" id="YcX-oC-Jhb"/>
             </connections>
-            <point key="canvasLocation" x="-177" y="26"/>
+            <point key="canvasLocation" x="86" y="42"/>
         </tableViewCell>
     </objects>
     <resources>

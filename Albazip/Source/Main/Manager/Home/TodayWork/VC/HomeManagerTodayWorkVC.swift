@@ -112,10 +112,20 @@ class HomeManagerTodayWorkVC: UIViewController{
             case 0:
                 segValue = 0
                 //setupTableView()
+                if isNoNonCompleteCoData,isNoCompleteCoData{
+                    tableView.isHidden = true
+                }else{
+                    tableView.isHidden = false
+                }
                 tableView.reloadData()
             case 1:
                 segValue = 1
                 //setupTableView()
+                if isNoPerData{
+                    tableView.isHidden = true
+                }else{
+                    tableView.isHidden = false
+                }
                 tableView.reloadData()
             default:
                 break;
@@ -346,7 +356,7 @@ extension HomeManagerTodayWorkVC: UITableViewDataSource,UITableViewDelegate {
         if segValue == 0{
             return 50
         }else{
-            return 0
+            return 24
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -462,6 +472,7 @@ extension HomeManagerTodayWorkVC {
                         self.comWorker = x
                     }
                 }
+                
             }
            
             // 개인 업무
@@ -474,9 +485,20 @@ extension HomeManagerTodayWorkVC {
             }
             
             
-           
         }
-        
+        if segValue == 0{
+            if isNoNonCompleteCoData,isNoCompleteCoData{
+                tableView.isHidden = true
+            }else{
+                tableView.isHidden = false
+            }
+        }else{
+            if isNoPerData{
+                tableView.isHidden = true
+            }else{
+                tableView.isHidden = false
+            }
+        }
         tableView.reloadData()
         print(result)
         dismissIndicator()
