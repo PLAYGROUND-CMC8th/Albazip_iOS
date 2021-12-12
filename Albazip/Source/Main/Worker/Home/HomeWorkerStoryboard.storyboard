@@ -79,6 +79,19 @@
                                     <action selector="indexChanged:" destination="cqj-qk-cH2" eventType="valueChanged" id="aW0-zQ-k01"/>
                                 </connections>
                             </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgAlert36Px" translatesAutoresizingMaskIntoConstraints="NO" id="THu-rg-skW">
+                                <rect key="frame" x="169.66666666666666" y="388" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="6Wl-un-MeI"/>
+                                    <constraint firstAttribute="width" constant="36" id="KVs-9o-nwl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가된 업무가 없어요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9z-MJ-NjU">
+                                <rect key="frame" x="127" y="438" width="121" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" red="0.63529413940000001" green="0.63921570780000003" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="mnw-zZ-PeE">
                                 <rect key="frame" x="0.0" y="168" width="375" height="610"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -89,17 +102,21 @@
                         <constraints>
                             <constraint firstItem="mnw-zZ-PeE" firstAttribute="trailing" secondItem="NyR-i6-0jE" secondAttribute="trailing" id="Akc-UW-fk8"/>
                             <constraint firstItem="JBi-DY-6xz" firstAttribute="top" secondItem="NyR-i6-0jE" secondAttribute="top" constant="21" id="Fbg-OP-G6S"/>
+                            <constraint firstItem="B9z-MJ-NjU" firstAttribute="top" secondItem="THu-rg-skW" secondAttribute="bottom" constant="14" id="JdB-4f-ADa"/>
                             <constraint firstItem="mnw-zZ-PeE" firstAttribute="top" secondItem="KSZ-qK-rTw" secondAttribute="bottom" id="KIr-xm-T8m"/>
                             <constraint firstItem="VV9-pK-jXq" firstAttribute="top" secondItem="JBi-DY-6xz" secondAttribute="bottom" constant="14" id="MNU-I9-zKv"/>
+                            <constraint firstItem="B9z-MJ-NjU" firstAttribute="centerX" secondItem="THu-rg-skW" secondAttribute="centerX" id="N38-fJ-6hm"/>
                             <constraint firstAttribute="trailing" secondItem="VV9-pK-jXq" secondAttribute="trailing" id="WHL-xG-Ogt"/>
                             <constraint firstItem="NyR-i6-0jE" firstAttribute="trailing" secondItem="KSZ-qK-rTw" secondAttribute="trailing" constant="24" id="fCV-Aq-RA7"/>
                             <constraint firstItem="KSZ-qK-rTw" firstAttribute="top" secondItem="VV9-pK-jXq" secondAttribute="bottom" constant="24" id="nMB-F5-q5i"/>
                             <constraint firstItem="KSZ-qK-rTw" firstAttribute="leading" secondItem="NyR-i6-0jE" secondAttribute="leading" constant="24" id="nYs-qE-QtM"/>
                             <constraint firstItem="NyR-i6-0jE" firstAttribute="bottom" secondItem="mnw-zZ-PeE" secondAttribute="bottom" id="nsR-Uz-x2w"/>
                             <constraint firstItem="VV9-pK-jXq" firstAttribute="leading" secondItem="qgn-S8-HOj" secondAttribute="leading" id="oez-bg-Y2P"/>
+                            <constraint firstItem="THu-rg-skW" firstAttribute="centerY" secondItem="qgn-S8-HOj" secondAttribute="centerY" id="pU6-W4-thD"/>
                             <constraint firstItem="JBi-DY-6xz" firstAttribute="centerX" secondItem="qgn-S8-HOj" secondAttribute="centerX" id="rz3-aP-TyB"/>
                             <constraint firstItem="R6r-1d-MTO" firstAttribute="centerY" secondItem="JBi-DY-6xz" secondAttribute="centerY" id="s9X-Y5-gat"/>
                             <constraint firstItem="R6r-1d-MTO" firstAttribute="leading" secondItem="NyR-i6-0jE" secondAttribute="leading" constant="24" id="vcV-BR-TFs"/>
+                            <constraint firstItem="THu-rg-skW" firstAttribute="centerX" secondItem="qgn-S8-HOj" secondAttribute="centerX" id="xLH-Js-amJ"/>
                             <constraint firstItem="mnw-zZ-PeE" firstAttribute="leading" secondItem="NyR-i6-0jE" secondAttribute="leading" id="xVu-B9-uY2"/>
                         </constraints>
                     </view>
@@ -110,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kB6-oj-k7M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="-158"/>
+            <point key="canvasLocation" x="973.60000000000002" y="-158.12807881773401"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="B6m-R5-MKz">
@@ -514,6 +531,7 @@
         <image name="icQrScan24Px" width="24" height="24"/>
         <image name="icX24Px" width="24" height="24"/>
         <image name="iconCheck56Px" width="56" height="56"/>
+        <image name="imgAlert36Px" width="36" height="36"/>
         <image name="imgReadyPx" width="68" height="68"/>
         <image name="qrScanArea" width="309" height="310"/>
         <systemColor name="systemBackgroundColor">

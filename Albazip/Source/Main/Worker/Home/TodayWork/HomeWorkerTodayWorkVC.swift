@@ -121,9 +121,19 @@ class HomeWorkerTodayWorkVC: UIViewController{
         switch segment.selectedSegmentIndex {
             case 0:
                 segValue = 0
+                if isNoNonCompleteCoData,isNoCompleteCoData{
+                    tableView.isHidden = true
+                }else{
+                    tableView.isHidden = false
+                }
                 tableView.reloadData()
             case 1:
                 segValue = 1
+                if isNoNonCompletePerData,isNoCompletePerData{
+                    tableView.isHidden = true
+                }else{
+                    tableView.isHidden = false
+                }
                 tableView.reloadData()
             default:
                 break;
@@ -555,7 +565,19 @@ extension HomeWorkerTodayWorkVC {
             
         }
         
-        
+        if segValue == 0{
+            if isNoNonCompleteCoData,isNoCompleteCoData{
+                tableView.isHidden = true
+            }else{
+                tableView.isHidden = false
+            }
+        }else{
+            if isNoNonCompletePerData,isNoCompletePerData{
+                tableView.isHidden = true
+            }else{
+                tableView.isHidden = false
+            }
+        }
         /*
         homeWorkerData = result.data
         if let data = homeWorkerData{
