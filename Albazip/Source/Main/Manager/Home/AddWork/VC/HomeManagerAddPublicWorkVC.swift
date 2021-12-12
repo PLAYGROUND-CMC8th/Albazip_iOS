@@ -13,6 +13,7 @@ class HomeManagerAddPublicWorkVC: UIViewController{
     @IBOutlet var tableView: UITableView!
     // Datamanager
     lazy var dataManager: HomeManagerAddPublicWorkDatamanager = HomeManagerAddPublicWorkDatamanager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -24,7 +25,6 @@ class HomeManagerAddPublicWorkVC: UIViewController{
     }
     //MARK:- View Setup
     func setUI(){
-        
         self.dismissKeyboardWhenTappedAround()
     }
     func setupTableView() {
@@ -69,6 +69,7 @@ class HomeManagerAddPublicWorkVC: UIViewController{
         //self.navigationController?.popViewController(animated: true)
  */
     }
+    
 }
 //MARK:- Table View Data Source
 
@@ -96,6 +97,7 @@ extension HomeManagerAddPublicWorkVC: UITableViewDataSource, UITableViewDelegate
                 print(indexPath.row)
                 return cell
             }
+        
         default:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkList2TableViewCell") as? MyPageManagerWorkList2TableViewCell {
                 
@@ -118,6 +120,7 @@ extension HomeManagerAddPublicWorkVC: UITableViewDataSource, UITableViewDelegate
             return 124
         case totalList.count+1:
             return 60
+        
         default:
             
         return 110
