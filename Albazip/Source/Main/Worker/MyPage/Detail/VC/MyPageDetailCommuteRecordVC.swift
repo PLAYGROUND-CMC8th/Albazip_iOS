@@ -135,17 +135,7 @@ extension MyPageDetailCommuteRecordVC: UITableViewDataSource,UITableViewDelegate
                 if let data = commuteData{
                     //날짜
                     cell.dateLabel.text = "\(data[indexPath.row].year!).\(data[indexPath.row].month!).\(data[indexPath.row].day!)"
-                    //출퇴근 기록
-                    if let start = data[indexPath.row].real_start_time{
-                        cell.startTime.text = start.insertTime
-                    }else{
-                        cell.startTime.text = ""
-                    }
-                    if let end = data[indexPath.row].real_end_time{
-                        cell.endTime.text = end.insertTime
-                    }else{
-                        cell.endTime.text = ""
-                    }
+                    
                     
                     //출근 지각일때!
                     if data[indexPath.row].start_late ?? 0  == 1{ // 지각일 때
@@ -158,11 +148,27 @@ extension MyPageDetailCommuteRecordVC: UITableViewDataSource,UITableViewDelegate
                     
                     //퇴근 지각일때!
                     if data[indexPath.row].end_late ?? 0  == 1{ // 지각일 때
-                        cell.endFlagView.image = #imageLiteral(resourceName: "716")
-                        cell.endTitle.textColor = #colorLiteral(red: 0.1198061183, green: 0.7442358136, blue: 0.306361407, alpha: 1)
+                        cell.endFlagView.image =  #imageLiteral(resourceName: "lateFlag")
+                        cell.endTitle.textColor = #colorLiteral(red: 0.9833402038, green: 0.2258323729, blue: 0.01172234025, alpha: 1)
                     }else{
                         cell.endFlagView.image = #imageLiteral(resourceName: "716")
                         cell.endTitle.textColor = #colorLiteral(red: 0.1198061183, green: 0.7442358136, blue: 0.306361407, alpha: 1)
+                    }
+                    
+                    //출퇴근 기록
+                    if let start = data[indexPath.row].real_start_time{
+                        cell.startTime.text = start.insertTime
+                    }else{
+                        cell.startTime.text = "기록 없음"
+                        cell.startFlagView.image = #imageLiteral(resourceName: "flagGray")
+                        cell.startTitle.textColor = #colorLiteral(red: 0.6273875237, green: 0.6274954677, blue: 0.6273732781, alpha: 1)
+                    }
+                    if let end = data[indexPath.row].real_end_time{
+                        cell.endTime.text = end.insertTime
+                    }else{
+                        cell.endTime.text = "기록 없음"
+                        cell.endFlagView.image = #imageLiteral(resourceName: "flagGray")
+                        cell.endTitle.textColor = #colorLiteral(red: 0.6273875237, green: 0.6274954677, blue: 0.6273732781, alpha: 1)
                     }
                 }
                 print(indexPath.row)
