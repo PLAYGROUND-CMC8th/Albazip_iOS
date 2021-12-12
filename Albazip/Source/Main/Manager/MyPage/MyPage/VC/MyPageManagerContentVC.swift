@@ -131,8 +131,10 @@ extension MyPageManagerContentVC: UITableViewDataSource, MyPageManagerNoWorkerDe
         }else{
             switch indexPath.row {
             case 0:
-                return 578
-            
+                if let x = contentData{
+                    return CGFloat(100 + 149 * (Int((x.count - 1) / 3) + 1))
+                }
+               return 100
             default:
                 return 100
             }
