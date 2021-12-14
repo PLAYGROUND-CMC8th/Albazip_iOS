@@ -10,6 +10,8 @@ class HomeManagerAddPublicWorkVC: UIViewController{
     var totalCount = 0
     var totalList = [WorkList]()
     var taskList = [TaskLists]()
+    var isFirstKeyboardSHow = true
+    var footer = UIView()
     @IBOutlet var tableView: UITableView!
     // Datamanager
     lazy var dataManager: HomeManagerAddPublicWorkDatamanager = HomeManagerAddPublicWorkDatamanager()
@@ -26,6 +28,7 @@ class HomeManagerAddPublicWorkVC: UIViewController{
     //MARK:- View Setup
     func setUI(){
         self.dismissKeyboardWhenTappedAround()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     func setupTableView() {
         
@@ -58,18 +61,41 @@ class HomeManagerAddPublicWorkVC: UIViewController{
         }
         showIndicator()
         dataManager.postHomeManagerAddPublicWork(HomeManagerAddPublicWorkRequest(coTaskList: taskList), delegate: self)
-        /*
-        //api 호출
-         
-        let data = MyPageManagerAddWorkerInfo.shared
-        let input = MyPageManagerAddWorkerRequest(rank: data.rank!, title: data.title!, startTime: data.startTime!, endTime: data.endTime!,  workDays: data.workDays!, breakTime: data.breakTime!, salary: data.salary!, salaryType: data.salaryType!, taskLists: taskList)
-        print(input)
-        dataManager.postAddWorker(input, vc: self)
-        showIndicator()
-        //self.navigationController?.popViewController(animated: true)
- */
+        
     }
-    
+    @objc internal func keyboardWillShow(_ notification : Notification?) -> Void {
+            print("키보드 올림")
+            var _kbSize:CGSize!
+                
+            if let info = notification?.userInfo {
+
+                let frameEndUserInfoKey = UIResponder.keyboardFrameEndUserInfoKey
+                    
+                    //  Getting UIKeyboardSize.
+                if let kbFrame = info[frameEndUserInfoKey] as? CGRect {
+                        
+                let screenSize = UIScreen.main.bounds
+                        
+                let intersectRect = kbFrame.intersection(screenSize)
+                        
+                if intersectRect.isNull {
+                    _kbSize = CGSize(width: screenSize.size.width, height: 0)
+                } else{
+                    _kbSize = intersectRect.size
+                }
+                    print("Your Keyboard Size \(_kbSize)")
+                    if isFirstKeyboardSHow{
+                        
+                        footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: _kbSize.height))
+                        tableView.tableFooterView = footer
+                        tableView.reloadData()
+                        isFirstKeyboardSHow = false
+                        
+                    }
+                    
+                }
+            }
+        }
 }
 //MARK:- Table View Data Source
 
