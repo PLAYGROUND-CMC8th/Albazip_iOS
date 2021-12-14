@@ -63,36 +63,25 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
     @IBAction func btn1_1(_ sender: Any) {
         btn1_1.isSelected.toggle()
         if btn1_1.isSelected{
-            btn1_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btnSelected(btn: btn1_1)
             //직원
-            btn1_2.isEnabled = false
-            btn1_2.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            btnDisabled(btn: btn1_2)
             //매니저, 점장
-            btn2_3.isEnabled = false
-            btn2_3.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
-            btn2_4.isEnabled = false
-            btn2_4.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            btnDisabled(btn: btn2_3)
+            btnDisabled(btn: btn2_4)
             //교대근무
-            btn4_8.isEnabled = false
-            btn4_8.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
-            
+            btnDisabled(btn: btn4_8)
             myPageManagerSelectInfo1Delegate?.setRank(text: "알바생")
         }else{
-            btn1_1.backgroundColor = .none
-            btn1_2.isEnabled = true
-            btn1_2.backgroundColor = .none
-            
+            btnUnSelected(btn: btn1_1)
+            btnUnSelected(btn: btn1_2)
             //직원
-            btn1_2.isEnabled = true
-            btn1_2.backgroundColor = .none
+            btnUnSelected(btn: btn1_2)
             //매니저, 점장
-            btn2_3.isEnabled = true
-            btn2_3.backgroundColor = .none
-            btn2_4.isEnabled = true
-            btn2_4.backgroundColor = .none
+            btnUnSelected(btn: btn2_3)
+            btnUnSelected(btn: btn2_4)
             //교대근무
-            btn4_8.isEnabled = true
-            btn4_8.backgroundColor = .none
+            btnUnSelected(btn: btn4_8)
         }
         checkButton()
     }
@@ -104,24 +93,22 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
     @IBAction func btn2_1(_ sender: Any) {
         btn2_1.isSelected.toggle()
         if btn2_1.isSelected{
-            btn2_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn2_2.backgroundColor = .none
-            btn2_2.isSelected = false
+            btnSelected(btn: btn2_1)
+            btnUnSelected(btn: btn2_2)
             myPageManagerSelectInfo1Delegate?.setTitle3(text: "평일")
         }else{
-            btn2_1.backgroundColor = .none
+            btnUnSelected(btn: btn2_1)
         }
         checkButton()
     }
     @IBAction func btn2_2(_ sender: Any) {
         btn2_2.isSelected.toggle()
         if btn2_2.isSelected{
-            btn2_2.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn2_1.backgroundColor = .none
-            btn2_1.isSelected = false
+            btnSelected(btn: btn2_2)
+            btnUnSelected(btn: btn2_1)
             myPageManagerSelectInfo1Delegate?.setTitle3(text: "주말")
         }else{
-            btn2_2.backgroundColor = .none
+            btnUnSelected(btn: btn2_2)
         }
         checkButton()
     }
@@ -137,42 +124,36 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
     @IBAction func btn3_1(_ sender: Any) {
         btn3_1.isSelected.toggle()
         if btn3_1.isSelected{
-            btn3_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn3_2.backgroundColor = .none
-            btn3_2.isSelected = false
-            btn3_3.backgroundColor = .none
-            btn3_3.isSelected = false
+            btnSelected(btn: btn3_1)
+            btnUnSelected(btn: btn3_2)
+            btnUnSelected(btn: btn3_3)
             myPageManagerSelectInfo1Delegate?.setTitle(text: "오픈")
         }else{
-            btn3_1.backgroundColor = .none
+            btnUnSelected(btn: btn3_1)
         }
         checkButton()
     }
     @IBAction func btn3_2(_ sender: Any) {
         btn3_2.isSelected.toggle()
         if btn3_2.isSelected{
-            btn3_2.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn3_1.backgroundColor = .none
-            btn3_1.isSelected = false
-            btn3_3.backgroundColor = .none
-            btn3_3.isSelected = false
+            btnSelected(btn: btn3_2)
+            btnUnSelected(btn: btn3_1)
+            btnUnSelected(btn: btn3_3)
             myPageManagerSelectInfo1Delegate?.setTitle(text: "미들")
         }else{
-            btn3_2.backgroundColor = .none
+            btnUnSelected(btn: btn3_2)
         }
         checkButton()
     }
     @IBAction func btn3_3(_ sender: Any) {
         btn3_3.isSelected.toggle()
         if btn3_3.isSelected{
-            btn3_3.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn3_2.backgroundColor = .none
-            btn3_2.isSelected = false
-            btn3_1.backgroundColor = .none
-            btn3_1.isSelected = false
+            btnSelected(btn: btn3_3)
+            btnUnSelected(btn: btn3_2)
+            btnUnSelected(btn: btn3_1)
             myPageManagerSelectInfo1Delegate?.setTitle(text: "마감")
         }else{
-            btn3_3.backgroundColor = .none
+            btnUnSelected(btn: btn3_3)
         }
         checkButton()
     }
@@ -185,16 +166,14 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
         btn4_1.isSelected.toggle()
         if isNoDaySelected(){  //토글했는데 아무것도 선택 안되어있으면,,,접어주자
             myPageManagerSelectInfo1Delegate?.closeView()
-            btn4_8.isEnabled = true
-            btn4_8.backgroundColor = .none
+            btnUnSelected(btn: btn4_8)
         }
         if btn4_1.isSelected{
-            btn4_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn4_8.isEnabled = false
-            btn4_8.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            btnSelected(btn: btn4_1)
+            btnDisabled(btn: btn4_8)
             myPageManagerSelectInfo1Delegate?.addDay(text: "월")
         }else{
-            btn4_1.backgroundColor = .none
+            btnUnSelected(btn: btn4_1)
             myPageManagerSelectInfo1Delegate?.deleteDay(text: "월")
         }
         checkButton()
@@ -206,16 +185,14 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
         btn4_2.isSelected.toggle()
         if isNoDaySelected(){  //토글했는데 아무것도 선택 안되어있으면,,,접어주자
             myPageManagerSelectInfo1Delegate?.closeView()
-            btn4_8.isEnabled = true
-            btn4_8.backgroundColor = .none
+            btnUnSelected(btn: btn4_8)
         }
         if btn4_2.isSelected{
-            btn4_2.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn4_8.isEnabled = false
-            btn4_8.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            btnSelected(btn: btn4_2)
+            btnDisabled(btn: btn4_8)
             myPageManagerSelectInfo1Delegate?.addDay(text: "화")
         }else{
-            btn4_2.backgroundColor = .none
+            btnUnSelected(btn: btn4_2)
             myPageManagerSelectInfo1Delegate?.deleteDay(text: "화")
         }
         checkButton()
@@ -227,16 +204,14 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
         btn4_3.isSelected.toggle()
         if isNoDaySelected(){  //토글했는데 아무것도 선택 안되어있으면,,,접어주자
             myPageManagerSelectInfo1Delegate?.closeView()
-            btn4_8.isEnabled = true
-            btn4_8.backgroundColor = .none
+            btnUnSelected(btn: btn4_8)
         }
         if btn4_3.isSelected{
-            btn4_3.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn4_8.isEnabled = false
-            btn4_8.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            btnSelected(btn: btn4_3)
+            btnDisabled(btn: btn4_8)
             myPageManagerSelectInfo1Delegate?.addDay(text: "수")
         }else{
-            btn4_3.backgroundColor = .none
+            btnUnSelected(btn: btn4_3)
             myPageManagerSelectInfo1Delegate?.deleteDay(text: "수")
         }
         checkButton()
@@ -248,16 +223,14 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
         btn4_4.isSelected.toggle()
         if isNoDaySelected(){  //토글했는데 아무것도 선택 안되어있으면,,,접어주자
             myPageManagerSelectInfo1Delegate?.closeView()
-            btn4_8.isEnabled = true
-            btn4_8.backgroundColor = .none
+            btnUnSelected(btn: btn4_8)
         }
         if btn4_4.isSelected{
-            btn4_4.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn4_8.isEnabled = false
-            btn4_8.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            btnSelected(btn: btn4_4)
+            btnDisabled(btn: btn4_8)
             myPageManagerSelectInfo1Delegate?.addDay(text: "목")
         }else{
-            btn4_4.backgroundColor = .none
+            btnUnSelected(btn: btn4_4)
             myPageManagerSelectInfo1Delegate?.deleteDay(text: "목")
         }
         checkButton()
@@ -269,16 +242,14 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
         btn4_5.isSelected.toggle()
         if isNoDaySelected(){  //토글했는데 아무것도 선택 안되어있으면,,,접어주자
             myPageManagerSelectInfo1Delegate?.closeView()
-            btn4_8.isEnabled = true
-            btn4_8.backgroundColor = .none
+            btnUnSelected(btn: btn4_8)
         }
         if btn4_5.isSelected{
-            btn4_5.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn4_8.isEnabled = false
-            btn4_8.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            btnSelected(btn: btn4_5)
+            btnDisabled(btn: btn4_8)
             myPageManagerSelectInfo1Delegate?.addDay(text: "금")
         }else{
-            btn4_5.backgroundColor = .none
+            btnUnSelected(btn: btn4_5)
             myPageManagerSelectInfo1Delegate?.deleteDay(text: "금")
         }
         checkButton()
@@ -290,16 +261,14 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
         btn4_6.isSelected.toggle()
         if isNoDaySelected(){  //토글했는데 아무것도 선택 안되어있으면,,,접어주자
             myPageManagerSelectInfo1Delegate?.closeView()
-            btn4_8.isEnabled = true
-            btn4_8.backgroundColor = .none
+            btnUnSelected(btn: btn4_8)
         }
         if btn4_6.isSelected{
-            btn4_6.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn4_8.isEnabled = false
-            btn4_8.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            btnSelected(btn: btn4_6)
+            btnDisabled(btn: btn4_8)
             myPageManagerSelectInfo1Delegate?.addDay(text: "토")
         }else{
-            btn4_6.backgroundColor = .none
+            btnUnSelected(btn: btn4_6)
             myPageManagerSelectInfo1Delegate?.deleteDay(text: "토")
         }
         checkButton()
@@ -312,16 +281,14 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
        
         if isNoDaySelected(){  //토글했는데 아무것도 선택 안되어있으면,,,접어주자
             myPageManagerSelectInfo1Delegate?.closeView()
-            btn4_8.isEnabled = true
-            btn4_8.backgroundColor = .none
+            btnUnSelected(btn: btn4_8)
         }
         if btn4_7.isSelected{
-            btn4_7.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn4_8.isEnabled = false
-            btn4_8.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            btnSelected(btn: btn4_7)
+            btnDisabled(btn: btn4_8)
             myPageManagerSelectInfo1Delegate?.addDay(text: "일")
         }else{
-            btn4_7.backgroundColor = .none
+            btnUnSelected(btn: btn4_7)
             myPageManagerSelectInfo1Delegate?.deleteDay(text: "일")
         }
         checkButton()
@@ -385,93 +352,87 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
     func setCell(data:MyPageManagerEditWorkerData ){
         // 직급
         if data.rank == "알바생"{
-            btn1_1.isSelected = true
-            btn1_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btnSelected(btn : btn1_1)
             //직원
-            btn1_2.isEnabled = false
-            btn1_2.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            btnDisabled(btn:  btn1_2)
             //매니저, 점장
-            btn2_3.isEnabled = false
-            btn2_3.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
-            btn2_4.isEnabled = false
-            btn2_4.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+            btnDisabled(btn:  btn2_3)
+            btnDisabled(btn:  btn2_4)
             //교대근무
-            btn4_8.isEnabled = false
-            btn4_8.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
-            
-            //myPageManagerSelectInfo1Delegate?.setRank(text: "알바생")
+            btnDisabled(btn:  btn4_8)
         }
         //포지션
         if data.title.contains("오픈"){
-            btn3_1.isSelected = true
-            btn3_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn3_2.backgroundColor = .none
-            btn3_2.isSelected = false
-            btn3_3.backgroundColor = .none
-            btn3_3.isSelected = false
-            //myPageManagerSelectInfo1Delegate?.setTitle(text: "오픈")
+            btnSelected(btn : btn3_1)
+            btnUnSelected(btn : btn3_2)
+            btnUnSelected(btn : btn3_3)
         }else if data.title.contains("미들"){
-            btn3_2.isSelected = true
-            btn3_2.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn3_1.backgroundColor = .none
-            btn3_1.isSelected = false
-            btn3_3.backgroundColor = .none
-            btn3_3.isSelected = false
-            //myPageManagerSelectInfo1Delegate?.setTitle(text: "미들")
+            btnSelected(btn : btn3_2)
+            btnUnSelected(btn : btn3_2)
+            btnUnSelected(btn : btn3_3)
         }else{
-            btn3_3.isSelected = true
-            btn3_3.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn3_2.backgroundColor = .none
-            btn3_2.isSelected = false
-            btn3_1.backgroundColor = .none
-            btn3_1.isSelected = false
-            //myPageManagerSelectInfo1Delegate?.setTitle(text: "마감")
+            btnSelected(btn : btn3_3)
+            btnUnSelected(btn : btn3_2)
+            btnUnSelected(btn : btn3_1)
         }
         
         if data.title.contains("평일"){
-            btn2_1.isSelected = true
-            btn2_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn2_2.backgroundColor = .none
-            btn2_2.isSelected = false
+            btnSelected(btn : btn2_1)
+            btnUnSelected(btn : btn2_2)
         }else{
-            btn2_2.isSelected = true
-            btn2_2.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            btn2_1.backgroundColor = .none
-            btn2_1.isSelected = false
+            btnSelected(btn : btn2_2)
+            btnUnSelected(btn : btn2_1)
         }
         
         
         if data.workDay.contains("월"){
-            btn4_1.isSelected = true
-            btn4_1.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btnSelected(btn : btn4_1)
         }
         if data.workDay.contains("화"){
-            btn4_2.isSelected = true
-            btn4_2.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btnSelected(btn : btn4_2)
         }
         if data.workDay.contains("수"){
-            btn4_3.isSelected = true
-            btn4_3.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btnSelected(btn : btn4_3)
         }
-        
         if data.workDay.contains("목"){
-            btn4_4.isSelected = true
-            btn4_4.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btnSelected(btn : btn4_4)
         }
         if data.workDay.contains("금"){
-            btn4_5.isSelected = true
-            btn4_5.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btnSelected(btn : btn4_5)
         }
         if data.workDay.contains("토"){
-            btn4_6.isSelected = true
-            btn4_6.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+            btnSelected(btn : btn4_6)
         }
         if data.workDay.contains("일"){
-            btn4_7.isSelected = true
-            btn4_7.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
-            //myPageManagerSelectInfo1Delegate?.addDay(text: "일")
+            btnSelected(btn : btn4_7)
         }
-        btn4_8.isEnabled = false
-        btn4_8.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+        btnDisabled(btn: btn4_8)
+    }
+    
+    //Disabled 버튼
+    func btnDisabled(btn : UIButton){
+        btn.setTitleColor(#colorLiteral(red: 0.4304383695, green: 0.4354898334, blue: 0.4353147745, alpha: 1), for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+        btn.borderColor =  #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+        btn.isEnabled = false
+        btn.isSelected = false
+    }
+    
+    //Selected 버튼
+    func btnSelected(btn : UIButton){
+        btn.setTitleColor(#colorLiteral(red: 0.203897506, green: 0.2039385736, blue: 0.2081941962, alpha: 1), for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+        btn.borderColor =  #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+        btn.isSelected = true
+        btn.isEnabled = true
+    }
+    
+    //UnSelected 버튼
+    func btnUnSelected(btn : UIButton){
+        btn.setTitleColor(#colorLiteral(red: 0.4304383695, green: 0.4354898334, blue: 0.4353147745, alpha: 1), for: .normal)
+        btn.backgroundColor = .none
+        btn.borderColor =  #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+        btn.isSelected = false
+        btn.isEnabled = true
     }
 }
