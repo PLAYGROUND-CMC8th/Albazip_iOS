@@ -22,7 +22,7 @@
                         <rect key="frame" x="24" y="6" width="327" height="62"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8M-jZ-f0O">
-                                <rect key="frame" x="294" y="14" width="17" height="17"/>
+                                <rect key="frame" x="294" y="5.6666666666666661" width="17" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="XfE-0j-Mfp"/>
                                     <constraint firstAttribute="width" constant="17" id="nac-ma-NRO"/>
@@ -32,14 +32,14 @@
                                     <action selector="btnPin:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="exR-27-SAV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfa-KL-uQ1">
-                                <rect key="frame" x="24" y="36" width="27" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfa-KL-uQ1">
+                                <rect key="frame" x="24" y="19" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                 <color key="textColor" red="0.63921570780000003" green="0.63921570780000003" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1f-Cp-YLO">
-                                <rect key="frame" x="24" y="14" width="254" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1f-Cp-YLO">
+                                <rect key="frame" x="24" y="14" width="254" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -84,7 +84,7 @@
                 <outlet property="subLabel" destination="Hfa-KL-uQ1" id="Fgj-Og-ua6"/>
                 <outlet property="titleLabel" destination="U1f-Cp-YLO" id="bAi-WS-PvA"/>
             </connections>
-            <point key="canvasLocation" x="455" y="149"/>
+            <point key="canvasLocation" x="453.60000000000002" y="148.52216748768473"/>
         </tableViewCell>
     </objects>
     <resources>
