@@ -17,6 +17,7 @@ class RegisterSelectYearVC: UIViewController{
     
     var date = "2000"
     
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet var cornerView: UIView!
     @IBOutlet var picker: UIPickerView!
     var delegate: YearModalDelegate?
@@ -28,6 +29,8 @@ class RegisterSelectYearVC: UIViewController{
         // Do any additional setup after loading the view.
         setPickerView()
         cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     func setPickerView() {
         
@@ -48,7 +51,10 @@ class RegisterSelectYearVC: UIViewController{
         delegate?.modalDismiss()
         self.dismiss(animated: true, completion: nil)
     }
-    
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        delegate?.modalDismiss()
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension RegisterSelectYearVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {

@@ -16,6 +16,7 @@ protocol ModalDelegate {
 class RegisterSelectStoreTypeVC: UIViewController{
     var modalDelegate : ModalDelegate?
     
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet var view1: UIView!
     @IBOutlet var view2: UIView!
     @IBOutlet var view3: UIView!
@@ -44,6 +45,9 @@ class RegisterSelectStoreTypeVC: UIViewController{
         
         let tapGestureRecognizer5 = UITapGestureRecognizer(target: self, action: #selector(view5Tapped))
         view5.addGestureRecognizer(tapGestureRecognizer5)
+        
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     @objc func view1Tapped(sender: UITapGestureRecognizer) {
         view1.backgroundColor = #colorLiteral(red: 0.9994661212, green: 0.979791224, blue: 0.9194086194, alpha: 1)
@@ -75,5 +79,8 @@ class RegisterSelectStoreTypeVC: UIViewController{
         modalDelegate?.textFieldData(data: text)
         self.dismiss(animated: true, completion: nil)
     }
-    
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+            modalDelegate?.modalDismiss()
+            self.dismiss(animated: true, completion: nil)
+    }
 }

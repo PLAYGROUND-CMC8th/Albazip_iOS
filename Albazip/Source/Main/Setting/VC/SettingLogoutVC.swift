@@ -12,9 +12,12 @@ protocol SettingLogoutDelegate{
 
 import Foundation
 class SettingLogoutVC: UIViewController{
+    @IBOutlet var backgroundView: UIView!
     var delegate: SettingLogoutDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     @IBAction func btnLogout(_ sender: Any) {
         self.delegate?.modalDismiss()
@@ -32,5 +35,8 @@ class SettingLogoutVC: UIViewController{
         self.delegate?.modalDismiss()
         self.dismiss(animated: true, completion: nil)
     }
-    
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        self.delegate?.modalDismiss()
+        self.dismiss(animated: true, completion: nil)
+    }
 }

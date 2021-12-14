@@ -374,6 +374,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="KC0-Xz-zaJ" id="qXk-KF-cov"/>
                         <outlet property="cornerView" destination="oZf-9J-3ae" id="bfn-nL-fBb"/>
                         <outlet property="imageBorder1" destination="Zth-P6-Ox0" id="43p-Nq-aZS"/>
                         <outlet property="imageBorder2" destination="H5K-Oe-fcd" id="FKo-QL-BYh"/>
@@ -1040,6 +1041,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="4pD-rQ-QDT" id="BBU-At-Esz"/>
                         <outlet property="cornerView" destination="mN7-pg-5Es" id="n5x-iy-J67"/>
                     </connections>
                 </viewController>

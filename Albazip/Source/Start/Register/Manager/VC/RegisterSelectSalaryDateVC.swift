@@ -17,6 +17,7 @@ protocol SalaryModalDelegate {
 class RegisterSelectSalaryDateVC: UIViewController{
     
     
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet var cornerView: UIView!
     @IBOutlet var pickerView: UIPickerView!
     
@@ -33,6 +34,9 @@ class RegisterSelectSalaryDateVC: UIViewController{
         setDelegate()
         
         cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     
     func setDelegate() {
@@ -50,7 +54,10 @@ class RegisterSelectSalaryDateVC: UIViewController{
         salaryModalDelegate?.modalDismiss()
         self.dismiss(animated: true, completion: nil)
     }
-    
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        salaryModalDelegate?.modalDismiss()
+            self.dismiss(animated: true, completion: nil)
+    }
     
 }
 extension RegisterSelectSalaryDateVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {

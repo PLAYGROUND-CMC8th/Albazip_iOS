@@ -13,6 +13,7 @@ protocol SelectProfileImageDelegate {
 }
 class MyPageManagerSelectProfileImageVC: UIViewController{
     
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet var mainImage: UIImageView!
     
     @IBOutlet var imageBorder1: UIImageView!
@@ -84,6 +85,8 @@ class MyPageManagerSelectProfileImageVC: UIViewController{
         imageBorder4.isHidden = true
         imageBorder5.isHidden = true
         cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     func changeImage(index: Int){
         mainImage.image = imageArray[index]
@@ -177,7 +180,10 @@ class MyPageManagerSelectProfileImageVC: UIViewController{
             dataManager.postMyPageProfileImageDefault(MyPageProfileImageDefaultRequest(defaultImage: imageDefaultPost[selectedImageIndex]),vc: self)
         }
     }
-    
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        selectProfileImageDelegate?.imageModalDismiss()
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 // MARK:- 이미지 피커 컨트롤러 델리게이트 메소드
 extension MyPageManagerSelectProfileImageVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

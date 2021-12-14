@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 class MyPageWorkerSelectProfileImageVC: UIViewController{
     
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet var mainImage: UIImageView!
     @IBOutlet var imageBorder1: UIImageView!
     @IBOutlet var imageBorder2: UIImageView!
@@ -80,6 +81,8 @@ class MyPageWorkerSelectProfileImageVC: UIViewController{
         imageBorder5.isHidden = true
         cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         self.navigationController?.isNavigationBarHidden = true
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
         
     }
     override func didReceiveMemoryWarning() {
@@ -183,6 +186,11 @@ class MyPageWorkerSelectProfileImageVC: UIViewController{
             dataManager.postMyPageProfileImageDefault(MyPageProfileImageDefaultRequest(defaultImage: imageDefaultPost[selectedImageIndex]),vc: self)
         }
         
+    }
+    
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        selectProfileImageDelegate?.imageModalDismiss()
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

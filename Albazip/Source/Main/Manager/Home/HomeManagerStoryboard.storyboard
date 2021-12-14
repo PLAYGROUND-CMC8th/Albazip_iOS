@@ -1211,6 +1211,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="Oyp-r1-NFt" id="84B-Mz-2wA"/>
                         <outlet property="cornorView" destination="j3l-y0-ujI" id="3B1-Mg-F2I"/>
                     </connections>
                 </viewController>
@@ -1569,6 +1570,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="Wjz-tU-3UE" id="ZLK-Tc-6yJ"/>
                         <outlet property="cornorView" destination="ZJ9-SE-cXe" id="VDE-HP-csb"/>
                     </connections>
                 </viewController>

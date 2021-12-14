@@ -13,6 +13,7 @@ class HomeManagerTodayWorkDeleteVC: UIViewController {
     var cellIndex: Int?
     var delegate : HomeManagerTodayWorkDeleteDelegate?
     @IBOutlet var cornorView: UIView!
+    @IBOutlet var backgroundView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
@@ -21,6 +22,8 @@ class HomeManagerTodayWorkDeleteVC: UIViewController {
         window?.addSubview(transparentView)
         
         cornorView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     @IBAction func btnCancel(_ sender: Any) {
         transparentView.isHidden = true
@@ -31,5 +34,8 @@ class HomeManagerTodayWorkDeleteVC: UIViewController {
         delegate?.deletePublicWork(index: cellIndex!)
         self.dismiss(animated: true, completion: nil)
     }
-    
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        transparentView.isHidden = true
+        self.dismiss(animated: true, completion: nil)
+    }
 }

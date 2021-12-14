@@ -106,6 +106,9 @@
                             <constraint firstItem="kQg-bH-kRp" firstAttribute="bottom" secondItem="FMj-RX-pls" secondAttribute="bottom" id="ot8-mu-K15"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="eRc-Tx-GB0" id="6hH-VO-ObN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Eg-SG-38n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -16,6 +16,7 @@ protocol MyPageManagerWorkerPositionDeleteAlertDelegate {
 
 class MyPageManagerWorkerPositionDeleteVC: UIViewController{
     
+    @IBOutlet var backgroundView: UIView!
     var myPageManagerWorkerPositionDeleteAlertDelegate : MyPageManagerWorkerPositionDeleteAlertDelegate?
     var transparentView = UIView()
     var positionId = 0
@@ -28,6 +29,8 @@ class MyPageManagerWorkerPositionDeleteVC: UIViewController{
         transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         transparentView.frame = self.view.frame
         window?.addSubview(transparentView)
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     @IBAction func btnCancel(_ sender: Any) {
         myPageManagerWorkerPositionDeleteAlertDelegate?.modalDismiss()
@@ -49,6 +52,11 @@ class MyPageManagerWorkerPositionDeleteVC: UIViewController{
         }
     */
 }
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        myPageManagerWorkerPositionDeleteAlertDelegate?.modalDismiss()
+        self.transparentView.isHidden = true
+        self.dismiss(animated: true)
+    }
 }
 extension MyPageManagerWorkerPositionDeleteVC {
     func didSuccessMyPageDeletePosition(result: MyPageStopWorkResponse) {

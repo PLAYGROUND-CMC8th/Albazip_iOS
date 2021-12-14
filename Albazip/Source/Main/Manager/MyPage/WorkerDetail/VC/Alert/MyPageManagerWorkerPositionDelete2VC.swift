@@ -12,6 +12,7 @@ protocol MyPageManagerPositionDelete2VCDelegate {
 }
 
 class MyPageManagerWorkerPositionDelete2VC: UIViewController {
+    @IBOutlet var backgroundView: UIView!
     var positionId = 0
     var delegate: MyPageManagerPositionDelete2VCDelegate?
     lazy var dataManager: MyPageDeletePositionDatamanager = MyPageDeletePositionDatamanager()
@@ -23,6 +24,8 @@ class MyPageManagerWorkerPositionDelete2VC: UIViewController {
         transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         transparentView.frame = self.view.frame
         window?.addSubview(transparentView)
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     @IBAction func btnCancel(_ sender: Any) {
         print("퇴사 취소")
@@ -36,6 +39,10 @@ class MyPageManagerWorkerPositionDelete2VC: UIViewController {
         //myPageManagerWorkerPositionDeleteAlertDelegate?.modalDismiss()
         showIndicator()
         dataManager.deletePosition(positionId: positionId, vc: self)
+    }
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        self.transparentView.isHidden = true
+        dismiss(animated: true, completion: nil)
     }
 }
 extension MyPageManagerWorkerPositionDelete2VC {

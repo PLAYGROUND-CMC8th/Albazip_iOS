@@ -691,6 +691,9 @@
                             <constraint firstItem="zOb-WA-maH" firstAttribute="trailing" secondItem="qqE-sQ-qmf" secondAttribute="trailing" id="aeI-Wh-WEj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="q60-7e-FfA" id="Izz-ld-EHO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKs-fl-Nae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -886,6 +889,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="Fa7-jX-9b4" id="0q8-vd-QFY"/>
                         <outlet property="titleLabel" destination="YhF-Ej-4p0" id="yJt-IG-7hK"/>
                     </connections>
                 </viewController>
@@ -1009,6 +1013,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="gAs-rC-o8H" id="FeW-Ha-hp7"/>
                         <outlet property="titleLabel" destination="Ovu-s8-uXe" id="MIS-Z1-ygZ"/>
                     </connections>
                 </viewController>
@@ -1238,6 +1243,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="bUB-JB-hp2" id="18F-YM-PmS"/>
                         <outlet property="cornerView" destination="ww8-1M-DBB" id="cKE-fS-6us"/>
                         <outlet property="imageBorder1" destination="4A8-gU-zyR" id="hg3-lh-HPM"/>
                         <outlet property="imageBorder2" destination="86s-OP-Bc3" id="AZn-Ew-jfb"/>
@@ -1370,6 +1376,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="DxO-Ba-rJ4" id="XOo-fj-rYd"/>
                         <outlet property="cornerView" destination="mCy-da-Hrv" id="mUy-MW-ro6"/>
                         <outlet property="view1" destination="a9k-XR-E0V" id="j2L-aq-6na"/>
                         <outlet property="view2" destination="pqy-4p-7oE" id="1Fj-VO-pkP"/>
@@ -1508,6 +1515,9 @@
                             <constraint firstItem="I4n-e3-Fsq" firstAttribute="leading" secondItem="vmN-uG-An7" secondAttribute="leading" id="ykW-R1-3L6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="Tiz-ML-oOX" id="dli-My-bze"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLM-bo-5k2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

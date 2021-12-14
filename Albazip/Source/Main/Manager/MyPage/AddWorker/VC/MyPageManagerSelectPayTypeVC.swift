@@ -14,6 +14,7 @@ protocol SelectPayTypeDelegate {
 }
 //MyPageManagerPayTypeModalDelegate
 class MyPageManagerSelectPayTypeVC: UIViewController{
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet var view1: UIView!
     @IBOutlet var view2: UIView!
     @IBOutlet var view3: UIView!
@@ -35,6 +36,9 @@ class MyPageManagerSelectPayTypeVC: UIViewController{
         
         let tapGestureRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(view3Tapped))
         view3.addGestureRecognizer(tapGestureRecognizer3)
+        
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     @objc func view1Tapped(sender: UITapGestureRecognizer) {
         view1.backgroundColor = #colorLiteral(red: 0.9994661212, green: 0.979791224, blue: 0.9194086194, alpha: 1)
@@ -55,5 +59,9 @@ class MyPageManagerSelectPayTypeVC: UIViewController{
         selectPayTypeDelegate?.modalDismiss()
         selectPayTypeDelegate?.textFieldData(data: text)
         self.dismiss(animated: true, completion: nil)
+    }
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        selectPayTypeDelegate?.modalDismiss()
+            self.dismiss(animated: true, completion: nil)
     }
 }

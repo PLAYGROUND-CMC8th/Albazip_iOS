@@ -9,6 +9,7 @@ protocol CommunityManagerNoticeAlertDeleteDelegate {
 }
 import Foundation
 class CommunityManagerNoticeAlertDeleteVC: UIViewController{
+    @IBOutlet var backgroundView: UIView!
     var transparentView = UIView()
     var modalDelegate : ModalDelegate?
     var noticeId = -1
@@ -25,6 +26,8 @@ class CommunityManagerNoticeAlertDeleteVC: UIViewController{
         window?.addSubview(transparentView)
         
         cornorView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     
     @IBAction func btnCancel(_ sender: Any) {
@@ -35,7 +38,10 @@ class CommunityManagerNoticeAlertDeleteVC: UIViewController{
         showIndicator()
         dataManager.getCommunityManagerNoticeDelete(noticeId: noticeId, vc: self)
     }
-    
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        transparentView.isHidden = true
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension CommunityManagerNoticeAlertDeleteVC{

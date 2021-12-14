@@ -8,6 +8,7 @@
 import Foundation
 class MyPageManagerWorkerDirectExitVC:UIViewController{
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var backgroundView: UIView!
     var name = ""
     var transparentView = UIView()
     // 이전 뷰에서 받아올 정보
@@ -23,6 +24,8 @@ class MyPageManagerWorkerDirectExitVC:UIViewController{
         transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         transparentView.frame = self.view.frame
         window?.addSubview(transparentView)
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     @IBAction func btnCancel(_ sender: Any) {
         self.transparentView.isHidden = true
@@ -32,6 +35,10 @@ class MyPageManagerWorkerDirectExitVC:UIViewController{
     @IBAction func btnNext(_ sender: Any) {
         showIndicator()
          datamanager.deleteMyPageStopWork( positionId: positionId, vc: self)
+    }
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        self.transparentView.isHidden = true
+        self.dismiss(animated: true)
     }
 }
 extension MyPageManagerWorkerDirectExitVC {

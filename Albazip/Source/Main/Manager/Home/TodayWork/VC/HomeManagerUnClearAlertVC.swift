@@ -13,12 +13,15 @@ class HomeManagerUnClearAlertVC: UIViewController{
     var taskId = -1
     var delegate: CheckCompleteWorkAlertDelegate?
     @IBOutlet var cornorView: UIView!
+    @IBOutlet var backgroundView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         transparentView.frame = self.view.frame
         window?.addSubview(transparentView)
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     @IBAction func btnCancel(_ sender: Any) {
         self.transparentView.isHidden = true
@@ -28,5 +31,9 @@ class HomeManagerUnClearAlertVC: UIViewController{
         self.transparentView.isHidden = true
         self.delegate?.readyToUnCkeckWork(taskId: taskId)
         self.dismiss(animated: true)
+    }
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        self.transparentView.isHidden = true
+            self.dismiss(animated: true, completion: nil)
     }
 }

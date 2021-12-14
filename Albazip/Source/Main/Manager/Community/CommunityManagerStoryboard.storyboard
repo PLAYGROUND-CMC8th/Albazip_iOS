@@ -835,6 +835,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="H6I-zs-tMW" id="QUe-qi-2dW"/>
                         <outlet property="cornorView" destination="pId-wN-qOv" id="2Am-Iy-aEI"/>
                     </connections>
                 </viewController>

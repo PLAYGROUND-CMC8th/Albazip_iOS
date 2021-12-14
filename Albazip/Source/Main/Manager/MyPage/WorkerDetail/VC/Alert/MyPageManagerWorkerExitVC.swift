@@ -10,6 +10,7 @@ protocol MyPageManagerWorkerExitDelegate {
 }
 import Foundation
 class MyPageManagerWorkerExitVC: UIViewController{
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet var titleLabel: UILabel!
     var name = ""
     var transparentView = UIView()
@@ -26,6 +27,8 @@ class MyPageManagerWorkerExitVC: UIViewController{
         transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         transparentView.frame = self.view.frame
         window?.addSubview(transparentView)
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     //퇴사 거절 api
     @IBAction func btnCancel(_ sender: Any) {
@@ -36,6 +39,10 @@ class MyPageManagerWorkerExitVC: UIViewController{
     @IBAction func btnNext(_ sender: Any) {
        showIndicator()
         datamanager.deleteMyPageStopWork( positionId: positionId, vc: self)
+    }
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        self.transparentView.isHidden = true
+        self.dismiss(animated: true)
     }
 }
 extension MyPageManagerWorkerExitVC {

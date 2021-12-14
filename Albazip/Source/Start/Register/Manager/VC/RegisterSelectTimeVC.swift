@@ -18,7 +18,7 @@ class RegisterSelectTimeVC: UIViewController{
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var pickerView: UIPickerView!
-   
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet var cornerView: UIView!
     @IBOutlet var pickerView2: UIPickerView!
     
@@ -59,6 +59,8 @@ class RegisterSelectTimeVC: UIViewController{
         pickerView2.dataSource = self
         titleLabel.text = titletext
         cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
+                backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
     }
     
    
@@ -78,7 +80,10 @@ class RegisterSelectTimeVC: UIViewController{
         self.dismiss(animated: true, completion: nil)
     }
     
-
+    @objc func backgroundViewTapped(sender: UITapGestureRecognizer) {
+        timeDateModalDelegate?.timeModalDismiss()
+            self.dismiss(animated: true, completion: nil)
+    }
    
 }
 extension RegisterSelectTimeVC: UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {

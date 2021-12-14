@@ -1078,6 +1078,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pxD-Ld-7dQ"/>
                     <connections>
+                        <outlet property="backgroundView" destination="hoc-vz-wW0" id="7kt-H1-Ebg"/>
                         <outlet property="cornerView" destination="xQ9-HH-Wfa" id="ov5-Fc-9wN"/>
                         <outlet property="view1" destination="L1Q-ht-dN7" id="OVP-wo-uZR"/>
                         <outlet property="view2" destination="j3U-7Y-zPG" id="weh-ed-aVq"/>
@@ -1209,6 +1210,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DHX-nO-cng"/>
                     <connections>
+                        <outlet property="backgroundView" destination="cwm-dl-pu3" id="LBS-vk-YGK"/>
                         <outlet property="cornerView" destination="le5-ov-bho" id="wMe-lP-BDS"/>
                         <outlet property="pickerView" destination="BfI-3Y-2bi" id="BmA-fm-WmT"/>
                     </connections>
@@ -1516,6 +1518,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="iaA-Z5-XcJ"/>
                     <connections>
+                        <outlet property="backgroundView" destination="Shi-Ed-glw" id="1rY-qd-43O"/>
                         <outlet property="cornerView" destination="WgG-Bb-JKb" id="ryD-Ot-iim"/>
                         <outlet property="pickerView" destination="Qh2-Sm-JO8" id="yei-Zs-Y2z"/>
                         <outlet property="pickerView2" destination="jN2-Ef-ShL" id="yaA-PO-qEp"/>

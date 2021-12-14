@@ -412,7 +412,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1m-du-xJB">
-                                <rect key="frame" x="0.0" y="617" width="375" height="161"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="195"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공지사항 메뉴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeM-Ci-ali">
                                         <rect key="frame" x="24" y="24" width="327" height="21.666666666666671"/>
@@ -459,8 +459,8 @@
                                     <constraint firstAttribute="width" constant="375" id="0mh-Gi-Ggt"/>
                                     <constraint firstAttribute="trailing" secondItem="wHF-Pp-kzo" secondAttribute="trailing" id="3cV-8N-u6h"/>
                                     <constraint firstAttribute="trailing" secondItem="YeM-Ci-ali" secondAttribute="trailing" constant="24" id="Ujr-oz-VVC"/>
-                                    <constraint firstAttribute="height" constant="161" id="Z3u-dR-chs"/>
-                                    <constraint firstAttribute="bottom" secondItem="wHF-Pp-kzo" secondAttribute="bottom" constant="36" id="jb0-cB-QB6"/>
+                                    <constraint firstAttribute="height" constant="195" id="Z3u-dR-chs"/>
+                                    <constraint firstAttribute="bottom" secondItem="wHF-Pp-kzo" secondAttribute="bottom" constant="70" id="jb0-cB-QB6"/>
                                     <constraint firstItem="YeM-Ci-ali" firstAttribute="leading" secondItem="X1m-du-xJB" secondAttribute="leading" constant="24" id="uES-cp-AAO"/>
                                     <constraint firstItem="wHF-Pp-kzo" firstAttribute="leading" secondItem="X1m-du-xJB" secondAttribute="leading" id="ush-9k-eq5"/>
                                     <constraint firstItem="YeM-Ci-ali" firstAttribute="top" secondItem="X1m-du-xJB" secondAttribute="top" constant="24" id="yoD-zJ-w4n"/>
@@ -476,7 +476,7 @@
                         <constraints>
                             <constraint firstItem="R0r-9j-pzw" firstAttribute="trailing" secondItem="X1m-du-xJB" secondAttribute="trailing" id="MR1-Ro-8x4"/>
                             <constraint firstItem="X1m-du-xJB" firstAttribute="leading" secondItem="oJO-IF-fpJ" secondAttribute="leading" id="Mr0-C9-TlH"/>
-                            <constraint firstItem="R0r-9j-pzw" firstAttribute="bottom" secondItem="X1m-du-xJB" secondAttribute="bottom" id="j14-E2-PrH"/>
+                            <constraint firstItem="R0r-9j-pzw" firstAttribute="bottom" secondItem="X1m-du-xJB" secondAttribute="bottom" constant="-34" id="j14-E2-PrH"/>
                         </constraints>
                     </view>
                     <connections>
@@ -487,7 +487,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ff-rg-RfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="-587"/>
+            <point key="canvasLocation" x="2028" y="-587.4384236453202"/>
         </scene>
         <!--Community Worker Notice Alert DetailVC-->
         <scene sceneID="xOk-37-e5f">

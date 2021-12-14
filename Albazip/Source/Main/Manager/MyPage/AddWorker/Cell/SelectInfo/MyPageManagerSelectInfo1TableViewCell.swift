@@ -368,7 +368,7 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
             btnUnSelected(btn : btn3_3)
         }else if data.title.contains("미들"){
             btnSelected(btn : btn3_2)
-            btnUnSelected(btn : btn3_2)
+            btnUnSelected(btn : btn3_1)
             btnUnSelected(btn : btn3_3)
         }else{
             btnSelected(btn : btn3_3)
