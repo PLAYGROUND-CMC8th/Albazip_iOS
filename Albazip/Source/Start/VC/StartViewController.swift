@@ -53,11 +53,11 @@ class StartViewController: UIViewController{
             self.navigationController?.pushViewController(nextVC, animated: true)
         }*/
     }
-    @IBAction func btnResetPassword(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: Bundle.main)
-        guard let nextVC = storyboard.instantiateViewController(identifier: "LoginResetPhoneVC") as? LoginResetPhoneVC else {return}
-        self.navigationController?.pushViewController(nextVC, animated: true)
-    }
+//    @IBAction func btnResetPassword(_ sender: Any) {
+//        let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: Bundle.main)
+//        guard let nextVC = storyboard.instantiateViewController(identifier: "LoginResetPhoneVC") as? LoginResetPhoneVC else {return}
+//        self.navigationController?.pushViewController(nextVC, animated: true)
+//    }
 }
 extension StartViewController {
     func didSuccessStartTokenCheck(result: StartTokenCheckResponse) {
