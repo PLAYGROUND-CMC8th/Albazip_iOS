@@ -1304,40 +1304,6 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="대표자명 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9KU-1M-0GK">
-                                <rect key="frame" x="36" y="270" width="303" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="Pli-nt-7xS"/>
-                                    <constraint firstAttribute="width" constant="303" id="xCC-Ba-j2D"/>
-                                </constraints>
-                                <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="join"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCheckedNormal" translatesAutoresizingMaskIntoConstraints="NO" id="PRl-yS-XDS">
-                                <rect key="frame" x="299" y="282" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="FSm-Ub-cGh"/>
-                                    <constraint firstAttribute="height" constant="24" id="bMS-ab-1gj"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표자명이 일치하지 않습니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rA-df-Lbc">
-                                <rect key="frame" x="44" y="326" width="145.33333333333334" height="15"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                <color key="textColor" systemColor="systemRedColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YJM-aM-66l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1345,22 +1311,15 @@
                             <constraint firstItem="tvL-t6-2l6" firstAttribute="top" secondItem="7hb-Xb-3x7" secondAttribute="bottom" constant="34" id="59W-Q8-36N"/>
                             <constraint firstItem="tvL-t6-2l6" firstAttribute="leading" secondItem="YJM-aM-66l" secondAttribute="leading" constant="36" id="Biz-gF-yfw"/>
                             <constraint firstAttribute="bottom" secondItem="Vn6-OJ-v1X" secondAttribute="bottom" constant="36" id="Cyd-fE-w9c"/>
-                            <constraint firstItem="9KU-1M-0GK" firstAttribute="top" secondItem="soI-Ih-pGw" secondAttribute="bottom" constant="11" id="F2g-jD-RQ4"/>
                             <constraint firstItem="YJM-aM-66l" firstAttribute="trailing" secondItem="soI-Ih-pGw" secondAttribute="trailing" constant="36" id="Lwc-Vy-7ah"/>
                             <constraint firstItem="soI-Ih-pGw" firstAttribute="leading" secondItem="YJM-aM-66l" secondAttribute="leading" constant="36" id="Nje-rb-F3w"/>
-                            <constraint firstItem="3rA-df-Lbc" firstAttribute="leading" secondItem="YJM-aM-66l" secondAttribute="leading" constant="44" id="Sac-pO-LJ1"/>
                             <constraint firstItem="Hp1-T7-AU2" firstAttribute="leading" secondItem="YJM-aM-66l" secondAttribute="leading" constant="36" id="W5r-3S-iyN"/>
-                            <constraint firstItem="YJM-aM-66l" firstAttribute="trailing" secondItem="PRl-yS-XDS" secondAttribute="trailing" constant="52" id="WEo-I3-Qnh"/>
                             <constraint firstItem="Vn6-OJ-v1X" firstAttribute="leading" secondItem="YJM-aM-66l" secondAttribute="leading" constant="24" id="Wii-ta-SLK"/>
-                            <constraint firstItem="9KU-1M-0GK" firstAttribute="trailing" secondItem="soI-Ih-pGw" secondAttribute="trailing" id="WlI-97-uYr"/>
                             <constraint firstItem="Hp1-T7-AU2" firstAttribute="top" secondItem="tvL-t6-2l6" secondAttribute="bottom" constant="36" id="b9W-oA-quR"/>
                             <constraint firstItem="soI-Ih-pGw" firstAttribute="top" secondItem="Hp1-T7-AU2" secondAttribute="bottom" constant="14" id="d1T-Wj-hBg"/>
                             <constraint firstItem="eEC-qM-yNQ" firstAttribute="top" secondItem="soI-Ih-pGw" secondAttribute="bottom" constant="7" id="dju-dI-Cly"/>
                             <constraint firstItem="7hb-Xb-3x7" firstAttribute="leading" secondItem="YJM-aM-66l" secondAttribute="leading" constant="19" id="eg3-h0-O5F"/>
                             <constraint firstItem="YJM-aM-66l" firstAttribute="trailing" secondItem="VAi-9I-78n" secondAttribute="trailing" constant="52" id="fIu-wf-hQe"/>
-                            <constraint firstItem="9KU-1M-0GK" firstAttribute="leading" secondItem="soI-Ih-pGw" secondAttribute="leading" id="fSt-Xz-zoO"/>
-                            <constraint firstItem="3rA-df-Lbc" firstAttribute="top" secondItem="9KU-1M-0GK" secondAttribute="bottom" constant="8" symbolic="YES" id="frr-Mf-2Sm"/>
-                            <constraint firstItem="PRl-yS-XDS" firstAttribute="centerY" secondItem="9KU-1M-0GK" secondAttribute="centerY" id="mLU-Oy-ajY"/>
                             <constraint firstItem="eEC-qM-yNQ" firstAttribute="leading" secondItem="YJM-aM-66l" secondAttribute="leading" constant="44" id="rwI-UY-Ntm"/>
                             <constraint firstItem="YJM-aM-66l" firstAttribute="trailing" secondItem="Vn6-OJ-v1X" secondAttribute="trailing" constant="24" id="s0k-yA-F6l"/>
                             <constraint firstItem="7hb-Xb-3x7" firstAttribute="top" secondItem="YJM-aM-66l" secondAttribute="top" constant="10" id="xtr-C4-2rl"/>
@@ -1370,10 +1329,7 @@
                     <connections>
                         <outlet property="btnNext" destination="Vn6-OJ-v1X" id="uph-TC-5uF"/>
                         <outlet property="checkImage1" destination="VAi-9I-78n" id="88n-N3-y6x"/>
-                        <outlet property="checkImage2" destination="PRl-yS-XDS" id="Rzs-H6-WXK"/>
                         <outlet property="errorLabel1" destination="eEC-qM-yNQ" id="fNz-yR-UuH"/>
-                        <outlet property="errorLabel2" destination="3rA-df-Lbc" id="Puh-Nh-RS0"/>
-                        <outlet property="personNameTextField" destination="9KU-1M-0GK" id="MEO-74-gh3"/>
                         <outlet property="registerNumberTextField" destination="soI-Ih-pGw" id="MGv-f6-MLk"/>
                     </connections>
                 </viewController>

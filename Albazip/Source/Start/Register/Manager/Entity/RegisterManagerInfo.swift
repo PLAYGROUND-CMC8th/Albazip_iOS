@@ -11,7 +11,7 @@ class RegisterManagerInfo{
     var name: String?
     var type: String?
     var address: String?
-    var ownerName: String?
+    var ownerName: String? //TODO: 수빈
     var registerNumber: String?
     var token: String?
     private init() { }
