@@ -131,6 +131,8 @@
 		C35DB311274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB310274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift */; };
 		C35DB313274C2E5F0011BC5A /* HomeManagerTodayWorkDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB312274C2E5F0011BC5A /* HomeManagerTodayWorkDetailResponse.swift */; };
 		C35DB315274C2E790011BC5A /* HomeManagerTodayWorkDetailDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB314274C2E790011BC5A /* HomeManagerTodayWorkDetailDatamanager.swift */; };
+		C36E624827F0AAF500E9B28C /* RegisterPhoneNumberCountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E624727F0AAF500E9B28C /* RegisterPhoneNumberCountDataManager.swift */; };
+		C36E624A27F0AD0600E9B28C /* RegisterPhoneNumberCountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E624927F0AD0600E9B28C /* RegisterPhoneNumberCountResponse.swift */; };
 		C37632C62765F41F0092F435 /* MyPageManagerWorkerDirectExitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37632C52765F41F0092F435 /* MyPageManagerWorkerDirectExitVC.swift */; };
 		C37B0B442728FF070017D179 /* OnboardingManagerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37B0B432728FF070017D179 /* OnboardingManagerStoryboard.storyboard */; };
 		C37B0B482728FF300017D179 /* OnboardingWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37B0B472728FF300017D179 /* OnboardingWorkerStoryboard.storyboard */; };
@@ -559,6 +561,8 @@
 		C35DB310274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDetailVC.swift; sourceTree = "<group>"; };
 		C35DB312274C2E5F0011BC5A /* HomeManagerTodayWorkDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDetailResponse.swift; sourceTree = "<group>"; };
 		C35DB314274C2E790011BC5A /* HomeManagerTodayWorkDetailDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDetailDatamanager.swift; sourceTree = "<group>"; };
+		C36E624727F0AAF500E9B28C /* RegisterPhoneNumberCountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPhoneNumberCountDataManager.swift; sourceTree = "<group>"; };
+		C36E624927F0AD0600E9B28C /* RegisterPhoneNumberCountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPhoneNumberCountResponse.swift; sourceTree = "<group>"; };
 		C37632C52765F41F0092F435 /* MyPageManagerWorkerDirectExitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerDirectExitVC.swift; sourceTree = "<group>"; };
 		C37B0B432728FF070017D179 /* OnboardingManagerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingManagerStoryboard.storyboard; sourceTree = "<group>"; };
 		C37B0B472728FF300017D179 /* OnboardingWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingWorkerStoryboard.storyboard; sourceTree = "<group>"; };
@@ -1485,6 +1489,7 @@
 				C37B0B56272972720017D179 /* RegisterResponse.swift */,
 				C37B0B5A272978F80017D179 /* RegisterBasicInfo.swift */,
 				C38CA0BC272F9CC200EA7BB3 /* RegisterPhoneNumberDuplicateResponse.swift */,
+				C36E624927F0AD0600E9B28C /* RegisterPhoneNumberCountResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1494,6 +1499,7 @@
 			children = (
 				C37B0B542729724E0017D179 /* RegisterDataManager.swift */,
 				C38CA0BA272F9C5D00EA7BB3 /* RegisterPhoneNumberDuplicateDataManager.swift */,
+				C36E624727F0AAF500E9B28C /* RegisterPhoneNumberCountDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -3156,6 +3162,8 @@
 				C34972FE2751372E009EFCD1 /* CommunityManagerNoticeDeleteResponse.swift in Sources */,
 				C32E4A7A274DB5A80015463F /* CommunityWorkerNoticeDetailTableViewCell.swift in Sources */,
 				C39083F12729B559006223CB /* OnboardingCollectionViewCell.swift in Sources */,
+				C36E624A27F0AD0600E9B28C /* RegisterPhoneNumberCountResponse.swift in Sources */,
+				C36E624827F0AAF500E9B28C /* RegisterPhoneNumberCountDataManager.swift in Sources */,
 				C3B93384273BFA220056E381 /* SettingNoticeVC.swift in Sources */,
 				C3AC1F85274D1B920007AA95 /* CommunityWorkerNoticeVC.swift in Sources */,
 				C33485FB27480D38000E2D14 /* HomeWorkerPublicWorkTableViewCell.swift in Sources */,

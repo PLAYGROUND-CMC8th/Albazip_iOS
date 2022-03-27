@@ -33,6 +33,7 @@ class RegisterPhoneNumberVC: UIViewController, UITextFieldDelegate{
     
     // Datamanager
     lazy var dataManager: RegisterPhoneNumberDuplicateDataManager = RegisterPhoneNumberDuplicateDataManager()
+    lazy var dataManager2: RegisterPhoneNumberCountDataManager = RegisterPhoneNumberCountDataManager()
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -219,18 +220,32 @@ class RegisterPhoneNumberVC: UIViewController, UITextFieldDelegate{
     
 }
 
+//핸드폰 번호 중복 검사 api 응답
 extension RegisterPhoneNumberVC {
     func didSuccessRegisterPhoneNumberExist(_ result: RegisterPhoneNumberDuplicateResponse) {
-        if(!isReAuth){//인증버튼이면
-            phoneAuth(phoneNumber: currentNumber)
-            print(result.message)
-        }else{
-            phoneReAuth(phoneNumber: currentNumber)
-            print(result.message)
-        }
+        //핸드폰 인증 횟수 체크 api 호출
+        dataManager2.getRegisterPhoneNumberCountDataManager(vc: self, number: currentNumber)
     }
     
     func failedToRequestRegisterPhoneNumberExist(message: String) {
+        self.presentAlert(title: message)
+    }
+}
+//핸드폰 인증 횟수 체크 api 응답
+extension RegisterPhoneNumberVC {
+    func didSuccessRegisterPhoneNumberCount(_ result: RegisterPhoneNumberCountResponse) {
+        if(!isReAuth){//인증버튼이면
+            phoneAuth(phoneNumber: currentNumber)
+            self.showMessage(message: result.message, controller: self)
+        }else{
+            phoneReAuth(phoneNumber: currentNumber)
+            self.showMessage(message: result.message, controller: self)
+        }
+    }
+    func didOverRegisterPhoneNumberCount(_ result: RegisterPhoneNumberCountResponse) {
+        self.showMessage(message: result.message, controller: self)
+    }
+    func failedToRequestRegisterPhoneNumberCount(message: String) {
         self.presentAlert(title: message)
     }
 }
