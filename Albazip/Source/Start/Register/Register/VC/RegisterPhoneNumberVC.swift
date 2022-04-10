@@ -75,9 +75,6 @@ class RegisterPhoneNumberVC: UIViewController, UITextFieldDelegate{
             perform(#selector(getSetTime), with: nil, afterDelay: 1.0)
         }
         else if limitTime == 0{
-            //checkNumberTextField.isHidden = true
-            //btnReAuth.isHidden = true
-            //timerLabel.isHidden = true
             errorLabel.isHidden = false
             errorLabel.text = "인증번호가 입력시간이 초과되었습니다. 재발송 해주세요."
             isTimerWork = false
@@ -197,9 +194,7 @@ class RegisterPhoneNumberVC: UIViewController, UITextFieldDelegate{
     }
     
     // MARK: 텍스트 필드 포커스 시, 테두리색 변경
-    // 텍스트 필드의 편집을 시작할 때 호출
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        print("텍스트 필드의 편집이 시작됩니다.")
         if(textField == checkNumberTextField){
             checkNumberTextField.borderColor = .mainYellow
             phoneNumberTextField.borderColor = .lightGray
@@ -212,12 +207,10 @@ class RegisterPhoneNumberVC: UIViewController, UITextFieldDelegate{
         btnConfirm.setImage(#imageLiteral(resourceName: "btnActive"), for: .normal)
         return true
     }
-    // 텍스트 필드의 편집이 종료되었을 때 호출
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.borderColor = .lightGray
     }
-    
-    
 }
 
 //핸드폰 번호 중복 검사 api 응답
@@ -242,8 +235,9 @@ extension RegisterPhoneNumberVC {
             self.showMessage(message: result.message, controller: self)
         }
     }
+    // 인증 횟수 5회 초과
     func didOverRegisterPhoneNumberCount(_ result: RegisterPhoneNumberCountResponse) {
-        self.showMessage(message: result.message, controller: self)
+        self.presentAlert(title: "SMS 인증 요청 제한 횟수를 초과했습니다. 24시간 후에 다시 시도해 주세요.")
     }
     func failedToRequestRegisterPhoneNumberCount(message: String) {
         self.presentAlert(title: message)
