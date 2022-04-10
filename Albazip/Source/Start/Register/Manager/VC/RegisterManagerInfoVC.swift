@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import AnyFormatKit
+
 class RegisterManagerInfoVC: UIViewController{
     
     
@@ -39,32 +41,19 @@ class RegisterManagerInfoVC: UIViewController{
     @IBAction func btnNext(_ sender: Any) {
         let registerManagerInfo = RegisterManagerInfo.shared
         registerManagerInfo.registerNumber = registerNumberTextField.text!
-        registerManagerInfo.ownerName = "김수빈" //TODO: 수빈
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterMoreInfoVC") as? RegisterMoreInfoVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 extension RegisterManagerInfoVC: UITextFieldDelegate{
-    
-    // 텍스트 필드의 편집을 시작할 때 호출
+
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if(textField == registerNumberTextField){
             registerNumberTextField.borderColor = .mainYellow
         }
         return true
     }
-    // 텍스트 필드의 편집이 종료되었을 때 호출
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.borderColor = .lightGray
-        if(textField == registerNumberTextField){
-            //사업자 등록 확인 api 호출
-            if let text = registerNumberTextField.text{
-                dataManager1.getRegisterNumberExist(vc: self, number: text)
-            }
-            
-        }
-    }
-    // 텍스트 필드의 리턴키가 눌러졌을 때 호출
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         if(textField == registerNumberTextField){
@@ -75,8 +64,29 @@ extension RegisterManagerInfoVC: UITextFieldDelegate{
         }
         return true
     }
+    // 사업자 인증번호 입력 포맷 설정 "###-##-#####"
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return true
+        guard let text = textField.text else {
+            return false
+        }
+        let characterSet = CharacterSet(charactersIn: string)
+        if CharacterSet.decimalDigits.isSuperset(of: characterSet) == false {
+            return false
+        }
+
+        let formatter = DefaultTextInputFormatter(textPattern: "###-##-#####")
+        let result = formatter.formatInput(currentText: text, range: range, replacementString: string)
+        textField.text = result.formattedText
+        let position = textField.position(from: textField.beginningOfDocument, offset: result.caretBeginOffset)!
+        textField.selectedTextRange = textField.textRange(from: position, to: position)
+        
+        if (textField.text?.count == 12){
+            //사업자 등록 확인 api 호출
+            if let text = registerNumberTextField.text{
+                dataManager1.getRegisterNumberExist(vc: self, number: text)
+            }
+        }
+        return false
     }
 }
 

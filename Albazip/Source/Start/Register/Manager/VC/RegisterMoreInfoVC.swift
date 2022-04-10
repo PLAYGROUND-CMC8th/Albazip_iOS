@@ -352,7 +352,7 @@ class RegisterMoreInfoVC: UIViewController {
         //로그인화면에서 포지션 선택으로 온것인지 관리자 가입에서 온것인지 잘 판단해야할듯, => 둘다 토큰을 Userdault말고 RegisterBasicInfo에 저장하자!
         
         // api resquest 데이터
-        let input = RegisterManagerRequset(name: data.name!, type: data.type!, address: data.address!, ownerName: data.ownerName!, registerNumber: data.registerNumber!, startTime: removeStartTime, endTime: removeEndTime, breakTime: "0",holiday: holiday, payday: salaryTextField.text!)
+        let input = RegisterManagerRequset(name: data.name!, type: data.type!, address: data.address!, registerNumber: data.registerNumber!, startTime: removeStartTime, endTime: removeEndTime, breakTime: "0",holiday: holiday, payday: salaryTextField.text!)
         print(input)
         
         // api 통신

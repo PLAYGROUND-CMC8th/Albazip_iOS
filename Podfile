@@ -15,4 +15,5 @@ target 'Albazip' do
   pod 'MSPeekCollectionViewDelegateImplementation'
   pod 'Kingfisher', '~> 7.0'
   pod 'Firebase/Messaging'
+  pod 'AnyFormatKit'
 end
