@@ -220,6 +220,7 @@ class RegisterMoreInfoVC: UIViewController {
         btn.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
         btn.setTitleColor(#colorLiteral(red: 0.2038974464, green: 0.2039384246, blue: 0.2038920522, alpha: 1), for: .normal)
         btn.isSelected = true
+        btn.borderColor = #colorLiteral(red: 1, green: 0.8398586512, blue: 0.2317804694, alpha: 1)
     }
     
     func enableBtn(btn: UIButton){
@@ -227,6 +228,7 @@ class RegisterMoreInfoVC: UIViewController {
         btn.backgroundColor = .none
         btn.setTitleColor(#colorLiteral(red: 0.4352484345, green: 0.4353259802, blue: 0.4352382123, alpha: 1), for: .normal)
         btn.isSelected = false
+        btn.borderColor = #colorLiteral(red: 0.9245131612, green: 0.9296400547, blue: 0.9250692725, alpha: 1)
     }
     
     func disableBtn(btn: UIButton){
@@ -234,6 +236,7 @@ class RegisterMoreInfoVC: UIViewController {
         btn.backgroundColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
         btn.setTitleColor(#colorLiteral(red: 0.4352484345, green: 0.4353259802, blue: 0.4352382123, alpha: 1), for: .normal)
         btn.isSelected = false
+        btn.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
     }
     
     func checkBtn(){

@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.4.4)
   - AlamofireNetworkActivityIndicator (3.1.0):
     - Alamofire (~> 5.1)
+  - AnyFormatKit (2.5.2)
   - Firebase (8.8.0):
     - Firebase/Core (= 8.8.0)
   - Firebase/Auth (8.8.0):
@@ -119,6 +120,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireNetworkActivityIndicator
+  - AnyFormatKit
   - Firebase
   - Firebase/Auth
   - Firebase/Messaging
@@ -131,6 +133,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireNetworkActivityIndicator
+    - AnyFormatKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -152,6 +155,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
+  AnyFormatKit: b0dbb2a5f2fe7a0fc97f401f8a219a47ee63a335
   Firebase: 629510f1a9ddb235f3a7c5c8ceb23ba887f0f814
   FirebaseAnalytics: 5506ea8b867d8423485a84b4cd612d279f7b0b8a
   FirebaseAuth: bcf0adeff88bda5dcb3beeabe5760f1226ab7b2f
@@ -170,6 +174,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: a3e1887e4b0577981b75620a5858048796c972d1
+PODFILE CHECKSUM: 99a2d44bdfd6f748e9cc7c361d7f5a6959afb335
 
 COCOAPODS: 1.11.2
