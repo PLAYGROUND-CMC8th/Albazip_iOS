@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //MARK: 탭바 배경색 이슈 해결
+        if #available(iOS 15, *) {
+                    let appearance = UITabBarAppearance()
+                    let tabBar = UITabBar()
+                    appearance.configureWithOpaqueBackground()
+                    appearance.backgroundColor = .white
+                    tabBar.standardAppearance = appearance;
+                    UITabBar.appearance().scrollEdgeAppearance = appearance
+        }
         
         //MARK: Firebase 전화번호 인증 코드 추가
         FirebaseApp.configure()
@@ -68,34 +76,27 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
   func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     //completionHandler([.alert, .badge, .sound])
     let userInfo = notification.request.content.userInfo
-    print("userNotificationCenter1_1")
     // With swizzling disabled you must let Messaging know about the message, for Analytics
     Messaging.messaging().appDidReceiveMessage(userInfo)
 
     // ...
-    print("userNotificationCenter1_2")
     // Print full message.
-    print("userInfo: \(userInfo)")
 
     // Change this to your preferred presentation option
     completionHandler([.alert, .badge, .sound])
-    print("userNotificationCenter1_3")
   }
   
   func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
     let userInfo = response.notification.request.content.userInfo
 
     // ...
-    print("userNotificationCenter2_1")
     // With swizzling disabled you must let Messaging know about the message, for Analytics
     Messaging.messaging().appDidReceiveMessage(userInfo)
 
     // Print full message.
     print("userInfo: \(userInfo)")
 
-    print("userNotificationCenter2_2")
     completionHandler()
-    print("userNotificationCenter2_3")
   }
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable: Any],
@@ -104,7 +105,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
       // If you are receiving a notification message while your app is in the background,
       // this callback will not be fired till the user taps on the notification launching the application.
       // TODO: Handle data of notification
-        print("userNotificationCenter3_1")
       // With swizzling disabled you must let Messaging know about the message, for Analytics
       Messaging.messaging().appDidReceiveMessage(userInfo)
 
@@ -115,10 +115,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
       }*/
 
       // Print full message.
-        print("userInfo: \(userInfo)")
-        print("userNotificationCenter3_2")
       completionHandler(UIBackgroundFetchResult.newData)
-        print("userNotificationCenter3_3")
     }
 
 }
@@ -134,7 +131,6 @@ extension AppDelegate: MessagingDelegate {
       )
       // TODO: If necessary send token to application server.
       // Note: This callback is fired at each app startup and whenever a new token is generated.
-        print("messaging")
     }
 }
 
