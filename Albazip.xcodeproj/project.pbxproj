@@ -126,6 +126,8 @@
 		C35982C22737933200546F2C /* MyPageManagerAddWorkerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35982C12737933200546F2C /* MyPageManagerAddWorkerResponse.swift */; };
 		C35982C42737A0F300546F2C /* MyPageManagerAddWorkerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35982C32737A0F300546F2C /* MyPageManagerAddWorkerInfo.swift */; };
 		C35982C6273810E300546F2C /* MyPageManagerAddWorkerDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35982C5273810E300546F2C /* MyPageManagerAddWorkerDatamanager.swift */; };
+		C35A30EE283A747C008354E2 /* StoreClosedDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A30EC283A747C008354E2 /* StoreClosedDayCell.swift */; };
+		C35A30EF283A747C008354E2 /* StoreClosedDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C35A30ED283A747C008354E2 /* StoreClosedDayCell.xib */; };
 		C35DB30D274C17830011BC5A /* HomeManagerTodayWorkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB30C274C17830011BC5A /* HomeManagerTodayWorkResponse.swift */; };
 		C35DB30F274C191D0011BC5A /* HomeManagerTodayWorkDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB30E274C191D0011BC5A /* HomeManagerTodayWorkDatamanager.swift */; };
 		C35DB311274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DB310274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift */; };
@@ -556,6 +558,8 @@
 		C35982C12737933200546F2C /* MyPageManagerAddWorkerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerAddWorkerResponse.swift; sourceTree = "<group>"; };
 		C35982C32737A0F300546F2C /* MyPageManagerAddWorkerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerAddWorkerInfo.swift; sourceTree = "<group>"; };
 		C35982C5273810E300546F2C /* MyPageManagerAddWorkerDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerAddWorkerDatamanager.swift; sourceTree = "<group>"; };
+		C35A30EC283A747C008354E2 /* StoreClosedDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreClosedDayCell.swift; sourceTree = "<group>"; };
+		C35A30ED283A747C008354E2 /* StoreClosedDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreClosedDayCell.xib; sourceTree = "<group>"; };
 		C35DB30C274C17830011BC5A /* HomeManagerTodayWorkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkResponse.swift; sourceTree = "<group>"; };
 		C35DB30E274C191D0011BC5A /* HomeManagerTodayWorkDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDatamanager.swift; sourceTree = "<group>"; };
 		C35DB310274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTodayWorkDetailVC.swift; sourceTree = "<group>"; };
@@ -1750,6 +1754,8 @@
 			children = (
 				C39019BE271F246500BC2830 /* SearchCollectionViewCell.swift */,
 				C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */,
+				C35A30EC283A747C008354E2 /* StoreClosedDayCell.swift */,
+				C35A30ED283A747C008354E2 /* StoreClosedDayCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2886,6 +2892,7 @@
 				C30AFE7B2733CE4F0075CDE2 /* MyPageManagerSelectInfo2TableViewCell.xib in Resources */,
 				C33E00092731D80500D88267 /* MyPageWorkerWriteVC.xib in Resources */,
 				C37EBF3F271A9D7000DEC2CA /* RegisterStoryboard.storyboard in Resources */,
+				C35A30EF283A747C008354E2 /* StoreClosedDayCell.xib in Resources */,
 				C3A228B4274286B600187587 /* HomeWorkerWorkTableViewCell.xib in Resources */,
 				C3B933A8273C3DD00056E381 /* MyPageDetailClearWorkMiddleTableViewCell.xib in Resources */,
 				C34BCB452732D9DF0085ADB3 /* MyPageDetailClearWorkTableViewCell.xib in Resources */,
@@ -3233,6 +3240,7 @@
 				C3AD3B1E273963AA0030905C /* MyPageManagerWorkerInfoVC.swift in Sources */,
 				C32E4AA3274EA7BE0015463F /* CommunityManagerWriteTableViewCell.swift in Sources */,
 				C3EBC259274A5D210017BB85 /* HomeWorkerDatamanager.swift in Sources */,
+				C35A30EE283A747C008354E2 /* StoreClosedDayCell.swift in Sources */,
 				C3EBC25F274A9A610017BB85 /* HomeManagerDatamanager.swift in Sources */,
 				C37EBF43271ABE6D00DEC2CA /* LoginViewController.swift in Sources */,
 				C384424F27147E2900B84E8A /* IndicatorView.swift in Sources */,
