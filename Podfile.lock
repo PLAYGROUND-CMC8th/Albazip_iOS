@@ -115,6 +115,7 @@ PODS:
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
   - SnapKit (5.0.1)
+  - Then (2.7.0)
   - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
@@ -127,6 +128,7 @@ DEPENDENCIES:
   - Kingfisher (~> 7.0)
   - MSPeekCollectionViewDelegateImplementation
   - SnapKit
+  - Then
   - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
@@ -150,6 +152,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SnapKit
+    - Then
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
@@ -172,8 +175,9 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 99a2d44bdfd6f748e9cc7c361d7f5a6959afb335
+PODFILE CHECKSUM: f50da13fa85f7cc58be019df42dce29107738e57
 
 COCOAPODS: 1.11.2

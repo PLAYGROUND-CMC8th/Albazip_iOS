@@ -16,4 +16,5 @@ target 'Albazip' do
   pod 'Kingfisher', '~> 7.0'
   pod 'Firebase/Messaging'
   pod 'AnyFormatKit'
+  pod 'Then'
 end
