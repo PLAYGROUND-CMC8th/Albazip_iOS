@@ -364,7 +364,7 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 2{
-            return 1 + 1  //TODO: 수빈
+            return 2
         }else{
             return 1
         }
@@ -392,9 +392,116 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
                 return cell
             }
         }else if indexPath.section == 2{ // 2. 영업 시간
-            //TODO: 수빈
+            if indexPath.row == 0{
+                let cell = UITableViewCell()
+                let dayTotalView = UIView().then{
+                    $0.backgroundColor = UIColor(hex: 0xf8f8f8)
+                    $0.layer.cornerRadius = 10
+                }
+                let dayView = UIView().then{
+                    $0.backgroundColor = .clear
+                }
+                let dayTitle = UILabel().then{
+                    $0.textColor = UIColor(hex: 0x343434)
+                    $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+                    $0.text = "월"
+                }
+                let dayTime = UILabel().then{
+                    $0.textColor = UIColor(hex: 0x6f6f6f)
+                    $0.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+                    $0.text = "10:00 ~ 17:00"
+                    $0.textAlignment = .left
+                }
+                dayView.addSubview(dayTitle)
+                dayView.addSubview(dayTime)
+                
+                dayTitle.snp.makeConstraints {
+                    $0.centerY.equalToSuperview()
+                    $0.leading.equalToSuperview().inset(16)
+                }
+                dayTime.snp.makeConstraints {
+                    $0.centerY.equalToSuperview()
+                    $0.leading.equalTo(dayTitle.snp.trailing).offset(8)
+                }
+                
+                dayTotalView.addSubview(dayView)
+                dayView.snp.makeConstraints {
+                    $0.height.equalTo(40)
+                    $0.top.bottom.trailing.leading.equalToSuperview()
+                }
+                cell.addSubview(dayTotalView)
+                dayTotalView.snp.makeConstraints {
+                    $0.top.equalToSuperview()
+                    $0.trailing.leading.equalToSuperview().inset(36)
+                    $0.bottom.equalToSuperview().inset(12)
+                }
+                
+                return cell
+            }else{
+                let cell = UITableViewCell()
+                let hourBtn = UIButton().then{
+                    $0.setTitleColor(UIColor(hex: 0x6f6f6f), for: .normal)
+                    $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+                    $0.setTitle("영업시간 설정하기", for: .normal)
+                    $0.layer.cornerRadius = 10
+                    $0.layer.borderWidth = 1
+                    $0.layer.borderColor = UIColor(hex: 0xededed).cgColor
+                }
+                cell.addSubview(hourBtn)
+                hourBtn.snp.makeConstraints {
+                    $0.top.bottom.equalToSuperview()
+                    $0.trailing.leading.equalToSuperview().inset(36)
+                }
+                //TODO: addtarget
+                return cell
+            }
         }else if indexPath.section == 3{ // 3. 급여일
-            //TODO: 수빈
+            let cell = UITableViewCell()
+            let payDayBtn = UIButton().then{
+                $0.layer.cornerRadius = 10
+                $0.layer.borderWidth = 1
+                $0.layer.borderColor = UIColor(hex: 0xededed).cgColor
+            }
+            let everyMonth = UILabel().then{
+                $0.textColor = UIColor(hex: 0x6f6f6f)
+                $0.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+                $0.text = "매월"
+            }
+            let everyDay = UILabel().then{
+                $0.textColor = UIColor(hex: 0x6f6f6f)
+                $0.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+                $0.text = "일"
+            }
+            let payDayLabel = UILabel().then{
+                $0.textColor = UIColor(hex: 0xc8c8c8)
+                $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+                $0.text = "1 - 31"
+                $0.textAlignment = .right
+            }
+            cell.addSubview(payDayLabel)
+            cell.addSubview(everyMonth)
+            cell.addSubview(everyDay)
+            cell.addSubview(payDayBtn)
+            payDayLabel.snp.makeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.trailing.equalToSuperview().inset(74)
+                $0.leading.equalToSuperview().inset(92)
+            }
+            everyMonth.snp.makeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.leading.equalToSuperview().inset(52)
+            }
+            everyDay.snp.makeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.trailing.equalToSuperview().inset(52)
+            }
+            payDayBtn.snp.makeConstraints {
+                $0.top.bottom.equalToSuperview()
+                $0.trailing.leading.equalToSuperview().inset(36)
+            }
+            
+            //TODO: addtarget
+            return cell
         }
         return UITableViewCell()
     }
@@ -408,7 +515,11 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
         }else if indexPath.section == 1{
             return 90
         }else if indexPath.section == 2{
-            return 39 //TODO: 수빈 case 나눠야함
+            if indexPath.row == 0{
+                return tableView.estimatedRowHeight
+            }else{
+                return 39
+            }
         }else{
             return 45
         }
