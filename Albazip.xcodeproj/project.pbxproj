@@ -372,6 +372,9 @@
 		C3CFC308273EC957001B2EB6 /* MyPageManagerWorkerCodeDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC307273EC957001B2EB6 /* MyPageManagerWorkerCodeDatamanager.swift */; };
 		C3CFC30A273ED375001B2EB6 /* MyPageManagerWorkerWriteDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC309273ED375001B2EB6 /* MyPageManagerWorkerWriteDatamanager.swift */; };
 		C3CFC30C273ED3A6001B2EB6 /* MyPageManagerWorkerWriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC30B273ED3A6001B2EB6 /* MyPageManagerWorkerWriteResponse.swift */; };
+		C3D01DF32845100800CB6D6F /* RegisterStoreHourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D01DF22845100800CB6D6F /* RegisterStoreHourVC.swift */; };
+		C3D01DF6284512A400CB6D6F /* StoreHourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D01DF4284512A400CB6D6F /* StoreHourTableViewCell.swift */; };
+		C3D01DF7284512A400CB6D6F /* StoreHourTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D01DF5284512A400CB6D6F /* StoreHourTableViewCell.xib */; };
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
 		C3D69454273ACC8500BF540C /* SettingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */; };
 		C3D69457273ACDC500BF540C /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D69456273ACDC500BF540C /* SettingVC.swift */; };
@@ -811,6 +814,9 @@
 		C3CFC307273EC957001B2EB6 /* MyPageManagerWorkerCodeDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerCodeDatamanager.swift; sourceTree = "<group>"; };
 		C3CFC309273ED375001B2EB6 /* MyPageManagerWorkerWriteDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerWriteDatamanager.swift; sourceTree = "<group>"; };
 		C3CFC30B273ED3A6001B2EB6 /* MyPageManagerWorkerWriteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerWriteResponse.swift; sourceTree = "<group>"; };
+		C3D01DF22845100800CB6D6F /* RegisterStoreHourVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStoreHourVC.swift; sourceTree = "<group>"; };
+		C3D01DF4284512A400CB6D6F /* StoreHourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHourTableViewCell.swift; sourceTree = "<group>"; };
+		C3D01DF5284512A400CB6D6F /* StoreHourTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreHourTableViewCell.xib; sourceTree = "<group>"; };
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69456273ACDC500BF540C /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -1756,6 +1762,8 @@
 				C39019BF271F246500BC2830 /* SearchCollectionViewCell.xib */,
 				C35A30EC283A747C008354E2 /* StoreClosedDayCell.swift */,
 				C35A30ED283A747C008354E2 /* StoreClosedDayCell.xib */,
+				C3D01DF4284512A400CB6D6F /* StoreHourTableViewCell.swift */,
+				C3D01DF5284512A400CB6D6F /* StoreHourTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2709,6 +2717,7 @@
 				C3B022EE2726F28A00013988 /* RegisterSelectStoreTypeVC.swift */,
 				C3B022F02727193100013988 /* RegisterSelectSalaryDateVC.swift */,
 				C383476F272D1D7E00EE0D55 /* RegisterSelectTimeVC.swift */,
+				C3D01DF22845100800CB6D6F /* RegisterStoreHourVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -2870,6 +2879,7 @@
 				C33E00052731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib in Resources */,
 				C30AFE7F2733CE670075CDE2 /* MyPageManagerSelectInfo3TableViewCell.xib in Resources */,
 				C38786162769185A003B5070 /* InfoPlist.strings in Resources */,
+				C3D01DF7284512A400CB6D6F /* StoreHourTableViewCell.xib in Resources */,
 				C384427A2714948200B84E8A /* ScheduleManagerStoryboard.storyboard in Resources */,
 				C32E4AA4274EA7BE0015463F /* CommunityManagerWriteTableViewCell.xib in Resources */,
 				C3AC1F8A274D22760007AA95 /* CommunityWorkerNoticeTableViewCell.xib in Resources */,
@@ -3087,6 +3097,7 @@
 				C3B022E92726D91400013988 /* RegisterStoreInfoVC.swift in Sources */,
 				C34BCB402732CCD90085ADB3 /* MyPageDetailClearWorkVC.swift in Sources */,
 				C3AD3B2B2739786D0030905C /* MyPageManagerWorkerPositionDeleteTableViewCell.swift in Sources */,
+				C3D01DF32845100800CB6D6F /* RegisterStoreHourVC.swift in Sources */,
 				C398BFBA273FD860008E8BA5 /* HomeManagerAddWorkVC.swift in Sources */,
 				C30EC2DD272A4F7D00EEF218 /* RegisterNumberExistDataManager.swift in Sources */,
 				C38EDCED2746C82100564A17 /* MyPageWorkerStopWorkResponse.swift in Sources */,
@@ -3118,6 +3129,7 @@
 				C34BCB482732F1040085ADB3 /* MyPageDetailPublicWorkTableViewCell.swift in Sources */,
 				C33485FF2748103A000E2D14 /* HomeWorkerPublicWorkCompleteTableViewCell.swift in Sources */,
 				C3E9C8EA2741692E00B0139C /* MyPageDetailClearWorkDayDatamanager.swift in Sources */,
+				C3D01DF6284512A400CB6D6F /* StoreHourTableViewCell.swift in Sources */,
 				C3A228BD274298EC00187587 /* HomeWorkerAlarmVC.swift in Sources */,
 				C3E1FEA9272D8C5B00CE44C6 /* MyPageManagerContentVC.swift in Sources */,
 				C32E4A84274E52000015463F /* CommunityWorkerAlarmVC.swift in Sources */,

@@ -24,12 +24,13 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
     @IBOutlet var btnNext: UIButton!
     
     
-    //버튼 선택 정보 저장
+    // 버튼 선택 정보 저장
     var btnArray = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     // 순서) 연중 무휴, 월-금, 휴무일
     // enable:0, selected:1, disabled: 2
     
     var holiday = [String]()
+    var salaryDate = ""
     // Datamanager
     lazy var dataManager: RegisterManagerDataManager = RegisterManagerDataManager()
     
@@ -59,19 +60,19 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
         tableView.register(UINib(nibName: "StoreClosedDayCell", bundle: nil),
                            forCellReuseIdentifier: "StoreClosedDayCell")
     }
-//    @objc func textFieldDidChange(_ textField:UITextField) {
-//
-//        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectSalaryDateVC") as? RegisterSelectSalaryDateVC {
-//            vc.modalPresentationStyle = .overFullScreen
-//
-//            modalBgView.isHidden = false
-//            vc.salaryModalDelegate = self
-//
-//            self.present(vc, animated: true, completion: nil)
-//
-//        }
-//
-//    }
+    @objc func selectSalaryDate(_ sender: UIButton) {
+
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectSalaryDateVC") as? RegisterSelectSalaryDateVC {
+            vc.modalPresentationStyle = .overFullScreen
+
+            modalBgView.isHidden = false
+            vc.salaryModalDelegate = self
+
+            self.present(vc, animated: true, completion: nil)
+
+        }
+
+    }
     
 //    @objc func startTimeTextFieldDidChange(_ textField:UITextField) {
 //
@@ -233,6 +234,11 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
 //        checkValue()
         tableView.reloadData()
     }
+    
+    @objc func goStoreHourPage(_ sender: UIButton){
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterStoreHourVC") as? RegisterStoreHourVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 //    @IBAction func btnNext(_ sender: Any) {
 //        // 몇시간 몇분 시간 계산
 //        holiday.removeAll()
@@ -259,18 +265,18 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
 //        holiday.removeAll()
 //    }
 }
-//extension RegisterMoreInfoVC: SalaryModalDelegate {
+extension RegisterMoreInfoVC: SalaryModalDelegate {
     
-//    func modalDismiss() {
-//        modalBgView.isHidden = true
+    func modalDismiss() {
+        modalBgView.isHidden = true
 //        checkValue()
-//    }
-//
-//    func textFieldData(data: String) {
-//        salaryTextField.text = data
-//
-//    }
-//}
+    }
+
+    func textFieldData(data: String) {
+        salaryDate = data
+        tableView.reloadData()
+    }
+}
 
 //extension RegisterMoreInfoVC: TimeDateModalDelegate {
     
@@ -388,9 +394,9 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "StoreClosedDayCell") as? StoreClosedDayCell {
                 cell.selectionStyle = .none
                 cell.delegate = self
-                cell.setUp(btnArray: self.btnArray)
-                return cell
-            }
+                                cell.setUp(btnArray: self.btnArray)
+                                return cell
+                            }
         }else if indexPath.section == 2{ // 2. 영업 시간
             if indexPath.row == 0{
                 let cell = UITableViewCell()
@@ -447,12 +453,14 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
                     $0.layer.borderWidth = 1
                     $0.layer.borderColor = UIColor(hex: 0xededed).cgColor
                 }
-                cell.addSubview(hourBtn)
+                cell.contentView.addSubview(hourBtn)
                 hourBtn.snp.makeConstraints {
                     $0.top.bottom.equalToSuperview()
                     $0.trailing.leading.equalToSuperview().inset(36)
                 }
-                //TODO: addtarget
+                
+                hourBtn.addTarget(self, action: #selector(goStoreHourPage(_:)), for: .touchUpInside)
+                
                 return cell
             }
         }else if indexPath.section == 3{ // 3. 급여일
@@ -461,6 +469,7 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
                 $0.layer.cornerRadius = 10
                 $0.layer.borderWidth = 1
                 $0.layer.borderColor = UIColor(hex: 0xededed).cgColor
+                $0.tag = indexPath.row
             }
             let everyMonth = UILabel().then{
                 $0.textColor = UIColor(hex: 0x6f6f6f)
@@ -473,15 +482,21 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
                 $0.text = "일"
             }
             let payDayLabel = UILabel().then{
-                $0.textColor = UIColor(hex: 0xc8c8c8)
-                $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-                $0.text = "1 - 31"
+                if salaryDate == ""{
+                    $0.textColor = UIColor(hex: 0xc8c8c8)
+                    $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+                    $0.text = "1 - 31"
+                }else{
+                    $0.textColor = UIColor(hex: 0x343434)
+                    $0.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+                    $0.text = salaryDate
+                }
                 $0.textAlignment = .right
             }
             cell.addSubview(payDayLabel)
             cell.addSubview(everyMonth)
             cell.addSubview(everyDay)
-            cell.addSubview(payDayBtn)
+            cell.contentView.addSubview(payDayBtn)
             payDayLabel.snp.makeConstraints {
                 $0.centerY.equalToSuperview()
                 $0.trailing.equalToSuperview().inset(74)
@@ -500,7 +515,8 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
                 $0.trailing.leading.equalToSuperview().inset(36)
             }
             
-            //TODO: addtarget
+            payDayBtn.addTarget(self, action: #selector(selectSalaryDate(_:)), for: .touchUpInside)
+            
             return cell
         }
         return UITableViewCell()
