@@ -1,18 +1,18 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
       "filename" : "icDelete24Px.png",
-      "scale" : "1x"
-    },
-    {
-      "scale" : "2x",
-      "filename" : "icDelete24Px@2x.png",
+      "scale" : "1x",
       "idiom" : "universal"
     },
     {
-      "filename" : "icDelete24Px@3x.png",
+      "filename" : "icDelete24Px@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
       "scale" : "3x",
+      "filename" : "icDelete24Px@3x.png",
       "idiom" : "universal"
     }
   ],
