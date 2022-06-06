@@ -16,21 +16,36 @@ class RegisterStoreHourVC: UIViewController, StoreClosedDayDelegate{
     // 버튼 선택 정보 저장
     var btnArray = [0, 0, 0, 0, 0, 0, 0, 0]
     // 순서) 연중 무휴, 월-금, 휴무일
-    // enable:0, selected:1, disabled: 2
+    // enable:0, selected:1, disabled: 2, added:3
+    var workHourArr = [WorkHour]()
+    var openHour = "" // 오픈 시간
+    var closeHour = "" // 마감 시간
+    var diffHour = "" // 오픈시간 - 마감시간 차이
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setTableView()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        let registerManagerInfo = RegisterManagerInfo.shared
+        if let workHour = registerManagerInfo.workHour, let btnArr = registerManagerInfo.btnArr{
+            workHourArr = workHour
+            btnArray = btnArr
+            tableView.reloadData()
+        }
+    }
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     func setUI(){
     }
     @IBAction func btnNext(_ sender: Any) {
-
+        let registerManagerInfo = RegisterManagerInfo.shared
+        registerManagerInfo.workHour = workHourArr
+        registerManagerInfo.btnArr = btnArray
+        self.navigationController?.popViewController(animated: true)
     }
     
     func setTableView(){
@@ -43,15 +58,17 @@ class RegisterStoreHourVC: UIViewController, StoreClosedDayDelegate{
     func btnDayClicked(index: Int) {
         switch (index){
         case 0:
-            if btnArray[index] == 0{
-                btnArray[index] = 1
-                for i in 1...7{
-                    btnArray[i] = 2
-                }
-            }else if btnArray[index] == 1{
-                btnArray[index] = 0
-                for i in 1...7{
-                    btnArray[i] = 0
+            if !btnArray.contains(3){
+                if btnArray[index] == 0{
+                    btnArray[index] = 1
+                    for i in 1...7{
+                        btnArray[i] = 2
+                    }
+                }else if btnArray[index] == 1{
+                    btnArray[index] = 0
+                    for i in 1...7{
+                        btnArray[i] = 0
+                    }
                 }
             }
             break
@@ -69,6 +86,110 @@ class RegisterStoreHourVC: UIViewController, StoreClosedDayDelegate{
             break
         }
 //        checkValue()
+        tableView.reloadData()
+    }
+    
+
+    @objc func setOpenHour(_ sender: UIButton) {
+
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
+            vc.modalPresentationStyle = .overFullScreen
+
+//                modalBgView.isHidden = false
+            vc.timeDateModalDelegate = self
+            vc.whatDate = 0
+            vc.titletext = "매장 오픈 시간"
+            self.present(vc, animated: true, completion: nil)
+
+        }
+    }
+    @objc func setCloseHour(_ sender: UIButton) {
+
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
+            vc.modalPresentationStyle = .overFullScreen
+
+//                modalBgView.isHidden = false
+            vc.timeDateModalDelegate = self
+            vc.whatDate = 1
+            vc.titletext = "매장 마감 시간"
+            self.present(vc, animated: true, completion: nil)
+
+        }
+    }
+    
+    //시간차 구하기
+    func calculateTime(){
+        if openHour.count > 0, closeHour.count > 0{
+            let startTime = openHour.components(separatedBy: ":")
+            let endTime = closeHour.components(separatedBy: ":")
+            var startTotal = 0
+            var endTotal = 0
+            var hour = 0
+            var minute = 0
+
+            //마감시간이 오픈시간 값보다 작을 때 마감시간에 24더하고 빼주기
+            if Int(startTime[0])!>Int(endTime[0])!{
+                endTotal = (Int(endTime[0])! + 24) * 60 + Int(endTime[1])!
+            }else if Int(startTime[0])!==Int(endTime[0])! , Int(startTime[1])!>Int(endTime[1])!{
+                endTotal = (Int(endTime[0])! + 24) * 60 + Int(endTime[1])!
+            }
+            //오픈 시간보다 마감시간이 더 빠를때!
+            else{
+                endTotal = Int(endTime[0])! * 60 + Int(endTime[1])!
+            }
+            startTotal = Int(startTime[0])! * 60 + Int(startTime[1])!
+
+            let diffTime = endTotal - startTotal
+            hour = diffTime/60
+            minute = diffTime%60
+
+            diffHour = "\(hour)시간\(minute)분"
+        }
+    }
+    
+    @objc func addStoreHour(_ sender: UIButton){
+        for (i, value) in btnArray.enumerated(){
+            if i != 0, value == 1{
+                btnArray[i] = 3 // 선택된 버튼 비활성화
+                workHourArr.append(WorkHour(startTime: openHour, endTime: closeHour, day: dayOfIndex(index: i), number: i))
+            }else if i == 0, value == 1{
+                btnArray[i] = 3
+                for i in 1...7{
+                    btnArray[i] = 3
+                    workHourArr.append(WorkHour(startTime: openHour, endTime: closeHour, day: dayOfIndex(index: i), number: i))
+                }
+            }
+        }
+        // 월 - 금 순으로 정렬
+        workHourArr = workHourArr.sorted(by: {$0.number < $1.number})
+        // 값 초기화
+        openHour = ""
+        closeHour = ""
+        
+        tableView.reloadData()
+    }
+    
+    func dayOfIndex(index :Int) -> String{
+        switch (index){
+            case 1: return "월"
+            case 2 : return "화"
+            case 3 : return "수"
+            case 4: return "목"
+            case 5 : return "금"
+            case 6 : return "토"
+            case 7: return "일"
+            default: return ""
+        }
+    }
+    
+    @objc func deleteStoreHour(_ sender: UIButton){
+        for i in 1...7{
+            if (dayOfIndex(index: i) == workHourArr[sender.tag].day){
+                btnArray[i] = 0
+                break
+            }
+        }
+        workHourArr.remove(at: sender.tag)
         tableView.reloadData()
     }
 }
@@ -117,7 +238,7 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
         if section == 0{
             return 3
         }else{
-            return 1
+            return workHourArr.count
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -165,7 +286,7 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
                     $0.image = UIImage(named: "wave")
                 }
                 
-                let totalHouur = UILabel().then {
+                let totalHour = UILabel().then {
                     $0.textColor = UIColor(hex: 0xa3a3a3)
                     $0.text = "0시간"
                     $0.font = UIFont.systemFont(ofSize: 12, weight: .medium)
@@ -178,7 +299,7 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
                 
                 cell.contentView.addSubview(openBtn)
                 cell.contentView.addSubview(closeBtn)
-                cell.contentView.addSubview(totalHouur)
+                cell.contentView.addSubview(totalHour)
                 
                 openLabel.snp.makeConstraints {
                     $0.top.equalToSuperview().inset(30)
@@ -221,10 +342,29 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
                     $0.top.equalToSuperview().inset(16)
                 }
                 
-                totalHouur.snp.makeConstraints {
+                totalHour.snp.makeConstraints {
                     $0.top.equalTo(closeBtn.snp.bottom).offset(8)
                     $0.trailing.equalToSuperview().inset(24)
                 }
+                
+                openBtn.addTarget(self, action: #selector(setOpenHour(_:)), for: .touchUpInside)
+                
+                closeBtn.addTarget(self, action: #selector(setCloseHour(_:)), for: .touchUpInside)
+                
+                if openHour != ""{
+                    openTimeLabel.text = openHour
+                    openTimeLabel.textColor = UIColor(hex: 0x343434)
+                }
+                
+                if closeHour != ""{
+                    closeTimeLabel.text = closeHour
+                    closeTimeLabel.textColor = UIColor(hex: 0x343434)
+                }
+                
+                if diffHour != ""{
+                    totalHour.text = diffHour
+                }
+                
                 return cell
             }else if indexPath.row == 2{
                 let cell = UITableViewCell()
@@ -242,8 +382,12 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
                     $0.trailing.leading.equalToSuperview().inset(24)
                     $0.height.equalTo(39)
                 }
+                if btnArray.contains(1), openHour != "", closeHour != ""{
+                    hourBtn.addTarget(self, action: #selector(addStoreHour(_:)), for: .touchUpInside)
+                }else{
+                    hourBtn.setTitleColor(UIColor(hex: 0xededed), for: .normal)
+                }
                 
-//                hourBtn.addTarget(self, action: #selector(goStoreHourPage(_:)), for: .touchUpInside)
                 return cell
             }
         }else if indexPath.section == 1{ // 2. 추가된 영업 시간
@@ -298,13 +442,23 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
                 $0.trailing.equalToSuperview().inset(40)
                 $0.centerY.equalToSuperview()
             }
+            
+            //Data Setting
+            let day = workHourArr[indexPath.row]
+            dayTime.text = "\(day.startTime) ~ \(day.endTime)"
+            dayTitle.text = day.day
+            
+            deleteBtn.tag = indexPath.row
+            deleteBtn.addTarget(self, action: #selector(deleteStoreHour(_:)), for: .touchUpInside)
+            
             return cell
         }
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.section == 1{
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0{
@@ -339,4 +493,31 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
             return 0
         }
     }
+}
+
+// 오픈, 마감 시간 delegate
+extension RegisterStoreHourVC: TimeDateModalDelegate {
+    
+    func timeModalDismiss() {
+//        modalBgView.isHidden = true
+//        checkValue()
+    }
+
+    func openTimeTextFieldData(data: String) {
+        openHour = data
+        calculateTime()
+        tableView.reloadData()
+    }
+    func endTimeTextFieldData(data: String) {
+        closeHour = data
+        calculateTime()
+        tableView.reloadData()
+    }
+}
+
+struct WorkHour: Encodable {
+    var startTime: String
+    var endTime: String
+    var day: String
+    var number: Int
 }

@@ -28,7 +28,7 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
     var btnArray = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     // 순서) 연중 무휴, 월-금, 휴무일
     // enable:0, selected:1, disabled: 2
-    
+    var workHourArr = [WorkHour]()
     var holiday = [String]()
     var salaryDate = ""
     // Datamanager
@@ -38,6 +38,15 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
         super.viewDidLoad()
         setUI()
         setTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        let registerManagerInfo = RegisterManagerInfo.shared
+        if let workHour = registerManagerInfo.workHour{
+            workHourArr = workHour
+            tableView.reloadData()
+        }
     }
     
     func setUI(){
@@ -133,36 +142,6 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
 //            btnNext.isEnabled = false
 //            btnNext.backgroundColor = .disableYellow
 //            btnNext.setTitleColor(.semiGray, for: .normal)
-//        }
-//    }
-    
-    //시간차 구하기
-//    func calculateTime(){
-//        if startTextField.text!.count > 0, endTextField.text!.count > 0{
-//            let startTime = startTextField.text!.components(separatedBy: ":")
-//            let endTime = endTextField.text!.components(separatedBy: ":")
-//            var startTotal = 0
-//            var endTotal = 0
-//            var hour = 0
-//            var minute = 0
-//
-//            //마감시간이 오픈시간 값보다 작을 때 마감시간에 24더하고 빼주기
-//            if Int(startTime[0])!>Int(endTime[0])!{
-//                endTotal = (Int(endTime[0])! + 24) * 60 + Int(endTime[1])!
-//            }else if Int(startTime[0])!==Int(endTime[0])! , Int(startTime[1])!>Int(endTime[1])!{
-//                endTotal = (Int(endTime[0])! + 24) * 60 + Int(endTime[1])!
-//            }
-//            //오픈 시간보다 마감시간이 더 빠를때!
-//            else{
-//                endTotal = Int(endTime[0])! * 60 + Int(endTime[1])!
-//            }
-//            startTotal = Int(startTime[0])! * 60 + Int(startTime[1])!
-//
-//            let diffTime = endTotal - startTotal
-//            hour = diffTime/60
-//            minute = diffTime%60
-//
-//            hourLabel.text = "\(hour)시간\(minute)분"
 //        }
 //    }
     
@@ -370,7 +349,11 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 2{
-            return 2
+            if workHourArr.count == 0{
+                return 1
+            }else{
+                return 2
+            }
         }else{
             return 1
         }
@@ -398,53 +381,9 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
                                 return cell
                             }
         }else if indexPath.section == 2{ // 2. 영업 시간
-            if indexPath.row == 0{
+            if workHourArr.count == 0 || indexPath.row == 1{
                 let cell = UITableViewCell()
-                let dayTotalView = UIView().then{
-                    $0.backgroundColor = UIColor(hex: 0xf8f8f8)
-                    $0.layer.cornerRadius = 10
-                }
-                let dayView = UIView().then{
-                    $0.backgroundColor = .clear
-                }
-                let dayTitle = UILabel().then{
-                    $0.textColor = UIColor(hex: 0x343434)
-                    $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-                    $0.text = "월"
-                }
-                let dayTime = UILabel().then{
-                    $0.textColor = UIColor(hex: 0x6f6f6f)
-                    $0.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-                    $0.text = "10:00 ~ 17:00"
-                    $0.textAlignment = .left
-                }
-                dayView.addSubview(dayTitle)
-                dayView.addSubview(dayTime)
                 
-                dayTitle.snp.makeConstraints {
-                    $0.centerY.equalToSuperview()
-                    $0.leading.equalToSuperview().inset(16)
-                }
-                dayTime.snp.makeConstraints {
-                    $0.centerY.equalToSuperview()
-                    $0.leading.equalTo(dayTitle.snp.trailing).offset(8)
-                }
-                
-                dayTotalView.addSubview(dayView)
-                dayView.snp.makeConstraints {
-                    $0.height.equalTo(40)
-                    $0.top.bottom.trailing.leading.equalToSuperview()
-                }
-                cell.addSubview(dayTotalView)
-                dayTotalView.snp.makeConstraints {
-                    $0.top.equalToSuperview()
-                    $0.trailing.leading.equalToSuperview().inset(36)
-                    $0.bottom.equalToSuperview().inset(12)
-                }
-                
-                return cell
-            }else{
-                let cell = UITableViewCell()
                 let hourBtn = UIButton().then{
                     $0.setTitleColor(UIColor(hex: 0x6f6f6f), for: .normal)
                     $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
@@ -460,6 +399,61 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
                 }
                 
                 hourBtn.addTarget(self, action: #selector(goStoreHourPage(_:)), for: .touchUpInside)
+                
+                return cell
+            }else if indexPath.row == 0{
+                let cell = UITableViewCell()
+                let dayTotalView = UIView().then{
+                    $0.backgroundColor = UIColor(hex: 0xf8f8f8)
+                    $0.layer.cornerRadius = 10
+                }
+                var dayTotalViewTop = 0
+                for (i, value) in workHourArr.enumerated(){
+                    let dayView = UIView().then{
+                        $0.backgroundColor = .clear
+                    }
+                    let dayTitle = UILabel().then{
+                        $0.textColor = UIColor(hex: 0x343434)
+                        $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+                        $0.text = workHourArr[i].day
+                    }
+                    let dayTime = UILabel().then{
+                        $0.textColor = UIColor(hex: 0x6f6f6f)
+                        $0.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+                        $0.text = "\(workHourArr[i].startTime) ~ \(workHourArr[i].endTime)"
+                        $0.textAlignment = .left
+                    }
+                    dayView.addSubview(dayTitle)
+                    dayView.addSubview(dayTime)
+                    
+                    dayTitle.snp.makeConstraints {
+                        $0.centerY.equalToSuperview()
+                        $0.leading.equalToSuperview().inset(16)
+                    }
+                    dayTime.snp.makeConstraints {
+                        $0.centerY.equalToSuperview()
+                        $0.leading.equalTo(dayTitle.snp.trailing).offset(8)
+                    }
+                    
+                    dayTotalView.addSubview(dayView)
+                    dayView.snp.makeConstraints {
+                        $0.height.equalTo(40)
+                        $0.trailing.leading.equalToSuperview()
+                        $0.top.equalToSuperview().inset(dayTotalViewTop)
+                        if workHourArr.count == (i+1){
+                            $0.bottom.equalToSuperview()
+                        }
+                    }
+                    
+                    dayTotalViewTop += 40
+                }
+                
+                cell.addSubview(dayTotalView)
+                dayTotalView.snp.makeConstraints {
+                    $0.top.equalToSuperview()
+                    $0.trailing.leading.equalToSuperview().inset(36)
+                    $0.bottom.equalToSuperview().inset(12)
+                }
                 
                 return cell
             }
@@ -531,10 +525,12 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
         }else if indexPath.section == 1{
             return 90
         }else if indexPath.section == 2{
-            if indexPath.row == 0{
+            if workHourArr.count == 0 || indexPath.row == 1{
+                return 39
+            }else if indexPath.row == 0{
                 return tableView.estimatedRowHeight
             }else{
-                return 39
+                return 0
             }
         }else{
             return 45
