@@ -12,13 +12,13 @@ struct RegisterManagerRequset: Encodable {
     var registerNumber: String
 //    var startTime: String
 //    var endTime: String
-    var workSchedule: [WorkSchedule]
-    var breakTime: String
+    var openSchedule: [OpenSchedule]
+//    var breakTime: String
     var holiday: [String]
     var payday: String
 }
 
-struct WorkSchedule: Encodable {
+struct OpenSchedule: Encodable {
     var startTime: String // TODO: ":" 없애서 보내야함
     var endTime: String
     var day: String

@@ -13,14 +13,6 @@ import SnapKit
 class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
     @IBOutlet var modalBgView: UIView!
     @IBOutlet var tableView: UITableView!
-    
-    
-//    @IBOutlet var startTextField: UITextField!
-//    @IBOutlet var endTextField: UITextField!
-//
-//    @IBOutlet var salaryTextField: UITextField!
-//    @IBOutlet var hourLabel: UILabel!
-    
     @IBOutlet var btnNext: UIButton!
     
     
@@ -47,21 +39,12 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
             workHourArr = workHour
             tableView.reloadData()
         }
+        checkValue()
     }
     
     func setUI(){
         self.dismissKeyboardWhenTappedAround()
         modalBgView.isHidden = true
-//        salaryTextField.addRightPadding()
-//        modalBgView.isHidden = true
-//        salaryTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .touchDown)
-//        startTextField.addLeftPadding()
-//        endTextField.addLeftPadding()
-//        startTextField.addTarget(self, action: #selector(startTimeTextFieldDidChange(_:)), for: .touchDown)
-//        endTextField.addTarget(self, action: #selector(endTimeTextFieldDidChange(_:)), for: .touchDown)
-//        salaryTextField.attributedPlaceholder = NSAttributedString(string: "1 - 31    ", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 16)!])
-//        startTextField.attributedPlaceholder = NSAttributedString(string: "00:00", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 30)!])
-//        endTextField.attributedPlaceholder = NSAttributedString(string: "00:00", attributes: [NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Medium", size: 30)!])
     }
     func setTableView(){
         tableView.dataSource = self
@@ -82,101 +65,43 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
         }
 
     }
+
+    //모든 값을 다 입력했는지 검사
+    func checkValue(){
+        if btnArray.contains(1), workHourArr.count > 0, salaryDate != ""{
+            btnNext.isEnabled = true
+            btnNext.backgroundColor = .enableYellow
+            btnNext.setTitleColor(.gray, for: .normal)
+        }else{
+            btnNext.isEnabled = false
+            btnNext.backgroundColor = .disableYellow
+            btnNext.setTitleColor(.semiGray, for: .normal)
+        }
+    }
+   
+    // 휴무일 추가
+    func setHoliday(){
+        holiday.removeAll()
+        for i in 0..<btnArray.count{
+            if btnArray[i] == 1{
+                holiday.append(dayOfIndex(index: i))
+            }
+        }
+    }
     
-//    @objc func startTimeTextFieldDidChange(_ textField:UITextField) {
-//
-//        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
-//            vc.modalPresentationStyle = .overFullScreen
-//
-//            modalBgView.isHidden = false
-//            vc.timeDateModalDelegate = self
-//            vc.whatDate = 0
-//            vc.titletext = "매장 오픈 시간"
-//            self.present(vc, animated: true, completion: nil)
-//
-//        }
-//    }
-//    @objc func endTimeTextFieldDidChange(_ textField:UITextField) {
-//
-//        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
-//            vc.modalPresentationStyle = .overFullScreen
-//
-//            modalBgView.isHidden = false
-//            vc.timeDateModalDelegate = self
-//            vc.whatDate = 1
-//            vc.titletext = "매장 마감 시간"
-//            self.present(vc, animated: true, completion: nil)
-//
-//        }
-//    }
-    
-    
-    
-//    func checkBtn(){
-//        if !btnMon.isSelected, !btnTue.isSelected, !btnWed.isSelected, !btnThu.isSelected, !btnFri.isSelected, !btnSat.isSelected, !btnSun.isSelected, !btnBreak.isSelected{
-//            enableBtn(btn: btnNoBreak)
-//        }
-//    }
-//    //모든 값을 다 입력했는지 검사
-//    func checkValue(){
-//        print(startTextField.text!)
-//
-//        if startTextField.text != "" && endTextField.text != "" && salaryTextField.text != ""{
-//            if btnNoBreak.isSelected{
-//                //연중무휴 체크
-//                btnNext.isEnabled = true
-//                btnNext.backgroundColor = .enableYellow
-//                btnNext.setTitleColor(.gray, for: .normal)
-//            }else if !btnMon.isSelected, !btnTue.isSelected, !btnWed.isSelected, !btnThu.isSelected, !btnFri.isSelected, !btnSat.isSelected, !btnSun.isSelected, !btnBreak.isSelected{
-//                // 아무것도 체크 안됨
-//                btnNext.isEnabled = false
-//                btnNext.backgroundColor = .disableYellow
-//                btnNext.setTitleColor(.semiGray, for: .normal)
-//            }else{
-//                //버튼중에 하나는 선택되어있음
-//                btnNext.isEnabled = true
-//                btnNext.backgroundColor = .enableYellow
-//                btnNext.setTitleColor(.gray, for: .normal)
-//            }
-//        }else{
-//            btnNext.isEnabled = false
-//            btnNext.backgroundColor = .disableYellow
-//            btnNext.setTitleColor(.semiGray, for: .normal)
-//        }
-//    }
-    
-//    //휴일 정보를 배열에 저장
-//    func getHoliday(){
-//        //연중 무휴가 아닐때 배열에 추가
-//        if !btnNoBreak.isSelected{
-//            if btnMon.isSelected{
-//                holiday.append("월")
-//            }
-//            if btnTue.isSelected{
-//                holiday.append("화")
-//            }
-//            if btnWed.isSelected{
-//                holiday.append("수")
-//            }
-//            if btnThu.isSelected{
-//                holiday.append("목")
-//            }
-//            if btnFri.isSelected{
-//                holiday.append("금")
-//            }
-//            if btnSat.isSelected{
-//                holiday.append("토")
-//            }
-//            if btnSun.isSelected{
-//                holiday.append("일")
-//            }
-//            if btnBreak.isSelected{
-//                holiday.append("공휴일")
-//            }
-//        }else{
-//            holiday.append("연중무휴")
-//        }
-//    }
+    func dayOfIndex(index :Int) -> String{
+        switch (index){
+            case 0: return "연중무휴"
+            case 1: return "월"
+            case 2 : return "화"
+            case 3 : return "수"
+            case 4: return "목"
+            case 5 : return "금"
+            case 6 : return "토"
+            case 7: return "일"
+            default: return "공휴일"
+        }
+    }
     
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -210,7 +135,7 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
             }
             break
         }
-//        checkValue()
+        checkValue()
         tableView.reloadData()
     }
     
@@ -218,37 +143,43 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterStoreHourVC") as? RegisterStoreHourVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-//    @IBAction func btnNext(_ sender: Any) {
-//        // 몇시간 몇분 시간 계산
-//        holiday.removeAll()
-//        // 휴무일 정보 불러오기
-//        getHoliday()
-//
-//        // 기존 입력 값 불러오기
-//        let data = RegisterManagerInfo.shared
-//
-//        //시간에서 : 문자 제거
-//        let removeStartTime = startTextField.text!.replace(target: ":", with: "")
-//        let removeEndTime = endTextField.text!.replace(target: ":", with: "")
-//
-//        //로그인화면에서 포지션 선택으로 온것인지 관리자 가입에서 온것인지 잘 판단해야할듯, => 둘다 토큰을 Userdault말고 RegisterBasicInfo에 저장하자!
-//
-//        // api resquest 데이터
-//        let input = RegisterManagerRequset(name: data.name!, type: data.type!, address: data.address!, registerNumber: data.registerNumber!, startTime: removeStartTime, endTime: removeEndTime, breakTime: "0",holiday: holiday, payday: salaryTextField.text!)
-//        print(input)
-//
-//        // api 통신
-//        dataManager.postRegisterManager(input, delegate: self)
-//
-//        //휴무일 정보 reset
-//        holiday.removeAll()
-//    }
+    
+    @IBAction func btnNext(_ sender: Any) {
+        
+        // 기존 입력 값 불러오기
+        let data = RegisterManagerInfo.shared
+
+        //로그인화면에서 포지션 선택으로 온것인지 관리자 가입에서 온것인지 잘 판단해야할듯, => 둘다 토큰을 Userdault말고 RegisterBasicInfo에 저장하자!
+        
+        // 휴무일 설정
+        setHoliday()
+        
+        // 영업시간 설정
+        var openSchedule = [OpenSchedule]()
+        for (i, _) in workHourArr.enumerated(){
+            //시간에서 : 문자 제거
+            let startStr = workHourArr[i].startTime.replace(target: ":", with: "")
+            let endStr = workHourArr[i].endTime.replace(target: ":", with: "")
+
+            openSchedule.append(OpenSchedule(startTime: startStr, endTime: endStr, day: workHourArr[i].day))
+        }
+        
+        // api resquest 데이터
+        let input = RegisterManagerRequset(name: data.name!, type: data.type!, address: data.address!, registerNumber: data.registerNumber!, openSchedule: openSchedule, holiday: holiday, payday: salaryDate)
+        print(input)
+
+        // api 통신
+        dataManager.postRegisterManager(input, delegate: self)
+
+        //휴무일 정보 reset
+        holiday.removeAll()
+    }
 }
 extension RegisterMoreInfoVC: SalaryModalDelegate {
     
     func modalDismiss() {
         modalBgView.isHidden = true
-//        checkValue()
+        checkValue()
     }
 
     func textFieldData(data: String) {
@@ -257,38 +188,9 @@ extension RegisterMoreInfoVC: SalaryModalDelegate {
     }
 }
 
-//extension RegisterMoreInfoVC: TimeDateModalDelegate {
-    
-//    func timeModalDismiss() {
-//        modalBgView.isHidden = true
-//        checkValue()
-//    }
-//
-//    func openTimeTextFieldData(data: String) {
-//        startTextField.text = data
-//        calculateTime()
-//    }
-//    func endTimeTextFieldData(data: String) {
-//        endTextField.text = data
-//        calculateTime()
-//    }
-//}
-
-//extension RegisterMoreInfoVC : UITextFieldDelegate{
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//            if(textField == startTextField || textField == endTextField){
-//                let newLength = (textField.text?.count)! + string.count - range.length
-//                    return !(newLength > 4)
-//            }
-//
-//            return true
-//        }
-//}
-
 extension RegisterMoreInfoVC {
     func didSuccessRegisterManager(_ result: RegisterManagerResponse) {
         
-        //
         //우선 유저 토큰 로컬에 저장
         UserDefaults.standard.set(result.data?.token ,forKey: "token")
         print("token: \(UserDefaults.standard.string(forKey: "token")!)")
@@ -408,7 +310,7 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
                     $0.layer.cornerRadius = 10
                 }
                 var dayTotalViewTop = 0
-                for (i, value) in workHourArr.enumerated(){
+                for (i, _) in workHourArr.enumerated(){
                     let dayView = UIView().then{
                         $0.backgroundColor = .clear
                     }
