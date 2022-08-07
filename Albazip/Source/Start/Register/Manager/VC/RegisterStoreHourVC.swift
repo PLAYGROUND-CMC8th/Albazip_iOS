@@ -10,17 +10,18 @@ import UIKit
 import Then
 import SnapKit
 
-class RegisterStoreHourVC: UIViewController, StoreClosedDayDelegate{
+class RegisterStoreHourVC: UIViewController{
     
     @IBOutlet var tableView: UITableView!
     // 버튼 선택 정보 저장
-    var btnArray = [0, 0, 0, 0, 0, 0, 0, 0]
+//    var btnArray = [0, 0, 0, 0, 0, 0, 0, 0]
     // 순서) 연중 무휴, 월-금, 휴무일
     // enable:0, selected:1, disabled: 2, added:3
     var workHourArr = [WorkHour]()
     var openHour = "" // 오픈 시간
     var closeHour = "" // 마감 시간
     var diffHour = "" // 오픈시간 - 마감시간 차이
+    var isAllSameHour = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,42 +57,20 @@ class RegisterStoreHourVC: UIViewController, StoreClosedDayDelegate{
         tableView.delegate = self
         tableView.register(StoreHourTableViewCell.self, forCellReuseIdentifier: "StoreHourTableViewCell")
     }
-    
-    func btnDayClicked(index: Int) {
-//        switch (index){
-//        case 0:
-//            if !btnArray.contains(3){
-//                if btnArray[index] == 0{
-//                    btnArray[index] = 1
-//                    for i in 1...7{
-//                        btnArray[i] = 2
-//                    }
-//                }else if btnArray[index] == 1{
-//                    btnArray[index] = 0
-//                    for i in 1...7{
-//                        btnArray[i] = 0
-//                    }
-//                }
-//            }
-//            break
-//
-//        default:
-//            if btnArray[index] == 0{
-//                btnArray[index] = 1
-//                btnArray[0] = 2
-//            }else if btnArray[index] == 1{
-//                btnArray[index] = 0
-//                if !btnArray.contains(1){
-//                    btnArray[0] = 0
-//                }
-//            }
-//            break
-//        }
-////        checkValue()
-//        tableView.reloadData()
+   
+    @objc func allSameBtnclicked(_ sender: UIButton){
+        isAllSameHour = !isAllSameHour
+        tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
     }
     
-
+    @objc func holidayBtnclicked(_ sender: UIButton){
+        sender.isSelected.toggle()
+    }
+    
+    @objc func allDayBtnclicked(_ sender: UIButton){
+        sender.isSelected.toggle()
+    }
+    
     @objc func setOpenHour(_ sender: UIButton) {
 
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
@@ -203,11 +182,7 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0{
-            return 51
-        }else{
-            return 61
-        }
+        return 0.1
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -223,110 +198,38 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{ // 1. 매장 휴무일
-            if indexPath.row == 0{
-//                if let cell = tableView.dequeueReusableCell(withIdentifier: "StoreHourTableViewCell") as? StoreHourTableViewCell {
-//                    cell.selectionStyle = .none
-//                    cell.delegate = self
-////                    cell.setUp(btnArray: self.btnArray)
-//                    return cell
-//                }
-                return UITableViewCell()
-            }else if indexPath.row == 1{
-//                let cell = UITableViewCell()
-//                let openBtn = UIButton().then{
-//                    $0.layer.borderColor = UIColor(hex: 0xededed).cgColor
-//                    $0.layer.borderWidth = 1
-//                    $0.layer.cornerRadius = 10
-//                }
-//                let openLabel = UILabel().then{
-//                    $0.textColor = UIColor(hex: 0x6f6f6f)
-//                    $0.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-//                    $0.text = "오픈시간"
-//                }
-//                let openTimeLabel = UILabel().then{
-//                    $0.textColor = UIColor(hex: 0xededed)
-//                    $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-//                    $0.text = "00:00"
-//                }
-//                let closeBtn = UIButton().then{
-//                    $0.layer.borderColor = UIColor(hex: 0xededed).cgColor
-//                    $0.layer.borderWidth = 1
-//                    $0.layer.cornerRadius = 10
-//                }
-//                let closeLabel = UILabel().then{
-//                    $0.textColor = UIColor(hex: 0x6f6f6f)
-//                    $0.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-//                    $0.text = "마감시간"
-//                }
-//                let closeTimeLabel = UILabel().then{
-//                    $0.textColor = UIColor(hex: 0xededed)
-//                    $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-//                    $0.text = "00:00"
-//                }
-//                let waveImg = UIImageView().then{
-//                    $0.image = UIImage(named: "wave")
-//                }
-//
-//                let totalHour = UILabel().then {
-//                    $0.textColor = UIColor(hex: 0xa3a3a3)
-//                    $0.text = "0시간"
-//                    $0.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-//                }
-//                cell.contentView.addSubview(openLabel)
-//                cell.contentView.addSubview(openTimeLabel)
-//                cell.contentView.addSubview(closeLabel)
-//                cell.contentView.addSubview(closeTimeLabel)
-//                cell.contentView.addSubview(waveImg)
-//
-//                cell.contentView.addSubview(openBtn)
-//                cell.contentView.addSubview(closeBtn)
-//                cell.contentView.addSubview(totalHour)
-//
-//                openLabel.snp.makeConstraints {
-//                    $0.top.equalToSuperview().inset(30)
-//                    $0.leading.equalToSuperview().inset(40)
-//                }
-//
-//                openTimeLabel.snp.makeConstraints {
-//                    $0.centerY.equalTo(openLabel.snp.centerY)
-//                    $0.leading.equalTo(openLabel.snp.trailing).offset(11)
-//                }
-//
-//                closeTimeLabel.snp.makeConstraints {
-//                    $0.top.equalToSuperview().inset(30)
-//                    $0.trailing.equalToSuperview().inset(40)
-//                }
-//
-//                closeLabel.snp.makeConstraints {
-//                    $0.centerY.equalTo(closeTimeLabel.snp.centerY)
-//                    $0.trailing.equalTo(closeTimeLabel.snp.leading).offset(-11)
-//                }
-//
-//                waveImg.snp.makeConstraints {
-//                    $0.width.equalTo(20)
-//                    $0.height.equalTo(15)
-//                    $0.top.equalToSuperview().inset(30)
-//                    $0.centerX.equalToSuperview()
-//                }
-//
-//                openBtn.snp.makeConstraints {
-//                    $0.trailing.equalTo(waveImg.snp.leading).offset(-20)
-//                    $0.leading.equalToSuperview().inset(24)
-//                    $0.height.equalTo(45)
-//                    $0.top.equalToSuperview().inset(16)
-//                }
-//
-//                closeBtn.snp.makeConstraints {
-//                    $0.leading.equalTo(waveImg.snp.trailing).offset(20)
-//                    $0.trailing.equalToSuperview().inset(24)
-//                    $0.height.equalTo(45)
-//                    $0.top.equalToSuperview().inset(16)
-//                }
-//
-//                totalHour.snp.makeConstraints {
-//                    $0.top.equalTo(closeBtn.snp.bottom).offset(8)
-//                    $0.trailing.equalToSuperview().inset(24)
-//                }
+            let cell = UITableViewCell()
+            
+            let checkBtn = UIButton().then{
+                if isAllSameHour{
+                    $0.setImage(UIImage(named: "checkCircleActive30Px"), for: .normal)
+                }else{
+                    $0.setImage(UIImage(named: "checkCircleInactive30Px"), for: .normal)
+                }
+            }
+            
+            let checkLabel = UILabel().then{
+                $0.font = .systemFont(ofSize: 16, weight: .medium)
+                $0.textColor = UIColor(hex: 0x343434)
+                $0.text = "모든 영업시간이 같아요."
+            }
+            
+            cell.contentView.addSubview(checkBtn)
+            cell.contentView.addSubview(checkLabel)
+            
+            checkBtn.snp.makeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.width.height.equalTo(30)
+                $0.leading.equalToSuperview().inset(24)
+            }
+            
+            checkLabel.snp.makeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.leading.equalTo(checkBtn.snp.trailing).offset(6)
+            }
+            
+            checkBtn.addTarget(self, action: #selector(allSameBtnclicked(_:)), for: .touchUpInside)
+            return cell
 //
 //                openBtn.addTarget(self, action: #selector(setOpenHour(_:)), for: .touchUpInside)
 //
@@ -347,89 +250,37 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
 //                }
 //
 //                return cell
-            }
-//            else if indexPath.row == 2{
-//                let cell = UITableViewCell()
-//                let hourBtn = UIButton().then{
-//                    $0.setTitleColor(UIColor(hex: 0x6f6f6f), for: .normal)
-//                    $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-//                    $0.setTitle("시간 추가", for: .normal)
-//                    $0.layer.cornerRadius = 10
-//                    $0.layer.borderWidth = 1
-//                    $0.layer.borderColor = UIColor(hex: 0xededed).cgColor
-//                }
-//                cell.contentView.addSubview(hourBtn)
-//                hourBtn.snp.makeConstraints {
-//                    $0.top.equalToSuperview()
-//                    $0.trailing.leading.equalToSuperview().inset(24)
-//                    $0.height.equalTo(39)
-//                }
-//                if btnArray.contains(1), openHour != "", closeHour != ""{
-//                    hourBtn.addTarget(self, action: #selector(addStoreHour(_:)), for: .touchUpInside)
-//                }else{
-//                    hourBtn.setTitleColor(UIColor(hex: 0xededed), for: .normal)
-//                }
-//
-//                return cell
-//            }
         }else if indexPath.section == 1{ // 2. 추가된 영업 시간
             if let cell = tableView.dequeueReusableCell(withIdentifier: "StoreHourTableViewCell") as? StoreHourTableViewCell {
                 cell.selectionStyle = .none
-                cell.delegate = self
 //                    cell.setUp(btnArray: self.btnArray)
+                
+                cell.openBtn.addTarget(self, action: #selector(setOpenHour(_:)), for: .touchUpInside)
+        
+                cell.closeBtn.addTarget(self, action: #selector(setCloseHour(_:)), for: .touchUpInside)
+                
+                if openHour != ""{
+                    cell.openTimeLabel.text = openHour
+                    cell.openTimeLabel.textColor = UIColor(hex: 0x343434)
+                }
+        
+                if closeHour != ""{
+                    cell.closeTimeLabel.text = closeHour
+                    cell.closeTimeLabel.textColor = UIColor(hex: 0x343434)
+                }
+        
+                if diffHour != ""{
+                    cell.totalHour.text = diffHour
+                }
+                
+                cell.holidayBtn.tag = indexPath.row
+                cell.holidayBtn.addTarget(self, action: #selector(holidayBtnclicked(_:)), for: .touchUpInside)
+                
+                cell.allDayBtn.tag = indexPath.row
+                cell.allDayBtn.addTarget(self, action: #selector(allDayBtnclicked(_:)), for: .touchUpInside)
                 return cell
             }
-//            let cell = UITableViewCell()
-//            let dayTotalView = UIView().then{
-//                $0.backgroundColor = UIColor(hex: 0xf8f8f8)
-//                $0.layer.cornerRadius = 10
-//            }
-//            let dayView = UIView().then{
-//                $0.backgroundColor = .clear
-//            }
-//            let dayTitle = UILabel().then{
-//                $0.textColor = UIColor(hex: 0x343434)
-//                $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-//                $0.text = "월"
-//            }
-//            let dayTime = UILabel().then{
-//                $0.textColor = UIColor(hex: 0x6f6f6f)
-//                $0.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-//                $0.text = "10:00 ~ 17:00"
-//                $0.textAlignment = .left
-//            }
-//            let deleteBtn = UIButton().then{
-//                $0.setImage(UIImage(named: "icDelete24Px"), for: .normal)
-//            }
-//
-//            dayView.addSubview(dayTitle)
-//            dayView.addSubview(dayTime)
-//
-//            dayTitle.snp.makeConstraints {
-//                $0.centerY.equalToSuperview()
-//                $0.leading.equalToSuperview().inset(16)
-//            }
-//            dayTime.snp.makeConstraints {
-//                $0.centerY.equalToSuperview()
-//                $0.leading.equalTo(dayTitle.snp.trailing).offset(8)
-//            }
-//
-//            dayTotalView.addSubview(dayView)
-//            dayView.snp.makeConstraints {
-//                $0.height.equalTo(49)
-//                $0.top.bottom.trailing.leading.equalToSuperview()
-//            }
-//            cell.addSubview(dayTotalView)
-//            dayTotalView.snp.makeConstraints {
-//                $0.trailing.leading.equalToSuperview().inset(24)
-//                $0.bottom.top.equalToSuperview().inset(6)
-//            }
-//            cell.contentView.addSubview(deleteBtn)
-//            deleteBtn.snp.makeConstraints {
-//                $0.height.width.equalTo(20)
-//                $0.trailing.equalToSuperview().inset(40)
-//                $0.centerY.equalToSuperview()
-//            }
+
 //
 //            //Data Setting
 //            let day = workHourArr[indexPath.row]
@@ -458,18 +309,22 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
         }
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let middleView = UIView().then {
-            if section == 0{
-                $0.backgroundColor = UIColor(hex: 0xefefef)
-            }else{
-                $0.backgroundColor = .white
+        if section == 0{
+            let middleView = UIView().then {
+               $0.backgroundColor = UIColor(hex: 0xefefef)
             }
+            return middleView
+        }else{
+            return UIView()
         }
-        return middleView
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-         return 0
+        if section == 0{
+            return 10
+        }else{
+            return 0.1
+        }
     }
 }
 

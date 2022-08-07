@@ -6,7 +6,7 @@
 //
 
 import UIKit
-protocol StoreClosedDayDelegate {
+protocol StoreClosedDayDelegate: AnyObject {
     func btnDayClicked(index: Int)
 }
 class StoreClosedDayCell: UITableViewCell {
@@ -19,7 +19,7 @@ class StoreClosedDayCell: UITableViewCell {
     @IBOutlet var btnSat: UIButton!
     @IBOutlet var btnSun: UIButton!
     @IBOutlet var btnBreak: UIButton!
-    var delegate: StoreClosedDayDelegate?
+    weak var delegate: StoreClosedDayDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
