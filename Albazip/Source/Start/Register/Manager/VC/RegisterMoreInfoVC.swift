@@ -20,8 +20,8 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
     var btnArray = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     // 순서) 연중 무휴, 월-금, 휴무일
     // enable:0, selected:1, disabled: 2
-    var workHourArr = [WorkHour]()
-    var holiday = [String]()
+//    var workHourArr = [WorkHour]()
+//    var holiday = [String]()
     var salaryDate = ""
     // Datamanager
     lazy var dataManager: RegisterManagerDataManager = RegisterManagerDataManager()
@@ -34,11 +34,11 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-        let registerManagerInfo = RegisterManagerInfo.shared
-        if let workHour = registerManagerInfo.workHour{
-            workHourArr = workHour
-            tableView.reloadData()
-        }
+//        let registerManagerInfo = RegisterManagerInfo.shared
+//        if let workHour = registerManagerInfo.workHour{
+//            workHourArr = workHour
+//            tableView.reloadData()
+//        }
         checkValue()
     }
     
@@ -68,7 +68,7 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
 
     //모든 값을 다 입력했는지 검사
     func checkValue(){
-        if btnArray.contains(1), workHourArr.count > 0, salaryDate != ""{
+        if btnArray.contains(1), salaryDate != ""{
             btnNext.isEnabled = true
             btnNext.backgroundColor = .enableYellow
             btnNext.setTitleColor(.gray, for: .normal)
@@ -80,14 +80,14 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
     }
    
     // 휴무일 추가
-    func setHoliday(){
-        holiday.removeAll()
-        for i in 0..<btnArray.count{
-            if btnArray[i] == 1{
-                holiday.append(dayOfIndex(index: i))
-            }
-        }
-    }
+//    func setHoliday(){
+//        holiday.removeAll()
+//        for i in 0..<btnArray.count{
+//            if btnArray[i] == 1{
+//                holiday.append(dayOfIndex(index: i))
+//            }
+//        }
+//    }
     
     func dayOfIndex(index :Int) -> String{
         switch (index){
@@ -152,27 +152,27 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
         //로그인화면에서 포지션 선택으로 온것인지 관리자 가입에서 온것인지 잘 판단해야할듯, => 둘다 토큰을 Userdault말고 RegisterBasicInfo에 저장하자!
         
         // 휴무일 설정
-        setHoliday()
+//        setHoliday()
         
         // 영업시간 설정
         var openSchedule = [OpenSchedule]()
-        for (i, _) in workHourArr.enumerated(){
-            //시간에서 : 문자 제거
-            let startStr = workHourArr[i].startTime.replace(target: ":", with: "")
-            let endStr = workHourArr[i].endTime.replace(target: ":", with: "")
-
-            openSchedule.append(OpenSchedule(startTime: startStr, endTime: endStr, day: workHourArr[i].day))
-        }
+//        for (i, _) in workHourArr.enumerated(){
+//            //시간에서 : 문자 제거
+//            let startStr = workHourArr[i].startTime.replace(target: ":", with: "")
+//            let endStr = workHourArr[i].endTime.replace(target: ":", with: "")
+//
+//            openSchedule.append(OpenSchedule(startTime: startStr, endTime: endStr, day: workHourArr[i].day))
+//        }
         
         // api resquest 데이터
-        let input = RegisterManagerRequset(name: data.name!, type: data.type!, address: data.address!, registerNumber: data.registerNumber!, openSchedule: openSchedule, holiday: holiday, payday: salaryDate)
-        print(input)
-
-        // api 통신
-        dataManager.postRegisterManager(input, delegate: self)
+//        let input = RegisterManagerRequset(name: data.name!, type: data.type!, address: data.address!, registerNumber: data.registerNumber!, openSchedule: openSchedule, holiday: holiday, payday: salaryDate)
+//        print(input)
+//
+//        // api 통신
+//        dataManager.postRegisterManager(input, delegate: self)
 
         //휴무일 정보 reset
-        holiday.removeAll()
+//        holiday.removeAll()
     }
 }
 extension RegisterMoreInfoVC: SalaryModalDelegate {
@@ -212,7 +212,7 @@ extension RegisterMoreInfoVC {
 extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -239,10 +239,8 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
         }
         
         if section == 1{
-            sectionTitle.text = "매장 휴무일"
-        }else if section == 2{
             sectionTitle.text = "영업시간"
-        }else if section == 3{
+        }else if section == 2{
             sectionTitle.text = "급여일"
         }
         
@@ -250,15 +248,7 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 2{
-            if workHourArr.count == 0{
-                return 1
-            }else{
-                return 2
-            }
-        }else{
-            return 1
-        }
+       return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{
@@ -275,91 +265,27 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
             }
             titleLabel.text = "추가 정보를 입력해주세요."
             return cell
-        }else if indexPath.section == 1{ // 1. 매장 휴무일
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "StoreClosedDayCell") as? StoreClosedDayCell {
-                cell.selectionStyle = .none
-                cell.delegate = self
-                                cell.setUp(btnArray: self.btnArray)
-                                return cell
-                            }
-        }else if indexPath.section == 2{ // 2. 영업 시간
-            if workHourArr.count == 0 || indexPath.row == 1{
-                let cell = UITableViewCell()
-                
-                let hourBtn = UIButton().then{
-                    $0.setTitleColor(UIColor(hex: 0x6f6f6f), for: .normal)
-                    $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-                    $0.setTitle("영업시간 설정하기", for: .normal)
-                    $0.layer.cornerRadius = 10
-                    $0.layer.borderWidth = 1
-                    $0.layer.borderColor = UIColor(hex: 0xededed).cgColor
-                }
-                cell.contentView.addSubview(hourBtn)
-                hourBtn.snp.makeConstraints {
-                    $0.top.bottom.equalToSuperview()
-                    $0.trailing.leading.equalToSuperview().inset(36)
-                }
-                
-                hourBtn.addTarget(self, action: #selector(goStoreHourPage(_:)), for: .touchUpInside)
-                
-                return cell
-            }else if indexPath.row == 0{
-                let cell = UITableViewCell()
-                let dayTotalView = UIView().then{
-                    $0.backgroundColor = UIColor(hex: 0xf8f8f8)
-                    $0.layer.cornerRadius = 10
-                }
-                var dayTotalViewTop = 0
-                for (i, _) in workHourArr.enumerated(){
-                    let dayView = UIView().then{
-                        $0.backgroundColor = .clear
-                    }
-                    let dayTitle = UILabel().then{
-                        $0.textColor = UIColor(hex: 0x343434)
-                        $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-                        $0.text = workHourArr[i].day
-                    }
-                    let dayTime = UILabel().then{
-                        $0.textColor = UIColor(hex: 0x6f6f6f)
-                        $0.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-                        $0.text = "\(workHourArr[i].startTime) ~ \(workHourArr[i].endTime)"
-                        $0.textAlignment = .left
-                    }
-                    dayView.addSubview(dayTitle)
-                    dayView.addSubview(dayTime)
-                    
-                    dayTitle.snp.makeConstraints {
-                        $0.centerY.equalToSuperview()
-                        $0.leading.equalToSuperview().inset(16)
-                    }
-                    dayTime.snp.makeConstraints {
-                        $0.centerY.equalToSuperview()
-                        $0.leading.equalTo(dayTitle.snp.trailing).offset(8)
-                    }
-                    
-                    dayTotalView.addSubview(dayView)
-                    dayView.snp.makeConstraints {
-                        $0.height.equalTo(40)
-                        $0.trailing.leading.equalToSuperview()
-                        $0.top.equalToSuperview().inset(dayTotalViewTop)
-                        if workHourArr.count == (i+1){
-                            $0.bottom.equalToSuperview()
-                        }
-                    }
-                    
-                    dayTotalViewTop += 40
-                }
-                
-                cell.addSubview(dayTotalView)
-                dayTotalView.snp.makeConstraints {
-                    $0.top.equalToSuperview()
-                    $0.trailing.leading.equalToSuperview().inset(36)
-                    $0.bottom.equalToSuperview().inset(12)
-                }
-                
-                return cell
+        }else if indexPath.section == 1{ // 1. 영업 시간
+            let cell = UITableViewCell()
+            
+            let hourBtn = UIButton().then{
+                $0.setTitleColor(UIColor(hex: 0x6f6f6f), for: .normal)
+                $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+                $0.setTitle("영업시간 설정하기", for: .normal)
+                $0.layer.cornerRadius = 10
+                $0.layer.borderWidth = 1
+                $0.layer.borderColor = UIColor(hex: 0xededed).cgColor
             }
-        }else if indexPath.section == 3{ // 3. 급여일
+            cell.contentView.addSubview(hourBtn)
+            hourBtn.snp.makeConstraints {
+                $0.top.bottom.equalToSuperview()
+                $0.trailing.leading.equalToSuperview().inset(36)
+            }
+            
+            hourBtn.addTarget(self, action: #selector(goStoreHourPage(_:)), for: .touchUpInside)
+            
+            return cell
+        }else if indexPath.section == 2{ // 2. 급여일
             let cell = UITableViewCell()
             let payDayBtn = UIButton().then{
                 $0.layer.cornerRadius = 10
@@ -425,15 +351,7 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
         if indexPath.section == 0{
             return 29
         }else if indexPath.section == 1{
-            return 90
-        }else if indexPath.section == 2{
-            if workHourArr.count == 0 || indexPath.row == 1{
-                return 39
-            }else if indexPath.row == 0{
-                return tableView.estimatedRowHeight
-            }else{
-                return 0
-            }
+            return 39
         }else{
             return 45
         }

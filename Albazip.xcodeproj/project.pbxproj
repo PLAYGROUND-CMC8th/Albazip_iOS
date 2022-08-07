@@ -374,7 +374,6 @@
 		C3CFC30C273ED3A6001B2EB6 /* MyPageManagerWorkerWriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC30B273ED3A6001B2EB6 /* MyPageManagerWorkerWriteResponse.swift */; };
 		C3D01DF32845100800CB6D6F /* RegisterStoreHourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D01DF22845100800CB6D6F /* RegisterStoreHourVC.swift */; };
 		C3D01DF6284512A400CB6D6F /* StoreHourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D01DF4284512A400CB6D6F /* StoreHourTableViewCell.swift */; };
-		C3D01DF7284512A400CB6D6F /* StoreHourTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D01DF5284512A400CB6D6F /* StoreHourTableViewCell.xib */; };
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
 		C3D69454273ACC8500BF540C /* SettingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */; };
 		C3D69457273ACDC500BF540C /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D69456273ACDC500BF540C /* SettingVC.swift */; };
@@ -816,7 +815,6 @@
 		C3CFC30B273ED3A6001B2EB6 /* MyPageManagerWorkerWriteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerWriteResponse.swift; sourceTree = "<group>"; };
 		C3D01DF22845100800CB6D6F /* RegisterStoreHourVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStoreHourVC.swift; sourceTree = "<group>"; };
 		C3D01DF4284512A400CB6D6F /* StoreHourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHourTableViewCell.swift; sourceTree = "<group>"; };
-		C3D01DF5284512A400CB6D6F /* StoreHourTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreHourTableViewCell.xib; sourceTree = "<group>"; };
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69456273ACDC500BF540C /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -1763,7 +1761,6 @@
 				C35A30EC283A747C008354E2 /* StoreClosedDayCell.swift */,
 				C35A30ED283A747C008354E2 /* StoreClosedDayCell.xib */,
 				C3D01DF4284512A400CB6D6F /* StoreHourTableViewCell.swift */,
-				C3D01DF5284512A400CB6D6F /* StoreHourTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2879,7 +2876,6 @@
 				C33E00052731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib in Resources */,
 				C30AFE7F2733CE670075CDE2 /* MyPageManagerSelectInfo3TableViewCell.xib in Resources */,
 				C38786162769185A003B5070 /* InfoPlist.strings in Resources */,
-				C3D01DF7284512A400CB6D6F /* StoreHourTableViewCell.xib in Resources */,
 				C384427A2714948200B84E8A /* ScheduleManagerStoryboard.storyboard in Resources */,
 				C32E4AA4274EA7BE0015463F /* CommunityManagerWriteTableViewCell.xib in Resources */,
 				C3AC1F8A274D22760007AA95 /* CommunityWorkerNoticeTableViewCell.xib in Resources */,

@@ -14,6 +14,5 @@ class RegisterManagerInfo{
     var registerNumber: String?
     var token: String?
     var workHour: [WorkHour]?
-    var btnArr: [Int]?
     private init() { }
 }
