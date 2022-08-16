@@ -264,14 +264,14 @@ extension MyPageManagerEditWorkerVC: TimeDateModalDelegate {
         //checkValue()
     }
 
-    func openTimeTextFieldData(data: String) {
+    func openTimeTextFieldData(data: String, index: Int) {
         isLoaded = true
         startTime = data
         tableView.reloadData()
         calculateTime()
     }
 
-    func endTimeTextFieldData(data: String) {
+    func endTimeTextFieldData(data: String, index: Int) {
         isLoaded = true
         endTime = data
         tableView.reloadData()

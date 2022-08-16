@@ -16,3 +16,10 @@ class RegisterManagerInfo{
     var workHour: [WorkHour]?
     private init() { }
 }
+struct WorkHour: Encodable {
+    var startTime: String?
+    var endTime: String?
+    var day: String
+//    var number: Int
+//    var holiday: Bool
+}

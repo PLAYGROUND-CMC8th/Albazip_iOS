@@ -7,8 +7,15 @@
 
 import UIKit
 
+// 매장 영업시간 타입
+enum StoreHourType: Int{
+    case normal // default
+    case hoilday // 휴무일
+    case allDay // 24시간 영업
+}
+
 class StoreHourTableViewCell: UITableViewCell {
-    
+
     let dayLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 16, weight: .bold)
         $0.textColor = UIColor(hex: 0x343434)
@@ -102,8 +109,6 @@ class StoreHourTableViewCell: UITableViewCell {
     let lineView = UIView().then {
         $0.backgroundColor = UIColor(hex: 0xededed)
     }
-
-    weak var delegate: StoreClosedDayDelegate?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -125,6 +130,7 @@ class StoreHourTableViewCell: UITableViewCell {
         configureHourView()
     }
     
+    // 1. 요일 이름
     func configureDayView(){
         self.contentView.addSubview(dayLabel)
         
@@ -134,6 +140,7 @@ class StoreHourTableViewCell: UITableViewCell {
         }
     }
     
+    // 2. 휴무일, 24시간 영업
     func configureCheckView(){
         self.contentView.addSubview(holidayBtn)
         self.contentView.addSubview(holidayLabel)
@@ -163,6 +170,7 @@ class StoreHourTableViewCell: UITableViewCell {
         }
     }
     
+    // 3. 오픈시간, 마감시간
     func configureHourView(){
         self.contentView.addSubview(openStackView)
         self.contentView.addSubview(closeStackView)
@@ -245,13 +253,106 @@ class StoreHourTableViewCell: UITableViewCell {
         }
     }
     
-    @objc func btnEveryDay(_ sender: Any){
-        delegate?.btnDayClicked(index: 0)
-    }
-
-    
-    func setUp(btnArray: [Int]){
-//        setBtnState(btn: btnEveryDay,state: btnArray[0])
+    func setUp(workHour: WorkHour, storeHourType: StoreHourType){
         
+        if storeHourType == .normal{
+            holidayBtn.isSelected = false
+            allDayBtn.isSelected = false
+            
+            // 오픈 시간
+            openBtn.layer.borderColor = UIColor(hex: 0xededed).cgColor
+            openBtn.backgroundColor = .clear
+            openBtn.isEnabled = true
+            self.contentView.bringSubviewToFront(openBtn)
+            openLabel.textColor = UIColor(hex: 0xa3a3a3)
+            
+            if let startTime = workHour.startTime{
+                openTimeLabel.text = startTime
+                openTimeLabel.textColor = UIColor(hex: 0x343434)
+            }else{
+                openTimeLabel.text = "00:00"
+                openTimeLabel.textColor = UIColor(hex: 0xe2e2e2)
+            }
+            
+            // 마감 시간
+            closeBtn.layer.borderColor = UIColor(hex: 0xededed).cgColor
+            closeBtn.backgroundColor = .clear
+            closeBtn.isEnabled = true
+            self.contentView.bringSubviewToFront(closeBtn)
+            closeLabel.textColor = UIColor(hex: 0xa3a3a3)
+            
+            if let endTime = workHour.endTime{
+                closeTimeLabel.text = endTime
+                closeTimeLabel.textColor = UIColor(hex: 0x343434)
+            }else{
+                closeTimeLabel.text = "00:00"
+                closeTimeLabel.textColor = UIColor(hex: 0xe2e2e2)
+            }
+            
+            // 시간차 구하기
+            calculateTime(workHour: workHour)
+        }else{
+            // 오픈 시간
+            openTimeLabel.text = "00:00"
+            openTimeLabel.textColor = UIColor(hex: 0xe2e2e2)
+            openBtn.backgroundColor = UIColor(hex: 0xf5f5f5)
+            openBtn.isEnabled = false
+            self.contentView.sendSubviewToBack(openBtn)
+            openLabel.textColor = UIColor(hex: 0xcecece)
+            
+            // 마감 시간
+            closeTimeLabel.text = "00:00"
+            closeTimeLabel.textColor = UIColor(hex: 0xe2e2e2)
+            closeBtn.backgroundColor = UIColor(hex: 0xf5f5f5)
+            closeBtn.isEnabled = false
+            self.contentView.sendSubviewToBack(closeBtn)
+            closeLabel.textColor = UIColor(hex: 0xcecece)
+            
+            // 휴무일
+            if storeHourType == .hoilday {
+                holidayBtn.isSelected = true
+                allDayBtn.isSelected = false
+                
+                totalHour.text = "0시간"
+            }else{ // 24시간 영업
+                holidayBtn.isSelected = false
+                allDayBtn.isSelected = true
+                
+                totalHour.text = "24시간"
+            }
+        }
+    }
+    
+    // 시간차 구하기
+    func calculateTime(workHour: WorkHour){
+        guard let openHour = workHour.startTime, let closeHour = workHour.endTime else {
+            totalHour.text = "0시간"
+            return
+        }
+        
+        let startTime = openHour.components(separatedBy: ":")
+        let endTime = closeHour.components(separatedBy: ":")
+        var startTotal = 0
+        var endTotal = 0
+        var hour = 0
+        var minute = 0
+
+        //마감시간이 오픈시간 값보다 작을 때 마감시간에 24더하고 빼주기
+        if Int(startTime[0])!>Int(endTime[0])!{
+            endTotal = (Int(endTime[0])! + 24) * 60 + Int(endTime[1])!
+        }else if Int(startTime[0])!==Int(endTime[0])! , Int(startTime[1])!>Int(endTime[1])!{
+            endTotal = (Int(endTime[0])! + 24) * 60 + Int(endTime[1])!
+        }
+        //오픈 시간보다 마감시간이 더 빠를때!
+        else{
+            endTotal = Int(endTime[0])! * 60 + Int(endTime[1])!
+        }
+        startTotal = Int(startTime[0])! * 60 + Int(startTime[1])!
+
+        let diffTime = endTotal - startTotal
+        hour = diffTime/60
+        minute = diffTime%60
+
+        totalHour.text = "\(hour)시간\(minute)분"
     }
 }

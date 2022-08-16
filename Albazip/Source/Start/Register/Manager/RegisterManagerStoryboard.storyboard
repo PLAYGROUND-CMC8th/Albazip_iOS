@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hTX-nK-S0L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hTX-nK-S0L">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -338,13 +338,21 @@
                                 <rect key="frame" x="0.0" y="91.666666666666686" width="375" height="686.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIG-5y-4jd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0s7-0R-ftr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0s7-0R-ftr" firstAttribute="bottom" secondItem="Ltj-VD-Y0Q" secondAttribute="bottom" id="2qQ-T9-UNk"/>
+                            <constraint firstItem="vIG-5y-4jd" firstAttribute="top" secondItem="ivv-Lh-c8R" secondAttribute="top" id="6x5-ya-Tfv"/>
                             <constraint firstItem="Dmo-Oa-9wb" firstAttribute="centerX" secondItem="ivv-Lh-c8R" secondAttribute="centerX" id="8Ed-on-IPH"/>
+                            <constraint firstItem="vIG-5y-4jd" firstAttribute="leading" secondItem="ivv-Lh-c8R" secondAttribute="leading" id="GqT-cs-vkS"/>
                             <constraint firstItem="Dmo-Oa-9wb" firstAttribute="centerY" secondItem="vwe-Hh-pHi" secondAttribute="centerY" id="HtS-jR-CAQ"/>
+                            <constraint firstItem="vIG-5y-4jd" firstAttribute="trailing" secondItem="0s7-0R-ftr" secondAttribute="trailing" id="KCc-Da-Z6v"/>
+                            <constraint firstAttribute="bottom" secondItem="vIG-5y-4jd" secondAttribute="bottom" id="Kjl-wV-orK"/>
                             <constraint firstItem="rrs-7e-1rN" firstAttribute="top" secondItem="Dmo-Oa-9wb" secondAttribute="bottom" constant="14" id="T0X-Le-Q2w"/>
                             <constraint firstItem="oeK-mY-9d0" firstAttribute="centerY" secondItem="Dmo-Oa-9wb" secondAttribute="centerY" id="UNL-rQ-Qci"/>
                             <constraint firstItem="Ltj-VD-Y0Q" firstAttribute="top" secondItem="rrs-7e-1rN" secondAttribute="bottom" id="UxL-Lx-VMH"/>
@@ -355,15 +363,17 @@
                             <constraint firstItem="0s7-0R-ftr" firstAttribute="trailing" secondItem="Ltj-VD-Y0Q" secondAttribute="trailing" id="crv-UD-mog"/>
                             <constraint firstItem="0s7-0R-ftr" firstAttribute="trailing" secondItem="oeK-mY-9d0" secondAttribute="trailing" constant="16" id="qIB-rm-8mq"/>
                             <constraint firstItem="vwe-Hh-pHi" firstAttribute="top" secondItem="0s7-0R-ftr" secondAttribute="top" constant="10" id="skQ-vA-h7M"/>
+                            <constraint firstAttribute="bottom" secondItem="vIG-5y-4jd" secondAttribute="bottom" id="zmK-u9-t3S"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="modalBgView" destination="vIG-5y-4jd" id="bJd-4r-RMg"/>
                         <outlet property="tableView" destination="Ltj-VD-Y0Q" id="csz-lU-fSN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4P-SH-Kxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2774" y="112"/>
+            <point key="canvasLocation" x="2773.5999999999999" y="111.57635467980296"/>
         </scene>
         <!--Register Search StoreVC-->
         <scene sceneID="WJ3-zm-fA7">

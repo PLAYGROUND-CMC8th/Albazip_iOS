@@ -218,13 +218,13 @@ extension MyPageManagerAddWorkerVC: TimeDateModalDelegate {
         //checkValue()
     }
 
-    func openTimeTextFieldData(data: String) {
+    func openTimeTextFieldData(data: String, index: Int) {
         startTime = data
         tableView.reloadData()
         calculateTime()
     }
 
-    func endTimeTextFieldData(data: String) {
+    func endTimeTextFieldData(data: String, index: Int) {
         endTime = data
         tableView.reloadData()
         calculateTime()

@@ -10,8 +10,8 @@ import UIKit
 
 protocol TimeDateModalDelegate {
     func timeModalDismiss()
-    func openTimeTextFieldData(data: String)
-    func endTimeTextFieldData(data: String)
+    func openTimeTextFieldData(data: String, index: Int)
+    func endTimeTextFieldData(data: String, index: Int)
 }
 
 class RegisterSelectTimeVC: UIViewController{
@@ -30,6 +30,8 @@ class RegisterSelectTimeVC: UIViewController{
     var selectedDate2 = 0
     //0 이면 오픈시간 1이면 마감시간
     var whatDate = 0
+    var index = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,9 +68,9 @@ class RegisterSelectTimeVC: UIViewController{
    
     @IBAction func btnNext(_ sender: Any) {
         if(whatDate == 0){
-            timeDateModalDelegate?.openTimeTextFieldData(data: date1[selectedDate1]+":"+date2[selectedDate2])
+            timeDateModalDelegate?.openTimeTextFieldData(data: date1[selectedDate1]+":"+date2[selectedDate2], index: self.index)
         }else{
-            timeDateModalDelegate?.endTimeTextFieldData(data: date1[selectedDate1]+":"+date2[selectedDate2])
+            timeDateModalDelegate?.endTimeTextFieldData(data: date1[selectedDate1]+":"+date2[selectedDate2], index: self.index)
         }
         
         timeDateModalDelegate?.timeModalDismiss()

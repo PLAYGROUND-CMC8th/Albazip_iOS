@@ -436,11 +436,11 @@ extension HomeManagerEditStore2VC: TimeDateModalDelegate {
         checkValue()
     }
     
-    func openTimeTextFieldData(data: String) {
+    func openTimeTextFieldData(data: String, index: Int) {
         startTextField.text = data
         calculateTime()
     }
-    func endTimeTextFieldData(data: String) {
+    func endTimeTextFieldData(data: String, index: Int) {
         endTextField.text = data
         calculateTime()
     }
