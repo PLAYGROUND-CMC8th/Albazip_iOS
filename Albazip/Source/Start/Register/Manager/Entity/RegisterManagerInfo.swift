@@ -15,12 +15,11 @@ class RegisterManagerInfo{
     var token: String?
     var workHour: [WorkHour]?
     var storeHourType = [StoreHourType]()
+    var hoilday = Set<String>()
     private init() { }
 }
 struct WorkHour: Encodable {
     var startTime: String?
     var endTime: String?
     var day: String
-//    var number: Int
-//    var holiday: Bool
 }

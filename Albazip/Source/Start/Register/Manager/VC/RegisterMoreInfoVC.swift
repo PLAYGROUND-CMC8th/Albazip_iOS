@@ -10,19 +10,22 @@ import UIKit
 import Then
 import SnapKit
 
-class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
+class RegisterMoreInfoVC: UIViewController {
     @IBOutlet var modalBgView: UIView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var btnNext: UIButton!
     
-    
-    // 버튼 선택 정보 저장
-    var btnArray = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    // 순서) 연중 무휴, 월-금, 휴무일
-    // enable:0, selected:1, disabled: 2
-//    var workHourArr = [WorkHour]()
-//    var holiday = [String]()
+    var workHourArr = [WorkHour]()
     var salaryDate = ""
+    var isHourSetted = false{
+        didSet{
+            if isHourSetted{
+                tableView.beginUpdates()
+                tableView.reloadSections(IndexSet(1...1), with: .none)
+                tableView.endUpdates()
+            }
+        }
+    }
     // Datamanager
     lazy var dataManager: RegisterManagerDataManager = RegisterManagerDataManager()
     
@@ -34,11 +37,11 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-//        let registerManagerInfo = RegisterManagerInfo.shared
-//        if let workHour = registerManagerInfo.workHour{
-//            workHourArr = workHour
-//            tableView.reloadData()
-//        }
+        let registerManagerInfo = RegisterManagerInfo.shared
+        if let workHour = registerManagerInfo.workHour{
+            workHourArr = workHour
+            isHourSetted = true
+        }
         checkValue()
     }
     
@@ -49,8 +52,6 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
     func setTableView(){
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: "StoreClosedDayCell", bundle: nil),
-                           forCellReuseIdentifier: "StoreClosedDayCell")
     }
     @objc func selectSalaryDate(_ sender: UIButton) {
 
@@ -68,7 +69,7 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
 
     //모든 값을 다 입력했는지 검사
     func checkValue(){
-        if btnArray.contains(1), salaryDate != ""{
+        if isHourSetted, salaryDate != ""{
             btnNext.isEnabled = true
             btnNext.backgroundColor = .enableYellow
             btnNext.setTitleColor(.gray, for: .normal)
@@ -79,16 +80,6 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
         }
     }
    
-    // 휴무일 추가
-//    func setHoliday(){
-//        holiday.removeAll()
-//        for i in 0..<btnArray.count{
-//            if btnArray[i] == 1{
-//                holiday.append(dayOfIndex(index: i))
-//            }
-//        }
-//    }
-    
     func dayOfIndex(index :Int) -> String{
         switch (index){
             case 0: return "연중무휴"
@@ -105,38 +96,6 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
     
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
-    }
-    
-    func btnDayClicked(index: Int) {
-        switch (index){
-        case 0:
-            if btnArray[index] == 0{
-                btnArray[index] = 1
-                for i in 1...8{
-                    btnArray[i] = 2
-                }
-            }else if btnArray[index] == 1{
-                btnArray[index] = 0
-                for i in 1...8{
-                    btnArray[i] = 0
-                }
-            }
-            break
-            
-        default:
-            if btnArray[index] == 0{
-                btnArray[index] = 1
-                btnArray[0] = 2
-            }else if btnArray[index] == 1{
-                btnArray[index] = 0
-                if !btnArray.contains(1){
-                    btnArray[0] = 0
-                }
-            }
-            break
-        }
-        checkValue()
-        tableView.reloadData()
     }
     
     @objc func goStoreHourPage(_ sender: UIButton){
@@ -156,23 +115,22 @@ class RegisterMoreInfoVC: UIViewController, StoreClosedDayDelegate {
         
         // 영업시간 설정
         var openSchedule = [OpenSchedule]()
-//        for (i, _) in workHourArr.enumerated(){
-//            //시간에서 : 문자 제거
-//            let startStr = workHourArr[i].startTime.replace(target: ":", with: "")
-//            let endStr = workHourArr[i].endTime.replace(target: ":", with: "")
-//
-//            openSchedule.append(OpenSchedule(startTime: startStr, endTime: endStr, day: workHourArr[i].day))
-//        }
+        for workHour in workHourArr{
+            //시간에서 : 문자 제거
+            let startTime = workHour.startTime ?? "00:00"
+            let endTime = workHour.endTime ?? "00:00"
+            let startStr = startTime.replace(target: ":", with: "")
+            let endStr = endTime.replace(target: ":", with: "")
+
+            openSchedule.append(OpenSchedule(startTime: startStr, endTime: endStr, day: workHour.day))
+        }
         
         // api resquest 데이터
-//        let input = RegisterManagerRequset(name: data.name!, type: data.type!, address: data.address!, registerNumber: data.registerNumber!, openSchedule: openSchedule, holiday: holiday, payday: salaryDate)
-//        print(input)
+        let input = RegisterManagerRequset(name: data.name!, type: data.type!, address: data.address!, registerNumber: data.registerNumber!, openSchedule: openSchedule, holiday: Array(data.hoilday), payday: salaryDate)
+        print(input)
 //
 //        // api 통신
-//        dataManager.postRegisterManager(input, delegate: self)
-
-        //휴무일 정보 reset
-//        holiday.removeAll()
+        dataManager.postRegisterManager(input, delegate: self)
     }
 }
 extension RegisterMoreInfoVC: SalaryModalDelegate {
@@ -225,6 +183,7 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionView = UIView()
+        // 섹션 title
         let sectionTitle = UILabel().then{
             $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
             $0.textColor = UIColor(hex: 0x6f6f6f)
@@ -238,8 +197,38 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
             $0.height.equalTo(19)
         }
         
+        // 입력 완료 표시
+        let completedLabel = UILabel().then{
+            $0.textColor = UIColor(hex: 0x1dbe4e)
+            $0.text = "입력완료"
+            $0.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        }
+        sectionView.addSubview(completedLabel)
+        
+        completedLabel.snp.makeConstraints {
+            $0.centerY.equalTo(sectionTitle)
+            $0.leading.equalTo(sectionTitle.snp.trailing).offset(6)
+        }
+        completedLabel.isHidden = true
+        let completedImage = UIImageView().then{
+            $0.image = UIImage(named: "icCheckedCorrect")
+        }
+        
+        sectionView.addSubview(completedImage)
+        
+        completedImage.snp.makeConstraints {
+            $0.centerY.equalTo(sectionTitle)
+            $0.leading.equalTo(completedLabel.snp.trailing)
+            $0.height.width.equalTo(18)
+        }
+        completedImage.isHidden = true
+        
         if section == 1{
             sectionTitle.text = "영업시간"
+            if isHourSetted{
+                completedLabel.isHidden = false
+                completedImage.isHidden = false
+            }
         }else if section == 2{
             sectionTitle.text = "급여일"
         }
@@ -271,7 +260,11 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
             let hourBtn = UIButton().then{
                 $0.setTitleColor(UIColor(hex: 0x6f6f6f), for: .normal)
                 $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-                $0.setTitle("영업시간 설정하기", for: .normal)
+                if isHourSetted{
+                    $0.setTitle("영업시간 변경하기", for: .normal)
+                }else{
+                    $0.setTitle("영업시간 설정하기", for: .normal)
+                }
                 $0.layer.cornerRadius = 10
                 $0.layer.borderWidth = 1
                 $0.layer.borderColor = UIColor(hex: 0xededed).cgColor

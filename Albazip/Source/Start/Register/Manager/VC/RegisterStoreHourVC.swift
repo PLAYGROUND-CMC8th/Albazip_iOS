@@ -43,6 +43,7 @@ class RegisterStoreHourVC: UIViewController{
         if let workHour = registerManagerInfo.workHour{
             workHourArr = workHour
             storeHourTypeArr = registerManagerInfo.storeHourType
+            hoilday = registerManagerInfo.hoilday
         }else{
             initWorkHour()
         }
@@ -74,6 +75,7 @@ class RegisterStoreHourVC: UIViewController{
         let registerManagerInfo = RegisterManagerInfo.shared
         registerManagerInfo.workHour = workHourArr
         registerManagerInfo.storeHourType = storeHourTypeArr
+        registerManagerInfo.hoilday = hoilday
         self.navigationController?.popViewController(animated: true)
     }
    
