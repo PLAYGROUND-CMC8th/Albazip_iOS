@@ -14,6 +14,7 @@ class RegisterManagerInfo{
     var registerNumber: String?
     var token: String?
     var workHour: [WorkHour]?
+    var storeHourType = [StoreHourType]()
     private init() { }
 }
 struct WorkHour: Encodable {

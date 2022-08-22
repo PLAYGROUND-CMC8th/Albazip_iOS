@@ -1178,9 +1178,131 @@
             </objects>
             <point key="canvasLocation" x="2720.8000000000002" y="-587.4384236453202"/>
         </scene>
+        <!--Register Select All Store HourVC-->
+        <scene sceneID="THo-CH-Ai5">
+            <objects>
+                <viewController storyboardIdentifier="RegisterSelectAllStoreHourVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PtL-Kt-5UT" customClass="RegisterSelectAllStoreHourVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TDk-8p-OL0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6c-fP-xzE">
+                                <rect key="frame" x="0.0" y="486" width="375" height="326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모든 영업시간을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNG-SM-KbW">
+                                        <rect key="frame" x="24" y="24" width="327" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0ow-EU-VDZ">
+                                        <rect key="frame" x="24" y="238" width="327" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rek-7c-AGf">
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="52"/>
+                                                <color key="backgroundColor" red="1" green="0.93725490196078431" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="eq9-r8-Yyk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <state key="normal" title="확인">
+                                                    <color key="titleColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="okBtnClicked:" destination="PtL-Kt-5UT" eventType="touchUpInside" id="kNi-z4-7xA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="327" id="Wvh-Lu-09Y"/>
+                                            <constraint firstAttribute="height" constant="52" id="e5K-7M-8Yr"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기존에 입력했던 영업시간은 모두 사라져요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRq-ps-OMf">
+                                        <rect key="frame" x="24" y="53.666666666666629" width="237" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                        <color key="textColor" red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhb-c4-YWk">
+                                        <rect key="frame" x="24" y="94.666666666666629" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="jLT-Ba-rWu"/>
+                                            <constraint firstAttribute="height" constant="24" id="m9e-pP-idX"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="checkCircleInactive24Px" title=""/>
+                                        <connections>
+                                            <action selector="allDayBtnClicked:" destination="PtL-Kt-5UT" eventType="touchUpInside" id="HRb-eZ-Mjg"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24시간 영업" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbo-DN-yzR">
+                                        <rect key="frame" x="51.999999999999993" y="97" width="79.333333333333314" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pNG-SM-KbW" secondAttribute="trailing" constant="24" id="Ey8-nT-3fA"/>
+                                    <constraint firstAttribute="width" constant="375" id="JPm-Tp-rDU"/>
+                                    <constraint firstItem="0ow-EU-VDZ" firstAttribute="leading" secondItem="c6c-fP-xzE" secondAttribute="leading" constant="24" id="NHB-Mr-2vz"/>
+                                    <constraint firstItem="Hhb-c4-YWk" firstAttribute="leading" secondItem="c6c-fP-xzE" secondAttribute="leading" constant="24" id="Ob8-Su-XjL"/>
+                                    <constraint firstAttribute="height" constant="326" id="Pvg-vg-goo"/>
+                                    <constraint firstItem="GRq-ps-OMf" firstAttribute="top" secondItem="pNG-SM-KbW" secondAttribute="bottom" constant="8" id="QCt-7x-PfO"/>
+                                    <constraint firstAttribute="trailing" secondItem="0ow-EU-VDZ" secondAttribute="trailing" constant="24" id="UJt-rY-Ase"/>
+                                    <constraint firstItem="pNG-SM-KbW" firstAttribute="leading" secondItem="c6c-fP-xzE" secondAttribute="leading" constant="24" id="ZqI-CR-FtE"/>
+                                    <constraint firstAttribute="bottom" secondItem="0ow-EU-VDZ" secondAttribute="bottom" constant="36" id="a2X-a8-Tgk"/>
+                                    <constraint firstItem="Hbo-DN-yzR" firstAttribute="centerY" secondItem="Hhb-c4-YWk" secondAttribute="centerY" id="cik-xK-FmW"/>
+                                    <constraint firstItem="GRq-ps-OMf" firstAttribute="leading" secondItem="c6c-fP-xzE" secondAttribute="leading" constant="24" id="dEg-Ha-H0M"/>
+                                    <constraint firstItem="pNG-SM-KbW" firstAttribute="top" secondItem="c6c-fP-xzE" secondAttribute="top" constant="24" id="jDO-wc-02m"/>
+                                    <constraint firstItem="Hbo-DN-yzR" firstAttribute="leading" secondItem="Hhb-c4-YWk" secondAttribute="trailing" constant="4" id="tBR-Oq-bvU"/>
+                                    <constraint firstItem="Hhb-c4-YWk" firstAttribute="top" secondItem="GRq-ps-OMf" secondAttribute="bottom" constant="24" id="wjg-yW-xal"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J81-UO-jcg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xkU-5T-or1"/>
+                        <constraints>
+                            <constraint firstItem="J81-UO-jcg" firstAttribute="top" secondItem="TDk-8p-OL0" secondAttribute="top" id="2TH-Ad-O93"/>
+                            <constraint firstAttribute="trailing" secondItem="J81-UO-jcg" secondAttribute="trailing" id="7xS-J4-EnQ"/>
+                            <constraint firstItem="c6c-fP-xzE" firstAttribute="trailing" secondItem="xkU-5T-or1" secondAttribute="trailing" id="9ik-Qr-cIb"/>
+                            <constraint firstAttribute="bottom" secondItem="c6c-fP-xzE" secondAttribute="bottom" id="LIj-Ee-VXi"/>
+                            <constraint firstItem="J81-UO-jcg" firstAttribute="leading" secondItem="xkU-5T-or1" secondAttribute="leading" id="NiA-0L-CXF"/>
+                            <constraint firstItem="c6c-fP-xzE" firstAttribute="leading" secondItem="xkU-5T-or1" secondAttribute="leading" id="QFY-zn-9fM"/>
+                            <constraint firstItem="xkU-5T-or1" firstAttribute="bottom" secondItem="J81-UO-jcg" secondAttribute="bottom" constant="-34" id="nzU-Yr-ULi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="allDayBtn" destination="Hhb-c4-YWk" id="Rcl-cX-yB8"/>
+                        <outlet property="backgroundView" destination="TDk-8p-OL0" id="F00-B8-sgW"/>
+                        <outlet property="cornerView" destination="c6c-fP-xzE" id="NmN-i7-pyv"/>
+                        <outlet property="modalBgView" destination="J81-UO-jcg" id="iAq-fb-OxU"/>
+                        <outlet property="okBtn" destination="Rek-7c-AGf" id="tGU-KZ-dQX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hyC-2E-azX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3556" y="-587.4384236453202"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btn" width="96" height="37"/>
+        <image name="checkCircleInactive24Px" width="24" height="24"/>
         <image name="icAlertCircle" width="20" height="20"/>
         <image name="icBackArrow" width="24" height="24"/>
         <image name="icCheckedNormal" width="24" height="24"/>

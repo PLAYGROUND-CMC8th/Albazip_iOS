@@ -377,6 +377,8 @@
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
 		C3D69454273ACC8500BF540C /* SettingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */; };
 		C3D69457273ACDC500BF540C /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D69456273ACDC500BF540C /* SettingVC.swift */; };
+		C3E0768328B3CCD700D049E4 /* StoreHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0768228B3CCD700D049E4 /* StoreHourView.swift */; };
+		C3E0768528B3CF5B00D049E4 /* RegisterSelectAllStoreHourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0768428B3CF5B00D049E4 /* RegisterSelectAllStoreHourVC.swift */; };
 		C3E1FEA3272D8A3300CE44C6 /* MyPageManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA2272D8A3300CE44C6 /* MyPageManagerVC.swift */; };
 		C3E1FEA6272D8AAB00CE44C6 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA5272D8AAB00CE44C6 /* Page.swift */; };
 		C3E1FEA9272D8C5B00CE44C6 /* MyPageManagerContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA7272D8C5B00CE44C6 /* MyPageManagerContentVC.swift */; };
@@ -818,6 +820,8 @@
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69456273ACDC500BF540C /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		C3E0768228B3CCD700D049E4 /* StoreHourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHourView.swift; sourceTree = "<group>"; };
+		C3E0768428B3CF5B00D049E4 /* RegisterSelectAllStoreHourVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSelectAllStoreHourVC.swift; sourceTree = "<group>"; };
 		C3E1FEA2272D8A3300CE44C6 /* MyPageManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerVC.swift; sourceTree = "<group>"; };
 		C3E1FEA5272D8AAB00CE44C6 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		C3E1FEA7272D8C5B00CE44C6 /* MyPageManagerContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerContentVC.swift; sourceTree = "<group>"; };
@@ -1761,6 +1765,7 @@
 				C35A30EC283A747C008354E2 /* StoreClosedDayCell.swift */,
 				C35A30ED283A747C008354E2 /* StoreClosedDayCell.xib */,
 				C3D01DF4284512A400CB6D6F /* StoreHourTableViewCell.swift */,
+				C3E0768228B3CCD700D049E4 /* StoreHourView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2715,6 +2720,7 @@
 				C3B022F02727193100013988 /* RegisterSelectSalaryDateVC.swift */,
 				C383476F272D1D7E00EE0D55 /* RegisterSelectTimeVC.swift */,
 				C3D01DF22845100800CB6D6F /* RegisterStoreHourVC.swift */,
+				C3E0768428B3CF5B00D049E4 /* RegisterSelectAllStoreHourVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -3194,6 +3200,7 @@
 				C34972F4275058E5009EFCD1 /* CommunityManagerNoticePinResponse.swift in Sources */,
 				C3B022EF2726F28A00013988 /* RegisterSelectStoreTypeVC.swift in Sources */,
 				C3CFC304273EC3F2001B2EB6 /* MyPageManagerWorkerInfoDataManager.swift in Sources */,
+				C3E0768328B3CCD700D049E4 /* StoreHourView.swift in Sources */,
 				C3A7C7F92752A33100271EFE /* HomeManagerEditStoreReponse.swift in Sources */,
 				C3F05A56274F8A6F0025DB24 /* MyPageDeletePositionDatamanager.swift in Sources */,
 				C3A228B3274286B600187587 /* HomeWorkerWorkTableViewCell.swift in Sources */,
@@ -3240,6 +3247,7 @@
 				C398BFA0273F861D008E8BA5 /* HomeManagerMainTableViewCell.swift in Sources */,
 				C37EBF4D271AD71700DEC2CA /* RegisterPasswordVC.swift in Sources */,
 				C34972F82750900B009EFCD1 /* CommunityManagerWriteRequest.swift in Sources */,
+				C3E0768528B3CF5B00D049E4 /* RegisterSelectAllStoreHourVC.swift in Sources */,
 				C33574162743E41A00644E9B /* SettingMyInfoResponse.swift in Sources */,
 				C3AC1F89274D22760007AA95 /* CommunityWorkerNoticeTableViewCell.swift in Sources */,
 				C3A7C7E72752665700271EFE /* HomeWorkerQRCodeReponse.swift in Sources */,

@@ -21,7 +21,13 @@ class RegisterStoreHourVC: UIViewController{
     
     var isAllSameHour = false { // 모든 영업시간 일치 여부
         didSet{
-            tableView.reloadData()
+            if isAllSameHour{
+                tableView.reloadData()
+            }else{
+                tableView.beginUpdates()
+                tableView.reloadSections(IndexSet(0...0), with: .none)
+                tableView.endUpdates()
+            }
         }
     }
     
@@ -36,6 +42,7 @@ class RegisterStoreHourVC: UIViewController{
         let registerManagerInfo = RegisterManagerInfo.shared
         if let workHour = registerManagerInfo.workHour{
             workHourArr = workHour
+            storeHourTypeArr = registerManagerInfo.storeHourType
         }else{
             initWorkHour()
         }
@@ -66,16 +73,31 @@ class RegisterStoreHourVC: UIViewController{
     @IBAction func btnNext(_ sender: Any) {
         let registerManagerInfo = RegisterManagerInfo.shared
         registerManagerInfo.workHour = workHourArr
+        registerManagerInfo.storeHourType = storeHourTypeArr
         self.navigationController?.popViewController(animated: true)
     }
    
     // 모든 요일 동일 버튼
     @objc func allSameBtnclicked(_ sender: UIButton){
-        isAllSameHour = !isAllSameHour
+        if isAllSameHour{
+            isAllSameHour = false
+        }else{
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectAllStoreHourVC") as? RegisterSelectAllStoreHourVC {
+                vc.modalPresentationStyle = .overFullScreen
+                vc.delegate = self
+                modalBgView.isHidden = false
+                self.present(vc, animated: true, completion: nil)
+
+            }
+        }
     }
     
     // 휴무일 버튼
     @objc func holidayBtnclicked(_ sender: UIButton){
+        if isAllSameHour{
+            isAllSameHour = false
+        }
+        
         let index = sender.tag
         let storeHourType = storeHourTypeArr[index]
         
@@ -91,7 +113,9 @@ class RegisterStoreHourVC: UIViewController{
                 hoilday.remove(at: indexToRemove)
             }
         }
+        tableView.beginUpdates()
         tableView.reloadRows(at: [IndexPath(row: index, section: 1)], with: .automatic)
+        tableView.endUpdates()
     }
     
     // 24시간 버튼
@@ -111,7 +135,6 @@ class RegisterStoreHourVC: UIViewController{
     }
     
     @objc func setOpenHour(_ sender: UIButton) {
-
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
             vc.modalPresentationStyle = .overFullScreen
             modalBgView.isHidden = false
@@ -124,7 +147,6 @@ class RegisterStoreHourVC: UIViewController{
         }
     }
     @objc func setCloseHour(_ sender: UIButton) {
-
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
             vc.modalPresentationStyle = .overFullScreen
 
@@ -276,13 +298,52 @@ extension RegisterStoreHourVC: TimeDateModalDelegate {
     }
 
     func openTimeTextFieldData(data: String, index: Int) {
+        if isAllSameHour{
+            isAllSameHour = false
+        }
+        
         workHourArr[index].startTime = data
         
+        tableView.beginUpdates()
         tableView.reloadRows(at: [IndexPath(row: index, section: 1)], with: .none)
+        tableView.endUpdates()
     }
     func endTimeTextFieldData(data: String, index: Int) {
+        if isAllSameHour{
+            isAllSameHour = false
+        }
+        
         workHourArr[index].endTime = data
         
+        tableView.beginUpdates()
         tableView.reloadRows(at: [IndexPath(row: index, section: 1)], with: .none)
+        tableView.endUpdates()
+    }
+}
+
+// 모든 요일 동일 delegate
+extension RegisterStoreHourVC: AllStoreHourDelegate {
+    func getAllTimeHour(workHour: WorkHour, isAllHour: Bool) {
+        modalBgView.isHidden = true
+        // 영업시간 세팅
+        workHourArr = workHourArr.map { _ in
+            return workHour
+        }
+        // 공휴일 모두 제거
+        hoilday.removeAll()
+        
+        storeHourTypeArr = storeHourTypeArr.map { _ in
+            if isAllHour{
+                return .allDay //24시간 영업
+            }else{
+                return .normal //default
+            }
+        }
+        
+        isAllSameHour = true
+    }
+    
+    func storeHourModalDismiss() {
+        modalBgView.isHidden = true
     }
 }
