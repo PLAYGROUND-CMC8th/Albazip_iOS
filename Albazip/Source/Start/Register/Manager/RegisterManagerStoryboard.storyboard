@@ -368,12 +368,129 @@
                     </view>
                     <connections>
                         <outlet property="modalBgView" destination="vIG-5y-4jd" id="bJd-4r-RMg"/>
+                        <outlet property="nextBtn" destination="oeK-mY-9d0" id="rAt-nN-d0V"/>
                         <outlet property="tableView" destination="Ltj-VD-Y0Q" id="csz-lU-fSN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4P-SH-Kxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2773.5999999999999" y="111.57635467980296"/>
+        </scene>
+        <!--Store Hour Un CompletedVC-->
+        <scene sceneID="LY6-Er-72f">
+            <objects>
+                <viewController storyboardIdentifier="StoreHourUnCompletedVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="w6H-6a-XkI" customClass="StoreHourUnCompletedVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Fe-aG-Nhp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TV7-KJ-CNR">
+                                <rect key="frame" x="0.0" y="586" width="375" height="226"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영업시간 설정이 완료되지 않았어요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nju-rZ-wci">
+                                        <rect key="frame" x="24" y="24" width="327" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="W4p-is-Skl">
+                                        <rect key="frame" x="24" y="138" width="327" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7M-bQ-WyF">
+                                                <rect key="frame" x="0.0" y="0.0" width="156" height="52"/>
+                                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="5ht-aR-aaJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <state key="normal" title="취소">
+                                                    <color key="titleColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnCancel:" destination="fVS-ED-yyy" eventType="touchUpInside" id="EH6-Il-rT4"/>
+                                                    <action selector="btnCancel:" destination="w6H-6a-XkI" eventType="touchUpInside" id="Xth-qG-iyM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asr-rO-Pzp">
+                                                <rect key="frame" x="171" y="0.0" width="156" height="52"/>
+                                                <color key="backgroundColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="2Ql-bR-vcy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <state key="normal" title="나가기">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnOk:" destination="w6H-6a-XkI" eventType="touchUpInside" id="v04-Dl-uxj"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="5hP-Pr-kph"/>
+                                            <constraint firstAttribute="width" constant="327" id="ywD-u5-IAM"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGq-hy-3GT">
+                                        <rect key="frame" x="0.0" y="53.666666666666629" width="375" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="5K0-ig-mN2"/>
+                                        </constraints>
+                                        <string key="text">설정중이던 내용은 저장되지 않아요. 
+그래도 작업을 중단하고 나가시겠어요?</string>
+                                        <fontDescription key="fontDescription" name=".AppleSDGothicNeoI-Regular" family=".Apple SD Gothic NeoI" pointSize="14"/>
+                                        <color key="textColor" red="0.43529411764705883" green="0.43529411764705883" blue="0.43529411764705883" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="W4p-is-Skl" secondAttribute="bottom" constant="36" id="4De-Xk-dje"/>
+                                    <constraint firstAttribute="trailing" secondItem="nju-rZ-wci" secondAttribute="trailing" constant="24" id="4Rw-oa-Zad"/>
+                                    <constraint firstItem="jGq-hy-3GT" firstAttribute="leading" secondItem="TV7-KJ-CNR" secondAttribute="leading" id="77U-xi-IzF"/>
+                                    <constraint firstAttribute="trailing" secondItem="W4p-is-Skl" secondAttribute="trailing" constant="24" id="Eqt-gZ-yaA"/>
+                                    <constraint firstAttribute="trailing" secondItem="jGq-hy-3GT" secondAttribute="trailing" id="HW0-Gc-n1b"/>
+                                    <constraint firstItem="nju-rZ-wci" firstAttribute="top" secondItem="TV7-KJ-CNR" secondAttribute="top" constant="24" id="KbD-ph-11d"/>
+                                    <constraint firstItem="W4p-is-Skl" firstAttribute="leading" secondItem="TV7-KJ-CNR" secondAttribute="leading" constant="24" id="LYf-le-qXE"/>
+                                    <constraint firstAttribute="height" constant="226" id="ciM-OE-t03"/>
+                                    <constraint firstItem="jGq-hy-3GT" firstAttribute="top" secondItem="nju-rZ-wci" secondAttribute="bottom" constant="8" id="iXq-5c-kCs"/>
+                                    <constraint firstAttribute="width" constant="375" id="idv-xX-gvn"/>
+                                    <constraint firstItem="nju-rZ-wci" firstAttribute="leading" secondItem="TV7-KJ-CNR" secondAttribute="leading" constant="24" id="uSX-7n-12z"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IFN-V0-xhq"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TV7-KJ-CNR" firstAttribute="leading" secondItem="IFN-V0-xhq" secondAttribute="leading" id="O9E-wg-yfN"/>
+                            <constraint firstAttribute="bottom" secondItem="TV7-KJ-CNR" secondAttribute="bottom" id="YO9-nm-w7Y"/>
+                            <constraint firstAttribute="trailing" secondItem="TV7-KJ-CNR" secondAttribute="trailing" id="zHh-cC-OXQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="7Fe-aG-Nhp" id="MWY-nH-XQ3"/>
+                        <outlet property="contentLabel" destination="jGq-hy-3GT" id="zTT-73-7L1"/>
+                        <outlet property="cornerView" destination="TV7-KJ-CNR" id="UTc-0W-Kf1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ek4-ES-SG0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3530" y="118"/>
         </scene>
         <!--Register Search StoreVC-->
         <scene sceneID="WJ3-zm-fA7">
@@ -1132,10 +1249,17 @@
                                             </pickerView>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마감시간은 마감 근무자의 퇴근시간을 기준으로 설정해주세요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k3-bI-4ps">
+                                        <rect key="frame" x="24" y="53.666666666666686" width="337.66666666666669" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                        <color key="textColor" red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="jer-Vz-Zro" firstAttribute="leading" secondItem="WgG-Bb-JKb" secondAttribute="leading" constant="24" id="2IS-Jc-z2j"/>
+                                    <constraint firstItem="6k3-bI-4ps" firstAttribute="top" secondItem="QVC-wV-ODQ" secondAttribute="bottom" constant="8" id="3hQ-py-SnE"/>
                                     <constraint firstAttribute="trailing" secondItem="jer-Vz-Zro" secondAttribute="trailing" constant="24" id="6d5-gp-Xh9"/>
                                     <constraint firstItem="a9h-Qj-AVL" firstAttribute="leading" secondItem="WgG-Bb-JKb" secondAttribute="leading" constant="32" id="71L-v1-hj4"/>
                                     <constraint firstItem="AkN-sY-Dfd" firstAttribute="centerY" secondItem="a9h-Qj-AVL" secondAttribute="centerY" id="9Iv-T1-QHa"/>
@@ -1145,6 +1269,7 @@
                                     <constraint firstAttribute="trailing" secondItem="QVC-wV-ODQ" secondAttribute="trailing" constant="24" id="bvx-8k-LNz"/>
                                     <constraint firstItem="QVC-wV-ODQ" firstAttribute="top" secondItem="WgG-Bb-JKb" secondAttribute="top" constant="24" id="cNJ-O4-6jZ"/>
                                     <constraint firstAttribute="width" constant="375" id="eP1-pm-X6A"/>
+                                    <constraint firstItem="6k3-bI-4ps" firstAttribute="leading" secondItem="WgG-Bb-JKb" secondAttribute="leading" constant="24" id="hSR-gI-wob"/>
                                     <constraint firstItem="QVC-wV-ODQ" firstAttribute="leading" secondItem="WgG-Bb-JKb" secondAttribute="leading" constant="24" id="iW1-Vf-b2S"/>
                                     <constraint firstItem="c1X-TZ-5qD" firstAttribute="centerY" secondItem="AkN-sY-Dfd" secondAttribute="centerY" id="jQW-aH-DRU"/>
                                     <constraint firstAttribute="trailing" secondItem="a9h-Qj-AVL" secondAttribute="trailing" constant="32" id="noF-TG-47g"/>
@@ -1169,8 +1294,10 @@
                     <connections>
                         <outlet property="backgroundView" destination="Shi-Ed-glw" id="1rY-qd-43O"/>
                         <outlet property="cornerView" destination="WgG-Bb-JKb" id="ryD-Ot-iim"/>
+                        <outlet property="cornerViewHeightConst" destination="FLK-dl-0vi" id="eYg-Jd-Bwv"/>
                         <outlet property="pickerView" destination="Qh2-Sm-JO8" id="yei-Zs-Y2z"/>
                         <outlet property="pickerView2" destination="jN2-Ef-ShL" id="yaA-PO-qEp"/>
+                        <outlet property="subLabel" destination="6k3-bI-4ps" id="4vQ-m7-RfD"/>
                         <outlet property="titleLabel" destination="QVC-wV-ODQ" id="l03-kd-tfz"/>
                     </connections>
                 </viewController>
@@ -1229,12 +1356,13 @@
                                         <color key="textColor" red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhb-c4-YWk">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhb-c4-YWk">
                                         <rect key="frame" x="24" y="94.666666666666629" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="jLT-Ba-rWu"/>
                                             <constraint firstAttribute="height" constant="24" id="m9e-pP-idX"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="checkCircleInactive24Px" title=""/>
                                         <connections>

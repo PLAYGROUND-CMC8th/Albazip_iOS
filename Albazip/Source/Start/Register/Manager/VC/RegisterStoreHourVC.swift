@@ -14,7 +14,8 @@ class RegisterStoreHourVC: UIViewController{
     
     @IBOutlet var modalBgView: UIView!
     @IBOutlet var tableView: UITableView!
-
+    @IBOutlet var nextBtn: UIButton!
+    
     var workHourArr = [WorkHour]()
     var storeHourTypeArr = [StoreHourType]()
     var hoilday : Set<String> = Set<String>()
@@ -47,6 +48,7 @@ class RegisterStoreHourVC: UIViewController{
         }else{
             initWorkHour()
         }
+        checkValue()
         tableView.reloadData()
     }
     
@@ -68,7 +70,12 @@ class RegisterStoreHourVC: UIViewController{
     }
     
     @IBAction func btnCancel(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "StoreHourUnCompletedVC") as? StoreHourUnCompletedVC {
+            vc.modalPresentationStyle = .overFullScreen
+            vc.delegate = self
+            modalBgView.isHidden = false
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func btnNext(_ sender: Any) {
@@ -83,6 +90,7 @@ class RegisterStoreHourVC: UIViewController{
     @objc func allSameBtnclicked(_ sender: UIButton){
         if isAllSameHour{
             isAllSameHour = false
+            checkValue()
         }else{
             if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectAllStoreHourVC") as? RegisterSelectAllStoreHourVC {
                 vc.modalPresentationStyle = .overFullScreen
@@ -115,6 +123,9 @@ class RegisterStoreHourVC: UIViewController{
                 hoilday.remove(at: indexToRemove)
             }
         }
+        
+        checkValue()
+        
         tableView.beginUpdates()
         tableView.reloadRows(at: [IndexPath(row: index, section: 1)], with: .automatic)
         tableView.endUpdates()
@@ -133,6 +144,9 @@ class RegisterStoreHourVC: UIViewController{
         case .allDay:
             storeHourTypeArr[index] = .normal
         }
+        
+        checkValue()
+        
         tableView.reloadRows(at: [IndexPath(row: index, section: 1)], with: .automatic)
     }
     
@@ -173,6 +187,19 @@ class RegisterStoreHourVC: UIViewController{
             case 6: return "일"
             default: return ""
         }
+    }
+    
+    func checkValue(){
+        // 모든 요일 다 입력했는지 검사
+        for (index, value) in workHourArr.enumerated(){
+            if (storeHourTypeArr[index] == .normal) && ((value.startTime == nil) || (value.endTime == nil)){
+                nextBtn.isEnabled = false
+                nextBtn.setTitleColor(UIColor(hex: 0xADADAD), for: .normal)
+                return
+            }
+        }
+        nextBtn.isEnabled = true
+        nextBtn.setTitleColor(UIColor(hex: 0xFFB100), for: .normal)
     }
 }
 
@@ -296,7 +323,7 @@ extension RegisterStoreHourVC: TimeDateModalDelegate {
     
     func timeModalDismiss() {
         modalBgView.isHidden = true
-//        checkValue()
+        checkValue()
     }
 
     func openTimeTextFieldData(data: String, index: Int) {
@@ -343,9 +370,21 @@ extension RegisterStoreHourVC: AllStoreHourDelegate {
         }
         
         isAllSameHour = true
+        checkValue()
     }
     
     func storeHourModalDismiss() {
         modalBgView.isHidden = true
+        checkValue()
+    }
+}
+// 영업 시간 설정 미완료 alert delegate
+extension RegisterStoreHourVC: StoreHourUnCompletedDelegate {
+    func modalDismiss() {
+        modalBgView.isHidden = true
+    }
+    
+    func backToPage() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

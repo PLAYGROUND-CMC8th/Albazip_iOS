@@ -17,9 +17,11 @@ protocol TimeDateModalDelegate {
 class RegisterSelectTimeVC: UIViewController{
     
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var subLabel: UILabel!
     @IBOutlet var pickerView: UIPickerView!
     @IBOutlet var backgroundView: UIView!
     @IBOutlet var cornerView: UIView!
+    @IBOutlet var cornerViewHeightConst: NSLayoutConstraint!
     @IBOutlet var pickerView2: UIPickerView!
     
     var titletext = ""
@@ -63,6 +65,13 @@ class RegisterSelectTimeVC: UIViewController{
         cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
                 backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
+        if (whatDate == 0){
+            subLabel.isHidden = true
+            cornerViewHeightConst.constant = 365
+        }else{
+            subLabel.isHidden = false
+            cornerViewHeightConst.constant = 390
+        }
     }
     
    

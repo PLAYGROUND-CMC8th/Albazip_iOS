@@ -53,7 +53,6 @@ class RegisterSelectAllStoreHourVC: UIViewController{
     @objc func setOpenHour(_ sender: UIButton) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
             vc.modalPresentationStyle = .overFullScreen
-            modalBgView.isHidden = false
             vc.timeDateModalDelegate = self
             vc.whatDate = 0
             vc.titletext = "매장 오픈 시간"
@@ -65,8 +64,6 @@ class RegisterSelectAllStoreHourVC: UIViewController{
     @objc func setCloseHour(_ sender: UIButton) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
             vc.modalPresentationStyle = .overFullScreen
-
-            modalBgView.isHidden = false
             vc.timeDateModalDelegate = self
             vc.whatDate = 1
             vc.titletext = "매장 마감 시간"

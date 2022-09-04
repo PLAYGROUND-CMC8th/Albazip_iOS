@@ -25,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     UITabBar.appearance().scrollEdgeAppearance = appearance
         }
         
+        if #available(iOS 15.0, *) {
+            UITableView.appearance().sectionHeaderTopPadding = 0.0
+        }
+        
         //MARK: Firebase 전화번호 인증 코드 추가
         FirebaseApp.configure()
         
