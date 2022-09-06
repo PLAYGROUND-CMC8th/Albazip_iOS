@@ -1,24 +1,21 @@
 //
-//  RegisterStoreHourVC.swift
+//  SelectWorkerHourVC.swift
 //  Albazip
 //
-//  Created by 김수빈 on 2022/05/30.
+//  Created by 김수빈 on 2022/09/04.
 //
 
-import Foundation
 import UIKit
-import Then
 import SnapKit
+import Then
 
-class RegisterStoreHourVC: UIViewController{
-    
-    @IBOutlet var modalBgView: UIView!
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var nextBtn: UIButton!
+class SelectWorkerHourVC: UIViewController{
     
     var workHourArr = [WorkHour]()
-    var storeHourTypeArr = [StoreHourType]()
-    var hoilday : Set<String> = Set<String>()
+    var workDayTypes = [Bool]()
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var nextBtn: UIButton!
+    let modalBgView = UIView()
     
     var isAllSameHour = false { // 모든 영업시간 일치 여부
         didSet{
@@ -38,13 +35,12 @@ class RegisterStoreHourVC: UIViewController{
         setTableView()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(false)
-        let registerManagerInfo = RegisterManagerInfo.shared
-        if let workHour = registerManagerInfo.workHour{
+        let workerInfo = MyPageManagerAddWorkerInfo.shared
+        if let workHour = workerInfo.workDays{
             workHourArr = workHour
-            storeHourTypeArr = registerManagerInfo.storeHourType
-            hoilday = registerManagerInfo.hoilday
+            workDayTypes = workerInfo.workDayTypes
         }else{
             initWorkHour()
         }
@@ -53,46 +49,36 @@ class RegisterStoreHourVC: UIViewController{
     }
     
     func setUI(){
+        modalBgView.backgroundColor = .separator
+        view.addSubview(modalBgView)
+        modalBgView.snp.makeConstraints {
+            $0.top.leading.trailing.bottom.equalToSuperview()
+        }
         modalBgView.isHidden = true
     }
     
     func setTableView(){
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(StoreHourTableViewCell.self, forCellReuseIdentifier: "StoreHourTableViewCell")
+        tableView.register(WorkHourTableViewCell.self, forCellReuseIdentifier: "WorkHourTableViewCell")
     }
     
+    // 요일별 데이터 세팅
     func initWorkHour(){
         for i in 0...6{
             workHourArr.append(WorkHour(startTime: nil, endTime: nil, day: SysUtils.dayOfIndex(index: i)))
-            storeHourTypeArr.append(.normal)
+            workDayTypes.append(false)
         }
     }
     
-    @IBAction func btnCancel(_ sender: Any) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "StoreHourUnCompletedVC") as? StoreHourUnCompletedVC {
-            vc.modalPresentationStyle = .overFullScreen
-            vc.delegate = self
-            modalBgView.isHidden = false
-            self.present(vc, animated: true, completion: nil)
-        }
-    }
-    
-    @IBAction func btnNext(_ sender: Any) {
-        let registerManagerInfo = RegisterManagerInfo.shared
-        registerManagerInfo.workHour = workHourArr
-        registerManagerInfo.storeHourType = storeHourTypeArr
-        registerManagerInfo.hoilday = hoilday
-        self.navigationController?.popViewController(animated: true)
-    }
-   
     // 모든 요일 동일 버튼
     @objc func allSameBtnclicked(_ sender: UIButton){
         if isAllSameHour{
             isAllSameHour = false
             checkValue()
         }else{
-            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectAllStoreHourVC") as? RegisterSelectAllStoreHourVC {
+            let newStoryboard = UIStoryboard(name: "RegisterManagerStoryboard", bundle: nil)
+            if let vc = newStoryboard.instantiateViewController(withIdentifier: "RegisterSelectAllStoreHourVC") as? RegisterSelectAllStoreHourVC {
                 vc.modalPresentationStyle = .overFullScreen
                 vc.delegate = self
                 modalBgView.isHidden = false
@@ -102,98 +88,89 @@ class RegisterStoreHourVC: UIViewController{
         }
     }
     
-    // 휴무일 버튼
-    @objc func holidayBtnclicked(_ sender: UIButton){
-        if isAllSameHour{
-            isAllSameHour = false
-        }
-        
-        let index = sender.tag
-        let storeHourType = storeHourTypeArr[index]
-        
-        switch(storeHourType){
-        case .normal, .allDay:
-            storeHourTypeArr[index] = .hoilday
-            workHourArr[index].startTime = nil
-            workHourArr[index].endTime = nil
-            hoilday.insert(SysUtils.dayOfIndex(index: index))
-        case .hoilday:
-            storeHourTypeArr[index] = .normal
-            if let indexToRemove = hoilday.firstIndex(of: SysUtils.dayOfIndex(index: index)) {
-                hoilday.remove(at: indexToRemove)
-            }
-        }
-        
-        checkValue()
-        
-        tableView.beginUpdates()
-        tableView.reloadRows(at: [IndexPath(row: index, section: 1)], with: .automatic)
-        tableView.endUpdates()
-    }
-    
-    // 24시간 버튼
-    @objc func allDayBtnclicked(_ sender: UIButton){
-        let index = sender.tag
-        let storeHourType = storeHourTypeArr[index]
-        
-        switch(storeHourType){
-        case .normal, .hoilday:
-            storeHourTypeArr[index] = .allDay
-            workHourArr[index].startTime = nil
-            workHourArr[index].endTime = nil
-        case .allDay:
-            storeHourTypeArr[index] = .normal
-        }
-        
-        checkValue()
-        
-        tableView.reloadRows(at: [IndexPath(row: index, section: 1)], with: .automatic)
-    }
-    
     @objc func setOpenHour(_ sender: UIButton) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
+        let newStoryboard = UIStoryboard(name: "RegisterManagerStoryboard", bundle: nil)
+        if let vc = newStoryboard.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
             vc.modalPresentationStyle = .overFullScreen
             modalBgView.isHidden = false
             vc.timeDateModalDelegate = self
+            vc.whatHour = .workHour
             vc.whenHour = .startTime
-            vc.whatHour = .storeHour
-            vc.titletext = "매장 오픈 시간"
+            vc.titletext = "출근 시간"
             vc.index = sender.tag
             self.present(vc, animated: true, completion: nil)
 
         }
     }
     @objc func setCloseHour(_ sender: UIButton) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
+        let newStoryboard = UIStoryboard(name: "RegisterManagerStoryboard", bundle: nil)
+        if let vc = newStoryboard.instantiateViewController(withIdentifier: "RegisterSelectTimeVC") as? RegisterSelectTimeVC {
             vc.modalPresentationStyle = .overFullScreen
 
             modalBgView.isHidden = false
             vc.timeDateModalDelegate = self
+            vc.whatHour = .workHour
             vc.whenHour = .endTime
-            vc.whatHour = .storeHour
-            vc.titletext = "매장 마감 시간"
+            vc.titletext = "퇴근 시간"
             vc.index = sender.tag
             self.present(vc, animated: true, completion: nil)
-
         }
     }
     
+    @objc func checkDayBtn(_ sender: UIButton) {
+        if isAllSameHour{
+            isAllSameHour = false
+        }
+        let index = sender.tag
+        
+        if (workDayTypes[index]){
+            // 요일 선택 해제 시, 해당 요일 시간 초기화
+            workHourArr[index].startTime = nil
+            workHourArr[index].endTime = nil
+        }
+        workDayTypes[index] = !workDayTypes[index]
+        
+        checkValue()
+        
+        tableView.beginUpdates()
+        tableView.reloadRows(at: [IndexPath(row: index, section: 1)], with: .fade)
+        tableView.endUpdates()
+    }
+    
     func checkValue(){
-        // 모든 요일 다 입력했는지 검사
+        // 선택한 요일 다 입력했는지 검사
         for (index, value) in workHourArr.enumerated(){
-            if (storeHourTypeArr[index] == .normal) && ((value.startTime == nil) || (value.endTime == nil)){
+            if (workDayTypes[index]) && ((value.startTime == nil) || (value.endTime == nil)){
                 nextBtn.isEnabled = false
                 nextBtn.setTitleColor(UIColor(hex: 0xADADAD), for: .normal)
                 return
             }
         }
-        nextBtn.isEnabled = true
-        nextBtn.setTitleColor(UIColor(hex: 0xFFB100), for: .normal)
+        
+        if workDayTypes.contains(true){
+            nextBtn.isEnabled = true
+            nextBtn.setTitleColor(UIColor(hex: 0xFFB100), for: .normal)
+        }else{
+            nextBtn.isEnabled = false
+            nextBtn.setTitleColor(UIColor(hex: 0xADADAD), for: .normal)
+        }
+    }
+    
+    @IBAction func btnCancel(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func btnNext(_ sender: Any) {
+        let workerInfo = MyPageManagerAddWorkerInfo.shared
+        workerInfo.workDays = workHourArr
+        workerInfo.workDayTypes = workDayTypes
+        
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
 // 테이블뷰 extension
-extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
+extension SelectWorkerHourVC: UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -211,7 +188,7 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
         if section == 0{
             return 1
         }else{
-            return workHourArr.count
+            return 7
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -229,7 +206,7 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
             let checkLabel = UILabel().then{
                 $0.font = .systemFont(ofSize: 16, weight: .medium)
                 $0.textColor = UIColor(hex: 0x343434)
-                $0.text = "모든 영업시간이 같아요."
+                $0.text = "모든 근무시간이 같아요."
             }
             
             cell.contentView.addSubview(checkBtn)
@@ -247,31 +224,28 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
             }
             
             checkBtn.addTarget(self, action: #selector(allSameBtnclicked(_:)), for: .touchUpInside)
+            
+            cell.selectionStyle = .none
+            
             return cell
         }else if indexPath.section == 1{ // 2. 추가된 영업 시간
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "StoreHourTableViewCell") as? StoreHourTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "WorkHourTableViewCell") as? WorkHourTableViewCell {
                 cell.selectionStyle = .none
                 
                 // 오픈 시간
-                cell.openBtn.addTarget(self, action: #selector(setOpenHour(_:)), for: .touchUpInside)
-                cell.openBtn.tag = indexPath.row
+                cell.storeHourView.openBtn.addTarget(self, action: #selector(setOpenHour(_:)), for: .touchUpInside)
+                cell.storeHourView.openBtn.tag = indexPath.row
                 
                 // 마감 시간
-                cell.closeBtn.addTarget(self, action: #selector(setCloseHour(_:)), for: .touchUpInside)
-                cell.closeBtn.tag = indexPath.row
+                cell.storeHourView.closeBtn.addTarget(self, action: #selector(setCloseHour(_:)), for: .touchUpInside)
+                cell.storeHourView.closeBtn.tag = indexPath.row
                 
-                // 휴무일 버튼
-                cell.holidayBtn.tag = indexPath.row
-                cell.holidayBtn.addTarget(self, action: #selector(holidayBtnclicked(_:)), for: .touchUpInside)
-                
-                // 24시간 버튼
-                cell.allDayBtn.tag = indexPath.row
-                cell.allDayBtn.addTarget(self, action: #selector(allDayBtnclicked(_:)), for: .touchUpInside)
+                // 요일 체크 버튼
+                cell.checkBtn.tag = indexPath.row
+                cell.checkBtn.addTarget(self, action: #selector(checkDayBtn(_:)), for: .touchUpInside)
                 
                 // data setting
-                cell.setUp(workHour: self.workHourArr[indexPath.row], storeHourType: self.storeHourTypeArr[indexPath.row])
-                cell.dayLabel.text = SysUtils.dayOfIndex(index: indexPath.row)
-                
+                cell.setUp(workHour: self.workHourArr[indexPath.row], workDayType: self.workDayTypes[indexPath.row], index: indexPath.row)
                 return cell
             }
         }
@@ -282,7 +256,11 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
         if indexPath.section == 0{
             return 74
         }else if indexPath.section == 1{
-            return 177
+            if workDayTypes[indexPath.row]{
+                return 156
+            }else{
+                return 77
+            }
         }else{
             return 0
         }
@@ -308,7 +286,7 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
 }
 
 // 오픈, 마감 시간 delegate
-extension RegisterStoreHourVC: TimeDateModalDelegate {
+extension SelectWorkerHourVC: TimeDateModalDelegate {
     
     func timeModalDismiss() {
         modalBgView.isHidden = true
@@ -340,21 +318,16 @@ extension RegisterStoreHourVC: TimeDateModalDelegate {
 }
 
 // 모든 요일 동일 delegate
-extension RegisterStoreHourVC: AllStoreHourDelegate {
+extension SelectWorkerHourVC: AllStoreHourDelegate {
     func getAllTimeHour(workHour: WorkHour, isAllHour: Bool) {
         modalBgView.isHidden = true
         // 영업시간 세팅
-        workHourArr = workHourArr.map { _ in
-            return workHour
-        }
-        // 공휴일 모두 제거
-        hoilday.removeAll()
-        
-        storeHourTypeArr = storeHourTypeArr.map { _ in
-            if isAllHour{
-                return .allDay //24시간 영업
-            }else{
-                return .normal //default
+        workHourArr = workHourArr.enumerated()
+            .map { (index, element) -> WorkHour in
+            if workDayTypes[index]{ // 선택된 요일이면 값 없데이트
+                return WorkHour(startTime: workHour.startTime, endTime: workHour.endTime, day: SysUtils.dayOfIndex(index: index))
+            }else{ // 선택안된 요일이면 값 그대로
+                return element
             }
         }
         
@@ -365,15 +338,5 @@ extension RegisterStoreHourVC: AllStoreHourDelegate {
     func storeHourModalDismiss() {
         modalBgView.isHidden = true
         checkValue()
-    }
-}
-// 영업 시간 설정 미완료 alert delegate
-extension RegisterStoreHourVC: StoreHourUnCompletedDelegate {
-    func modalDismiss() {
-        modalBgView.isHidden = true
-    }
-    
-    func backToPage() {
-        self.navigationController?.popViewController(animated: true)
     }
 }

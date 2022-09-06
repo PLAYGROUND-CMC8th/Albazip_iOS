@@ -90,7 +90,7 @@ class MyPageManagerEditWorkerVC: UIViewController{
         data.breakTime = breakTime
         data.title = title3 + title2
         data.rank = rank
-        data.workDays = workDay
+//        data.workDays = workDay
         
         print("data:\(data.rank) \(data.title) \(data.startTime) \(data.endTime) \(data.workDays) \(data.breakTime) \(data.salary) \(data.salaryType)")
         
@@ -370,11 +370,13 @@ extension MyPageManagerEditWorkerVC: MyPageManagerTimeDateModalDelegate, MyPageM
                     
                     modalBgView.isHidden = false
                     vc.timeDateModalDelegate = self
-                    vc.whatDate = index
+                    vc.whatHour = .workHour
                     if index == 0{
                         vc.titletext = "출근 시간"
+                        vc.whenHour = .startTime
                     }else{
                         vc.titletext = "퇴근 시간"
+                        vc.whenHour = .endTime
                     }
                     self.present(vc, animated: true, completion: nil)
                     

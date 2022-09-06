@@ -85,11 +85,11 @@ class MyPageManagerEditWorkerListVC: UIViewController{
         }else{
             salaryType2 = 2
         }
-        let input = MyPageManagerEditWorkerData2(rank: data.rank!, title: data.title!, startTime: data.startTime!, endTime: data.endTime!,  workDay: data.workDays!, breakTime: data.breakTime!, salary: data.salary!, salaryType: salaryType2, taskList: taskList)
-      
-        print(input)
-        dataManager.getMyPageManagerEditWorkerList(input, vc: self, index: positionId)
-        showIndicator()
+//        let input = MyPageManagerEditWorkerData2(rank: data.rank!, title: data.title!, startTime: data.startTime!, endTime: data.endTime!,  workDay: data.workDays!, breakTime: data.breakTime!, salary: data.salary!, salaryType: salaryType2, taskList: taskList)
+//
+//        print(input)
+//        dataManager.getMyPageManagerEditWorkerList(input, vc: self, index: positionId)
+//        showIndicator()
         
     }
     @objc internal func keyboardWillShow(_ notification : Notification?) -> Void {

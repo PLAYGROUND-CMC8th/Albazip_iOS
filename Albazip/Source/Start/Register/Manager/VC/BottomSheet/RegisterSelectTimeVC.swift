@@ -14,6 +14,16 @@ protocol TimeDateModalDelegate {
     func endTimeTextFieldData(data: String, index: Int)
 }
 
+enum WhatHour:Int {
+    case storeHour // 영업 시간
+    case workHour // 근무 시간
+}
+
+enum WhenHour:Int{
+    case startTime // 오픈, 출근 시간
+    case endTime // 마감, 퇴근 시간
+}
+
 class RegisterSelectTimeVC: UIViewController{
     
     @IBOutlet var titleLabel: UILabel!
@@ -30,8 +40,10 @@ class RegisterSelectTimeVC: UIViewController{
     var date2 =  [String]()
     var selectedDate1 = 0
     var selectedDate2 = 0
-    //0 이면 오픈시간 1이면 마감시간
-    var whatDate = 0
+
+    var whatHour: WhatHour?
+    var whenHour: WhenHour?
+    
     var index = 0
     
     override func viewDidLoad() {
@@ -65,7 +77,7 @@ class RegisterSelectTimeVC: UIViewController{
         cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
                 backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
-        if (whatDate == 0){
+        if whenHour == .startTime || whatHour == .workHour{
             subLabel.isHidden = true
             cornerViewHeightConst.constant = 365
         }else{
@@ -76,7 +88,7 @@ class RegisterSelectTimeVC: UIViewController{
     
    
     @IBAction func btnNext(_ sender: Any) {
-        if(whatDate == 0){
+        if(whenHour == .startTime){
             timeDateModalDelegate?.openTimeTextFieldData(data: date1[selectedDate1]+":"+date2[selectedDate2], index: self.index)
         }else{
             timeDateModalDelegate?.endTimeTextFieldData(data: date1[selectedDate1]+":"+date2[selectedDate2], index: self.index)

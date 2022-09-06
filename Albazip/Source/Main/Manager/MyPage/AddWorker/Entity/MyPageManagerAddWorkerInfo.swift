@@ -13,7 +13,8 @@ class MyPageManagerAddWorkerInfo{
     var startTime: String?
     var endTime: String?
     var workTime: String?
-    var workDays: [String]?
+    var workDays: [WorkHour]?
+    var workDayTypes = [Bool]() // true일때만 근무 요일
     var breakTime: String?
     var salary: String?
     var salaryType: String?

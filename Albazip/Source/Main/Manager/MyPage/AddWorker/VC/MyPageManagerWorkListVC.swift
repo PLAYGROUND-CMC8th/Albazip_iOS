@@ -72,13 +72,13 @@ class MyPageManagerWorkListVC: UIViewController{
            
             
         }
-        //api 호출
-        let data = MyPageManagerAddWorkerInfo.shared
-        let input = MyPageManagerAddWorkerRequest(rank: data.rank!, title: data.title!, startTime: data.startTime!, endTime: data.endTime!,  workDays: data.workDays!, breakTime: data.breakTime!, salary: data.salary!, salaryType: data.salaryType!, taskLists: taskList)
-        print(input)
-        dataManager.postAddWorker(input, vc: self)
-        showIndicator()
-        //self.navigationController?.popViewController(animated: true)
+//        //api 호출
+//        let data = MyPageManagerAddWorkerInfo.shared
+//        let input = MyPageManagerAddWorkerRequest(rank: data.rank!, title: data.title!, startTime: data.startTime!, endTime: data.endTime!,  workDays: data.workDays!, breakTime: data.breakTime!, salary: data.salary!, salaryType: data.salaryType!, taskLists: taskList)
+//        print(input)
+//        dataManager.postAddWorker(input, vc: self)
+//        showIndicator()
+
     }
     
     @objc internal func keyboardWillShow(_ notification : Notification?) -> Void {

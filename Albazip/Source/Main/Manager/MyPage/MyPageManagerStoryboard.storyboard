@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vs7-eS-pCa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vs7-eS-pCa">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -773,7 +773,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="seJ-Lb-2Rd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1917.5999999999999" y="704.92610837438428"/>
+            <point key="canvasLocation" x="3028" y="705"/>
         </scene>
         <!--My Page Manager Worker ExitVC-->
         <scene sceneID="6qR-mn-GVI">
@@ -895,7 +895,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jfy-ke-EdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2823.1999999999998" y="729.31034482758628"/>
+            <point key="canvasLocation" x="3860" y="726"/>
         </scene>
         <!--My Page Manager Worker Direct ExitVC-->
         <scene sceneID="OGy-cn-Ys7">
@@ -1020,6 +1020,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mqf-5t-HNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3448.8000000000002" y="1410.5911330049262"/>
+        </scene>
+        <!--Select Worker HourVC-->
+        <scene sceneID="Ge2-RT-9XW">
+            <objects>
+                <viewController storyboardIdentifier="SelectWorkerHourVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ueS-be-lBu" customClass="SelectWorkerHourVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cbX-nm-IjI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Peu-W6-wh3">
+                                <rect key="frame" x="329" y="60" width="30" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="완료">
+                                    <color key="titleColor" red="0.96470588450000005" green="0.77647060160000003" blue="0.26274511220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNext:" destination="ueS-be-lBu" eventType="touchUpInside" id="mXx-Wg-clb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="근무일 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJp-ve-USV">
+                                <rect key="frame" x="146.66666666666666" y="65" width="82" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ff-uB-I58">
+                                <rect key="frame" x="16" y="64" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="9Lm-Dq-vF8"/>
+                                    <constraint firstAttribute="width" constant="24" id="nUS-mQ-Woj"/>
+                                </constraints>
+                                <state key="normal" image="icBackArrow"/>
+                                <connections>
+                                    <action selector="btnCancel:" destination="ueS-be-lBu" eventType="touchUpInside" id="vmI-9A-Jpc"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6y-M3-5ZC">
+                                <rect key="frame" x="0.0" y="102" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.91764706370000004" green="0.91764706370000004" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="8LW-Zz-FzJ"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6mV-A5-Acl">
+                                <rect key="frame" x="0.0" y="103" width="375" height="709"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="os1-Db-pU5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="os1-Db-pU5" firstAttribute="trailing" secondItem="6mV-A5-Acl" secondAttribute="trailing" id="4Rg-hm-CGF"/>
+                            <constraint firstItem="os1-Db-pU5" firstAttribute="trailing" secondItem="Peu-W6-wh3" secondAttribute="trailing" constant="16" id="61c-Ln-GI4"/>
+                            <constraint firstItem="7ff-uB-I58" firstAttribute="centerY" secondItem="TJp-ve-USV" secondAttribute="centerY" id="7tr-Vb-a2X"/>
+                            <constraint firstItem="os1-Db-pU5" firstAttribute="bottom" secondItem="6mV-A5-Acl" secondAttribute="bottom" constant="-34" id="JI1-XN-hkd"/>
+                            <constraint firstItem="O6y-M3-5ZC" firstAttribute="top" secondItem="Peu-W6-wh3" secondAttribute="bottom" constant="10" id="Nqi-uZ-j17"/>
+                            <constraint firstItem="6mV-A5-Acl" firstAttribute="top" secondItem="O6y-M3-5ZC" secondAttribute="bottom" id="VSV-52-28w"/>
+                            <constraint firstItem="7ff-uB-I58" firstAttribute="leading" secondItem="os1-Db-pU5" secondAttribute="leading" constant="16" id="bPn-QS-TCI"/>
+                            <constraint firstItem="6mV-A5-Acl" firstAttribute="leading" secondItem="os1-Db-pU5" secondAttribute="leading" id="jQi-q3-Z1M"/>
+                            <constraint firstItem="O6y-M3-5ZC" firstAttribute="top" secondItem="7ff-uB-I58" secondAttribute="bottom" constant="14" id="kYQ-kU-bsm"/>
+                            <constraint firstItem="O6y-M3-5ZC" firstAttribute="trailing" secondItem="6mV-A5-Acl" secondAttribute="trailing" id="mmc-Vc-Mfb"/>
+                            <constraint firstItem="TJp-ve-USV" firstAttribute="centerX" secondItem="cbX-nm-IjI" secondAttribute="centerX" id="nc4-kd-QF7"/>
+                            <constraint firstItem="Peu-W6-wh3" firstAttribute="centerY" secondItem="TJp-ve-USV" secondAttribute="centerY" id="psO-AH-HSj"/>
+                            <constraint firstItem="TJp-ve-USV" firstAttribute="top" secondItem="os1-Db-pU5" secondAttribute="top" constant="21" id="rj4-MT-1Ns"/>
+                            <constraint firstItem="O6y-M3-5ZC" firstAttribute="leading" secondItem="6mV-A5-Acl" secondAttribute="leading" id="wU3-fn-657"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nextBtn" destination="Peu-W6-wh3" id="Lzj-jU-Fc8"/>
+                        <outlet property="tableView" destination="6mV-A5-Acl" id="UGO-lc-whB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dEn-en-kfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2069.5999999999999" y="702.70935960591135"/>
         </scene>
         <!--My Page Manager Select Profile ImageVC-->
         <scene sceneID="2Xc-BK-vkD">

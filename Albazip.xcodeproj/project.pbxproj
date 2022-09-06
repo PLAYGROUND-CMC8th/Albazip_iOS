@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -124,6 +124,10 @@
 		C34BCB572732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34BCB552732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.swift */; };
 		C34BCB582732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34BCB562732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.xib */; };
 		C34C4AE02721BF6700300454 /* RegisterSelectYearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C4ADF2721BF6700300454 /* RegisterSelectYearVC.swift */; };
+		C352F9D628C79BDA00C07108 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C352F9D528C79BDA00C07108 /* RxCocoa */; };
+		C352F9D828C79BDA00C07108 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C352F9D728C79BDA00C07108 /* RxRelay */; };
+		C352F9DA28C79BDA00C07108 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C352F9D928C79BDA00C07108 /* RxSwift */; };
+		C352F9DC28C79FE100C07108 /* SysUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352F9DB28C79FE000C07108 /* SysUtils.swift */; };
 		C3546F812725082100C4C3DC /* RegisterSearchStoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3546F802725082100C4C3DC /* RegisterSearchStoreResponse.swift */; };
 		C3546F832725083B00C4C3DC /* RegisterSearchStoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3546F822725083B00C4C3DC /* RegisterSearchStoreDataManager.swift */; };
 		C3546F8627253A3100C4C3DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3546F8527253A3100C4C3DC /* GoogleService-Info.plist */; };
@@ -564,6 +568,7 @@
 		C34BCB552732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailCommuteRecordTableViewCell.swift; sourceTree = "<group>"; };
 		C34BCB562732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageDetailCommuteRecordTableViewCell.xib; sourceTree = "<group>"; };
 		C34C4ADF2721BF6700300454 /* RegisterSelectYearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSelectYearVC.swift; sourceTree = "<group>"; };
+		C352F9DB28C79FE000C07108 /* SysUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SysUtils.swift; sourceTree = "<group>"; };
 		C3546F802725082100C4C3DC /* RegisterSearchStoreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSearchStoreResponse.swift; sourceTree = "<group>"; };
 		C3546F822725083B00C4C3DC /* RegisterSearchStoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSearchStoreDataManager.swift; sourceTree = "<group>"; };
 		C3546F84272537DE00C4C3DC /* Albazip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Albazip.entitlements; sourceTree = "<group>"; };
@@ -899,13 +904,16 @@
 			files = (
 				C3A3AC20272064380019D1F3 /* libsqlite3.tbd in Frameworks */,
 				C3A3AC1F272064290019D1F3 /* libxml2.tbd in Frameworks */,
+				C352F9D628C79BDA00C07108 /* RxCocoa in Frameworks */,
 				C3A3AC1E2720641C0019D1F3 /* libc++.tbd in Frameworks */,
 				C3A3AC1727205E8B0019D1F3 /* QuartzCore.framework in Frameworks */,
 				C3A3AC1527205E760019D1F3 /* CoreLocation.framework in Frameworks */,
+				C352F9DA28C79BDA00C07108 /* RxSwift in Frameworks */,
 				9C7447FE94295A129DB07CA9 /* Pods_Albazip.framework in Frameworks */,
 				C3A3AC1327205E6B0019D1F3 /* SystemConfiguration.framework in Frameworks */,
 				C3A3AC1C27205F200019D1F3 /* DaumMap.framework in Frameworks */,
 				C3A3AC1127205E5F0019D1F3 /* OpenGLES.framework in Frameworks */,
+				C352F9D828C79BDA00C07108 /* RxRelay in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1660,6 +1668,7 @@
 			children = (
 				C384424D27147E2900B84E8A /* IndicatorView.swift */,
 				C384424E27147E2900B84E8A /* Device.swift */,
+				C352F9DB28C79FE000C07108 /* SysUtils.swift */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -2849,6 +2858,11 @@
 			dependencies = (
 			);
 			name = Albazip;
+			packageProductDependencies = (
+				C352F9D528C79BDA00C07108 /* RxCocoa */,
+				C352F9D728C79BDA00C07108 /* RxRelay */,
+				C352F9D928C79BDA00C07108 /* RxSwift */,
+			);
 			productName = Albazip;
 			productReference = C38442312714797000B84E8A /* Albazip.app */;
 			productType = "com.apple.product-type.application";
@@ -2877,6 +2891,9 @@
 				ko,
 			);
 			mainGroup = C38442282714797000B84E8A;
+			packageReferences = (
+				C352F9D428C79BDA00C07108 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = C38442322714797000B84E8A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -3286,6 +3303,7 @@
 				C38CA0C0273051F700EA7BB3 /* MyPageManagerWorkerCollectionViewCell.swift in Sources */,
 				C38CA0B7272F647600EA7BB3 /* LoginResetPasswordRequest.swift in Sources */,
 				C3A7C8082752D52900271EFE /* CommunityWorkerReportResponse.swift in Sources */,
+				C352F9DC28C79FE100C07108 /* SysUtils.swift in Sources */,
 				C30AFE742733CE080075CDE2 /* MyPageManagerSelectInfo1TableViewCell.swift in Sources */,
 				C37B0B5F27299EA70017D179 /* LoginResponse.swift in Sources */,
 				C398BFA0273F861D008E8BA5 /* HomeManagerMainTableViewCell.swift in Sources */,
@@ -3535,7 +3553,7 @@
 				CODE_SIGN_ENTITLEMENTS = Albazip/Albazip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -3549,7 +3567,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chobi.Albazip.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3570,7 +3588,7 @@
 				CODE_SIGN_ENTITLEMENTS = Albazip/Albazip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3583,7 +3601,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chobi.Albazip.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3615,6 +3633,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C352F9D428C79BDA00C07108 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C352F9D528C79BDA00C07108 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C352F9D428C79BDA00C07108 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		C352F9D728C79BDA00C07108 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C352F9D428C79BDA00C07108 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		C352F9D928C79BDA00C07108 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C352F9D428C79BDA00C07108 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C38442292714797000B84E8A /* Project object */;
 }

@@ -290,7 +290,7 @@ class StoreHourTableViewCell: UITableViewCell {
             }
             
             // 시간차 구하기
-            calculateTime(workHour: workHour)
+            totalHour.text = SysUtils.calculateTime(workHour: workHour)
         }else{
             // 오픈 시간
             openTimeLabel.text = "00:00"
@@ -321,38 +321,5 @@ class StoreHourTableViewCell: UITableViewCell {
                 totalHour.text = "24시간"
             }
         }
-    }
-    
-    // 시간차 구하기
-    func calculateTime(workHour: WorkHour){
-        guard let openHour = workHour.startTime, let closeHour = workHour.endTime else {
-            totalHour.text = "0시간"
-            return
-        }
-        
-        let startTime = openHour.components(separatedBy: ":")
-        let endTime = closeHour.components(separatedBy: ":")
-        var startTotal = 0
-        var endTotal = 0
-        var hour = 0
-        var minute = 0
-
-        //마감시간이 오픈시간 값보다 작을 때 마감시간에 24더하고 빼주기
-        if Int(startTime[0])!>Int(endTime[0])!{
-            endTotal = (Int(endTime[0])! + 24) * 60 + Int(endTime[1])!
-        }else if Int(startTime[0])!==Int(endTime[0])! , Int(startTime[1])!>Int(endTime[1])!{
-            endTotal = (Int(endTime[0])! + 24) * 60 + Int(endTime[1])!
-        }
-        //오픈 시간보다 마감시간이 더 빠를때!
-        else{
-            endTotal = Int(endTime[0])! * 60 + Int(endTime[1])!
-        }
-        startTotal = Int(startTime[0])! * 60 + Int(startTime[1])!
-
-        let diffTime = endTotal - startTotal
-        hour = diffTime/60
-        minute = diffTime%60
-
-        totalHour.text = "\(hour)시간\(minute)분"
     }
 }
