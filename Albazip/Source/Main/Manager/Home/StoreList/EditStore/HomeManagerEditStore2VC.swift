@@ -250,7 +250,6 @@ class HomeManagerEditStore2VC: UIViewController{
             vc.timeDateModalDelegate = self
             vc.whenHour = .startTime
             vc.whatHour = .storeHour
-            vc.titletext = "매장 오픈 시간"
             self.present(vc, animated: true, completion: nil)
             
         }
@@ -264,7 +263,6 @@ class HomeManagerEditStore2VC: UIViewController{
             vc.timeDateModalDelegate = self
             vc.whenHour = .endTime
             vc.whatHour = .storeHour
-            vc.titletext = "매장 마감 시간"
             self.present(vc, animated: true, completion: nil)
             
         }

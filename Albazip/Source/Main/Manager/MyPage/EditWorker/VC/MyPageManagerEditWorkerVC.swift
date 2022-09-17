@@ -372,10 +372,8 @@ extension MyPageManagerEditWorkerVC: MyPageManagerTimeDateModalDelegate, MyPageM
                     vc.timeDateModalDelegate = self
                     vc.whatHour = .workHour
                     if index == 0{
-                        vc.titletext = "출근 시간"
                         vc.whenHour = .startTime
                     }else{
-                        vc.titletext = "퇴근 시간"
                         vc.whenHour = .endTime
                     }
                     self.present(vc, animated: true, completion: nil)

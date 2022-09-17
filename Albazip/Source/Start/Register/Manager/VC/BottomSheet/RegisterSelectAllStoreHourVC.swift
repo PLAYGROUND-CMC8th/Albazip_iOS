@@ -17,11 +17,18 @@ class RegisterSelectAllStoreHourVC: UIViewController{
     @IBOutlet var backgroundView: UIView!
     @IBOutlet var modalBgView: UIView!
     @IBOutlet var cornerView: UIView!
+    @IBOutlet var cornerViewHeightConst: NSLayoutConstraint!
     @IBOutlet var allDayBtn: UIButton!
+    @IBOutlet var allDayBtnHeightConst: NSLayoutConstraint!
+    @IBOutlet var allDayLabel: UILabel!
     @IBOutlet var okBtn: UIButton!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var subLabel: UILabel!
+    
     let storeHourView = StoreHourView()
     var workHour: WorkHour = WorkHour(startTime: nil, endTime: nil, day: "")
     weak var delegate: AllStoreHourDelegate?
+    var whatHour: WhatHour = .storeHour
     
     override func viewDidLoad() {
         setUI()
@@ -46,8 +53,23 @@ class RegisterSelectAllStoreHourVC: UIViewController{
         
         storeHourView.openBtn.addTarget(self, action: #selector(setOpenHour(_:)), for: .touchUpInside)
         storeHourView.closeBtn.addTarget(self, action: #selector(setCloseHour(_:)), for: .touchUpInside)
+        storeHourView.whatHour = self.whatHour
         
         okBtn.isEnabled = false
+        
+        if whatHour == .storeHour{ // 영업 시간
+            titleLabel.text = "모든 영업시간을 입력해주세요."
+            subLabel.text = "기존에 입력했던 영업시간은 모두 사라져요."
+            cornerViewHeightConst.constant = 326
+            allDayBtnHeightConst.constant = 24
+        }else{ // 근무 시간
+            titleLabel.text = "근무시간을 입력해주세요."
+            subLabel.text = "기존에 입력했던 근무시간은 모두 사라져요."
+            allDayBtn.isHidden = true
+            allDayLabel.isHidden = true
+            cornerViewHeightConst.constant = 288
+            allDayBtnHeightConst.constant = 0
+        }
     }
     
     @objc func setOpenHour(_ sender: UIButton) {
@@ -55,7 +77,7 @@ class RegisterSelectAllStoreHourVC: UIViewController{
             vc.modalPresentationStyle = .overFullScreen
             vc.timeDateModalDelegate = self
             vc.whenHour = .startTime
-            vc.titletext = "매장 오픈 시간"
+            vc.whatHour = self.whatHour
             vc.index = 7
             self.present(vc, animated: true, completion: nil)
 
@@ -66,7 +88,7 @@ class RegisterSelectAllStoreHourVC: UIViewController{
             vc.modalPresentationStyle = .overFullScreen
             vc.timeDateModalDelegate = self
             vc.whenHour = .endTime
-            vc.titletext = "매장 마감 시간"
+            vc.whatHour = self.whatHour
             vc.index = 7
             self.present(vc, animated: true, completion: nil)
 

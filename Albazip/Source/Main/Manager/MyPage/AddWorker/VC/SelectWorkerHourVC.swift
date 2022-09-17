@@ -81,6 +81,7 @@ class SelectWorkerHourVC: UIViewController{
             if let vc = newStoryboard.instantiateViewController(withIdentifier: "RegisterSelectAllStoreHourVC") as? RegisterSelectAllStoreHourVC {
                 vc.modalPresentationStyle = .overFullScreen
                 vc.delegate = self
+                vc.whatHour = .workHour
                 modalBgView.isHidden = false
                 self.present(vc, animated: true, completion: nil)
 
@@ -96,7 +97,6 @@ class SelectWorkerHourVC: UIViewController{
             vc.timeDateModalDelegate = self
             vc.whatHour = .workHour
             vc.whenHour = .startTime
-            vc.titletext = "출근 시간"
             vc.index = sender.tag
             self.present(vc, animated: true, completion: nil)
 
@@ -111,7 +111,6 @@ class SelectWorkerHourVC: UIViewController{
             vc.timeDateModalDelegate = self
             vc.whatHour = .workHour
             vc.whenHour = .endTime
-            vc.titletext = "퇴근 시간"
             vc.index = sender.tag
             self.present(vc, animated: true, completion: nil)
         }
@@ -245,6 +244,7 @@ extension SelectWorkerHourVC: UITableViewDataSource, UITableViewDelegate{
                 cell.checkBtn.addTarget(self, action: #selector(checkDayBtn(_:)), for: .touchUpInside)
                 
                 // data setting
+                cell.storeHourView.whatHour = .workHour
                 cell.setUp(workHour: self.workHourArr[indexPath.row], workDayType: self.workDayTypes[indexPath.row], index: indexPath.row)
                 return cell
             }

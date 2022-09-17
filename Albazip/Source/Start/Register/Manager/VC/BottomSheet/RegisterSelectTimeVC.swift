@@ -34,15 +34,14 @@ class RegisterSelectTimeVC: UIViewController{
     @IBOutlet var cornerViewHeightConst: NSLayoutConstraint!
     @IBOutlet var pickerView2: UIPickerView!
     
-    var titletext = ""
     var timeDateModalDelegate : TimeDateModalDelegate?
     var date1 =  [String]()
     var date2 =  [String]()
     var selectedDate1 = 0
     var selectedDate2 = 0
 
-    var whatHour: WhatHour?
-    var whenHour: WhenHour?
+    var whatHour: WhatHour = .storeHour
+    var whenHour: WhenHour = .startTime
     
     var index = 0
     
@@ -73,10 +72,29 @@ class RegisterSelectTimeVC: UIViewController{
         pickerView.dataSource = self
         pickerView2.delegate = self
         pickerView2.dataSource = self
-        titleLabel.text = titletext
+
         cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
                 backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)
+        
+        
+        switch(whatHour){
+        case .storeHour:
+            switch(whenHour){
+            case .startTime:
+                titleLabel.text = "매장 오픈 시간"
+            case .endTime:
+                titleLabel.text = "매장 마감 시간"
+            }
+        case .workHour:
+            switch(whenHour){
+            case .startTime:
+                titleLabel.text = "출근 시간"
+            case .endTime:
+                titleLabel.text = "퇴근 시간"
+            }
+        }
+        
         if whenHour == .startTime || whatHour == .workHour{
             subLabel.isHidden = true
             cornerViewHeightConst.constant = 365

@@ -72,6 +72,18 @@ class StoreHourView: UIView {
         $0.font = UIFont.systemFont(ofSize: 12, weight: .medium)
     }
     
+    lazy var whatHour: WhatHour = .storeHour{
+        didSet{
+            if whatHour == .storeHour{
+                openLabel.text = "매장 오픈 시간"
+                closeLabel.text = "매장 마감 시간"
+            }else{
+                openLabel.text = "출근 시간"
+                closeLabel.text = "퇴근 시간"
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
