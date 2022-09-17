@@ -114,9 +114,9 @@ extension MyPageManagerWorkerPositionVC: UITableViewDataSource {
                     }else{
                         cell.salaryLabel.text = "월급 " + data.salary!.insertComma +  "원"
                     }
-                    cell.workDayLabel.text = data.workDay!
-                    let workTime = data.workTime!.insertWorkTime
-                    cell.workTimeLabel.text = "\(data.startTime!.insertTime) ~ \(data.endTime!.insertTime) \(workTime)"
+                    cell.workDayLabel.text = data.workDay ?? ""
+                    let workTime = (data.workTime ?? "").insertWorkTime
+                    cell.workTimeLabel.text = "\((data.startTime ?? "").insertTime) ~ \((data.endTime ?? "").insertTime) \(workTime)"
                 }
                 print(indexPath.row)
                 return cell
