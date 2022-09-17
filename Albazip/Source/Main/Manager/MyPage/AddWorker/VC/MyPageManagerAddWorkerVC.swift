@@ -57,6 +57,7 @@ class MyPageManagerAddWorkerVC: UIViewController{
         super.viewDidLoad()
         setupTableView()
         setUI()
+        setData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,6 +83,12 @@ class MyPageManagerAddWorkerVC: UIViewController{
                            forCellReuseIdentifier: "MyPageManagerSelectInfo3TableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    func setData(){
+        // 싱글톤 초기화
+        let workerInfo = MyPageManagerAddWorkerInfo.shared
+        workerInfo.workSchedule = nil
     }
     
     @IBAction func btnCancel(_ sender: Any) {
