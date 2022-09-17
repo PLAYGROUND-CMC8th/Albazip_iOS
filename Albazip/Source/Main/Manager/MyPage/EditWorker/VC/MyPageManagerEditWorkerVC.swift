@@ -83,16 +83,13 @@ class MyPageManagerEditWorkerVC: UIViewController{
     }
     @IBAction func btnNext(_ sender: Any) {
         let data = MyPageManagerAddWorkerInfo.shared
-        data.startTime = startTime.replace(target: ":", with: "")
-        data.endTime = endTime.replace(target: ":", with: "")
         data.salaryType = payTime
         data.salary = salary
         data.breakTime = breakTime
         data.title = title3 + title2
-        data.rank = rank
 //        data.workDays = workDay
         
-        print("data:\(data.rank) \(data.title) \(data.startTime) \(data.endTime) \(data.workDays) \(data.breakTime) \(data.salary) \(data.salaryType)")
+        print("data:\(data.title) \(data.workSchedule) \(data.breakTime) \(data.salary) \(data.salaryType)")
         
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageManagerEditWorkerListVC") as? MyPageManagerEditWorkerListVC else {return}
         if let data = loadData{

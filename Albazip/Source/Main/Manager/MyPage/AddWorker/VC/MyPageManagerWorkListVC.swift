@@ -72,12 +72,24 @@ class MyPageManagerWorkListVC: UIViewController{
            
             
         }
+        
+
 //        //api 호출
-//        let data = MyPageManagerAddWorkerInfo.shared
-//        let input = MyPageManagerAddWorkerRequest(rank: data.rank!, title: data.title!, startTime: data.startTime!, endTime: data.endTime!,  workDays: data.workDays!, breakTime: data.breakTime!, salary: data.salary!, salaryType: data.salaryType!, taskLists: taskList)
-//        print(input)
-//        dataManager.postAddWorker(input, vc: self)
-//        showIndicator()
+        let data = MyPageManagerAddWorkerInfo.shared
+        let input = MyPageManagerAddWorkerRequest(rank: "알바생",title: data.title!,
+                                                  workSchedule: data.workSchedule!
+            .filter{$0.startTime != nil}
+            .filter{$0.endTime != nil}
+            .map{
+                return WorkHour(startTime: $0.startTime?.replace(target: ":", with: ""), endTime: $0.endTime?.replace(target: ":", with: ""), day: $0.day)
+        },
+                                                  breakTime: data.breakTime!,
+                                                  salary: data.salary!,
+                                                  salaryType: data.salaryType!,
+                                                  taskLists: taskList)
+        print(input)
+        dataManager.postAddWorker(input, vc: self)
+        showIndicator()
 
     }
     

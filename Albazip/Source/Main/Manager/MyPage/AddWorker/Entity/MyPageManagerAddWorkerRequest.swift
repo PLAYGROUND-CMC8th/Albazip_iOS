@@ -8,9 +8,7 @@
 struct MyPageManagerAddWorkerRequest: Encodable {
     var rank: String
     var title: String
-    var startTime: String
-    var endTime: String
-    var workDays: [String]
+    var workSchedule: [WorkHour]
     var breakTime: String
     var salary: String
     var salaryType: String

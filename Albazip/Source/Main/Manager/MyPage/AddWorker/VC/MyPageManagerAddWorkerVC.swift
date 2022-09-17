@@ -17,38 +17,59 @@ class MyPageManagerAddWorkerVC: UIViewController{
     @IBOutlet var tableView: UITableView!
     
     // 시간 변수
-    var startTime = ""
-    var endTime = ""
     var payTime = "시급"
     var hour = "0시간"
     
     //폼 요소 다 채워졌는지 확인
-    var checkValue1 = false
-    var checkValue2 = false
     var checkValue3 = true
     
     // data
-    var rank = ""
-    var title2 = ""
-    var title3 = ""
+    var positionDay = ""{
+        didSet{
+            reloadSection(section: 0)
+        }
+    }
+    
+    var positionHour = ""{
+        didSet{
+            reloadSection(section: 0)
+        }
+    }
+    
+    var breakTime = ""{
+        didSet{
+            reloadSection(section: 1)
+        }
+    }
+    
     var workDay = [String]()
-    var breakTime = ""
     var salary = "8720"
     
     var isWorkDaySetted = false{
         didSet{
             if isWorkDaySetted{
-                tableView.beginUpdates()
-                tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .none)
-                tableView.endUpdates()
+                reloadSection(section: 1)
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        let workerInfo = MyPageManagerAddWorkerInfo.shared
+        if let workHour = workerInfo.workSchedule{
+            isWorkDaySetted = true
+        }else{
+            isWorkDaySetted = false
+        }
+        checkValue()
+    }
+    
     //MARK:- View Setup
     func setUI(){
         self.dismissKeyboardWhenTappedAround()
@@ -69,28 +90,23 @@ class MyPageManagerAddWorkerVC: UIViewController{
     
     @IBAction func btnNext(_ sender: Any) {
         let data = MyPageManagerAddWorkerInfo.shared
-        data.startTime = startTime.replace(target: ":", with: "")
-        data.endTime = endTime.replace(target: ":", with: "")
         data.salaryType = payTime
         data.salary = salary
         data.breakTime = breakTime
-        data.title = title3 + title2
-        data.rank = rank
+        data.title = positionDay + positionHour
 //        data.workDays = workDay
         
-        print("data:\(data.rank) \(data.title) \(data.startTime) \(data.endTime) \(data.workDays) \(data.breakTime) \(data.salary) \(data.salaryType)")
+        print("data:\(data.title) \(data.workSchedule) \(data.breakTime) \(data.salary) \(data.salaryType)")
         
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageManagerWorkListVC") as? MyPageManagerWorkListVC else {return}
                 self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     //모든 값이 입력되었는지 확인
-    func checkContent(){
-        if checkValue1, checkValue2, checkValue3, startTime != "", endTime != ""{
-            
+    func checkValue(){
+        if positionHour != "", positionDay != "", checkValue3, isWorkDaySetted, breakTime != ""{
             btnNext.isEnabled = true
             btnNext.setTitleColor(#colorLiteral(red: 0.9961670041, green: 0.7674626112, blue: 0, alpha: 1), for: .normal)
-            
         }else{
             btnNext.isEnabled = false
             btnNext.setTitleColor(#colorLiteral(red: 0.678363204, green: 0.678479135, blue: 0.6783478856, alpha: 1), for: .normal)
@@ -101,24 +117,82 @@ class MyPageManagerAddWorkerVC: UIViewController{
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SelectWorkerHourVC") as? SelectWorkerHourVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
+    @objc func positionDayBtnTapped(_ sender: UIButton){
+        if sender.tag == 0{
+            positionDay = "평일"
+        }else{
+            positionDay = "주말"
+        }
+        checkValue()
+    }
+    
+    @objc func positionHourBtnTapped(_ sender: UIButton){
+        if sender.tag == 2{
+            positionHour = "오픈"
+        }else if sender.tag == 3{
+            positionHour = "미들"
+        }else if sender.tag == 4{
+            positionHour = "마감"
+        }
+        checkValue()
+    }
+    
+    @objc func breakTimeBtnTapped(_ sender: UIButton){
+        if sender.tag == 0{
+            breakTime = "없음"
+        }else if sender.tag == 1{
+            breakTime = "30분"
+        }else if sender.tag == 2{
+            breakTime = "60분"
+        }else{
+            breakTime = "90분"
+        }
+        checkValue()
+    }
+    
+    //Selected 버튼
+    func btnSelected(btn: UIButton){
+        btn.setTitleColor(#colorLiteral(red: 0.203897506, green: 0.2039385736, blue: 0.2081941962, alpha: 1), for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+        btn.borderColor =  #colorLiteral(red: 1, green: 0.849331677, blue: 0.3616983294, alpha: 1)
+        btn.isSelected = true
+    }
+    
+    //UnSelected 버튼
+    func btnUnSelected(btn: UIButton){
+        btn.setTitleColor(#colorLiteral(red: 0.4304383695, green: 0.4354898334, blue: 0.4353147745, alpha: 1), for: .normal)
+        btn.backgroundColor = .none
+        btn.borderColor =  #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+        btn.isSelected = false
+    }
+    
+    func reloadSection(section: Int){
+        tableView.beginUpdates()
+        tableView.reloadSections(IndexSet(section...section), with: .none)
+        tableView.endUpdates()
+    }
 }
 //MARK:- Table View Data Source
 
 extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
             return 104
         
         case 1:
-            return 50
+            if indexPath.row == 0{
+                return 118
+            }else{
+                return 75
+            }
             
         case 2:
             return 57
             
         default:
-            
-        return 0
+          return 0
         }
     }
     
@@ -192,21 +266,140 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let cell = UITableViewCell()
+            let dayStackView = UIStackView().then {
+                $0.axis = .horizontal
+                $0.distribution = .fillEqually
+                $0.alignment = .center
+                $0.spacing = 8
+            }
+            let hourStackView = UIStackView().then {
+                $0.axis = .horizontal
+                $0.distribution = .fillEqually
+                $0.alignment = .center
+                $0.spacing = 8
+            }
+
+            cell.contentView.addSubview(dayStackView)
+            cell.contentView.addSubview(hourStackView)
             
-            return UITableViewCell()
+            dayStackView.snp.makeConstraints {
+                $0.top.equalToSuperview().inset(12)
+                $0.leading.equalToSuperview().inset(24)
+                $0.height.equalTo(41)
+            }
+            
+            hourStackView.snp.makeConstraints {
+                $0.top.equalTo(dayStackView.snp.bottom).offset(10)
+                $0.leading.equalToSuperview().inset(24)
+                $0.height.equalTo(41)
+            }
+            
+            for i in 0..<5{
+                let selectBtn = UIButton().then{
+                    $0.setTitleColor(UIColor(hex: 0x6f6f6f), for: .normal)
+                    $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+                    $0.layer.cornerRadius = 16
+                    $0.layer.borderWidth = 1
+                    $0.layer.borderColor = UIColor(hex: 0xededed).cgColor
+                    $0.tag = i
+                }
+                var titleText = ""
+                switch (i){
+                case 0:
+                    titleText = "평일"
+                case 1:
+                    titleText = "주말"
+                case 2:
+                    titleText = "오픈"
+                case 3:
+                    titleText = "미들"
+                default:
+                    titleText = "마감"
+                }
+                selectBtn.setTitle(titleText, for: .normal)
+                
+                if i<2{
+                    dayStackView.addArrangedSubview(selectBtn)
+                    selectBtn.addTarget(self, action: #selector(positionDayBtnTapped(_:)), for: .touchUpInside)
+                    if positionDay == titleText{
+                        btnSelected(btn: selectBtn)
+                    }else{
+                        btnUnSelected(btn: selectBtn)
+                    }
+                }else{
+                    hourStackView.addArrangedSubview(selectBtn)
+                    selectBtn.addTarget(self, action: #selector(positionHourBtnTapped(_:)), for: .touchUpInside)
+                    if positionHour == titleText{
+                        btnSelected(btn: selectBtn)
+                    }else{
+                        btnUnSelected(btn: selectBtn)
+                    }
+                }
+                selectBtn.snp.makeConstraints {
+                    $0.height.equalTo(41)
+                    $0.width.equalTo(53)
+                }
+            }
+            
+            return cell
         case 1:
             if indexPath.row == 0 {
-                
-            }else{
                 let cell = UITableViewCell()
+                
+                // 근무일
+                let titleLabel = UILabel().then{
+                    $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+                    $0.textColor = UIColor(hex: 0x6f6f6f)
+                    $0.text = "근무일"
+                }
+                
+                cell.addSubview(titleLabel)
+                
+                titleLabel.snp.makeConstraints {
+                    $0.leading.equalToSuperview().inset(24)
+                    $0.top.equalToSuperview().inset(12)
+                    $0.height.equalTo(19)
+                }
+                
+                // 입력 완료 표시
+                let completedLabel = UILabel().then{
+                    $0.textColor = UIColor(hex: 0x1dbe4e)
+                    $0.text = "설정 완료"
+                    $0.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+                }
+                cell.addSubview(completedLabel)
+                
+                completedLabel.snp.makeConstraints {
+                    $0.centerY.equalTo(titleLabel)
+                    $0.leading.equalTo(titleLabel.snp.trailing).offset(8)
+                }
+                let completedImage = UIImageView().then{
+                    $0.image = UIImage(named: "icCheckedCorrect")
+                }
+                
+                cell.addSubview(completedImage)
+                
+                completedImage.snp.makeConstraints {
+                    $0.centerY.equalTo(titleLabel)
+                    $0.leading.equalTo(completedLabel.snp.trailing)
+                    $0.height.width.equalTo(18)
+                }
+                
+                if isWorkDaySetted{
+                    completedImage.isHidden = false
+                    completedLabel.isHidden = false
+                }else{
+                    completedImage.isHidden = true
+                    completedLabel.isHidden = true
+                }
                 
                 let hourBtn = UIButton().then{
                     $0.setTitleColor(UIColor(hex: 0x6f6f6f), for: .normal)
                     $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
                     if isWorkDaySetted{
-                        $0.setTitle("근무일 설정하기", for: .normal)
-                    }else{
                         $0.setTitle("근무일 변경하기", for: .normal)
+                    }else{
+                        $0.setTitle("근무일 설정하기", for: .normal)
                     }
                     $0.layer.cornerRadius = 10
                     $0.layer.borderWidth = 1
@@ -214,12 +407,94 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
                 }
                 cell.contentView.addSubview(hourBtn)
                 hourBtn.snp.makeConstraints {
-                    $0.top.bottom.equalToSuperview()
-                    $0.trailing.leading.equalToSuperview().inset(36)
+                    $0.top.equalTo(titleLabel.snp.bottom).offset(14)
+                    $0.height.equalTo(40)
+                    $0.trailing.leading.equalToSuperview().inset(24)
                 }
                 
                 hourBtn.addTarget(self, action: #selector(goSelectWorkHourPage(_:)), for: .touchUpInside)
                 
+                return cell
+            }else{
+                let cell = UITableViewCell()
+                // 쉬는 시간
+                let titleLabel = UILabel().then{
+                    $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+                    $0.textColor = UIColor(hex: 0x6f6f6f)
+                    $0.text = "쉬는 시간"
+                }
+                
+                cell.addSubview(titleLabel)
+                
+                titleLabel.snp.makeConstraints {
+                    $0.leading.equalToSuperview().inset(24)
+                    $0.top.equalToSuperview()
+                    $0.height.equalTo(19)
+                }
+                let subLabel = UILabel().then{
+                    $0.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+                    $0.textColor = UIColor(hex: 0xA3A3A3)
+                    $0.text = "근무일 4시간 이상부터 적용"
+                }
+                
+                cell.addSubview(subLabel)
+                
+                subLabel.snp.makeConstraints {
+                    $0.leading.equalTo(titleLabel.snp.trailing).offset(6)
+                    $0.centerY.equalTo(titleLabel.snp.centerY)
+                }
+                
+                let breakTimeStackView = UIStackView().then {
+                    $0.axis = .horizontal
+                    $0.distribution = .fillEqually
+                    $0.alignment = .center
+                    $0.spacing = 8
+                }
+
+                cell.contentView.addSubview(breakTimeStackView)
+                
+                breakTimeStackView.snp.makeConstraints {
+                    $0.top.equalTo(titleLabel.snp.bottom).offset(14)
+                    $0.leading.equalToSuperview().inset(24)
+                    $0.height.equalTo(41)
+                }
+                
+                for i in 0..<4{
+                    let selectBtn = UIButton().then{
+                        $0.setTitleColor(UIColor(hex: 0x6f6f6f), for: .normal)
+                        $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+                        $0.layer.cornerRadius = 16
+                        $0.layer.borderWidth = 1
+                        $0.layer.borderColor = UIColor(hex: 0xededed).cgColor
+                        $0.tag = i
+                    }
+                    var titleText = ""
+                    switch (i){
+                    case 0:
+                        titleText = "없음"
+                    case 1:
+                        titleText = "30분"
+                    case 2:
+                        titleText = "60분"
+                    default:
+                        titleText = "90분"
+                    }
+                    selectBtn.setTitle(titleText, for: .normal)
+                    
+
+                    breakTimeStackView.addArrangedSubview(selectBtn)
+                    selectBtn.addTarget(self, action: #selector(breakTimeBtnTapped(_:)), for: .touchUpInside)
+                    if breakTime == titleText{
+                        btnSelected(btn: selectBtn)
+                    }else{
+                        btnUnSelected(btn: selectBtn)
+                    }
+                    
+                    selectBtn.snp.makeConstraints {
+                        $0.height.equalTo(41)
+                        $0.width.equalTo(53)
+                    }
+                }
                 return cell
             }
             
@@ -266,7 +541,7 @@ extension MyPageManagerAddWorkerVC:  MyPageManagerPayTypeModalDelegate{
         }else{
             checkValue3 = false
         }
-        checkContent()
+        checkValue()
     }
     
     //급여 계산 기준 선택 페이지로

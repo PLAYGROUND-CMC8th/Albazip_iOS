@@ -38,7 +38,7 @@ class SelectWorkerHourVC: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         let workerInfo = MyPageManagerAddWorkerInfo.shared
-        if let workHour = workerInfo.workDays{
+        if let workHour = workerInfo.workSchedule{
             workHourArr = workHour
             workDayTypes = workerInfo.workDayTypes
         }else{
@@ -161,7 +161,7 @@ class SelectWorkerHourVC: UIViewController{
     
     @IBAction func btnNext(_ sender: Any) {
         let workerInfo = MyPageManagerAddWorkerInfo.shared
-        workerInfo.workDays = workHourArr
+        workerInfo.workSchedule = workHourArr
         workerInfo.workDayTypes = workDayTypes
         
         self.navigationController?.popViewController(animated: true)

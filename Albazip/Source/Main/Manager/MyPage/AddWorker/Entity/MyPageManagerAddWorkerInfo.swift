@@ -8,12 +8,9 @@
 import Foundation
 class MyPageManagerAddWorkerInfo{
     static let shared = MyPageManagerAddWorkerInfo()
-    var rank: String?
     var title: String?
-    var startTime: String?
-    var endTime: String?
     var workTime: String?
-    var workDays: [WorkHour]?
+    var workSchedule: [WorkHour]?
     var workDayTypes = [Bool]() // true일때만 근무 요일
     var breakTime: String?
     var salary: String?
