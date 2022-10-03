@@ -89,7 +89,7 @@ class WorkHourTableViewCell: UITableViewCell {
     
     // 셀 데이터 세팅
     func setUp(workHour: WorkHour, workDayType:Bool, index: Int){
-        self.dayLabel.text = SysUtils.dayOfIndex(index: index)
+        self.dayLabel.text = SysUtils.dayOfIndex(index: index) + "요일"
         storeHourView.setUp(selected: false, workHour: workHour)
         if workDayType{
             storeHourView.isHidden = false

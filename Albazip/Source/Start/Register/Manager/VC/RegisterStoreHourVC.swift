@@ -272,7 +272,7 @@ extension RegisterStoreHourVC: UITableViewDataSource, UITableViewDelegate{
                 
                 // data setting
                 cell.setUp(workHour: self.workHourArr[indexPath.row], storeHourType: self.storeHourTypeArr[indexPath.row])
-                cell.dayLabel.text = SysUtils.dayOfIndex(index: indexPath.row)
+                cell.dayLabel.text = SysUtils.dayOfIndex(index: indexPath.row) + "요일"
                 
                 return cell
             }
