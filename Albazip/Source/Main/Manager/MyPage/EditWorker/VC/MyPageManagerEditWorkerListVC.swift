@@ -77,17 +77,7 @@ class MyPageManagerEditWorkerListVC: UIViewController{
         }
         //api 호출
         let data = MyPageManagerAddWorkerInfo.shared
-        var salaryType2 = 0
-        if data.salaryType == "시급"{
-            salaryType2 = 0
-        }else if data.salaryType == "주급"{
-            salaryType2 = 1
-        }else{
-            salaryType2 = 2
-        }
-        
-        //api 호출
-        let input = MyPageManagerAddWorkerRequest(
+        let input = MyPageManagerEditWorkerRequest(
             rank: "알바생",
             title: data.title!,
             workSchedule: data.workSchedule!
@@ -98,7 +88,16 @@ class MyPageManagerEditWorkerListVC: UIViewController{
                 },
             breakTime: data.breakTime!,
             salary: data.salary!,
-            salaryType: data.salaryType!,
+            salaryType: {
+                switch(data.salaryType ?? "시급"){
+                case "시급":
+                    return 0
+                case "주급":
+                    return 1
+                default:
+                    return 2
+                }
+            }(),
             taskLists: taskList.map{
                 TaskLists(title: $0.title, content: $0.content ?? "")
             }

@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 class MyPageManagerEditWorkerListDataManger{
-    func getMyPageManagerEditWorkerList(_ parameters: MyPageManagerAddWorkerRequest,vc: MyPageManagerEditWorkerListVC, index: Int) {
+    func getMyPageManagerEditWorkerList(_ parameters: MyPageManagerEditWorkerRequest,vc: MyPageManagerEditWorkerListVC, index: Int) {
         let url = "\(Constant.BASE_URL)/position/\(index)"
         
         let header: HTTPHeaders = [ "Content-Type":"application/json",

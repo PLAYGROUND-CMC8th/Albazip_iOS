@@ -7,16 +7,14 @@
 
 
 
-struct MyPageManagerEditWorkerData2: Encodable {
+struct MyPageManagerEditWorkerRequest: Encodable {
     var rank: String
     var title: String
-    var startTime: String
-    var endTime: String
-    var workDay: [String]
+    var workSchedule: [WorkHour]
     var breakTime: String
     var salary: String
     var salaryType: Int
-    var taskList: [EditTaskLists2]
+    var taskLists: [TaskLists]
 }
 struct EditTaskLists2: Encodable{
     var title: String
