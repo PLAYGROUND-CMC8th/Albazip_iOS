@@ -79,14 +79,11 @@ class HomeManagerEditStore1VC:UIViewController{
         registerManagerInfo.type = storeTypeTextField.text!
         registerManagerInfo.address = storeLocationTextField.text! + " " + storeLocationDetailTextField.text!
        
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerEditStore2VC") as? HomeManagerEditStore2VC else {return}
-        if let x = storeData{
-            nextVC.startTime = x.startTime!.insertTime
-            nextVC.endTime = x.endTime!.insertTime
-            nextVC.salary = x.payday!
-            nextVC.holiday = x.holiday!
-            nextVC.managerId = managerId
-        }
+        let storyboard = UIStoryboard(name: "RegisterManagerStoryboard", bundle: Bundle.main)
+        guard let nextVC = storyboard.instantiateViewController(identifier: "RegisterMoreInfoVC") as? RegisterMoreInfoVC else {return}
+        nextVC.writeType = .edit
+        nextVC.salaryDate = storeData?.payday ?? ""
+        nextVC.managerId = self.managerId
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
@@ -145,16 +142,41 @@ extension HomeManagerEditStore1VC: ModalDelegate {
 }
 extension HomeManagerEditStore1VC {
     func didSuccessHomeManagerEditStore(result: HomeManagerEditStoreBeforeResponse) {
-        //print(result.data)
+        guard let data = result.data else{ return}
+        storeData = data
+        storeNameTextField.text = data.name!
+        storeTypeTextField.text = data.type!
+        storeLocationTextField.text = data.address!
         
-        if let data = result.data{
-            storeData = data
-            print(storeData)
-            storeNameTextField.text = data.name!
-            storeTypeTextField.text = data.type!
-            storeLocationTextField.text = data.address!
-            
+        // 영업 시간
+        var workHour = [WorkHour]()
+        var storeHourType = [StoreHourType]()
+        
+        let registerManagerInfo = RegisterManagerInfo.shared
+        
+        for openSchedule in data.openSchedule{
+            var appended = false
+            for holiday in data.holiday ?? [String](){
+                if holiday == openSchedule.day{ // 휴무일
+                    workHour.append(WorkHour(startTime: nil, endTime: nil, day: openSchedule.day))
+                    storeHourType.append(.hoilday)
+                    appended = true
+                    break
+                }
+            }
+            if !appended{
+                workHour.append(WorkHour(startTime: openSchedule.startTime?.insertTime, endTime: openSchedule.endTime?.insertTime, day: openSchedule.day))
+                if openSchedule.startTime == openSchedule.endTime{
+                    storeHourType.append(.allDay) // 24시간 영업
+                }else{
+                    storeHourType.append(.normal) // default
+                }
+            }
         }
+        registerManagerInfo.hoilday = Set(data.holiday ?? [String]())
+        registerManagerInfo.workHour = workHour
+        registerManagerInfo.storeHourType = storeHourType
+        
         dismissIndicator()
     }
     

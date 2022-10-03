@@ -142,6 +142,9 @@ class RegisterStoreHourVC: UIViewController{
             storeHourTypeArr[index] = .allDay
             workHourArr[index].startTime = nil
             workHourArr[index].endTime = nil
+            if let indexToRemove = hoilday.firstIndex(of: SysUtils.dayOfIndex(index: index)) {
+                hoilday.remove(at: indexToRemove)
+            }
         case .allDay:
             storeHourTypeArr[index] = .normal
         }

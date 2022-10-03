@@ -401,12 +401,12 @@ class HomeManagerEditStore2VC: UIViewController{
         
         // api resquest 데이터
         
-        let input = HomeManagerEditStoreRequest(name: data.name!, type: data.type!, address: data.address!, startTime: removeStartTime, endTime: removeEndTime, holiday: holiday, payday: salaryTextField.text!)
-        print(input)
+//        let input = HomeManagerEditStoreRequest(name: data.name!, type: data.type!, address: data.address!, startTime: removeStartTime, endTime: removeEndTime, holiday: holiday, payday: salaryTextField.text!)
+//        print(input)
         
         // api 통신
-        showIndicator()
-        dataManager.postEditStore(managerId: managerId, input, delegate: self)
+//        showIndicator()
+//        dataManager.postEditStore(managerId: managerId, input, delegate: self)
         
         
         //휴무일 정보 reset

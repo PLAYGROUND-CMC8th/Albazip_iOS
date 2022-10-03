@@ -17,8 +17,7 @@ struct HomeManagerEditStoreBeforeData: Decodable {
     var name: String?
     var type: String?
     var address: String?
-    var startTime: String?
-    var endTime: String?
+    var openSchedule: [WorkSchedule]
     var breakTime: String?
     var holiday: [String]?
     var payday: String?

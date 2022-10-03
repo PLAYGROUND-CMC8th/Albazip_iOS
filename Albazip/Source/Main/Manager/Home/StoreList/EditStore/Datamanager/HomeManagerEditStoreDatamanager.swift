@@ -8,7 +8,7 @@
 import Alamofire
 import Foundation
 class HomeManagerEditStoreDatamanager {
-    func postEditStore(managerId: Int, _ parameters: HomeManagerEditStoreRequest, delegate: HomeManagerEditStore2VC) {
+    func postEditStore(managerId: Int, _ parameters: HomeManagerEditStoreRequest, delegate: RegisterMoreInfoVC) {
         
         let header: HTTPHeaders = [ "Content-Type":"application/json",
                                     "token":"\(UserDefaults.standard.string(forKey: "token")!)"]

@@ -9,8 +9,7 @@ struct HomeManagerEditStoreRequest: Encodable {
     var name: String
     var type: String
     var address: String
-    var startTime: String
-    var endTime: String
+    var openSchedule: [OpenSchedule]
     var holiday: [String]
     var payday: String
 }

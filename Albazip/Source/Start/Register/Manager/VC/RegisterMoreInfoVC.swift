@@ -14,20 +14,25 @@ class RegisterMoreInfoVC: UIViewController {
     @IBOutlet var modalBgView: UIView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var btnNext: UIButton!
+    // 폼 타입
+    var writeType: WriteType = .add
     
+    // 수정 모드
+    var managerId = -1
+    
+    // data
     var workHourArr = [WorkHour]()
     var salaryDate = ""
     var isHourSetted = false{
         didSet{
             if isHourSetted{
-                tableView.beginUpdates()
-                tableView.reloadSections(IndexSet(1...1), with: .none)
-                tableView.endUpdates()
+                tableView.reloadData()
             }
         }
     }
     // Datamanager
     lazy var dataManager: RegisterManagerDataManager = RegisterManagerDataManager()
+    lazy var editDataManager: HomeManagerEditStoreDatamanager = HomeManagerEditStoreDatamanager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +105,7 @@ class RegisterMoreInfoVC: UIViewController {
     
     @objc func goStoreHourPage(_ sender: UIButton){
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterStoreHourVC") as? RegisterStoreHourVC else {return}
+        let data = RegisterManagerInfo.shared
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -109,9 +115,6 @@ class RegisterMoreInfoVC: UIViewController {
         let data = RegisterManagerInfo.shared
 
         //로그인화면에서 포지션 선택으로 온것인지 관리자 가입에서 온것인지 잘 판단해야할듯, => 둘다 토큰을 Userdault말고 RegisterBasicInfo에 저장하자!
-        
-        // 휴무일 설정
-//        setHoliday()
         
         // 영업시간 설정
         var openSchedule = [OpenSchedule]()
@@ -125,12 +128,19 @@ class RegisterMoreInfoVC: UIViewController {
             openSchedule.append(OpenSchedule(startTime: startStr, endTime: endStr, day: workHour.day))
         }
         
-        // api resquest 데이터
-        let input = RegisterManagerRequset(name: data.name!, type: data.type!, address: data.address!, registerNumber: data.registerNumber!, openSchedule: openSchedule, holiday: Array(data.hoilday), payday: salaryDate)
-        print(input)
-//
-//        // api 통신
-        dataManager.postRegisterManager(input, delegate: self)
+        if writeType == .add{ // 작성 모드
+            // api resquest 데이터
+            let input = RegisterManagerRequset(name: data.name!, type: data.type!, address: data.address!, registerNumber: data.registerNumber!, openSchedule: openSchedule, holiday: Array(data.hoilday), payday: salaryDate)
+            
+            // api 통신
+            dataManager.postRegisterManager(input, delegate: self)
+        }else{ // 수정 모드
+            let input = HomeManagerEditStoreRequest(name: data.name!, type: data.type!, address: data.address!, openSchedule: openSchedule, holiday: Array(data.hoilday), payday: salaryDate)
+            
+            // api 통신
+            showIndicator()
+            editDataManager.postEditStore(managerId: self.managerId, input, delegate: self)
+        }
     }
 }
 extension RegisterMoreInfoVC: SalaryModalDelegate {
@@ -147,6 +157,7 @@ extension RegisterMoreInfoVC: SalaryModalDelegate {
 }
 
 extension RegisterMoreInfoVC {
+    // 작성 모드
     func didSuccessRegisterManager(_ result: RegisterManagerResponse) {
         
         //우선 유저 토큰 로컬에 저장
@@ -163,6 +174,21 @@ extension RegisterMoreInfoVC {
     
     func failedToRegisterManager(message: String) {
         self.presentAlert(title: message)
+    }
+    
+    // 수정 모드
+    func didSuccessEditStore(result: HomeManagerEditStoreReponse) {
+        dismissIndicator()
+        backTwo()
+    }
+    
+    func failedToEditStore(message: String) {
+        dismissIndicator()
+        presentAlert(title: message)
+    }
+    func backTwo() {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: false)
     }
 }
 
