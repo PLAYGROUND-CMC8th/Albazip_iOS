@@ -22,13 +22,14 @@ class MyPageManagerAddWorkerVC: UIViewController{
     var writeType: WriteType = .add
     
     // 수정 모드
-    var positionId = 0
+    var positionId: Int?
     lazy var dataManager: MyPageManagerEditWorkerDatamanager = MyPageManagerEditWorkerDatamanager()
 
     // 폼 요소 다 채워졌는지 확인
     var checkValue3 = true
     
     // data
+    var loadData : MyPageManagerEditWorkerData?
     var salaryType = "시급"
     
     var positionDay = ""{
@@ -66,7 +67,7 @@ class MyPageManagerAddWorkerVC: UIViewController{
         setData()
         if writeType == .edit{
             showIndicator()
-            dataManager.getMyPageManagerEditWorker(vc: self, index: positionId)
+            dataManager.getMyPageManagerEditWorker(vc: self, index: positionId ?? 0)
         }
     }
     
@@ -113,12 +114,26 @@ class MyPageManagerAddWorkerVC: UIViewController{
         data.salary = salary
         data.breakTime = breakTime
         data.title = positionDay + positionHour
-//        data.workDays = workDay
         
-        print("data:\(data.title) \(data.workSchedule) \(data.breakTime) \(data.salary) \(data.salaryType)")
-        
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageManagerWorkListVC") as? MyPageManagerWorkListVC else {return}
-                self.navigationController?.pushViewController(nextVC, animated: true)
+        if let positionId = self.positionId{ // 수정모드
+            guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageManagerEditWorkerListVC") as? MyPageManagerEditWorkerListVC else {return}
+            
+            if let data = loadData{
+                var i = 0
+                var editTaskList2 = [EditTaskLists2]()
+                while i < data.taskList.count{
+                    editTaskList2.append(EditTaskLists2(title: data.taskList[i].title, content: data.taskList[i].content, id: data.taskList[i].id))
+                    i += 1
+                }
+                
+                nextVC.taskList = editTaskList2
+            }
+            nextVC.positionId = positionId
+                    self.navigationController?.pushViewController(nextVC, animated: true)
+        }else{ // 작성모드
+            guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageManagerWorkListVC") as? MyPageManagerWorkListVC else {return}
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
     }
     
     //모든 값이 입력되었는지 확인
@@ -587,6 +602,9 @@ extension MyPageManagerAddWorkerVC {
 
         let data = MyPageManagerAddWorkerInfo.shared
         guard let response = result.data else {return}
+        
+        // 전체 데이터 저장
+        self.loadData = response
         
         // 급여 타입
         self.salaryType = {

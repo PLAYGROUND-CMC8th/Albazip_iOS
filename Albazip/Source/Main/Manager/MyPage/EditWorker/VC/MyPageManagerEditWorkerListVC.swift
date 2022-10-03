@@ -85,11 +85,27 @@ class MyPageManagerEditWorkerListVC: UIViewController{
         }else{
             salaryType2 = 2
         }
-//        let input = MyPageManagerEditWorkerData2(rank: data.rank!, title: data.title!, startTime: data.startTime!, endTime: data.endTime!,  workDay: data.workDays!, breakTime: data.breakTime!, salary: data.salary!, salaryType: salaryType2, taskList: taskList)
-//
-//        print(input)
-//        dataManager.getMyPageManagerEditWorkerList(input, vc: self, index: positionId)
-//        showIndicator()
+        
+        //api 호출
+        let input = MyPageManagerAddWorkerRequest(
+            rank: "알바생",
+            title: data.title!,
+            workSchedule: data.workSchedule!
+                .filter{$0.startTime != nil}
+                .filter{$0.endTime != nil}
+                .map{
+                    return WorkHour(startTime: $0.startTime?.replace(target: ":", with: ""), endTime: $0.endTime?.replace(target: ":", with: ""), day: $0.day)
+                },
+            breakTime: data.breakTime!,
+            salary: data.salary!,
+            salaryType: data.salaryType!,
+            taskLists: taskList.map{
+                TaskLists(title: $0.title, content: $0.content ?? "")
+            }
+        )
+
+        showIndicator()
+        dataManager.getMyPageManagerEditWorkerList(input, vc: self, index: positionId)
         
     }
     @objc internal func keyboardWillShow(_ notification : Notification?) -> Void {
