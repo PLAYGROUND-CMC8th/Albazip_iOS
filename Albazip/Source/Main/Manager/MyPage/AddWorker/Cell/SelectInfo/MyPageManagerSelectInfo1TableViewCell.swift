@@ -385,27 +385,27 @@ class MyPageManagerSelectInfo1TableViewCell: UITableViewCell {
         }
         
         
-        if data.workDay.contains("월"){
-            btnSelected(btn : btn4_1)
-        }
-        if data.workDay.contains("화"){
-            btnSelected(btn : btn4_2)
-        }
-        if data.workDay.contains("수"){
-            btnSelected(btn : btn4_3)
-        }
-        if data.workDay.contains("목"){
-            btnSelected(btn : btn4_4)
-        }
-        if data.workDay.contains("금"){
-            btnSelected(btn : btn4_5)
-        }
-        if data.workDay.contains("토"){
-            btnSelected(btn : btn4_6)
-        }
-        if data.workDay.contains("일"){
-            btnSelected(btn : btn4_7)
-        }
+//        if data.workDay.contains("월"){
+//            btnSelected(btn : btn4_1)
+//        }
+//        if data.workDay.contains("화"){
+//            btnSelected(btn : btn4_2)
+//        }
+//        if data.workDay.contains("수"){
+//            btnSelected(btn : btn4_3)
+//        }
+//        if data.workDay.contains("목"){
+//            btnSelected(btn : btn4_4)
+//        }
+//        if data.workDay.contains("금"){
+//            btnSelected(btn : btn4_5)
+//        }
+//        if data.workDay.contains("토"){
+//            btnSelected(btn : btn4_6)
+//        }
+//        if data.workDay.contains("일"){
+//            btnSelected(btn : btn4_7)
+//        }
         btnDisabled(btn: btn4_8)
     }
     

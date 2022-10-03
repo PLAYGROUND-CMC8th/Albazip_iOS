@@ -99,10 +99,12 @@ class MyPageManagerWorkerDetailVC: BaseViewController{
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnNext(_ sender: Any) {
-        
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MyPageManagerEditWorkerVC") as? MyPageManagerEditWorkerVC else {return}
+        let storyboard = UIStoryboard(name: "MyPageManagerStoryboard", bundle: Bundle.main)
+        guard let nextVC = storyboard.instantiateViewController(identifier: "MyPageManagerAddWorkerVC") as? MyPageManagerAddWorkerVC else {return}
         
         nextVC.positionId = positionId
+        nextVC.writeType = .edit
+        
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

@@ -49,7 +49,7 @@ class MyPageManagerEditWorkerVC: UIViewController{
         setupTableView()
         setUI()
         showIndicator()
-        dataManager.getMyPageManagerEditWorker(vc: self, index: positionId)
+//        dataManager.getMyPageManagerEditWorker(vc: self, index: positionId)
     }
     //MARK:- View Setup
     func setUI(){
@@ -430,7 +430,7 @@ extension MyPageManagerEditWorkerVC {
             }
             
             salary = x.salary
-            workDay = x.workDay
+//            workDay = x.workDay
         }
         btnNext.isEnabled = true
         tableView.reloadData()

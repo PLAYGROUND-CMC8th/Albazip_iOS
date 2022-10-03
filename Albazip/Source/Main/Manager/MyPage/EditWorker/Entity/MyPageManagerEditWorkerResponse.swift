@@ -16,12 +16,19 @@ struct MyPageManagerEditWorkerData: Decodable {
     var title: String
     var startTime: String
     var endTime: String
-    var workDay: [String]
+    var workSchedule: [WorkSchedule]
     var breakTime: String
     var salary: String
     var salaryType: Int
     var taskList: [EditTaskLists]
 }
+
+struct WorkSchedule: Decodable {
+    var startTime: String?
+    var endTime: String?
+    var day: String
+}
+
 struct EditTaskLists: Decodable{
     var title: String
     var content: String?

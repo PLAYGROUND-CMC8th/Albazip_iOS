@@ -8,22 +8,29 @@
 import Foundation
 import UIKit
 
+enum WriteType:Int {
+    case add // 작성
+    case edit // 편집
+}
+
 class MyPageManagerAddWorkerVC: UIViewController{
-    
-    
     @IBOutlet var modalBgView: UIView!
-    
     @IBOutlet var btnNext: UIButton!
     @IBOutlet var tableView: UITableView!
     
-    // 시간 변수
-    var payTime = "시급"
-    var hour = "0시간"
+    // 폼 타입
+    var writeType: WriteType = .add
     
-    //폼 요소 다 채워졌는지 확인
+    // 수정 모드
+    var positionId = 0
+    lazy var dataManager: MyPageManagerEditWorkerDatamanager = MyPageManagerEditWorkerDatamanager()
+
+    // 폼 요소 다 채워졌는지 확인
     var checkValue3 = true
     
     // data
+    var salaryType = "시급"
+    
     var positionDay = ""{
         didSet{
             reloadSection(section: 0)
@@ -42,7 +49,6 @@ class MyPageManagerAddWorkerVC: UIViewController{
         }
     }
     
-    var workDay = [String]()
     var salary = "8720"
     
     var isWorkDaySetted = false{
@@ -58,17 +64,23 @@ class MyPageManagerAddWorkerVC: UIViewController{
         setupTableView()
         setUI()
         setData()
+        if writeType == .edit{
+            showIndicator()
+            dataManager.getMyPageManagerEditWorker(vc: self, index: positionId)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-        let workerInfo = MyPageManagerAddWorkerInfo.shared
-        if let workHour = workerInfo.workSchedule{
-            isWorkDaySetted = true
-        }else{
-            isWorkDaySetted = false
+        if writeType == .add{
+            let workerInfo = MyPageManagerAddWorkerInfo.shared
+            if workerInfo.workSchedule != nil{
+                isWorkDaySetted = true
+            }else{
+                isWorkDaySetted = false
+            }
+            checkValue()
         }
-        checkValue()
     }
     
     //MARK:- View Setup
@@ -97,7 +109,7 @@ class MyPageManagerAddWorkerVC: UIViewController{
     
     @IBAction func btnNext(_ sender: Any) {
         let data = MyPageManagerAddWorkerInfo.shared
-        data.salaryType = payTime
+        data.salaryType = salaryType
         data.salary = salary
         data.breakTime = breakTime
         data.title = positionDay + positionHour
@@ -510,10 +522,15 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
                 cell.selectionStyle = .none
                 print(indexPath.row)
                 cell.myPageManagerPayTypeModalDelegate = self
-                if payTime != ""{
-                    cell.payTypeLabel.text = payTime
+                if salaryType != ""{
+                    cell.payTypeLabel.text = salaryType
                     
                 }
+                
+                if writeType == .edit{
+                    cell.moneyTextField.text = salary
+                }
+                
                 salary = cell.moneyTextField.text!
                 return cell
             }
@@ -533,7 +550,7 @@ extension MyPageManagerAddWorkerVC: SelectPayTypeDelegate {
         modalBgView.isHidden = true
     }
     func textFieldData(data: String){
-        payTime = data
+        salaryType = data
         tableView.reloadData()
     }
 }
@@ -564,3 +581,77 @@ extension MyPageManagerAddWorkerVC:  MyPageManagerPayTypeModalDelegate{
     }
 }
 
+extension MyPageManagerAddWorkerVC {
+    func didSuccessMyPageMyPageManagerEditWorker(_ result: MyPageManagerEditWorkerResponse) {
+        dismissIndicator()
+
+        let data = MyPageManagerAddWorkerInfo.shared
+        guard let response = result.data else {return}
+        
+        // 급여 타입
+        self.salaryType = {
+            switch(response.salaryType){
+            case 0:
+                return "시급"
+            case 1:
+                return "주급"
+            default:
+                return "월급"
+            }
+        }()
+        data.salaryType = self.salaryType
+        
+        // 급여
+        self.salary = response.salary
+        data.salary = self.salary
+        reloadSection(section: 2)
+        
+        // 쉬는 시간
+        self.breakTime = response.breakTime
+        data.breakTime = self.breakTime
+        
+        // 포지션
+        self.positionDay = response.title.substring(from: 0, to: 2)
+        self.positionHour = response.title.substring(from: 2, to: 4)
+        data.title = positionDay + positionHour
+        
+        // 근무 시간
+        var workHourArr = [WorkHour]()
+        var workDayTypes = [Bool]()
+        
+        for i in 0...6{
+            var appended = false
+            for work in response.workSchedule{
+                if SysUtils.dayOfIndex(index: i) == work.day{
+                    workHourArr.append(WorkHour(
+                        startTime: work.startTime?.insertTime,
+                        endTime: work.endTime?.insertTime,
+                        day: work.day
+                    ))
+                    workDayTypes.append(true)
+                    appended = true
+                    break
+                }
+            }
+            if !appended{
+                workHourArr.append(WorkHour(
+                    startTime: nil,
+                    endTime: nil,
+                    day: SysUtils.dayOfIndex(index: i)
+                ))
+                workDayTypes.append(false)
+            }
+        }
+        data.workSchedule = workHourArr
+        data.workDayTypes = workDayTypes
+        
+        isWorkDaySetted = true
+        checkValue()
+        writeType = .add
+    }
+    
+    func failedToRequestMyPageManagerEditWorker(message: String) {
+        dismissIndicator()
+        self.presentAlert(title: message)
+    }
+}
