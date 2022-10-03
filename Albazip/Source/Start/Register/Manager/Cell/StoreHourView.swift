@@ -75,8 +75,8 @@ class StoreHourView: UIView {
     lazy var whatHour: WhatHour = .storeHour{
         didSet{
             if whatHour == .storeHour{
-                openLabel.text = "매장 오픈 시간"
-                closeLabel.text = "매장 마감 시간"
+                openLabel.text = "오픈 시간"
+                closeLabel.text = "마감 시간"
             }else{
                 openLabel.text = "출근 시간"
                 closeLabel.text = "퇴근 시간"
