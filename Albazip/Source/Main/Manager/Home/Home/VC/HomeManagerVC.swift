@@ -76,6 +76,10 @@ class HomeManagerVC: BaseViewController{
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 
+    @IBAction func goAddPublicWork(_ sender: Any) {
+        goAddPublicWork()
+    }
+    
     //매장 목록 페이지로
     @objc func storeNameViewTapped(sender: UITapGestureRecognizer) {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "HomeManagerStoreListVC") as? HomeManagerStoreListVC else {return}
@@ -272,8 +276,7 @@ extension HomeManagerVC: UITableViewDataSource, UITableViewDelegate{
         case 0:
             return 480
         case 1:
-            return 163
-       
+            return 214
         default:
             return 0
         }

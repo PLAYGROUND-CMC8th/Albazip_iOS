@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -531,28 +531,15 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqO-bN-LgZ">
-                        <rect key="frame" x="319" y="173" width="24" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="24" id="Y3S-RH-bK8"/>
-                            <constraint firstAttribute="height" constant="24" id="hW5-PV-a7q"/>
-                        </constraints>
-                        <state key="normal" image="icAdd24Px"/>
-                        <connections>
-                            <action selector="btnAddWork:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fce-Ki-glt"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Zmw-ar-0SU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="0DR-Au-FsM"/>
                     <constraint firstItem="JCF-wr-s2g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="0QZ-5P-rv1"/>
                     <constraint firstItem="e1d-tt-OUd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="88D-8Q-jnY"/>
-                    <constraint firstAttribute="trailing" secondItem="uqO-bN-LgZ" secondAttribute="trailing" constant="32" id="Coe-l9-ENN"/>
                     <constraint firstAttribute="trailing" secondItem="Zmw-ar-0SU" secondAttribute="trailing" constant="24" id="GQ9-40-6y5"/>
                     <constraint firstItem="oDH-Hj-8qq" firstAttribute="leading" secondItem="Zmw-ar-0SU" secondAttribute="leading" id="JO8-aV-EkN"/>
                     <constraint firstAttribute="bottom" secondItem="kJF-29-Ek5" secondAttribute="bottom" constant="24" id="K4o-Ax-fdF"/>
                     <constraint firstAttribute="trailing" secondItem="vgq-dK-yXs" secondAttribute="trailing" constant="36" id="b6p-OG-fAf"/>
-                    <constraint firstItem="uqO-bN-LgZ" firstAttribute="centerY" secondItem="JCF-wr-s2g" secondAttribute="centerY" id="dTz-gK-Mwx"/>
                     <constraint firstItem="JCF-wr-s2g" firstAttribute="top" secondItem="Zmw-ar-0SU" secondAttribute="bottom" constant="48" id="eW8-qn-Jqx"/>
                     <constraint firstItem="oDH-Hj-8qq" firstAttribute="trailing" secondItem="Zmw-ar-0SU" secondAttribute="trailing" id="fv8-Tj-WiW"/>
                     <constraint firstItem="kJF-29-Ek5" firstAttribute="leading" secondItem="oDH-Hj-8qq" secondAttribute="leading" id="hxe-XU-faV"/>
@@ -602,7 +589,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icAdd24Px" width="24" height="24"/>
         <image name="imgPrivateWork68Px" width="68" height="68"/>
         <image name="imgPublicWork68Px" width="68" height="68"/>
         <systemColor name="systemBackgroundColor">
