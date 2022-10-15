@@ -10,7 +10,7 @@ class HomeManagerTodayWorkVC: UIViewController{
     var isNoNonCompleteCoData = true
     var isNoCompleteCoData = true
     var isNoPerData = true
-    @IBOutlet var segment: UISegmentedControl!
+    @IBOutlet var segment: SegmentedControl!
     @IBOutlet var tableView: UITableView!
     var status = -1
     var segValue = 0 // 0이면 공동업무, 1이면 개인업무!
@@ -43,8 +43,6 @@ class HomeManagerTodayWorkVC: UIViewController{
         dataManager.getHomeManagerTodayWork(vc: self)
     }
     func setUI() {
-        
-        segment.cornerRadius = segment.bounds.height / 2
         let attributes = [
             NSAttributedString.Key.foregroundColor :  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
             NSAttributedString.Key.font : UIFont(name: "AppleSDGothicNeo-Bold", size: 16) as Any
@@ -58,7 +56,8 @@ class HomeManagerTodayWorkVC: UIViewController{
         segment.setTitleTextAttributes(attributes2 , for: .normal)
         
         segment.selectedSegmentIndex = segValue
-        self.segment.layer.cornerRadius = 50.0
+        
+        self.segment.layer.cornerRadius = CGRectGetHeight(segment.bounds) / 2
         self.segment.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.segment.layer.borderWidth = 1.0
         self.segment.layer.masksToBounds = true
@@ -637,4 +636,27 @@ extension HomeManagerTodayWorkVC: CheckUnCompleteWorkDelegate, CheckCompleteWork
     }
 }
 
-
+class SegmentedControl: UISegmentedControl {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+            
+        //background
+        layer.cornerRadius = CGRectGetHeight(self.bounds) / 2
+        layer.masksToBounds = true
+        clipsToBounds = true
+              
+        //foreground
+        let segmentInset: CGFloat = 4
+        let foregroundIndex = numberOfSegments
+        let segmentImage: UIImage? = UIImage(color: UIColor(hex: 0x343434))
+              
+        if subviews.indices.contains(foregroundIndex), let foregroundImageView = subviews[foregroundIndex] as? UIImageView
+        {
+            foregroundImageView.bounds = foregroundImageView.bounds.insetBy(dx: segmentInset, dy: segmentInset)
+            foregroundImageView.image = segmentImage    //substitute with our own colored image
+            foregroundImageView.layer.removeAnimation(forKey: "SelectionBounds")    //this removes the weird scaling animation!
+            foregroundImageView.layer.masksToBounds = true
+            foregroundImageView.layer.cornerRadius = foregroundImageView.bounds.height/2
+        }
+    }
+}

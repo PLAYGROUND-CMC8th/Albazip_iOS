@@ -366,6 +366,7 @@
 		C3CDB059274BC31A006D7A92 /* HomeWorkerTodayWorkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CDB058274BC31A006D7A92 /* HomeWorkerTodayWorkResponse.swift */; };
 		C3CDB53A2738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CDB5382738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift */; };
 		C3CDB53B2738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CDB5392738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib */; };
+		C3CEDD1928FB42B300485D4A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CEDD1828FB42B300485D4A /* UIImage.swift */; };
 		C3CFC2EE273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2ED273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift */; };
 		C3CFC2F0273E27C1001B2EB6 /* MyPageManagerContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2EF273E27C1001B2EB6 /* MyPageManagerContentResponse.swift */; };
 		C3CFC2F4273E5241001B2EB6 /* MyPageManagerWorkerDetailProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CFC2F3273E5241001B2EB6 /* MyPageManagerWorkerDetailProfileResponse.swift */; };
@@ -815,6 +816,7 @@
 		C3CDB058274BC31A006D7A92 /* HomeWorkerTodayWorkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerTodayWorkResponse.swift; sourceTree = "<group>"; };
 		C3CDB5382738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerNoWriteTableViewCell.swift; sourceTree = "<group>"; };
 		C3CDB5392738D22E00005FD9 /* MyPageManagerNoWriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerNoWriteTableViewCell.xib; sourceTree = "<group>"; };
+		C3CEDD1828FB42B300485D4A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		C3CFC2ED273E27A9001B2EB6 /* MyPageManagerContentDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerContentDatamanager.swift; sourceTree = "<group>"; };
 		C3CFC2EF273E27C1001B2EB6 /* MyPageManagerContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerContentResponse.swift; sourceTree = "<group>"; };
 		C3CFC2F3273E5241001B2EB6 /* MyPageManagerWorkerDetailProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWorkerDetailProfileResponse.swift; sourceTree = "<group>"; };
@@ -1686,6 +1688,7 @@
 				C3A9683E2719F8E500E27DA1 /* UIView.swift */,
 				C37EBF50271AF29B00DEC2CA /* UITextField.swift */,
 				C38BFB7C273AA30700E79BF5 /* UIApplication.swift */,
+				C3CEDD1828FB42B300485D4A /* UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -3205,6 +3208,7 @@
 				C30EC2E3272A4FEF00EEF218 /* RegisterNumberExistResponse.swift in Sources */,
 				C398BF9C273F77F9008E8BA5 /* HomeManagerVC.swift in Sources */,
 				C33574122743D4C100644E9B /* SettingWorkerVC.swift in Sources */,
+				C3CEDD1928FB42B300485D4A /* UIImage.swift in Sources */,
 				C398BFB8273FD847008E8BA5 /* HomeManagerTodayWorkVC.swift in Sources */,
 				C398BFBE273FF0FF008E8BA5 /* HomeManagerAddPublicWorkVC.swift in Sources */,
 				C3EBC257274A31890017BB85 /* HomeWorkerResponse.swift in Sources */,

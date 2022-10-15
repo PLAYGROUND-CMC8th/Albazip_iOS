@@ -1633,7 +1633,7 @@
                                     <constraint firstAttribute="height" constant="1" id="lE7-MO-7Rf"/>
                                 </constraints>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Gwd-O8-eIp">
+                            <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Gwd-O8-eIp" customClass="SegmentedControl" customModule="Albazip" customModuleProvider="target">
                                 <rect key="frame" x="24" y="129" width="327" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="N04-jE-z9b"/>
@@ -1643,11 +1643,6 @@
                                     <segment title="개인업무"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="70"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="indexChanged:" destination="nti-Hd-vSa" eventType="valueChanged" id="RY9-U9-oZN"/>
                                 </connections>
