@@ -22,6 +22,7 @@ class HomeManagerCommunityTableViewCell: UITableViewCell {
     weak var delegate: HomeCommunityViewCellDelegate?
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var bottomPadding: NSLayoutConstraint!
     
     var isNoData = true
 

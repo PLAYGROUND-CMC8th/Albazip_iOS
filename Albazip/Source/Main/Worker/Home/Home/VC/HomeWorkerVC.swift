@@ -268,7 +268,7 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
                 if let data = boardInfo{
                     cell.setCell(boardInfo: data)
                 }
-                
+                cell.bottomPadding.constant = 26
                 cell.selectionStyle = .none
                 return cell
             }
@@ -287,7 +287,7 @@ extension HomeWorkerVC: UITableViewDataSource, UITableViewDelegate{
         case 0:
             return 480
         case 1:
-            return 163
+            return tableView.estimatedRowHeight
        
         default:
             return 0

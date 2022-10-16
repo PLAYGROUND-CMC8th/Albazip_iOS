@@ -52,7 +52,11 @@ class SysUtils{
         let diffTime = endTotal - startTotal
         hour = diffTime/60
         minute = diffTime%60
-
-        return "\(hour)시간\(minute)분"
+        
+        if minute == 0{
+            return "\(hour)시간"
+        }else{
+            return "\(hour)시간\(minute)분"
+        }
     }
 }

@@ -106,17 +106,7 @@ extension MyPageManagerWorkerPositionVC: UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkerPositionTableViewCell") as? MyPageManagerWorkerPositionTableViewCell {
                 
                 if let data = positionInfo{
-                    cell.breakTimeLabel.text = "휴게시간 " + data.breakTime!
-                    if data.salaryType == 0{
-                        cell.salaryLabel.text = "시급 " + data.salary!.insertComma +  "원"
-                    }else if data.salaryType == 1{
-                        cell.salaryLabel.text = "주급 " + data.salary!.insertComma +  "원"
-                    }else{
-                        cell.salaryLabel.text = "월급 " + data.salary!.insertComma +  "원"
-                    }
-                    cell.workDayLabel.text = data.workDay ?? ""
-                    let workTime = (data.workTime ?? "").insertWorkTime
-                    cell.workTimeLabel.text = "\((data.startTime ?? "").insertTime) ~ \((data.endTime ?? "").insertTime) \(workTime)"
+                    cell.setCell(data: data)
                 }
                 print(indexPath.row)
                 return cell
@@ -142,7 +132,7 @@ extension MyPageManagerWorkerPositionVC: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
         if indexPath.row == 0{
-            return 330
+            return tableView.estimatedRowHeight
         }else {
             return 50
         }

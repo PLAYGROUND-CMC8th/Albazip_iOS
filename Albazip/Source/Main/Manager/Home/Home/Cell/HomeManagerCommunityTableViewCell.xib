@@ -73,6 +73,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bottomPadding" destination="KuK-qt-W5O" id="uuF-WR-2zJ"/>
                 <outlet property="collectionView" destination="JPK-jP-9ap" id="c8U-Hn-dSz"/>
                 <outlet property="pageControl" destination="6uq-7t-jA6" id="ooh-Xh-dXL"/>
             </connections>

@@ -12,11 +12,9 @@ struct MyPageWorkerPositionResponse: Decodable {
 }
 
 struct MyPageWorkerPositionData: Decodable {
-    var startTime: String?
-    var endTime: String?
-    var workTime: String?
     var breakTime: String?
     var workDay: String?
     var salaryType: Int?
     var salary: String?
+    var workSchedule: [WorkSchedule]?
 }
