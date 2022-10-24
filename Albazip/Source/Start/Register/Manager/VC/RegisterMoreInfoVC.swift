@@ -118,14 +118,15 @@ class RegisterMoreInfoVC: UIViewController {
         
         // 영업시간 설정
         var openSchedule = [OpenSchedule]()
-        for workHour in workHourArr{
+        let dayString = ["월", "화", "수", "목", "금", "토", "일"]
+        for (index, workHour) in workHourArr.enumerated(){
             //시간에서 : 문자 제거
             let startTime = workHour.startTime ?? "00:00"
             let endTime = workHour.endTime ?? "00:00"
             let startStr = startTime.replace(target: ":", with: "")
             let endStr = endTime.replace(target: ":", with: "")
 
-            openSchedule.append(OpenSchedule(startTime: startStr, endTime: endStr, day: workHour.day))
+            openSchedule.append(OpenSchedule(startTime: startStr, endTime: endStr, day: dayString[index]))
         }
         
         if writeType == .add{ // 작성 모드
