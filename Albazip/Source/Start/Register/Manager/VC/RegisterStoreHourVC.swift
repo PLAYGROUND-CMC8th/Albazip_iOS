@@ -70,12 +70,18 @@ class RegisterStoreHourVC: UIViewController{
     }
     
     @IBAction func btnCancel(_ sender: Any) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "StoreHourUnCompletedVC") as? StoreHourUnCompletedVC {
-            vc.modalPresentationStyle = .overFullScreen
-            vc.delegate = self
-            modalBgView.isHidden = false
-            self.present(vc, animated: true, completion: nil)
+        for (index, value) in workHourArr.enumerated(){
+            if !((storeHourTypeArr[index] == .normal) && (value.startTime == nil) && (value.endTime == nil)){
+                if let vc = self.storyboard?.instantiateViewController(withIdentifier: "StoreHourUnCompletedVC") as? StoreHourUnCompletedVC {
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.delegate = self
+                    modalBgView.isHidden = false
+                    self.present(vc, animated: true, completion: nil)
+                }
+                return
+            }
         }
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func btnNext(_ sender: Any) {
