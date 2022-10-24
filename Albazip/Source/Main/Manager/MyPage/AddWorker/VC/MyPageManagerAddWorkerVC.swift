@@ -65,6 +65,7 @@ class MyPageManagerAddWorkerVC: UIViewController{
         setupTableView()
         setUI()
         setData()
+        setNoti()
         if writeType == .edit{
             showIndicator()
             dataManager.getMyPageManagerEditWorker(vc: self, index: positionId ?? 0)
@@ -96,12 +97,18 @@ class MyPageManagerAddWorkerVC: UIViewController{
                            forCellReuseIdentifier: "MyPageManagerSelectInfo3TableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.isScrollEnabled = false
     }
     
     func setData(){
         // 싱글톤 초기화
         let workerInfo = MyPageManagerAddWorkerInfo.shared
         workerInfo.workSchedule = nil
+    }
+    
+    func setNoti(){
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @IBAction func btnCancel(_ sender: Any) {
@@ -183,6 +190,20 @@ class MyPageManagerAddWorkerVC: UIViewController{
             breakTime = "90분"
         }
         checkValue()
+    }
+    
+    @objc override func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height - 100
+            }
+        }
+    }
+
+    @objc override func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     //Selected 버튼
@@ -598,7 +619,7 @@ extension MyPageManagerAddWorkerVC:  MyPageManagerPayTypeModalDelegate{
                     
                     modalBgView.isHidden = false
                     vc.selectPayTypeDelegate = self
-                    
+                    self.view.endEditing(true)
                     self.present(vc, animated: true, completion: nil)
         }
     }
