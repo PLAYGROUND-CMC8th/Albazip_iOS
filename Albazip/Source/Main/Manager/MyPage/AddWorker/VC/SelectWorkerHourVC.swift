@@ -77,6 +77,12 @@ class SelectWorkerHourVC: UIViewController{
             isAllSameHour = false
             checkValue()
         }else{
+            // 선택한 근무일이 없을 때
+            if !workDayTypes.contains(true){
+                presentBottomAlert(message: "시간을 설정할 근무일을 선택해주세요.")
+                return
+            }
+            
             let newStoryboard = UIStoryboard(name: "RegisterManagerStoryboard", bundle: nil)
             if let vc = newStoryboard.instantiateViewController(withIdentifier: "RegisterSelectAllStoreHourVC") as? RegisterSelectAllStoreHourVC {
                 vc.modalPresentationStyle = .overFullScreen
