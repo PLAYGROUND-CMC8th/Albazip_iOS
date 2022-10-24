@@ -162,7 +162,19 @@ class SelectWorkerHourVC: UIViewController{
     }
     
     @IBAction func btnCancel(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        if !workDayTypes.contains(true){
+            // 뒤로가기
+            self.navigationController?.popViewController(animated: true)
+        }else{
+            // 미완료 팝업
+            let newStoryboard = UIStoryboard(name: "RegisterManagerStoryboard", bundle: nil)
+            if let vc = newStoryboard.instantiateViewController(withIdentifier: "StoreHourUnCompletedVC") as? StoreHourUnCompletedVC {
+                vc.modalPresentationStyle = .overFullScreen
+                vc.delegate = self
+                modalBgView.isHidden = false
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func btnNext(_ sender: Any) {
@@ -344,5 +356,16 @@ extension SelectWorkerHourVC: AllStoreHourDelegate {
     func storeHourModalDismiss() {
         modalBgView.isHidden = true
         checkValue()
+    }
+}
+
+// 근무 시간 설정 미완료 alert delegate
+extension SelectWorkerHourVC: StoreHourUnCompletedDelegate {
+    func modalDismiss() {
+        modalBgView.isHidden = true
+    }
+    
+    func backToPage() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

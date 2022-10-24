@@ -10,18 +10,21 @@ protocol StoreHourUnCompletedDelegate: AnyObject {
     func backToPage()
 }
 class StoreHourUnCompletedVC: UIViewController{
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var backgroundView: UIView!
     @IBOutlet var cornerView: UIView!
     @IBOutlet var contentLabel: UILabel!
-    
+    var whatHour: WhatHour = .storeHour
     weak var delegate: StoreHourUnCompletedDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUI()
+        setData()
         setGesture()
     }
+    
     func setUI(){
         cornerView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         
@@ -32,6 +35,15 @@ class StoreHourUnCompletedVC: UIViewController{
         attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
         contentLabel.attributedText = attrString
     }
+    
+    func setData(){
+        if whatHour == .workHour{
+            titleLabel.text = "영업시간 설정이 완료되지 않았어요."
+        }else{
+            titleLabel.text = "근무시간 설정이 완료되지 않았어요."
+        }
+    }
+    
     func setGesture(){
         let backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped))
                 backgroundView.addGestureRecognizer(backgroundTapGestureRecognizer)

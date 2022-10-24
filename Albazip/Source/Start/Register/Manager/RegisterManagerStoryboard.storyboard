@@ -486,6 +486,7 @@
                         <outlet property="backgroundView" destination="7Fe-aG-Nhp" id="MWY-nH-XQ3"/>
                         <outlet property="contentLabel" destination="jGq-hy-3GT" id="zTT-73-7L1"/>
                         <outlet property="cornerView" destination="TV7-KJ-CNR" id="UTc-0W-Kf1"/>
+                        <outlet property="titleLabel" destination="nju-rZ-wci" id="xiC-FB-CQ2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ek4-ES-SG0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
