@@ -30,6 +30,8 @@ class RegisterMoreInfoVC: UIViewController {
             }
         }
     }
+    var isHoliday: Bool = false // 공휴일 쉬어요
+    
     // Datamanager
     lazy var dataManager: RegisterManagerDataManager = RegisterManagerDataManager()
     lazy var editDataManager: HomeManagerEditStoreDatamanager = HomeManagerEditStoreDatamanager()
@@ -58,8 +60,8 @@ class RegisterMoreInfoVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
     @objc func selectSalaryDate(_ sender: UIButton) {
-
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterSelectSalaryDateVC") as? RegisterSelectSalaryDateVC {
             vc.modalPresentationStyle = .overFullScreen
 
@@ -67,9 +69,12 @@ class RegisterMoreInfoVC: UIViewController {
             vc.salaryModalDelegate = self
 
             self.present(vc, animated: true, completion: nil)
-
         }
-
+    }
+    
+    @objc func holidayBtnClicked(_ sender: UIButton) {
+        isHoliday = !isHoliday
+        tableView.reloadData()
     }
 
     //모든 값을 다 입력했는지 검사
@@ -298,11 +303,43 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
             }
             cell.contentView.addSubview(hourBtn)
             hourBtn.snp.makeConstraints {
-                $0.top.bottom.equalToSuperview()
+                $0.top.equalToSuperview()
                 $0.trailing.leading.equalToSuperview().inset(36)
+                $0.height.equalTo(40)
             }
             
             hourBtn.addTarget(self, action: #selector(goStoreHourPage(_:)), for: .touchUpInside)
+            
+            let holidayBtn = UIButton().then{
+                if isHoliday{
+                    $0.setImage(UIImage(named: "checkCircleActive30Px"), for: .normal)
+                }else{
+                    $0.setImage(UIImage(named: "checkCircleInactive30Px"), for: .normal)
+                }
+            }
+            
+            cell.contentView.addSubview(holidayBtn)
+            
+            holidayBtn.snp.makeConstraints {
+                $0.leading.equalToSuperview().inset(36)
+                $0.top.equalTo(hourBtn.snp.bottom).offset(12)
+                $0.width.height.equalTo(24)
+            }
+            
+            holidayBtn.addTarget(self, action: #selector(holidayBtnClicked(_:)), for: .touchUpInside)
+            
+            let holidayLabel = UILabel().then{
+                $0.font = .systemFont(ofSize: 16, weight: .medium)
+                $0.textColor = UIColor(hex: 0x343434)
+                $0.text = "공휴일은 쉬어요."
+            }
+            
+            cell.addSubview(holidayLabel)
+            
+            holidayLabel.snp.makeConstraints {
+                $0.centerY.equalTo(holidayBtn.snp.centerY)
+                $0.leading.equalTo(holidayBtn.snp.trailing).offset(4)
+            }
             
             return cell
         }else if indexPath.section == 2{ // 2. 급여일
@@ -371,7 +408,7 @@ extension RegisterMoreInfoVC: UITableViewDataSource, UITableViewDelegate{
         if indexPath.section == 0{
             return 29
         }else if indexPath.section == 1{
-            return 39
+            return 39 + 35
         }else{
             return 45
         }
