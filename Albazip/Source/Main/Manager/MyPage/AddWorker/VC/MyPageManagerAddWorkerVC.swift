@@ -499,6 +499,20 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
                     $0.centerY.equalTo(titleLabel.snp.centerY)
                 }
                 
+                let breakTimeBtn = UIButton().then{
+                    $0.setImage(UIImage(named: "icBreakTime"), for: .normal)
+                }
+                
+                cell.contentView.addSubview(breakTimeBtn)
+                
+                breakTimeBtn.snp.makeConstraints {
+                    $0.leading.equalTo(subLabel.snp.trailing)
+                    $0.width.height.equalTo(20)
+                    $0.centerY.equalTo(titleLabel.snp.centerY)
+                }
+                
+                breakTimeBtn.addTarget(self, action: #selector(goBreakTimePage), for: .touchUpInside)
+                
                 let breakTimeStackView = UIStackView().then {
                     $0.axis = .horizontal
                     $0.distribution = .fillEqually
@@ -589,7 +603,7 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension MyPageManagerAddWorkerVC: SelectPayTypeDelegate {
+extension MyPageManagerAddWorkerVC: SelectPayTypeDelegate, BreakTimeDelegate {
     func modalDismiss(){
         modalBgView.isHidden = true
     }
@@ -621,6 +635,16 @@ extension MyPageManagerAddWorkerVC:  MyPageManagerPayTypeModalDelegate{
                     vc.selectPayTypeDelegate = self
                     self.view.endEditing(true)
                     self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    //쉬는 시간 설명 페이지로
+    @objc func goBreakTimePage() {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "BreakTimeBottomVC") as? BreakTimeBottomVC {
+            vc.modalPresentationStyle = .overFullScreen
+            vc.delegate = self
+            modalBgView.isHidden = false
+            self.present(vc, animated: true, completion: nil)
         }
     }
 }
