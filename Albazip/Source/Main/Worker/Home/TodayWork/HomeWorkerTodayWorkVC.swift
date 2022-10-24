@@ -13,7 +13,7 @@ class HomeWorkerTodayWorkVC: UIViewController{
     var isNoNonCompletePerData = true
     var isNoCompletePerData = true
     var status = -1
-    @IBOutlet var segment: UISegmentedControl!
+    @IBOutlet var segment: SegmentedControl!
     @IBOutlet var tableView: UITableView!
     
     // 공동 업무
@@ -53,8 +53,6 @@ class HomeWorkerTodayWorkVC: UIViewController{
         profileDataManager.getMyPageManagerProfile(vc: self)
     }
     func setUI() {
-        
-        segment.cornerRadius = segment.bounds.height / 2
         let attributes = [
             NSAttributedString.Key.foregroundColor :  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
             NSAttributedString.Key.font : UIFont(name: "AppleSDGothicNeo-Bold", size: 16) as Any
@@ -66,14 +64,7 @@ class HomeWorkerTodayWorkVC: UIViewController{
             NSAttributedString.Key.font : UIFont(name: "AppleSDGothicNeo-Medium", size: 16) as Any
         ] as [NSAttributedString.Key : Any]
         segment.setTitleTextAttributes(attributes2 , for: .normal)
-        /*
-        //corner radius
-        let cornerRadius = segment.bounds.height / 2
-        let maskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        //background
-        segment.clipsToBounds = true
-        segment.layer.cornerRadius = cornerRadius
-        segment.layer.maskedCorners = maskedCorners*/
+        self.segment.layer.cornerRadius = CGRectGetHeight(segment.bounds) / 2
         segment.selectedSegmentIndex = segValue
         
     }
