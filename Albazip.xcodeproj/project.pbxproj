@@ -124,6 +124,7 @@
 		C34BCB572732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34BCB552732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.swift */; };
 		C34BCB582732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34BCB562732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.xib */; };
 		C34C4AE02721BF6700300454 /* RegisterSelectYearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C4ADF2721BF6700300454 /* RegisterSelectYearVC.swift */; };
+		C3528368290FB7C200093561 /* RegisterPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3528367290FB7C200093561 /* RegisterPasswordViewModel.swift */; };
 		C352F9D628C79BDA00C07108 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C352F9D528C79BDA00C07108 /* RxCocoa */; };
 		C352F9D828C79BDA00C07108 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C352F9D728C79BDA00C07108 /* RxRelay */; };
 		C352F9DA28C79BDA00C07108 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C352F9D928C79BDA00C07108 /* RxSwift */; };
@@ -570,6 +571,7 @@
 		C34BCB552732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailCommuteRecordTableViewCell.swift; sourceTree = "<group>"; };
 		C34BCB562732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageDetailCommuteRecordTableViewCell.xib; sourceTree = "<group>"; };
 		C34C4ADF2721BF6700300454 /* RegisterSelectYearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSelectYearVC.swift; sourceTree = "<group>"; };
+		C3528367290FB7C200093561 /* RegisterPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordViewModel.swift; sourceTree = "<group>"; };
 		C352F9DB28C79FE000C07108 /* SysUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SysUtils.swift; sourceTree = "<group>"; };
 		C3546F802725082100C4C3DC /* RegisterSearchStoreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSearchStoreResponse.swift; sourceTree = "<group>"; };
 		C3546F822725083B00C4C3DC /* RegisterSearchStoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSearchStoreDataManager.swift; sourceTree = "<group>"; };
@@ -1448,6 +1450,14 @@
 				C34BCB562732F7F20085ADB3 /* MyPageDetailCommuteRecordTableViewCell.xib */,
 			);
 			path = CommuteRecord;
+			sourceTree = "<group>";
+		};
+		C3528366290FB79300093561 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C3528367290FB7C200093561 /* RegisterPasswordViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C3546F7E272507A400C4C3DC /* DataManager */ = {
@@ -2332,6 +2342,7 @@
 		C3CB0162273CC977000EA353 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				C3528366290FB79300093561 /* ViewModel */,
 				C3F05A5C274FBB820025DB24 /* Cell */,
 				C37B0B52272972040017D179 /* Entity */,
 				C37B0B53272972100017D179 /* DataManager */,
@@ -3234,6 +3245,7 @@
 				C3E9C8EC2741696000B0139C /* MyPageDetailClearWorkResponse.swift in Sources */,
 				C3CFC2F8273E916F001B2EB6 /* MyPageWorkerMyInfoDatamanager.swift in Sources */,
 				C34BCB532732F6C50085ADB3 /* MyPageDetailCommuteMonthTableViewCell.swift in Sources */,
+				C3528368290FB7C200093561 /* RegisterPasswordViewModel.swift in Sources */,
 				C32E4A8C274E73D80015463F /* CommunityManagerTopTabVC.swift in Sources */,
 				C384425A27147E3F00B84E8A /* String.swift in Sources */,
 				C3F05A43274F4D5E0025DB24 /* HomeManagerTodayWorkDeleteDatamanager.swift in Sources */,
