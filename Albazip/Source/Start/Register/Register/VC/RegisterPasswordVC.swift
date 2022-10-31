@@ -19,6 +19,7 @@ class RegisterPasswordVC: UIViewController{
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var checkImage2: UIImageView!
     @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var btnCancel: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,11 @@ class RegisterPasswordVC: UIViewController{
     }
     
     private func setBind(){
+        setTextFieldBinding()
+        setBtnBinding()
+    }
+    
+    private func setTextFieldBinding(){
         // 비밀번호
         passwordTextField.rx.text.orEmpty
             .bind(to: viewModel.pwdText)
@@ -47,7 +53,7 @@ class RegisterPasswordVC: UIViewController{
         
         passwordTextField.rx.controlEvent([.editingDidBegin])
             .asDriver()
-            .drive(onNext:  { [weak self] in
+            .drive(onNext: { [weak self] in
                 guard let self = self else { return }
                 self.passwordTextField.borderColor = .mainYellow
             })
@@ -55,7 +61,7 @@ class RegisterPasswordVC: UIViewController{
         
         passwordTextField.rx.controlEvent([.editingDidEnd])
             .asDriver()
-            .drive(onNext:  { [weak self] in
+            .drive(onNext: { [weak self] in
                 guard let self = self else { return }
                 self.passwordTextField.borderColor = .lightGray
             })
@@ -68,15 +74,19 @@ class RegisterPasswordVC: UIViewController{
         
         passwordCkTextField.rx.controlEvent([.editingDidBegin])
             .asDriver()
-            .drive(onNext:  { [weak self] in
+            .drive(onNext: { [weak self] in
                 guard let self = self else { return }
-                self.passwordCkTextField.borderColor = .mainYellow
+                if self.errorLabel.isHidden{
+                    self.passwordCkTextField.borderColor = .mainYellow
+                }else{
+                    self.passwordCkTextField.borderColor = .red
+                }
             })
             .disposed(by: disposeBag)
         
         passwordCkTextField.rx.controlEvent([.editingDidEnd])
             .asDriver()
-            .drive(onNext:  { [weak self] in
+            .drive(onNext: { [weak self] in
                 guard let self = self else { return }
                 self.passwordCkTextField.borderColor = .lightGray
             })
@@ -84,27 +94,47 @@ class RegisterPasswordVC: UIViewController{
         
         // 비밀번호 검사
         viewModel.checkPwd()
-            .drive(onNext: {
+            .drive(onNext: { [weak self] in
+                guard let self = self else { return }
                 self.checkImage1.image = $0.pwdCheck ? #imageLiteral(resourceName: "icCheckedCorrect") : #imageLiteral(resourceName: "icCheckedNormal")
                 self.checkImage2.image = $0.pwdCkCheck ? #imageLiteral(resourceName: "icCheckedCorrect") : #imageLiteral(resourceName: "icCheckedNormal")
                 self.btnNextEnable($0.nextBtnCheck)
                 self.errorLabel.isHidden = $0.errorMsgHidden
+                if $0.errorMsgHidden{
+                    if self.passwordCkTextField.isFirstResponder{
+                        self.passwordCkTextField.borderColor = .mainYellow
+                    }else{
+                        self.passwordCkTextField.borderColor = .lightGray
+                    }
+                }else{
+                    self.passwordCkTextField.borderColor = .red
+                }
             })
             .disposed(by: disposeBag)
     }
     
-    @IBAction func btnNext(_ sender: Any) {
-        // 회원가입 데이터 저장
-        let registerBasicInfo = RegisterBasicInfo.shared
-        registerBasicInfo.pwd = passwordCkTextField.text!
+    private func setBtnBinding(){
+        btnNext.rx.tap
+            .asDriver()
+            .drive(onNext: {[weak self] in
+                guard let self = self else { return }
+                // 회원가입 데이터 저장
+                let registerBasicInfo = RegisterBasicInfo.shared
+                registerBasicInfo.pwd = self.passwordCkTextField.text!
+                
+                // 다음화면으로 이동
+                guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterBasicInfoVC") as? RegisterBasicInfoVC else {return}
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            })
+            .disposed(by: disposeBag)
         
-        // 다음화면으로 이동
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterBasicInfoVC") as? RegisterBasicInfoVC else {return}
-        self.navigationController?.pushViewController(nextVC, animated: true)
-    }
-    
-    @IBAction func btnCancel(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        btnCancel.rx.tap
+            .asDriver()
+            .drive(onNext: {[weak self] in
+                guard let self = self else { return }
+                self.navigationController?.popViewController(animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func btnNextEnable(_ state: Bool){
