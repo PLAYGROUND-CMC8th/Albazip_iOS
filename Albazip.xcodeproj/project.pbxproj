@@ -31,6 +31,7 @@
 		C30D2EB027315DC400D4C1C1 /* HomeWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30D2EAF27315DC400D4C1C1 /* HomeWorkerStoryboard.storyboard */; };
 		C30D2EB227315E4A00D4C1C1 /* CommunityWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30D2EB127315E4A00D4C1C1 /* CommunityWorkerStoryboard.storyboard */; };
 		C30D2EB427315EC400D4C1C1 /* ScheduleWorkerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30D2EB327315EC400D4C1C1 /* ScheduleWorkerStoryboard.storyboard */; };
+		C30DEB292911739E00A17912 /* RegisterBasicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30DEB282911739E00A17912 /* RegisterBasicViewModel.swift */; };
 		C30EC2DD272A4F7D00EEF218 /* RegisterNumberExistDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2DC272A4F7D00EEF218 /* RegisterNumberExistDataManager.swift */; };
 		C30EC2E1272A4FDB00EEF218 /* RegisterNumberMatchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E0272A4FDB00EEF218 /* RegisterNumberMatchResponse.swift */; };
 		C30EC2E3272A4FEF00EEF218 /* RegisterNumberExistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30EC2E2272A4FEF00EEF218 /* RegisterNumberExistResponse.swift */; };
@@ -478,6 +479,7 @@
 		C30D2EAF27315DC400D4C1C1 /* HomeWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeWorkerStoryboard.storyboard; sourceTree = "<group>"; };
 		C30D2EB127315E4A00D4C1C1 /* CommunityWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommunityWorkerStoryboard.storyboard; sourceTree = "<group>"; };
 		C30D2EB327315EC400D4C1C1 /* ScheduleWorkerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScheduleWorkerStoryboard.storyboard; sourceTree = "<group>"; };
+		C30DEB282911739E00A17912 /* RegisterBasicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBasicViewModel.swift; sourceTree = "<group>"; };
 		C30EC2DC272A4F7D00EEF218 /* RegisterNumberExistDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNumberExistDataManager.swift; sourceTree = "<group>"; };
 		C30EC2E0272A4FDB00EEF218 /* RegisterNumberMatchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNumberMatchResponse.swift; sourceTree = "<group>"; };
 		C30EC2E2272A4FEF00EEF218 /* RegisterNumberExistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNumberExistResponse.swift; sourceTree = "<group>"; };
@@ -1456,6 +1458,7 @@
 			isa = PBXGroup;
 			children = (
 				C3528367290FB7C200093561 /* RegisterPasswordViewModel.swift */,
+				C30DEB282911739E00A17912 /* RegisterBasicViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -3346,6 +3349,7 @@
 				C38EDCEB2746C78A00564A17 /* MyPageWorkerStopWorkDatamanager.swift in Sources */,
 				C391EAC527533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift in Sources */,
 				C3F05A6E274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.swift in Sources */,
+				C30DEB292911739E00A17912 /* RegisterBasicViewModel.swift in Sources */,
 				C38D932B2749AAA800AFFDE9 /* HomeWorkerCompletePeopleTableViewCell.swift in Sources */,
 				C3B9338E273BFB2F0056E381 /* SettingSubscribVC.swift in Sources */,
 				C3CDB057274BC306006D7A92 /* HomeWorkerTodayWorkDatamanager.swift in Sources */,

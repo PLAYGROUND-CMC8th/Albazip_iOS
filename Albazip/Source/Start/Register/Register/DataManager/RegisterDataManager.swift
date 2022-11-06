@@ -6,25 +6,27 @@
 //
 
 import Alamofire
+import RxSwift
+
 class RegisterDataManager{
-    func postRegister(_ parameters: RegisterRequest, delegate: RegisterBasicInfoVC) {
-        AF.request("\(Constant.BASE_URL)/user/signup", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
-            .validate()
+    func postRegister(parameters: RegisterRequest) -> Observable<RegisterResponse> {
+        return Observable.create { (observable) in
+            let request = AF.request("\(Constant.BASE_URL)/user/signup",
+                                     method: .post, parameters: parameters,
+                                     encoder: JSONParameterEncoder(),
+                                     headers: nil)
+            .validate(statusCode: 200..<300)
             .responseDecodable(of: RegisterResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    // 성공했을 때
-                    if ((response.data) != nil) {
-                        delegate.didSuccessRegister(response)
-                    }
-                    // 실패했을 때
-                    else {
-                        delegate.failedToRequest(message: response.message)
-                    }
+                    observable.onNext(response)
+                    observable.onCompleted()
                 case .failure(let error):
-                    print(error.localizedDescription)
-                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                    observable.onError(error)
+                    observable.onCompleted()
                 }
             }
+            return Disposables.create { request.cancel() }
+        }
     }
 }

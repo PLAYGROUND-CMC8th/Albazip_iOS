@@ -15,6 +15,7 @@ struct RegisterPasswordViewModel{
     // 비밀번호 확인 텍스트
     let pwdCkText = BehaviorRelay<String>(value: "")
     
+    // 비밀번호 관련 상태값
     struct PwdState {
         var pwdCheck: Bool
         var pwdCkCheck: Bool

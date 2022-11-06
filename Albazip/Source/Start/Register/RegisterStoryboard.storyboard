@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mxT-iB-grI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mxT-iB-grI">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -701,9 +701,6 @@
                                     <constraint firstAttribute="height" constant="24" id="wcr-Ky-hgS"/>
                                 </constraints>
                                 <state key="normal" image="icBackArrow"/>
-                                <connections>
-                                    <action selector="btnCancel:" destination="8jS-4m-b3Q" eventType="touchUpInside" id="ZxH-pi-nhk"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기본정보를 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHV-oJ-gYg">
                                 <rect key="frame" x="36" y="115.00000000000001" width="240" height="28.666666666666671"/>
@@ -787,9 +784,6 @@
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="btnNext:" destination="8jS-4m-b3Q" eventType="touchUpInside" id="EMe-n2-mAH"/>
-                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rlb-wX-CHs">
                                 <rect key="frame" x="36" y="447.66666666666669" width="302" height="48"/>
@@ -815,9 +809,6 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="btnMan:" destination="8jS-4m-b3Q" eventType="touchUpInside" id="0Ac-Un-wwU"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbG-cB-JIc">
                                         <rect key="frame" x="156" y="0.0" width="146" height="48"/>
@@ -840,9 +831,6 @@
                                                 <color key="value" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="btnWoman:" destination="8jS-4m-b3Q" eventType="touchUpInside" id="fWC-fP-H6n"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -866,9 +854,6 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="ageTextfield:" destination="8jS-4m-b3Q" eventType="editingDidEnd" id="htr-5r-tFN"/>
-                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYf-Ff-trM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -910,6 +895,7 @@
                     </view>
                     <connections>
                         <outlet property="ageTextfield" destination="wzL-W1-CKH" id="6Yu-ks-Yhv"/>
+                        <outlet property="btnCancel" destination="vuZ-sS-hVp" id="1Y0-0c-y5K"/>
                         <outlet property="btnMan" destination="KEl-X2-QMC" id="Uy8-hw-VEX"/>
                         <outlet property="btnNext" destination="AYL-ik-IrP" id="qg8-yg-bbR"/>
                         <outlet property="btnWoman" destination="CbG-cB-JIc" id="ERH-a3-1ut"/>
