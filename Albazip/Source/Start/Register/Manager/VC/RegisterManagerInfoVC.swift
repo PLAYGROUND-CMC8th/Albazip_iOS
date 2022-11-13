@@ -50,6 +50,7 @@ extension RegisterManagerInfoVC: UITextFieldDelegate{
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if(textField == registerNumberTextField){
             registerNumberTextField.borderColor = .mainYellow
+            errorLabel1.isHidden = true
         }
         return true
     }
