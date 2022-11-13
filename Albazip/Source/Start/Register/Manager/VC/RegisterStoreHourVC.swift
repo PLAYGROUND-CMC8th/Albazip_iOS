@@ -117,8 +117,6 @@ class RegisterStoreHourVC: UIViewController{
         switch(storeHourType){
         case .normal, .allDay:
             storeHourTypeArr[index] = .hoilday
-            workHourArr[index].startTime = nil
-            workHourArr[index].endTime = nil
             hoilday.insert(SysUtils.dayOfIndex(index: index))
         case .hoilday:
             storeHourTypeArr[index] = .normal
@@ -142,8 +140,6 @@ class RegisterStoreHourVC: UIViewController{
         switch(storeHourType){
         case .normal, .hoilday:
             storeHourTypeArr[index] = .allDay
-            workHourArr[index].startTime = nil
-            workHourArr[index].endTime = nil
             if let indexToRemove = hoilday.firstIndex(of: SysUtils.dayOfIndex(index: index)) {
                 hoilday.remove(at: indexToRemove)
             }

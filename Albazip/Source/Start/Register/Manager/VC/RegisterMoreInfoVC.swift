@@ -22,6 +22,8 @@ class RegisterMoreInfoVC: UIViewController {
     
     // data
     var workHourArr = [WorkHour]()
+    var storeHourTypeArr = [StoreHourType]()
+    
     var salaryDate = ""
     var isHourSetted = false{
         didSet{
@@ -47,6 +49,7 @@ class RegisterMoreInfoVC: UIViewController {
         let registerManagerInfo = RegisterManagerInfo.shared
         if let workHour = registerManagerInfo.workHour{
             workHourArr = workHour
+            storeHourTypeArr = registerManagerInfo.storeHourType
             isHourSetted = true
         }
         checkValue()
@@ -126,8 +129,24 @@ class RegisterMoreInfoVC: UIViewController {
         let dayString = ["월", "화", "수", "목", "금", "토", "일"]
         for (index, workHour) in workHourArr.enumerated(){
             //시간에서 : 문자 제거
-            let startTime = workHour.startTime ?? "00:00"
-            let endTime = workHour.endTime ?? "00:00"
+            let startTime: String = (workHour.startTime).map{
+                if (storeHourTypeArr[index] == .hoilday) ||
+                    (storeHourTypeArr[index] == .allDay){
+                    return "00:00"
+                }else{
+                    return $0
+                }
+            } ?? "00:00"
+            
+            let endTime: String = (workHour.endTime).map{
+                if (storeHourTypeArr[index] == .hoilday) ||
+                    (storeHourTypeArr[index] == .allDay){
+                    return "00:00"
+                }else{
+                    return $0
+                }
+            } ?? "00:00"
+            
             let startStr = startTime.replace(target: ":", with: "")
             let endStr = endTime.replace(target: ":", with: "")
 
