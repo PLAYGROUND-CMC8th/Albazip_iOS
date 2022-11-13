@@ -22,13 +22,7 @@ class RegisterStoreHourVC: UIViewController{
     
     var isAllSameHour = false { // 모든 영업시간 일치 여부
         didSet{
-            if isAllSameHour{
-                tableView.reloadData()
-            }else{
-                tableView.beginUpdates()
-                tableView.reloadSections(IndexSet(0...0), with: .none)
-                tableView.endUpdates()
-            }
+            tableView.reloadData()
         }
     }
     
@@ -45,11 +39,11 @@ class RegisterStoreHourVC: UIViewController{
             workHourArr = workHour
             storeHourTypeArr = registerManagerInfo.storeHourType
             hoilday = registerManagerInfo.hoilday
+            isAllSameHour = registerManagerInfo.allSameHour
         }else{
             initWorkHour()
         }
         checkValue()
-        tableView.reloadData()
     }
     
     func setUI(){
@@ -67,6 +61,7 @@ class RegisterStoreHourVC: UIViewController{
             workHourArr.append(WorkHour(startTime: nil, endTime: nil, day: SysUtils.dayOfIndex(index: i)))
             storeHourTypeArr.append(.normal)
         }
+        isAllSameHour = false
     }
     
     @IBAction func btnCancel(_ sender: Any) {
@@ -89,6 +84,7 @@ class RegisterStoreHourVC: UIViewController{
         registerManagerInfo.workHour = workHourArr
         registerManagerInfo.storeHourType = storeHourTypeArr
         registerManagerInfo.hoilday = hoilday
+        registerManagerInfo.allSameHour = isAllSameHour
         self.navigationController?.popViewController(animated: true)
     }
    

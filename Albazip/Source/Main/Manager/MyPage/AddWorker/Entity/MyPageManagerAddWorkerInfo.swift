@@ -15,5 +15,6 @@ class MyPageManagerAddWorkerInfo{
     var breakTime: String?
     var salary: String?
     var salaryType: String?
+    var allSameHour: Bool = false
     private init() { }
 }

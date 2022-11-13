@@ -16,6 +16,7 @@ class RegisterManagerInfo{
     var workHour: [WorkHour]?
     var storeHourType = [StoreHourType]()
     var hoilday = Set<String>()
+    var allSameHour: Bool = false
     private init() { }
 }
 struct WorkHour: Encodable {

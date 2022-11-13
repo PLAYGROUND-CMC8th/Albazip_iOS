@@ -19,13 +19,7 @@ class SelectWorkerHourVC: UIViewController{
     
     var isAllSameHour = false { // 모든 영업시간 일치 여부
         didSet{
-            if isAllSameHour{
-                tableView.reloadData()
-            }else{
-                tableView.beginUpdates()
-                tableView.reloadSections(IndexSet(0...0), with: .none)
-                tableView.endUpdates()
-            }
+            tableView.reloadData()
         }
     }
     
@@ -41,11 +35,11 @@ class SelectWorkerHourVC: UIViewController{
         if let workHour = workerInfo.workSchedule{
             workHourArr = workHour
             workDayTypes = workerInfo.workDayTypes
+            isAllSameHour = workerInfo.allSameHour
         }else{
             initWorkHour()
         }
         checkValue()
-        tableView.reloadData()
     }
     
     func setUI(){
@@ -69,6 +63,7 @@ class SelectWorkerHourVC: UIViewController{
             workHourArr.append(WorkHour(startTime: nil, endTime: nil, day: SysUtils.dayOfIndex(index: i)))
             workDayTypes.append(false)
         }
+        isAllSameHour = false
     }
     
     // 모든 요일 동일 버튼
@@ -181,7 +176,7 @@ class SelectWorkerHourVC: UIViewController{
         let workerInfo = MyPageManagerAddWorkerInfo.shared
         workerInfo.workSchedule = workHourArr
         workerInfo.workDayTypes = workDayTypes
-        
+        workerInfo.allSameHour = isAllSameHour
         self.navigationController?.popViewController(animated: true)
     }
 }
