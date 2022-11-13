@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,14 +50,22 @@
                         <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(선택)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Q1-KW-1ba">
+                        <rect key="frame" x="157" y="95" width="40" height="19.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <color key="textColor" red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="WfI-70-4cR" secondAttribute="bottom" constant="10" id="8ig-S8-tCe"/>
                     <constraint firstItem="dht-Vz-EEC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="GYm-fL-0HG"/>
+                    <constraint firstItem="2Q1-KW-1ba" firstAttribute="leading" secondItem="WfI-70-4cR" secondAttribute="trailing" constant="4" id="Ki1-qI-p7c"/>
                     <constraint firstAttribute="trailing" secondItem="dht-Vz-EEC" secondAttribute="trailing" constant="24" id="Oix-R0-lS5"/>
                     <constraint firstItem="WfI-70-4cR" firstAttribute="leading" secondItem="dht-Vz-EEC" secondAttribute="leading" id="ZJl-WO-BOy"/>
                     <constraint firstItem="dht-Vz-EEC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="agX-ro-hF4"/>
                     <constraint firstItem="WfI-70-4cR" firstAttribute="top" secondItem="dht-Vz-EEC" secondAttribute="bottom" constant="24" id="mN4-hx-aql"/>
+                    <constraint firstItem="2Q1-KW-1ba" firstAttribute="centerY" secondItem="WfI-70-4cR" secondAttribute="centerY" id="rCf-vG-t6v"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
