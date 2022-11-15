@@ -21,33 +21,37 @@ struct RegisterPasswordViewModel{
         var pwdCkCheck: Bool
         var nextBtnCheck: Bool
         var errorMsgHidden: Bool
+        
+        init(pwdCheck: Bool, pwdCkCheck: Bool, nextBtnCheck: Bool, errorMsgHidden: Bool) {
+            self.pwdCheck = pwdCheck
+            self.pwdCkCheck = pwdCkCheck
+            self.nextBtnCheck = nextBtnCheck
+            self.errorMsgHidden = errorMsgHidden
+        }
     }
     
     func checkPwd() -> Driver<PwdState> {
         let output = Observable.combineLatest(pwdText, pwdCkText) {
-            var pwdCheck = false
-            var pwdCkCheck = false
-            var nextBtnCheck = false
-            var errorMsgHidden = true
+            var state = PwdState(pwdCheck: false,
+                                    pwdCkCheck: false,
+                                    nextBtnCheck: false,
+                                    errorMsgHidden: true)
             
             if($0.count >= 6){ // 비밀번호 6자 이상
-                pwdCheck = true
+                state.pwdCheck = true
                 if $0 == $1{ // 비밀번호 일치
-                    pwdCkCheck = true
-                    nextBtnCheck = true
+                    state.pwdCkCheck = true
+                    state.nextBtnCheck = true
                 }else{
-                    errorMsgHidden = false
+                    state.errorMsgHidden = false
                 }
             }
             
             if $1 == ""{
-                errorMsgHidden = true
+                state.errorMsgHidden = true
             }
             
-            return PwdState(pwdCheck: pwdCheck,
-                            pwdCkCheck: pwdCkCheck,
-                            nextBtnCheck: nextBtnCheck,
-                            errorMsgHidden: errorMsgHidden)
+            return state
         }
         .asDriver(onErrorJustReturn:
                 PwdState(pwdCheck: false,
