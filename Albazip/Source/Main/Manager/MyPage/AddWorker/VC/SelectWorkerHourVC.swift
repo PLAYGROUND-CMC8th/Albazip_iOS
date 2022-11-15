@@ -133,7 +133,7 @@ class SelectWorkerHourVC: UIViewController{
         checkValue()
         
         tableView.beginUpdates()
-        tableView.reloadRows(at: [IndexPath(row: index, section: 1)], with: .fade)
+        tableView.reloadRows(at: [IndexPath(row: index, section: 1)], with: .automatic)
         tableView.endUpdates()
     }
     
