@@ -138,11 +138,16 @@ class RegisterBasicInfoVC: UIViewController{
             .asDriver()
             .drive(onNext: { [weak self] in
                 guard let self = self else { return }
-                self.viewModel.postRegister { (data, error) in
-                    if data == nil{
-                        self.presentAlert(title: error ?? "")
-                    }else{
-                        self.moveToSelectPositionVC()
+                self.viewModel.postRegister { result in
+                    switch result {
+                    case .success(let data):
+                        if data.data != nil{
+                            self.moveToSelectPositionVC()
+                        }else{
+                            self.presentAlert(title: data.message)
+                        }
+                    case .failure(let error):
+                        self.presentAlert(title: error.localizedDescription)
                     }
                 }
             })

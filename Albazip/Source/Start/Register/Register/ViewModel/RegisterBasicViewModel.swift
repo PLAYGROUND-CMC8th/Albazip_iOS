@@ -36,24 +36,20 @@ struct RegisterBasicViewModel {
         return output
     }
     
-    func postRegister(completion: @escaping (RegisterResponse?, String?) -> Void){
+    func postRegister(completion: @escaping (Result<RegisterResponse, Error>) -> Void){
         network.postRegister(parameters: setupRequest())
             .subscribe(
                 onNext: { result in
-                    if result.data == nil{
-                        return completion(nil, result.message)
-                    }else{
-                        let data = RegisterBasicInfo.shared
-                        // 토큰 정보 저장
-                        data.token = result.data?.token.token
-                        // 이름 정보 저장
-                        data.firstName = firstName.value
-                        
-                        return completion(result, nil)
-                    }
+                    let data = RegisterBasicInfo.shared
+                    // 토큰 정보 저장
+                    data.token = result.data?.token.token
+                    // 이름 정보 저장
+                    data.firstName = firstName.value
+                    
+                    return completion(.success(result))
             },
                 onError: { error in
-                    return completion(nil, "서버와의 연결이 원활하지 않습니다")
+                    return completion(.failure(error))
             })
             .disposed(by: disposeBag)
     }
