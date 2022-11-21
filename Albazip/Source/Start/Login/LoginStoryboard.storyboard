@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mes-qf-oXu">
-                                <rect key="frame" x="17" y="64" width="24" height="24"/>
+                                <rect key="frame" x="17" y="67" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="VVQ-o1-xNE"/>
                                     <constraint firstAttribute="width" constant="24" id="f5b-ng-9o1"/>
@@ -29,19 +29,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알바집 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEm-dm-NXC">
-                                <rect key="frame" x="36" y="112" width="130" height="29"/>
+                                <rect key="frame" x="36" y="115" width="130" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전화번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyk-t1-eVu">
-                                <rect key="frame" x="36" y="177" width="56" height="20"/>
+                                <rect key="frame" x="36" y="180" width="56" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="-없이 번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m6X-Fk-k2c">
-                                <rect key="frame" x="36" y="211" width="302" height="48"/>
+                                <rect key="frame" x="36" y="214" width="302" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="6QK-UR-wID"/>
                                     <constraint firstAttribute="width" constant="302" id="LjA-8V-x0w"/>
@@ -62,13 +62,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRp-V0-4U3">
-                                <rect key="frame" x="36" y="295" width="56" height="20"/>
+                                <rect key="frame" x="36" y="298" width="56" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Goa-bb-u2p">
-                                <rect key="frame" x="36" y="329" width="302" height="48"/>
+                                <rect key="frame" x="36" y="332" width="302" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="302" id="83E-RK-v5k"/>
                                     <constraint firstAttribute="height" constant="48" id="fAC-TX-eLm"/>
@@ -89,7 +89,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcD-FJ-z2h">
-                                <rect key="frame" x="243" y="389" width="95" height="30"/>
+                                <rect key="frame" x="243" y="392" width="95" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="비밀번호 재설정">
                                     <color key="titleColor" red="0.80392158030000005" green="0.8078432083" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -162,7 +162,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sV-25-wK4">
-                                <rect key="frame" x="16" y="64" width="24" height="24"/>
+                                <rect key="frame" x="16" y="67" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="IgO-NU-CBV"/>
                                     <constraint firstAttribute="height" constant="24" id="edW-zX-vke"/>
@@ -173,7 +173,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7l-ay-xAA">
-                                <rect key="frame" x="36" y="112" width="151" height="29"/>
+                                <rect key="frame" x="36" y="115" width="151" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -199,7 +199,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="-없이 번호 입력" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DxC-Vd-8pv">
-                                <rect key="frame" x="36" y="177" width="303" height="48"/>
+                                <rect key="frame" x="36" y="180" width="303" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="10l-Lh-S68"/>
                                     <constraint firstAttribute="width" constant="303" id="onE-29-OsP"/>
@@ -220,7 +220,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="221-mo-w2t">
-                                <rect key="frame" x="287" y="189" width="36" height="24"/>
+                                <rect key="frame" x="287" y="192" width="36" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="gYz-FB-j6q"/>
                                     <constraint firstAttribute="height" constant="24" id="kNs-eZ-OtA"/>
@@ -231,7 +231,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xrt-WK-DvX">
-                                <rect key="frame" x="36" y="249" width="303" height="48"/>
+                                <rect key="frame" x="36" y="252" width="303" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="BNM-Dh-ZVP"/>
                                     <constraint firstAttribute="width" constant="303" id="svU-55-yi8"/>
@@ -252,7 +252,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ja5-iX-u3T">
-                                <rect key="frame" x="276" y="261" width="47" height="24"/>
+                                <rect key="frame" x="276" y="264" width="47" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="UXH-T4-2Qp"/>
                                     <constraint firstAttribute="height" constant="24" id="wqi-40-kRD"/>
@@ -263,13 +263,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjM-pd-UVR">
-                                <rect key="frame" x="225" y="264.66666666666669" width="36" height="17"/>
+                                <rect key="frame" x="225" y="267.66666666666669" width="36" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" red="0.43137252329999998" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호가 일치하지 않습니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tH-RL-gvC">
-                                <rect key="frame" x="44" y="305" width="146" height="15"/>
+                                <rect key="frame" x="44" y="308" width="146" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -324,24 +324,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcC-8k-CWk">
-                                <rect key="frame" x="16" y="64" width="24" height="24"/>
+                                <rect key="frame" x="16" y="67" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="0nM-Ao-eba"/>
                                     <constraint firstAttribute="width" constant="24" id="AEe-fO-vmf"/>
                                 </constraints>
                                 <state key="normal" image="icBackArrow"/>
-                                <connections>
-                                    <action selector="btnCancel:" destination="2FO-Y3-esZ" eventType="touchUpInside" id="M3M-6k-JGn"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2K-5J-Tvf">
-                                <rect key="frame" x="36" y="112" width="151" height="29"/>
+                                <rect key="frame" x="36" y="115" width="151" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6자리 이상 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z5q-Ln-bEa">
-                                <rect key="frame" x="36" y="177" width="303" height="48"/>
+                                <rect key="frame" x="36" y="180" width="303" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="pAE-2T-9pj"/>
                                     <constraint firstAttribute="height" constant="48" id="pBz-Jv-E9C"/>
@@ -362,7 +359,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 재입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fM9-zH-Ioe">
-                                <rect key="frame" x="36" y="249" width="303" height="48"/>
+                                <rect key="frame" x="36" y="252" width="303" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Miu-5s-dHU"/>
                                     <constraint firstAttribute="width" constant="303" id="jRj-X9-EvQ"/>
@@ -398,25 +395,22 @@
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="btnNext:" destination="2FO-Y3-esZ" eventType="touchUpInside" id="OG3-jb-dPE"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호가 일치하지 않습니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5N-fl-Gfk">
-                                <rect key="frame" x="44" y="305" width="146" height="15"/>
+                                <rect key="frame" x="44" y="308" width="146" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCheckedNormal" translatesAutoresizingMaskIntoConstraints="NO" id="Y37-yq-ovv">
-                                <rect key="frame" x="299" y="189" width="24" height="24"/>
+                                <rect key="frame" x="299" y="192" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="DNN-Bd-lgn"/>
                                     <constraint firstAttribute="width" constant="24" id="Kti-Ay-eq9"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCheckedNormal" translatesAutoresizingMaskIntoConstraints="NO" id="8rj-Hy-GgB">
-                                <rect key="frame" x="299" y="261" width="24" height="24"/>
+                                <rect key="frame" x="299" y="264" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Awb-4B-927"/>
                                     <constraint firstAttribute="width" constant="24" id="MUp-H2-mUy"/>
@@ -448,6 +442,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnCancel" destination="vcC-8k-CWk" id="KCz-to-Jpf"/>
                         <outlet property="btnNext" destination="OZI-Jz-Gst" id="9cb-Xc-kzB"/>
                         <outlet property="checkImage1" destination="Y37-yq-ovv" id="Mmv-8l-cBq"/>
                         <outlet property="checkImage2" destination="8rj-Hy-GgB" id="Hv9-jS-19L"/>

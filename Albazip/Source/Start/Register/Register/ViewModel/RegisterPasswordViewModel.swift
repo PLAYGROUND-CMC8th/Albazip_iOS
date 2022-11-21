@@ -9,6 +9,9 @@ import RxSwift
 import RxCocoa
 
 struct RegisterPasswordViewModel{
+    let network = LoginResetPasswordDataManager()
+    let disposeBag = DisposeBag()
+    
     // 비밀번호 텍스트
     let pwdText = BehaviorRelay<String>(value: "")
 
@@ -45,5 +48,19 @@ struct RegisterPasswordViewModel{
         }
         .asDriver(onErrorJustReturn:PwdState())
         return output
+    }
+    
+    func postResetPassword(phoneNumber: String, completion: @escaping (Result<LoginResetPasswordResponse, Error>) -> Void){
+        let request = LoginResetPasswordRequest(phone: phoneNumber,
+                                                pwd: self.pwdText.value)
+        network.postResetPassword(parameters: request)
+            .subscribe(
+                onNext: { result in
+                    return completion(.success(result))
+            },
+                onError: { error in
+                    return completion(.failure(error))
+            })
+            .disposed(by: disposeBag)
     }
 }

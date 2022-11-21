@@ -23,11 +23,11 @@ class RegisterPasswordVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
-        setBind()
+        setupUI()
+        setupBinding()
     }
     
-    private func setUI(){
+    private func setupUI(){
         passwordTextField.addLeftPadding()
         passwordCkTextField.addLeftPadding()
         
@@ -40,7 +40,7 @@ class RegisterPasswordVC: UIViewController{
         self.dismissKeyboardWhenTappedAround()
     }
     
-    private func setBind(){
+    private func setupBinding(){
         setTextFieldBinding()
         setBtnBinding()
     }

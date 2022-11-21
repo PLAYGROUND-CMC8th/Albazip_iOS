@@ -6,25 +6,27 @@
 //
 
 import Alamofire
+import RxSwift
+
 class LoginResetPasswordDataManager{
-    func postLoginResetPassword(_ parameters: LoginResetPasswordRequest, delegate: LoginResetPasswordVC) {
-        AF.request("\(Constant.BASE_URL)/user/signin/password", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
+    func postResetPassword(parameters: LoginResetPasswordRequest) -> Observable<LoginResetPasswordResponse> {
+        return Observable.create { (observable) in
+            let request = AF.request("\(Constant.BASE_URL)/user/signin/password",
+                                     method: .post, parameters: parameters,
+                                     encoder: JSONParameterEncoder(),
+                                     headers: nil)
             .validate()
             .responseDecodable(of: LoginResetPasswordResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    
-                    // 연결 성공했을 때
-                    switch response.code {
-                    case "200": delegate.didSuccessLoginResetPassword(response)
-                    case "400": delegate.failedToRequestLoginResetPassword(message: response.message)
-                    default: delegate.failedToRequestLoginResetPassword(message: response.message)
-                    }
-                    
+                    observable.onNext(response)
+                    observable.onCompleted()
                 case .failure(let error):
-                    print(error.localizedDescription)
-                    delegate.failedToRequestLoginResetPassword(message: "서버와의 연결이 원활하지 않습니다")
+                    observable.onError(error)
+                    observable.onCompleted()
                 }
             }
+            return Disposables.create { request.cancel() }
+        }
     }
 }
