@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C7447FE94295A129DB07CA9 /* Pods_Albazip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363836578B4295DDC93F8120 /* Pods_Albazip.framework */; };
+		C304DC112932367600C36E26 /* AllHourSameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C304DC102932367600C36E26 /* AllHourSameCell.swift */; };
 		C30AFE672733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AFE652733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift */; };
 		C30AFE682733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30AFE662733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib */; };
 		C30AFE6B2733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AFE692733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift */; };
@@ -456,6 +457,7 @@
 		363836578B4295DDC93F8120 /* Pods_Albazip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Albazip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EACD131BC8A80FCC54849C5 /* Pods-Albazip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Albazip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Albazip/Pods-Albazip.debug.xcconfig"; sourceTree = "<group>"; };
 		9E8BCDC410EA5AB6EF1D4E62 /* Pods-Albazip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Albazip.release.xcconfig"; path = "Pods/Target Support Files/Pods-Albazip/Pods-Albazip.release.xcconfig"; sourceTree = "<group>"; };
+		C304DC102932367600C36E26 /* AllHourSameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHourSameCell.swift; sourceTree = "<group>"; };
 		C30AFE652733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWriteTabTableViewCell.swift; sourceTree = "<group>"; };
 		C30AFE662733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerWriteTabTableViewCell.xib; sourceTree = "<group>"; };
 		C30AFE692733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWriteCommunityTableViewCell.swift; sourceTree = "<group>"; };
@@ -1836,6 +1838,7 @@
 				C35A30ED283A747C008354E2 /* StoreClosedDayCell.xib */,
 				C3D01DF4284512A400CB6D6F /* StoreHourTableViewCell.swift */,
 				C3E0768228B3CCD700D049E4 /* StoreHourView.swift */,
+				C304DC102932367600C36E26 /* AllHourSameCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -3081,6 +3084,7 @@
 				C38EDCE8274695B300564A17 /* ReaderView.swift in Sources */,
 				C3F05A52274F70C30025DB24 /* MyPageStopWorkDatamanager.swift in Sources */,
 				C3E9C8DB2740FEE600B0139C /* HomeManagerAddPrivateWorkTableViewCell.swift in Sources */,
+				C304DC112932367600C36E26 /* AllHourSameCell.swift in Sources */,
 				C32E4A92274E81D30015463F /* CommunityManagerSearchVC.swift in Sources */,
 				C30EC2E5272B0A8D00EEF218 /* RegisterManagerDataManager.swift in Sources */,
 				C34C4AE02721BF6700300454 /* RegisterSelectYearVC.swift in Sources */,

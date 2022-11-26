@@ -22,21 +22,25 @@ class StoreHourTableViewCell: UITableViewCell {
         $0.text = "월요일"
     }
     
-    let holidayBtn = UIButton().then {
-        $0.setImage(UIImage(named: "checkCircleInactive24Px"), for: .normal)
-        $0.setImage(UIImage(named: "checkCircleActive24Px"), for: .selected)
+    let holidayImage = UIImageView().then {
+        $0.image = UIImage(named: "checkCircleInactive24Px")
+//        $0.setImage(UIImage(named: "checkCircleActive24Px"), for: .selected)
     }
+    
+    let holidayBtn = UIButton()
 
     let holidayLabel = UILabel().then {
         $0.text = "휴무일"
         $0.font = .systemFont(ofSize: 16, weight: .medium)
         $0.textColor = UIColor(hex: 0x343434)
     }
-    
-    let allDayBtn = UIButton().then {
-        $0.setImage(UIImage(named: "checkCircleInactive24Px"), for: .normal)
-        $0.setImage(UIImage(named: "checkCircleActive24Px"), for: .selected)
+
+    let allDayImage = UIImageView().then {
+        $0.image = UIImage(named: "checkCircleInactive24Px")
+//        $0.setImage(UIImage(named: "checkCircleActive24Px"), for: .selected)
     }
+    
+    let allDayBtn = UIButton()
     
     let allDayLabel = UILabel().then {
         $0.text = "24시간 영업"
@@ -142,31 +146,47 @@ class StoreHourTableViewCell: UITableViewCell {
     
     // 2. 휴무일, 24시간 영업
     func configureCheckView(){
-        self.contentView.addSubview(holidayBtn)
+        self.contentView.addSubview(holidayImage)
         self.contentView.addSubview(holidayLabel)
-        self.contentView.addSubview(allDayBtn)
+        self.contentView.addSubview(holidayBtn)
+        self.contentView.addSubview(allDayImage)
         self.contentView.addSubview(allDayLabel)
+        self.contentView.addSubview(allDayBtn)
         
-        holidayBtn.snp.makeConstraints {
+        holidayImage.snp.makeConstraints {
             $0.top.equalTo(dayLabel.snp.bottom).offset(12)
             $0.leading.equalToSuperview().inset(24)
             $0.width.height.equalTo(24)
         }
         
         holidayLabel.snp.makeConstraints {
-            $0.centerY.equalTo(holidayBtn.snp.centerY)
-            $0.leading.equalTo(holidayBtn.snp.trailing).offset(4)
+            $0.centerY.equalTo(holidayImage.snp.centerY)
+            $0.leading.equalTo(holidayImage.snp.trailing).offset(4)
         }
         
-        allDayBtn.snp.makeConstraints {
-            $0.centerY.equalTo(holidayBtn.snp.centerY)
+        holidayBtn.snp.makeConstraints {
+            $0.leading.equalTo(holidayImage.snp.leading)
+            $0.top.equalTo(holidayImage.snp.top)
+            $0.trailing.equalTo(holidayLabel.snp.trailing)
+            $0.height.equalTo(24)
+        }
+        
+        allDayImage.snp.makeConstraints {
+            $0.centerY.equalTo(holidayImage.snp.centerY)
             $0.leading.equalTo(holidayLabel.snp.trailing).offset(12)
             $0.width.height.equalTo(24)
         }
         
         allDayLabel.snp.makeConstraints {
-            $0.centerY.equalTo(holidayBtn.snp.centerY)
-            $0.leading.equalTo(allDayBtn.snp.trailing).offset(4)
+            $0.centerY.equalTo(holidayImage.snp.centerY)
+            $0.leading.equalTo(allDayImage.snp.trailing).offset(4)
+        }
+        
+        allDayBtn.snp.makeConstraints {
+            $0.leading.equalTo(allDayImage.snp.leading)
+            $0.top.equalTo(allDayImage.snp.top)
+            $0.trailing.equalTo(allDayLabel.snp.trailing)
+            $0.height.equalTo(24)
         }
     }
     
@@ -185,7 +205,7 @@ class StoreHourTableViewCell: UITableViewCell {
         waveImg.snp.makeConstraints {
             $0.width.equalTo(20)
             $0.height.equalTo(15)
-            $0.top.equalTo(holidayBtn.snp.bottom).offset(28)
+            $0.top.equalTo(holidayImage.snp.bottom).offset(28)
             $0.centerX.equalToSuperview()
         }
         
@@ -257,7 +277,9 @@ class StoreHourTableViewCell: UITableViewCell {
         
         if storeHourType == .normal{
             holidayBtn.isSelected = false
+            holidayImage.image = UIImage(named: "checkCircleInactive24Px")
             allDayBtn.isSelected = false
+            allDayImage.image = UIImage(named: "checkCircleInactive24Px")
             
             // 오픈 시간
             openBtn.layer.borderColor = UIColor(hex: 0xededed).cgColor
@@ -311,13 +333,15 @@ class StoreHourTableViewCell: UITableViewCell {
             // 휴무일
             if storeHourType == .hoilday {
                 holidayBtn.isSelected = true
+                holidayImage.image = UIImage(named: "checkCircleActive24Px")
                 allDayBtn.isSelected = false
-                
+                allDayImage.image = UIImage(named: "checkCircleInactive24Px")
                 totalHour.text = "0시간"
             }else{ // 24시간 영업
                 holidayBtn.isSelected = false
+                holidayImage.image = UIImage(named: "checkCircleInactive24Px")
                 allDayBtn.isSelected = true
-                
+                allDayImage.image = UIImage(named: "checkCircleActive24Px")
                 totalHour.text = "24시간"
             }
         }

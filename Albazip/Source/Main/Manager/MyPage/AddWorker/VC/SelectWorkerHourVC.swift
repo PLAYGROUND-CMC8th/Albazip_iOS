@@ -54,6 +54,7 @@ class SelectWorkerHourVC: UIViewController{
     func setTableView(){
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(AllHourSameCell.self, forCellReuseIdentifier: "AllHourSameCell")
         tableView.register(WorkHourTableViewCell.self, forCellReuseIdentifier: "WorkHourTableViewCell")
     }
     
@@ -205,41 +206,11 @@ extension SelectWorkerHourVC: UITableViewDataSource, UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{ // 1. 매장 휴무일
-            let cell = UITableViewCell()
-            
-            let checkBtn = UIButton().then{
-                if isAllSameHour{
-                    $0.setImage(UIImage(named: "checkCircleActive30Px"), for: .normal)
-                }else{
-                    $0.setImage(UIImage(named: "checkCircleInactive30Px"), for: .normal)
-                }
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "AllHourSameCell") as? AllHourSameCell {
+                cell.setUp(isAllSameHour: self.isAllSameHour, whatHour: .workHour)
+                cell.checkBtn.addTarget(self, action: #selector(allSameBtnclicked(_:)), for: .touchUpInside)
+                return cell
             }
-            
-            let checkLabel = UILabel().then{
-                $0.font = .systemFont(ofSize: 16, weight: .medium)
-                $0.textColor = UIColor(hex: 0x343434)
-                $0.text = "모든 근무시간이 같아요."
-            }
-            
-            cell.contentView.addSubview(checkBtn)
-            cell.contentView.addSubview(checkLabel)
-            
-            checkBtn.snp.makeConstraints {
-                $0.centerY.equalToSuperview()
-                $0.width.height.equalTo(30)
-                $0.leading.equalToSuperview().inset(24)
-            }
-            
-            checkLabel.snp.makeConstraints {
-                $0.centerY.equalToSuperview()
-                $0.leading.equalTo(checkBtn.snp.trailing).offset(6)
-            }
-            
-            checkBtn.addTarget(self, action: #selector(allSameBtnclicked(_:)), for: .touchUpInside)
-            
-            cell.selectionStyle = .none
-            
-            return cell
         }else if indexPath.section == 1{ // 2. 추가된 영업 시간
             if let cell = tableView.dequeueReusableCell(withIdentifier: "WorkHourTableViewCell") as? WorkHourTableViewCell {
                 cell.selectionStyle = .none

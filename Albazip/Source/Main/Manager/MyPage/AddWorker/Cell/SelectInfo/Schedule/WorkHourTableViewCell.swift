@@ -7,14 +7,8 @@
 
 import Foundation
 class WorkHourTableViewCell: UITableViewCell {
-    let checkBtn = UIButton().then{
-        $0.setImage(UIImage(named: "checkCircleInactive30Px"), for: .normal)
-    }
-    
-    let checkLabel = UILabel().then{
-        $0.font = .systemFont(ofSize: 16, weight: .medium)
-        $0.textColor = UIColor(hex: 0x343434)
-        $0.text = "모든 근무시간이 같아요."
+    let checkImage = UIImageView().then{
+        $0.image = UIImage(named: "checkCircleInactive30Px")
     }
     
     let dayLabel = UILabel().then {
@@ -26,6 +20,8 @@ class WorkHourTableViewCell: UITableViewCell {
     let lineView = UIView().then {
         $0.backgroundColor = UIColor(hex: 0xededed)
     }
+    
+    let checkBtn = UIButton()
     
     let storeHourView = StoreHourView()
     var isAllSameHour : Bool = false
@@ -51,19 +47,23 @@ class WorkHourTableViewCell: UITableViewCell {
     
     // 1. 요일 이름
     func configureDayView(){
-        [checkBtn, dayLabel].forEach {
+        [checkImage, dayLabel, checkBtn].forEach {
             self.contentView.addSubview($0)
         }
       
-        checkBtn.snp.makeConstraints {
+        checkImage.snp.makeConstraints {
             $0.top.equalToSuperview().inset(24)
             $0.width.height.equalTo(30)
             $0.leading.equalToSuperview().inset(24)
         }
         
         dayLabel.snp.makeConstraints {
-            $0.centerY.equalTo(checkBtn.snp.centerY)
-            $0.leading.equalTo(checkBtn.snp.trailing).offset(6)
+            $0.centerY.equalTo(checkImage.snp.centerY)
+            $0.leading.equalTo(checkImage.snp.trailing).offset(6)
+        }
+        
+        checkBtn.snp.makeConstraints {
+            $0.size.equalToSuperview()
         }
     }
     
@@ -93,10 +93,10 @@ class WorkHourTableViewCell: UITableViewCell {
         storeHourView.setUp(selected: false, workHour: workHour)
         if workDayType{
             storeHourView.isHidden = false
-            checkBtn.setImage(UIImage(named: "checkCircleActive30Px"), for: .normal)
+            checkImage.image = UIImage(named: "checkCircleActive30Px")
         }else{
             storeHourView.isHidden = true
-            checkBtn.setImage(UIImage(named: "checkCircleInactive30Px"), for: .normal)
+            checkImage.image = UIImage(named: "checkCircleInactive30Px")
         }
     }
 }
