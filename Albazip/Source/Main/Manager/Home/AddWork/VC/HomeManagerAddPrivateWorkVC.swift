@@ -104,12 +104,8 @@ extension HomeManagerAddPrivateWorkVC: UITableViewDataSource, UITableViewDelegat
         default:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkList2TableViewCell") as? MyPageManagerWorkList2TableViewCell {
                 
-                cell.selectionStyle = .none
-                cell.cellIndex = indexPath.row
                 cell.myPageManagerWorkList2Delegate = self
-                cell.titleLabel.text = totalList[indexPath.row - 2].title
-                cell.subLabel.text = totalList[indexPath.row - 2].content
-                
+                cell.setUpData(work: totalList[indexPath.row - 2], index: indexPath.row)
                 
                 print(indexPath.row)
                 return cell
@@ -121,13 +117,10 @@ extension HomeManagerAddPrivateWorkVC: UITableViewDataSource, UITableViewDelegat
         switch indexPath.row {
         case 0:
             return 124
-        case 1:
-            return 110
         case totalList.count+2:
             return 60
         default:
-            
-        return 110
+            return tableView.estimatedRowHeight
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -164,7 +157,18 @@ extension HomeManagerAddPrivateWorkVC: MyPageManagerWorkList3Delegate, MyPageMan
         
     }
     
-    
+    func updateTextViewHeight(_ cell: UITableViewCell, _ textView: UITextView) {
+        let size = textView.bounds.size
+        let newSize = tableView.sizeThatFits(CGSize(width: size.width,
+                                                    height: CGFloat.greatestFiniteMagnitude))
+        print(newSize)
+        if size.height != newSize.height {
+            UIView.setAnimationsEnabled(false)
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            UIView.setAnimationsEnabled(true)
+        }
+    }
 }
 
 extension  HomeManagerAddPrivateWorkVC: HomeManagerAddPrivateWorkTableViewCellDelegate{

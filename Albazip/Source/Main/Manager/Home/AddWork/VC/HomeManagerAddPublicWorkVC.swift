@@ -40,6 +40,7 @@ class HomeManagerAddPublicWorkVC: UIViewController{
         tableView.dataSource = self
         tableView.delegate = self
         //tableView.estimatedRowHeight = 74
+        tableView.rowHeight = UITableView.automaticDimension
     }
     @IBAction func btnNext(_ sender: Any) {
         taskList.removeAll()
@@ -127,14 +128,9 @@ extension HomeManagerAddPublicWorkVC: UITableViewDataSource, UITableViewDelegate
         default:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkList2TableViewCell") as? MyPageManagerWorkList2TableViewCell {
                 
-                cell.selectionStyle = .none
-                cell.cellIndex = indexPath.row
                 cell.myPageManagerWorkList2Delegate = self
-                cell.titleLabel.text = totalList[indexPath.row - 1].title
-                cell.subLabel.text = totalList[indexPath.row - 1].content
-                
-                
-                print(indexPath.row)
+                cell.setUpData(work: totalList[indexPath.row - 1], index: indexPath.row)
+
                 return cell
             }
         }
@@ -146,10 +142,8 @@ extension HomeManagerAddPublicWorkVC: UITableViewDataSource, UITableViewDelegate
             return 124
         case totalList.count+1:
             return 60
-        
         default:
-            
-        return 110
+            return UITableView.automaticDimension
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -182,7 +176,18 @@ extension HomeManagerAddPublicWorkVC: MyPageManagerWorkList3Delegate, MyPageMana
         print(totalList)
     }
     
-    
+    func updateTextViewHeight(_ cell: UITableViewCell, _ textView: UITextView) {
+        let size = textView.bounds.size
+        let newSize = tableView.sizeThatFits(CGSize(width: size.width,
+                                                    height: CGFloat.greatestFiniteMagnitude))
+        print(newSize)
+        if size.height != newSize.height {
+            UIView.setAnimationsEnabled(false)
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            UIView.setAnimationsEnabled(true)
+        }
+    }
 }
 extension HomeManagerAddPublicWorkVC {
     func didSuccessHomeManagerAddPublicWork(result: HomeManagerAddPublicWorkResponse) {

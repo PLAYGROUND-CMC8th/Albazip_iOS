@@ -157,14 +157,9 @@ extension  MyPageManagerWorkListVC: UITableViewDataSource, UITableViewDelegate {
         default:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkList2TableViewCell") as? MyPageManagerWorkList2TableViewCell {
                 
-                cell.selectionStyle = .none
-                cell.cellIndex = indexPath.row
                 cell.myPageManagerWorkList2Delegate = self
-                cell.titleLabel.text = totalList[indexPath.row - 1].title
-                cell.subLabel.text = totalList[indexPath.row - 1].content
+                cell.setUpData(work: totalList[indexPath.row - 1], index: indexPath.row)
                 
-                
-                print(indexPath.row)
                 return cell
             }
         }
@@ -177,8 +172,7 @@ extension  MyPageManagerWorkListVC: UITableViewDataSource, UITableViewDelegate {
         case totalList.count+1:
             return 60
         default:
-            
-        return 110
+            return tableView.estimatedRowHeight
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -212,7 +206,18 @@ extension MyPageManagerWorkListVC: MyPageManagerWorkList3Delegate, MyPageManager
         print(totalList)
     }
     
-    
+    func updateTextViewHeight(_ cell: UITableViewCell, _ textView: UITextView) {
+        let size = textView.bounds.size
+        let newSize = tableView.sizeThatFits(CGSize(width: size.width,
+                                                    height: CGFloat.greatestFiniteMagnitude))
+        print(newSize)
+        if size.height != newSize.height {
+            UIView.setAnimationsEnabled(false)
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            UIView.setAnimationsEnabled(true)
+        }
+    }
 }
 
 extension MyPageManagerWorkListVC {

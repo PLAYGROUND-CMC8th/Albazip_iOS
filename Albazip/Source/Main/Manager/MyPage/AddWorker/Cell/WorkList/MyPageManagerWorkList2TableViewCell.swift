@@ -12,33 +12,34 @@ protocol MyPageManagerWorkList2Delegate {
     
     func setTitleTextField(index: Int, text:String)
     func setSubTextField(index: Int, text:String)
+    func updateTextViewHeight(_ cell: UITableViewCell, _ textView: UITextView)
 }
 
-class MyPageManagerWorkList2TableViewCell: UITableViewCell, UITextFieldDelegate {
+class MyPageManagerWorkList2TableViewCell: UITableViewCell {
 
     @IBOutlet var textView: UIView!
     @IBOutlet var titleLabel: UITextField!
-    @IBOutlet var subLabel: UITextField!
+    
+    @IBOutlet var subTextView: UITextView!
+    @IBOutlet var subLabel: UILabel!
+    
     var cellIndex: Int?
+    
     var myPageManagerWorkList2Delegate: MyPageManagerWorkList2Delegate?
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         titleLabel.addTarget(self, action: #selector(self.textFieldDidChange(_:)),  for: .editingChanged)
-        subLabel.addTarget(self, action: #selector(self.textFieldDidChange2(_:)),  for: .editingChanged)
         titleLabel.delegate = self
-        subLabel.delegate = self
+        subTextView.delegate = self
+        subTextView.sizeToFit()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     @IBAction func btnDelete(_ sender: Any) {
         print(cellIndex!)
         myPageManagerWorkList2Delegate?.deleteCell(index: cellIndex!)
-        //myPageManagerWorkList2Delegate?.deleteCell2(self)
     }
     
     @objc func textFieldDidChange(_ sender: Any?) {
@@ -47,39 +48,83 @@ class MyPageManagerWorkList2TableViewCell: UITableViewCell, UITextFieldDelegate 
         myPageManagerWorkList2Delegate?.setTitleTextField(index: cellIndex!, text: self.titleLabel.text!)
         textView.borderColor = #colorLiteral(red: 0.6391510963, green: 0.6392608881, blue: 0.6391366124, alpha: 1)
     }
-    @objc func textFieldDidChange2(_ sender: Any?) {
-           print(self.subLabel.text!)
-        subLabel.becomeFirstResponder()
-        myPageManagerWorkList2Delegate?.setSubTextField(index: cellIndex!, text: self.subLabel.text!)
-        textView.borderColor = #colorLiteral(red: 0.6391510963, green: 0.6392608881, blue: 0.6391366124, alpha: 1)
+    
+    func setUpData(work: WorkList, index: Int) {
+        self.selectionStyle = .none
+        self.cellIndex = index
+        self.titleLabel.text = work.title
+        self.subTextView.text = work.content
+        let textStr = subTextView.text ?? ""
+        if textStr == "" {
+            subLabel.isHidden = false
+        }else {
+            subLabel.isHidden = true
+        }
     }
     
-    // 텍스트 필드의 편집을 시작할 때 호출
-        func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-            print("텍스트 필드의 편집이 시작됩니다.")
-            textView.borderColor = #colorLiteral(red: 0.6391510963, green: 0.6392608881, blue: 0.6391366124, alpha: 1)
-            return true // false를 리턴하면 편집되지 않는다.
+    func setUpData(work: EditWorkList, index: Int) {
+        self.selectionStyle = .none
+        self.cellIndex = index
+        self.titleLabel.text = work.title
+        self.subTextView.text = work.content ?? ""
+        let textStr = subTextView.text ?? ""
+        if textStr == "" {
+            subLabel.isHidden = false
+        }else {
+            subLabel.isHidden = true
         }
-    // 텍스트 필드의 리턴키가 눌러졌을 때 호출
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
-            print("텍스트 필드의 리턴키가 눌러졌습니다.")
-            textView.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
-            return true
-        }
-        
-        // 텍스트 필드 편집이 종료될 때 호출
-        func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-            print("텍스트 필드의 편집이 종료됩니다.")
-            textView.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
-            return true
-        }
-        
-        // 텍스트 필드의 편집이 종료되었을 때 호출
-        func textFieldDidEndEditing(_ textField: UITextField) {
-            print("텍스트 필드의 편집이 종료되었습니다.")
-            textView.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
-        }
-
+    }
 }
-
+extension MyPageManagerWorkList2TableViewCell:  UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textView.borderColor = #colorLiteral(red: 0.6391510963, green: 0.6392608881, blue: 0.6391366124, alpha: 1)
+        return true // false를 리턴하면 편집되지 않는다.
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        textView.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        textView.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textView.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+    }
+}
+extension MyPageManagerWorkList2TableViewCell: UITextViewDelegate {
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        self.textView.borderColor = #colorLiteral(red: 0.6391510963, green: 0.6392608881, blue: 0.6391366124, alpha: 1)
+        subLabel.isHidden = true
+        return true
+    }
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        self.textView.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+        let textStr = self.subTextView.text ?? ""
+        if textStr == "" {
+            subLabel.isHidden = false
+        }else {
+            subLabel.isHidden = true
+        }
+        return true
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        self.textView.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)
+        let textStr = self.subTextView.text ?? ""
+        if textStr == "" {
+            subLabel.isHidden = false
+        }else {
+            subLabel.isHidden = true
+        }
+    }
+    func textViewDidChange(_ textView: UITextView){
+        subTextView.becomeFirstResponder()
+        self.textView.borderColor = #colorLiteral(red: 0.6391510963, green: 0.6392608881, blue: 0.6391366124, alpha: 1)
+        let textStr = self.subTextView.text ?? ""
+        myPageManagerWorkList2Delegate?.setSubTextField(index: cellIndex!, text: textStr)
+        myPageManagerWorkList2Delegate?.updateTextViewHeight(self, textView)
+    }
+}
