@@ -11,6 +11,7 @@ class HomeManagerAddPrivateWorkVC: UIViewController{
     var totalCount = 0
     var totalList = [WorkList]()
     var taskList = [TaskLists]()
+    var selectedIndex = 0
     var selectedItem = -1
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,6 @@ class HomeManagerAddPrivateWorkVC: UIViewController{
     }
     //MARK:- View Setup
     func setUI(){
-        
         self.dismissKeyboardWhenTappedAround()
     }
     func setupTableView() {
@@ -33,11 +33,8 @@ class HomeManagerAddPrivateWorkVC: UIViewController{
         tableView.register(UINib(nibName: "MyPageManagerWorkList2TableViewCell", bundle: nil),forCellReuseIdentifier: "MyPageManagerWorkList2TableViewCell")
         tableView.register(UINib(nibName: "MyPageManagerWorkList3TableViewCell", bundle: nil),forCellReuseIdentifier: "MyPageManagerWorkList3TableViewCell")
         tableView.register(UINib(nibName: "HomeManagerAddPrivateWorkTableViewCell", bundle: nil),forCellReuseIdentifier: "HomeManagerAddPrivateWorkTableViewCell")
-        //HomeManagerAddPrivateWorkTableViewCell
-        //MyPageManagerWriteCommunityTableViewCell
         tableView.dataSource = self
         tableView.delegate = self
-        //tableView.estimatedRowHeight = 74
     }
     @IBAction func btnNext(_ sender: Any) {
         taskList.removeAll()
@@ -50,12 +47,6 @@ class HomeManagerAddPrivateWorkVC: UIViewController{
                 }
                 taskList.append(TaskLists(title: totalList[x].title, content: totalList[x].content))
             }
-            print("완료")
-            
-        }else{
-            print("totalList가 null 임")
-           
-            
         }
         /*
         //api 호출
@@ -124,8 +115,6 @@ extension HomeManagerAddPrivateWorkVC: UITableViewDataSource, UITableViewDelegat
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("선택된 행은 \(indexPath.row) 입니다.")
-        
     }
 }
 extension HomeManagerAddPrivateWorkVC: MyPageManagerWorkList3Delegate, MyPageManagerWorkList2Delegate{
@@ -168,6 +157,10 @@ extension HomeManagerAddPrivateWorkVC: MyPageManagerWorkList3Delegate, MyPageMan
             tableView.endUpdates()
             UIView.setAnimationsEnabled(true)
         }
+    }
+    
+    func selectedRowIndex(index: Int) {
+        selectedIndex = index
     }
 }
 

@@ -13,6 +13,7 @@ protocol MyPageManagerWorkList2Delegate {
     func setTitleTextField(index: Int, text:String)
     func setSubTextField(index: Int, text:String)
     func updateTextViewHeight(_ cell: UITableViewCell, _ textView: UITextView)
+    func selectedRowIndex(index: Int)
 }
 
 class MyPageManagerWorkList2TableViewCell: UITableViewCell {
@@ -32,6 +33,8 @@ class MyPageManagerWorkList2TableViewCell: UITableViewCell {
         titleLabel.delegate = self
         subTextView.delegate = self
         subTextView.sizeToFit()
+        subTextView.textContainer.lineFragmentPadding = 0
+        subTextView.textContainerInset = .zero
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -78,6 +81,7 @@ class MyPageManagerWorkList2TableViewCell: UITableViewCell {
 extension MyPageManagerWorkList2TableViewCell:  UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textView.borderColor = #colorLiteral(red: 0.6391510963, green: 0.6392608881, blue: 0.6391366124, alpha: 1)
+        myPageManagerWorkList2Delegate?.selectedRowIndex(index: self.cellIndex ?? 0)
         return true // false를 리턴하면 편집되지 않는다.
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -99,7 +103,11 @@ extension MyPageManagerWorkList2TableViewCell: UITextViewDelegate {
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         self.textView.borderColor = #colorLiteral(red: 0.6391510963, green: 0.6392608881, blue: 0.6391366124, alpha: 1)
         subLabel.isHidden = true
+        myPageManagerWorkList2Delegate?.selectedRowIndex(index: self.cellIndex ?? 0)
         return true
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.textView.borderColor = #colorLiteral(red: 0.6391510963, green: 0.6392608881, blue: 0.6391366124, alpha: 1)
     }
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         self.textView.borderColor = #colorLiteral(red: 0.9371625781, green: 0.9373195171, blue: 0.9371418357, alpha: 1)

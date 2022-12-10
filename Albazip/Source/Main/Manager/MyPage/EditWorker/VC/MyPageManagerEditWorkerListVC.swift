@@ -20,10 +20,10 @@ class MyPageManagerEditWorkerListVC: UIViewController{
     var totalCount = 0
     var totalList = [EditWorkList]()
     var taskList = [EditTaskLists2]()
-    // Datamanager
+    var selectedIndex = 0
+    
     lazy var dataManager: MyPageManagerEditWorkerListDataManger = MyPageManagerEditWorkerListDataManger()
-    var isFirstKeyboardSHow = true
-    var footer = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(taskList)
@@ -35,11 +35,17 @@ class MyPageManagerEditWorkerListVC: UIViewController{
         setupTableView()
         setUI()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        registerKeyboardNotification()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        removeKeyboardNotification()
+    }
     //MARK:- View Setup
     func setUI(){
         self.tabBarController?.tabBar.isHidden = true
         self.dismissKeyboardWhenTappedAround()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     func setupTableView() {
         
@@ -49,10 +55,8 @@ class MyPageManagerEditWorkerListVC: UIViewController{
                            forCellReuseIdentifier: "MyPageManagerWorkList2TableViewCell")
         tableView.register(UINib(nibName: "MyPageManagerWorkList3TableViewCell", bundle: nil),
                            forCellReuseIdentifier: "MyPageManagerWorkList3TableViewCell")
-        //MyPageManagerWriteCommunityTableViewCell
         tableView.dataSource = self
         tableView.delegate = self
-        //tableView.estimatedRowHeight = 74
     }
     @IBAction func btnCancel(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -72,9 +76,8 @@ class MyPageManagerEditWorkerListVC: UIViewController{
             }
             print("완료")
             
-        }else{
-            print("totalList가 null 임")
         }
+        
         //api 호출
         let data = MyPageManagerAddWorkerInfo.shared
         let input = MyPageManagerEditWorkerRequest(
@@ -107,42 +110,39 @@ class MyPageManagerEditWorkerListVC: UIViewController{
         dataManager.getMyPageManagerEditWorkerList(input, vc: self, index: positionId)
         
     }
-    @objc internal func keyboardWillShow(_ notification : Notification?) -> Void {
-            print("키보드 올림")
-            var _kbSize:CGSize!
-                
-            if let info = notification?.userInfo {
-
-                let frameEndUserInfoKey = UIResponder.keyboardFrameEndUserInfoKey
-                    
-                    //  Getting UIKeyboardSize.
-                if let kbFrame = info[frameEndUserInfoKey] as? CGRect {
-                        
-                let screenSize = UIScreen.main.bounds
-                        
-                let intersectRect = kbFrame.intersection(screenSize)
-                        
-                if intersectRect.isNull {
-                    _kbSize = CGSize(width: screenSize.size.width, height: 0)
-                } else{
-                    _kbSize = intersectRect.size
-                }
-                    print("Your Keyboard Size \(_kbSize)")
-                    if isFirstKeyboardSHow{
-                        
-                        footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: _kbSize.height))
-                        tableView.tableFooterView = footer
-                        tableView.reloadData()
-                        isFirstKeyboardSHow = false
-                        
-                    }
-                    
-                }
-            }
+   
+}
+//MARK:- Keyboard
+extension MyPageManagerEditWorkerListVC {
+    func registerKeyboardNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func removeKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc
+    func keyboardWillShow(_ sender: Notification) {
+        if let keyboardRect = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+              print(keyboardRect.height)
+            let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: keyboardRect.height))
+            tableView.tableFooterView = footerView
+            tableView.scrollToRow(at: IndexPath(row: selectedIndex, section: 0), at: .middle, animated: true)
         }
+    }
+    
+    @objc
+    func keyboardWillHide(_ sender: Notification) {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 0))
+        tableView.tableFooterView = footerView
+        tableView.scrollToRow(at: IndexPath(row: selectedIndex, section: 0), at: .middle, animated: true)
+    }
 }
 //MARK:- Table View Data Source
-
 extension MyPageManagerEditWorkerListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -198,38 +198,35 @@ extension MyPageManagerEditWorkerListVC: MyPageManagerWorkList3Delegate, MyPageM
     
     func setTitleTextField(index: Int,text: String) {
         totalList[index-1].title = text
-        print(totalList)
     }
     func setSubTextField(index: Int, text:String){
         totalList[index-1].content = text
-        print(totalList)
     }
     func deleteCell(index: Int) {
         totalList.remove(at: index - 1)
-        print(totalList)
         tableView.reloadData()
-        print(totalList)
     }
 
     func addWork() {
-            
         totalList.append(EditWorkList(title: "",content: "", id: nil))
-        print(totalList)
         tableView.reloadData()
-        print(totalList)
+        tableView.scrollToRow(at: IndexPath(row: totalList.count + 1, section: 0), at: .middle, animated: true)
     }
     
     func updateTextViewHeight(_ cell: UITableViewCell, _ textView: UITextView) {
         let size = textView.bounds.size
         let newSize = tableView.sizeThatFits(CGSize(width: size.width,
                                                     height: CGFloat.greatestFiniteMagnitude))
-        print(newSize)
         if size.height != newSize.height {
             UIView.setAnimationsEnabled(false)
             tableView.beginUpdates()
             tableView.endUpdates()
             UIView.setAnimationsEnabled(true)
         }
+    }
+    
+    func selectedRowIndex(index: Int) {
+        selectedIndex = index
     }
 }
 extension MyPageManagerEditWorkerListVC {

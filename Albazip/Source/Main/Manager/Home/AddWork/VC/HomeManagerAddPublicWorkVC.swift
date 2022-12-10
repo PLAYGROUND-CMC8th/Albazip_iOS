@@ -7,41 +7,47 @@
 
 import Foundation
 class HomeManagerAddPublicWorkVC: UIViewController{
-    var totalCount = 0
     var totalList = [WorkList]()
     var taskList = [TaskLists]()
-    var isFirstKeyboardSHow = true
-    var footer = UIView()
+    var selectedIndex = 0
+
     @IBOutlet var tableView: UITableView!
-    // Datamanager
+    
     lazy var dataManager: HomeManagerAddPublicWorkDatamanager = HomeManagerAddPublicWorkDatamanager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setupTableView()
-        //setKeyboardObserver()
     }
-    @IBAction func btnCancel(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        registerKeyboardNotification()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        removeKeyboardNotification()
+    }
+    
     //MARK:- View Setup
     func setUI(){
         self.dismissKeyboardWhenTappedAround()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
+    
     func setupTableView() {
-        
         tableView.register(UINib(nibName: "HomeManagerAddPublicWorkTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "HomeManagerAddPublicWorkTableViewCell")
         tableView.register(UINib(nibName: "MyPageManagerWorkList2TableViewCell", bundle: nil),forCellReuseIdentifier: "MyPageManagerWorkList2TableViewCell")
         tableView.register(UINib(nibName: "MyPageManagerWorkList3TableViewCell", bundle: nil),forCellReuseIdentifier: "MyPageManagerWorkList3TableViewCell")
-        //MyPageManagerWriteCommunityTableViewCell
         tableView.dataSource = self
         tableView.delegate = self
-        //tableView.estimatedRowHeight = 74
         tableView.rowHeight = UITableView.automaticDimension
     }
+    
+    @IBAction func btnCancel(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func btnNext(_ sender: Any) {
         taskList.removeAll()
      
@@ -53,53 +59,45 @@ class HomeManagerAddPublicWorkVC: UIViewController{
                 }
                 taskList.append(TaskLists(title: totalList[x].title, content: totalList[x].content))
             }
-            print("완료")
-            
-        }else{
-            print("totalList가 null 임")
-           
-            
         }
+        
         showIndicator()
         dataManager.postHomeManagerAddPublicWork(HomeManagerAddPublicWorkRequest(coTaskList: taskList), delegate: self)
         
     }
-    @objc internal func keyboardWillShow(_ notification : Notification?) -> Void {
-            print("키보드 올림")
-            var _kbSize:CGSize!
-                
-            if let info = notification?.userInfo {
-
-                let frameEndUserInfoKey = UIResponder.keyboardFrameEndUserInfoKey
-                    
-                    //  Getting UIKeyboardSize.
-                if let kbFrame = info[frameEndUserInfoKey] as? CGRect {
-                        
-                let screenSize = UIScreen.main.bounds
-                        
-                let intersectRect = kbFrame.intersection(screenSize)
-                        
-                if intersectRect.isNull {
-                    _kbSize = CGSize(width: screenSize.size.width, height: 0)
-                } else{
-                    _kbSize = intersectRect.size
-                }
-                    print("Your Keyboard Size \(_kbSize)")
-                    if isFirstKeyboardSHow{
-                        
-                        footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: _kbSize.height))
-                        tableView.tableFooterView = footer
-                        tableView.reloadData()
-                        isFirstKeyboardSHow = false
-                        
-                    }
-                    
-                }
-            }
-        }
 }
-//MARK:- Table View Data Source
+//MARK:- Keyboard
+extension HomeManagerAddPublicWorkVC {
+    func registerKeyboardNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func removeKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc
+    func keyboardWillShow(_ sender: Notification) {
+        if let keyboardRect = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+              print(keyboardRect.height)
+            let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: keyboardRect.height))
+            tableView.tableFooterView = footerView
+            tableView.scrollToRow(at: IndexPath(row: selectedIndex, section: 0), at: .middle, animated: true)
+        }
+    }
+    
+    @objc
+    func keyboardWillHide(_ sender: Notification) {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 0))
+        tableView.tableFooterView = footerView
+        tableView.scrollToRow(at: IndexPath(row: selectedIndex, section: 0), at: .middle, animated: true)
+    }
+}
 
+//MARK:- Table View Data Source
 extension HomeManagerAddPublicWorkVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -147,7 +145,6 @@ extension HomeManagerAddPublicWorkVC: UITableViewDataSource, UITableViewDelegate
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("선택된 행은 \(indexPath.row) 입니다.")
         
     }
 }
@@ -155,32 +152,25 @@ extension HomeManagerAddPublicWorkVC: MyPageManagerWorkList3Delegate, MyPageMana
     
     func setTitleTextField(index: Int,text: String) {
         totalList[index-1].title = text
-        print(totalList)
     }
     func setSubTextField(index: Int, text:String){
         totalList[index-1].content = text
-        print(totalList)
     }
     func deleteCell(index: Int) {
         totalList.remove(at: index - 1)
-        print(totalList)
         tableView.reloadData()
-        print(totalList)
     }
 
     func addWork() {
-            
         totalList.append(WorkList(title: "",content: ""))
-        print(totalList)
         tableView.reloadData()
-        print(totalList)
+        tableView.scrollToRow(at: IndexPath(row: totalList.count + 1, section: 0), at: .middle, animated: true)
     }
     
     func updateTextViewHeight(_ cell: UITableViewCell, _ textView: UITextView) {
         let size = textView.bounds.size
         let newSize = tableView.sizeThatFits(CGSize(width: size.width,
                                                     height: CGFloat.greatestFiniteMagnitude))
-        print(newSize)
         if size.height != newSize.height {
             UIView.setAnimationsEnabled(false)
             tableView.beginUpdates()
@@ -188,12 +178,13 @@ extension HomeManagerAddPublicWorkVC: MyPageManagerWorkList3Delegate, MyPageMana
             UIView.setAnimationsEnabled(true)
         }
     }
+    
+    func selectedRowIndex(index: Int) {
+        selectedIndex = index
+    }
 }
 extension HomeManagerAddPublicWorkVC {
     func didSuccessHomeManagerAddPublicWork(result: HomeManagerAddPublicWorkResponse) {
-        
-        print(result.message)
-        
         dismissIndicator()
         self.navigationController?.popViewController(animated: true)
     }
