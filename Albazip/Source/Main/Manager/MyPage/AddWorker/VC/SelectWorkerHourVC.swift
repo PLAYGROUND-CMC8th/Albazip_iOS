@@ -100,6 +100,7 @@ class SelectWorkerHourVC: UIViewController{
             vc.whatHour = .workHour
             vc.whenHour = .startTime
             vc.index = sender.tag
+            vc.workHour = workHourArr[sender.tag]
             self.present(vc, animated: true, completion: nil)
 
         }
@@ -114,6 +115,7 @@ class SelectWorkerHourVC: UIViewController{
             vc.whatHour = .workHour
             vc.whenHour = .endTime
             vc.index = sender.tag
+            vc.workHour = workHourArr[sender.tag]
             self.present(vc, animated: true, completion: nil)
         }
     }

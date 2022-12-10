@@ -42,7 +42,7 @@ class RegisterSelectTimeVC: UIViewController{
 
     var whatHour: WhatHour = .storeHour
     var whenHour: WhenHour = .startTime
-    
+    var workHour: WorkHour?
     var index = 0
     
     override func viewDidLoad() {
@@ -106,10 +106,21 @@ class RegisterSelectTimeVC: UIViewController{
     
    
     @IBAction func btnNext(_ sender: Any) {
+        let dateStr = date1[selectedDate1]+":"+date2[selectedDate2]
+        if let workHour = workHour {
+            if whenHour == .startTime, let endTime = workHour.endTime, dateStr == endTime {
+                self.showMessage(message: "퇴근 시간과 같아요. 시간을 다시 설정해주세요.", controller: self, bottomInset: 112)
+                return
+            }else if whenHour == .endTime, let startTime = workHour.startTime, dateStr == startTime {
+                self.showMessage(message: "출근 시간과 같아요. 시간을 다시 설정해주세요.", controller: self, bottomInset: 112)
+                return
+            }
+        }
+        
         if(whenHour == .startTime){
-            timeDateModalDelegate?.openTimeTextFieldData(data: date1[selectedDate1]+":"+date2[selectedDate2], index: self.index)
+            timeDateModalDelegate?.openTimeTextFieldData(data: dateStr, index: self.index)
         }else{
-            timeDateModalDelegate?.endTimeTextFieldData(data: date1[selectedDate1]+":"+date2[selectedDate2], index: self.index)
+            timeDateModalDelegate?.endTimeTextFieldData(data: dateStr, index: self.index)
         }
         
         timeDateModalDelegate?.timeModalDismiss()

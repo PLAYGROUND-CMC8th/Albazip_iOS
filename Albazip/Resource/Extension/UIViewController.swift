@@ -117,7 +117,7 @@ extension UIViewController {
         IndicatorView.customHide()
     }
     
-    func showMessage(message: String, controller: UIViewController) {
+    func showMessage(message: String, controller: UIViewController, bottomInset: CGFloat = 15) {
             let toastContainer = UIView(frame: CGRect())
             toastContainer.backgroundColor = UIColor.black.withAlphaComponent(0.6)
             toastContainer.alpha = 0.0
@@ -146,7 +146,7 @@ extension UIViewController {
             
             let c1 = NSLayoutConstraint(item: toastContainer, attribute: .leading, relatedBy: .equal, toItem: controller.view, attribute: .leading, multiplier: 1, constant: 10)
             let c2 = NSLayoutConstraint(item: toastContainer, attribute: .trailing, relatedBy: .equal, toItem: controller.view, attribute: .trailing, multiplier: 1, constant: -10)
-            let c3 = NSLayoutConstraint(item: toastContainer, attribute: .bottom, relatedBy: .equal, toItem: controller.view, attribute: .bottom, multiplier: 1, constant: -16)
+            let c3 = NSLayoutConstraint(item: toastContainer, attribute: .bottom, relatedBy: .equal, toItem: controller.view, attribute: .bottom, multiplier: 1, constant: -(bottomInset + 1))
             controller.view.addConstraints([c1, c2, c3])
             
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {

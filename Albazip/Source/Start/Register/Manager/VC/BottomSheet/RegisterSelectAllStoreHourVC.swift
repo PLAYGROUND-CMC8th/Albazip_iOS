@@ -79,6 +79,7 @@ class RegisterSelectAllStoreHourVC: UIViewController{
             vc.whenHour = .startTime
             vc.whatHour = self.whatHour
             vc.index = 7
+            vc.workHour = workHour
             self.present(vc, animated: true, completion: nil)
 
         }
@@ -90,6 +91,7 @@ class RegisterSelectAllStoreHourVC: UIViewController{
             vc.whenHour = .endTime
             vc.whatHour = self.whatHour
             vc.index = 7
+            vc.workHour = workHour
             self.present(vc, animated: true, completion: nil)
 
         }
