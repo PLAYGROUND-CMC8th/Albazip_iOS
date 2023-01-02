@@ -37,6 +37,8 @@ class MyPageManagerSelectInfo3TableViewCell: UITableViewCell{
     }
     @objc func textFieldDidChange(_ sender: Any?) {
            print(self.moneyTextField.text!)
+        let currentMoney = (moneyTextField.text ?? "").replace(target: ",", with: "")
+        moneyTextField.text = currentMoney.insertComma
         myPageManagerPayTypeModalDelegate?.checkValue3(text: self.moneyTextField.text!)
         
     }

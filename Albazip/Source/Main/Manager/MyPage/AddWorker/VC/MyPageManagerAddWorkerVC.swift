@@ -50,7 +50,7 @@ class MyPageManagerAddWorkerVC: UIViewController{
         }
     }
     
-    var salary = "8720"
+    var salary = ""
     
     var isWorkDaySetted = false{
         didSet{
@@ -118,7 +118,7 @@ class MyPageManagerAddWorkerVC: UIViewController{
     @IBAction func btnNext(_ sender: Any) {
         let data = MyPageManagerAddWorkerInfo.shared
         data.salaryType = salaryType
-        data.salary = salary
+        data.salary = salary.replace(target: ",", with: "")
         data.breakTime = breakTime
         data.title = positionDay + positionHour
         
@@ -578,7 +578,7 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
                 }
                 
                 if writeType == .edit{
-                    cell.moneyTextField.text = salary
+                    cell.moneyTextField.text = salary.insertComma
                 }
                 
                 salary = cell.moneyTextField.text!
@@ -673,8 +673,8 @@ extension MyPageManagerAddWorkerVC {
         data.salaryType = self.salaryType
         
         // 급여
-        self.salary = response.salary
-        data.salary = self.salary
+        self.salary = response.salary.insertComma
+        data.salary = response.salary
         reloadSection(section: 2)
         
         // 쉬는 시간
