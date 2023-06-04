@@ -3575,7 +3575,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chobi.Albazip.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimsoobin/Desktop/MakeUs/알바집/Albazip/Albazip/Application/Albazip-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Albazip/Application/Albazip-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -3609,7 +3609,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chobi.Albazip.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimsoobin/Desktop/MakeUs/알바집/Albazip/Albazip/Application/Albazip-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Albazip/Application/Albazip-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
