@@ -18,7 +18,7 @@
 #include <CommonCrypto/CommonCrypto.h>
 #import "FirebaseAuth/Sources/Public/FirebaseAuth/FIRFacebookAuthProvider.h"
 #import "FirebaseAuth/Sources/Public/FirebaseAuth/FIROAuthCredential.h"
-#import "FirebaseCore/Sources/Private/FirebaseCoreInternal.h"
+#import "FirebaseCore/Extension/FirebaseCoreInternal.h"
 
 #import "FirebaseAuth/Sources/Auth/FIRAuthGlobalWorkQueue.h"
 #import "FirebaseAuth/Sources/Auth/FIRAuth_Internal.h"
@@ -308,6 +308,7 @@ static NSString *const kCustomUrlSchemePrefix = @"app-";
                                      NSString *appID = strongSelf->_auth.app.options.googleAppID;
                                      NSString *apiKey =
                                          strongSelf->_auth.requestConfiguration.APIKey;
+                                     NSString *tenantID = strongSelf->_auth.tenantID;
                                      NSMutableDictionary *urlArguments = [@{
                                        @"apiKey" : apiKey,
                                        @"authType" : kAuthTypeSignInWithRedirect,
@@ -321,6 +322,9 @@ static NSString *const kCustomUrlSchemePrefix = @"app-";
                                        urlArguments[@"clientId"] = clientID;
                                      } else {
                                        urlArguments[@"appId"] = appID;
+                                     }
+                                     if (tenantID) {
+                                       urlArguments[@"tid"] = tenantID;
                                      }
                                      if (strongSelf.scopes.count) {
                                        urlArguments[@"scopes"] =

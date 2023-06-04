@@ -295,6 +295,7 @@
 		C3A7C80A2752D59A00271EFE /* CommunityWorkerReportDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7C8092752D59A00271EFE /* CommunityWorkerReportDatamanager.swift */; };
 		C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9683E2719F8E500E27DA1 /* UIView.swift */; };
 		C3A968422719FA7A00E27DA1 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A968412719FA7A00E27DA1 /* StartViewController.swift */; };
+		C3AB5B342A2CD4A100B007EA /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AB5B332A2CD4A100B007EA /* Firebase.swift */; };
 		C3AC1F83274D195D0007AA95 /* CommunityWorkerTopTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC1F82274D195D0007AA95 /* CommunityWorkerTopTabVC.swift */; };
 		C3AC1F85274D1B920007AA95 /* CommunityWorkerNoticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC1F84274D1B920007AA95 /* CommunityWorkerNoticeVC.swift */; };
 		C3AC1F89274D22760007AA95 /* CommunityWorkerNoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC1F87274D22760007AA95 /* CommunityWorkerNoticeTableViewCell.swift */; };
@@ -742,6 +743,7 @@
 		C3A7C8092752D59A00271EFE /* CommunityWorkerReportDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerReportDatamanager.swift; sourceTree = "<group>"; };
 		C3A9683E2719F8E500E27DA1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C3A968412719FA7A00E27DA1 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		C3AB5B332A2CD4A100B007EA /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		C3AC1F82274D195D0007AA95 /* CommunityWorkerTopTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerTopTabVC.swift; sourceTree = "<group>"; };
 		C3AC1F84274D1B920007AA95 /* CommunityWorkerNoticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerNoticeVC.swift; sourceTree = "<group>"; };
 		C3AC1F87274D22760007AA95 /* CommunityWorkerNoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWorkerNoticeTableViewCell.swift; sourceTree = "<group>"; };
@@ -1669,6 +1671,7 @@
 				C384424D27147E2900B84E8A /* IndicatorView.swift */,
 				C384424E27147E2900B84E8A /* Device.swift */,
 				C352F9DB28C79FE000C07108 /* SysUtils.swift */,
+				C3AB5B332A2CD4A100B007EA /* Firebase.swift */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -3146,6 +3149,7 @@
 				C34BCB382732B5910085ADB3 /* MyPageDetailCountTableViewCell.swift in Sources */,
 				C391EAC327533B57002CD2E5 /* CommunityWorkerConfirmResponse.swift in Sources */,
 				C3CFC30C273ED3A6001B2EB6 /* MyPageManagerWorkerWriteResponse.swift in Sources */,
+				C3AB5B342A2CD4A100B007EA /* Firebase.swift in Sources */,
 				C30AFE90273425170075CDE2 /* MyPageManagerWorkList3TableViewCell.swift in Sources */,
 				C38CA0BD272F9CC200EA7BB3 /* RegisterPhoneNumberDuplicateResponse.swift in Sources */,
 				C3E1FEB9272DB1EA00CE44C6 /* MyPageManagerWriteVC.swift in Sources */,
