@@ -39,6 +39,7 @@ class RegisterSearchStoreVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Firebase.Log.signupSearchStoreBefore.event()
         
         setUI()
         setTextField()
@@ -188,6 +189,7 @@ class RegisterSearchStoreVC: UIViewController{
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     @IBAction func btnNext(_ sender: Any) {
+        Firebase.Log.signupSearchStoreAfter.event()
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RegisterStoreInfoVC") as? RegisterStoreInfoVC else {return}
         nextVC.storeName = searchData![selectedOne].place_name!
         nextVC.storeLocation = searchData![selectedOne].address_name!

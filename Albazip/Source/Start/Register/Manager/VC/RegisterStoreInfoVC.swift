@@ -24,6 +24,8 @@ class RegisterStoreInfoVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Firebase.Log.signupStoreInfo.event()
+        
         setUI()
         if(storeName != "" && storeLocation != ""){
             storeNameTextField.text = storeName

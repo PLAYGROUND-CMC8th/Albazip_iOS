@@ -7,8 +7,6 @@
 
 import Foundation
 
-import FirebaseAnalytics
-
 class HomeManagerVC: BaseViewController{
     
     var isOpen = true
@@ -80,12 +78,6 @@ class HomeManagerVC: BaseViewController{
     }
 
     @IBAction func goAddPublicWork(_ sender: Any) {
-      let event = "AddPublicWork"
-      let parameters = [
-        "token": UserDefaults.standard.string(forKey: "token")!
-      ]
-      Analytics.logEvent(event, parameters: parameters)
-      
       goAddPublicWork()
     }
     

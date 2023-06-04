@@ -21,6 +21,8 @@ class RegisterManagerInfoVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Firebase.Log.signupManagerInfo.event()
+        
         setUI()
     }
     

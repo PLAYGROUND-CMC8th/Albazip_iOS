@@ -28,6 +28,8 @@ class RegisterStoreHourVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Firebase.Log.signupOperatingTime.event()
+        
         setUI()
         setTableView()
     }

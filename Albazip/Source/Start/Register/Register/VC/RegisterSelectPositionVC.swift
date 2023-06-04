@@ -17,6 +17,8 @@ class RegisterSelectPositionVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Firebase.Log.signupSelectPosition.event()
+        
         let data = RegisterBasicInfo.shared
         nameLabel.text = "\(data.firstName!)님 반가워요 :)\n포지션을 선택해주세요!"
         

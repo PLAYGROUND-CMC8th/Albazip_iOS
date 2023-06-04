@@ -19,6 +19,7 @@ class OnboardingManagerVC:UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Firebase.Log.signupManagerOnboarding.event()
         
         slides = [
                    OnboardingData(title: "근무자 관리", description: "근무자의 스케줄과 시급을 설정하고, 업무\n리스트를 작성해 편리하게 인수인계 하세요.", image: #imageLiteral(resourceName: "imgManagerOnboarding1")),

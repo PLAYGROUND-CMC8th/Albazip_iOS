@@ -19,6 +19,8 @@ class OnboardingWorkerVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Firebase.Log.signupEmployeeOnboarding.event()
+        
         slides = [
                    OnboardingData(title: "업무 체크", description: "업무 리스트를 체크하고, 하루에\n주어진 업무를 빼먹지 않고 수행할 수 있어요.", image: #imageLiteral(resourceName: "imgOnboarding1")),
             OnboardingData(title: "근무일 및 급여 확인", description: "QR체크를 통한 출퇴근 기록으로\n정확한 근무한 날과 시간이 기록돼요!\n또한 이 달에 받을 급여를 미리 알 수 있어요.", image: #imageLiteral(resourceName: "imgOnboarding2")),

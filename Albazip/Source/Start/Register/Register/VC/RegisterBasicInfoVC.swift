@@ -25,7 +25,7 @@ class RegisterBasicInfoVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Firebase.Log.signupInfo.event()
         setupUI()
         setupBinding()
     }

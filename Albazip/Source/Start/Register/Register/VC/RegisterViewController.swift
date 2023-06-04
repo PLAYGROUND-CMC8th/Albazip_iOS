@@ -18,8 +18,8 @@ class RegisterViewController: UIViewController{
     var isAllChecked = false
     
     override func viewDidLoad() {
-            super.viewDidLoad()
-            // Do any additional setup after loading the view.
+        super.viewDidLoad()
+        Firebase.Log.signupAgreement.event()
     }
     
     @IBAction func btnAllAgree(_ sender: Any) {

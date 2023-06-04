@@ -23,6 +23,7 @@ class RegisterPasswordVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Firebase.Log.signupPassword.event()
         setupUI()
         setupBinding()
     }

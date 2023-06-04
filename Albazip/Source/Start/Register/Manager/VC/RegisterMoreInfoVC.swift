@@ -40,6 +40,8 @@ class RegisterMoreInfoVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Firebase.Log.signupMoreInfo.event()
+        
         setUI()
         setTableView()
     }

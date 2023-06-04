@@ -21,6 +21,8 @@ class RegisterWorkerCodeVC : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Firebase.Log.signupCode.event()
+        
         setUI()
     }
     

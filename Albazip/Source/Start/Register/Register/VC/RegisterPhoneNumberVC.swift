@@ -38,7 +38,7 @@ class RegisterPhoneNumberVC: UIViewController, UITextFieldDelegate{
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        Firebase.Log.signupPhoneNumber.event()
         setUI()
     }
     
