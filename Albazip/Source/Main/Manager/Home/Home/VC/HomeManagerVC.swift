@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SnapKit
 
 class HomeManagerVC: BaseViewController{
     
@@ -31,10 +32,14 @@ class HomeManagerVC: BaseViewController{
     @IBOutlet var tableView: UITableView!
     @IBOutlet var storeNameView: UIStackView!
     @IBOutlet var storeNameLabel: UILabel!
+    
+    lazy var homeTooTip = HomeTooltip()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         setUI()
+        dataManager.getPostionCount(vc: self)
     }
     override func viewWillAppear(_ animated: Bool) {
         showIndicator()
@@ -365,6 +370,18 @@ extension HomeManagerVC: HomeManagerAddWorkSelectDelegate{
     }
 }
 extension HomeManagerVC {
+    func didSuccessPostionCount(result: Int) {
+        guard result == 0 else { return }
+        
+        view.addSubview(homeTooTip)
+        homeTooTip.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(32)
+            $0.bottom.equalToSuperview().inset(4)
+            $0.width.equalTo(223)
+            $0.height.equalTo(79)
+        }
+    }
+    
     func didSuccessHomeManager(result: HomeManagerResponse) {
         
         

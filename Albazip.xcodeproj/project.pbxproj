@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9C7447FE94295A129DB07CA9 /* Pods_Albazip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363836578B4295DDC93F8120 /* Pods_Albazip.framework */; };
 		C304DC112932367600C36E26 /* AllHourSameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C304DC102932367600C36E26 /* AllHourSameCell.swift */; };
+		C306C5AB2A5021EE0025985B /* ManagerTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C306C5AA2A5021EE0025985B /* ManagerTabBarController.swift */; };
 		C30AFE672733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AFE652733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift */; };
 		C30AFE682733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30AFE662733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib */; };
 		C30AFE6B2733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AFE692733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift */; };
@@ -385,6 +386,8 @@
 		C3D385D42719EB990099A290 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D385D32719EB990099A290 /* StartStoryboard.storyboard */; };
 		C3D69454273ACC8500BF540C /* SettingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */; };
 		C3D69457273ACDC500BF540C /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D69456273ACDC500BF540C /* SettingVC.swift */; };
+		C3D8CDFC2A500530009BEB82 /* HomeTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D8CDFB2A500530009BEB82 /* HomeTooltip.swift */; };
+		C3D8CDFE2A500CB4009BEB82 /* PositionCountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D8CDFD2A500CB4009BEB82 /* PositionCountResponse.swift */; };
 		C3E0768328B3CCD700D049E4 /* StoreHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0768228B3CCD700D049E4 /* StoreHourView.swift */; };
 		C3E0768528B3CF5B00D049E4 /* RegisterSelectAllStoreHourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0768428B3CF5B00D049E4 /* RegisterSelectAllStoreHourVC.swift */; };
 		C3E1FEA3272D8A3300CE44C6 /* MyPageManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FEA2272D8A3300CE44C6 /* MyPageManagerVC.swift */; };
@@ -452,6 +455,7 @@
 		7EACD131BC8A80FCC54849C5 /* Pods-Albazip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Albazip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Albazip/Pods-Albazip.debug.xcconfig"; sourceTree = "<group>"; };
 		9E8BCDC410EA5AB6EF1D4E62 /* Pods-Albazip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Albazip.release.xcconfig"; path = "Pods/Target Support Files/Pods-Albazip/Pods-Albazip.release.xcconfig"; sourceTree = "<group>"; };
 		C304DC102932367600C36E26 /* AllHourSameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHourSameCell.swift; sourceTree = "<group>"; };
+		C306C5AA2A5021EE0025985B /* ManagerTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerTabBarController.swift; sourceTree = "<group>"; };
 		C30AFE652733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWriteTabTableViewCell.swift; sourceTree = "<group>"; };
 		C30AFE662733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageManagerWriteTabTableViewCell.xib; sourceTree = "<group>"; };
 		C30AFE692733AD040075CDE2 /* MyPageManagerWriteCommunityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerWriteCommunityTableViewCell.swift; sourceTree = "<group>"; };
@@ -833,6 +837,8 @@
 		C3D385D32719EB990099A290 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69453273ACC8500BF540C /* SettingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingStoryboard.storyboard; sourceTree = "<group>"; };
 		C3D69456273ACDC500BF540C /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		C3D8CDFB2A500530009BEB82 /* HomeTooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTooltip.swift; sourceTree = "<group>"; };
+		C3D8CDFD2A500CB4009BEB82 /* PositionCountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCountResponse.swift; sourceTree = "<group>"; };
 		C3E0768228B3CCD700D049E4 /* StoreHourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHourView.swift; sourceTree = "<group>"; };
 		C3E0768428B3CF5B00D049E4 /* RegisterSelectAllStoreHourVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSelectAllStoreHourVC.swift; sourceTree = "<group>"; };
 		C3E1FEA2272D8A3300CE44C6 /* MyPageManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManagerVC.swift; sourceTree = "<group>"; };
@@ -951,6 +957,7 @@
 				C38442782714946D00B84E8A /* Schedule */,
 				C3844270271480D400B84E8A /* MyPage */,
 				C384423A2714797000B84E8A /* MainManager.storyboard */,
+				C306C5AA2A5021EE0025985B /* ManagerTabBarController.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1863,6 +1870,7 @@
 		C398BF99273F77DF008E8BA5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C3D8CDFA2A500519009BEB82 /* Component */,
 				C3EBC25B274A9A350017BB85 /* Entity */,
 				C3EBC25A274A9A2D0017BB85 /* Datamanager */,
 				C398BF9D273F85F6008E8BA5 /* Cell */,
@@ -2520,6 +2528,14 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		C3D8CDFA2A500519009BEB82 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				C3D8CDFB2A500530009BEB82 /* HomeTooltip.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		C3E1FEA0272D8A0F00CE44C6 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2623,6 +2639,7 @@
 			isa = PBXGroup;
 			children = (
 				C3EBC25C274A9A540017BB85 /* HomeManagerResponse.swift */,
+				C3D8CDFD2A500CB4009BEB82 /* PositionCountResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -3054,6 +3071,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3D8CDFE2A500CB4009BEB82 /* PositionCountResponse.swift in Sources */,
 				C37B0B6327299EDD0017D179 /* LoginDataManager.swift in Sources */,
 				C3CDB059274BC31A006D7A92 /* HomeWorkerTodayWorkResponse.swift in Sources */,
 				C38BFB7B2739EFA000E79BF5 /* MyPageManagerWorkerPositionDelete2VC.swift in Sources */,
@@ -3276,6 +3294,7 @@
 				C37B0B59272972840017D179 /* RegisterRequest.swift in Sources */,
 				C3EBC25D274A9A540017BB85 /* HomeManagerResponse.swift in Sources */,
 				C3A9683F2719F8E500E27DA1 /* UIView.swift in Sources */,
+				C306C5AB2A5021EE0025985B /* ManagerTabBarController.swift in Sources */,
 				C3A1ADCC271C5002005A61ED /* RegisterSearchStoreVC.swift in Sources */,
 				C37B0B50272902F30017D179 /* OnboardingWorkerCollectionViewCell.swift in Sources */,
 				C3CFC306273EC929001B2EB6 /* MyPageManagerWorkerCodeResponse.swift in Sources */,
@@ -3294,6 +3313,7 @@
 				C3221F0628C4738500C7080F /* SelectWorkerHourVC.swift in Sources */,
 				C3B93393273C05E60056E381 /* SettingEditPhoneNumberVC.swift in Sources */,
 				C38BFB792739EC6C00E79BF5 /* MyPageManagerWorkerPositionDeleteVC.swift in Sources */,
+				C3D8CDFC2A500530009BEB82 /* HomeTooltip.swift in Sources */,
 				C35DB311274C2C7F0011BC5A /* HomeManagerTodayWorkDetailVC.swift in Sources */,
 				C3B9339A273C2ECD0056E381 /* MyPageDetailClearWorkMonthVC.swift in Sources */,
 				C30AFE672733A61D0075CDE2 /* MyPageManagerWriteTabTableViewCell.swift in Sources */,
@@ -3558,7 +3578,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = 69F5355JYF;
+				DEVELOPMENT_TEAM = XT9KMRDJC2;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3593,7 +3613,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = 69F5355JYF;
+				DEVELOPMENT_TEAM = XT9KMRDJC2;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
