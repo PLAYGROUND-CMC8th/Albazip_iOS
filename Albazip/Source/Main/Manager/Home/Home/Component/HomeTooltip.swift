@@ -17,6 +17,7 @@ final class HomeTooltip: UIView {
     private let backgroundImageView = UIImageView().then {
         $0.image = UIImage(named: "homeTooltip")
         $0.contentMode = .scaleAspectFit
+        $0.applyShadow(blur: 70, x: 0, y: 3, opacity: 0.1, color: .black)
     }
     
     private let tooltipLabel = UILabel().then {

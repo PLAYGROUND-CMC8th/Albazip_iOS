@@ -51,4 +51,18 @@ extension UIView {
         self.layer.masksToBounds = true
     }
     
+    
+    func applyShadow(
+        blur: CGFloat,
+        x: CGFloat,
+        y: CGFloat,
+        opacity: Float,
+        color: UIColor
+    ) {
+        layer.masksToBounds = false
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = CGSize(width: x, height: y)
+        layer.shadowRadius = blur
+    }
 }
