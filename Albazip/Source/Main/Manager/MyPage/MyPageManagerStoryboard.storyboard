@@ -154,6 +154,7 @@
                     <navigationItem key="navigationItem" id="lVX-pb-hpK"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addWorkerButton" destination="cNs-Ng-sTJ" id="pGZ-Wb-OVw"/>
                         <outlet property="bottomView" destination="t7w-ZY-WfN" id="iso-Pg-Mif"/>
                         <outlet property="bottomViewTopConstraint" destination="SrI-Ro-GGV" id="J5h-nR-vQ5"/>
                         <outlet property="headerViewHeightConstraint" destination="4QR-T6-pe4" id="anJ-vU-arC"/>

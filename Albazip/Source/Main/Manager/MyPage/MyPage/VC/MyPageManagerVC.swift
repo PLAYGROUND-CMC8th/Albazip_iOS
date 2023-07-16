@@ -39,6 +39,7 @@ class MyPageManagerVC : BaseViewController{
     @IBOutlet var bottomView: UIView!
     @IBOutlet var headerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var bottomViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet var addWorkerButton: UIButton!
     
     // 상단 내 정보
     @IBOutlet var profileImage: UIImageView!
@@ -46,6 +47,8 @@ class MyPageManagerVC : BaseViewController{
     @IBOutlet var userNameLabel: UILabel!
     
     @IBOutlet var modalBgView: UIView!
+    
+    lazy var myPageTooltip = MyPageTooltip()
     
     //MARK:- Programatic UI Properties
     
@@ -120,6 +123,7 @@ class MyPageManagerVC : BaseViewController{
     }
     
     @IBAction func btnAddWorker(_ sender: Any) {
+        self.myPageTooltip.isHidden = true
         let storyboard = UIStoryboard(name: "MyPageManagerStoryboard", bundle: Bundle.main)
         guard let nextVC = storyboard.instantiateViewController(identifier: "MyPageManagerAddWorkerVC") as? MyPageManagerAddWorkerVC else {return}
         self.navigationController?.pushViewController(nextVC, animated: true)
@@ -196,7 +200,7 @@ class MyPageManagerVC : BaseViewController{
             if(subTabCount==0){
                 let tabContentVC = MyPageManagerContentVC()
                 tabContentVC.innerTableViewScrollDelegate = self
-               
+                tabContentVC.delegate = self
                 let displayName = tabName[subTabCount]
                 let page = Page(with: displayName, _vc: tabContentVC)
                 pageCollection.pages.append(page)
@@ -572,3 +576,21 @@ extension MyPageManagerVC {
     }
 }
 
+extension MyPageManagerVC: MyPageManagerContentVCDelegate {
+    func showPositionAddTooltip(state: Bool) {
+        if state {
+            if myPageTooltip.superview == nil {
+                view.addSubview(myPageTooltip)
+                myPageTooltip.snp.makeConstraints {
+                    $0.trailing.equalToSuperview().inset(12)
+                    $0.top.equalTo(addWorkerButton.snp.bottom).offset(6)
+                    $0.width.equalTo(240)
+                    $0.height.equalTo(81)
+                }
+            }
+            myPageTooltip.isHidden = false
+        } else {
+            myPageTooltip.isHidden = true
+        }
+    }
+}

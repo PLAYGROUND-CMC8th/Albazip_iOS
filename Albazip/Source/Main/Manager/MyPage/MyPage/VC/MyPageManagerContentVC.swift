@@ -20,7 +20,11 @@ protocol InnerTableViewScrollDelegate: AnyObject {
     func innerTableViewDidScroll(withDistance scrollDistance: CGFloat)
     func innerTableViewScrollEnded(withScrollDirection scrollDirection: DragDirection)
 }
-//186
+
+protocol MyPageManagerContentVCDelegate: AnyObject {
+    func showPositionAddTooltip(state: Bool)
+}
+
 class MyPageManagerContentVC: UIViewController {
 
     //MARK:- Outlets
@@ -29,6 +33,7 @@ class MyPageManagerContentVC: UIViewController {
     //MARK:- Scroll Delegate
     
     weak var innerTableViewScrollDelegate: InnerTableViewScrollDelegate?
+    weak var delegate: MyPageManagerContentVCDelegate?
     
     //MARK:- Stored Properties for Scroll Delegate
     
@@ -234,11 +239,14 @@ extension MyPageManagerContentVC {
         contentData = result.data
        print(contentData)
         print(result.message!)
-        if contentData!.count != 0{
+        if let contentData = contentData, !contentData.isEmpty {
             isNoWorker = false
+            delegate?.showPositionAddTooltip(state: contentData.count == 1)
         }else{
             isNoWorker = true
+            delegate?.showPositionAddTooltip(state: false)
         }
+        
         numberOfCells = 1
         tableView.reloadData()
         dismissIndicator()
