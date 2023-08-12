@@ -18,10 +18,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kvd-aT-ATP">
-                        <rect key="frame" x="24" y="24" width="327" height="66"/>
+                        <rect key="frame" x="24" y="24" width="327" height="96"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해당 업무리스트는 포지션 담당 업무로, 업무를 작성하면 근무자의 근무일에 고정되어 노출됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E10-4J-67O">
-                                <rect key="frame" x="20" y="16" width="287" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN1-Kz-cQC">
+                                <rect key="frame" x="20" y="65" width="163.66666666666666" height="15"/>
+                                <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="어떻게 작성해야 될 지 모르겠다면?">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="12" name="AppleSDGothicNeo-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해당 업무리스트는 역할 담당 업무로, 업무를 작성하면 알바생의 근무일에 고정되어 노출됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E10-4J-67O">
+                                <rect key="frame" x="20" y="16" width="287" height="28.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.63921570780000003" green="0.63921570780000003" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -30,10 +45,11 @@
                         <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="E10-4J-67O" firstAttribute="leading" secondItem="Kvd-aT-ATP" secondAttribute="leading" constant="20" id="042-Ry-W0w"/>
+                            <constraint firstAttribute="bottom" secondItem="fN1-Kz-cQC" secondAttribute="bottom" constant="16" id="0GE-JL-PAP"/>
                             <constraint firstAttribute="trailing" secondItem="E10-4J-67O" secondAttribute="trailing" constant="20" id="1S4-xY-kma"/>
-                            <constraint firstAttribute="bottom" secondItem="E10-4J-67O" secondAttribute="bottom" constant="16" id="7d3-0i-Zb5"/>
                             <constraint firstItem="E10-4J-67O" firstAttribute="top" secondItem="Kvd-aT-ATP" secondAttribute="top" constant="16" id="QVn-o4-cZN"/>
-                            <constraint firstAttribute="height" constant="66" id="fTO-4F-Xkl"/>
+                            <constraint firstAttribute="height" constant="96" id="fTO-4F-Xkl"/>
+                            <constraint firstItem="fN1-Kz-cQC" firstAttribute="leading" secondItem="Kvd-aT-ATP" secondAttribute="leading" constant="20" id="nP4-DS-ZTs"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -42,7 +58,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업무리스트 작성하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hya-ny-o7k">
-                        <rect key="frame" x="24" y="114" width="129" height="19"/>
+                        <rect key="frame" x="24" y="144" width="129" height="19"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="19" id="Jjs-lD-kvb"/>
                         </constraints>
@@ -51,7 +67,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(선택)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAf-uA-aY5">
-                        <rect key="frame" x="157" y="114" width="40" height="19.333333333333343"/>
+                        <rect key="frame" x="157" y="144" width="40" height="19.333333333333343"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <color key="textColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -72,6 +88,8 @@
             <connections>
                 <outlet property="cellHeight" destination="fTO-4F-Xkl" id="Y3P-dk-xli"/>
                 <outlet property="cellTitle" destination="E10-4J-67O" id="Aag-jY-1lB"/>
+                <outlet property="helpWriteLabel" destination="fN1-Kz-cQC" id="fWT-kr-XhP"/>
+                <outlet property="taskWriteLabel" destination="hya-ny-o7k" id="0jk-ca-8nE"/>
             </connections>
             <point key="canvasLocation" x="-95" y="167"/>
         </tableViewCell>

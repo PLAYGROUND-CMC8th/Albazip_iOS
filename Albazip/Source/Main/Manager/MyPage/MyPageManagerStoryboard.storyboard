@@ -170,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="394.39999999999998" y="703.44827586206895"/>
         </scene>
-        <!--근무자 추가-->
+        <!--알바생 추가-->
         <scene sceneID="ifs-X0-BbL">
             <objects>
                 <viewController storyboardIdentifier="MyPageManagerAddWorkerVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3et-ET-s4f" customClass="MyPageManagerAddWorkerVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
@@ -199,7 +199,7 @@
                                     <constraint firstAttribute="height" constant="1" id="8uz-ci-1Gh"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="근무자 추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKY-4N-nCK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알바생 추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKY-4N-nCK">
                                 <rect key="frame" x="146.66666666666666" y="68" width="82" height="22"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -243,7 +243,7 @@
                             <constraint firstItem="zbn-Au-bSL" firstAttribute="centerY" secondItem="yKY-4N-nCK" secondAttribute="centerY" id="vmc-oI-Zzg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="근무자 추가" id="sGN-3c-BHe"/>
+                    <navigationItem key="navigationItem" title="알바생 추가" id="sGN-3c-BHe"/>
                     <connections>
                         <outlet property="btnNext" destination="zbn-Au-bSL" id="ejR-zU-SNJ"/>
                         <outlet property="modalBgView" destination="jfA-7b-dxW" id="GkN-SP-Kt7"/>
@@ -610,7 +610,7 @@
             </objects>
             <point key="canvasLocation" x="1914.4000000000001" y="1410.5911330049262"/>
         </scene>
-        <!--근무자 추가-->
+        <!--알바생 추가-->
         <scene sceneID="tj8-Nk-q8k">
             <objects>
                 <viewController storyboardIdentifier="MyPageManagerWorkListVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="By3-ao-wND" customClass="MyPageManagerWorkListVC" customModule="Albazip" customModuleProvider="target" sceneMemberID="viewController">
@@ -632,7 +632,7 @@
                                     <action selector="btnNext:" destination="By3-ao-wND" eventType="touchUpInside" id="dWx-rI-bYC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="근무자 추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOn-oz-aML">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알바생 추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOn-oz-aML">
                                 <rect key="frame" x="146.66666666666666" y="68" width="82" height="22"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -677,7 +677,7 @@
                             <constraint firstItem="zVg-9W-rue" firstAttribute="top" secondItem="pOn-oz-aML" secondAttribute="bottom" constant="14" id="sJV-gC-BWC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="근무자 추가" id="bcF-qI-xdy"/>
+                    <navigationItem key="navigationItem" title="알바생 추가" id="bcF-qI-xdy"/>
                     <connections>
                         <outlet property="tableView" destination="G6k-nb-xQ9" id="sTG-wf-mBJ"/>
                     </connections>

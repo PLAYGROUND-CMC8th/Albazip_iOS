@@ -288,9 +288,9 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
         
         switch section{
         case 0:
-            sectionTitle.text = "포지션 선택하기"
+            sectionTitle.text = "알바생 역할 선택하기"
         case 1:
-            sectionTitle.text = "스케줄 입력하기"
+            sectionTitle.text = "알바생 스케줄 등록하기"
         case 2:
             sectionTitle.text = "급여 입력하기"
         default:
@@ -302,7 +302,7 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
             let sectionSubTitle = UILabel().then{
                 $0.font = UIFont.systemFont(ofSize: 14, weight: .medium)
                 $0.textColor = UIColor(hex: 0xA3A3A3)
-                $0.text = "포지션이 여러개라면, 메인 포지션을 선택해 주세요."
+                $0.text = "역할이 여러개라면, 메인 역할을 선택해 주세요."
             }
             sectionView.addSubview(sectionSubTitle)
             
@@ -452,9 +452,9 @@ extension MyPageManagerAddWorkerVC: UITableViewDataSource, UITableViewDelegate {
                     $0.setTitleColor(UIColor(hex: 0x6f6f6f), for: .normal)
                     $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
                     if isWorkDaySetted{
-                        $0.setTitle("근무일 변경하기", for: .normal)
+                        $0.setTitle("변경하기", for: .normal)
                     }else{
-                        $0.setTitle("근무일 설정하기", for: .normal)
+                        $0.setTitle("설정하기", for: .normal)
                     }
                     $0.layer.cornerRadius = 10
                     $0.layer.borderWidth = 1
