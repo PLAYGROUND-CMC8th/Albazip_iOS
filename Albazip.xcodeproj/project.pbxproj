@@ -107,6 +107,8 @@
 		C34A00612731BF2900C24102 /* MyPageWorkerPositionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34A005F2731BF2900C24102 /* MyPageWorkerPositionTableViewCell.xib */; };
 		C34A00642731C82200C24102 /* MyPageWorkerPositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A00622731C82200C24102 /* MyPageWorkerPositionVC.swift */; };
 		C34A00652731C82200C24102 /* MyPageWorkerPositionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34A00632731C82200C24102 /* MyPageWorkerPositionVC.xib */; };
+		C34ABDB22A638E4A005FA695 /* HelpWrittingBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34ABDB12A638E4A005FA695 /* HelpWrittingBottomSheetViewController.swift */; };
+		C34ABDB42A639301005FA695 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34ABDB32A639301005FA695 /* BottomSheetViewController.swift */; };
 		C34BCB382732B5910085ADB3 /* MyPageDetailCountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34BCB362732B5910085ADB3 /* MyPageDetailCountTableViewCell.swift */; };
 		C34BCB392732B5910085ADB3 /* MyPageDetailCountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34BCB372732B5910085ADB3 /* MyPageDetailCountTableViewCell.xib */; };
 		C34BCB3C2732BFB20085ADB3 /* MyPageDetailCommuteRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34BCB3B2732BFB20085ADB3 /* MyPageDetailCommuteRecordVC.swift */; };
@@ -554,6 +556,8 @@
 		C34A005F2731BF2900C24102 /* MyPageWorkerPositionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageWorkerPositionTableViewCell.xib; sourceTree = "<group>"; };
 		C34A00622731C82200C24102 /* MyPageWorkerPositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkerPositionVC.swift; sourceTree = "<group>"; };
 		C34A00632731C82200C24102 /* MyPageWorkerPositionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageWorkerPositionVC.xib; sourceTree = "<group>"; };
+		C34ABDB12A638E4A005FA695 /* HelpWrittingBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpWrittingBottomSheetViewController.swift; sourceTree = "<group>"; };
+		C34ABDB32A639301005FA695 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		C34BCB362732B5910085ADB3 /* MyPageDetailCountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailCountTableViewCell.swift; sourceTree = "<group>"; };
 		C34BCB372732B5910085ADB3 /* MyPageDetailCountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageDetailCountTableViewCell.xib; sourceTree = "<group>"; };
 		C34BCB3B2732BFB20085ADB3 /* MyPageDetailCommuteRecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailCommuteRecordVC.swift; sourceTree = "<group>"; };
@@ -1039,6 +1043,7 @@
 		C30AFE8C27341F450075CDE2 /* WorkList */ = {
 			isa = PBXGroup;
 			children = (
+				C34ABDB02A638E08005FA695 /* BottomSheet */,
 				C30AFE8427341CD70075CDE2 /* MyPageManagerWorkList1TableViewCell.swift */,
 				C30AFE8527341CD70075CDE2 /* MyPageManagerWorkList1TableViewCell.xib */,
 				C30AFE8827341F330075CDE2 /* MyPageManagerWorkList2TableViewCell.swift */,
@@ -1378,6 +1383,15 @@
 				C33E00032731D30600D88267 /* MyPageWorkerWriteTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C34ABDB02A638E08005FA695 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				C34ABDB12A638E4A005FA695 /* HelpWrittingBottomSheetViewController.swift */,
+				C34ABDB32A639301005FA695 /* BottomSheetViewController.swift */,
+			);
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		C34BCB342732B52D0085ADB3 /* Detail */ = {
@@ -3160,6 +3174,7 @@
 				C3E9C8F02741698000B0139C /* MyPageDetailClearWorkDayResponse.swift in Sources */,
 				C384426C27147E6E00B84E8A /* BaseViewController.swift in Sources */,
 				C3497303275140BB009EFCD1 /* CommunityMangerNoticeEditVC.swift in Sources */,
+				C34ABDB42A639301005FA695 /* BottomSheetViewController.swift in Sources */,
 				C3A228BA274297DF00187587 /* HomeWorkerTodayWorkVC.swift in Sources */,
 				C3F05A5B274FA3260025DB24 /* RegisterPermissionVC.swift in Sources */,
 				C3A968422719FA7A00E27DA1 /* StartViewController.swift in Sources */,
@@ -3360,6 +3375,7 @@
 				C38EDCEB2746C78A00564A17 /* MyPageWorkerStopWorkDatamanager.swift in Sources */,
 				C391EAC527533B96002CD2E5 /* CommunityWorkerConfirmDatamanager.swift in Sources */,
 				C3F05A6E274FD43E0025DB24 /* CommunityManagerNoticeTableViewCell.swift in Sources */,
+				C34ABDB22A638E4A005FA695 /* HelpWrittingBottomSheetViewController.swift in Sources */,
 				C30DEB292911739E00A17912 /* RegisterBasicViewModel.swift in Sources */,
 				C38D932B2749AAA800AFFDE9 /* HomeWorkerCompletePeopleTableViewCell.swift in Sources */,
 				C3B9338E273BFB2F0056E381 /* SettingSubscribVC.swift in Sources */,

@@ -139,6 +139,8 @@ extension  MyPageManagerWorkListVC: UITableViewDataSource, UITableViewDelegate {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageManagerWorkList1TableViewCell") as? MyPageManagerWorkList1TableViewCell {
                 cell.selectionStyle = .none
+                cell.delegate = self
+                cell.setupTaskWriteLabel(text: MyPageManagerAddWorkerInfo.shared.title)
                 return cell
             }
         
@@ -220,5 +222,13 @@ extension MyPageManagerWorkListVC {
     func failedToRequestAddWorker(message: String) {
         dismissIndicator()
         self.presentAlert(title: message)
+    }
+}
+
+extension MyPageManagerWorkListVC: MyPageManagerWorkList1TableViewCellDelegate {
+    func showHelpWriteBottomSheet() {
+        let bottomSheetVC = HelpWrittingBottomSheetViewController()
+        bottomSheetVC.modalPresentationStyle = .overFullScreen
+        present(bottomSheetVC, animated: false, completion: nil)
     }
 }
